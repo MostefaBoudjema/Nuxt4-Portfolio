@@ -10,8 +10,10 @@ export default defineNuxtConfig({
   ],
   plugins: [
     '@/plugins/aos.client.js',
+    '@/plugins/aos.client.js',
     '~/plugins/i18n.js',
-    '~/plugins/theme.client.js'
+    '~/plugins/theme.client.js',
+    '~/plugins/backtotop.client.js'
   ],
   ssr: true,
   nitro: {

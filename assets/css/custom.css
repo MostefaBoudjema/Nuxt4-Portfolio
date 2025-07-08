@@ -34,3 +34,39 @@ body {
         }
     }
 }
+
+.my-backtotop {
+  background: #2563eb; /* Custom blue color */
+  color: #fff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.my-backtotop:hover {
+  background: #1e40af; /* Darker blue on hover */
+}
+
+.vue-back-to-top .default {
+    background-color: #2563eb !important; /* Your custom color */
+    border-radius: 50% !important;        /* Make it round */
+    color: #fff !important;
+    width: 48px !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    font-size: 2rem !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.vue-back-to-top .default:hover {
+    background: #1e40af !important;
+}

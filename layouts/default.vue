@@ -6,8 +6,15 @@
     <!-- Main content -->
     <main>
       <slot />
-      <WhatsApp/>
     </main>
+    <WhatsApp/>
+    <BackToTop class="my-backtotop"
+      :visibleoffset="300"
+      right="30px"
+      bottom="40px"
+      text="↑"
+      customClass="my-backtotop"
+    />
     <!-- Footer -->
     <AppFooter />
   </div>

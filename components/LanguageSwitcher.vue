@@ -1,6 +1,6 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
-import { ref, defineProps, defineEmits } from 'vue';
+import { ref, defineProps, defineEmits, computed } from 'vue';
 
 const props=defineProps({
 	lang: {
@@ -20,6 +20,8 @@ const { t }=useI18n({
 	useScope: 'local',
 });
 
+const nextLang = computed(() => props.lang === 'ar' ? 'en' : 'ar');
+
 const togglelang=() => {
 	const newlang=props.lang==='ar'? 'en':'ar';
 	localStorage.setItem('lang', newlang);
@@ -31,9 +33,8 @@ const togglelang=() => {
 <template>
 	<a href="#" @click.prevent="togglelang" aria-label="lang Switcher">
 		<i v-if="theme === 'light'"
-			class="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light w-5">{{
-		t(lang) }}</i>
-		<i v-else class="text-gray-200 hover:text-gray-50 w-5">{{ t(lang) }}</i>
+			class="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light w-5">{{ t(nextLang) }}</i>
+		<i v-else class="text-gray-200 hover:text-gray-50 w-5">{{ t(nextLang) }}</i>
 	</a>
 </template>
 

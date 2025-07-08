@@ -13,7 +13,9 @@ const configs=
 	full_list: JSON.parse(process.env.VUE_APP_FULL_LIST || '[3,9,1,10,0,11,5,2,4,6,7,8]'),
 	home_list: JSON.parse(process.env.VUE_APP_HOME_LIST || '[3,14,15,6,9,10]'),
 	show_cv: process.env.VUE_APP_SHOW_CV === 'true' || true,
-	show_multi_lang: process.env.VUE_APP_SHOW_MULTI_LANG === 'true' || false,
+	// show_multi_lang: process.env.VUE_APP_SHOW_MULTI_LANG === 'true' || false,
+	
+	show_multi_lang: true,
 	show_hire_me: process.env.VUE_APP_SHOW_HIRE_ME === 'true' || true,
 	show_contact_form: process.env.VUE_APP_SHOW_CONTACT_FORM === 'true' || true,
 	show_blog: process.env.VUE_APP_SHOW_BLOG === 'true' || true,
