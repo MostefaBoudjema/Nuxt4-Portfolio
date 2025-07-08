@@ -2,7 +2,14 @@
 
 body {
     font-family: 'GeneralSans-Regular';
+    @apply bg-secondary-light;
 }
+
+/* Dark mode body background for the entire page */
+.dark body {
+    @apply bg-primary-dark;
+}
+
 /* Theme Colors */
 
 /* Active class for navigation menu */
