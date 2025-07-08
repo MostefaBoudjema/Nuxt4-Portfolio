@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     '~/assets/css/app.css'
   ],
   plugins: [
-    '~/plugins/i18n.js'
-  ]
+    '~/plugins/i18n.js',
+    '~/plugins/theme.client.js'
+  ],
+  compatibilityDate: '2025-07-08'
 })

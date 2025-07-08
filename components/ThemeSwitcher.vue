@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watch, defineProps, defineEmits } from 'vue';
+import useThemeSwitcher from '~/composables/useThemeSwitcher';
 
 const props = defineProps({
   theme: {
@@ -10,11 +11,12 @@ const props = defineProps({
 
 const emit = defineEmits(['theme-changed']);
 
-const toggleTheme = () => {
+const { toggleTheme } = useThemeSwitcher();
+
+const handleToggleTheme = () => {
+  toggleTheme();
   const newTheme = props.theme === 'light' ? 'dark' : 'light';
-  localStorage.setItem('theme', newTheme);
   emit('theme-changed', newTheme);
-  location.reload(); // Refresh the page
 };
 
 // Ensure feather icons are refreshed when theme changes
@@ -25,7 +27,7 @@ watch(() => props.theme, () => {
 </script>
 
 <template>
-  <a href="#" @click.prevent="toggleTheme" aria-label="Theme Switcher">
+  <a href="#" @click.prevent="handleToggleTheme" aria-label="Theme Switcher">
     <i
       v-if="theme === 'light'"
       data-feather="moon"

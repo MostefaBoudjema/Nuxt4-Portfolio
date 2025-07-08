@@ -187,10 +187,10 @@ const posts=[
     slug: 'getting-started-laravel-11',
     author: {
       name: 'Mostefa Boudjema',
-      avatar: '/assets/images/me1.webp',
+      avatar: '/images/me1.webp',
       bio: 'Laravel dev'
     },
-    coverImage: '/assets/images/posts/getting-started-laravel-11.jpg',
+    coverImage: '/images/posts/getting-started-laravel-11.jpg',
     readingTime: '4 min read',
     published: true,
     category: 'Backend',
@@ -280,10 +280,10 @@ const posts=[
     slug: 'best-technology-to-learn-2025',
     author: {
       name: 'Mostefa Boudjema',
-      avatar: '/assets/images/me1.webp',
+      avatar: '/images/me1.webp',
       bio: 'Laravel dev'
     },
-    coverImage: '/assets/images/posts/best-tech-2025.webp',
+    coverImage: '/images/posts/best-tech-2025.webp',
     readingTime: '4 min read',
     published: true,
     category: 'Tech Trends',
@@ -402,10 +402,10 @@ const posts=[
     slug: 'best-laravel-related-tech-2025',
     author: {
       name: 'Mostefa Boudjema',
-      avatar: '/assets/images/me1.webp',
+      avatar: '/images/me1.webp',
       bio: 'Laravel dev'
     },
-    coverImage: '/assets/images/posts/best-laravel-tech-2025.webp',
+    coverImage: '/images/posts/best-laravel-tech-2025.webp',
     readingTime: '10 min read',
     published: true,
     category: 'Backend',

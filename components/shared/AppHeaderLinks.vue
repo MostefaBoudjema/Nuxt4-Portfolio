@@ -1,22 +1,24 @@
-<script>
+<script setup>
 import { useI18n } from "vue-i18n";
 import settings from "@/data/configs";
-export default {
-    name: "Home",
-    setup(props, { emit }) {
-        const { t } = useI18n({
-            inheritLocale: true,
-            useScope: "local",
-        });
 
-        // Emit close-menu event
-        const closeMenu = () => {
-            emit("close-menu");
-        };
+const { t } = useI18n({
+    inheritLocale: true,
+    useScope: "local",
+});
 
-        return { t,settings, closeMenu };
-    },
-    props: ["showModal", "isOpen"],
+// Define props
+const props = defineProps({
+    showModal: Function,
+    isOpen: Boolean
+});
+
+// Define emits
+const emit = defineEmits(['close-menu']);
+
+// Emit close-menu event
+const closeMenu = () => {
+    emit("close-menu");
 };
 </script>
 

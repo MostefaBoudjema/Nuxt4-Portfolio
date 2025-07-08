@@ -33,11 +33,11 @@
         </div>
         <p class="my-2 text-left">{{ post.excerpt || post.summary }}</p>
         <div class="mt-0 sm:mt-5 flex justify-center sm:justify-start">
-          <router-link :to="{ name: 'SingleBlog', params: { slug: post.slug } }"
+          <NuxtLink :to="`/blog/${post.slug}`"
             class="flex items-center px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow-lg hover:shadow-xl bg-blue-500 hover:bg-blue-600 focus:ring-1 focus:ring-blue-900 text-white text-sm sm:text-lg lg:text-xl duration-300"
             aria-label="Read More">
             {{ $t('blog.readMore') }}
-          </router-link>
+          </NuxtLink>
         </div>
       </div>
 

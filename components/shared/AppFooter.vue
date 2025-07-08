@@ -1,3 +1,25 @@
+<script setup>
+import { ref, onMounted, onUpdated } from 'vue';
+import { useI18n } from 'vue-i18n';
+import feather from "feather-icons";
+import { socialLinks } from "@/data/socialLinks";
+
+const { t } = useI18n({
+    inheritLocale: true,
+    useScope: "local",
+});
+
+const socials = ref(socialLinks);
+
+onMounted(() => {
+    feather.replace();
+});
+
+onUpdated(() => {
+    feather.replace();
+});
+</script>
+
 <template>
     <div class="container mx-auto">
         <div
@@ -33,39 +55,5 @@
         </div>
     </div>
 </template>
-<script>
-import feather from "feather-icons";
-// import FooterCopyright from './FooterCopyright.vue';
-import { socialLinks } from "@/data/socialLinks";
-
-import { useI18n } from "vue-i18n";
-export default {
-    components: {
-        // FooterCopyright
-    },
-    setup() {
-        const { t } = useI18n({
-            inheritLocale: true,
-            useScope: "local",
-        });
-
-        
-
-        return { t };
-    },
-    data() {
-        return {
-            socials: socialLinks,
-        };
-    },
-    mounted() {
-        feather.replace();
-    },
-    updated() {
-        feather.replace();
-    },
-};
-</script>
-
 
 <style scoped></style>
