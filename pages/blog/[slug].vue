@@ -51,8 +51,6 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
-import { marked } from 'marked';
 import posts from '../data/posts.js';
 
 const route = useRoute();

@@ -44,8 +44,7 @@ onMounted(() => {
                     start: "top 80%",
                     end: "end 10%",
                     toggleActions: "restart none none none",
-                    // toggleActions: "restart pause resume complete",
-                    // play pause resume reverse restart reset complete none
+                    // toggleActions: "restart pause resume reverse restart reset complete none
                     scrub: 5,
                     // markers: true,
                 },
@@ -59,9 +58,13 @@ onMounted(() => {
 <template>
     <div v-if="!props.project.hide">
         <div>
-            <NuxtLink :to="props.project.link" @click="setPageId(props.project.id)"
-                class="single rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
-                aria-label="Single Project" style="position: relative; display: inline-block;">
+            <NuxtLink
+  :to="{ path: `/projects/${props.project.link}` }"
+  @click="setPageId(props.project.id)"
+  class="single rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
+  aria-label="Single Project"
+  style="position: relative; display: inline-block;"
+>
                 <NuxtImg :src="props.project.img" :alt="props.project.title" class="rounded-t-xl border-none"
                     style="width: 100%; height: auto;" />
                 <template v-for="(smallImg, index) in props.project.smallImages" :key="index">

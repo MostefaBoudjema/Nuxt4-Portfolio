@@ -19,5 +19,13 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'node'
   },
+  app: {
+    head: {
+      title: 'Mostefa Boudjema', // Change this to your desired title
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+      ]
+    }
+  },
   compatibilityDate: '2025-07-08'
 })

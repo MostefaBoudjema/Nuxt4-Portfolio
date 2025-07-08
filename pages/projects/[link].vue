@@ -9,32 +9,22 @@ import relatedProject from "@/data/relatedProjects";
 import projects from "@/data/projects";
 
 // import { blog } from "@/data/projectInfos";
-import { useI18n } from "vue-i18n";
-import { useStore } from "vuex";
 import { computed, onMounted, onUpdated, ref } from "vue";
+import { useRoute } from 'vue-router';
+import { useI18n } from 'vue-i18n';
 
-const { t } = useI18n({
-    inheritLocale: true,
-    useScope: "global",
-});
+const { t } = useI18n();
 
-const id = 0;
+const route = useRoute();
+const projectLink = computed(() => route.params.link);
+const projectIndex = computed(() => projects.findIndex(p => p.link === projectLink.value));
+const project = computed(() => projects[projectIndex.value] || null);
 
-const singleProjectHeader = ref(projects[id].singleProjectHeader);
-const projectImages = ref(projects[id].projectImages);
-const projectInfo = ref(projects[id].projectInfo);
-const img = ref(projects[id].img);
-const relatedProjectRef = ref(relatedProject);
-
-const store = useStore();
-const pageid = computed(() => store.state.pageid);
-
-const ImgMethod = computed(() => projects[pageid.value].img);
-const singleProjectHeaderMethod = computed(() => projects[pageid.value].singleProjectHeader);
-const projectImagesMethod = computed(() => projects[pageid.value].projectImages);
-const projectvideosMethod = computed(() => projects[pageid.value].video);
-const projectInfoMethod = computed(() => projects[pageid.value].projectInfo);
-const smallImagesMethod = computed(() => projects[pageid.value].smallImages);
+const singleProjectHeaderMethod = computed(() => project.value?.singleProjectHeader);
+const projectImagesMethod = computed(() => project.value?.projectImages);
+const projectvideosMethod = computed(() => project.value?.video);
+const projectInfoMethod = computed(() => project.value?.projectInfo);
+const smallImagesMethod = computed(() => project.value?.smallImages);
 
 onMounted(() => {
     feather.replace();
