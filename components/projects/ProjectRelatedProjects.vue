@@ -1,32 +1,33 @@
-<script>
+<script setup>
 import { useI18n } from "vue-i18n";
-import { mapActions } from "vuex";
-export default {
-    props: ["relatedProject"],
-    setup() {
-        const { t } = useI18n({
-            inheritLocale: true,
-            useScope: "global",
-        });
+import { computed } from 'vue';
 
-        return { t };
-    },
-    computed: {
-        randomItems() {
-            // Shuffle the items array using Fisher-Yates shuffle algorithm
-            const shuffled = this.relatedProject.relatedProjects.slice(0);
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
+const props = defineProps({
+    relatedProject: {
+        type: Object,
+        required: true
+    }
+});
 
-            // Take the first 4 items from the shuffled array
-            return shuffled.slice(0, 4);
-        },
-    },
-    methods: {
-        ...mapActions(["setPageId"]),
-    },
+const { t } = useI18n({
+    inheritLocale: true,
+    useScope: "global",
+});
+
+const randomItems = computed(() => {
+    // Shuffle the items array using Fisher-Yates shuffle algorithm
+    const shuffled = props.relatedProject.relatedProjects.slice(0);
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    // Take the first 4 items from the shuffled array
+    return shuffled.slice(0, 4);
+});
+
+const setPageId = (id) => {
+    console.log('Page ID:', id);
 };
 </script>
 
@@ -41,15 +42,15 @@ export default {
             <div class="grid grid-cols-1 sm:grid-cols-4 sm:gap-10 mt-12">
             <!-- <div class="grid grid-cols-1 mt-6 sm:gap-10"> -->
             <div v-for="item in randomItems" :key="item.id">
-                <router-link
-                    :to="{ name: item.link }"
+                <NuxtLink
+                    :to="item.link"
                     @click="setPageId(item.id)"
                 >
                     <img
                         v-lazy="item.img"
                         class="rounded-xl cursor-pointer h-70 w-96"
                         :alt="item.title"
-                /></router-link>
+                /></NuxtLink>
                 <h3 class="dark:text-white text-center pt-2">
                     {{ item.title }}
                 </h3>

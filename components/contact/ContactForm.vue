@@ -267,7 +267,7 @@ export default {
 					timeline: this.formData.timeline === 'other' ? this.formData.timelineCustom : this.formData.timeline
 				};
 
-				const apiUrl = process.env.VUE_APP_API_URL || 'http://localhost:3000';
+				const apiUrl = 'http://localhost:3000';
 				const response = await fetch(`${apiUrl}/send-email`, {
 					method: 'POST',
 					headers: {

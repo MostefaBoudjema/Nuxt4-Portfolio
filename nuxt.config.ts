@@ -11,5 +11,9 @@ export default defineNuxtConfig({
     '~/plugins/i18n.js',
     '~/plugins/theme.client.js'
   ],
+  ssr: true,
+  nitro: {
+    preset: 'node'
+  },
   compatibilityDate: '2025-07-08'
 })

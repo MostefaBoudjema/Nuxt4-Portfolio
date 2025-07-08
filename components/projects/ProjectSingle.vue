@@ -19,8 +19,9 @@ const { t }=useI18n({
     useScope: "global",
 });
 
-const store=useStore();
-const setPageId=(id) => store.dispatch('setPageId', id);
+// const store=useStore();
+// const setPageId=(id) => store.dispatch('setPageId', id);
+const setPageId=(id) => console.log('Page ID:', id);
 onMounted(() => {
     let mm=gsap.matchMedia();
     mm.add("(min-width: 991px)", () => {
@@ -58,7 +59,7 @@ onMounted(() => {
 <template>
     <div v-if="!props.project.hide">
         <div>
-            <router-link :to="{ name: props.project.link }" @click="setPageId(props.project.id)"
+            <NuxtLink :to="props.project.link" @click="setPageId(props.project.id)"
                 class="single rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
                 aria-label="Single Project" style="position: relative; display: inline-block;">
                 <img v-lazy="props.project.img" :alt="props.project.title" class="rounded-t-xl border-none"
@@ -72,7 +73,7 @@ onMounted(() => {
         height: smallImg.height || '50px',
     }" />
                 </template>
-            </router-link>
+            </NuxtLink>
         </div>
         <div class="text-center px-4 py-6 d-flex justify-content-center align-items-center">
             <p class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2">

@@ -142,7 +142,8 @@ onUpdated(() => {
 </template>
 
 <style scoped>
-#nav a.router-link-exact-active {
+#nav a.router-link-exact-active,
+#nav a.nuxt-link-exact-active {
     @apply text-blue-700;
     @apply dark:text-blue-400;
     @apply font-medium;

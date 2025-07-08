@@ -15,14 +15,18 @@ export default function useLangSwitcher() {
 	function setLightLang() {
 		currentLang.value = 'ar';
 
-		process.isClient && localStorage.setItem('lang', 'ar');
+		if (process.client) {
+			localStorage.setItem('lang', 'ar');
+		}
 	}
 
 	// Dark Lang Function
 	function setDarkLang() {
 		currentLang.value = 'en';
 
-		process.isClient && localStorage.setItem('lang', 'en');
+		if (process.client) {
+			localStorage.setItem('lang', 'en');
+		}
 	}
 
 	return {

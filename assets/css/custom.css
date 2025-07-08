@@ -14,7 +14,9 @@ body {
 
 /* Active class for navigation menu */
 .router-link-active,
-.router-link-exact-active {
+.router-link-exact-active,
+.nuxt-link-active,
+.nuxt-link-exact-active {
     @apply text-blue-800;
     @apply text-blue-600 dark:text-blue-300;
 }

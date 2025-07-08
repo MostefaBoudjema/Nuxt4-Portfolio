@@ -3,7 +3,13 @@ import en from '../locales/en.json';
 import ar from '../locales/ar.json';
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const appLang = (typeof window !== 'undefined' && localStorage.getItem('lang')) || 'en'
+  let appLang = 'en'
+  
+  // Only access localStorage on client side
+  if (process.client) {
+    appLang = localStorage.getItem('lang') || 'en'
+  }
+  
   const i18n = createI18n({
     legacy: false,
     globalInjection: true,

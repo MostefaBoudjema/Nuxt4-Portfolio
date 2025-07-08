@@ -9,13 +9,13 @@
 
 		<!-- Load more projects button -->
 		<div class="mt-10 sm:mt-20 flex justify-center">
-			<router-link
-				:to="{name : 'Projects'}"
+			<NuxtLink
+				to="/projects"
 				class="font-general-medium flex items-center px-6 py-3 rounded-lg shadow-lg hover:shadow-xl bg-blue-500 hover:bg-blue-600 focus:ring-1 focus:ring-blue-900 text-white text-lg sm:text-xl duration-300"
 				aria-label="More Projects"
 			>
 				<Button :title="$t('More Projects')"/>
-			</router-link>
+			</NuxtLink>
 		</div>
 	</div>
 </template>
