@@ -62,10 +62,10 @@ onMounted(() => {
             <NuxtLink :to="props.project.link" @click="setPageId(props.project.id)"
                 class="single rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
                 aria-label="Single Project" style="position: relative; display: inline-block;">
-                <img v-lazy="props.project.img" :alt="props.project.title" class="rounded-t-xl border-none"
+                <NuxtImg :src="props.project.img" :alt="props.project.title" class="rounded-t-xl border-none"
                     style="width: 100%; height: auto;" />
                 <template v-for="(smallImg, index) in props.project.smallImages" :key="index">
-                    <img v-lazy="smallImg.src" :alt="smallImg.alt" :style="{
+                    <NuxtImg :src="smallImg.src" :alt="smallImg.alt" :style="{
         position: 'absolute',
         top: index * 50 + 'px',
         right: '0',

@@ -2,7 +2,7 @@
   <div class="block sm:flex sm:gap-10 mt-10 sm:mt-20">
     <!-- About profile image -->
     <div class="w-full sm:w-2/6 mb-7 sm:mb-0">
-      <img v-lazy="settings.profile_photo" class="rounded-xl w-96" alt="" />
+      <NuxtImg :src="settings.profile_photo" class="rounded-xl w-96" alt="" />
       <DownloadCv />
       <ContactBtn />
     </div>

@@ -38,13 +38,15 @@ const { t }=useI18n({
   useScope: 'local',
 });
 
-const theme=ref(localStorage.getItem('theme')||'light');
-const lang=ref(localStorage.getItem('lang')||'ar');
+const theme = ref('light');
+const lang = ref('ar');
 
 onMounted(() => {
   feather.replace();
-  theme.value=localStorage.getItem('theme')||'light';
-  lang.value=localStorage.getItem('lang')||'ar';
+  if (process.client) {
+    theme.value = localStorage.getItem('theme') || 'light';
+    lang.value = localStorage.getItem('lang') || 'ar';
+  }
 });
 
 onUpdated(() => {

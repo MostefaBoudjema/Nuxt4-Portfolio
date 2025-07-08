@@ -1,8 +1,6 @@
 <template>
   <div class="container mx-auto p-8">
-    <h1 class="text-4xl font-bold text-blue-600 mb-4">Layout Test</h1>
-    <p class="text-lg text-gray-700 dark:text-gray-300">This is a test to see if the layout is working properly.</p>
-    
+
     <!-- Banner -->
     <AppBanner class="mb-5 sm:mb-8 mt-8" />
 

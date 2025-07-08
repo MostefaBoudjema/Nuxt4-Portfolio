@@ -6,7 +6,7 @@
 		<!-- Contact form -->
 		<ContactForm v-if="settings.show_contact_form" />
 		<div v-else class="mr-16">
-			<img v-lazy="settings.profile_photo" class="rounded-xl w-96" alt="" />
+			<NuxtImg :src="settings.profile_photo" class="rounded-xl w-96" alt="" />
 		</div>
 		<!-- <ContactSocials :socials="socials" /> -->
 	</div>

@@ -46,8 +46,8 @@ const setPageId = (id) => {
                     :to="item.link"
                     @click="setPageId(item.id)"
                 >
-                    <img
-                        v-lazy="item.img"
+                    <NuxtImg
+                        :src="item.img"
                         class="rounded-xl cursor-pointer h-70 w-96"
                         :alt="item.title"
                 /></NuxtLink>

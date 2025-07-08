@@ -2,12 +2,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image',
   ],
   css: [
     '~/assets/css/app.css'
   ],
   plugins: [
+    '@/plugins/aos.client.js',
     '~/plugins/i18n.js',
     '~/plugins/theme.client.js'
   ],
