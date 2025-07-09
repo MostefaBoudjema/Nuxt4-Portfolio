@@ -50,8 +50,9 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, watchEffect } from 'vue';
 import posts from '../data/posts.js';
+import { useHead } from '#imports'
 
 const route = useRoute();
 const post = ref(null);
@@ -68,6 +69,14 @@ onMounted(() => {
     };
   }
 });
+
+watchEffect(() => {
+  if (post.value) {
+    useHead({
+      title: `Mostefa Boudjema - ${post.value.title}`
+    })
+  }
+})
 
 const formattedContent = computed(() => {
   if (!post.value) return '';

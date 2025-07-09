@@ -7,52 +7,52 @@ import HireMeModal from "@/components/HireMeModal.vue";
 import feather from "feather-icons";
 import AppHeaderLinks from "./AppHeaderLinks.vue";
 import Button from "@/components/reusable/Button.vue";
-import settings from "@/data/configs";
+import settings from "~/configs";
 import useThemeSwitcher from '~/composables/useThemeSwitcher';
 
-const { t } = useI18n({
+const { t }=useI18n({
     inheritLocale: true,
     useScope: "global",
 });
 
-const isOpen = ref(false);
-const theme = ref('light');
-const lang = ref('');
-const modal = ref(false);
+const isOpen=ref(false);
+const theme=ref('light');
+const lang=ref('');
+const modal=ref(false);
 
-const { currentTheme } = useThemeSwitcher();
+const { currentTheme }=useThemeSwitcher();
 
 onMounted(() => {
     // Get theme from localStorage or default to light
-    theme.value = localStorage.getItem("theme") || "light";
-    lang.value = localStorage.getItem("lang") || "en";
-    
+    theme.value=localStorage.getItem("theme")||"light";
+    lang.value=localStorage.getItem("lang")||"en";
+
     // Watch for theme changes
     watch(currentTheme, (newTheme) => {
-        theme.value = newTheme;
+        theme.value=newTheme;
     });
 });
 
-const updateTheme = (newTheme) => {
-    theme.value = newTheme;
+const updateTheme=(newTheme) => {
+    theme.value=newTheme;
 };
 
-const updateLang = (newLang) => {
-    lang.value = newLang;
+const updateLang=(newLang) => {
+    lang.value=newLang;
 };
 
-const showModal = () => {
+const showModal=() => {
     if (modal.value) {
         // Stop screen scrolling
         document
             .getElementsByTagName("html")[0]
             .classList.remove("overflow-y-hidden");
-        modal.value = false;
+        modal.value=false;
     } else {
         document
             .getElementsByTagName("html")[0]
             .classList.add("overflow-y-hidden");
-        modal.value = true;
+        modal.value=true;
     }
 };
 
@@ -74,28 +74,29 @@ onUpdated(() => {
                         <img v-else :src="settings.logo_light" class="w-36" alt="Light Logo" />
                     </NuxtLink>
                 </div>
+                <div class="flex items-end gap-3">
+                    <language-switcher v-if="settings.show_multi_lang" :lang="lang" :theme="theme"
+                        @themeChanged="updateLang"
+                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
+                    <!-- Theme switcher small screen -->
+                    <theme-switcher :theme="theme" @themeChanged="updateTheme"
+                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
 
-                <language-switcher v-if="settings.show_multi_lang" :lang="lang" :theme="theme"
-                    @themeChanged="updateLang"
-                    class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
-                <!-- Theme switcher small screen -->
-                <theme-switcher :theme="theme" @theme-changed="updateTheme"
-                    class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
-
-                <!-- Small screen hamburger menu -->
-                <div class="sm:hidden">
-                    <button @click="isOpen = !isOpen" type="button" class="focus:outline-none"
-                        aria-label="Hamburger Menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                            class="h-7 w-7 fill-current text-secondary-dark dark:text-ternary-light">
-                            <path v-if="isOpen" fill-rule="evenodd"
-                                d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-                                clip-rule="evenodd"></path>
-                            <path v-if="!isOpen" fill-rule="evenodd"
-                                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
-                            </path>
-                        </svg>
-                    </button>
+                    <!-- Small screen hamburger menu -->
+                    <div class="sm:hidden">
+                        <button @click="isOpen = !isOpen" type="button" class="focus:outline-none"
+                            aria-label="Hamburger Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                class="h-7 w-7 fill-current text-secondary-dark dark:text-ternary-light">
+                                <path v-if="isOpen" fill-rule="evenodd"
+                                    d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+                                    clip-rule="evenodd"></path>
+                                <path v-if="!isOpen" fill-rule="evenodd"
+                                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 

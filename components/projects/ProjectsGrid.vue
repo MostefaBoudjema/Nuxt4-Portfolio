@@ -50,7 +50,7 @@ import feather from 'feather-icons';
 import ProjectsFilter from './ProjectsFilter.vue';
 import ProjectSingle from './ProjectSingle.vue';
 import projects from '@/data/projects';
-import settings from '@/data/configs';
+import settings from '~/configs';
 import { useI18n } from 'vue-i18n';
 
 const { t }=useI18n({ inheritLocale: true, useScope: 'global' });

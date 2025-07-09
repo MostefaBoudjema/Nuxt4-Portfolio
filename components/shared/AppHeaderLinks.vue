@@ -1,6 +1,6 @@
 <script setup>
 import { useI18n } from "vue-i18n";
-import settings from "@/data/configs";
+import settings from "~/configs";
 
 const { t } = useI18n({
     inheritLocale: true,

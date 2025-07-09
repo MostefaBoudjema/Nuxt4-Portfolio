@@ -29,7 +29,7 @@ import { onMounted, onUpdated, ref } from 'vue';
 import feather from 'feather-icons';
 import { useI18n } from 'vue-i18n';
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
-import settings from '@/data/configs';
+import settings from '~/configs';
 import DownloadCv from './DownloadCv.vue';
 import ContactBtn from './ContactBtn.vue';
 

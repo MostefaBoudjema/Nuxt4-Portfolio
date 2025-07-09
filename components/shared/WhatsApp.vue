@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import settings from "@/data/configs";
+import settings from "~/configs";
 
 
 </script>
