@@ -50,7 +50,7 @@ import feather from 'feather-icons';
 import ProjectsFilter from './ProjectsFilter.vue';
 import ProjectSingle from './ProjectSingle.vue';
 import projects from '@/data/projects';
-import settings from '~/configs';
+import settings from '@/configs';
 import { useI18n } from 'vue-i18n';
 
 const { t }=useI18n({ inheritLocale: true, useScope: 'global' });
@@ -62,19 +62,49 @@ const props=defineProps({
   full: String
 })
 const filteredProjects=computed(() => {
+  let filtered;
   if (selectedCategory.value) {
-    return filterProjectsByCategory();
+    filtered = filterProjectsByCategory();
   } else if (searchProject.value) {
-    return filterProjectsBySearch();
+    filtered = filterProjectsBySearch();
+  } else {
+    filtered = projects;
   }
-  return projects;
+  
+  // Sort projects according to settings.full_list order
+  return filtered.sort((a, b) => {
+    const aIndex = settings.full_list.indexOf(a.id);
+    const bIndex = settings.full_list.indexOf(b.id);
+    
+    // If both projects are in full_list, sort by their position
+    if (aIndex !== -1 && bIndex !== -1) {
+      return aIndex - bIndex;
+    }
+    // If only a is in full_list, a comes first
+    if (aIndex !== -1 && bIndex === -1) {
+      return -1;
+    }
+    // If only b is in full_list, b comes first
+    if (aIndex === -1 && bIndex !== -1) {
+      return 1;
+    }
+    // If neither is in full_list, maintain original order
+    return 0;
+  });
 });
 
 
 const getShortList = computed(() => {
     const selectedIds = settings.home_list;
     // const selectedIds = [3, 4, 5, 6, 7, 14, 15];
-    return filteredProjects.value.filter(project => selectedIds.includes(project.id));
+    const filtered = filteredProjects.value.filter(project => selectedIds.includes(project.id));
+    
+    // Sort projects according to settings.home_list order
+    return filtered.sort((a, b) => {
+        const aIndex = selectedIds.indexOf(a.id);
+        const bIndex = selectedIds.indexOf(b.id);
+        return aIndex - bIndex;
+    });
 });
 
 const filterProjectsByCategory=() => {

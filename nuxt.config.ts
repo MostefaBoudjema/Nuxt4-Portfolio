@@ -19,6 +19,28 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'node'
   },
+  runtimeConfig: {
+    // Private keys (only available on server-side)
+    // apiSecret: process.env.API_SECRET,
+    
+    // Public keys (exposed to the client)
+    public: {
+      i18nLocale: process.env.I18N_LOCALE || 'en',
+      i18nFallbackLocale: process.env.I18N_FALLBACK_LOCALE || 'en',
+      authorName: process.env.AUTHOR_NAME || 'Mostefa Boudjema',
+      apiUrl: process.env.API_URL || 'http://localhost:3000',
+      showCv: process.env.SHOW_CV === 'true' || false,
+      showMultiLang: process.env.SHOW_MULTI_LANG === 'true' || false,
+      showHireMe: process.env.SHOW_HIRE_ME === 'true' || false,
+      showBlog: process.env.SHOW_BLOG === 'true' || false,
+      showContactForm: process.env.SHOW_CONTACT_FORM === 'true' || false,
+      cvPath: process.env.CV_PATH || '/files/MostefaBoudjema-Resume.pdf',
+      videoLinkEn: process.env.VIDEO_LINK_EN || 'https://www.youtube.com/embed/CMu_27ZURwA?si=sriXHIbvcos5620e',
+      whatsappNumber: process.env.WHATSAPP_NUMBER || '213793692289',
+      fullList: process.env.FULL_LIST || '[3,9,1,10,0,11,5,2,4,6,7,8]',
+      homeList: process.env.HOME_LIST || '[3,14,15,6,9,10]'
+    }
+  },
   app: {
     head: {
       title: 'Mostefa Boudjema', // Change this to your desired title

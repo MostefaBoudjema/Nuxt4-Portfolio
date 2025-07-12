@@ -1,71 +1,76 @@
-const configs=
-{
-	hero_image: '/images/developer.svg',
-	hero_image_dark: '/images/developer-dark.svg',
-	logo_dark: "/images/logo-dark.svg",
-	logo_light: "/images/logo-light.svg",
-	page_404: "/images/404-page.png",
-	profile_photo: "/images/me3.webp",
-	whatsapp: "/images/whatsapp2.svg",
-	cv_path: process.env.VUE_APP_CV_PATH || '/files/MostefaBoudjema-Resume.pdf',
-	videoLinkEn: process.env.VUE_APP_VIDEO_LINK_EN || "https://www.youtube.com/embed/CMu_27ZURwA?si=sriXHIbvcos5620e",
-	whatsappNumber: process.env.VUE_APP_WHATSAPP_NUMBER || "213793692289",
-	full_list: JSON.parse(process.env.VUE_APP_FULL_LIST || '[3,9,1,10,0,11,5,2,4,6,7,8]'),
-	home_list: JSON.parse(process.env.VUE_APP_HOME_LIST || '[3,14,15,6,9,10]'),
-	show_cv: process.env.VUE_APP_SHOW_CV === 'true' || true,
-	// show_multi_lang: process.env.VUE_APP_SHOW_MULTI_LANG === 'true' || false,
-	
-	show_multi_lang: true,
-	show_hire_me: process.env.VUE_APP_SHOW_HIRE_ME === 'true' || true,
-	show_contact_form: process.env.VUE_APP_SHOW_CONTACT_FORM === 'true' || true,
-	show_blog: process.env.VUE_APP_SHOW_BLOG === 'true' || true,
-	contacts: [
-		{
-			id: 1,
-			name: 'Annaba, Algeria',
-			icon: 'map-pin',
-		},
-		{
-			id: 2,
-			name: 'mostefa.boudjema.dev@gmail.com',
-			icon: 'mail',
-		},
-		{
-			id: 3,
-			name: '+213 793 69 22 89',
-			icon: 'phone',
-		},
-	],
-	socials: [
-		{
-			id: 1,
-			name: 'Telegram',
-			link: 'Telegram',
-			icon: 'map-pin',
-		},
-	],
-	categories: [
-		{
-			id: 1,
-			value: "Laravel Application",
-			name: "Laravel Application",
-		},
-		{
-			id: 2,
-			value: "Laravel Vue Application",
-			name: "Laravel Vue Application",
-		},
-		{
-			id: 3,
-			value: "Wordpress site",
-			name: "Wordpress site",
-		},
-		{
-			id: 4,
-			value: "Vue App",
-			name: "Vue App",
-		},
-	],
+import heroImage from '/images/developer.svg';
+import heroImageDark from '/images/developer-dark.svg';
+import logoDark from '/images/logo-dark.svg';
+import logoLight from '/images/logo-light.svg';
+import page404 from '/images/404-page.png';
+import profilePhoto from '/images/me3.webp';
+import whatsapp from '/images/whatsapp2.svg';
+
+const configs = {
+  hero_image: heroImage,
+  hero_image_dark: heroImageDark,
+  logo_dark: logoDark,
+  logo_light: logoLight,
+  page_404: page404,
+  profile_photo: profilePhoto,
+  whatsapp: whatsapp,
+  cv_path: import.meta.env.VITE_CV_PATH || '/files/MostefaBoudjema-Resume.pdf',
+  videoLinkEn: import.meta.env.VITE_VIDEO_LINK_EN || "https://www.youtube.com/embed/CMu_27ZURwA?si=sriXHIbvcos5620e",
+  whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || "213793692289",
+  full_list: JSON.parse(import.meta.env.VITE_FULL_LIST || '[3,9,1,10,0,11,5,2,4,6,7,8]'),
+  home_list: JSON.parse(import.meta.env.VITE_HOME_LIST || '[3,14,15,6,9,10]'),
+  show_cv: import.meta.env.VITE_SHOW_CV === 'true' || false,
+  show_multi_lang: import.meta.env.VITE_SHOW_MULTI_LANG === 'true' || false,
+  show_hire_me: import.meta.env.VITE_SHOW_HIRE_ME === 'true' || false,
+  show_contact_form: import.meta.env.VITE_SHOW_CONTACT_FORM === 'true' || false,
+  show_blog: import.meta.env.VITE_SHOW_BLOG === 'true' || false,
+  contacts: [
+    {
+      id: 1,
+      name: 'Annaba, Algeria',
+      icon: 'map-pin',
+    },
+    {
+      id: 2,
+      name: 'mostefa.boudjema.dev@gmail.com',
+      icon: 'mail',
+    },
+    {
+      id: 3,
+      name: '+213 793 69 22 89',
+      icon: 'phone',
+    },
+  ],
+  socials: [
+    {
+      id: 1,
+      name: 'Telegram',
+      link: 'Telegram',
+      icon: 'map-pin',
+    },
+  ],
+  categories: [
+    {
+      id: 1,
+      value: "Laravel Application",
+      name: "Laravel Application",
+    },
+    {
+      id: 2,
+      value: "Laravel Vue Application",
+      name: "Laravel Vue Application",
+    },
+    {
+      id: 3,
+      value: "Wordpress site",
+      name: "Wordpress site",
+    },
+    {
+      id: 4,
+      value: "Vue App",
+      name: "Vue App",
+    },
+  ],
 }
 
 export default configs;

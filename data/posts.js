@@ -1,5 +1,11 @@
 // Blog posts data
-const posts=[
+import me1 from '/images/me1.webp';
+import cover1 from '/images/posts/getting-started-laravel-11.jpg';
+import cover2 from '/images/posts/best-tech-2025.webp';
+import cover3 from '/images/posts/best-laravel-tech-2025.webp';
+import cover4 from '/images/posts/Best-Sites-for-Finding-Remote-Work-Online.webp';
+
+const posts = [
   {
     id: 1,
     title: 'Getting Started with Laravel 11: A Step-by-Step Guide',
@@ -45,7 +51,7 @@ const posts=[
     php artisan serve
     \`\`\`
     
-    Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser — you should see Laravel's default welcome page.
+    Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser — you should see Laravel’s default welcome page.
     
     ---
     
@@ -88,7 +94,7 @@ const posts=[
     
     ## Step 5: Create Your First Route
     
-    Let's edit the default route in \`routes/web.php\`:
+    Let’s edit the default route in \`routes/web.php\`:
     
     \`\`\`php
     Route::get('/', function () {
@@ -175,9 +181,9 @@ const posts=[
     
     ## Conclusion
     
-    You've just created and configured a Laravel 11 application, set up your first route, created a controller, and built a basic view.
+    You’ve just created and configured a Laravel 11 application, set up your first route, created a controller, and built a basic view.
     
-    Laravel's learning curve is smooth, and the ecosystem is incredibly rich. Stick with it, build real things, and you'll master backend development in no time.
+    Laravel's learning curve is smooth, and the ecosystem is incredibly rich. Stick with it, build real things, and you’ll master backend development in no time.
     
     > ⭐ Bonus tip: Follow Laravel News and the official docs to stay updated.
     
@@ -187,10 +193,10 @@ const posts=[
     slug: 'getting-started-laravel-11',
     author: {
       name: 'Mostefa Boudjema',
-      avatar: '/images/me1.webp',
+      avatar: me1,
       bio: 'Laravel dev'
     },
-    coverImage: '/images/posts/getting-started-laravel-11.jpg',
+    coverImage: cover1,
     readingTime: '4 min read',
     published: true,
     category: 'Backend',
@@ -223,13 +229,13 @@ const posts=[
     
     WebAssembly allows you to run low-level code in the browser at near-native speed. This is a game changer for performance-critical applications like gaming, video editing, or 3D modeling in the browser.
     
-    > **Why it matters:** It expands what's possible with JavaScript and allows languages like Rust or C++ to run in the browser.
+    > **Why it matters:** It expands what’s possible with JavaScript and allows languages like Rust or C++ to run in the browser.
     
     ---
     
     ### 🌐 3. **Edge Computing**
     
-    Data is moving closer to the user. With **Edge Computing**, apps become faster and more scalable by processing data at the source (user's location) instead of the central server.
+    Data is moving closer to the user. With **Edge Computing**, apps become faster and more scalable by processing data at the source (user’s location) instead of the central server.
     
     - Frameworks to explore: **Cloudflare Workers**, **AWS Lambda@Edge**, **Vercel Edge Functions**.
     - Ideal for: IoT apps, real-time dashboards, location-aware services.
@@ -258,14 +264,14 @@ const posts=[
     
     Businesses want fast deployment across platforms. **Flutter** (by Google) and **React Native** (by Meta) are still top picks for writing once and deploying to iOS & Android.
     
-    - Flutter's UI engine gives native-like experience.
+    - Flutter’s UI engine gives native-like experience.
     - React Native has a larger ecosystem and third-party libraries.
     
     ---
     
     ### 🎯 Final Thoughts
     
-    Don't chase hype — choose based on your goals.
+    Don’t chase hype — choose based on your goals.
     
     - Want backend mastery? Laravel + Octane + Filament.
     - Want performance? WebAssembly + Bun.
@@ -275,15 +281,15 @@ const posts=[
     
     ---
     
-    _"Learning never exhausts the mind." – Leonardo da Vinci_
+    _“Learning never exhausts the mind.” – Leonardo da Vinci_
     `,
     slug: 'best-technology-to-learn-2025',
     author: {
       name: 'Mostefa Boudjema',
-      avatar: '/images/me1.webp',
+      avatar: me1,
       bio: 'Laravel dev'
     },
-    coverImage: '/images/posts/best-tech-2025.webp',
+    coverImage: cover2,
     readingTime: '4 min read',
     published: true,
     category: 'Tech Trends',
@@ -300,7 +306,7 @@ const posts=[
     content: `
   ## Introduction
   
-  Laravel keeps evolving, and the ecosystem around it is getting more powerful. In 2025, mastering Laravel alone isn't enough — you need to embrace the tools and packages that supercharge development.
+  Laravel keeps evolving, and the ecosystem around it is getting more powerful. In 2025, mastering Laravel alone isn’t enough — you need to embrace the tools and packages that supercharge development.
   
   Here are the **top Laravel-related technologies** you should learn this year to stay relevant and efficient.
   
@@ -392,7 +398,7 @@ const posts=[
   
   ## Conclusion
   
-  Laravel isn't just a framework — it's a whole ecosystem.
+  Laravel isn’t just a framework — it's a whole ecosystem.
   
   By mastering tools like Livewire, Filament, Octane, and Vapor, you position yourself as a **modern Laravel developer** — one who can build, ship, and scale full-featured apps efficiently.
   
@@ -402,22 +408,156 @@ const posts=[
     slug: 'best-laravel-related-tech-2025',
     author: {
       name: 'Mostefa Boudjema',
-      avatar: '/images/me1.webp',
+      avatar: me1,
       bio: 'Laravel dev'
     },
-    coverImage: '/images/posts/best-laravel-tech-2025.webp',
+    coverImage: cover3,
     readingTime: '10 min read',
     published: true,
     category: 'Backend',
     updatedAt: '2025-07-07',
     metaDescription: 'Discover the top Laravel-related tools and technologies to learn in 2025 — from Livewire and Filament to Octane and Vapor.',
     excerpt: 'Master the Laravel ecosystem in 2025 with these powerful tools and frameworks.'
+  },
+  {
+    id: 4,
+    title: 'Top Remote Job Platforms for Full-Stack Developers (International-Friendly)',
+    summary: 'A curated list of the best remote job platforms that hire full-stack developers globally — no entry fees, no location bias.',
+    date: '2025-07-09',
+    tags: ['remote work', 'full-stack', 'job search', 'laravel', 'vue', 'freelance'],
+    content: `
+  ## Introduction
+  
+  Remote work is booming, but finding the **right platforms** that accept **international applicants** without charging upfront fees can be tricky — especially as a **full-stack developer** working with stacks like Laravel, Vue, or React.
+  
+  Here’s a curated, no-fluff list of the best platforms that support **international full-stack devs**, including from countries like Algeria.
+  
+  ---
+  
+  ## 🏆 Top Picks for Full-Stack Developers
+  
+  ### 1. **Toptal** – [toptal.com](https://www.toptal.com)
+  - 🔍 Highly selective (you’ll need to pass tests)
+  - 💼 Enterprise clients + top startups
+  - 💰 Very high-paying contracts
+  - 📍 Global — open to devs from anywhere
+  
+  ---
+  
+  ### 2. **Turing** – [turing.com](https://www.turing.com)
+  - 🤖 AI matches your profile with U.S. companies
+  - 🧪 Technical skill assessment required
+  - 🔥 Full-time, long-term remote roles
+  - ✅ Laravel + Vue/React stacks are in demand
+  
+  ---
+  
+  ### 3. **Arc** – [arc.dev](https://arc.dev)
+  - 🔎 Focused on remote developers only
+  - 👌 Offers freelance and full-time positions
+  - 🌍 International applicants welcome
+  - 🧠 Curated roles for mid/senior devs
+  
+  ---
+  
+  ## 💻 Dev-Friendly Job Boards
+  
+  ### 4. **We Work Remotely** – [weworkremotely.com](https://weworkremotely.com)
+  - 📄 Simple, effective remote job listings
+  - 📦 Dedicated full-stack section
+  - ✅ No sign-up required
+  - 🗺 Most roles are open globally
+  
+  ---
+  
+  ### 5. **Remote OK** – [remoteok.com](https://remoteok.com)
+  - 🔍 Tags like “Laravel”, “Vue”, “Full-stack”
+  - 🛠 Startups, tech companies, and SaaS
+  - 💬 No login required
+  - 🌍 International-friendly by default
+  
+  ---
+  
+  ### 6. **Remotive** – [remotive.io](https://remotive.io)
+  - 🧭 Easy filters by job type, stack, and location
+  - 💼 Good quality control on listings
+  - 🌎 Most companies support async and global teams
+  
+  ---
+  
+  ## 🌍 Freelance Marketplaces (Free to Join)
+  
+  ### 7. **Upwork** – [upwork.com](https://upwork.com)
+  - 💼 Massive client base
+  - 📈 Laravel/Vue/React full-stack gigs in abundance
+  - ⚠️ Competitive early on, but scalable
+  - ✅ Open to developers from anywhere
+  
+  ---
+  
+  ### 8. **Lemon.io** – [lemon.io](https://lemon.io)
+  - 🧠 You’ll need to pass vetting tests
+  - 🤑 Matches with EU/US-based clients
+  - 📦 Laravel + React/Vue = strong demand
+  
+  ---
+  
+  ### 9. **Freelancer.com** – [freelancer.com](https://freelancer.com)
+  - 🎯 Tons of Laravel/React/Vue full-stack projects
+  - 📉 Lower budgets common, but good exposure
+  - ✅ Global access and easy sign-up
+  
+  ---
+  
+  ## 🎯 Bonus Options
+  
+  ### 10. **Jobspresso** – [jobspresso.co](https://jobspresso.co)
+  - 🔍 Fully remote, dev-heavy listings
+  - 🌍 Offers roles in dev, design, product
+  - ✅ Works well for full-stack roles
+  
+  ### 11. **Working Nomads** – [workingnomads.co](https://www.workingnomads.co)
+  - 📧 Job alerts by category (dev, full-stack, etc.)
+  - 📊 Aggregates quality listings across the web
+  - ✅ Global-friendly filters
+  
+  ---
+  
+  ## Conclusion
+  
+  If you're a **full-stack developer** with Laravel, Vue, React, or similar in your stack, you don't need to limit your job search to local markets or low-paying freelance sites. These platforms connect you with **real remote jobs** from reputable companies, without charging you to apply.
+  
+  > 🚀 Tip: Focus on 2–3 platforms, polish your profile, and apply consistently. Remote work rewards persistence.
+  
+  ---
+  
+  ## What’s Next?
+  
+  - Want a guide on writing a killer Upwork/Lemon.io profile?
+  - Need help building a portfolio or CV for Arc/Toptal?
+  
+  Let me know — I’ve got you covered.
+    `,
+    slug: 'top-remote-job-platforms-fullstack-developers',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover4,
+    readingTime: '5 min read',
+    published: true,
+    category: 'Career',
+    updatedAt: '2025-07-09',
+    metaDescription: 'Explore the top international-friendly remote job platforms for full-stack developers. Laravel, Vue, and React developers welcome.',
+    excerpt: 'Best remote job platforms for full-stack developers that support international applicants without fees. Includes curated dev boards and freelance sites.'
   }
+  
 
 
 ];
 
 // Sort by updatedAt (descending: newest first)
-posts.sort((a, b) => new Date(b.updatedAt)-new Date(a.updatedAt));
+posts.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
 export default posts; 

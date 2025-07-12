@@ -223,6 +223,9 @@
       "readMore": "Read more",
       "draft": "Draft",
       "updated": "Updated:",
-      "latestArticle": "Latest Article"
+      "latestArticle": "Latest Article",
+      "relatedPosts": "Related Posts",
+      "noRelatedPosts": "No related posts found.",
+      "viewAllPosts": "View All Posts"
     }
 }
