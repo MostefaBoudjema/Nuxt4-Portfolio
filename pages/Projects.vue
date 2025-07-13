@@ -1,6 +1,12 @@
 <script setup>
 import ProjectsGrid from '@/components/projects/ProjectsGrid.vue';
 import ContactBtn from '@/components/shared/ContactBtn.vue';
+import { useHead } from '#imports'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+useHead({
+  title: () => `Mostefa Boudjema - ${t('Projects')}`
+})
 </script>
 
 <template>

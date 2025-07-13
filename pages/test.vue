@@ -28,7 +28,12 @@
 </template>
 
 <script setup>
-// No complex imports for this test
+import { useHead } from '#imports'
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+useHead({
+  title: () => `Mostefa Boudjema - ${t('Test')}`
+})
 </script>
 
 <style scoped>

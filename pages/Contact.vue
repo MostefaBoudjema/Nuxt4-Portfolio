@@ -20,10 +20,17 @@ import ContactDetails from '@/components/contact/ContactDetails.vue';
 
 import settingsData from '~/configs';
 import { socialLinks } from '@/data/socialLinks';
+import { useHead } from '#imports'
+import { useI18n } from 'vue-i18n';
 // import ContactSocials from '@/components/contact/ContactSocials.vue';
 
 const settings=ref(settingsData);
 const socials=ref(socialLinks);
+
+const { t } = useI18n();
+useHead({
+  title: () => `Mostefa Boudjema - ${t('Contact')}`
+})
 
 onMounted(() => {
 	feather.replace();

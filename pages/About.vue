@@ -34,6 +34,9 @@ import AboutsSkills from '@/components/about/AboutsSkills.vue';
 import AboutVideo from '@/components/about/AboutVideo';
 import AboutTestimonials from '@/components/about/AboutTestimonials.vue';
 import feather from 'feather-icons';
+import { useHead } from '#imports'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 import { onMounted, onUpdated } from 'vue';
 
@@ -44,6 +47,10 @@ onMounted(() => {
 onUpdated(() => {
 	feather.replace();
 });
+
+useHead({
+  title: () => `Mostefa Boudjema - ${t('About Me')}`
+})
 </script>
 
 <style scoped></style>

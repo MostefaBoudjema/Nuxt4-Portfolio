@@ -61,6 +61,7 @@
 import { marked } from 'marked';
 import posts from '../data/posts.js';
 import RelatedPosts from '../components/blog/RelatedPosts.vue';
+import { useHead } from '#imports';
 
 export default {
   name: 'SingleBlog',
@@ -72,15 +73,21 @@ export default {
       post: null
     };
   },
-  created() {
-    this.loadPost();
-  },
   watch: {
     '$route'(to, from) {
       if (to.params.slug !== from.params.slug) {
         this.loadPost();
       }
+    },
+    post: {
+      handler(newPost) {
+        this.setHeadTitle(newPost);
+      },
+      immediate: true
     }
+  },
+  created() {
+    this.loadPost();
   },
   methods: {
     loadPost() {
@@ -96,6 +103,11 @@ export default {
       } else {
         this.post = null;
       }
+    },
+    setHeadTitle(post) {
+      useHead({
+        title: post && post.title ? `Mostefa Boudjema - ${post.title}` : 'Mostefa Boudjema - %'
+      });
     }
   },
   computed: {

@@ -25,17 +25,18 @@ import AppBanner from '@/components/shared/AppBanner';
 import ProjectsGrid from '@/components/projects/ProjectsGrid.vue';
 import Button from '@/components/reusable/Button.vue';
 
-import { useI18n } from "vue-i18n";
+import { useI18n } from 'vue-i18n';
 import { useHead } from '#imports'
 
-// useHead({
-//   title: 'Mostefa Boudjema - Home'
-// })
+
 
 const { t } = useI18n({
     inheritLocale: true,
     useScope: "local",
 });
+useHead({
+  title: () => `Mostefa Boudjema - ${t('Home')}`
+})
 </script>
 
 <style scoped></style>

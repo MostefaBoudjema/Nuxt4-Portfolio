@@ -1,6 +1,7 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import { ref } from "vue";
+import { useHead } from '#imports'
 
 import settings from "~/configs";
 
@@ -8,6 +9,10 @@ const { t }=useI18n({
     inheritLocale: true,
     useScope: "global",
 });
+
+useHead({
+  title: () => `Mostefa Boudjema - ${t('404 Page Not found')}`
+})
 
 const theme=ref("light"); // Assuming theme is a reactive property; adjust if it's sourced differently
 </script>
