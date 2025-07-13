@@ -24,7 +24,6 @@ const projects = [
       },
     ],
     category: 'React App',
-    outer_link: 'https://popular-moviedb.vercel.app/',
     img: '/images/movie-db/0.png',
     link: 'movie-db',
     singleProjectHeader: {
@@ -77,7 +76,6 @@ const projects = [
     title: 'Business Website',
     hide: false,
     category: 'Laravel Application',
-    outer_link: 'https://tamtamtools.com/',
     img: '/images/tamtamtools/0.png',
     link: 'tamtamtools',
     smallImages: [{
@@ -205,7 +203,6 @@ const projects = [
     title: 'Elearn',
     hide: true,
     category: 'Wordpress site',
-    outer_link: 'https://websitedemos.net/online-courses-02/',
     link: 'Elearn',
     img: '/images/Elearn/1.webp',
     smallImages: [{
@@ -335,7 +332,6 @@ const projects = [
     title: 'iAuto Business Website',
     hide: false,
     category: 'Laravel Vue Application',
-    outer_link: 'https://iauto.no/',
     // video: '@/assets/videos/iauto/0.mp4',
     img: '/images/iauto/0.png',
     link: 'iauto',
@@ -489,7 +485,6 @@ const projects = [
     title: 'Business',
     hide: true,
     category: 'Wordpress site',
-    outer_link: 'https://websitedemos.net/kathryn-ebook-author-02/',
     link: 'Business',
     img: '/images/Business/1.webp',
     smallImages: [{
@@ -619,7 +614,6 @@ const projects = [
     title: 'Blog',
     category: 'Vue App',
     hide: false,
-    outer_link: 'https://saadaahnews.com/',
     link: 'Blog',
     img: '/images/Blog/1.webp',
     smallImages: [{
@@ -746,7 +740,6 @@ const projects = [
     title: 'Clothes Store',
     hide: false,
     category: 'Wordpress site',
-    outer_link: 'https://websitedemos.net/brandstore-02/',
     link: 'ClothesStore',
     img: '/images/ClothesStore/1.webp',
     smallImages: [{
@@ -876,7 +869,6 @@ const projects = [
     title: 'Portfolio',
     hide: true,
     category: 'Vue App',
-    outer_link: 'https://webpress-annaba.netlify.app/',
     link: 'Portfolio',
     img: '/images/Portfolio/1.webp',
     smallImages: [{
@@ -1000,7 +992,6 @@ const projects = [
     title: 'Image Generator OpenAI',
     hide: true,
     category: 'Vue App',
-    outer_link: '#',
     img: '/images/ImageGeneratorOpenAI/1.png',
     link: 'ai-image-generation',
     smallImages: [{
@@ -1128,7 +1119,6 @@ const projects = [
     title: 'Ecommerce Phone Store',
     hide: false,
     category: 'Laravel Vue Application',
-    outer_link: '#',
     link: 'LaravelVueEcommercePhone',
     img: '/images/LaravelVueEcommercePhone/A.png',
     smallImages: [{
@@ -1305,7 +1295,6 @@ const projects = [
     title: 'Phones Store',
     hide: false,
     category: 'Wordpress site',
-    outer_link: '#',
     link: 'PhonesStore',
     img: '/images/PhonesStore/1.webp',
     smallImages: [{
@@ -1467,7 +1456,6 @@ const projects = [
     title: 'Landing Page',
     hide: false,
     category: 'React App',
-    outer_link: 'https://landing-page-next-react.netlify.app',
     link: 'landing-page',
     img: '/images/react-landing/0.png',
     smallImages: [{
@@ -1602,7 +1590,6 @@ const projects = [
     title: 'Bash Gate Landing Page',
     hide: false,
     category: 'React App',
-    outer_link: 'https://infogate.sa',
     link: 'infogate',
     img: '/images/infogate/0.png',
     smallImages: [{
@@ -1747,7 +1734,6 @@ const projects = [
     title: 'Stockifly - Stock management system',
     hide: true,
     category: 'Laravel Vue Application',
-    outer_link: '#',
     link: 'stockifly',
     img: '/images/stockifly/0.png',
     smallImages: [{
@@ -1888,7 +1874,6 @@ const projects = [
     title: 'Roxboro - Content Management System',
     hide: false,
     category: 'Laravel Application',
-    outer_link: 'https://roxboro.ca',
     link: 'roxboro',
     img: '/images/roxboro/0.png',
     smallImages: [{
@@ -2026,7 +2011,6 @@ const projects = [
     title: 'Stock management SaaS Garage',
     hide: false,
     category: 'Laravel Application',
-    outer_link: '#',
     link: 'garage',
     img: '/images/garage/0.png',
     smallImages: [{
@@ -2164,7 +2148,6 @@ const projects = [
     title: 'Alphanex',
     hide: false,
     category: 'Wordpress site',
-    outer_link: 'https://alphanex.fr/',
     link: 'Alphanex',
     img: '/images/alphanex/0.webp',
     smallImages: [{
@@ -2290,7 +2273,6 @@ const projects = [
     title: 'Event Management',
     hide: false,
     category: 'Laravel React Web App',
-    outer_link: '#',
     link: 'event-management',
     img: '/images/event-management/0.png',
     smallImages: [{

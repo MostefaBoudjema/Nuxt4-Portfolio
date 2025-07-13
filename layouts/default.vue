@@ -4,7 +4,7 @@
     <AppHeader />
     
     <!-- Main content -->
-    <main>
+    <main class="main-content">
       <slot />
     </main>
     <WhatsApp/>

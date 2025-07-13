@@ -1,16 +1,26 @@
-<script>
+<script setup>
 import feather from 'feather-icons';
+import { onMounted, onUpdated } from 'vue';
 
-export default {
-	props: ['projectInfo', 'smallImages'],
+// Define props with proper typing
+const props = defineProps({
+  projectInfo: {
+    type: Object,
+    required: true
+  },
+  smallImages: {
+    type: Array,
+    required: true
+  }
+});
 
-	mounted() {
-		feather.replace();
-	},
-	updated() {
-		feather.replace();
-	},
-};
+onMounted(() => {
+  feather.replace();
+});
+
+onUpdated(() => {
+  feather.replace();
+});
 </script>
 
 <template>
@@ -30,7 +40,7 @@ export default {
 							<a :href=info.details :class="info.title == 'Website' || info.title == 'Phone'
 								? 'hover:underline cursor-pointer'
 								: ''
-								" aria-label="Project Website and Phone" target=”_blank”>
+								" aria-label="Project Website and Phone" target="_blank">
 								{{ info.details }}
 							</a>
 						</div>
@@ -89,4 +99,5 @@ export default {
 			{{ projectDetail.details }}
 		</p>
 	</div>
-</div></template>
+</div>
+</template>
