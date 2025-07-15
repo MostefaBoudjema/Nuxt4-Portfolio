@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   ],
   ssr: true,
   nitro: {
-    preset: 'node'
+    preset: 'vercel'
   },
   runtimeConfig: {
     // Private keys (only available on server-side)
