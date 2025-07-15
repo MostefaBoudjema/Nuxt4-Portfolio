@@ -3,6 +3,7 @@ _BAK
 # Nuxt dev/build outputs
 .output
 .data
+.cursor
 .nuxt
 .nitro
 .cache
