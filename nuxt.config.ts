@@ -43,11 +43,27 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Mostefa Boudjema', // Change this to your desired title
+      title: 'Mostefa Boudjema', 
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+      ],
+      script: [
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-L5HVZ2VCP7',
+          async: true
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-L5HVZ2VCP7');`,
+          type: 'text/javascript'
+        }
       ]
     }
+  },
+  __dangerouslyDisableSanitizersByTagID: {
+    'ga-gtag-init': ['innerHTML']
   },
   compatibilityDate: '2025-07-08'
 })
