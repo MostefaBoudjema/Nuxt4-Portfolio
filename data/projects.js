@@ -1,76 +1,153 @@
-const projects = [
+const allProjects = [
   {
     id: 0,
-    title: 'project.title.popularMovieDb',
-    hide: true,
-    smallImages: [
-      {
-        id: 1,
-        alt: 'react',
-        src: '/images/technology/react.png',
-        width: '60px',
-      },
-      {
-        id: 2,
-        alt: 'api',
-        src: '/images/technology/api.png',
-        width: '60px',
-      },
-      {
-        id: 3,
-        alt: 'bootstrap',
-        src: '/images/technology/bootstrap.png',
-        width: '60px',
-      },
-    ],
-    category: 'React App',
-    img: '/images/movie-db/0.png',
-    link: 'movie-db',
-    singleProjectHeader: {
-      singleProjectTitle: 'project.header.popularMovieDb',
-      singleProjectDate: '09 august 2023',
-      singleProjectTag: 'project.tag.frontend',
-    },
-    projectImages: [
-      { id: 0, img: '/images/movie-db/0.png' },
-      { id: 1, img: '/images/movie-db/1.png' },
-      { id: 2, img: '/images/movie-db/2.png' },
-      { id: 3, img: '/images/movie-db/3.png' },
-      { id: 4, img: '/images/movie-db/4.png' },
-      { id: 5, img: '/images/movie-db/5.png' },
-    ],
-    projectInfo: {
-      clientHeading: 'project.info.clientHeading',
-      companyInfos: [
-        { id: 1, title: 'project.info.name', details: 'project.info.movieDb' },
-        { id: 2, title: 'project.info.services', details: 'project.info.movieRankingServices' },
-        { id: 3, title: 'project.info.website', details: 'https://popular-moviedb.vercel.app/' },
-      ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective0',
-      technologies: [
-        {
-          title: 'project.info.technologiesTitle',
-          techs: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Bootstrap5'],
-        },
-      ],
-      projectDetailsHeading: 'project.info.challengeHeading',
-      projectDetails: [
-        { id: 1, details: 'project.info.details0A' },
-        { id: 2, details: 'project.info.details0B' },
-        { id: 3, details: 'project.info.details0C' },
-        { id: 4, details: 'project.info.details0D' },
-      ],
-      socialSharingsHeading: 'project.info.shareThis',
-      socialSharings: [
-        { id: 1, name: 'Twitter', icon: 'twitter', url: 'https://twitter.com/' },
-        { id: 2, name: 'Instagram', icon: 'instagram', url: 'https://instagram.com/' },
-        { id: 3, name: 'Facebook', icon: 'facebook', url: 'https://facebook.com/' },
-        { id: 4, name: 'LinkedIn', icon: 'linkedin', url: 'https://linkedin.com/' },
-        { id: 5, name: 'Youtube', icon: 'youtube', url: 'https://www.youtube.com/' },
-      ],
-    },
-  },
+	title: 'Popular Movie DB Website',
+	hide: false,
+	smallImages: [{
+		id: 1,
+		alt: "react",
+		src: new URL('../assets/images/technology/react.png', import.meta.url).href,
+		width: '60px',
+	},
+	{
+		id: 2,
+		alt: "api",
+		src: new URL('../assets/images/technology/api.png', import.meta.url).href,
+		width: '60px',
+	},
+	{
+		id: 3,
+		alt: "bootstrap",
+		src: new URL('../assets/images/technology/bootstrap.png', import.meta.url).href,
+		width: '60px',
+	},
+	],
+	category: 'React App',
+  
+  img: '/images/movie-db/0.png',
+	link: 'movie-db',
+	singleProjectHeader: {
+		singleProjectTitle: 'project.header.popularMovieDbWebsite',
+		singleProjectDate: "09 august 2023",
+		singleProjectTag: 'project.tag.frontend',
+	},
+	projectImages: [{
+		id: 0,
+		img: new URL("../assets/images/movie-db/0.png", import.meta.url).href,
+	},
+	{
+		id: 1,
+		img: new URL("../assets/images/movie-db/1.png", import.meta.url).href,
+	},
+	{
+		id: 2,
+		img: new URL("../assets/images/movie-db/2.png", import.meta.url).href,
+	},
+	{
+		id: 3,
+		img: new URL("../assets/images/movie-db/3.png", import.meta.url).href,
+	},
+	{
+		id: 4,
+		img: new URL("../assets/images/movie-db/4.png", import.meta.url).href,
+	},
+	{
+		id: 5,
+		img: new URL("../assets/images/movie-db/5.png", import.meta.url).href,
+	},
+	{
+		id: 6,
+		img: new URL("../assets/images/movie-db/6.png", import.meta.url).href,
+	},
+	{
+		id: 7,
+		img: new URL("../assets/images/movie-db/7.png", import.meta.url).href,
+	},
+
+	],
+	projectInfo: {
+		clientHeading: 'project.info.clientHeading',
+		companyInfos: [{
+			id: 1,
+			title: 'project.info.name',
+			details: 'project.info.movieDb',
+		},
+		{
+			id: 2,
+			title: 'project.info.services',
+			details: 'project.info.movieRankingServices',
+		},
+		{
+			id: 3,
+			title: 'project.info.website',
+			details: "https://popular-moviedb.vercel.app/",
+		},
+
+		],
+		objectivesHeading: 'project.info.objectivesHeading',
+		objectivesDetails: 'project.info.objective0',
+		technologies: [{
+			title: 'project.info.technologiesTitle',
+			techs: [
+				"HTML",
+				"CSS",
+				"JavaScript",
+				"React.js",
+				"Bootstrap5",
+			],
+		},],
+		projectDetailsHeading: 'project.info.challengeHeading',
+		projectDetails: [{
+			id: 1,
+			details: 'project.info.details0A',
+		},
+		{
+			id: 2,
+			details: 'project.info.details0B',
+		},
+		{
+			id: 3,
+			details: 'project.info.details0C',
+		},
+		{
+			id: 4,
+			details: 'project.info.details0D',
+		},
+		],
+		socialSharingsHeading: 'project.info.shareThis',
+		socialSharings: [{
+			id: 1,
+			name: "Twitter",
+			icon: "twitter",
+			url: "https://twitter.com/",
+		},
+		{
+			id: 2,
+			name: "Instagram",
+			icon: "instagram",
+			url: "https://instagram.com/",
+		},
+		{
+			id: 3,
+			name: "Facebook",
+			icon: "facebook",
+			url: "https://facebook.com/",
+		},
+		{
+			id: 4,
+			name: "LinkedIn",
+			icon: "linkedin",
+			url: "https://linkedin.com/",
+		},
+		{
+			id: 5,
+			name: "Youtube",
+			icon: "youtube",
+			url: "https://www.youtube.com/",
+		},
+		],
+	},
+},
   {
     id: 1,
     title: 'Business Website',
@@ -738,7 +815,7 @@ const projects = [
   {
     id: 6,
     title: 'Clothes Store',
-    hide: false,
+    hide: true,
     category: 'Wordpress site',
     link: 'ClothesStore',
     img: '/images/ClothesStore/1.webp',
@@ -2445,4 +2522,5 @@ const projects = [
   },
 ];
 
-export default projects;
+// Filter out projects where hide is true before exporting
+export const projects = allProjects.filter(project => !project.hide);
