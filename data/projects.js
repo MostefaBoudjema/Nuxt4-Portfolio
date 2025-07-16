@@ -1,67 +1,110 @@
+// IMAGE PATH CONSTANTS
+const IMG_TECH = {
+  react: '/images/technology/react.png',
+  api: '/images/technology/api.png',
+  bootstrap: '/images/technology/bootstrap.png',
+  laravel: '/images/technology/laravel.png',
+  php: '/images/technology/php.png',
+  jquery: '/images/technology/jquery.png',
+  wordpress: '/images/technology/wordpress.png',
+  vue: '/images/technology/vue.png',
+  tailwind: '/images/technology/tailwind.png',
+  next: '/images/technology/next.png',
+};
+const IMG_PROJECT = {
+  movieDb: [
+    '/images/movie-db/0.png', '/images/movie-db/1.png', '/images/movie-db/2.png', '/images/movie-db/3.png', '/images/movie-db/4.png', '/images/movie-db/5.png', '/images/movie-db/6.png', '/images/movie-db/7.png',
+  ],
+  tamtamtools: ['/images/tamtamtools/0.png', '/images/tamtamtools/1.png', '/images/tamtamtools/2.png', '/images/tamtamtools/3.png'],
+  iauto: ['/images/iauto/0.png', '/images/iauto/1.png', '/images/iauto/2.png', '/images/iauto/3.png', '/images/iauto/4.png', '/images/iauto/5.png', '/images/iauto/6.png'],
+  blog: ['/images/Blog/1.webp', '/images/Blog/2.webp', '/images/Blog/3.webp'],
+  clothesStore: ['/images/ClothesStore/1.webp', '/images/ClothesStore/2.webp', '/images/ClothesStore/3.webp'],
+  portfolio: ['/images/Portfolio/1.webp', '/images/Portfolio/2.webp', '/images/Portfolio/3.webp'],
+  imageGen: ['/images/ImageGeneratorOpenAI/1.png', '/images/ImageGeneratorOpenAI/2.png', '/images/ImageGeneratorOpenAI/3.png'],
+  laravelVueEcom: [
+    '/images/LaravelVueEcommercePhone/A.png', '/images/LaravelVueEcommercePhone/A (1).png', '/images/LaravelVueEcommercePhone/A (2).png', '/images/LaravelVueEcommercePhone/A (3).png', '/images/LaravelVueEcommercePhone/A (4).png', '/images/LaravelVueEcommercePhone/A (5).png', '/images/LaravelVueEcommercePhone/A (6).png', '/images/LaravelVueEcommercePhone/A (7).png', '/images/LaravelVueEcommercePhone/B (1).png', '/images/LaravelVueEcommercePhone/B (2).png', '/images/LaravelVueEcommercePhone/B (3).png', '/images/LaravelVueEcommercePhone/B (4).png',
+  ],
+  phonesStore: [
+    '/images/PhonesStore/1.webp', '/images/PhonesStore/2.webp', '/images/PhonesStore/3.webp', '/images/PhonesStore/4.webp', '/images/PhonesStore/5.webp', '/images/PhonesStore/6.webp', '/images/PhonesStore/7.webp', '/images/PhonesStore/8.webp', '/images/PhonesStore/9.webp', '/images/PhonesStore/10.webp', '/images/PhonesStore/11.webp',
+  ],
+  reactLanding: ['/images/react-landing/0.png', '/images/react-landing/1.png', '/images/react-landing/2.png', '/images/react-landing/3.png', '/images/react-landing/4.png', '/images/react-landing/5.png'],
+  infogate: ['/images/infogate/0.png', '/images/infogate/1.png', '/images/infogate/2.png', '/images/infogate/3.png', '/images/infogate/4.png', '/images/infogate/5.png', '/images/infogate/6.png'],
+  stockifly: ['/images/stockifly/0.png', '/images/stockifly/1.png', '/images/stockifly/2.png', '/images/stockifly/3.png', '/images/stockifly/4.png', '/images/stockifly/5.png'],
+  roxboro: ['/images/roxboro/0.png', '/images/roxboro/1.png', '/images/roxboro/2.png', '/images/roxboro/3.png', '/images/roxboro/4.png', '/images/roxboro/5.png', '/images/roxboro/6.png'],
+  garage: ['/images/garage/0.png', '/images/garage/1.png', '/images/garage/2.png', '/images/garage/3.png', '/images/garage/4.png', '/images/garage/5.png'],
+  alphanex: ['/images/alphanex/1.webp', '/images/alphanex/2.webp', '/images/alphanex/3.webp', '/images/alphanex/4.webp'],
+  eventManagement: [
+    '/images/event-management/1.png', '/images/event-management/2.png', '/images/event-management/3.png', '/images/event-management/4.png', '/images/event-management/5.png', '/images/event-management/6.png', '/images/event-management/7.png', '/images/event-management/8.png', '/images/event-management/9.png', '/images/event-management/10.png', '/images/event-management/11.png', '/images/event-management/12.png', '/images/event-management/13.png', '/images/event-management/14.png', '/images/event-management/15.png',
+  ],
+  business: ['/images/Business/1.webp', '/images/Business/2.webp', '/images/Business/3.webp'],
+  elearn: ['/images/Elearn/1.webp', '/images/Elearn/2.webp', '/images/Elearn/3.webp'],
+};
+const WIDTH_60 = '60px';
+
 const allProjects = [
   {
     id: 0,
-	title: 'Popular Movie DB Website',
+	title: 'MyMoviez - Popular Movie Listing',
 	hide: false,
 	smallImages: [{
 		id: 1,
 		alt: "react",
-		src: '/images/technology/react.png',
-		width: '60px',
+		src: IMG_TECH.react,
+		width: WIDTH_60,
 	},
 	{
 		id: 2,
 		alt: "api",
-		src: '/images/technology/api.png',
-		width: '60px',
+		src: IMG_TECH.api,
+		width: WIDTH_60,
 	},
 	{
 		id: 3,
 		alt: "bootstrap",
-		src: '/images/technology/bootstrap.png',
-		width: '60px',
+		src: IMG_TECH.bootstrap,
+		width: WIDTH_60,
 	},
 	],
 	category: 'React App',
   
-  img: '/images/movie-db/0.png',
+  img: IMG_PROJECT.movieDb[0],
 	link: 'movie-db',
 	singleProjectHeader: {
-		singleProjectTitle: 'project.header.popularMoviezWebsite',
+		singleProjectTitle: 'project.header.popularMyMoviezWebsite',
 		singleProjectDate: "09 august 2023",
 		singleProjectTag: 'project.tag.frontend',
 	},
 	projectImages: [{
 		id: 0,
-		img: "/images/movie-db/0.png",
+		img: IMG_PROJECT.movieDb[0],
 	},
 	{
 		id: 1,
-		img: "/images/movie-db/1.png",
+		img: IMG_PROJECT.movieDb[1],
 	},
 	{
 		id: 2,
-		img: "/images/movie-db/2.png",
+		img: IMG_PROJECT.movieDb[2],
 	},
 	{
 		id: 3,
-		img: "/images/movie-db/3.png",
+		img: IMG_PROJECT.movieDb[3],
 	},
 	{
 		id: 4,
-		img: "/images/movie-db/4.png",
+		img: IMG_PROJECT.movieDb[4],
 	},
 	{
 		id: 5,
-		img: "/images/movie-db/5.png",
+		img: IMG_PROJECT.movieDb[5],
 	},
 	{
 		id: 6,
-		img: "/images/movie-db/6.png",
+		img: IMG_PROJECT.movieDb[6],
 	},
 	{
 		id: 7,
-		img: "/images/movie-db/7.png",
+		img: IMG_PROJECT.movieDb[7],
 	},
 
 	],
@@ -70,7 +113,7 @@ const allProjects = [
 		companyInfos: [{
 			id: 1,
 			title: 'project.info.name',
-			details: 'project.info.Moviez',
+			details: 'project.info.MyMoviez',
 		},
 		{
 			id: 2,
@@ -80,7 +123,7 @@ const allProjects = [
 		{
 			id: 3,
 			title: 'project.info.website',
-			details: "https://popular-Moviez.vercel.app/",
+			details: "https://mymoviez.vercel.app/",
 		},
 
 		],
@@ -153,31 +196,31 @@ const allProjects = [
     title: 'Business Website',
     hide: false,
     category: 'Laravel Application',
-    img: '/images/tamtamtools/0.png',
+    img: IMG_PROJECT.tamtamtools[0],
     link: 'tamtamtools',
     smallImages: [{
       id: 1,
       alt: "laravel",
-      src: '/images/technology/laravel.png',
-      width: '60px',
+      src: IMG_TECH.laravel,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "jquery",
-      src: '/images/technology/jquery.png',
-      width: '60px',
+      src: IMG_TECH.jquery,
+      width: WIDTH_60,
     },
     {
       id: 4,
       alt: "bootstrap",
-      src: '/images/technology/bootstrap.png',
-      width: '60px',
+      src: IMG_TECH.bootstrap,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -187,19 +230,19 @@ const allProjects = [
     },
     projectImages: [{
       id: 0,
-      img: "/images/tamtamtools/0.png",
+      img: IMG_PROJECT.tamtamtools[0],
     },
     {
       id: 1,
-      img: "/images/tamtamtools/1.png",
+      img: IMG_PROJECT.tamtamtools[1],
     },
     {
       id: 2,
-      img: "/images/tamtamtools/2.png",
+      img: IMG_PROJECT.tamtamtools[2],
     },
     {
       id: 3,
-      img: "/images/tamtamtools/3.png",
+      img: IMG_PROJECT.tamtamtools[3],
     },
     ],
     projectInfo: {
@@ -281,24 +324,24 @@ const allProjects = [
     hide: true,
     category: 'Wordpress site',
     link: 'Elearn',
-    img: '/images/Elearn/1.webp',
+    img: IMG_PROJECT.elearn[0],
     smallImages: [{
       id: 1,
       alt: "wordpress",
-      src: '/images/technology/wordpress.png',
-      width: '60px',
+      src: IMG_TECH.wordpress,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "jquery",
-      src: '/images/technology/jquery.png',
-      width: '60px',
+      src: IMG_TECH.jquery,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -308,15 +351,15 @@ const allProjects = [
     },
     projectImages: [{
       id: 1,
-      img: "/images/Elearn/1.webp",
+      img: IMG_PROJECT.elearn[0],
     },
     {
       id: 2,
-      img: "/images/Elearn/2.webp",
+      img: IMG_PROJECT.elearn[1],
     },
     {
       id: 3,
-      img: "/images/Elearn/3.webp",
+      img: IMG_PROJECT.elearn[2],
     },
     ],
     projectInfo: {
@@ -410,32 +453,32 @@ const allProjects = [
     hide: false,
     category: 'Laravel Vue Application',
     // video: '@/assets/videos/iauto/0.mp4',
-    img: '/images/iauto/0.png',
+    img: IMG_PROJECT.iauto[0],
     link: 'iauto',
     smallImages: [{
       id: 1,
       alt: "laravel",
-      src: '/images/technology/laravel.png',
-      width: '60px',
+      src: IMG_TECH.laravel,
+      width: WIDTH_60,
     },
 
     {
       id: 2,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "vue",
-      src: '/images/technology/vue.png',
-      width: '60px',
+      src: IMG_TECH.vue,
+      width: WIDTH_60,
     },
     {
       id: 4,
       alt: "bootstrap",
-      src: '/images/technology/bootstrap.png',
-      width: '60px',
+      src: IMG_TECH.bootstrap,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -445,31 +488,31 @@ const allProjects = [
     },
     projectImages: [{
       id: 0,
-      img: "/images/iauto/0.png",
+      img: IMG_PROJECT.iauto[0],
     },
     {
       id: 1,
-      img: "/images/iauto/1.png",
+      img: IMG_PROJECT.iauto[1],
     },
     {
       id: 2,
-      img: "/images/iauto/2.png",
+      img: IMG_PROJECT.iauto[2],
     },
     {
       id: 3,
-      img: "/images/iauto/3.png",
+      img: IMG_PROJECT.iauto[3],
     },
     {
       id: 4,
-      img: "/images/iauto/4.png",
+      img: IMG_PROJECT.iauto[4],
     },
     {
       id: 5,
-      img: "/images/iauto/5.png",
+      img: IMG_PROJECT.iauto[5],
     },
     {
       id: 6,
-      img: "/images/iauto/6.png",
+      img: IMG_PROJECT.iauto[6],
     },
     ],
     projectInfo: {
@@ -563,24 +606,24 @@ const allProjects = [
     hide: true,
     category: 'Wordpress site',
     link: 'Business',
-    img: '/images/Business/1.webp',
+    img: IMG_PROJECT.business[0],
     smallImages: [{
       id: 1,
       alt: "wordpress",
-      src: '/images/technology/wordpress.png',
-      width: '60px',
+      src: IMG_TECH.wordpress,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "jquery",
-      src: '/images/technology/jquery.png',
-      width: '60px',
+      src: IMG_TECH.jquery,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -590,15 +633,15 @@ const allProjects = [
     },
     projectImages: [{
       id: 1,
-      img: "/images/Business/1.webp",
+      img: IMG_PROJECT.business[0],
     },
     {
       id: 2,
-      img: "/images/Business/2.webp",
+      img: IMG_PROJECT.business[1],
     },
     {
       id: 3,
-      img: "/images/Business/3.webp",
+      img: IMG_PROJECT.business[2],
     },
     ],
     projectInfo: {
@@ -692,18 +735,18 @@ const allProjects = [
     category: 'Vue App',
     hide: false,
     link: 'Blog',
-    img: '/images/Blog/1.webp',
+    img: IMG_PROJECT.blog[0],
     smallImages: [{
       id: 1,
       alt: "vue",
-      src: '/images/technology/vue.png',
-      width: '60px',
+      src: IMG_TECH.vue,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "api",
-      src: '/images/technology/api.png',
-      width: '60px',
+      src: IMG_TECH.api,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -713,15 +756,15 @@ const allProjects = [
     },
     projectImages: [{
       id: 1,
-      img: "/images/Blog/1.webp",
+      img: IMG_PROJECT.blog[0],
     },
     {
       id: 2,
-      img: "/images/Blog/2.webp",
+      img: IMG_PROJECT.blog[1],
     },
     {
       id: 3,
-      img: "/images/Blog/3.webp",
+      img: IMG_PROJECT.blog[2],
     },
     ],
     projectInfo: {
@@ -818,24 +861,24 @@ const allProjects = [
     hide: true,
     category: 'Wordpress site',
     link: 'ClothesStore',
-    img: '/images/ClothesStore/1.webp',
+    img: IMG_PROJECT.clothesStore[0],
     smallImages: [{
       id: 1,
       alt: "wordpress",
-      src: '/images/technology/wordpress.png',
-      width: '60px',
+      src: IMG_TECH.wordpress,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "jquery",
-      src: '/images/technology/jquery.png',
-      width: '60px',
+      src: IMG_TECH.jquery,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -845,15 +888,15 @@ const allProjects = [
     },
     projectImages: [{
       id: 1,
-      img: "/images/ClothesStore/1.webp",
+      img: IMG_PROJECT.clothesStore[0],
     },
     {
       id: 2,
-      img: "/images/ClothesStore/2.webp",
+      img: IMG_PROJECT.clothesStore[1],
     },
     {
       id: 3,
-      img: "/images/ClothesStore/3.webp",
+      img: IMG_PROJECT.clothesStore[2],
     },
     ],
     projectInfo: {
@@ -947,18 +990,18 @@ const allProjects = [
     hide: true,
     category: 'Vue App',
     link: 'Portfolio',
-    img: '/images/Portfolio/1.webp',
+    img: IMG_PROJECT.portfolio[0],
     smallImages: [{
       id: 1,
       alt: "vue",
-      src: '/images/technology/vue.png',
-      width: '60px',
+      src: IMG_TECH.vue,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "tailwind",
-      src: '/images/technology/tailwind.png',
-      width: '60px',
+      src: IMG_TECH.tailwind,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -968,15 +1011,15 @@ const allProjects = [
     },
     projectImages: [{
       id: 1,
-      img: "/images/Portfolio/1.webp",
+      img: IMG_PROJECT.portfolio[0],
     },
     {
       id: 2,
-      img: "/images/Portfolio/2.webp",
+      img: IMG_PROJECT.portfolio[1],
     },
     {
       id: 3,
-      img: "/images/Portfolio/3.webp",
+      img: IMG_PROJECT.portfolio[2],
     },
     ],
     projectInfo: {
@@ -1069,25 +1112,25 @@ const allProjects = [
     title: 'Image Generator OpenAI',
     hide: true,
     category: 'Vue App',
-    img: '/images/ImageGeneratorOpenAI/1.png',
+    img: IMG_PROJECT.imageGen[0],
     link: 'ai-image-generation',
     smallImages: [{
       id: 1,
       alt: "vue",
-      src: '/images/technology/vue.png',
-      width: '60px',
+      src: IMG_TECH.vue,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "api",
-      src: '/images/technology/api.png',
-      width: '60px',
+      src: IMG_TECH.api,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "bootstrap",
-      src: '/images/technology/bootstrap.png',
-      width: '60px',
+      src: IMG_TECH.bootstrap,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -1097,15 +1140,15 @@ const allProjects = [
     },
     projectImages: [{
       id: 1,
-      img: "/images/ImageGeneratorOpenAI/1.png",
+      img: IMG_PROJECT.imageGen[0],
     },
     {
       id: 2,
-      img: "/images/ImageGeneratorOpenAI/2.png",
+      img: IMG_PROJECT.imageGen[1],
     },
     {
       id: 3,
-      img: "/images/ImageGeneratorOpenAI/3.png",
+      img: IMG_PROJECT.imageGen[2],
     },
     ],
     projectInfo: {
@@ -1197,31 +1240,31 @@ const allProjects = [
     hide: false,
     category: 'Laravel Vue Application',
     link: 'LaravelVueEcommercePhone',
-    img: '/images/LaravelVueEcommercePhone/A.png',
+    img: IMG_PROJECT.laravelVueEcom[0],
     smallImages: [{
       id: 1,
       alt: "laravel",
-      src: '/images/technology/laravel.png',
-      width: '60px',
+      src: IMG_TECH.laravel,
+      width: WIDTH_60,
     },
 
     {
       id: 2,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "vue",
-      src: '/images/technology/vue.png',
-      width: '60px',
+      src: IMG_TECH.vue,
+      width: WIDTH_60,
     },
     {
       id: 4,
       alt: "bootstrap",
-      src: '/images/technology/bootstrap.png',
-      width: '60px',
+      src: IMG_TECH.bootstrap,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -1231,51 +1274,51 @@ const allProjects = [
     },
     projectImages: [{
       id: 0,
-      img: "/images/LaravelVueEcommercePhone/A.png",
+      img: IMG_PROJECT.laravelVueEcom[0],
     },
     {
       id: 1,
-      img: "/images/LaravelVueEcommercePhone/A (1).png",
+      img: IMG_PROJECT.laravelVueEcom[1],
     },
     {
       id: 2,
-      img: "/images/LaravelVueEcommercePhone/A (2).png",
+      img: IMG_PROJECT.laravelVueEcom[2],
     },
     {
       id: 3,
-      img: "/images/LaravelVueEcommercePhone/A (3).png",
+      img: IMG_PROJECT.laravelVueEcom[3],
     },
     {
       id: 4,
-      img: "/images/LaravelVueEcommercePhone/A (4).png",
+      img: IMG_PROJECT.laravelVueEcom[4],
     },
     {
       id: 5,
-      img: "/images/LaravelVueEcommercePhone/A (5).png",
+      img: IMG_PROJECT.laravelVueEcom[5],
     },
     {
       id: 6,
-      img: "/images/LaravelVueEcommercePhone/A (6).png",
+      img: IMG_PROJECT.laravelVueEcom[6],
     },
     {
       id: 7,
-      img: "/images/LaravelVueEcommercePhone/A (7).png",
+      img: IMG_PROJECT.laravelVueEcom[7],
     },
     {
       id: 1,
-      img: "/images/LaravelVueEcommercePhone/B (1).png",
+      img: IMG_PROJECT.laravelVueEcom[8],
     },
     {
       id: 2,
-      img: "/images/LaravelVueEcommercePhone/B (2).png",
+      img: IMG_PROJECT.laravelVueEcom[9],
     },
     {
       id: 3,
-      img: "/images/LaravelVueEcommercePhone/B (3).png",
+      img: IMG_PROJECT.laravelVueEcom[10],
     },
     {
       id: 4,
-      img: "/images/LaravelVueEcommercePhone/B (4).png",
+      img: IMG_PROJECT.laravelVueEcom[11],
     },
     ],
     projectInfo: {
@@ -1373,24 +1416,24 @@ const allProjects = [
     hide: false,
     category: 'Wordpress site',
     link: 'PhonesStore',
-    img: '/images/PhonesStore/1.webp',
+    img: IMG_PROJECT.phonesStore[0],
     smallImages: [{
       id: 1,
       alt: "wordpress",
-      src: '/images/technology/wordpress.png',
-      width: '60px',
+      src: IMG_TECH.wordpress,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "jquery",
-      src: '/images/technology/jquery.png',
-      width: '60px',
+      src: IMG_TECH.jquery,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -1400,47 +1443,47 @@ const allProjects = [
     },
     projectImages: [{
       id: 1,
-      img: "/images/PhonesStore/1.webp",
+      img: IMG_PROJECT.phonesStore[0],
     },
     {
       id: 2,
-      img: "/images/PhonesStore/2.webp",
+      img: IMG_PROJECT.phonesStore[1],
     },
     {
       id: 3,
-      img: "/images/PhonesStore/3.webp",
+      img: IMG_PROJECT.phonesStore[2],
     },
     {
       id: 4,
-      img: "/images/PhonesStore/4.webp",
+      img: IMG_PROJECT.phonesStore[3],
     },
     {
       id: 5,
-      img: "/images/PhonesStore/5.webp",
+      img: IMG_PROJECT.phonesStore[4],
     },
     {
       id: 6,
-      img: "/images/PhonesStore/6.webp",
+      img: IMG_PROJECT.phonesStore[5],
     },
     {
       id: 6,
-      img: "/images/PhonesStore/7.webp",
+      img: IMG_PROJECT.phonesStore[6],
     },
     {
       id: 6,
-      img: "/images/PhonesStore/8.webp",
+      img: IMG_PROJECT.phonesStore[7],
     },
     {
       id: 6,
-      img: "/images/PhonesStore/9.webp",
+      img: IMG_PROJECT.phonesStore[8],
     },
     {
       id: 6,
-      img: "/images/PhonesStore/10.webp",
+      img: IMG_PROJECT.phonesStore[9],
     },
     {
       id: 6,
-      img: "/images/PhonesStore/11.webp",
+      img: IMG_PROJECT.phonesStore[10],
     },
     ],
     projectInfo: {
@@ -1534,18 +1577,18 @@ const allProjects = [
     hide: false,
     category: 'React App',
     link: 'landing-page',
-    img: '/images/react-landing/0.png',
+    img: IMG_PROJECT.reactLanding[0],
     smallImages: [{
       id: 1,
       alt: "next",
-      src: '/images/technology/next.png',
-      width: '60px',
+      src: IMG_TECH.next,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "react",
-      src: '/images/technology/react.png',
-      width: '60px',
+      src: IMG_TECH.react,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -1555,27 +1598,27 @@ const allProjects = [
     },
     projectImages: [{
       id: 0,
-      img: "/images/react-landing/0.png",
+      img: IMG_PROJECT.reactLanding[0],
     },
     {
       id: 1,
-      img: "/images/react-landing/1.png",
+      img: IMG_PROJECT.reactLanding[1],
     },
     {
       id: 2,
-      img: "/images/react-landing/2.png",
+      img: IMG_PROJECT.reactLanding[2],
     },
     {
       id: 3,
-      img: "/images/react-landing/3.png",
+      img: IMG_PROJECT.reactLanding[3],
     },
     {
       id: 4,
-      img: "/images/react-landing/4.png",
+      img: IMG_PROJECT.reactLanding[4],
     },
     {
       id: 5,
-      img: "/images/react-landing/5.png",
+      img: IMG_PROJECT.reactLanding[5],
     },
     ],
     projectInfo: {
@@ -1668,30 +1711,30 @@ const allProjects = [
     hide: false,
     category: 'React App',
     link: 'infogate',
-    img: '/images/infogate/0.png',
+    img: IMG_PROJECT.infogate[0],
     smallImages: [{
       id: 1,
       alt: "react",
-      src: '/images/technology/react.png',
-      width: '60px',
+      src: IMG_TECH.react,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "laravel",
-      src: '/images/technology/laravel.png',
-      width: '60px',
+      src: IMG_TECH.laravel,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 4,
       alt: "bootstrap",
-      src: '/images/technology/bootstrap.png',
-      width: '60px',
+      src: IMG_TECH.bootstrap,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -1701,31 +1744,31 @@ const allProjects = [
     },
     projectImages: [{
       id: 0,
-      img: "/images/infogate/0.png",
+      img: IMG_PROJECT.infogate[0],
     },
     {
       id: 1,
-      img: "/images/infogate/1.png",
+      img: IMG_PROJECT.infogate[1],
     },
     {
       id: 2,
-      img: "/images/infogate/2.png",
+      img: IMG_PROJECT.infogate[2],
     },
     {
       id: 3,
-      img: "/images/infogate/3.png",
+      img: IMG_PROJECT.infogate[3],
     },
     {
       id: 4,
-      img: "/images/infogate/4.png",
+      img: IMG_PROJECT.infogate[4],
     },
     {
       id: 5,
-      img: "/images/infogate/5.png",
+      img: IMG_PROJECT.infogate[5],
     },
     {
       id: 6,
-      img: "/images/infogate/6.png",
+      img: IMG_PROJECT.infogate[6],
     },
     ],
     projectInfo: {
@@ -1812,30 +1855,30 @@ const allProjects = [
     hide: true,
     category: 'Laravel Vue Application',
     link: 'stockifly',
-    img: '/images/stockifly/0.png',
+    img: IMG_PROJECT.stockifly[0],
     smallImages: [{
       id: 1,
       alt: "laravel",
-      src: '/images/technology/laravel.png',
-      width: '60px',
+      src: IMG_TECH.laravel,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "vue",
-      src: '/images/technology/vue.png',
-      width: '60px',
+      src: IMG_TECH.vue,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 4,
       alt: "bootstrap",
-      src: '/images/technology/bootstrap.png',
-      width: '60px',
+      src: IMG_TECH.bootstrap,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -1845,27 +1888,27 @@ const allProjects = [
     },
     projectImages: [{
       id: 0,
-      img: "/images/stockifly/0.png",
+      img: IMG_PROJECT.stockifly[0],
     },
     {
       id: 1,
-      img: "/images/stockifly/1.png",
+      img: IMG_PROJECT.stockifly[1],
     },
     {
       id: 2,
-      img: "/images/stockifly/2.png",
+      img: IMG_PROJECT.stockifly[2],
     },
     {
       id: 3,
-      img: "/images/stockifly/3.png",
+      img: IMG_PROJECT.stockifly[3],
     },
     {
       id: 4,
-      img: "/images/stockifly/4.png",
+      img: IMG_PROJECT.stockifly[4],
     },
     {
       id: 5,
-      img: "/images/stockifly/5.png",
+      img: IMG_PROJECT.stockifly[5],
     }
     ],
     projectInfo: {
@@ -1952,24 +1995,24 @@ const allProjects = [
     hide: false,
     category: 'Laravel Application',
     link: 'roxboro',
-    img: '/images/roxboro/0.png',
+    img: IMG_PROJECT.roxboro[0],
     smallImages: [{
       id: 1,
       alt: "laravel",
-      src: '/images/technology/laravel.png',
-      width: '60px',
+      src: IMG_TECH.laravel,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "bootstrap",
-      src: '/images/technology/bootstrap.png',
-      width: '60px',
+      src: IMG_TECH.bootstrap,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -1979,31 +2022,31 @@ const allProjects = [
     },
     projectImages: [{
       id: 0,
-      img: "/images/roxboro/0.png",
+      img: IMG_PROJECT.roxboro[0],
     },
     {
       id: 1,
-      img: "/images/roxboro/1.png",
+      img: IMG_PROJECT.roxboro[1],
     },
     {
       id: 2,
-      img: "/images/roxboro/2.png",
+      img: IMG_PROJECT.roxboro[2],
     },
     {
       id: 3,
-      img: "/images/roxboro/3.png",
+      img: IMG_PROJECT.roxboro[3],
     },
     {
       id: 4,
-      img: "/images/roxboro/4.png",
+      img: IMG_PROJECT.roxboro[4],
     },
     {
       id: 5,
-      img: "/images/roxboro/5.png",
+      img: IMG_PROJECT.roxboro[5],
     },
     {
       id: 6,
-      img: "/images/roxboro/6.png",
+      img: IMG_PROJECT.roxboro[6],
     },
     ],
     projectInfo: {
@@ -2089,24 +2132,24 @@ const allProjects = [
     hide: false,
     category: 'Laravel Application',
     link: 'garage',
-    img: '/images/garage/0.png',
+    img: IMG_PROJECT.garage[0],
     smallImages: [{
       id: 1,
       alt: "laravel",
-      src: '/images/technology/laravel.png',
-      width: '60px',
+      src: IMG_TECH.laravel,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "bootstrap",
-      src: '/images/technology/bootstrap.png',
-      width: '60px',
+      src: IMG_TECH.bootstrap,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -2116,27 +2159,27 @@ const allProjects = [
     },
     projectImages: [{
       id: 0,
-      img: "/images/garage/0.png",
+      img: IMG_PROJECT.garage[0],
     },
     {
       id: 1,
-      img: "/images/garage/1.png",
+      img: IMG_PROJECT.garage[1],
     },
     {
       id: 2,
-      img: "/images/garage/2.png",
+      img: IMG_PROJECT.garage[2],
     },
     {
       id: 3,
-      img: "/images/garage/3.png",
+      img: IMG_PROJECT.garage[3],
     },
     {
       id: 4,
-      img: "/images/garage/4.png",
+      img: IMG_PROJECT.garage[4],
     },
     {
       id: 5,
-      img: "/images/garage/5.png",
+      img: IMG_PROJECT.garage[5],
     },
     ],
     projectInfo: {
@@ -2226,24 +2269,24 @@ const allProjects = [
     hide: false,
     category: 'Wordpress site',
     link: 'Alphanex',
-    img: '/images/alphanex/0.webp',
+    img: IMG_PROJECT.alphanex[0],
     smallImages: [{
       id: 1,
       alt: "wordpress",
-      src: '/images/technology/wordpress.png',
-      width: '60px',
+      src: IMG_TECH.wordpress,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "jquery",
-      src: '/images/technology/jquery.png',
-      width: '60px',
+      src: IMG_TECH.jquery,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -2253,19 +2296,19 @@ const allProjects = [
     },
     projectImages: [{
       id: 1,
-      img: "/images/alphanex/1.webp",
+      img: IMG_PROJECT.alphanex[0],
     },
     {
       id: 2,
-      img: "/images/alphanex/2.webp",
+      img: IMG_PROJECT.alphanex[1],
     },
     {
       id: 3,
-      img: "/images/alphanex/3.webp",
+      img: IMG_PROJECT.alphanex[2],
     },
     {
       id: 4,
-      img: "/images/alphanex/4.webp",
+      img: IMG_PROJECT.alphanex[3],
     },
     ],
     projectInfo: {
@@ -2351,30 +2394,30 @@ const allProjects = [
     hide: false,
     category: 'Laravel React Web App',
     link: 'event-management',
-    img: '/images/event-management/0.png',
+    img: IMG_PROJECT.eventManagement[0],
     smallImages: [{
       id: 1,
       alt: "react",
-      src: '/images/technology/react.png',
-      width: '60px',
+      src: IMG_TECH.react,
+      width: WIDTH_60,
     },
     {
       id: 2,
       alt: "laravel",
-      src: '/images/technology/laravel.png',
-      width: '60px',
+      src: IMG_TECH.laravel,
+      width: WIDTH_60,
     },
     {
       id: 3,
       alt: "php",
-      src: '/images/technology/php.png',
-      width: '60px',
+      src: IMG_TECH.php,
+      width: WIDTH_60,
     },
     {
       id: 4,
       alt: "tailwind",
-      src: '/images/technology/tailwind.png',
-      width: '60px',
+      src: IMG_TECH.tailwind,
+      width: WIDTH_60,
     },
     ],
     singleProjectHeader: {
@@ -2384,63 +2427,63 @@ const allProjects = [
     },
     projectImages: [{
       id: 1,
-      img: "/images/event-management/1.png",
+      img: IMG_PROJECT.eventManagement[0],
     },
     {
       id: 2,
-      img: "/images/event-management/2.png",
+      img: IMG_PROJECT.eventManagement[1],
     },
     {
       id: 3,
-      img: "/images/event-management/3.png",
+      img: IMG_PROJECT.eventManagement[2],
     },
     {
       id: 4,
-      img: "/images/event-management/4.png",
+      img: IMG_PROJECT.eventManagement[3],
     },
     {
       id: 5,
-      img: "/images/event-management/5.png",
+      img: IMG_PROJECT.eventManagement[4],
     },
     {
       id: 6,
-      img: "/images/event-management/6.png",
+      img: IMG_PROJECT.eventManagement[5],
     },
     {
       id: 7,
-      img: "/images/event-management/7.png",
+      img: IMG_PROJECT.eventManagement[6],
     },
     {
       id: 8,
-      img: "/images/event-management/8.png",
+      img: IMG_PROJECT.eventManagement[7],
     },
     {
       id: 9,
-      img: "/images/event-management/9.png",
+      img: IMG_PROJECT.eventManagement[8],
     },
     {
       id: 10,
-      img: "/images/event-management/10.png",
+      img: IMG_PROJECT.eventManagement[9],
     },
     {
       id: 11,
-      img: "/images/event-management/11.png",
+      img: IMG_PROJECT.eventManagement[10],
     },
     {
       id: 12,
-      img: "/images/event-management/12.png",
+      img: IMG_PROJECT.eventManagement[11],
     },
     {
       id: 13,
-      img: "/images/event-management/13.png",
+      img: IMG_PROJECT.eventManagement[12],
     },
     {
       id: 14,
-      img: "/images/event-management/14.png",
+      img: IMG_PROJECT.eventManagement[13],
     },
     {
       id: 15,
-      img: "/images/event-management/15.png",
+      img: IMG_PROJECT.eventManagement[14],
     },
     ],
     projectInfo: {

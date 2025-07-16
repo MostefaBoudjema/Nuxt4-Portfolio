@@ -217,7 +217,7 @@
     "Home": "الرئيسية",
     "Popular Movie DB Website": "موقع قاعدة بيانات الأفلام الشهير",
     "Frontend": "الواجهة الأمامية",
-    "Moviez": "قاعدة بيانات الأفلام",
+    "MyMoviez": "قاعدة بيانات الأفلام",
     "movie ranking services": "خدمات تصنيف الأفلام",
     "Tamtam Tools": "أدوات تمتم",
     "Frontend / Backend": "الواجهة الأمامية / الخلفية",
@@ -246,7 +246,7 @@
       "readMore": "اقرأ المزيد",
       "draft": "مسودة",
       "updated": "تم التحديث:",
-      "latestArticle": "أحدث مقال",
+      "latestArticle": "أحدث المقالات",
       "relatedPosts": "مقالات ذات صلة",
       "noRelatedPosts": "لم يتم العثور على مقالات ذات صلة.",
       "viewAllPosts": "عرض جميع المقالات"
