@@ -267,7 +267,7 @@ export default {
 					timeline: this.formData.timeline === 'other' ? this.formData.timelineCustom : this.formData.timeline
 				};
 
-				const apiUrl = 'http://localhost:3000';
+				const apiUrl = process.env.API_URL || 'https://backend-mostefa-boudjema.vercel.app';
 				const response = await fetch(`${apiUrl}/send-email`, {
 					method: 'POST',
 					headers: {

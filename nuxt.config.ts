@@ -28,7 +28,7 @@ export default defineNuxtConfig({
       i18nLocale: process.env.I18N_LOCALE || 'en',
       i18nFallbackLocale: process.env.I18N_FALLBACK_LOCALE || 'en',
       authorName: process.env.AUTHOR_NAME || 'Mostefa Boudjema',
-      apiUrl: process.env.API_URL || 'http://localhost:3000',
+      apiUrl: process.env.API_URL || 'https://backend-mostefa-boudjema.vercel.app',
       showCv: process.env.SHOW_CV === 'true' || false,
       showMultiLang: process.env.SHOW_MULTI_LANG === 'true' || false,
       showHireMe: process.env.SHOW_HIRE_ME === 'true' || false,

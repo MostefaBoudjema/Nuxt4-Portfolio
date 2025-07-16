@@ -3,7 +3,7 @@ export const socialLinks = [
 		id: 1,
 		name: 'Website',
 		icon: 'globe',
-		url: 'https://mostefa-boudjema.vercel.app/',
+		url: 'https://nuxt3-mostefa-boudjema.vercel.app/',
 	},
 	{
 		id: 2,
