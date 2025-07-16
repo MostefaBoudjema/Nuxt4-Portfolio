@@ -6,19 +6,19 @@ const allProjects = [
 	smallImages: [{
 		id: 1,
 		alt: "react",
-		src: new URL('../assets/images/technology/react.png', import.meta.url).href,
+		src: '/images/technology/react.png',
 		width: '60px',
 	},
 	{
 		id: 2,
 		alt: "api",
-		src: new URL('../assets/images/technology/api.png', import.meta.url).href,
+		src: '/images/technology/api.png',
 		width: '60px',
 	},
 	{
 		id: 3,
 		alt: "bootstrap",
-		src: new URL('../assets/images/technology/bootstrap.png', import.meta.url).href,
+		src: '/images/technology/bootstrap.png',
 		width: '60px',
 	},
 	],
@@ -27,41 +27,41 @@ const allProjects = [
   img: '/images/movie-db/0.png',
 	link: 'movie-db',
 	singleProjectHeader: {
-		singleProjectTitle: 'project.header.popularMovieDbWebsite',
+		singleProjectTitle: 'project.header.popularMoviezWebsite',
 		singleProjectDate: "09 august 2023",
 		singleProjectTag: 'project.tag.frontend',
 	},
 	projectImages: [{
 		id: 0,
-		img: new URL("../assets/images/movie-db/0.png", import.meta.url).href,
+		img: "/images/movie-db/0.png",
 	},
 	{
 		id: 1,
-		img: new URL("../assets/images/movie-db/1.png", import.meta.url).href,
+		img: "/images/movie-db/1.png",
 	},
 	{
 		id: 2,
-		img: new URL("../assets/images/movie-db/2.png", import.meta.url).href,
+		img: "/images/movie-db/2.png",
 	},
 	{
 		id: 3,
-		img: new URL("../assets/images/movie-db/3.png", import.meta.url).href,
+		img: "/images/movie-db/3.png",
 	},
 	{
 		id: 4,
-		img: new URL("../assets/images/movie-db/4.png", import.meta.url).href,
+		img: "/images/movie-db/4.png",
 	},
 	{
 		id: 5,
-		img: new URL("../assets/images/movie-db/5.png", import.meta.url).href,
+		img: "/images/movie-db/5.png",
 	},
 	{
 		id: 6,
-		img: new URL("../assets/images/movie-db/6.png", import.meta.url).href,
+		img: "/images/movie-db/6.png",
 	},
 	{
 		id: 7,
-		img: new URL("../assets/images/movie-db/7.png", import.meta.url).href,
+		img: "/images/movie-db/7.png",
 	},
 
 	],
@@ -70,7 +70,7 @@ const allProjects = [
 		companyInfos: [{
 			id: 1,
 			title: 'project.info.name',
-			details: 'project.info.movieDb',
+			details: 'project.info.Moviez',
 		},
 		{
 			id: 2,
@@ -80,7 +80,7 @@ const allProjects = [
 		{
 			id: 3,
 			title: 'project.info.website',
-			details: "https://popular-moviedb.vercel.app/",
+			details: "https://popular-Moviez.vercel.app/",
 		},
 
 		],
@@ -406,7 +406,7 @@ const allProjects = [
 
   {
     id: 3,
-    title: 'iAuto Business Website',
+    title: 'iAuto - Car dealership web app',
     hide: false,
     category: 'Laravel Vue Application',
     // video: '@/assets/videos/iauto/0.mp4',
@@ -2523,4 +2523,5 @@ const allProjects = [
 ];
 
 // Filter out projects where hide is true before exporting
-export const projects = allProjects.filter(project => !project.hide);
+const projects = allProjects.filter(project => !project.hide);
+export default projects;

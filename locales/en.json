@@ -209,6 +209,8 @@
     "details17D": "Purpose and Contact This project demonstrates expertise in full-stack development, focusing on role-based access, scheduling logic, and user-friendly design. It's a practical tool for event organizers needing reliable management and participation features. The Laravel React Event Management System merges technical precision with real-world applicability, offering a streamlined platform for event coordination and engagement, adaptable to various use cases like community events or professional gatherings.",
     "Objective17": "The Laravel React Event Management System aims to evaluate and showcase the ability to build a robust full-stack application using Laravel and React. It focuses on implementing user roles—admins with full event oversight and users restricted to published events—alongside comprehensive event management and scheduling constraints. By integrating a Laravel JSON:API backend with a React frontend and Laravel Material Dashboard, the project tests skills in CRUD operations, authentication, capacity handling, and notification systems. The objective is to create an efficient, user-friendly platform for event organization and participation, suitable for real-world applications like workshops or conferences.",
 
+    "Moviez": "Moviez",
+    "movie ranking services": "Movie ranking services",
     "Job Title": "Laravel Vue Web Developer",
     "Testimonials": "Testimonials",
     "Project Manager": "Project Manager",

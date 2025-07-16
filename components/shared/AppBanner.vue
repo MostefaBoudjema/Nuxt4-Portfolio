@@ -12,7 +12,7 @@
       </p>
       <DownloadCv />
 
-      <ContactBtn />
+      <AboutBtn />
 
     </div>
 
@@ -28,10 +28,9 @@
 import { onMounted, onUpdated, ref } from 'vue';
 import feather from 'feather-icons';
 import { useI18n } from 'vue-i18n';
-import { DotLottieVue } from '@lottiefiles/dotlottie-vue'
-import settings from '~/configs';
+import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
 import DownloadCv from './DownloadCv.vue';
-import ContactBtn from './ContactBtn.vue';
+import AboutBtn from './AboutBtn.vue';
 
 const { t }=useI18n({
   inheritLocale: true,
