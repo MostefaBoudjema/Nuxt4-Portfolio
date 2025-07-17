@@ -12,7 +12,7 @@
       :visibleoffset="300"
       right="30px"
       bottom="40px"
-      text="↑"
+      text="⮝"
       customClass="my-backtotop"
     />
     <!-- Footer -->
