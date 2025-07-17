@@ -32,9 +32,9 @@ const IMG_PROJECT = {
   stockifly: ['/images/stockifly/0.png', '/images/stockifly/1.png', '/images/stockifly/2.png', '/images/stockifly/3.png', '/images/stockifly/4.png', '/images/stockifly/5.png'],
   roxboro: ['/images/roxboro/0.png', '/images/roxboro/1.png', '/images/roxboro/2.png', '/images/roxboro/3.png', '/images/roxboro/4.png', '/images/roxboro/5.png', '/images/roxboro/6.png'],
   garage: ['/images/garage/0.png', '/images/garage/1.png', '/images/garage/2.png', '/images/garage/3.png', '/images/garage/4.png', '/images/garage/5.png'],
-  alphanex: ['/images/alphanex/1.webp', '/images/alphanex/2.webp', '/images/alphanex/3.webp', '/images/alphanex/4.webp'],
+  alphanex: ['/images/alphanex/0.webp','/images/alphanex/1.webp', '/images/alphanex/2.webp', '/images/alphanex/3.webp', '/images/alphanex/4.webp'],
   eventManagement: [
-    '/images/event-management/1.png', '/images/event-management/2.png', '/images/event-management/3.png', '/images/event-management/4.png', '/images/event-management/5.png', '/images/event-management/6.png', '/images/event-management/7.png', '/images/event-management/8.png', '/images/event-management/9.png', '/images/event-management/10.png', '/images/event-management/11.png', '/images/event-management/12.png', '/images/event-management/13.png', '/images/event-management/14.png', '/images/event-management/15.png',
+    '/images/event-management/0.png', '/images/event-management/1.png', '/images/event-management/2.png', '/images/event-management/3.png', '/images/event-management/4.png', '/images/event-management/5.png', '/images/event-management/6.png', '/images/event-management/7.png', '/images/event-management/8.png', '/images/event-management/9.png', '/images/event-management/10.png', '/images/event-management/11.png', '/images/event-management/12.png', '/images/event-management/13.png', '/images/event-management/14.png', '/images/event-management/15.png',
   ],
   business: ['/images/Business/1.webp', '/images/Business/2.webp', '/images/Business/3.webp'],
   elearn: ['/images/Elearn/1.webp', '/images/Elearn/2.webp', '/images/Elearn/3.webp'],

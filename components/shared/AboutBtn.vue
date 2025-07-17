@@ -13,7 +13,6 @@
 
 <script setup>
 import { defineProps } from 'vue';
-import settings from '@/configs';
 import Button from '@/components/reusable/Button.vue';
 import { useI18n } from 'vue-i18n';
 

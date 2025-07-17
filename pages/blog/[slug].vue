@@ -61,7 +61,6 @@
 import { marked } from 'marked';
 import posts from '../data/posts.js';
 import RelatedPosts from '../components/blog/RelatedPosts.vue';
-import { useHead } from '#imports';
 
 export default {
   name: 'SingleBlog',
@@ -73,21 +72,15 @@ export default {
       post: null
     };
   },
+  created() {
+    this.loadPost();
+  },
   watch: {
     '$route'(to, from) {
       if (to.params.slug !== from.params.slug) {
         this.loadPost();
       }
-    },
-    post: {
-      handler(newPost) {
-        this.setHeadTitle(newPost);
-      },
-      immediate: true
     }
-  },
-  created() {
-    this.loadPost();
   },
   methods: {
     loadPost() {
@@ -100,14 +93,13 @@ export default {
           ...found,
           image: found.coverImage || found.image || `https://picsum.photos/600/300?random=${found.id}`
         };
+        // Set document title dynamically
+        document.title = `Mostefa Boudjema - ${this.post.title} `;
       } else {
         this.post = null;
+        // Set a fallback title if not found
+        document.title = 'Blog Post Not Found - Mostefa Boudjema';
       }
-    },
-    setHeadTitle(post) {
-      useHead({
-        title: post && post.title ? `Mostefa Boudjema - ${post.title}` : 'Mostefa Boudjema - %'
-      });
     }
   },
   computed: {
@@ -131,5 +123,124 @@ export default {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(24px);}
   to { opacity: 1; transform: none;}
+}
+
+/* Code block and long text wrapping styles */
+:deep(.prose pre) {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background-color: #1f2937;
+  color: #f9fafb;
+  padding: 1rem;
+  border-radius: 00.5em;
+  margin: 1rem 0;
+  border:1px solid #374151;
+}
+
+:deep(.prose code) {
+  background-color: #f3f4f6;
+  color: #1f2937;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+:deep(.prose pre code) {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* Ensure all code blocks are scrollable */
+:deep(.prose pre::-webkit-scrollbar) {
+  height: 8px;
+}
+
+:deep(.prose pre::-webkit-scrollbar-track) {
+  background: #374151;
+  border-radius: 4px;
+}
+
+:deep(.prose pre::-webkit-scrollbar-thumb) {
+  background: #6b7280;
+  border-radius: 4px;
+}
+
+:deep(.prose pre::-webkit-scrollbar-thumb:hover) {
+  background: #9ca3af;
+}
+
+/* Dark mode adjustments */
+.dark :deep(.prose pre) {
+  background-color: #111827;
+  border-color: #374151;
+}
+
+.dark :deep(.prose code) {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+/* Make long text wrap to new lines */
+:deep(.prose p) {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+:deep(.prose h1),
+:deep(.prose h2),
+:deep(.prose h3),
+:deep(.prose h4),
+:deep(.prose h5),
+:deep(.prose h6) {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+:deep(.prose li) {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Long inline code should wrap */
+:deep(.prose p code) {
+  word-break: break-all;
+  white-space: pre-wrap;
+  max-width: 100%;
+  display: inline-block;
+}
+
+/* Make sure tables are also scrollable */
+:deep(.prose table) {
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+:deep(.prose table::-webkit-scrollbar) {
+  height: 8px;
+}
+
+:deep(.prose table::-webkit-scrollbar-track) {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+:deep(.prose table::-webkit-scrollbar-thumb) {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.dark :deep(.prose table::-webkit-scrollbar-track) {
+  background: #374151;
+}
+
+.dark :deep(.prose table::-webkit-scrollbar-thumb) {
+  background: #6b7280;
 }
 </style> 

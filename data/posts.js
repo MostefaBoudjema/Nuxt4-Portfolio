@@ -1438,7 +1438,7 @@ Here’s a list of **real web developer interview questions** (for frontend, bac
 
 ---
 
-## 🧠 1. “What’s the difference between `==` and `===` in JavaScript?”
+## 🧠 1. “What’s the difference between '==' and '===' in JavaScript?”
 
 **What they want:** Understanding of type coercion and strict comparison.
 
@@ -1548,7 +1548,7 @@ const yyyy = today.getFullYear();
 const mm = String(today.getMonth() + 1).padStart(2, '0');
 const dd = String(today.getDate()).padStart(2, '0');
 const todayStr = `${yyyy}-${mm}-${dd}`;
-// const posts = postsList;
-const posts = postsList.filter(post => new Date(post.updatedAt) <= new Date(todayStr));
+const posts = postsList;
+// const posts = postsList.filter(post => new Date(post.updatedAt) <= new Date(todayStr));
 
 export default posts; 
