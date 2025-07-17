@@ -54,16 +54,13 @@ export default defineNuxtConfig({
         },
         {
           innerHTML: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 gtag('config', 'G-L5HVZ2VCP7');`,
           type: 'text/javascript'
         }
       ]
     }
-  },
-  __dangerouslyDisableSanitizersByTagID: {
-    'ga-gtag-init': ['innerHTML']
   },
   compatibilityDate: '2025-07-08'
 })
