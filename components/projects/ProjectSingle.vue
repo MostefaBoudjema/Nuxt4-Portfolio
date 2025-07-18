@@ -57,7 +57,7 @@ onMounted(() => {
 
 <template>
     <div v-if="!props.project.hide">
-        <div>
+        <div class="flex justify-center">
             <NuxtLink
   :to="{ path: `/projects/${props.project.link}` }"
   @click="setPageId(props.project.id)"
