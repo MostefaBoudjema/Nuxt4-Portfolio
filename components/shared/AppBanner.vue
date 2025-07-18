@@ -7,15 +7,13 @@
         {{ t("Hi, Iam Mostfa") }}
       </h1>
       <p
-        class="font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center sm:text-left leading-none text-gray-400">
-        {{ t("Job Title") }}
+        class="font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center sm:text-left leading-none text-gray-400 min-h-[2.5rem]"
+      >
+        {{ displayedText }}<span v-if="showCursor" class="typewriter-cursor">|</span>
       </p>
       <DownloadCv />
-
       <AboutBtn />
-
     </div>
-
     <!-- Banner right illustration -->
     <div class="w-full md:w-2/3 text-right float-right">
       <DotLottieVue class="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px]" autoplay loop
@@ -25,7 +23,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUpdated, ref } from 'vue';
+import { onMounted, onUpdated, onUnmounted, ref } from 'vue';
 import feather from 'feather-icons';
 import { useI18n } from 'vue-i18n';
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
@@ -37,15 +35,69 @@ const { t }=useI18n({
   useScope: 'local',
 });
 
-const theme = ref('light');
-const lang = ref('ar');
+const jobTitles = [
+  t("Job Title1"),
+  t("Job Title2"),
+  t("Job Title3"),
+];
+const currentJobTitleIndex = ref(0);
+const displayedText = ref("");
+const showCursor = ref(true);
+let typingInterval = null;
+let pauseTimeout = null;
+let erasing = false;
+
+const typeSpeed = 80; // ms per character
+const eraseSpeed = 40; // ms per character
+const pauseAfterTyping = 1200; // ms to pause after typing
+const pauseAfterErasing = 400; // ms to pause after erasing
+
+function startTypewriter() {
+  const fullText = jobTitles[currentJobTitleIndex.value];
+  let charIndex = 0;
+  erasing = false;
+
+  typingInterval = setInterval(() => {
+    if (charIndex < fullText.length) {
+      displayedText.value += fullText[charIndex];
+      charIndex++;
+    } else {
+      clearInterval(typingInterval);
+      pauseTimeout = setTimeout(() => startErasing(), pauseAfterTyping);
+    }
+  }, typeSpeed);
+}
+
+function startErasing() {
+  erasing = true;
+  typingInterval = setInterval(() => {
+    if (displayedText.value.length > 0) {
+      displayedText.value = displayedText.value.slice(0, -1);
+    } else {
+      clearInterval(typingInterval);
+      currentJobTitleIndex.value = (currentJobTitleIndex.value + 1) % jobTitles.length;
+      pauseTimeout = setTimeout(() => startTypewriter(), pauseAfterErasing);
+    }
+  }, eraseSpeed);
+}
+
+function startAnimation() {
+  displayedText.value = "";
+  startTypewriter();
+}
 
 onMounted(() => {
   feather.replace();
-  if (process.client) {
-    theme.value = localStorage.getItem('theme') || 'light';
-    lang.value = localStorage.getItem('lang') || 'ar';
-  }
+  startAnimation();
+  // Blinking cursor
+  setInterval(() => {
+    showCursor.value = !showCursor.value;
+  }, 500);
+});
+
+onUnmounted(() => {
+  clearInterval(typingInterval);
+  clearTimeout(pauseTimeout);
 });
 
 onUpdated(() => {
@@ -53,4 +105,14 @@ onUpdated(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.typewriter-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+</style>
