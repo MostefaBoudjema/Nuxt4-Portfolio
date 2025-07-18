@@ -850,7 +850,7 @@ const postsList=[
     id: 7,
     title: 'Vue.js: A Beginner\'s Guide to Getting Started',
     summary: 'Learn how to set up and start building with Vue.js, the popular JavaScript framework for creating interactive user interfaces.',
-    date: '2025-07-17',
+    date: '2025-06-17',
     tags: ['vuejs', 'javascript', 'frontend', 'framework', 'getting started'],
     slug: 'vuejs-beginner-guide',
     author: {
@@ -862,7 +862,7 @@ const postsList=[
     readingTime: '5 min read',
     published: true,
     category: 'Frontend',
-    updatedAt: '2025-07-17',
+    updatedAt: '2025-06-17',
     metaDescription: 'Learn how to get started with Vue.js in this beginner’s guide, including setup and creating your first app.',
     excerpt: 'A beginner’s guide to Vue.js, helping you get started with this powerful JavaScript framework.',
     content: `
@@ -1047,7 +1047,7 @@ Check out more guides on my blog:
     id: 9,
     title: 'React for Beginners: A Quick Start Guide',
     summary: 'Learn how to get started with React and build your first interactive web app.',
-    date: '2025-07-21',
+    date: '2025-05-21',
     tags: ['react', 'javascript', 'frontend', 'getting started'],
     slug: 'react-for-beginners',
     author: {
@@ -1059,7 +1059,7 @@ Check out more guides on my blog:
     readingTime: '5 min read',
     published: true,
     category: 'Frontend',
-    updatedAt: '2025-07-21',
+    updatedAt: '2025-05-21',
     metaDescription: 'A beginner’s guide to getting started with React, including components and state management.',
     excerpt: 'Learn how to build your first interactive web app with React in this quick start guide.',
     content: `
@@ -1548,7 +1548,7 @@ const yyyy = today.getFullYear();
 const mm = String(today.getMonth() + 1).padStart(2, '0');
 const dd = String(today.getDate()).padStart(2, '0');
 const todayStr = `${yyyy}-${mm}-${dd}`;
-const posts = postsList;
-// const posts = postsList.filter(post => new Date(post.updatedAt) <= new Date(todayStr));
+// const posts = postsList;
+const posts = postsList.filter(post => new Date(post.updatedAt) <= new Date(todayStr));
 
 export default posts; 

@@ -1,8 +1,14 @@
 <script>
 import CustomSlide from "@/components/reusable/CustomSlide.vue";
+import { useI18n } from "vue-i18n";
+
 export default {
     components: { CustomSlide },
     props: ["singleProjectHeader", "imgList","video"],
+    setup() {
+        const { t } = useI18n();
+        return { t };
+    },
 };
 // console.log(imgList);
 </script>
@@ -15,7 +21,7 @@ export default {
                     <p
                         class="font-general-medium text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light mt-7 sm:mt-7 mb-7"
                     >
-                        {{ singleProjectHeader.singleProjectTitle }}
+                        {{ t(singleProjectHeader.singleProjectTitle) }}
                     </p>
                 </div>
                 <div class="flex sm:block justify-center">
@@ -26,7 +32,7 @@ export default {
                         ></i>
                         <span
                             class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-                            >{{ singleProjectHeader.singleProjectDate }}</span
+                            >{{ t(singleProjectHeader.singleProjectDate) }}</span
                         >
                     </div>
                     <div class="flex mt-10">
@@ -36,7 +42,7 @@ export default {
                         ></i>
                         <span
                             class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-                            >{{ singleProjectHeader.singleProjectTag }}</span
+                            >{{ t(singleProjectHeader.singleProjectTag) }}</span
                         >
                     </div>
                 </div>

@@ -70,9 +70,9 @@ const allProjects = [
   img: IMG_PROJECT.movieDb[0],
 	link: 'movie-db',
 	singleProjectHeader: {
-		singleProjectTitle: 'project.header.popularMyMoviezWebsite',
+		singleProjectTitle: 'popularMyMoviezWebsite',
 		singleProjectDate: "09 august 2023",
-		singleProjectTag: 'project.tag.frontend',
+		singleProjectTag: 'frontend',
 	},
 	projectImages: [{
 		id: 0,
@@ -109,28 +109,28 @@ const allProjects = [
 
 	],
 	projectInfo: {
-		clientHeading: 'project.info.clientHeading',
+		clientHeading: 'clientHeading',
 		companyInfos: [{
 			id: 1,
-			title: 'project.info.name',
-			details: 'project.info.MyMoviez',
+			title: 'name',
+			details: 'MyMoviez',
 		},
 		{
 			id: 2,
-			title: 'project.info.services',
-			details: 'project.info.movieRankingServices',
+			title: 'services',
+			details: 'movieRankingServices',
 		},
 		{
 			id: 3,
-			title: 'project.info.website',
+			title: 'website',
 			details: "https://mymoviez.vercel.app/",
 		},
 
 		],
-		objectivesHeading: 'project.info.objectivesHeading',
-		objectivesDetails: 'project.info.objective0',
+		objectivesHeading: 'objectivesHeading',
+		objectivesDetails: 'objective',
 		technologies: [{
-			title: 'project.info.technologiesTitle',
+			title: 'technologiesTitle',
 			techs: [
 				"HTML",
 				"CSS",
@@ -139,25 +139,25 @@ const allProjects = [
 				"Bootstrap5",
 			],
 		},],
-		projectDetailsHeading: 'project.info.challengeHeading',
+		projectDetailsHeading: 'challengeHeading',
 		projectDetails: [{
 			id: 1,
-			details: 'project.info.details0A',
+			details: 'details0A',
 		},
 		{
 			id: 2,
-			details: 'project.info.details0B',
+			details: 'details0B',
 		},
 		{
 			id: 3,
-			details: 'project.info.details0C',
+			details: 'details0C',
 		},
 		{
 			id: 4,
-			details: 'project.info.details0D',
+			details: 'details0D',
 		},
 		],
-		socialSharingsHeading: 'project.info.shareThis',
+		socialSharingsHeading: 'shareThis',
 		socialSharings: [{
 			id: 1,
 			name: "Twitter",
@@ -224,9 +224,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.tamtamTools',
+      singleProjectTitle: 'tamtamTools',
       singleProjectDate: "02 Apr 2023",
-      singleProjectTag: 'project.tag.frontend / project.tag.backend',
+      singleProjectTag: 'frontend / backend',
     },
     projectImages: [{
       id: 0,
@@ -246,27 +246,27 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.tamtamToolsLtd',
+        title: 'name',
+        details: 'tamtamToolsLtd',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.campaignGenerationServices',
+        title: 'services',
+        details: 'campaignGenerationServices',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://tamtamtools.com/",
       },
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective1',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Laravel",
           "PHP",
@@ -277,25 +277,25 @@ const allProjects = [
           "Bootstrap",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details1A',
+        details: 'details1A',
       },
       {
         id: 2,
-        details: 'project.info.details1B',
+        details: 'details1B',
       },
       {
         id: 3,
-        details: 'project.info.details1C',
+        details: 'details1C',
       },
       {
         id: 4,
-        details: 'project.info.details1D',
+        details: 'details1D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Instagram",
@@ -345,9 +345,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.elearn',
+      singleProjectTitle: 'elearn',
       singleProjectDate: "16 Jan 2023",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 1,
@@ -363,28 +363,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.eLearn',
+        title: 'name',
+        details: 'eLearn',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.uiDesignFrontendDevelopment',
+        title: 'services',
+        details: 'uiDesignFrontendDevelopment',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://websitedemos.net/online-courses-02/",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective2',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "HTML",
           "CSS",
@@ -393,25 +393,25 @@ const allProjects = [
           "PHP",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details2A',
+        details: 'details2A',
       },
       {
         id: 2,
-        details: 'project.info.details2B',
+        details: 'details2B',
       },
       {
         id: 3,
-        details: 'project.info.details2C',
+        details: 'details2C',
       },
       {
         id: 4,
-        details: 'project.info.details2D',
+        details: 'details2D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -482,9 +482,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.iAutoBusinessWebsite',
+      singleProjectTitle: 'iAutoBusinessWebsite',
       singleProjectDate: "04 mai 2023",
-      singleProjectTag: 'project.tag.frontend / project.tag.backend',
+      singleProjectTag: 'frontend / backend',
     },
     projectImages: [{
       id: 0,
@@ -516,28 +516,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.iAuto',
+        title: 'name',
+        details: 'iAuto',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.carStoreServices',
+        title: 'services',
+        details: 'carStoreServices',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://iauto.no/",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective3',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Laravel",
           "Vue.js",
@@ -548,25 +548,25 @@ const allProjects = [
           "JavaScript",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details3A',
+        details: 'details3A',
       },
       {
         id: 2,
-        details: 'project.info.details3B',
+        details: 'details3B',
       },
       {
         id: 3,
-        details: 'project.info.details3C',
+        details: 'details3C',
       },
       {
         id: 4,
-        details: 'project.info.details3D',
+        details: 'details3D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -627,9 +627,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.business',
+      singleProjectTitle: 'business',
       singleProjectDate: "18 Sep 2017",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 1,
@@ -645,28 +645,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.eBook',
+        title: 'name',
+        details: 'eBook',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.uiDesignFrontendDevelopment',
+        title: 'services',
+        details: 'uiDesignFrontendDevelopment',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://websitedemos.net/kathryn-ebook-author-02/",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective4',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Wordpress",
           "PHP",
@@ -676,25 +676,25 @@ const allProjects = [
           "jQuery",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details4A',
+        details: 'details4A',
       },
       {
         id: 2,
-        details: 'project.info.details4B',
+        details: 'details4B',
       },
       {
         id: 3,
-        details: 'project.info.details4C',
+        details: 'details4C',
       },
       {
         id: 4,
-        details: 'project.info.details4D',
+        details: 'details4D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -750,9 +750,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.blog',
+      singleProjectTitle: 'blog',
       singleProjectDate: "08 Mar 2020",
-      singleProjectTag: 'project.tag.frontend / project.tag.backend',
+      singleProjectTag: 'frontend / backend',
     },
     projectImages: [{
       id: 1,
@@ -768,28 +768,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.saadaahNews',
+        title: 'name',
+        details: 'saadaahNews',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.blogServices',
+        title: 'services',
+        details: 'blogServices',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://saadaahnews.com/",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective5',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Vue.js",
           "JavaScript",
@@ -798,29 +798,29 @@ const allProjects = [
           "CSS",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details5A',
+        details: 'details5A',
       },
       {
         id: 2,
-        details: 'project.info.details5B',
+        details: 'details5B',
       },
       {
         id: 3,
-        details: 'project.info.details5C',
+        details: 'details5C',
       },
       {
         id: 4,
-        details: 'project.info.details5D',
+        details: 'details5D',
       },
       {
         id: 4,
-        details: 'project.info.details5E',
+        details: 'details5E',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -882,9 +882,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.clothesStore',
+      singleProjectTitle: 'clothesStore',
       singleProjectDate: "24 Sep 2022",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 1,
@@ -900,28 +900,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.clothesStore',
+        title: 'name',
+        details: 'clothesStore',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.uiDesignFrontendDevelopment',
+        title: 'services',
+        details: 'uiDesignFrontendDevelopment',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://websitedemos.net/brandstore-02/",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective6',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Wordpress",
           "PHP",
@@ -931,25 +931,25 @@ const allProjects = [
           "jQuery",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details6A',
+        details: 'details6A',
       },
       {
         id: 2,
-        details: 'project.info.details6B',
+        details: 'details6B',
       },
       {
         id: 3,
-        details: 'project.info.details6C',
+        details: 'details6C',
       },
       {
         id: 4,
-        details: 'project.info.detailsCD',
+        details: 'detailsCD',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -1005,9 +1005,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.portfolio',
+      singleProjectTitle: 'portfolio',
       singleProjectDate: "20 Mar 2023",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 1,
@@ -1023,28 +1023,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.portfolio',
+        title: 'name',
+        details: 'portfolio',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.uiDesignFrontendDevelopment',
+        title: 'services',
+        details: 'uiDesignFrontendDevelopment',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://webpress-annaba.netlify.app/",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective7',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Vue.js",
           "HTML",
@@ -1053,25 +1053,25 @@ const allProjects = [
           "TailwindCSS",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details7A',
+        details: 'details7A',
       },
       {
         id: 2,
-        details: 'project.info.details7B',
+        details: 'details7B',
       },
       {
         id: 3,
-        details: 'project.info.details7C',
+        details: 'details7C',
       },
       {
         id: 4,
-        details: 'project.info.details7D',
+        details: 'details7D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -1134,9 +1134,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.imageGeneratorOpenAI',
+      singleProjectTitle: 'imageGeneratorOpenAI',
       singleProjectDate: "02 Apr 2023",
-      singleProjectTag: 'project.tag.frontend / project.tag.api',
+      singleProjectTag: 'frontend / api',
     },
     projectImages: [{
       id: 1,
@@ -1152,27 +1152,27 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.imageGenerator',
+        title: 'name',
+        details: 'imageGenerator',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.aiImageGeneration',
+        title: 'services',
+        details: 'aiImageGeneration',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "#",
       },
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective8',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Vue.js",
           "API",
@@ -1182,25 +1182,25 @@ const allProjects = [
           "HTML",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details8A',
+        details: 'details8A',
       },
       {
         id: 2,
-        details: 'project.info.details8B',
+        details: 'details8B',
       },
       {
         id: 3,
-        details: 'project.info.details8C',
+        details: 'details8C',
       },
       {
         id: 4,
-        details: 'project.info.details8D',
+        details: 'details8D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -1268,9 +1268,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.laravelVueEcommercePhone',
+      singleProjectTitle: 'laravelVueEcommercePhone',
       singleProjectDate: "26 Jul 2021",
-      singleProjectTag: 'project.tag.frontend / project.tag.backend',
+      singleProjectTag: 'frontend / backend',
     },
     projectImages: [{
       id: 0,
@@ -1322,28 +1322,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.eCommercePhoneStore',
+        title: 'name',
+        details: 'eCommercePhoneStore',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.phoneStoreServices',
+        title: 'services',
+        details: 'phoneStoreServices',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "#",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective9',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Laravel",
           "Vue.js",
@@ -1353,29 +1353,29 @@ const allProjects = [
           "HTML",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details9A',
+        details: 'details9A',
       },
       {
         id: 2,
-        details: 'project.info.details9B',
+        details: 'details9B',
       },
       {
         id: 3,
-        details: 'project.info.details9C',
+        details: 'details9C',
       },
       {
         id: 4,
-        details: 'project.info.details9D',
+        details: 'details9D',
       },
       {
         id: 5,
-        details: 'project.info.details9E',
+        details: 'details9E',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -1437,9 +1437,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.phonesStore',
+      singleProjectTitle: 'phonesStore',
       singleProjectDate: "26 Jul 2021",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 1,
@@ -1487,28 +1487,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.eCommercePhoneStore',
+        title: 'name',
+        details: 'eCommercePhoneStore',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.phoneStoreServices',
+        title: 'services',
+        details: 'phoneStoreServices',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "#",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective10',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective0',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Wordpress",
           "PHP",
@@ -1518,25 +1518,25 @@ const allProjects = [
           "JavaScript",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details10A',
+        details: 'details10A',
       },
       {
         id: 2,
-        details: 'project.info.details10B',
+        details: 'details10B',
       },
       {
         id: 3,
-        details: 'project.info.details10C',
+        details: 'details10C',
       },
       {
         id: 4,
-        details: 'project.info.details10D',
+        details: 'details10D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -1592,9 +1592,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.landingPage',
+      singleProjectTitle: 'landingPage',
       singleProjectDate: "26 Aug 2023",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 0,
@@ -1622,28 +1622,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.landingPage',
+        title: 'name',
+        details: 'landingPage',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.landingPage',
+        title: 'services',
+        details: 'landingPage',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://landing-page-next-react.netlify.app/",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective11',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective1',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "React",
           "Next",
@@ -1652,25 +1652,25 @@ const allProjects = [
           "JavaScript",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details11A',
+        details: 'details11A',
       },
       {
         id: 2,
-        details: 'project.info.details11B',
+        details: 'details11B',
       },
       {
         id: 3,
-        details: 'project.info.details11C',
+        details: 'details11C',
       },
       {
         id: 4,
-        details: 'project.info.details11D',
+        details: 'details11D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -1738,9 +1738,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.bashGate',
+      singleProjectTitle: 'bashGate',
       singleProjectDate: "31 Dec 2023",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 0,
@@ -1772,28 +1772,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.bashGate',
+        title: 'name',
+        details: 'bashGate',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.onlineServices',
+        title: 'services',
+        details: 'onlineServices',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://infogate.sa",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective12',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective2',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "React",
           "Laravel",
@@ -1802,25 +1802,25 @@ const allProjects = [
           "JavaScript",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details12A',
+        details: 'details12A',
       },
       {
         id: 2,
-        details: 'project.info.details12B',
+        details: 'details12B',
       },
       {
         id: 3,
-        details: 'project.info.details12C',
+        details: 'details12C',
       },
       {
         id: 4,
-        details: 'project.info.details12D',
+        details: 'details12D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -1882,9 +1882,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.stockifly',
+      singleProjectTitle: 'stockifly',
       singleProjectDate: "16 Oct 2022",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 0,
@@ -1912,28 +1912,28 @@ const allProjects = [
     }
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.stockifly',
+        title: 'name',
+        details: 'stockifly',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.onlineServices',
+        title: 'services',
+        details: 'onlineServices',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "#",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective13',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective3',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Laravel",
           "Vue",
@@ -1942,25 +1942,25 @@ const allProjects = [
           "JavaScript",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details13A',
+        details: 'details13A',
       },
       {
         id: 2,
-        details: 'project.info.details13B',
+        details: 'details13B',
       },
       {
         id: 3,
-        details: 'project.info.details13C',
+        details: 'details13C',
       },
       {
         id: 4,
-        details: 'project.info.details13D',
+        details: 'details13D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -2016,9 +2016,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.roxboro',
+      singleProjectTitle: 'roxboro',
       singleProjectDate: "03 Mar 2024",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 0,
@@ -2050,28 +2050,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.roxboro',
+        title: 'name',
+        details: 'roxboro',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.onlineServices',
+        title: 'services',
+        details: 'onlineServices',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://roxboro.ca",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective14',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective4',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Laravel",
           "PHP",
@@ -2079,25 +2079,25 @@ const allProjects = [
           "JavaScript",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details14A',
+        details: 'details14A',
       },
       {
         id: 2,
-        details: 'project.info.details14B',
+        details: 'details14B',
       },
       {
         id: 3,
-        details: 'project.info.details14C',
+        details: 'details14C',
       },
       {
         id: 4,
-        details: 'project.info.details14D',
+        details: 'details14D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -2153,9 +2153,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.garage',
+      singleProjectTitle: 'garage',
       singleProjectDate: "05 Dec 2023",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 0,
@@ -2183,28 +2183,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.garage',
+        title: 'name',
+        details: 'garage',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.onlineServices',
+        title: 'services',
+        details: 'onlineServices',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "#",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective15',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective5',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Laravel",
           "PHP",
@@ -2212,29 +2212,29 @@ const allProjects = [
           "JavaScript",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details15A',
+        details: 'details15A',
       },
       {
         id: 2,
-        details: 'project.info.details15B',
+        details: 'details15B',
       },
       {
         id: 3,
-        details: 'project.info.details15C',
+        details: 'details15C',
       },
       {
         id: 4,
-        details: 'project.info.details15D',
+        details: 'details15D',
       },
       {
         id: 5,
-        details: 'project.info.details15E',
+        details: 'details15E',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -2290,9 +2290,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.alphanex',
+      singleProjectTitle: 'alphanex',
       singleProjectDate: "16 Jan 2023",
-      singleProjectTag: 'project.tag.ui / project.tag.frontend',
+      singleProjectTag: 'ui / frontend',
     },
     projectImages: [{
       id: 1,
@@ -2312,28 +2312,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.alphanex',
+        title: 'name',
+        details: 'alphanex',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.uiDesignFrontendDevelopment',
+        title: 'services',
+        details: 'uiDesignFrontendDevelopment',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "https://alphanex.fr/",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective16',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective6',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "Wordpress",
           "CSS",
@@ -2341,25 +2341,25 @@ const allProjects = [
           "PHP",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details16A',
+        details: 'details16A',
       },
       {
         id: 2,
-        details: 'project.info.details16B',
+        details: 'details16B',
       },
       {
         id: 3,
-        details: 'project.info.details16C',
+        details: 'details16C',
       },
       {
         id: 4,
-        details: 'project.info.details16D',
+        details: 'details16D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",
@@ -2421,9 +2421,9 @@ const allProjects = [
     },
     ],
     singleProjectHeader: {
-      singleProjectTitle: 'project.header.eventManagement',
+      singleProjectTitle: 'eventManagement',
       singleProjectDate: "22 Feb 2025",
-      singleProjectTag: 'project.tag.backend / project.tag.frontend',
+      singleProjectTag: 'backend / frontend',
     },
     projectImages: [{
       id: 1,
@@ -2487,28 +2487,28 @@ const allProjects = [
     },
     ],
     projectInfo: {
-      clientHeading: 'project.info.clientHeading',
+      clientHeading: 'clientHeading',
       companyInfos: [{
         id: 1,
-        title: 'project.info.name',
-        details: 'project.info.newDay',
+        title: 'name',
+        details: 'newDay',
       },
       {
         id: 2,
-        title: 'project.info.services',
-        details: 'project.info.backendFrontendDevelopment',
+        title: 'services',
+        details: 'backendFrontendDevelopment',
       },
       {
         id: 3,
-        title: 'project.info.website',
+        title: 'website',
         details: "#",
       },
 
       ],
-      objectivesHeading: 'project.info.objectivesHeading',
-      objectivesDetails: 'project.info.objective17',
+      objectivesHeading: 'objectivesHeading',
+      objectivesDetails: 'objective7',
       technologies: [{
-        title: 'project.info.technologiesTitle',
+        title: 'technologiesTitle',
         techs: [
           "React",
           "Laravel",
@@ -2516,25 +2516,25 @@ const allProjects = [
           "PHP",
         ],
       },],
-      projectDetailsHeading: 'project.info.challengeHeading',
+      projectDetailsHeading: 'challengeHeading',
       projectDetails: [{
         id: 1,
-        details: 'project.info.details17A',
+        details: 'details17A',
       },
       {
         id: 2,
-        details: 'project.info.details17B',
+        details: 'details17B',
       },
       {
         id: 3,
-        details: 'project.info.details17C',
+        details: 'details17C',
       },
       {
         id: 4,
-        details: 'project.info.details17D',
+        details: 'details17D',
       },
       ],
-      socialSharingsHeading: 'project.info.shareThis',
+      socialSharingsHeading: 'shareThis',
       socialSharings: [{
         id: 1,
         name: "Twitter",

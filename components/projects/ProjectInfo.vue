@@ -1,6 +1,7 @@
 <script setup>
 import feather from 'feather-icons';
 import { onMounted, onUpdated } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 // Define props with proper typing
 const props = defineProps({
@@ -13,6 +14,9 @@ const props = defineProps({
     required: true
   }
 });
+
+// Setup i18n
+const { t } = useI18n();
 
 onMounted(() => {
   feather.replace();
@@ -30,18 +34,18 @@ onUpdated(() => {
 			<!-- Single project client details -->
 			<div class="mb-7">
 				<p class="font-general-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2">
-					{{ projectInfo.clientHeading }}
+					{{ t(projectInfo.clientHeading) }}
 				</p>
 				<ul class="leading-loose">
 					<li v-for="info in projectInfo.companyInfos" :key="info"
 						class="font-general-regular text-ternary-dark dark:text-ternary-light">
 						<div v-if="info.details != '#'">
-							<span>{{ info.title }}: </span>
-							<a :href=info.details :class="info.title == 'Website' || info.title == 'Phone'
+							<span>{{ t(info.title) }}: </span>
+							<a :href="info.details" :class="info.title == 'Website' || info.title == 'Phone'
 								? 'hover:underline cursor-pointer'
-								: ''
-								" aria-label="Project Website and Phone" target="_blank">
-								{{ info.details }}
+								: ''"
+								aria-label="Project Website and Phone" target="_blank">
+								{{ t(info.details.replace('project.info.','')) }} 
 							</a>
 						</div>
 					</li>
@@ -51,17 +55,17 @@ onUpdated(() => {
 			<!-- Single project objectives -->
 			<div class="mb-7">
 				<p class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2">
-					{{ projectInfo.objectivesHeading }}
+					{{ t(projectInfo.objectivesHeading) }}
 				</p>
 				<p class="font-general-regular text-primary-dark dark:text-ternary-light">
-					{{ projectInfo.objectivesDetails }}
+					{{ t(projectInfo.objectivesDetails) }}
 				</p>
 			</div>
 
 			<!-- Single project technologies -->
 			<div class="mb-7">
 				<p class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2">
-					{{ projectInfo.technologies[0].title }}
+					{{ t(projectInfo.technologies[0].title) }}
 				</p>
 				<!-- <p class="font-general-regular text-primary-dark dark:text-ternary-light">
 					{{ projectInfo.technologies[0].techs.join(', ') }}
@@ -78,7 +82,7 @@ onUpdated(() => {
 		<!-- Single project social sharing -->
 		<div>
 			<p class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2">
-				{{ projectInfo.socialSharingsHeading }}
+				{{ t(projectInfo.socialSharingsHeading) }}
 			</p>
 			<div class="flex items-center gap-3 mt-5">
 				<a v-for="social in projectInfo.socialSharings" :key="social.id" :href="social.url" target="__blank"
@@ -92,11 +96,11 @@ onUpdated(() => {
 	<!-- Single project right section details -->
 	<div class="w-full sm:w-2/3 text-left mt-10 sm:mt-0">
 		<p class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
-			{{ projectInfo.projectDetailsHeading }}
+			{{ t(projectInfo.projectDetailsHeading) }}
 		</p>
 		<p v-for="projectDetail in projectInfo.projectDetails" :key="projectDetail.id"
 			class="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light">
-			{{ projectDetail.details }}
+			{{ t(projectDetail.details) }}
 		</p>
 	</div>
 </div>
