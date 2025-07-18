@@ -53,23 +53,25 @@ import getProjects from '@/data/projects';
 import settings from '@/configs';
 import { useI18n } from 'vue-i18n';
 
-const { t }=useI18n({ inheritLocale: true, useScope: 'global' });
-const projects = getProjects(t);
-const projectsHeading=t('Projects I worked On');
+const { t } = useI18n({ inheritLocale: true, useScope: 'global' });
 
-const selectedCategory=ref('');
-const searchProject=ref('');
-const props=defineProps({
+const projects = computed(() => getProjects(t));
+const projectsHeading = computed(() => t('Projects I worked On'));
+
+const selectedCategory = ref('');
+const searchProject = ref('');
+const props = defineProps({
   full: String
 })
-const filteredProjects=computed(() => {
+
+const filteredProjects = computed(() => {
   let filtered;
   if (selectedCategory.value) {
     filtered = filterProjectsByCategory();
   } else if (searchProject.value) {
     filtered = filterProjectsBySearch();
   } else {
-    filtered = projects;
+    filtered = projects.value;
   }
   
   // Sort projects according to settings.full_list order
@@ -94,7 +96,6 @@ const filteredProjects=computed(() => {
   });
 });
 
-
 const getShortList = computed(() => {
     const selectedIds = settings.home_list;
     // const selectedIds = [3, 4, 5, 6, 7, 14, 15];
@@ -108,20 +109,20 @@ const getShortList = computed(() => {
     });
 });
 
-const filterProjectsByCategory=() => {
-  return projects.filter((item) => {
-    const category=
-      item.category.charAt(0).toUpperCase()+item.category.slice(1);
+const filterProjectsByCategory = () => {
+  return projects.value.filter((item) => {
+    const category =
+      item.category.charAt(0).toUpperCase() + item.category.slice(1);
     return category.includes(selectedCategory.value);
   });
 };
 
-const filterProjectsBySearch=() => {
-  const project=new RegExp(searchProject.value, 'i');
-  return projects.filter((el) => el.title.match(project));
+const filterProjectsBySearch = () => {
+  const project = new RegExp(searchProject.value, 'i');
+  return projects.value.filter((el) => el.title.match(project));
 };
 
-const getSpecificProjectsList=(indices) => {
+const getSpecificProjectsList = (indices) => {
   return indices.map((index) => filteredProjects.value[index]);
 };
 

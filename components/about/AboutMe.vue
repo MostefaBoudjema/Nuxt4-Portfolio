@@ -27,19 +27,20 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n';
+import { computed } from 'vue';
 import settings from '~/configs';
 import DownloadCv from '@/components/shared/DownloadCv.vue';
 import ContactBtn from '@/components/shared/ContactBtn.vue';
 
 const { t } = useI18n();
 
-const bios=[
+const bios = computed(() => [
   { id: 1, bio: t('AboutMe1') },
   { id: 2, bio: t('AboutMe2') },
   { id: 3, bio: t('AboutMe3') },
   { id: 4, bio: t('AboutMe4') },
   { id: 5, bio: t('AboutMe5') },
-];
+]);
 </script>
 
 <style scoped></style>

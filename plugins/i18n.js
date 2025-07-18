@@ -18,4 +18,5 @@ export default defineNuxtPlugin((nuxtApp) => {
     messages: { en, ar }
   })
   nuxtApp.vueApp.use(i18n)
+  nuxtApp.provide('i18n', i18n.global) // Provide i18n instance for global access
 }) 

@@ -27,7 +27,7 @@ const props = defineProps({
 
 const { t } = useI18n({
   inheritLocale: true,
-  useScope: 'local',
+  useScope: 'global',
 });
 </script>
 

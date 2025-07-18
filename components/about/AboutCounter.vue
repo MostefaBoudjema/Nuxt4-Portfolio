@@ -46,6 +46,7 @@
 <script>
 import counter from "vue3-autocounter";
 import { useI18n } from 'vue-i18n';
+import { computed } from 'vue';
 
 export default {
     components: {
@@ -54,11 +55,16 @@ export default {
     setup() {
         const { t } = useI18n();
         
+        const experienceTitle = computed(() => t("Years of experience"));
+        const githubTitle = computed(() => t("Stars on GitHub"));
+        const feedbackTitle = computed(() => t("Positive feedback"));
+        const projectsTitle = computed(() => t("Projects completed"));
+        
         return {
-            experienceTitle: t("Years of experience"),
-            githubTitle: t("Stars on GitHub"),
-            feedbackTitle: t("Positive feedback"),
-            projectsTitle: t("Projects completed"),
+            experienceTitle,
+            githubTitle,
+            feedbackTitle,
+            projectsTitle,
             currentYear: new Date().getFullYear(),
             currentYearMinus2017: 0,
         };

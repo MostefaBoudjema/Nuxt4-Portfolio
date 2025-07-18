@@ -32,7 +32,7 @@ import AboutBtn from './AboutBtn.vue';
 
 const { t }=useI18n({
   inheritLocale: true,
-  useScope: 'local',
+  useScope: 'global',
 });
 
 const jobTitles = [

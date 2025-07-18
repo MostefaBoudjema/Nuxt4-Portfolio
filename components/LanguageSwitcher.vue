@@ -1,8 +1,11 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
 import { ref, defineProps, defineEmits, computed } from 'vue';
+import gsap from 'gsap';
+import { useNuxtApp } from '#app';
+import useLangSwitcher from '~/composables/useLangSwitcher';
 
-const props=defineProps({
+const props = defineProps({
 	lang: {
 		type: String,
 		required: true,
@@ -13,20 +16,45 @@ const props=defineProps({
 	},
 });
 
-const emit=defineEmits(['lang-changed']);
+const emit = defineEmits(['lang-changed']);
 
-const { t }=useI18n({
+const { t, locale } = useI18n({
 	inheritLocale: true,
-	useScope: 'local',
+	useScope: 'global',
 });
 
-const nextLang = computed(() => props.lang === 'en' ? 'en' : 'ar');
+const { $i18n } = useNuxtApp();
+const { currentLang, toggleLang } = useLangSwitcher();
 
-const togglelang=() => {
-	const newlang=props.lang==='ar'? 'en':'ar';
-	localStorage.setItem('lang', newlang);
-	emit('lang-changed', newlang);
-	location.reload(); // Refresh the page
+const nextLang = computed(() => locale.value === 'ar' ? 'ar' : 'en');
+
+const togglelang = () => {
+  const mainContent = document.querySelector('.main-content');
+  const newlang = locale.value === 'ar' ? 'en' : 'ar';
+  
+  if (mainContent) {
+    gsap.to(mainContent, {
+      scale: 0.95,
+      opacity: 0,
+      duration: 0.3,
+      ease: 'power1.in',
+      onComplete: () => {
+        locale.value = newlang;
+        localStorage.setItem('lang', newlang);
+        emit('lang-changed', newlang);
+        gsap.fromTo(mainContent, { scale: 1.05, opacity: 0 }, {
+          scale: 1,
+          opacity: 1,
+          duration: 0.4,
+          ease: 'power1.out',
+        });
+      }
+    });
+  } else {
+    locale.value = newlang;
+    localStorage.setItem('lang', newlang);
+    emit('lang-changed', newlang);
+  }
 };
 </script>
 

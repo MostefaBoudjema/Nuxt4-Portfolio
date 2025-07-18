@@ -76,7 +76,7 @@ onUpdated(() => {
                 </div>
                 <div class="flex items-end gap-3">
                     <language-switcher v-if="settings.show_multi_lang" :lang="lang" :theme="theme"
-                        @themeChanged="updateLang"
+                        @lang-changed="updateLang"
                         class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
                     <!-- Theme switcher small screen -->
                     <theme-switcher :theme="theme" @themeChanged="updateTheme"
@@ -108,7 +108,7 @@ onUpdated(() => {
 
 
                 <language-switcher v-if="settings.show_multi_lang" :lang="lang" :theme="theme"
-                    @themeChanged="updateLang"
+                    @lang-changed="updateLang"
                     class="bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
 
                 <!-- Hire me button -->
