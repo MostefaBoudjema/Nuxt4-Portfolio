@@ -39,6 +39,7 @@ const jobTitles = [
   t("Job Title1"),
   t("Job Title2"),
   t("Job Title3"),
+  t("Job Title4"),
 ];
 const currentJobTitleIndex = ref(0);
 const displayedText = ref("");
