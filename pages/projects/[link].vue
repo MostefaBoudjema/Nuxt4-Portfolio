@@ -6,7 +6,7 @@ import ProjectInfo from "@/components/projects/ProjectInfo.vue";
 import ProjectRelatedProjects from "@/components/projects/ProjectRelatedProjects.vue";
 
 import relatedProject from "@/data/relatedProjects";
-import projects from "@/data/projects";
+import getProjects from "@/data/projects";
 
 // import { blog } from "@/data/projectInfos";
 import { ref, watch, onMounted, onUpdated } from "vue";
@@ -20,7 +20,7 @@ const route = useRoute();
 const project = ref(null);
 
 function fetchProject() {
-  project.value = projects.find(p => p.link === route.params.link) || null;
+  project.value = getProjects(t).find(p => p.link === route.params.link) || null;
   if (project.value) {
     useHead({
       title: `Mostefa Boudjema - ${project.value.title || project.value.name || 'Project'}`

@@ -49,11 +49,12 @@ import { ref, computed, onMounted, defineProps } from 'vue';
 import feather from 'feather-icons';
 import ProjectsFilter from './ProjectsFilter.vue';
 import ProjectSingle from './ProjectSingle.vue';
-import projects from '@/data/projects';
+import getProjects from '@/data/projects';
 import settings from '@/configs';
 import { useI18n } from 'vue-i18n';
 
 const { t }=useI18n({ inheritLocale: true, useScope: 'global' });
+const projects = getProjects(t);
 const projectsHeading=t('Projects I worked On');
 
 const selectedCategory=ref('');

@@ -15,13 +15,16 @@ const { t } = useI18n({
 });
 
 const randomItems = computed(() => {
+    console.log('relatedProject:', props.relatedProject);
+    const arr = Array.isArray(props.relatedProject.relatedProjects)
+        ? props.relatedProject.relatedProjects
+        : [];
     // Shuffle the items array using Fisher-Yates shuffle algorithm
-    const shuffled = props.relatedProject.relatedProjects.slice(0);
+    const shuffled = arr.slice(0);
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
-
     // Take the first 4 items from the shuffled array
     return shuffled.slice(0, 4);
 });

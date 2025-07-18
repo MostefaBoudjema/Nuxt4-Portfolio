@@ -20,7 +20,7 @@ const { t }=useI18n({
 	useScope: 'local',
 });
 
-const nextLang = computed(() => props.lang === 'ar' ? 'en' : 'ar');
+const nextLang = computed(() => props.lang === 'en' ? 'en' : 'ar');
 
 const togglelang=() => {
 	const newlang=props.lang==='ar'? 'en':'ar';
