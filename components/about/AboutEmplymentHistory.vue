@@ -37,7 +37,7 @@ export default {
             <div class="flex justify-center md:justify-between items-center">
                 <NuxtImg class="w-24 py-3 px-2 border shadow-sm rounded-lg m-1 cursor-pointer dark:bg-secondary-light"
                     :src="job.logo" alt="logo" />
-                <div class="flex-1 md:ml-4 mt-4 md:mt-0">
+                <div class="flex-1 mx-2 justify-center md:ml-4 mt-4 md:mt-0">
                     <h2 class="text-xl font-semibold">{{ t(job.title) }}</h2>
                     <p class="">{{ t(job.company) }}</p>
                     <p class="">{{ t(job.startDate) }} - {{ t(job.endDate) }}</p>
