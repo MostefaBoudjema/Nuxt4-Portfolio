@@ -576,7 +576,7 @@ const allProjects=[
       { id: 4, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "iAuto Business Website",
+      singleProjectTitle: "iAuto - Car dealership web app",
       singleProjectDate: "04 mai 2023",
       singleProjectTag: " Frontend / Backend",
     },
