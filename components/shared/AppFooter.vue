@@ -34,7 +34,7 @@ onUpdated(() => {
                 >
                     {{ t("Contact me") }}
                 </p>
-                <ul class="flex gap-6 sm:gap-10">
+                <ul class="flex gap-2 sm:gap-10">
                     <a
                         v-for="social in socials"
                         :key="social.id"
