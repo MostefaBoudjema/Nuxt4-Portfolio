@@ -1,20 +1,20 @@
-<script>
-export default {
-	props: {
-		label: {
-			type: String,
-			default: '',
-		},
-		textareaIdentifier: {
-			type: String,
-			default: '',
-		},
-		modelValue: {
-			type: [String, Number],
-			default: '',
-		},
+<script setup>
+defineProps({
+	label: {
+		type: String,
+		default: '',
 	},
-};
+	textareaIdentifier: {
+		type: String,
+		default: '',
+	},
+	modelValue: {
+		type: [String, Number],
+		default: '',
+	},
+});
+
+defineEmits(['update:modelValue']);
 </script>
 
 <template>

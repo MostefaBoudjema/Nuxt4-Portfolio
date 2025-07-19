@@ -1,24 +1,12 @@
-<script>
+<script setup>
 import AboutClientSingle from "./AboutClientSingle.vue";
 import clients from '@/data/clients';
 import { useI18n } from 'vue-i18n';
 import { computed } from 'vue';
 
-export default {
-    components: {
-        AboutClientSingle,
-    },
-    setup() {
-        const { t } = useI18n();
-        
-        const clientsHeading = computed(() => t("Some of the brands I have worked with"));
-        
-        return {
-            clientsHeading,
-            clients: clients,
-        };
-    },
-};
+const { t } = useI18n();
+
+const clientsHeading = computed(() => t("Some of the brands I have worked with"));
 </script>
 
 <template>

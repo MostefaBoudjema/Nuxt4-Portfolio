@@ -113,17 +113,180 @@
 	</div>
 </template>
 
-<script>
+<script setup>
+import { ref, computed, onBeforeUnmount } from 'vue';
 import Button from '@/components/reusable/Button.vue';
 import FormInput from '@/components/reusable/FormInput.vue';
 import FormTextarea from '@/components/reusable/FormTextarea.vue';
 
-export default {
-	components: { Button, FormInput, FormTextarea },
-	data() {
-		return {
-			currentStep: 0,
-			formData: {
+const currentStep = ref(0);
+const formData = ref({
+	fullName: '',
+	email: '',
+	phone: '',
+	subject: '',
+	projectType: '',
+	budget: '',
+	budgetCustom: '',
+	timeline: '',
+	timelineCustom: '',
+	message: '',
+});
+
+const steps = ref([
+	{
+		label: 'What is this regarding?',
+		field: 'subject',
+		type: 'text',
+		placeholder: 'Enter the subject',
+		validation: (value) => value.length >= 3
+	},
+	{
+		label: 'What type of project are you interested in?',
+		field: 'projectType',
+		type: 'select',
+		placeholder: 'Select project type',
+		options: [
+			{ value: 'web-development', label: 'Web Development' },
+			{ value: 'ecommerce', label: 'E-commerce Solution' },
+			{ value: 'cms', label: 'Content Management System' },
+			{ value: 'api-development', label: 'API Development' },
+			{ value: 'maintenance', label: 'Website Maintenance' },
+			{ value: 'other', label: 'Other' }
+		],
+		validation: (value) => value !== ''
+	},
+	{
+		label: 'What is your budget range?',
+		field: 'budget',
+		type: 'select',
+		placeholder: 'Select budget range',
+		options: [
+			{ value: 'under-1000', label: 'Under $1,000' },
+			{ value: '1000-5000', label: '$1,000 - $5,000' },
+			{ value: '5000-10000', label: '$5,000 - $10,000' },
+			{ value: '10000-25000', label: '$10,000 - $25,000' },
+			{ value: '25000-plus', label: '$25,000+' },
+			{ value: 'other', label: 'Other' }
+		],
+		validation: (value) => value !== ''
+	},
+	{
+		label: 'What is your timeframe?',
+		field: 'timeline',
+		type: 'select',
+		placeholder: 'Select timeframe',
+		options: [
+			{ value: 'asap', label: 'ASAP' },
+			{ value: '1-2-weeks', label: '1-2 weeks' },
+			{ value: '1-month', label: '1 month' },
+			{ value: '2-3-months', label: '2-3 months' },
+			{ value: '3-6-months', label: '3-6 months' },
+			{ value: 'other', label: 'Other' }
+		],
+		validation: (value) => value !== ''
+	},
+	{
+		label: 'What would you like to tell us?',
+		field: 'message',
+		type: 'textarea',
+		placeholder: 'Enter your message',
+		validation: (value) => value.length >= 10
+	},
+	{
+		label: 'What is your name?',
+		field: 'fullName',
+		type: 'text',
+		placeholder: 'Enter your full name',
+		validation: (value) => value.length >= 2
+	},
+	{
+		label: 'What is your email address?',
+		field: 'email',
+		type: 'email',
+		placeholder: 'Enter your email',
+		validation: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+	},
+	{
+		label: 'What is your phone number?',
+		field: 'phone',
+		type: 'phone',
+		placeholder: 'Enter your phone number',
+		validation: (value) => /^[0-9+\s]{10,}$/.test(value)
+	}
+]);
+
+const isSubmitting = ref(false);
+const submissionError = ref(null);
+const submissionSuccess = ref(false);
+const successTimeout = ref(null);
+
+const currentQuestion = computed(() => {
+	return steps.value[currentStep.value];
+});
+
+const isLastStep = computed(() => {
+	return currentStep.value === steps.value.length - 1;
+});
+
+const isCurrentStepValid = computed(() => {
+	const currentField = currentQuestion.value.field;
+	const value = formData.value[currentField];
+	return currentQuestion.value.validation(value);
+});
+
+function nextStep() {
+	if (currentStep.value < steps.value.length - 1) {
+		currentStep.value++;
+	}
+}
+
+function previousStep() {
+	if (currentStep.value > 0) {
+		currentStep.value--;
+	}
+}
+
+async function submitForm() {
+	if (!isCurrentStepValid.value) return;
+
+	isSubmitting.value = true;
+	submissionError.value = null;
+	submissionSuccess.value = false;
+
+	// Clear any existing timeout
+	if (successTimeout.value) {
+		clearTimeout(successTimeout.value);
+	}
+
+	try {
+		// Prepare form data, using custom values if "other" is selected
+		const formDataToSend = {
+			...formData.value,
+			budget: formData.value.budget === 'other' ? formData.value.budgetCustom : formData.value.budget,
+			timeline: formData.value.timeline === 'other' ? formData.value.timelineCustom : formData.value.timeline
+		};
+
+		const apiUrl = process.env.API_URL || 'https://backend-mostefa-boudjema.vercel.app';
+		const response = await fetch(`${apiUrl}/send-email`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(formDataToSend),
+		});
+
+		const data = await response.json();
+
+		if (response.ok) {
+			submissionSuccess.value = true;
+			// Set timeout to hide success message and redirect to home page
+			successTimeout.value = setTimeout(() => {
+				submissionSuccess.value = false;
+				window.location.href = '/';
+			}, 5000);
+			// Reset form
+			formData.value = {
 				fullName: '',
 				email: '',
 				phone: '',
@@ -134,189 +297,25 @@ export default {
 				timeline: '',
 				timelineCustom: '',
 				message: '',
-			},
-			steps: [
-				{
-					label: 'What is this regarding?',
-					field: 'subject',
-					type: 'text',
-					placeholder: 'Enter the subject',
-					validation: (value) => value.length >= 3
-				},
-				{
-					label: 'What type of project are you interested in?',
-					field: 'projectType',
-					type: 'select',
-					placeholder: 'Select project type',
-					options: [
-						{ value: 'web-development', label: 'Web Development' },
-						{ value: 'ecommerce', label: 'E-commerce Solution' },
-						{ value: 'cms', label: 'Content Management System' },
-						{ value: 'api-development', label: 'API Development' },
-						{ value: 'maintenance', label: 'Website Maintenance' },
-						{ value: 'other', label: 'Other' }
-					],
-					validation: (value) => value !== ''
-				},
-				{
-					label: 'What is your budget range?',
-					field: 'budget',
-					type: 'select',
-					placeholder: 'Select budget range',
-					options: [
-						{ value: 'under-1000', label: 'Under $1,000' },
-						{ value: '1000-5000', label: '$1,000 - $5,000' },
-						{ value: '5000-10000', label: '$5,000 - $10,000' },
-						{ value: '10000-25000', label: '$10,000 - $25,000' },
-						{ value: '25000-plus', label: '$25,000+' },
-						{ value: 'other', label: 'Other' }
-					],
-					validation: (value) => value !== ''
-				},
-				{
-					label: 'What is your timeframe?',
-					field: 'timeline',
-					type: 'select',
-					placeholder: 'Select timeframe',
-					options: [
-						{ value: 'asap', label: 'ASAP' },
-						{ value: '1-2-weeks', label: '1-2 weeks' },
-						{ value: '1-month', label: '1 month' },
-						{ value: '2-3-months', label: '2-3 months' },
-						{ value: '3-6-months', label: '3-6 months' },
-						{ value: 'other', label: 'Other' }
-					],
-					validation: (value) => value !== ''
-				},
-				{
-					label: 'What would you like to tell us?',
-					field: 'message',
-					type: 'textarea',
-					placeholder: 'Enter your message',
-					validation: (value) => value.length >= 10
-				},
-				{
-					label: 'What is your name?',
-					field: 'fullName',
-					type: 'text',
-					placeholder: 'Enter your full name',
-					validation: (value) => value.length >= 2
-				},
-				{
-					label: 'What is your email address?',
-					field: 'email',
-					type: 'email',
-					placeholder: 'Enter your email',
-					validation: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
-				},
-				{
-					label: 'What is your phone number?',
-					field: 'phone',
-					type: 'phone',
-					placeholder: 'Enter your phone number',
-					validation: (value) => /^[0-9+\s]{10,}$/.test(value)
-				}
-			],
-			isSubmitting: false,
-			submissionError: null,
-			submissionSuccess: false,
-			successTimeout: null,
-		};
-	},
-	computed: {
-		currentQuestion() {
-			return this.steps[this.currentStep];
-		},
-		isLastStep() {
-			return this.currentStep === this.steps.length - 1;
-		},
-		isCurrentStepValid() {
-			const currentField = this.currentQuestion.field;
-			const value = this.formData[currentField];
-			return this.currentQuestion.validation(value);
+			};
+			currentStep.value = 0;
+		} else {
+			submissionError.value = data.message || 'Failed to send message';
 		}
-	},
-	methods: {
-		nextStep() {
-			if (this.currentStep < this.steps.length - 1) {
-				this.currentStep++;
-			}
-		},
-		previousStep() {
-			if (this.currentStep > 0) {
-				this.currentStep--;
-			}
-		},
-		async submitForm() {
-			if (!this.isCurrentStepValid) return;
+	} catch (error) {
+		console.error('Error submitting form:', error);
+		submissionError.value = 'An error occurred while submitting the form. Please try again later.';
+	} finally {
+		isSubmitting.value = false;
+	}
+}
 
-			this.isSubmitting = true;
-			this.submissionError = null;
-			this.submissionSuccess = false;
-
-			// Clear any existing timeout
-			if (this.successTimeout) {
-				clearTimeout(this.successTimeout);
-			}
-
-			try {
-				// Prepare form data, using custom values if "other" is selected
-				const formDataToSend = {
-					...this.formData,
-					budget: this.formData.budget === 'other' ? this.formData.budgetCustom : this.formData.budget,
-					timeline: this.formData.timeline === 'other' ? this.formData.timelineCustom : this.formData.timeline
-				};
-
-				const apiUrl = process.env.API_URL || 'https://backend-mostefa-boudjema.vercel.app';
-				const response = await fetch(`${apiUrl}/send-email`, {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					body: JSON.stringify(formDataToSend),
-				});
-
-				const data = await response.json();
-
-				if (response.ok) {
-					this.submissionSuccess = true;
-					// Set timeout to hide success message and redirect to home page
-					this.successTimeout = setTimeout(() => {
-						this.submissionSuccess = false;
-						this.$router.push('/');
-					}, 5000);
-					// Reset form
-					this.formData = {
-						fullName: '',
-						email: '',
-						phone: '',
-						subject: '',
-						projectType: '',
-						budget: '',
-						budgetCustom: '',
-						timeline: '',
-						timelineCustom: '',
-						message: '',
-					};
-					this.currentStep = 0;
-				} else {
-					this.submissionError = data.message || 'Failed to send message';
-				}
-			} catch (error) {
-				console.error('Error submitting form:', error);
-				this.submissionError = 'An error occurred while submitting the form. Please try again later.';
-			} finally {
-				this.isSubmitting = false;
-			}
-		},
-	},
-	beforeUnmount() {
-		// Clear timeout when component is unmounted
-		if (this.successTimeout) {
-			clearTimeout(this.successTimeout);
-		}
-	},
-};
+onBeforeUnmount(() => {
+	// Clear timeout when component is unmounted
+	if (successTimeout.value) {
+		clearTimeout(successTimeout.value);
+	}
+});
 </script>
 
 <style lang="scss" scoped>

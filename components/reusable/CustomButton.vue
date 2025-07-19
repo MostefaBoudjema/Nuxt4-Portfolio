@@ -9,17 +9,14 @@
     </button>
   </template>
   
-  <script>
-  export default {
-    props: {
-      title: String,
-      color: String,
-    },
-    methods: {
-      onClick() {
-        // Emit a custom event here if needed
-      }
-    }
+  <script setup>
+  const props = defineProps({
+    title: String,
+    color: String,
+  });
+
+  const onClick = () => {
+    // Emit a custom event here if needed
   };
   </script>
   

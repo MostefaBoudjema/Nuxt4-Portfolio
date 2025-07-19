@@ -1,16 +1,9 @@
-<script>
+<script setup>
 import CustomSlide from "@/components/reusable/CustomSlide.vue";
 import { useI18n } from "vue-i18n";
 
-export default {
-    components: { CustomSlide },
-    props: ["singleProjectHeader", "imgList","video"],
-    setup() {
-        const { t } = useI18n();
-        return { t };
-    },
-};
-// console.log(imgList);
+const props = defineProps(["singleProjectHeader", "imgList", "video"]);
+const { t } = useI18n();
 </script>
 
 <template>

@@ -1,42 +1,29 @@
-<script>
+<script setup>
 import { useI18n } from "vue-i18n";
-// import i18n from '@/i18n';
-// const { t } = i18n.global;
-export default {
-    setup() {
-        const { t } = useI18n({
-            inheritLocale: true,
-            useScope: "global",
-        });
 
-        
-
-        return { t };
-    },
-	props: {
-		
-		select: {
-			type: String,
-			default: 'projects',
-			required: true,
-		},
-		selectOptions: {
-			
-			type: Array,
-			default: () => [
-				// t('Ecommerce'),
-				// t('Elearn'),
-				// t('Business Website'),
-				// t('Blogs'),
-				// t('Portfolio'),
-				'Laravel',
-				'Wordpress',
-				'Vue',
-				'React',
-			],
-		},
+const props = defineProps({
+	select: {
+		type: String,
+		default: 'projects',
+		required: true,
 	},
-};
+	selectOptions: {
+		type: Array,
+		default: () => [
+			'Laravel',
+			'Wordpress',
+			'Vue',
+			'React',
+		],
+	},
+});
+
+const { t } = useI18n({
+	inheritLocale: true,
+	useScope: "global",
+});
+
+defineEmits(['filter']);
 </script>
 
 <template>

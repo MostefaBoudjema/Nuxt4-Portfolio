@@ -57,77 +57,62 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { computed } from 'vue';
 import posts from '../../data/posts.js';
 
-export default {
-  name: 'RelatedPosts',
-  props: {
-    currentPost: {
-      type: Object,
-      required: true
-    },
-    maxPosts: {
-      type: Number,
-      default: 3
-    }
+const props = defineProps({
+  currentPost: {
+    type: Object,
+    required: true
   },
-  computed: {
-    relatedPosts() {
-      if (!this.currentPost) return [];
-      
-      const currentTags = this.currentPost.tags || [];
-      const currentCategory = this.currentPost.category;
-      
-      // Find posts with similar tags or category, excluding current post
-      const related = posts
-        .filter(post => 
-          post.id !== this.currentPost.id && 
-          post.published !== false
-        )
-        .map(post => {
-          let score = 0;
-          
-          // Score based on matching tags
-          if (post.tags) {
-            const matchingTags = post.tags.filter(tag => 
-              currentTags.some(currentTag => 
-                currentTag.toLowerCase().includes(tag.toLowerCase()) ||
-                tag.toLowerCase().includes(currentTag.toLowerCase())
-              )
-            );
-            score += matchingTags.length * 2;
-          }
-          
-          // Score based on matching category
-          if (post.category && currentCategory && 
-              post.category.toLowerCase() === currentCategory.toLowerCase()) {
-            score += 3;
-          }
-          
-          return { ...post, score };
-        })
-        .filter(post => post.score > 0)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, this.maxPosts);
-      
-      return related;
-    }
-  },
-  methods: {
-    formatDate(dateString) {
-      const date = new Date(dateString);
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric'
-      });
-    },
-    navigateToPost(slug) {
-      this.$router.push(`/blog/${slug}`);
-    }
+  maxPosts: {
+    type: Number,
+    default: 3
   }
-};
+});
+
+const relatedPosts = computed(() => {
+  if (!props.currentPost) return [];
+  const currentTags = props.currentPost.tags || [];
+  const currentCategory = props.currentPost.category;
+  const related = posts
+    .filter(post => post.id !== props.currentPost.id && post.published !== false)
+    .map(post => {
+      let score = 0;
+      if (post.tags) {
+        const matchingTags = post.tags.filter(tag =>
+          currentTags.some(currentTag =>
+            currentTag.toLowerCase().includes(tag.toLowerCase()) ||
+            tag.toLowerCase().includes(currentTag.toLowerCase())
+          )
+        );
+        score += matchingTags.length * 2;
+      }
+      if (post.category && currentCategory && post.category.toLowerCase() === currentCategory.toLowerCase()) {
+        score += 3;
+      }
+      return { ...post, score };
+    })
+    .filter(post => post.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, props.maxPosts);
+  return related;
+});
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
+}
+
+function navigateToPost(slug) {
+  // Use Nuxt navigateTo composable or router push
+  window.location.href = `/blog/${slug}`;
+}
 </script>
 
 <style scoped>

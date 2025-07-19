@@ -1,7 +1,5 @@
-<script>
-export default {
-    props: ["projectImages"],
-};
+<script setup>
+defineProps(["projectImages"]);
 </script>
 
 <template>

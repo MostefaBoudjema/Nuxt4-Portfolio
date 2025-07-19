@@ -1,3 +1,13 @@
+<script setup>
+import BlogPost from './BlogPost.vue';
+import posts from '../../data/posts.js';
+
+const filteredPosts = posts.filter(post => post.published).map(post => ({
+  ...post,
+  image: `https://picsum.photos/600/300?random=${post.id}`
+}));
+</script>
+
 <template>
   <div class="container mx-auto">
     <div class="blog-list font-general-regular text-ternary-dark dark:text-ternary-light">
@@ -7,36 +17,13 @@
       </p>
     </div>
       <BlogPost
-        v-for="post in posts"
+        v-for="post in filteredPosts"
         :key="post.id"
         :post="post"
       />
     </div>
   </div>
 </template>
-
-<script>
-import BlogPost from './BlogPost.vue';
-import posts from '../../data/posts.js';
-
-export default {
-  name: 'BlogList',
-  components: {
-    BlogPost
-  },
-  data() {
-    return {
-      posts: posts.filter(post => post.published).map(post => ({
-        ...post,
-        image: `https://picsum.photos/600/300?random=${post.id}`
-      }))
-    };
-  },
-  created() {
-    // No need to reassign posts here, logic moved to data()
-  }
-}
-</script>
 
 <style scoped>
 .blog-list {

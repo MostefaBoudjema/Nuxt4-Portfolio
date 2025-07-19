@@ -1,7 +1,5 @@
-<script>
-export default {
-	props: ['socials'],
-};
+<script setup>
+defineProps(['socials']);
 </script>
 
 <template>

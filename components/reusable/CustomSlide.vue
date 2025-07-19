@@ -1,62 +1,58 @@
-<script>
-export default {
-    name: "CustomSlide",
-    data() {
-        return {
-            chunkSize: 4,
-            currSlide: 0,
-            currImgIdx: 0,
-            transition_name: "slide_next",
-            lightboxActive: false,
-            currLightboxImg: 2,
-        };
-    },
+<script setup>
+import { ref, computed, watch } from 'vue';
 
-    props: ["imgList", "video"],
-    watch: {
-        currImgIdx(newVal) {
-            this.currLightboxImg=newVal;
-        },
-    },
-    computed: {
-        arrChunk() {
-            return Array.from(
-                { length: Math.ceil(this.imgList.length/this.chunkSize) },
-                (v, i) =>
-                    this.imgList.slice(
-                        i*this.chunkSize,
-                        i*this.chunkSize+this.chunkSize
-                    )
-            );
-        },
-    },
-    methods: {
-        prev() {
-            this.transition_name="slide_prev";
-            this.currSlide=
-                this.currSlide==0
-                    ? this.arrChunk.length-1
-                    :this.currSlide-1;
-        },
-        next() {
-            this.transition_name="slide_next";
-            this.currSlide=
-                this.currSlide==this.arrChunk.length-1
-                    ? 0
-                    :this.currSlide+1;
-        },
-        goToImg(n) {
-            this.currLightboxImg=
-                n<0? this.imgList.length-1:n%this.imgList.length;
-        },
-        goToChunk(idx) {
-            this.transition_name=
-                idx<this.currSlide? "slide_prev":"slide_next";
-            this.currSlide=idx;
-        },
-    },
+const props = defineProps(["imgList", "video"]);
+
+const chunkSize = ref(4);
+const currSlide = ref(0);
+const currImgIdx = ref(0);
+const transition_name = ref("slide_next");
+const lightboxActive = ref(false);
+const currLightboxImg = ref(2);
+
+watch(currImgIdx, (newVal) => {
+    currLightboxImg.value = newVal;
+});
+
+const arrChunk = computed(() => {
+    return Array.from(
+        { length: Math.ceil(props.imgList.length / chunkSize.value) },
+        (v, i) =>
+            props.imgList.slice(
+                i * chunkSize.value,
+                i * chunkSize.value + chunkSize.value
+            )
+    );
+});
+
+const prev = () => {
+    transition_name.value = "slide_prev";
+    currSlide.value =
+        currSlide.value == 0
+            ? arrChunk.value.length - 1
+            : currSlide.value - 1;
+};
+
+const next = () => {
+    transition_name.value = "slide_next";
+    currSlide.value =
+        currSlide.value == arrChunk.value.length - 1
+            ? 0
+            : currSlide.value + 1;
+};
+
+const goToImg = (n) => {
+    currLightboxImg.value =
+        n < 0 ? props.imgList.length - 1 : n % props.imgList.length;
+};
+
+const goToChunk = (idx) => {
+    transition_name.value =
+        idx < currSlide.value ? "slide_prev" : "slide_next";
+    currSlide.value = idx;
 };
 </script>
+
 <template>
     <div class="Carousel">
         <video class="video-style" v-if="video" controls width="800">

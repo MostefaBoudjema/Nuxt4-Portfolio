@@ -1,7 +1,5 @@
-<script>
-export default {
-	props: ['contacts'],
-};
+<script setup>
+defineProps(['contacts']);
 </script>
 
 <template>

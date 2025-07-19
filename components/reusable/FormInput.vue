@@ -1,24 +1,24 @@
-<script>
-export default {
-	props: {
-		label: {
-			type: String,
-			default: '',
-		},
-		inputIdentifier: {
-			type: String,
-			default: '',
-		},
-		modelValue: {
-			type: [String, Number],
-			default: '',
-		},
-		inputType: {
-			type: String,
-			default: 'text',
-		},
+<script setup>
+defineProps({
+	label: {
+		type: String,
+		default: '',
 	},
-};
+	inputIdentifier: {
+		type: String,
+		default: '',
+	},
+	modelValue: {
+		type: [String, Number],
+		default: '',
+	},
+	inputType: {
+		type: String,
+		default: 'text',
+	},
+});
+
+defineEmits(['update:modelValue']);
 </script>
 
 <template>

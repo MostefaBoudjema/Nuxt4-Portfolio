@@ -1,27 +1,14 @@
-<script>
-
+<script setup>
 import { useI18n } from "vue-i18n";
-
 import EmplymentHistory from '@/data/EmplymentHistory';
-export default {
-    data() {
-        return {
-            employmentHistory: EmplymentHistory
-        };
-    },
-    setup() {
-        const { t }=useI18n({
-            inheritLocale: true,
-            useScope: "local",
-        });
 
+const { t } = useI18n({
+    inheritLocale: true,
+    useScope: "local",
+});
 
-
-        return { t };
-    },
-};
+const employmentHistory = EmplymentHistory;
 </script>
-
 
 <template>
 <div class="mb-8">

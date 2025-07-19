@@ -1,12 +1,7 @@
-<script>
-export default {
-	props: ['client'],
-	data() {
-		return {
-			isHovered: false
-		};
-	}
-};
+<script setup>
+import { ref } from 'vue';
+const props = defineProps(['client']);
+const isHovered = ref(false);
 </script>
 
 <template>
@@ -31,7 +26,6 @@ export default {
 		</div>
 	</div>
 </template>
-  
 
 <style lang="scss" scoped>
 .client-container {

@@ -46,51 +46,46 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { onMounted } from 'vue';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-
 gsap.registerPlugin(ScrollTrigger);
 
-export default {
-  name: 'BlogPost',
-  props: {
-    post: {
-      type: Object,
-      required: true
-    }
-  },
-  setup() {
-    onMounted(() => {
-      let mm=gsap.matchMedia();
-      mm.add('(min-width: 991px)', () => {
-        gsap.fromTo('.single',
-          {
-            opacity: 0,
-            y: 80
-          },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1.5,
-            delay: 0.3,
-            stagger: 0.9,
-            ease: 'elastic',
-            scrollTrigger: {
-              trigger: '.single',
-              start: 'top 80%',
-              end: 'end 10%',
-              toggleActions: 'restart none none none',
-              scrub: 5,
-              // markers: true,
-            },
-          }
-        );
-      });
-    });
+const props = defineProps({
+  post: {
+    type: Object,
+    required: true
   }
-}
+});
+
+onMounted(() => {
+  let mm = gsap.matchMedia();
+  mm.add('(min-width: 991px)', () => {
+    gsap.fromTo('.single',
+      {
+        opacity: 0,
+        y: 80
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        delay: 0.3,
+        stagger: 0.9,
+        ease: 'elastic',
+        scrollTrigger: {
+          trigger: '.single',
+          start: 'top 80%',
+          end: 'end 10%',
+          toggleActions: 'restart none none none',
+          scrub: 5,
+          // markers: true,
+        },
+      }
+    );
+  });
+});
 </script>
 
 <style scoped>

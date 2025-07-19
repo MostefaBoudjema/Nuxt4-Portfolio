@@ -1,12 +1,5 @@
-<script>
-export default {
-	props: ['title'],
-	data: () => {
-		return {
-			//
-		};
-	},
-};
+<script setup>
+defineProps(['title']);
 </script>
 
 <template>
