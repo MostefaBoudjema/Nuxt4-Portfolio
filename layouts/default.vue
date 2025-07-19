@@ -10,8 +10,8 @@
     <WhatsApp/>
     <CustomBackToTop
       :visibleoffset="300"
-      right="30px"
-      bottom="40px"
+      right="20px"
+      bottom="25px"
     />
     <!-- Footer -->
     <AppFooter />
