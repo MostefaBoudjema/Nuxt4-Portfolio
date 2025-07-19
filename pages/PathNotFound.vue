@@ -14,7 +14,7 @@ useHead({
   title: () => `Mostefa Boudjema - ${t('404 Page Not found')}`
 })
 
-const theme=ref("light"); // Assuming theme is a reactive property; adjust if it's sourced differently
+const theme=ref("dark"); // Assuming theme is a reactive property; adjust if it's sourced differently
 </script>
 
 <template>

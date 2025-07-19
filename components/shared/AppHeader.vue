@@ -16,15 +16,15 @@ const { t }=useI18n({
 });
 
 const isOpen=ref(false);
-const theme=ref('light');
+const theme=ref('dark');
 const lang=ref('');
 const modal=ref(false);
 
 const { currentTheme }=useThemeSwitcher();
 
 onMounted(() => {
-    // Get theme from localStorage or default to light
-    theme.value=localStorage.getItem("theme")||"light";
+    // Get theme from localStorage or default to dark
+    theme.value=localStorage.getItem("theme")||"dark";
     lang.value=localStorage.getItem("lang")||"en";
 
     // Watch for theme changes

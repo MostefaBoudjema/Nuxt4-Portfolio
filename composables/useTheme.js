@@ -2,9 +2,9 @@ import { ref, watch } from 'vue';
 
 const getInitialTheme = () => {
   if (typeof window !== 'undefined' && window.localStorage) {
-    return localStorage.getItem('theme') || 'light';
+    return localStorage.getItem('theme') || 'dark';
   }
-  return 'light';
+  return 'dark';
 };
 
 const theme = ref(getInitialTheme());
