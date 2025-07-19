@@ -34,10 +34,10 @@ import { useHead } from '#imports'
 
 const { t } = useI18n({
     inheritLocale: true,
-    useScope: "local",
+    useScope: "global",
 });
 useHead({
-  title: () => `Mostefa Boudjema - ${t('Home')}`
+  title: () => `${t('Home')} - Mostefa Boudjema`
 })
 </script>
 

@@ -57,60 +57,64 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { marked } from 'marked';
 import posts from '../data/posts.js';
 import RelatedPosts from '../components/blog/RelatedPosts.vue';
+import { ref, computed, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import { useHead } from '#imports';
 
-export default {
-  name: 'SingleBlog',
-  components: {
-    RelatedPosts
-  },
-  data() {
-    return {
-      post: null
+const route = useRoute();
+const post = ref(null);
+
+const loadPost = () => {
+  const slug = route.params.slug;
+  // Find the post by slug
+  const found = posts.find(p => p.slug === slug);
+  if (found) {
+    // Add fallback image if missing
+    post.value = {
+      ...found,
+      image: found.coverImage || found.image || `https://picsum.photos/600/300?random=${found.id}`
     };
-  },
-  created() {
-    this.loadPost();
-  },
-  watch: {
-    '$route'(to, from) {
-      if (to.params.slug !== from.params.slug) {
-        this.loadPost();
-      }
-    }
-  },
-  methods: {
-    loadPost() {
-      const slug = this.$route.params.slug;
-      // Find the post by slug
-      const found = posts.find(p => p.slug === slug);
-      if (found) {
-        // Add fallback image if missing
-        this.post = {
-          ...found,
-          image: found.coverImage || found.image || `https://picsum.photos/600/300?random=${found.id}`
-        };
-        // Set document title dynamically
-        document.title = `Mostefa Boudjema - ${this.post.title} `;
-      } else {
-        this.post = null;
-        // Set a fallback title if not found
-        document.title = 'Blog Post Not Found - Mostefa Boudjema';
-      }
-    }
-  },
-  computed: {
-    formattedContent() {
-      if (!this.post) return '';
-      const content = this.post.content || this.post.body || '';
-      // Use marked to render Markdown to HTML
-      return marked.parse(content);
-    }
+  } else {
+    post.value = null;
   }
 };
+
+// Watch for route changes
+watch(() => route.params.slug, () => {
+  loadPost();
+}, { immediate: true });
+
+// Computed property for formatted content
+const formattedContent = computed(() => {
+  if (!post.value) return '';
+  const content = post.value.content || post.value.body || '';
+  // Use marked to render Markdown to HTML
+  return marked.parse(content);
+});
+
+// Dynamic head management
+const title = computed(() => {
+  if (post.value) {
+    return `${post.value.title} - Mostefa Boudjema`;
+  }
+  return 'Blog Post Not Found - Mostefa Boudjema';
+});
+
+const description = computed(() => {
+  if (post.value) {
+    return post.value.metaDescription || post.value.excerpt || post.value.summary || '';
+  }
+  return 'Blog post not found.';
+});
+
+// Set the head using useHead
+useHead(() => ({
+  title: title.value
+}));
 </script>
 
 <style scoped>

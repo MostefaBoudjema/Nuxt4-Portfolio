@@ -23,7 +23,7 @@ function fetchProject() {
   project.value = getProjects(t).find(p => p.link === route.params.link) || null;
   if (project.value) {
     useHead({
-      title: `Mostefa Boudjema - ${project.value.title || project.value.name || 'Project'}`
+      title: `${project.value.title || project.value.name || 'Project'} - Mostefa Boudjema`
     })
   }
 }
