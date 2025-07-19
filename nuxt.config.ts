@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     
     // Public keys (exposed to the client)
     public: {
+      useAllPosts: process.env.NUXT_PUBLIC_USE_ALL_POSTS === 'true' || false,
       i18nLocale: process.env.I18N_LOCALE || 'en',
       i18nFallbackLocale: process.env.I18N_FALLBACK_LOCALE || 'en',
       authorName: process.env.AUTHOR_NAME || 'Mostefa Boudjema',

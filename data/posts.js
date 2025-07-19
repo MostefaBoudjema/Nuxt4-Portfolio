@@ -16,6 +16,9 @@ import cover13 from '/images/posts/common-web-dev-interview-questions.webp';
 import cover14 from '/images/posts/eager-vs-lazy-loading-laravel.webp';
 import cover15 from '/images/posts/laravel-pulse-vs-telescope.webp';
 
+// Nuxt 3: Use runtime config for useAllPosts
+import { useRuntimeConfig } from '#imports'
+
 let postsList=[
   {
     id: 1,
@@ -1796,14 +1799,20 @@ const mm=String(today.getMonth()+1).padStart(2, '0');
 const dd=String(today.getDate()).padStart(2, '0');
 const todayStr=`${yyyy}-${mm}-${dd}`;
 
-// const useAllPosts=useRuntimeConfig().public.useAllPosts==='true';
-const useAllPosts=false;
-// const useAllPosts=true;
-console.log(useAllPosts);
+// Use Nuxt runtime config for useAllPosts
+let useAllPosts = false;
+try {
+  const config = useRuntimeConfig && useRuntimeConfig();
+  if (config && config.public && (config.public.useAllPosts === true || config.public.useAllPosts === 'true')) {
+    useAllPosts = true;
+  }
+} catch (e) {
+  // fallback for non-Nuxt environments (e.g. static build)
+}
 
-const posts=
+const posts =
   useAllPosts
     ? postsList
-    :postsList.filter(post => new Date(post.updatedAt)<=new Date(todayStr));
+    : postsList.filter(post => new Date(post.updatedAt) <= new Date(todayStr));
 
 export default posts; 
