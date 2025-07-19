@@ -8,12 +8,10 @@
       <slot />
     </main>
     <WhatsApp/>
-    <BackToTop class="my-backtotop"
+    <CustomBackToTop
       :visibleoffset="300"
       right="30px"
       bottom="40px"
-      text="⮝"
-      customClass="my-backtotop"
     />
     <!-- Footer -->
     <AppFooter />
@@ -25,4 +23,5 @@
 import AppHeader from '~/components/shared/AppHeader.vue'
 import AppFooter from '~/components/shared/AppFooter.vue'
 import WhatsApp from '~/components/shared/WhatsApp.vue';
+import CustomBackToTop from '~/components/shared/CustomBackToTop.vue';
 </script> 
