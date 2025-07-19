@@ -1,24 +1,26 @@
 <template>
-  <section class="flex flex-col sm:justify-between items-center sm:flex-row mt-12 sm:mt-10">
-    <!-- Banner left contents -->
-    <div class="w-full md:w-1/3 text-left" data-aos="fade-right" data-aos-delay="200">
-      <h1
-        class="font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase">
-        {{ t("Hi, Iam Mostfa") }}
-      </h1>
-      <p
-        class="font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center sm:text-left leading-none text-gray-400 min-h-[2.5rem]"
-      >
-        {{ displayedText }}<span v-if="showCursor" class="typewriter-cursor">|</span>
-      </p>
-      <DownloadCv />
-      <AboutBtn />
+  <section class="sm:container sm:mx-auto">
+    <div class="flex flex-col sm:justify-between items-center sm:flex-row mt-12 sm:mt-10">
+      <!-- Banner left contents -->
+      <div class="w-full md:w-1/3 text-left px-4 sm:px-0" data-aos="fade-right" data-aos-delay="200">
+        <h1
+          class="font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase">
+          {{ t("Hi, Iam Mostfa") }}
+        </h1>
+        <p
+          class="font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center sm:text-left leading-none text-gray-400 min-h-[2.5rem]"
+        >
+          {{ displayedText }}<span v-if="showCursor" class="typewriter-cursor">|</span>
+        </p>
+        <DownloadCv />
+        <AboutBtn />
+      </div>
+      <!-- Banner right illustration -->
+      <div class="w-full md:w-2/3 text-right float-right">
+        <DotLottieVue class="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px]" autoplay loop
+          src="https://lottie.host/e3d2a44b-7d02-4b19-8d05-e90af78f1571/FGAlWtRxOu.lottie" />
+       </div>
     </div>
-    <!-- Banner right illustration -->
-    <div class="w-full md:w-2/3 text-right float-right">
-      <DotLottieVue class="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px]" autoplay loop
-        src="https://lottie.host/e3d2a44b-7d02-4b19-8d05-e90af78f1571/FGAlWtRxOu.lottie" />
-     </div>
   </section>
 </template>
 

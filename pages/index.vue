@@ -1,21 +1,23 @@
 <template>
-  <div class="container mx-auto p-8">
+  <div class="p-8">
 
     <!-- Banner -->
     <AppBanner class="mb-5 sm:mb-8 mt-8" />
 
     <!-- Projects -->
-    <ProjectsGrid data-aos="fade-up" data-aos-delay="200"/>
+    <div class="sm:container sm:mx-auto">
+      <ProjectsGrid data-aos="fade-up" data-aos-delay="200"/>
 
-    <!-- Load more projects button -->
-    <div class="mt-10 sm:mt-20 flex justify-center">
-      <NuxtLink
-        to="/projects"
-        class="font-general-medium flex items-center px-6 py-3 rounded-lg shadow-lg hover:shadow-xl bg-blue-500 hover:bg-blue-600 focus:ring-1 focus:ring-blue-900 text-white text-lg sm:text-xl duration-300"
-        aria-label="More Projects"
-      >
-        <Button :title="$t('More Projects')"/>
-      </NuxtLink>
+      <!-- Load more projects button -->
+      <div class="mt-10 sm:mt-20 flex justify-center">
+        <NuxtLink
+          to="/projects"
+          class="font-general-medium flex items-center px-6 py-3 rounded-lg shadow-lg hover:shadow-xl bg-blue-500 hover:bg-blue-600 focus:ring-1 focus:ring-blue-900 text-white text-lg sm:text-xl duration-300"
+          aria-label="More Projects"
+        >
+          <Button :title="$t('More Projects')"/>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
