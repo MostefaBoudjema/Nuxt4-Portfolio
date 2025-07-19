@@ -251,6 +251,7 @@
     "updated": "تم التحديث:",
     "latestArticle": "أحدث المقالات",
     "relatedPosts": "مقالات ذات صلة",
+    "notFound": "غير موجود",
     "noRelatedPosts": "لم يتم العثور على مقالات ذات صلة."
   }
 }

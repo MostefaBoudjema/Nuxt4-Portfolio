@@ -13,8 +13,9 @@ import cover10 from '/images/posts/advanced-react-performance-patterns.webp';
 import cover11 from '/images/posts/algorithm-patterns-dev-interview.webp';
 import cover12 from '/images/posts/laravel-advanced-tips.webp';
 import cover13 from '/images/posts/common-web-dev-interview-questions.webp';
+import cover14 from '/images/posts/eager-vs-lazy-loading-laravel.webp';
 
-const postsList=[
+let postsList=[
   {
     id: 1,
     title: 'Getting Started with Laravel 11: A Step-by-Step Guide',
@@ -1532,6 +1533,118 @@ Visit my blog for more real-world prep tips and example answers:
 🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
   `
   },
+  {
+    id: 14,
+    title: 'Eager vs Lazy Loading in Laravel (Clear, Practical Guide)',
+    summary: 'Avoid N+1 query issues and speed up your Laravel app. Learn the difference between eager and lazy loading, with simple examples.',
+    date: '2025-07-30',
+    tags: ['laravel', 'php', 'eloquent', 'performance', 'backend', 'web development'],
+    slug: 'eager-vs-lazy-loading-laravel',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover14,
+    readingTime: '5 min read',
+    published: true,
+    category: 'Laravel',
+    updatedAt: '2025-07-31',
+    metaDescription: 'Learn the difference between eager and lazy loading in Laravel, how to avoid N+1 problems, and when to use each technique for better app performance.',
+    excerpt: 'Speed up your Laravel app by mastering the difference between eager and lazy loading. Avoid N+1 queries with clear examples.',
+    content: `
+  ## Introduction
+  
+  Loading relationships in Laravel can either make your app fly or crawl.
+  
+  This guide breaks down **eager vs lazy loading in Laravel**, how they impact performance, and **when to use each** — with real examples.
+  
+  ---
+  
+  ## 🐢 What Is Lazy Loading?
+  
+  **What it means:** Laravel loads related data **only when you access it** — not before.
+  
+  **Example:**
+  \`\`\`php
+  $posts = Post::all(); // no relations yet
+  
+  foreach ($posts as $post) {
+      echo $post->user->name; // triggers a separate query per post
+  }
+  \`\`\`
+  
+  🔴 **Problem:** This causes the **N+1 query issue** — one query for all posts, then one extra for each post’s user.
+  
+  ---
+  
+  ## ⚡ What Is Eager Loading?
+  
+  **What it means:** You tell Laravel up front to load relationships **in the same query**.
+  
+  **Example:**
+  \`\`\`php
+  $posts = Post::with('user')->get();
+  
+  foreach ($posts as $post) {
+      echo $post->user->name; // already loaded
+  }
+  \`\`\`
+  
+  ✅ **Advantage:** Cuts the number of queries down to 2 (posts + users). Much faster for lists.
+  
+  ---
+  
+  ## 🔄 When Should You Use Each?
+  
+  ### Use **lazy loading** when:
+  - You only need the relation in rare cases
+  - You’re loading just one model, not a list
+  
+  ### Use **eager loading** when:
+  - You’re looping over many models with related data
+  - You care about performance and want to avoid N+1
+  
+  ---
+  
+  ## 🎯 Bonus: Eager Load Multiple or Nested Relations
+  
+  **Multiple relations:**
+  \`\`\`php
+  $posts = Post::with(['user', 'comments'])->get();
+  \`\`\`
+  
+  **Nested relations:**
+  \`\`\`php
+  $posts = Post::with('comments.user')->get();
+  \`\`\`
+  
+  ---
+  
+  ## 🧪 Pro Tip: Debug with Laravel Debugbar or Telescope
+  
+  They’ll show you exactly **how many queries are being run**, and if you’re accidentally lazy-loading inside a loop.
+  
+  ---
+  
+  ## Conclusion
+  
+  Lazy loading is simple, but dangerous in loops. Eager loading is your best friend for performance — if you use it smartly.
+  
+  > 💡 Tip: Always check your query count when dealing with Eloquent relationships.
+  
+  ---
+  
+  ## What’s Next?
+  
+  - Want real project examples where eager loading saved performance?
+  - Need help optimizing a slow Laravel app?
+  
+  Check out more Laravel deep-dives on my blog:  
+  🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
+  `
+  },
+
 
 
 
@@ -1541,14 +1654,21 @@ Visit my blog for more real-world prep tips and example answers:
 
 // Sort by updatedAt (descending: newest first)
 postsList.sort((a, b) => new Date(b.updatedAt)-new Date(a.updatedAt));
-
+postsList=postsList.filter(post => post.published===true);
 // Export only posts published on or before today (dynamic date)
-const today = new Date();
-const yyyy = today.getFullYear();
-const mm = String(today.getMonth() + 1).padStart(2, '0');
-const dd = String(today.getDate()).padStart(2, '0');
-const todayStr = `${yyyy}-${mm}-${dd}`;
-// const posts = postsList;
-const posts = postsList.filter(post => new Date(post.updatedAt) <= new Date(todayStr));
+const today=new Date();
+const yyyy=today.getFullYear();
+const mm=String(today.getMonth()+1).padStart(2, '0');
+const dd=String(today.getDate()).padStart(2, '0');
+const todayStr=`${yyyy}-${mm}-${dd}`;
+
+// const useAllPosts=useRuntimeConfig().public.useAllPosts==='true';
+const useAllPosts = false;
+console.log(useAllPosts);
+
+const posts=
+  useAllPosts
+    ? postsList
+    :postsList.filter(post => new Date(post.updatedAt)<=new Date(todayStr));
 
 export default posts; 

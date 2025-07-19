@@ -256,6 +256,7 @@
     "updated": "Updated:",
     "latestArticle": "Latest Article",
     "relatedPosts": "Related Posts",
+    "notFound": "Not Found",
     "noRelatedPosts": "No related posts found."
   }
 }
