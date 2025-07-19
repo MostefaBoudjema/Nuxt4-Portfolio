@@ -14,6 +14,7 @@ import cover11 from '/images/posts/algorithm-patterns-dev-interview.webp';
 import cover12 from '/images/posts/laravel-advanced-tips.webp';
 import cover13 from '/images/posts/common-web-dev-interview-questions.webp';
 import cover14 from '/images/posts/eager-vs-lazy-loading-laravel.webp';
+import cover15 from '/images/posts/laravel-pulse-vs-telescope.webp';
 
 let postsList=[
   {
@@ -1537,7 +1538,7 @@ Visit my blog for more real-world prep tips and example answers:
     id: 14,
     title: 'Eager vs Lazy Loading in Laravel (Clear, Practical Guide)',
     summary: 'Avoid N+1 query issues and speed up your Laravel app. Learn the difference between eager and lazy loading, with simple examples.',
-    date: '2025-07-30',
+    date: '2025-07-31',
     tags: ['laravel', 'php', 'eloquent', 'performance', 'backend', 'web development'],
     slug: 'eager-vs-lazy-loading-laravel',
     author: {
@@ -1644,7 +1645,140 @@ Visit my blog for more real-world prep tips and example answers:
   🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
   `
   },
-
+  {
+    id: 15,
+    title: 'Laravel Pulse vs Telescope: Best Monitoring Tool for Production',
+    summary: 'Confused between Laravel Pulse and Telescope? This post compares both tools and helps you decide which one fits your app’s needs.',
+    date: '2025-08-01',
+    tags: ['laravel', 'monitoring', 'pulse', 'telescope', 'debugging', 'performance', 'backend'],
+    slug: 'laravel-pulse-vs-telescope',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover15,
+    readingTime: '6 min read',
+    published: true,
+    category: 'Laravel',
+    updatedAt: '2025-08-01',
+    metaDescription: 'Laravel Pulse vs Telescope — which one is better for production? Learn the key differences, use cases, and when to use each.',
+    excerpt: 'Compare Laravel Pulse and Telescope. See which one is better for monitoring your Laravel app in development vs production.',
+    content: `
+  ## Introduction
+  
+  When your Laravel app hits production, you need solid monitoring. 
+  
+  Two first-party tools stand out: **Laravel Pulse** and **Laravel Telescope**. But they’re not the same — and using the wrong one in production could backfire.
+  
+  Let’s break down what each tool does best, and when to use them.
+  
+  ---
+  
+  ## 🔍 What is Laravel Telescope?
+  
+  **Telescope is a powerful debugging assistant** for Laravel apps.
+  
+  It tracks:
+  - Requests
+  - Exceptions
+  - Queries
+  - Jobs
+  - Events
+  - Cache
+  - Mail
+  - Notifications
+  - Auth
+  
+  **Good for:** Development environments, QA, local debugging
+  
+  **Example use case:**
+  \`\`\`php
+  Route::get('/telescope', function () {
+      // Monitor incoming requests, exceptions, DB queries
+  });
+  \`\`\`
+  
+  🔴 **Downside:** Telescope stores *a lot* of data. Not ideal for production unless it’s a private/internal app.
+  
+  ---
+  
+  ## 📊 What is Laravel Pulse?
+  
+  **Pulse is a lightweight production-ready monitoring tool**, built for performance insights.
+  
+  It tracks:
+  - HTTP traffic
+  - Queries
+  - Queue jobs
+  - Exceptions
+  - Logs
+  - Cache usage
+  - App load & memory
+  
+  **Good for:** Monitoring real-time performance and health in production.
+  
+  **Example use case:**
+  \`\`\`bash
+  php artisan pulse:install
+  # View metrics via /pulse dashboard
+  \`\`\`
+  
+  ✅ **Designed to be fast, low-overhead, and safe for production use.**
+  
+  ---
+  
+  ## ⚔️ Telescope vs Pulse: Key Differences
+  
+  | Feature            | Telescope               | Pulse                    |
+  |--------------------|--------------------------|---------------------------|
+  | Purpose            | Debugging during dev     | Monitoring in production  |
+  | Performance impact | Heavy                    | Lightweight               |
+  | Data stored        | Detailed per-request logs| Aggregated metrics        |
+  | UI                 | Rich debugger UI         | Clean real-time dashboard |
+  | Use in production  | Not recommended          | Yes, designed for it      |
+  
+  ---
+  
+  ## 🤔 Which One Should You Use?
+  
+  | Environment | Use        |
+  |-------------|------------|
+  | Local dev   | Telescope  |
+  | Staging     | Telescope  |
+  | Production  | Pulse      |
+  | Debugging   | Telescope  |
+  | Live monitoring | Pulse  |
+  
+  ---
+  
+  ## 🧪 Can You Use Both?
+  
+  Yes — use **Telescope for debugging during dev**, and **Pulse for performance in production**.
+  
+  Just don’t keep Telescope running in production unless you lock it behind auth and limit data collection.
+  
+  ---
+  
+  ## Conclusion
+  
+  Both tools serve different purposes.
+  
+  > 🧠 Use **Telescope** when you're building and debugging.  
+  > 🚀 Use **Pulse** when you're live and need insight without slowing down your app.
+  
+  ---
+  
+  ## What’s Next?
+  
+  - Want help setting up Pulse in your production server?
+  - Need to debug performance issues in a live Laravel app?
+  
+  Check out my Laravel guides and real-world tips on the blog:  
+  🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
+  `
+  }
+  ,
 
 
 
@@ -1663,7 +1797,8 @@ const dd=String(today.getDate()).padStart(2, '0');
 const todayStr=`${yyyy}-${mm}-${dd}`;
 
 // const useAllPosts=useRuntimeConfig().public.useAllPosts==='true';
-const useAllPosts = false;
+const useAllPosts=false;
+// const useAllPosts=true;
 console.log(useAllPosts);
 
 const posts=
