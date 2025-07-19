@@ -13,14 +13,14 @@ export default {
 				{{$t('Contact details')}}
 			</h2>
 			<ul class="font-general-regular">
-				<li class="flex" v-for="contact in contacts" :key="contact.id">
+				<li class="flex items-start" v-for="contact in contacts" :key="contact.id">
 					<i
 						:data-feather="contact.icon"
-						class="w-5 text-gray-500 dark:text-gray-400 mr-4"
+						class="w-5 text-gray-500 dark:text-gray-400 mr-4 flex-shrink-0"
 					></i>
 					<a
 						href="#"
-						class="text-lg mb-4 text-ternary-dark dark:text-ternary-light"
+						class="text-lg mb-4 text-ternary-dark dark:text-ternary-light min-w-0 break-words"
 						:class="
 							contact.icon === 'mail' || contact.icon === 'phone'
 								? 'hover:underline cursor-pointer'
