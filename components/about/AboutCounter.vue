@@ -60,17 +60,17 @@ export default {
         const feedbackTitle = computed(() => t("Positive feedback"));
         const projectsTitle = computed(() => t("Projects completed"));
         
+        const currentYear = new Date().getFullYear();
+        const currentYearMinus2017 = currentYear - 2017-4;
+        
         return {
             experienceTitle,
             githubTitle,
             feedbackTitle,
             projectsTitle,
-            currentYear: new Date().getFullYear(),
-            currentYearMinus2017: 0,
+            currentYear,
+            currentYearMinus2017,
         };
-    },
-    mounted() {
-        this.currentYearMinus2017=this.currentYear-2017-4;
     }
 };
 </script>
