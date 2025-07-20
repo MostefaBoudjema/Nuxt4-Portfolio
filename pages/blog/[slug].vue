@@ -2,7 +2,7 @@
   <div class="single-blog-page container mx-auto py-12 max-w-7xl">
     <div v-if="post" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <!-- Main Content -->
-      <div class="lg:col-span-2 bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8 transition-all duration-300">
+      <div class="lg:col-span-2 bg-white dark:bg-gray-900 rounded-xl shadow-lg md:p-8 transition-all duration-300">
         <!-- Breadcrumb -->
         <nav class="text-sm text-gray-500 dark:text-gray-400 mb-6 flex items-center gap-2">
           <router-link to="/blog" class="hover:underline text-blue-600 dark:text-blue-400">Articles</router-link>
