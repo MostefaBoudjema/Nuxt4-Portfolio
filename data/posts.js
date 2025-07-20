@@ -16,6 +16,9 @@ import cover13 from '/images/posts/common-web-dev-interview-questions.webp';
 import cover14 from '/images/posts/eager-vs-lazy-loading-laravel.webp';
 import cover15 from '/images/posts/laravel-pulse-vs-telescope.webp';
 import cover16 from '/images/posts/find-website-clients.webp';
+import cover17 from '/images/posts/find-website-clients.webp';
+import cover18 from '/images/posts/find-website-clients.webp';
+import cover19 from '/images/posts/find-website-clients.webp';
 
 // Nuxt 3: Use runtime config for useAllPosts
 import { useRuntimeConfig } from '#imports'
@@ -1782,7 +1785,7 @@ Visit my blog for more real-world prep tips and example answers:
   🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
   `
   }
-  ,{
+  , {
     id: 16,
     title: 'How to Find People That Need a New Website or a Redesign',
     summary: 'Struggling to find web dev clients? Here’s a straight-to-the-point guide to help you identify and reach people who need a new website or a redesign.',
@@ -1970,9 +1973,620 @@ Visit my blog for more real-world prep tips and example answers:
   https://mostefa-boudjema.vercel.app/blog
   \`\`\`
   `
-  }
+  },
+
+  {
+    id: 17,
+    title: 'Laravel Filament: Powerful Admin Panels Made Easy',
+    summary: 'Need a modern admin panel fast? Laravel Filament gives you beautiful dashboards, resource management, and more — with zero boilerplate. Here’s how to get started and when to use it.',
+    date: '2025-08-05',
+    tags: ['laravel', 'filament', 'php', 'admin panel', 'dashboard'],
+    slug: 'laravel-filament-guide',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover17,
+    readingTime: '10 min read',
+    published: true,
+    category: 'Laravel',
+    updatedAt: '2025-08-05',
+    metaDescription: 'A complete beginner-to-advanced guide on Laravel Filament. Learn how to install, integrate with existing projects, and use it to build powerful admin panels fast.',
+    excerpt: 'Laravel Filament makes building admin dashboards ridiculously fast. In this guide, you’ll learn how to install it, use it with your current Laravel project, and the best use cases where it shines.',
+    content: `
+  ## 🚀 What is Laravel Filament?
   
-  ,
+  Filament is a **beautiful, fast, and highly extensible admin panel** for Laravel. It's built with TALL stack (Tailwind, Alpine.js, Laravel, Livewire), and it saves you hours building dashboards from scratch.
+  
+  Great for:
+  - Admin panels
+  - Internal dashboards
+  - CMS-style management
+  - CRUD for Eloquent models
+  
+  ---
+  
+  \`\`\`
+  🧰 Installing Filament in a New Laravel Project
+  
+  1. Make sure you're on Laravel 10+.
+  2. Install Filament via Composer:
+  
+  \`\`\`bash
+  composer require filament/filament
+  \`\`\`
+  
+  3. Publish the assets and config:
+  
+  \`\`\`bash
+  php artisan filament:install
+  \`\`\`
+  
+  4. Create a user:
+  
+  \`\`\`bash
+  php artisan make:filament-user
+  \`\`\`
+  
+  Done. Visit '/admin' and log in.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🔁 Integrating Filament into an Existing Project
+  
+  Already have a Laravel app? No problem.
+  
+  Steps:
+  - Run the install command: \`php artisan filament:install\`
+  - Make sure your User model uses \`HasFilamentDefaultProfilePhoto\` and implements \`FilamentUser\` interface (optional)
+  - Register resources using \`php artisan make:filament-resource ModelName\`
+  
+  Example:
+  
+  \`\`\`bash
+  php artisan make:filament-resource Post
+  \`\`\`
+  
+  You’ll get:
+  - A resource class
+  - Create/edit/delete forms
+  - List table with search, filters, actions — all ready out of the box.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  📦 Best Use Cases for Filament
+  
+  🔹 CRUD for Eloquent models  
+  🔹 Internal admin for clients  
+  🔹 User management  
+  🔹 Lightweight CMS features  
+  🔹 Multi-tenant dashboards (yes, it supports that too)
+  
+  Avoid using it for:
+  ❌ Public-facing pages  
+  ❌ Complex frontend interactivity (use Vue/React there)
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🛠️ Customizing Filament Resources
+  
+  Each resource can be fully customized.
+  
+  - Change table columns
+  - Add filters/sorting
+  - Customize forms with relationships, toggles, uploads, repeaters
+  
+  Example: Add image upload to the Post form:
+  
+  \`\`\`php
+  Forms\Components\FileUpload::make('thumbnail')->image()
+  \`\`\`
+  
+  Need advanced logic? Use Livewire hooks inside the resource.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🎨 Styling Filament (Yes, It’s Tailwind)
+  
+  Since it’s built on Tailwind, you can easily extend and customize styles.
+  
+  - Add your own Tailwind config
+  - Override default views
+  - Add custom components using Livewire + Blade
+  
+  Need dark mode, RTL, or theme switchers? Already built-in or supported via plugins.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🔌 Useful Filament Plugins
+  
+  The Filament ecosystem is growing fast.
+  
+  Popular ones:
+  - filament-spatie-laravel-permission: Easy role management
+  - filament-log: View Laravel logs inside admin
+  - filament-notifications: Push alerts to admins
+  - filament-breezy: Laravel Breeze + Filament auth combo
+  
+  You can build your own plugins too.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🌍 Filament in a Multi-Tenant App?
+  
+  Yes, it supports multi-tenancy.
+  
+  Use packages like:
+  - \`stancl/tenancy\`
+  - \`spatie/multitenancy\`
+  
+  Each tenant can have their own admin panel, or share one with scoped data. Depends on how you configure Filament’s global resources and auth.
+  
+  You can use:
+  \`\`\`php
+  Filament::getTenant()
+  \`\`\`
+  to get tenant context inside your resources.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🧪 Filament vs Laravel Nova vs Voyager
+  
+  | Feature         | Filament     | Nova        | Voyager      |
+  |----------------|--------------|-------------|--------------|
+  | Open Source    | ✅ Free       | ❌ Paid      | ✅ Free       |
+  | Modern UI      | ✅ Tailwind   | ✅ Tailwind  | ❌ Bootstrap  |
+  | Extensible     | ✅ Plugins    | ✅ Fields    | ❌ Limited    |
+  | Community      | 🔥 Growing    | 💤 Slower    | 🤷‍♂️ Aging     |
+  
+  For most Laravel devs in 2025 — **Filament is the best choice**.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🧩 Final Tips
+  
+  ✅ Use Filament if:
+  - You need CRUD fast  
+  - You don’t want to build admin UI from scratch  
+  - You want something customizable and clean  
+  
+  ❌ Skip it if:
+  - Your app is 100% headless
+  - You want a full CMS (try Statamic)
+  
+  Want a full working demo with roles, auth, plugins?
+  
+  📎 Download the Filament Starter Kit on my GitHub (coming soon)
+  
+  💬 Need help integrating Filament into a client project?
+  Let’s chat: https://mostefa-boudjema.vercel.app
+  
+  \`\`\`
+    `
+  },
+  {
+    id: 18,
+    title: 'Laravel Nova: Setup, Integration & Best Use Cases',
+    summary: 'Laravel Nova is a sleek admin panel for Laravel. Learn how to set it up, use it effectively, and decide when it’s the right tool for your project.',
+    date: '2025-08-03',
+    tags: ['laravel', 'nova', 'admin panel', 'dashboard', 'backend'],
+    slug: 'laravel-nova-guide',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover18,
+    readingTime: '10 min read',
+    published: true,
+    category: 'Laravel',
+    updatedAt: '2025-08-03',
+    metaDescription: 'Everything you need to know about Laravel Nova: what it is, how to install it, integrate it into existing projects, and when you should use it.',
+    excerpt: 'Laravel Nova is a powerful admin panel that saves dev time. In this guide, learn how to install Nova, use it, and know when it’s the right tool for your Laravel project.',
+    content: `
+  ## ⚙️ What Is Laravel Nova?
+  
+  Laravel Nova is an official Laravel admin panel package.  
+  It gives you a beautiful UI to manage your Eloquent models — without writing your own dashboard from scratch.
+  
+  Think of it like:
+  - A Laravel-flavored CMS
+  - A back-office tool for managing users, posts, orders, etc.
+  - A data admin layer for your clients or internal team
+  
+  ---
+  
+  \`\`\`
+  📦 How to Install Laravel Nova
+  
+  Nova is **not free**. It’s a paid product from Laravel (https://nova.laravel.com).
+  
+  Once purchased, you’ll get access to a private Nova repository.
+  
+  Steps:
+  1. Add your Nova repo credentials to your 'auth.json' or 'composer config':
+     \`\`\`bash
+     composer config repositories.nova composer https://nova.laravel.com
+     composer config --global --auth http-basic.nova.laravel.com your-email your-license-key
+     \`\`\`
+  
+  2. Require Nova:
+     \`\`\`bash
+     composer require laravel/nova
+     \`\`\`
+  
+  3. Publish assets and migrate:
+     \`\`\`bash
+     php artisan nova:install
+     php artisan migrate
+     \`\`\`
+  
+  4. Create your first Nova resource:
+     \`\`\`bash
+     php artisan nova:resource User
+     \`\`\`
+  
+  That’s it. You’ll now see '/nova' in your browser.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🔁 How to Add Nova to an Existing Project
+  
+  Nova works great in both new and old Laravel apps.
+  
+  If your project already has Eloquent models, just generate the resources:
+  
+  Example:
+  \`\`\`bash
+  php artisan nova:resource Product
+  php artisan nova:resource Order
+  \`\`\`
+  
+  This creates files like \`app/Nova/Product.php\`, where you can define fields, filters, cards, and actions.
+  
+  You can customize:
+  - Fields: Text, Boolean, File, Image, etc.
+  - Relationships: BelongsTo, HasMany, MorphMany, etc.
+  - Metrics: Like number of new users this week
+  - Actions: Like “Approve Order” or “Mark as Shipped”
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🎯 When Should You Use Laravel Nova?
+  
+  Nova shines when:
+  - You want a quick admin dashboard for CRUD
+  - You’re building internal tools or client portals
+  - You don’t want to maintain your own admin UI
+  - You’re already deep into Laravel and want a native experience
+  
+  Avoid Nova if:
+  - You need heavy customization in the UI/UX
+  - You want a free/open source alternative (look into Filament or Voyager)
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🔐 Securing Nova Access
+  
+  Out of the box, Nova is restricted to users who pass the \`Gate::allows('viewNova')\` check.
+  
+  To control access:
+  1. Open \`app/Providers/NovaServiceProvider.php\`
+  2. Modify the gate logic:
+     \`\`\`php
+     Gate::define('viewNova', function ($user) {
+         return $user->is_admin;
+     });
+     \`\`\`
+  
+  Now only admin users can access '/nova'.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🧩 Nova Custom Fields & Tools
+  
+  Nova lets you extend it via:
+  - Custom fields (e.g., Color Picker, Markdown Editor)
+  - Custom cards (e.g., Metrics)
+  - Custom tools (e.g., whole Vue components)
+  
+  Install community packages or build your own:
+  \`\`\`bash
+  php artisan nova:field StatusToggle
+  php artisan nova:tool CustomAnalytics
+  \`\`\`
+  
+  It uses Vue under the hood, so frontend extensions are flexible.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🗂 Example Use Cases
+  
+  Here’s where Nova works best:
+  - CRM panels
+  - Inventory dashboards
+  - Blog/article admin
+  - User management (for SaaS)
+  - Order processing panel
+  
+  For client work, it’s a good way to hand over admin tools fast without building a custom backend.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  📌 Pros vs Cons
+  
+  ✅ Pros:
+  - Built by Laravel team
+  - Native Laravel experience
+  - Beautiful UI
+  - Great for CRUD + metrics
+  
+  ❌ Cons:
+  - Paid (starts at $99)
+  - UI is less customizable than Filament
+  - Not ideal for frontend-heavy admin panels
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🚀 Final Tip
+  
+  Nova isn’t just for big enterprise dashboards. It’s great for small internal tools too.
+  
+  Start with a few resources, build actions, metrics, and filters — and you’ve got a full admin suite in days, not weeks.
+  
+  Need a Filament vs Nova comparison?  
+  Want help building custom Nova tools?
+  
+  Check out more practical Laravel tips on the blog:  
+  https://mostefa-boudjema.vercel.app/blog
+  \`\`\`
+  `
+  },
+  {
+    id: 19,
+    title: 'Laravel Multi-Tenancy: How to Get Started and When to Use It',
+    summary: 'Building a SaaS app? Laravel multi-tenancy might be what you need. Learn the core concepts, how to set it up, and when it actually makes sense to use.',
+    date: '2025-08-04',
+    tags: ['laravel', 'multi-tenancy', 'saas', 'architecture', 'database'],
+    slug: 'laravel-multi-tenancy-guide',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover19,
+    readingTime: '10 min read',
+    published: true,
+    category: 'Laravel',
+    updatedAt: '2025-08-04',
+    metaDescription: 'Learn how to set up multi-tenancy in Laravel using practical packages and clean architecture. Understand the different tenancy types and when you should (or shouldn’t) use them.',
+    excerpt: 'Thinking about building a SaaS or client-facing app with isolated data? Laravel multi-tenancy is what you’re looking for. This guide walks you through setup, strategy, and best use cases.',
+    content: `
+  ## 🏢 What Is Multi-Tenancy?
+  
+  Multi-tenancy means a single app serves **multiple clients (tenants)** with isolated data.
+  
+  Example:
+  - A SaaS CRM where each company has its own users, leads, and data.
+  - A real estate system where each agency has separate listings.
+  
+  ---
+  
+  \`\`\`
+  🧠 Multi-Tenancy Types in Laravel
+  
+  There are 3 main strategies:
+  
+  1. **Single Database – Shared Schema**  
+     All tenants use the same DB and tables, identified by a \`tenant_id\` field.
+  
+  2. **Single Database – Separate Schemas**  
+     One DB, but each tenant has their own schema (PostgreSQL only).
+  
+  3. **Multiple Databases**  
+     Each tenant has their own database. Best for strong isolation and scaling.
+  
+  Pick based on:
+  - # of tenants
+  - Data isolation/security needs
+  - App complexity
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🔧 Getting Started with Laravel Tenancy
+  
+  Use [stancl/tenancy](https://tenancyforlaravel.com) — it’s the most popular and well-documented package for Laravel multi-tenancy.
+  
+  Installation:
+  
+  \`\`\`bash
+  composer require stancl/tenancy
+  php artisan tenancy:install
+  php artisan migrate
+  \`\`\`
+  
+  This package supports:
+  - Multiple DBs per tenant
+  - Central and tenant-specific routes
+  - Tenant-aware queues, events, jobs, and storage
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  📁 Folder Structure Tips
+  
+  Your app will have:
+  - **Central app**: authentication, tenant creation, billing, etc.
+  - **Tenant app**: the actual business logic (dashboard, resources, etc.)
+  
+  Stancl keeps the structure simple:
+  - \`routes/tenant.php\` – for tenant-specific routes
+  - \`routes/web.php\` – for central app
+  - Tenants auto-resolve based on domain or subdomain
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🌐 Route Handling (Central vs Tenant)
+  
+  Stancl automatically detects the tenant using domains or subdomains.
+  
+  Example:
+  - \`yourapp.com\` → Central
+  - \`client1.yourapp.com\` → Tenant 1
+  - \`client2.yourapp.com\` → Tenant 2
+  
+  Tenant routes go inside:
+  \`\`\`php
+  // routes/tenant.php
+  Route::middleware(['web', 'tenant'])->group(function () {
+      Route::get('/dashboard', function () {
+          return 'Tenant dashboard';
+      });
+  });
+  \`\`\`
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🗃 Database Per Tenant (Best Isolation)
+  
+  This is the default and safest setup.
+  
+  Every tenant gets its own DB, which is created automatically:
+  
+  \`\`\`php
+  Tenant::create([
+    'id' => 'client1',
+    'domain' => 'client1.yourapp.com',
+  ]);
+  \`\`\`
+  
+  You define what migrations run for tenants:
+  \`\`\`bash
+  php artisan tenants:migrate
+  \`\`\`
+  
+  You can even seed data per tenant.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  ⚙️ Useful Stancl Commands
+  
+  - \`php artisan tenants:create\`
+  - \`php artisan tenants:list\`
+  - \`php artisan tenants:migrate\`
+  - \`php artisan tenants:seed\`
+  
+  You can also dispatch jobs or queue events tenant-by-tenant.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  📦 When Should You Use Multi-Tenancy?
+  
+  Use multi-tenancy if:
+  - You’re building a **SaaS**
+  - You need data separation between clients
+  - You want clients to have their own subdomain
+  - You need to scale easily by moving tenants across DB servers
+  
+  Don’t use multi-tenancy if:
+  - You’re building a simple one-client app
+  - Your app only has different user roles (admin/user) — that’s **not** tenancy
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  ⚠️ Challenges to Keep in Mind
+  
+  - Backups: each tenant DB needs its own backup routine
+  - Migrations: test carefully before running tenant-wide
+  - Caching: isolate tenant cache to avoid data leaks
+  - Debugging: more moving parts = more complexity
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🌟 Final Tip
+  
+  Start simple — one DB per tenant is usually enough.  
+  Use [stancl/tenancy](https://github.com/stancl/tenancy) for Laravel, and only introduce custom logic if you really need it.
+  
+  Need a starter template for Laravel SaaS with tenancy?  
+  Want tips on user billing + tenant creation?
+  
+  Check out more Laravel SaaS tips on the blog:  
+  https://mostefa-boudjema.vercel.app/blog
+  \`\`\`
+  `
+  },
+
+
 
 
 
@@ -1991,19 +2605,19 @@ const dd=String(today.getDate()).padStart(2, '0');
 const todayStr=`${yyyy}-${mm}-${dd}`;
 
 // Use Nuxt runtime config for useAllPosts
-let useAllPosts = false;
+let useAllPosts=false;
 try {
-  const config = useRuntimeConfig && useRuntimeConfig();
-  if (config && config.public && (config.public.useAllPosts === true || config.public.useAllPosts === 'true')) {
-    useAllPosts = true;
+  const config=useRuntimeConfig&&useRuntimeConfig();
+  if (config&&config.public&&(config.public.useAllPosts===true||config.public.useAllPosts==='true')) {
+    useAllPosts=true;
   }
 } catch (e) {
   // fallback for non-Nuxt environments (e.g. static build)
 }
 
-const posts =
+const posts=
   useAllPosts
     ? postsList
-    : postsList.filter(post => new Date(post.updatedAt) <= new Date(todayStr));
+    :postsList.filter(post => new Date(post.updatedAt)<=new Date(todayStr));
 
 export default posts; 
