@@ -1,12 +1,20 @@
 const EmplymentHistory=[
-    // {
-    //     title: "JobTitle6",
-    //     company: "JobCompany6",
-    //     startDate: "JobStartDate6",
-    //     endDate: "JobEndDate6",
-    //     logo: '/images/brands/newdayagency_color.webp',
-    //     description: "JobDescription6"
-    // },
+
+    {
+        title: "JobTitle2",
+        company: "JobCompany2",
+        startDate: "JobStartDate2",
+        endDate: "JobEndDate2",
+        logo: '/images/brands/upwork_color.webp',
+        description: "JobDescription2"
+    }, {
+        title: "JobTitle6",
+        company: "JobCompany6",
+        startDate: "JobStartDate6",
+        endDate: "JobEndDate6",
+        logo: '/images/brands/newdayagency_color.webp',
+        description: "JobDescription6"
+    },
     {
         title: "JobTitle5",
         company: "JobCompany5",
@@ -22,14 +30,6 @@ const EmplymentHistory=[
         endDate: "JobEndDate4",
         logo: '/images/brands/infogate_color.webp',
         description: "JobDescription4"
-    },
-    {
-        title: "JobTitle2",
-        company: "JobCompany2",
-        startDate: "JobStartDate2",
-        endDate: "JobEndDate2",
-        logo: '/images/brands/upwork_color.webp',
-        description: "JobDescription2"
     },
     {
         title: "JobTitle1",
@@ -48,7 +48,7 @@ const EmplymentHistory=[
         logo: '/images/brands/biginformatique_color.webp',
         description: "JobDescription3"
     },
-  
+
 ];
 
 export default EmplymentHistory;
