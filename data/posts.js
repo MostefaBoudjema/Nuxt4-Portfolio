@@ -1,6 +1,6 @@
 // Blog posts data
 import me1 from '/images/me1.webp';
-import cover1 from '/images/posts/getting-started-laravel-11.jpg';
+import cover1 from '/images/posts/getting-started-laravel-11.webp';
 import cover2 from '/images/posts/best-tech-2025.webp';
 import cover3 from '/images/posts/best-laravel-tech-2025.webp';
 import cover4 from '/images/posts/Best-Sites-for-Finding-Remote-Work-Online.webp';
@@ -15,6 +15,7 @@ import cover12 from '/images/posts/laravel-advanced-tips.webp';
 import cover13 from '/images/posts/common-web-dev-interview-questions.webp';
 import cover14 from '/images/posts/eager-vs-lazy-loading-laravel.webp';
 import cover15 from '/images/posts/laravel-pulse-vs-telescope.webp';
+import cover16 from '/images/posts/find-website-clients.webp';
 
 // Nuxt 3: Use runtime config for useAllPosts
 import { useRuntimeConfig } from '#imports'
@@ -1781,6 +1782,196 @@ Visit my blog for more real-world prep tips and example answers:
   🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
   `
   }
+  ,{
+    id: 16,
+    title: 'How to Find People That Need a New Website or a Redesign',
+    summary: 'Struggling to find web dev clients? Here’s a straight-to-the-point guide to help you identify and reach people who need a new website or a redesign.',
+    date: '2025-08-02',
+    tags: ['web development', 'freelance', 'marketing', 'portfolio', 'clients'],
+    slug: 'find-website-clients',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover16,
+    readingTime: '6 min read',
+    published: true,
+    category: 'Freelance',
+    updatedAt: '2025-08-02',
+    metaDescription: 'Learn practical strategies to find people or businesses that need a new website or a redesign. Perfect for freelance web developers looking to get more clients.',
+    excerpt: 'If you’re a web developer looking for more clients, here’s how to find businesses that desperately need a website redesign — and how to pitch them.',
+    content: `
+  ## 🔎 How to Find People Who Need a New Website or Redesign
+  
+  Not enough clients? You're probably chasing the wrong ones.  
+  Truth is, there are tons of people who need a new website or a redesign — they just don't know it yet.
+  
+  Here's how to find them, pitch them, and land the job.
+  
+  ---
+  
+  \`\`\`
+  🏪 Local Businesses with Bad or Outdated Websites
+  
+  What to look for:
+  - Websites that look like they're from 2008
+  - Not mobile-friendly
+  - Slow to load
+  - No HTTPS
+  
+  How to approach:
+  Walk into the shop, call, or email.
+  
+  Example:
+  “Hi, I noticed your website isn’t mobile-friendly. I build modern, mobile-first websites that help businesses get more clients. Want a quick audit?”
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  💬 Facebook Groups = Free Leads
+  
+  Join groups like:
+  - Small Business Owners
+  - Startups
+  - Entrepreneurs in [Your City]
+  
+  How to offer value:
+  “Free 2-minute website audit — drop your link below and I’ll tell you what’s working and what’s not.”
+  
+  This builds trust fast. Then pitch the redesign.
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  💼 Freelance Platforms (But Smarter)
+  
+  Use platforms like:
+  - Upwork
+  - Fiverr
+  - Freelancer
+  
+  Search for:
+  - “Website redesign”
+  - “Modern landing page”
+  - “Mobile-friendly website”
+  
+  Even if you're not active on those sites, you'll spot real pain points businesses are dealing with.
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🧑‍💼 LinkedIn Cold Outreach
+  
+  Target industries:
+  - Real estate agents
+  - Dentists
+  - Coaches
+  - Local shop owners
+  
+  Message idea:
+  “Hey [Name], I help businesses like yours modernize their websites to increase leads and trust. Want a free homepage review?”
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  📧 Cold Email Works (If You’re Not Spamming)
+  
+  Find leads with:
+  - Google Maps
+  - Yelp
+  - Yellow Pages
+  - Local directories
+  
+  Use Hunter.io or Apollo.io to grab emails.
+  
+  Simple email script:
+  Subject: Quick Tip About Your Website
+  
+  Hi [Name],
+  I noticed your website isn’t mobile-friendly or secure (no HTTPS). I specialize in redesigning websites that load fast and look modern. Want a quick free audit?
+  
+  Attach a before/after sample. That’s all.
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  📝 Google Hack: “Not Secure” Websites
+  
+  Search this in Google:
+  site:.com "not secure" "contact us"
+  
+  These are businesses that haven’t added HTTPS — and if they missed that, their whole site is probably outdated.
+  
+  Great redesign targets.
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  📲 DM Small Brands on Instagram
+  
+  Perfect for:
+  - Artists
+  - Coaches
+  - Creators
+  - Small shops
+  
+  Message idea:
+  “Love your brand. Just checked your website — a few tweaks could really boost your conversions. Want a quick look?”
+  
+  Keep it short, specific, and helpful.
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🎯 Run Targeted Facebook/Instagram Ads
+  
+  Ad idea:
+  “Still using a 2012-style website? I build modern, fast, mobile-first websites for small businesses.”
+  
+  Target audience:
+  - Your city
+  - Business interests
+  - Age 30–50 (business owners)
+  
+  Even $20 can get you solid leads.
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🙋 Referrals: Ask Every Single Client
+  
+  After delivering a website:
+  “If you know someone else who needs a site refresh, let me know — I’ll give them a discount and you’ll get a referral bonus.”
+  
+  Don’t wait. Just ask.
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🌟 Final Tip
+  
+  You don’t need 100 leads — just 3–5 good ones who see the value in your work.  
+  Focus on showing clear, simple value. Fix problems, don’t sell pixels.
+  
+  Want outreach message templates that actually convert?
+  Need help with lead gen tools like Hunter or YAMM?
+  
+  Check out more no-fluff freelance guides on the blog:
+  https://mostefa-boudjema.vercel.app/blog
+  \`\`\`
+  `
+  }
+  
   ,
 
 
