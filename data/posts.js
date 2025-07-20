@@ -16,9 +16,9 @@ import cover13 from '/images/posts/common-web-dev-interview-questions.webp';
 import cover14 from '/images/posts/eager-vs-lazy-loading-laravel.webp';
 import cover15 from '/images/posts/laravel-pulse-vs-telescope.webp';
 import cover16 from '/images/posts/find-website-clients.webp';
-import cover17 from '/images/posts/find-website-clients.webp';
-import cover18 from '/images/posts/find-website-clients.webp';
-import cover19 from '/images/posts/find-website-clients.webp';
+import cover17 from '/images/posts/laravel-filament-guide.webp';
+import cover18 from '/images/posts/laravel-nova-guide.webp';
+import cover19 from '/images/posts/laravel-multi-tenancy-guide.webp';
 
 // Nuxt 3: Use runtime config for useAllPosts
 import { useRuntimeConfig } from '#imports'
