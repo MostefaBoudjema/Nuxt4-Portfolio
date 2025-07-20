@@ -240,6 +240,11 @@ useHead(() => ({
   border-radius: 4px;
 }
 
+:deep(.prose hr) {
+  /* border-top: 2px solid #3b82f6; Tailwind blue-500 */
+  margin: 2rem 0;
+}
+
 .dark :deep(.prose table::-webkit-scrollbar-track) {
   background: #374151;
 }

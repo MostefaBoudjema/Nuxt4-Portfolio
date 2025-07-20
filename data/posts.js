@@ -19,6 +19,7 @@ import cover16 from '/images/posts/find-website-clients.webp';
 import cover17 from '/images/posts/laravel-filament-guide.webp';
 import cover18 from '/images/posts/laravel-nova-guide.webp';
 import cover19 from '/images/posts/laravel-multi-tenancy-guide.webp';
+import cover20 from '/images/posts/laravel-dto-vs-model.webp';
 
 // Nuxt 3: Use runtime config for useAllPosts
 import { useRuntimeConfig } from '#imports'
@@ -2585,7 +2586,207 @@ Visit my blog for more real-world prep tips and example answers:
   \`\`\`
   `
   },
+  {
+    id: 20,
+    title: 'What Is the Advantage of DTO (Over Model Instances)?',
+    summary: 'DTOs can make your Laravel app cleaner, more testable, and easier to scale. Here’s when and why to use Data Transfer Objects instead of Eloquent models directly.',
+    date: '2025-08-06',
+    tags: ['laravel', 'dto', 'architecture', 'clean code', 'best practices'],
+    slug: 'laravel-dto-vs-model',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover20,
+    readingTime: '7 min read',
+    published: true,
+    category: 'Laravel',
+    updatedAt: '2025-08-06',
+    metaDescription: 'Learn what DTOs are in Laravel, why they matter, and how they improve maintainability, testability, and decoupling over using raw model instances.',
+    excerpt: 'Stop passing around Eloquent models like candy. Use DTOs to make your Laravel app more predictable, testable, and future-proof. Here’s the what, why, and how.',
+    content: `
+  ## 📦 What Is a DTO?
+  
+  DTO = **Data Transfer Object**  
+  It's a simple object that holds **only data**, no logic or database access.
+  
+  Think of it as a plain container for structured data.
+  
+  Example:
+  - Instead of passing an Eloquent model to a service/controller, you pass a DTO.
+  - Instead of injecting request input directly into business logic, you wrap it in a DTO.
+  
+  ---
+  
+  \`\`\`
+  🧠 Why Not Just Use Models Everywhere?
+  
+  Because models come with baggage:
+  - Database logic
+  - Relationships
+  - Mutators
+  - Lazy-loaded data
+  
+  Using them **everywhere** tightly couples your logic to the database.
+  
+  DTOs give you:
+  - Clean boundaries
+  - Predictable, fixed shape
+  - No side effects or DB calls
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  ✅ DTO vs Model: Quick Comparison
+  
+  | Feature        | DTO              | Model           |
+  |----------------|------------------|-----------------|
+  | Holds data     | ✅ Yes           | ✅ Yes         |
+  | Has logic      | ❌ No            | ✅ Yes         |
+  | Lazy loading   | ❌ No            | ✅ Yes         |
+  | Tied to DB     | ❌ No            | ✅ Yes         |
+  | Good for APIs  | ✅ Yes           | 🚫 Risky       |
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🧱 Where to Use DTOs in Laravel
+  
+  DTOs are great for:
+  - Service layer inputs/outputs
+  - Form requests → services
+  - API responses
+  - Jobs and Events
+  - External APIs (normalizing structure)
+  
+  Example use case:
+  Instead of passing the full \`User\` model:
+  \`\`\`php
+  $user = new UserData(
+    name: 'John',
+    email: 'john@example.com',
+    role: 'admin'
+  );
+  \`\`\`
+  
+  Now your service or controller isn’t tied to the database anymore.
+  
+  
+  ---
+  
+  📐 How to Build a Simple DTO in Laravel
+  
+  You can use plain PHP classes or Laravel Data tools (like Spatie or Laravel Data).
+  
+  Example using native PHP 8+:
+  \`\`\`php
+  class UserData
+  {
+    public function __construct(
+      public string \$name,
+      public string \$email,
+      public string \$role,
+    ) {}
+  }
+  \`\`\`
+  
+  Or make it immutable:
+  \`\`\`php
+  final readonly class UserData
+  {
+    public function __construct(
+      public string \$name,
+      public string \$email,
+      public string \$role,
+    ) {}
+  }
+  \`\`\`
+  
+  
+  ---
+  
+  🔁 How to Convert Request to DTO
+  
+  Instead of this:
+  \`\`\`php
+  MyService::handle(\$request->all());
+  \`\`\`
+  
+  Use:
+  \`\`\`php
+  $userData = new UserData(
+    name: \$request->input('name'),
+    email: \$request->input('email'),
+    role: \$request->input('role'),
+  );
+  
+  MyService::handle(\$userData);
+  \`\`\`
+  
+  Cleaner. Explicit. Easier to test.
+  
+  
+  ---
+  
+  📤 DTOs for API Responses
+  
+  You can also return DTOs instead of models in JSON APIs.
+  
+  Wrap your data:
+  \`\`\`php
+  return response()->json(new UserData(...));
+  \`\`\`
+  
+  Or transform them into arrays using custom logic:
+  \`\`\`php
+  public function toArray(): array
+  {
+    return [
+      'name' => \$this->name,
+      'email' => \$this->email,
+    ];
+  }
+  \`\`\`
+  
+  This protects your app from leaking model internals (timestamps, relationships, etc.).
+  
+  
+  ---
+  
+  📦 DTO Tools for Laravel
+  
+  If you want better control, type safety, and transformations:
+  
+  - **spatie/data-transfer-object**  
+  - **spatie/laravel-data** (most flexible)
+  - **laravel-datafy** (lightweight)
+  
+  These help you validate, cast, and serialize DTOs easily.
+  
+  ---
+  
+  🌟 Final Tip
+  
+  Using DTOs feels like “extra work” at first. But long-term, it pays off.
+  
+  ✅ Better architecture  
+  ✅ Loosely coupled logic  
+  ✅ Easier testing  
+  ✅ No accidental DB queries
+  
+  Still passing models around? Time to clean it up.
+  
+  Want real-world DTO examples for services, jobs, or APIs?  
+  Check out more Laravel best practices on the blog:  
+  https://mostefa-boudjema.vercel.app/blog
 
+  `
+  },
 
 
 
