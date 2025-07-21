@@ -20,6 +20,7 @@ import cover17 from '/images/posts/laravel-filament-guide.webp';
 import cover18 from '/images/posts/laravel-nova-guide.webp';
 import cover19 from '/images/posts/laravel-multi-tenancy-guide.webp';
 import cover20 from '/images/posts/laravel-dto-vs-model.webp';
+import cover21 from '/images/posts/firebase-vs-supabase.webp';
 
 // Nuxt 3: Use runtime config for useAllPosts
 import { useRuntimeConfig } from '#imports'
@@ -2755,7 +2756,244 @@ Visit my blog for more real-world prep tips and example answers:
 
   `
   },
-
+  {
+    id: 21,
+    title: 'Firebase vs Supabase: Which One Should You Use?',
+    summary: 'Both Firebase and Supabase offer backend-as-a-service tools — but they take very different approaches. Here’s a no-fluff comparison to help you choose.',
+    date: '2025-08-07',
+    tags: ['firebase', 'supabase', 'backend', 'baas', 'databases'],
+    slug: 'firebase-vs-supabase',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover21,
+    readingTime: '9 min read',
+    published: true,
+    category: 'Backend',
+    updatedAt: '2025-08-07',
+    metaDescription: 'A practical comparison of Firebase and Supabase for developers. Learn the key differences, when to choose one over the other, and which stacks they work best with.',
+    excerpt: 'Firebase vs Supabase — which one fits your project better? We break down auth, databases, pricing, real-time features, and more. No fluff, just the facts.',
+    content: `
+  ## ⚔️ Firebase vs Supabase: The Showdown
+  
+  Both **Firebase** and **Supabase** are "backend-as-a-service" (BaaS) platforms. They help you build full-stack apps without writing your own backend from scratch.
+  
+  But they’re very different under the hood.
+  
+  ---
+  
+  \`\`\`
+  🔥 Firebase Overview
+  
+  - Built by Google
+  - Uses Firestore (NoSQL)
+  - Real-time database
+  - Auth, hosting, cloud functions, ML, analytics
+  - Great for mobile apps
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🧊 Supabase Overview
+  
+  - Open-source Firebase alternative
+  - Uses PostgreSQL (SQL)
+  - Real-time via Postgres replication
+  - Auth, storage, edge functions, admin UI
+  - Great for web apps with relational data
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🗃️ Database Comparison
+  
+  Firebase:
+  - Firestore (NoSQL)
+  - Document-based
+  - Scales easily
+  - Not great for joins or relational data
+  
+  Supabase:
+  - PostgreSQL (SQL)
+  - Full relational support
+  - Joins, triggers, views, constraints — everything SQL
+  - Use raw SQL or client libraries
+  
+  💡 Pick Supabase if your data is relational (users, posts, comments...).
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🔐 Auth & Security
+  
+  Firebase:
+  - Battle-tested Google auth system
+  - Supports Google, Facebook, Apple, etc.
+  - Rules-based access control (can get complex)
+  
+  Supabase:
+  - Auth powered by GoTrue (like Netlify)
+  - Also supports OAuth providers
+  - Uses RLS (Row Level Security) — SQL-driven, powerful but requires SQL know-how
+  
+  💡 Firebase is easier for beginners. Supabase is more flexible for devs who know SQL.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  📡 Real-time Support
+  
+  Firebase:
+  - Real-time is native (built-in to Firestore)
+  - Push updates instantly to clients
+  
+  Supabase:
+  - Real-time via Postgres' replication + websockets
+  - Works well but slightly heavier setup
+  - Great for collaborative apps
+  
+  💡 Both are solid. Firebase wins on speed, Supabase wins on structure.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🧮 Functions (Serverless Logic)
+  
+  Firebase:
+  - Cloud Functions
+  - Deploy JS/TS to run backend logic
+  
+  Supabase:
+  - Edge Functions (based on Deno)
+  - Deploy logic close to the user
+  - Lightweight, modern
+  
+  💡 Firebase is more mature, Supabase is faster and simpler for quick tasks.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  💰 Pricing
+  
+  Firebase:
+  - Free tier is generous
+  - Pay-as-you-go pricing
+  - Firestore reads/writes can get expensive at scale
+  
+  Supabase:
+  - Free tier includes Postgres, auth, and storage
+  - Predictable pricing tiers
+  - Full database access — no hidden costs on reads/writes
+  
+  💡 Firebase can surprise you with read/write costs. Supabase is more transparent.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🔌 Ecosystem & Tooling
+  
+  Firebase:
+  - Massive ecosystem
+  - Well integrated with Android, Flutter, and web
+  - Proprietary tech
+  
+  Supabase:
+  - Growing fast (fully open-source)
+  - Self-hosting possible
+  - More control, but smaller ecosystem (for now)
+  
+  💡 Firebase is safer for enterprise apps, Supabase is developer-friendly and flexible.
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  📊 TL;DR Comparison Table
+  
+  | Feature        | Firebase            | Supabase           |
+  |----------------|---------------------|--------------------|
+  | Database       | Firestore (NoSQL)   | PostgreSQL (SQL)   |
+  | Auth           | Google Auth         | GoTrue + RLS       |
+  | Real-time      | Built-in            | Postgres channels  |
+  | Functions      | Cloud Functions     | Edge (Deno)        |
+  | Hosting        | Yes                 | Yes (Vercel/Netlify-style) |
+  | Open Source    | ❌                  | ✅                 |
+  | Offline Support| ✅ Native           | ❌ Experimental     |
+  | Pricing Model  | Pay-per-request     | Flat/Usage tiers   |
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🚀 When to Use Firebase
+  
+  ✅ Best for:
+  - Mobile-first apps
+  - MVPs that need fast real-time DB
+  - Google Cloud-integrated workflows
+  
+  ❌ Not ideal for:
+  - Complex queries
+  - SQL-heavy apps
+  - Multi-table joins
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🧠 When to Use Supabase
+  
+  ✅ Best for:
+  - Web apps with structured data
+  - Projects where you want full SQL
+  - Self-hosted/controlled apps
+  
+  ❌ Not ideal for:
+  - Mobile apps with heavy offline support
+  - Real-time heavy apps at massive scale (yet)
+  
+  \`\`\`
+  
+  ---
+  
+  \`\`\`
+  🧩 Final Thoughts
+  
+  Both are amazing. But they serve **different needs**.
+  
+  👉 Firebase is ideal when you need **speed and scalability** for unstructured data.  
+  👉 Supabase is ideal when you want **relational power, open-source flexibility**, and full control.
+  
+  Still confused? Here’s the rule:
+  
+  If your schema looks like a SQL ERD → use Supabase.  
+  If your data is loose, dynamic, and heavily real-time → use Firebase.
+  
+  Want starter templates for both? Check the blog:
+  https://mostefa-boudjema.vercel.app/blog
+  
+  \`\`\`
+    `
+  },  
 
 
 
