@@ -31,7 +31,6 @@ const showMultiLang = runtimeConfig.public?.showMultiLang === true || runtimeCon
 </script>
 
 <template>
-  <div class="relative inline-block w-fit">
     <select
       v-if="showMultiLang"
       :value="locale"
@@ -39,6 +38,9 @@ const showMultiLang = runtimeConfig.public?.showMultiLang === true || runtimeCon
       :class="[
         'rounded px-2 py-1 font-semibold pr-8',
         'outline-none focus:outline-none',
+        'focus:ring-0 focus:border-gray-300 dark:focus:border-gray-700',
+        'bg-white text-gray-900 border border-gray-300',
+        'dark:bg-gray-800 dark:text-white dark:border-gray-700',
       ]"
       aria-label="Language Switcher"
     >
@@ -46,22 +48,6 @@ const showMultiLang = runtimeConfig.public?.showMultiLang === true || runtimeCon
         {{ lang.label }}
       </option>
     </select>
-    <!-- Custom dropdown arrow -->
-    <span
-      v-if="showMultiLang"
-      class="pointer-events-none absolute right-2 top-1/2 transform -translate-y-1/2"
-    >
-      <svg
-        class="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light w-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-      </svg>
-    </span>
-  </div>
 </template>
 
 <style scoped>
@@ -78,6 +64,8 @@ select {
 }
 select:focus {
   box-shadow: none;
+  outline: none;
+  border-color: inherit;
   /* border-color removed, handled by Tailwind */
 }
 </style>
