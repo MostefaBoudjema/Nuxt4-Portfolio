@@ -2032,11 +2032,9 @@ Visit my blog for more real-world prep tips and example answers:
   
   Done. Visit '/admin' and log in.
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   🔁 Integrating Filament into an Existing Project
   
   Already have a Laravel app? No problem.
@@ -2057,11 +2055,9 @@ Visit my blog for more real-world prep tips and example answers:
   - Create/edit/delete forms
   - List table with search, filters, actions — all ready out of the box.
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   📦 Best Use Cases for Filament
   
   🔹 CRUD for Eloquent models  
@@ -2074,11 +2070,9 @@ Visit my blog for more real-world prep tips and example answers:
   ❌ Public-facing pages  
   ❌ Complex frontend interactivity (use Vue/React there)
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   🛠️ Customizing Filament Resources
   
   Each resource can be fully customized.
@@ -2095,11 +2089,9 @@ Visit my blog for more real-world prep tips and example answers:
   
   Need advanced logic? Use Livewire hooks inside the resource.
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   🎨 Styling Filament (Yes, It’s Tailwind)
   
   Since it’s built on Tailwind, you can easily extend and customize styles.
@@ -2110,11 +2102,9 @@ Visit my blog for more real-world prep tips and example answers:
   
   Need dark mode, RTL, or theme switchers? Already built-in or supported via plugins.
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   🔌 Useful Filament Plugins
   
   The Filament ecosystem is growing fast.
@@ -2127,11 +2117,9 @@ Visit my blog for more real-world prep tips and example answers:
   
   You can build your own plugins too.
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   🌍 Filament in a Multi-Tenant App?
   
   Yes, it supports multi-tenancy.
@@ -2148,11 +2136,9 @@ Visit my blog for more real-world prep tips and example answers:
   \`\`\`
   to get tenant context inside your resources.
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   🧪 Filament vs Laravel Nova vs Voyager
   
   | Feature         | Filament     | Nova        | Voyager      |
@@ -2164,11 +2150,9 @@ Visit my blog for more real-world prep tips and example answers:
   
   For most Laravel devs in 2025 — **Filament is the best choice**.
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   🧩 Final Tips
   
   ✅ Use Filament if:
@@ -2187,7 +2171,6 @@ Visit my blog for more real-world prep tips and example answers:
   💬 Need help integrating Filament into a client project?
   Let’s chat: https://mostefa-boudjema.vercel.app
   
-  \`\`\`
     `
   },
   {
@@ -2278,12 +2261,9 @@ Visit my blog for more real-world prep tips and example answers:
   - Relationships: BelongsTo, HasMany, MorphMany, etc.
   - Metrics: Like number of new users this week
   - Actions: Like “Approve Order” or “Mark as Shipped”
-  
-  \`\`\`
-  
+    
   ---
   
-  \`\`\`
   🎯 When Should You Use Laravel Nova?
   
   Nova shines when:
@@ -2296,11 +2276,9 @@ Visit my blog for more real-world prep tips and example answers:
   - You need heavy customization in the UI/UX
   - You want a free/open source alternative (look into Filament or Voyager)
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   🔐 Securing Nova Access
   
   Out of the box, Nova is restricted to users who pass the \`Gate::allows('viewNova')\` check.
@@ -2316,11 +2294,9 @@ Visit my blog for more real-world prep tips and example answers:
   
   Now only admin users can access '/nova'.
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   🧩 Nova Custom Fields & Tools
   
   Nova lets you extend it via:
@@ -2336,11 +2312,9 @@ Visit my blog for more real-world prep tips and example answers:
   
   It uses Vue under the hood, so frontend extensions are flexible.
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   🗂 Example Use Cases
   
   Here’s where Nova works best:
@@ -2352,11 +2326,9 @@ Visit my blog for more real-world prep tips and example answers:
   
   For client work, it’s a good way to hand over admin tools fast without building a custom backend.
   
-  \`\`\`
   
   ---
   
-  \`\`\`
   📌 Pros vs Cons
   
   ✅ Pros:
@@ -2370,11 +2342,7 @@ Visit my blog for more real-world prep tips and example answers:
   - UI is less customizable than Filament
   - Not ideal for frontend-heavy admin panels
   
-  \`\`\`
-  
-  ---
-  
-  \`\`\`
+ 
   🚀 Final Tip
   
   Nova isn’t just for big enterprise dashboards. It’s great for small internal tools too.
@@ -2386,7 +2354,7 @@ Visit my blog for more real-world prep tips and example answers:
   
   Check out more practical Laravel tips on the blog:  
   https://mostefa-boudjema.vercel.app/blog
-  \`\`\`
+ 
   `
   },
   {
