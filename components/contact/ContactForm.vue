@@ -2,7 +2,13 @@
 	<div class="w-full md:w-2/3">
 		<div
 			class="leading-loose m-2 md:m-4 p-4 md:p-7 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left">
-			<p class="font-general-medium text-primary-dark dark:text-primary-light text-xl md:text-2xl mb-6 md:mb-8">
+			<p
+				:class="[
+					'font-general-medium text-primary-dark dark:text-primary-light text-xl md:text-2xl mb-6 md:mb-8',
+					($i18n && $i18n.locale === 'ar') ? 'text-right' : 'text-left'
+				]"
+				dir="$i18n && $i18n.locale === 'ar' ? 'rtl' : 'ltr'"
+			>
 				{{ $t('Contact Us') }}
 			</p>
 			<form @submit.prevent="submitForm" class="font-general-regular space-y-5 md:space-y-7">

@@ -8,7 +8,7 @@ defineProps(['socials']);
 			<h2
 				class="font-general-medium text-2xl text-primary-dark dark:text-primary-light mt-12 mb-8"
 			>
-				<!-- {{$t('Contact details')}} -->
+				{{$t('Contact details')}}
 			</h2>
 			<div class="font-general-regular">
 				<button class="flex text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-1 m-2 duration-500"

@@ -4,11 +4,19 @@
       <!-- Banner left contents -->
       <div class="w-full md:w-1/3 text-left px-4 sm:px-0" data-aos="fade-right" data-aos-delay="200">
         <h1
-          class="font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase">
+          :class="[
+            'font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center uppercase',
+            isRtl ? 'text-right' : 'sm:text-left',
+            'text-ternary-dark dark:text-primary-light'
+          ]"
+        >
           {{ t("Hi, Iam Mostfa") }}
         </h1>
         <p
-          class="font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center sm:text-left leading-none text-gray-400 min-h-[2.5rem]"
+          :class="[
+            'font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center leading-none text-gray-400 min-h-[2.5rem]',
+            isRtl ? 'text-right' : 'sm:text-left'
+          ]"
         >
           {{ displayedText }}<span v-if="showCursor" class="typewriter-cursor">|</span>
         </p>
@@ -25,17 +33,20 @@
 </template>
 
 <script setup>
-import { onMounted, onUpdated, onUnmounted, ref } from 'vue';
+import { onMounted, onUpdated, onUnmounted, ref, computed } from 'vue';
 import feather from 'feather-icons';
 import { useI18n } from 'vue-i18n';
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
 import DownloadCv from './DownloadCv.vue';
 import AboutBtn from './AboutBtn.vue';
 
-const { t }=useI18n({
+const { t, locale } = useI18n({
   inheritLocale: true,
   useScope: 'global',
 });
+
+const rtlLocales = ['ar', 'he', 'fa', 'ur']; // Add other RTL locales if needed
+const isRtl = computed(() => rtlLocales.includes(locale.value));
 
 const jobTitles = [
   t("Job Title1"),

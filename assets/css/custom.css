@@ -70,3 +70,18 @@ body {
 .vue-back-to-top .default:hover {
     background: #1e40af !important;
 }
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* .rtl p {
+  direction: rtl;
+  text-align: right;
+} */
+
+/* .rtl h1 {
+  direction: rtl;
+  text-align: right;
+} */

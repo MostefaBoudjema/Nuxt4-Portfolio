@@ -6,7 +6,11 @@ defineProps(['contacts']);
 	<div class="w-full md:w-1/3">
 		<div class="text-left max-w-xl px-6">
 			<h2
-				class="font-general-medium text-2xl text-primary-dark dark:text-primary-light mt-12 mb-8"
+				:class="[
+					'font-general-medium text-2xl text-primary-dark dark:text-primary-light mt-12 mb-8',
+					($i18n && $i18n.locale === 'ar') ? 'text-right' : 'text-left'
+				]"
+				dir="$i18n && $i18n.locale === 'ar' ? 'rtl' : 'ltr'"
 			>
 				{{$t('Contact details')}}
 			</h2>
@@ -14,7 +18,10 @@ defineProps(['contacts']);
 				<li class="flex items-start" v-for="contact in contacts" :key="contact.id">
 					<i
 						:data-feather="contact.icon"
-						class="w-5 text-gray-500 dark:text-gray-400 mr-4 flex-shrink-0"
+						:class="[
+							'w-5 text-gray-500 dark:text-gray-400 flex-shrink-0',
+							($i18n && $i18n.locale === 'ar') ? 'ml-4' : 'mr-4'
+						]"
 					></i>
 					<a
 						href="#"

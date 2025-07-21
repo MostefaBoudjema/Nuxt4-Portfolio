@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :dir="isArabic ? 'rtl' : 'ltr'" :class="{ rtl: isArabic }">
     <!-- Header -->
     <AppHeader />
     
@@ -19,9 +19,12 @@
 </template>
 
 <script setup>
-// Import the header and footer components
+import { useI18n } from 'vue-i18n'
 import AppHeader from '~/components/shared/AppHeader.vue'
 import AppFooter from '~/components/shared/AppFooter.vue'
 import WhatsApp from '~/components/shared/WhatsApp.vue';
 import CustomBackToTop from '~/components/shared/CustomBackToTop.vue';
+
+const { locale } = useI18n()
+const isArabic = computed(() => locale.value === 'ar')
 </script> 
