@@ -3,11 +3,12 @@
         'mt-0 sm:mt-5 flex justify-center',
         place === 'center' ? 'sm:justify-center' : 'sm:justify-start'
       ]">
-        <router-link :to="{ name: 'About' }"
+        <NuxtLink
+          to="/about"
           class="font-general-medium flex items-center px-6 py-3 rounded-lg shadow-lg hover:shadow-xl bg-blue-500 hover:bg-blue-600 focus:ring-1 focus:ring-blue-900 text-white text-lg sm:text-xl duration-300"
           aria-label="About Us">
           <Button :title="$t('About Me')" />
-        </router-link>
+        </NuxtLink>
       </div>
 </template>
 

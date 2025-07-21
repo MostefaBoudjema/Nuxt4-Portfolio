@@ -4,6 +4,7 @@ import { useI18n } from "vue-i18n";
 import { onMounted, defineProps } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLocalePath } from '#i18n'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +23,7 @@ const { t }=useI18n({
 // const store=useStore();
 // const setPageId=(id) => store.dispatch('setPageId', id);
 const setPageId=(id) => console.log('Page ID:', id);
+const localePath = useLocalePath();
 onMounted(() => {
     let mm=gsap.matchMedia();
     mm.add("(min-width: 991px)", () => {
@@ -59,7 +61,7 @@ onMounted(() => {
     <div v-if="!props.project.hide">
         <div class="flex justify-center">
             <NuxtLink
-  :to="{ path: `/projects/${props.project.link}` }"
+  :to="localePath(`/projects/${props.project.link}`)"
   @click="setPageId(props.project.id)"
   class="single rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
   aria-label="Single Project"

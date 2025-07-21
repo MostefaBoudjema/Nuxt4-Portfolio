@@ -4,6 +4,20 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxt/image',
+    [
+      '@nuxtjs/i18n',
+      {
+        locales: [
+          { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
+          { code: 'ar', iso: 'ar-DZ', file: 'ar.json', name: 'Arabic' }
+        ],
+        defaultLocale: 'en',
+        strategy: 'prefix_except_default', // Only /ar/ gets a prefix, /en/ is default
+        lazy: true,
+        langDir: 'locales/',
+        vueI18n: './locales/vue-i18n.options.js'
+      }
+    ]
   ],
   css: [
     '~/assets/css/app.css'
@@ -11,7 +25,6 @@ export default defineNuxtConfig({
   plugins: [
     '@/plugins/aos.client.js',
     '@/plugins/aos.client.js',
-    '~/plugins/i18n.js',
     '~/plugins/theme.client.js',
     '~/plugins/backtotop.client.js'
   ],
