@@ -9,7 +9,8 @@ export default defineNuxtConfig({
       {
         locales: [
           { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
-          { code: 'ar', iso: 'ar-DZ', file: 'ar.json', name: 'Arabic' }
+          { code: 'ar', iso: 'ar-DZ', file: 'ar.json', name: 'Arabic' },
+          { code: 'fr', iso: 'fr-FR', file: 'fr.json', name: 'Français' }
         ],
         defaultLocale: 'en',
         strategy: 'prefix_except_default', // Only /ar/ gets a prefix, /en/ is default

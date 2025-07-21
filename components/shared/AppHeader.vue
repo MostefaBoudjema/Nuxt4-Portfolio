@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUpdated, watch } from 'vue';
+import { ref, onMounted, onUpdated, watch, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -9,6 +9,7 @@ import AppHeaderLinks from "./AppHeaderLinks.vue";
 import Button from "@/components/reusable/Button.vue";
 import settings from "~/configs";
 import useThemeSwitcher from '~/composables/useThemeSwitcher';
+import { useLocalePath } from '#i18n';
 
 const { t }=useI18n({
     inheritLocale: true,
@@ -19,6 +20,14 @@ const isOpen=ref(false);
 const theme=ref('dark');
 const lang=ref('');
 const modal=ref(false);
+
+const langRoot = computed(() => {
+    // If default language is 'en', you may want to use '/' instead of '/en'
+    // Adjust as needed for your routing strategy
+    return lang.value === 'en' ? '/' : `/${lang.value}`;
+});
+
+const localePath = useLocalePath();
 
 const { currentTheme }=useThemeSwitcher();
 
@@ -69,7 +78,8 @@ onUpdated(() => {
             <div class="flex justify-between items-center px-4 sm:px-0">
                 <!-- Header logos -->
                 <div>
-                    <NuxtLink to="/"><img v-if="theme === 'light'" :src="settings.logo_dark"
+                    <NuxtLink :to="localePath('/')">
+                        <img v-if="theme === 'light'" :src="settings.logo_dark"
                             class="w-36" alt="Dark Logo" />
                         <img v-else :src="settings.logo_light" class="w-36" alt="Light Logo" />
                     </NuxtLink>
