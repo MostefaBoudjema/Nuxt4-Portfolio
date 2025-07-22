@@ -21,13 +21,13 @@ const theme=ref('dark');
 const lang=ref('');
 const modal=ref(false);
 
-const langRoot = computed(() => {
+const langRoot=computed(() => {
     // If default language is 'en', you may want to use '/' instead of '/en'
     // Adjust as needed for your routing strategy
-    return lang.value === 'en' ? '/' : `/${lang.value}`;
+    return lang.value==='en'? '/':`/${lang.value}`;
 });
 
-const localePath = useLocalePath();
+const localePath=useLocalePath();
 
 const { currentTheme }=useThemeSwitcher();
 
@@ -68,6 +68,17 @@ const showModal=() => {
 onUpdated(() => {
     feather.replace();
 });
+
+let show_multi_lang=false;
+try {
+    const config=typeof useRuntimeConfig==='function'? useRuntimeConfig():null;
+    if (config&&config.public) {
+        const val=config.public.showMultiLang||config.public.SHOW_MULTI_LANG||config.public.NUXT_PUBLIC_SHOW_MULTI_LANG;
+        show_multi_lang=val===true||val==='true'||val===1||val==='1';
+    }
+} catch (e) {
+    // fallback for non-Nuxt environments (e.g. static build)
+}
 </script>
 
 <template>
@@ -79,18 +90,16 @@ onUpdated(() => {
                 <!-- Header logos -->
                 <div>
                     <NuxtLink :to="localePath('/')">
-                        <img v-if="theme === 'light'" :src="settings.logo_dark"
-                            class="w-36" alt="Dark Logo" />
+                        <img v-if="theme === 'light'" :src="settings.logo_dark" class="w-36" alt="Dark Logo" />
                         <img v-else :src="settings.logo_light" class="w-36" alt="Light Logo" />
                     </NuxtLink>
                 </div>
                 <div class="flex items-end gap-3">
-                    <language-switcher v-if="settings.show_multi_lang" :lang="lang" :theme="theme"
-                        @lang-changed="updateLang"
-                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
+                    <language-switcher v-if="show_multi_lang" :lang="lang" :theme="theme" @lang-changed="updateLang"
+                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg rtl:mr-4" />
                     <!-- Theme switcher small screen -->
                     <theme-switcher :theme="theme" @themeChanged="updateTheme"
-                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
+                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg rtl:mr-4" />
 
                     <!-- Small screen hamburger menu -->
                     <div class="sm:hidden">
@@ -116,26 +125,16 @@ onUpdated(() => {
             <!-- Header right section buttons -->
             <div class="hidden sm:flex justify-between items-center flex-col md:flex-row">
 
+                <language-switcher v-if="show_multi_lang" :lang="lang" :theme="theme" @lang-changed="updateLang"
+                    class="bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer rtl:mr-4" />
 
-                <language-switcher v-if="settings.show_multi_lang" :lang="lang" :theme="theme"
-                    @lang-changed="updateLang"
-                    class="bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
-
-                <!-- Hire me button -->
-                <!-- <div class="hidden md:block" v-if="settings.show_hire_me">
-                    <Button
-                        :title="$t('Hire Me')"
-                        class="text-md font-general-medium bg-blue-500 hover:bg-blue-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
-                        @click="showModal()"
-                        aria-label="Hire Me Button"
-                    />
-                </div> -->
                 <!-- Theme switcher large screen -->
                 <theme-switcher :theme="theme" @theme-changed="updateTheme"
-                    class="ml-8 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
+                    class="ml-8 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer rtl:mr-4" />
+
                 <div class="hidden md:block" v-if="settings.show_hire_me">
-                    <a href="https://www.upwork.com/freelancers/mostefaboudjema" target="_blank"><Button
-                            :title="$t('Hire Me')"
+                    <a href="https://www.upwork.com/freelancers/mostefaboudjema" target="_blank">
+                        <Button :title="$t('Hire Me')"
                             class="ml-8 text-md font-general-medium bg-blue-500 hover:bg-blue-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
                             @click="showModal()" aria-label="Hire Me Button">
                             <img src="/images/upworkIcon.png" alt="">
@@ -144,6 +143,7 @@ onUpdated(() => {
                 </div>
 
             </div>
+
         </div>
 
         <!-- Hire me modal -->
