@@ -23,18 +23,19 @@ defineProps(['contacts']);
 							($i18n && $i18n.locale === 'ar') ? 'ml-4' : 'mr-4'
 						]"
 					></i>
-					<a
-						href="#"
-						class="text-lg mb-4 text-ternary-dark dark:text-ternary-light min-w-0 break-words"
-						:class="
-							contact.icon === 'mail' || contact.icon === 'phone'
-								? 'hover:underline cursor-pointer'
-								: ''
-						"
-						aria-label="Website and Phone"
-					>
-						{{ contact.name }}
-					</a>
+			   <a
+				   href="#"
+				   class="text-lg mb-4 text-ternary-dark dark:text-ternary-light min-w-0 break-words"
+				   :class="
+					   contact.icon === 'mail' || contact.icon === 'phone'
+						   ? 'hover:underline cursor-pointer'
+						   : ''
+				   "
+				   aria-label="Website and Phone"
+				   :dir="contact.icon === 'phone' ? 'ltr' : undefined"
+			   >
+				   {{ contact.name }}
+			   </a>
 				</li>
 			</ul>
 		</div>
