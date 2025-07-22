@@ -258,6 +258,7 @@
         "latestArticle": "Latest Article",
         "relatedPosts": "Related Posts",
         "notFound": "Not Found",
+        "noPosts": "No posts found.",
         "noRelatedPosts": "No related posts found."
     },
 

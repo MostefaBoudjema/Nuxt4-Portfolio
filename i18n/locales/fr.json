@@ -235,6 +235,7 @@
         "latestArticle": "Dernier article",
         "relatedPosts": "Articles connexes",
         "notFound": "Non trouvé",
+        "noPosts": "Aucun article trouvé.",
         "noRelatedPosts": "Aucun article connexe trouvé."
     },
     "form": {
