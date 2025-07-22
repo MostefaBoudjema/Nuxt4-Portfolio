@@ -96,10 +96,10 @@ try {
                 </div>
                 <div class="flex items-end gap-3">
                     <language-switcher v-if="show_multi_lang" :lang="lang" :theme="theme" @lang-changed="updateLang"
-                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg rtl:mr-4" />
+                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
                     <!-- Theme switcher small screen -->
                     <theme-switcher :theme="theme" @themeChanged="updateTheme"
-                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg rtl:mr-4" />
+                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
 
                     <!-- Small screen hamburger menu -->
                     <div class="sm:hidden">
@@ -130,7 +130,7 @@ try {
 
                 <!-- Theme switcher large screen -->
                 <theme-switcher :theme="theme" @theme-changed="updateTheme"
-                    class="ml-8 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer rtl:mr-4" />
+                    class="ml-8 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
 
                 <div class="hidden md:block" v-if="settings.show_hire_me">
                     <a href="https://www.upwork.com/freelancers/mostefaboudjema" target="_blank">
