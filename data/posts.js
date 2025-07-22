@@ -21,6 +21,7 @@ import cover18 from '/images/posts/laravel-nova-guide.webp';
 import cover19 from '/images/posts/laravel-multi-tenancy-guide.webp';
 import cover20 from '/images/posts/laravel-dto-vs-model.webp';
 import cover21 from '/images/posts/firebase-vs-supabase.webp';
+import cover22 from '/images/posts/laravel-service-container-vs-provider.webp';
 
 // Nuxt 3: Use runtime config for useAllPosts
 import { useRuntimeConfig } from '#imports'
@@ -28,6 +29,7 @@ import { useRuntimeConfig } from '#imports'
 let postsList=[
   {
     id: 1,
+    lang: 'en',
     title: 'Getting Started with Laravel 11: A Step-by-Step Guide',
     summary: 'A beginner-friendly walkthrough to set up, configure, and run your first Laravel 11 application.',
     date: '2025-07-02',
@@ -226,6 +228,7 @@ let postsList=[
 
   {
     id: 2,
+    lang: 'en',
     title: 'Best Technology to Learn in 2025',
     summary: 'Explore the top technologies you should master in 2025 to stay ahead in tech.',
     date: '2025-07-05',
@@ -318,6 +321,7 @@ let postsList=[
   },
   {
     id: 3,
+    lang: 'en',
     title: 'Best Laravel-Related Technologies to Learn in 2025',
     summary: 'Explore top Laravel-related tools and technologies that will boost your productivity and job prospects in 2025.',
     date: '2025-07-07',
@@ -440,6 +444,7 @@ let postsList=[
   },
   {
     id: 4,
+    lang: 'en',
     title: 'Top Remote Job Platforms for Full-Stack Developers (International-Friendly)',
     summary: 'A curated list of the best remote job platforms that hire full-stack developers globally — no entry fees, no location bias.',
     date: '2025-07-09',
@@ -573,6 +578,7 @@ let postsList=[
   },
   {
     id: 5,
+    lang: 'en',
     title: 'Laravel Packages You Must Know as a Developer',
     summary: 'Level up your Laravel development by using the best community-supported packages for performance, security, and productivity.',
     date: '2025-07-13',
@@ -730,6 +736,7 @@ let postsList=[
   ,
   {
     id: 6,
+    lang: 'en',
     title: 'Best MVC Frameworks Developers Should Know in 2025',
     summary: 'Explore the top MVC frameworks used by developers in 2025 — whether you’re building web apps, APIs, or full-stack projects.',
     date: '2025-07-15',
@@ -859,6 +866,7 @@ let postsList=[
   ,
   {
     id: 7,
+    lang: 'en',
     title: 'Vue.js: A Beginner\'s Guide to Getting Started',
     summary: 'Learn how to set up and start building with Vue.js, the popular JavaScript framework for creating interactive user interfaces.',
     date: '2025-06-17',
@@ -958,6 +966,7 @@ let postsList=[
   },
   {
     id: 8,
+    lang: 'en',
     title: 'Advanced Vue.js Features You Should Know',
     summary: 'Explore advanced features in Vue.js that can help you scale your apps, from Vue Router to Vuex and dynamic components.',
     date: '2025-07-19',
@@ -1056,6 +1065,7 @@ Check out more guides on my blog:
   },
   {
     id: 9,
+    lang: 'en',
     title: 'React for Beginners: A Quick Start Guide',
     summary: 'Learn how to get started with React and build your first interactive web app.',
     date: '2025-05-21',
@@ -1147,6 +1157,7 @@ Check out more on my blog:
   },
   {
     id: 10,
+    lang: 'en',
     title: 'Advanced React: Optimizing Performance and Advanced Patterns',
     summary: 'Dive deeper into React with performance optimization techniques, hooks, and advanced patterns.',
     date: '2025-07-23',
@@ -1229,6 +1240,7 @@ Visit my blog for in-depth React tutorials:
   },
   {
     id: 11,
+    lang: 'en',
     title: '7 Algorithm Patterns Every Developer Should Master for Interviews',
     summary: 'Learn the most common algorithmic patterns that appear in coding interviews. Mastering these will help you solve 80% of LeetCode-style problems.',
     date: '2025-07-25',
@@ -1344,6 +1356,7 @@ Check out the blog for focused guides and coding patterns:
   },
   {
     id: 12,
+    lang: 'en',
     title: 'Laravel: Advanced Tips and Techniques for Power Users',
     summary: 'Take your Laravel skills to the next level with these advanced tips and techniques.',
     date: '2025-07-27',
@@ -1423,6 +1436,7 @@ Visit my blog for more advanced Laravel tutorials:
   },
   {
     id: 13,
+    lang: 'en',
     title: 'Top Web Development Interview Questions (And How to Answer Them Right)',
     summary: 'Get ready for your next frontend, backend, or full-stack interview with this list of real web dev questions and the best ways to answer them.',
     date: '2025-07-29',
@@ -1545,6 +1559,7 @@ Visit my blog for more real-world prep tips and example answers:
   },
   {
     id: 14,
+    lang: 'en',
     title: 'Eager vs Lazy Loading in Laravel (Clear, Practical Guide)',
     summary: 'Avoid N+1 query issues and speed up your Laravel app. Learn the difference between eager and lazy loading, with simple examples.',
     date: '2025-07-31',
@@ -1656,6 +1671,7 @@ Visit my blog for more real-world prep tips and example answers:
   },
   {
     id: 15,
+    lang: 'en',
     title: 'Laravel Pulse vs Telescope: Best Monitoring Tool for Production',
     summary: 'Confused between Laravel Pulse and Telescope? This post compares both tools and helps you decide which one fits your app’s needs.',
     date: '2025-08-01',
@@ -1789,6 +1805,7 @@ Visit my blog for more real-world prep tips and example answers:
   }
   , {
     id: 16,
+    lang: 'en',
     title: 'How to Find People That Need a New Website or a Redesign',
     summary: 'Struggling to find web dev clients? Here’s a straight-to-the-point guide to help you identify and reach people who need a new website or a redesign.',
     date: '2025-08-02',
@@ -1979,6 +1996,7 @@ Visit my blog for more real-world prep tips and example answers:
 
   {
     id: 17,
+    lang: 'en',
     title: 'Laravel Filament: Powerful Admin Panels Made Easy',
     summary: 'Need a modern admin panel fast? Laravel Filament gives you beautiful dashboards, resource management, and more — with zero boilerplate. Here’s how to get started and when to use it.',
     date: '2025-08-05',
@@ -2176,6 +2194,7 @@ Visit my blog for more real-world prep tips and example answers:
   },
   {
     id: 18,
+    lang: 'en',
     title: 'Laravel Nova: Setup, Integration & Best Use Cases',
     summary: 'Laravel Nova is a sleek admin panel for Laravel. Learn how to set it up, use it effectively, and decide when it’s the right tool for your project.',
     date: '2025-08-03',
@@ -2360,6 +2379,7 @@ Visit my blog for more real-world prep tips and example answers:
   },
   {
     id: 19,
+    lang: 'en',
     title: 'Laravel Multi-Tenancy: How to Get Started and When to Use It',
     summary: 'Building a SaaS app? Laravel multi-tenancy might be what you need. Learn the core concepts, how to set it up, and when it actually makes sense to use.',
     date: '2025-08-04',
@@ -2557,6 +2577,7 @@ Visit my blog for more real-world prep tips and example answers:
   },
   {
     id: 20,
+    lang: 'en',
     title: 'What Is the Advantage of DTO (Over Model Instances)?',
     summary: 'DTOs can make your Laravel app cleaner, more testable, and easier to scale. Here’s when and why to use Data Transfer Objects instead of Eloquent models directly.',
     date: '2025-08-06',
@@ -2758,6 +2779,7 @@ Visit my blog for more real-world prep tips and example answers:
   },
   {
     id: 21,
+    lang: 'en',
     title: 'Firebase vs Supabase: Which One Should You Use?',
     summary: 'Both Firebase and Supabase offer backend-as-a-service tools — but they take very different approaches. Here’s a no-fluff comparison to help you choose.',
     date: '2025-08-07',
@@ -2993,8 +3015,207 @@ Visit my blog for more real-world prep tips and example answers:
   
   \`\`\`
     `
-  },  
+  },
+  {
+    id: 22,
+    lang: 'en',
+    title: 'Laravel Service Container vs Service Provider: What’s the Difference?',
+    summary: 'Still confused between Laravel’s Service Container and Service Providers? This post clears it up with real examples and explains how they work together.',
+    date: '2025-08-08',
+    tags: ['laravel', 'php', 'dependency injection', 'service container', 'service provider'],
+    slug: 'laravel-service-container-vs-provider',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover22,
+    readingTime: '7 min read',
+    published: true,
+    category: 'Laravel',
+    updatedAt: '2025-08-08',
+    metaDescription: 'Learn the real difference between Laravel’s service container and service providers. Understand how they work together with examples and practical use cases.',
+    excerpt: 'Service Container? Service Provider? If these two concepts confuse you in Laravel, this article will finally clear things up with simple examples and real use cases.',
+    content: `
+## 🧠 Service Container vs Service Provider — What’s the Deal?
 
+They sound similar, right?  
+But they’re not the same thing.
+
+In Laravel, **Service Container** is the *engine*, and **Service Providers** are the *fuel*. Let’s break it down.
+
+---
+
+\`\`\`
+🔌 What is the Laravel Service Container?
+
+The **Service Container** is Laravel’s dependency injection container.
+
+It’s what resolves classes, dependencies, singletons, and bindings.
+
+Example:
+
+\`\`\`php
+// Bind something manually
+app()->bind('PaymentService', function () {
+    return new StripePaymentService();
+});
+
+// Resolve it
+$payment = app()->make('PaymentService');
+\`\`\`
+
+You can also use constructor injection:
+
+\`\`\`php
+public function __construct(StripePaymentService \$service) {
+    \$this->service = \$service;
+}
+\`\`\`
+
+💡 Think of it as the thing that **holds and resolves your dependencies**.
+
+
+---
+
+🛠️ What is a Service Provider?
+
+A **Service Provider** is the class where you *register things* into the service container.
+
+It’s like the container’s config file.
+
+Example:
+
+\`\`\`php
+// app/Providers/PaymentServiceProvider.php
+
+public function register() {
+    \$this->app->singleton(PaymentService::class, function () {
+        return new StripePaymentService();
+    });
+}
+\`\`\`
+
+And then register the provider in \`config/app.php\` or use package auto-discovery.
+
+💡 It’s where you define how things get added to the container.
+
+\`\`\`
+
+---
+
+\`\`\`
+🧩 So What’s the Real Difference?
+
+| Feature              | Service Container              | Service Provider                  |
+|----------------------|--------------------------------|------------------------------------|
+| Role                | Stores and resolves bindings   | Registers bindings into container |
+| Used for            | Dependency injection           | Bootstrapping services            |
+| When it runs        | Every time a class is resolved | At app startup                    |
+| Common methods      | bind(), make(), singleton()    | register(), boot()                |
+
+💡 You *use* the Service Container — but you *define things* in Service Providers.
+
+\`\`\`
+
+---
+
+\`\`\`
+⚙️ Real World Example: Registering a Custom Service
+
+Let’s say you build a custom logger class.
+
+1. Create your class:
+
+\`\`\`php
+class CustomLogger {
+    public function log(\$msg) {
+        file_put_contents('log.txt', \$msg);
+    }
+}
+\`\`\`
+
+2. Create a provider:
+
+\`\`\`php
+class LoggerServiceProvider extends ServiceProvider {
+    public function register() {
+        \$this->app->singleton(CustomLogger::class, function () {
+            return new CustomLogger();
+        });
+    }
+}
+\`\`\`
+
+3. Use it anywhere:
+
+\`\`\`php
+use App\\Services\\CustomLogger;
+
+class ReportController {
+    public function __construct(CustomLogger \$logger) {
+        \$logger->log("Page loaded");
+    }
+}
+\`\`\`
+
+Laravel will resolve \`CustomLogger\` automatically using the Service Container.
+
+
+---
+
+🧠 When to Use Which?
+
+✅ Use the **Service Container**:
+- Inside controllers or services
+- When you want to manually resolve something
+- In tests or dynamic logic
+
+✅ Use a **Service Provider**:
+- When registering services, bindings, facades, singletons
+- When building packages
+- When bootstrapping app-wide logic
+
+💡 TL;DR:
+- Service Provider = where you **put things into** the container
+- Service Container = where you **pull things out** of the container
+
+
+---
+
+🔁 How They Work Together
+
+1. **You bind stuff** in the Service Provider.
+2. Laravel adds it to the **Service Container**.
+3. Later, you **resolve** it via injection or \`app()->make()\`.
+
+They’re two halves of the same system.
+
+
+---
+
+✅ Final Tip
+
+If you’re building Laravel apps:
+- You’ll mostly *use* the Service Container without touching it directly
+- But you’ll *write* bindings in a Service Provider for anything custom
+
+Still unsure?
+
+If you’ve ever used:
+\`\`\`php
+Route::get(...)
+View::share(...)
+Auth::guard(...)
+\`\`\`
+…you’ve already used things that were registered via **Service Providers** and resolved from the **Service Container**.
+
+💬 Need real-world examples from your Laravel project?
+Check out more Laravel deep dives here:  
+https://mostefa-boudjema.vercel.app/blog
+
+  `
+  },
 
 
 
@@ -3002,8 +3223,11 @@ Visit my blog for more real-world prep tips and example answers:
 ];
 
 // Sort by updatedAt (descending: newest first)
-postsList.sort((a, b) => new Date(b.updatedAt)-new Date(a.updatedAt));
-postsList=postsList.filter(post => post.published===true);
+
+postsList = postsList
+  .filter(post => post.published === true)
+  .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+
 // Export only posts published on or before today (dynamic date)
 const today=new Date();
 const yyyy=today.getFullYear();
