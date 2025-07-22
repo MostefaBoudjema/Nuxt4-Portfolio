@@ -3,23 +3,21 @@
     <div class="flex flex-col sm:justify-between items-center sm:flex-row mt-12 sm:mt-10">
       <!-- Banner left contents -->
       <div class="w-full md:w-1/3 text-left px-4 sm:px-0" data-aos="fade-right" data-aos-delay="200">
-        <h1
-          :class="[
-            'font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center uppercase',
-            isRtl ? 'text-right' : 'sm:text-left',
-            'text-ternary-dark dark:text-primary-light'
-          ]"
-        >
-          {{ t("Hi, Iam Mostfa") }}
+        <h1 :class="[
+          'font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center uppercase',
+          isRtl ? 'md:text-right' : 'md:text-left',
+          'text-ternary-dark dark:text-primary-light'
+        ]">
+          {{ t('Hi, Iam Mostfa') }}
         </h1>
-        <p
-          :class="[
-            'font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center leading-none text-gray-400 min-h-[2.5rem]',
-            isRtl ? 'text-right' : 'sm:text-left'
-          ]"
-        >
+
+        <p :class="[
+          'font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center leading-none text-gray-400 min-h-[2.5rem]',
+          isRtl ? 'md:text-right' : 'md:text-left'
+        ]">
           {{ displayedText }}<span v-if="showCursor" class="typewriter-cursor">|</span>
         </p>
+
         <DownloadCv />
         <AboutBtn />
       </div>
@@ -27,7 +25,7 @@
       <div class="w-full md:w-2/3 text-right float-right">
         <DotLottieVue class="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px]" autoplay loop
           src="https://lottie.host/e3d2a44b-7d02-4b19-8d05-e90af78f1571/FGAlWtRxOu.lottie" />
-       </div>
+      </div>
     </div>
   </section>
 </template>
@@ -40,63 +38,63 @@ import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
 import DownloadCv from './DownloadCv.vue';
 import AboutBtn from './AboutBtn.vue';
 
-const { t, locale } = useI18n({
+const { t, locale }=useI18n({
   inheritLocale: true,
   useScope: 'global',
 });
 
-const rtlLocales = ['ar', 'he', 'fa', 'ur']; // Add other RTL locales if needed
-const isRtl = computed(() => rtlLocales.includes(locale.value));
+const rtlLocales=['ar', 'he', 'fa', 'ur']; // Add other RTL locales if needed
+const isRtl=computed(() => rtlLocales.includes(locale.value));
 
-const jobTitles = [
+const jobTitles=[
   t("Job Title1"),
   t("Job Title2"),
   t("Job Title3"),
   t("Job Title4"),
 ];
-const currentJobTitleIndex = ref(0);
-const displayedText = ref("");
-const showCursor = ref(true);
-let typingInterval = null;
-let pauseTimeout = null;
-let erasing = false;
+const currentJobTitleIndex=ref(0);
+const displayedText=ref("");
+const showCursor=ref(true);
+let typingInterval=null;
+let pauseTimeout=null;
+let erasing=false;
 
-const typeSpeed = 80; // ms per character
-const eraseSpeed = 40; // ms per character
-const pauseAfterTyping = 1200; // ms to pause after typing
-const pauseAfterErasing = 400; // ms to pause after erasing
+const typeSpeed=80; // ms per character
+const eraseSpeed=40; // ms per character
+const pauseAfterTyping=1200; // ms to pause after typing
+const pauseAfterErasing=400; // ms to pause after erasing
 
 function startTypewriter() {
-  const fullText = jobTitles[currentJobTitleIndex.value];
-  let charIndex = 0;
-  erasing = false;
+  const fullText=jobTitles[currentJobTitleIndex.value];
+  let charIndex=0;
+  erasing=false;
 
-  typingInterval = setInterval(() => {
-    if (charIndex < fullText.length) {
-      displayedText.value += fullText[charIndex];
+  typingInterval=setInterval(() => {
+    if (charIndex<fullText.length) {
+      displayedText.value+=fullText[charIndex];
       charIndex++;
     } else {
       clearInterval(typingInterval);
-      pauseTimeout = setTimeout(() => startErasing(), pauseAfterTyping);
+      pauseTimeout=setTimeout(() => startErasing(), pauseAfterTyping);
     }
   }, typeSpeed);
 }
 
 function startErasing() {
-  erasing = true;
-  typingInterval = setInterval(() => {
-    if (displayedText.value.length > 0) {
-      displayedText.value = displayedText.value.slice(0, -1);
+  erasing=true;
+  typingInterval=setInterval(() => {
+    if (displayedText.value.length>0) {
+      displayedText.value=displayedText.value.slice(0, -1);
     } else {
       clearInterval(typingInterval);
-      currentJobTitleIndex.value = (currentJobTitleIndex.value + 1) % jobTitles.length;
-      pauseTimeout = setTimeout(() => startTypewriter(), pauseAfterErasing);
+      currentJobTitleIndex.value=(currentJobTitleIndex.value+1)%jobTitles.length;
+      pauseTimeout=setTimeout(() => startTypewriter(), pauseAfterErasing);
     }
   }, eraseSpeed);
 }
 
 function startAnimation() {
-  displayedText.value = "";
+  displayedText.value="";
   startTypewriter();
 }
 
@@ -105,7 +103,7 @@ onMounted(() => {
   startAnimation();
   // Blinking cursor
   setInterval(() => {
-    showCursor.value = !showCursor.value;
+    showCursor.value=!showCursor.value;
   }, 500);
 });
 
@@ -125,8 +123,17 @@ onUpdated(() => {
   width: 1ch;
   animation: blink 1s steps(1) infinite;
 }
+
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 </style>
