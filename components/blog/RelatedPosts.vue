@@ -77,7 +77,7 @@ const relatedPosts = computed(() => {
   const currentTags = props.currentPost.tags || [];
   const currentCategory = props.currentPost.category;
   const related = posts
-    .filter(post => post.id !== props.currentPost.id && post.published !== false)
+    .filter(post => post.id !== props.currentPost.id && post.published !== false && props.currentPost.lang === post.lang)
     .map(post => {
       let score = 0;
       if (post.tags) {

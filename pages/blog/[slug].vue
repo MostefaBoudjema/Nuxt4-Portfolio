@@ -41,14 +41,14 @@
           <img v-if="post.author.avatar" :src="post.author.avatar" :alt="post.author.name" class="w-14 h-14 rounded-full border object-cover" />
           <div>
             <div class="font-semibold text-lg text-gray-900 dark:text-gray-100">{{ post.author.name }}</div>
-            <div class="text-blue-600 dark:text-blue-400 text-sm">{{ post.author.role || 'Author' }}</div>
+            <div class="text-blue-600 dark:text-blue-400 text-sm">{{ post.author.bio || 'Author' }}</div>
           </div>
         </div>
       </div>
 
       <!-- Sidebar with Related Posts -->
       <div class="lg:col-span-1">
-        <RelatedPosts :current-post="post" :max-posts="3" />
+        <RelatedPosts :current-post="post" :max-posts="6" />
       </div>
     </div>
     <div v-else class="py-24 text-center text-xl text-red-500 dark:text-red-400">
