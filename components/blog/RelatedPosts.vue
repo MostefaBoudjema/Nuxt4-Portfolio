@@ -58,8 +58,11 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import posts from '../../data/posts.js';
+
+import { useLocalePath, useRouter } from '#imports';
+const localePath = useLocalePath();
+const router = useRouter && useRouter();
 
 const props = defineProps({
   currentPost: {
@@ -110,8 +113,15 @@ function formatDate(dateString) {
 }
 
 function navigateToPost(slug) {
-  // Use Nuxt navigateTo composable or router push
-  window.location.href = `/blog/${slug}`;
+  // Use Nuxt localePath for localized navigation
+  const path = localePath(`/blog/${slug}`);
+  if (typeof navigateTo === 'function') {
+    navigateTo(path);
+  } else if (router && typeof router.push === 'function') {
+    router.push(path);
+  } else {
+    window.location.href = path;
+  }
 }
 </script>
 
