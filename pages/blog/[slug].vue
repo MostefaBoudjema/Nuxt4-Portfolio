@@ -5,7 +5,7 @@
       <div class="lg:col-span-2 bg-white dark:bg-gray-900 rounded-xl shadow-lg md:p-8 transition-all duration-300">
         <!-- Breadcrumb -->
         <nav class="text-sm text-gray-500 dark:text-gray-400 mb-6 flex items-center gap-2">
-          <router-link to="/blog" class="hover:underline text-blue-600 dark:text-blue-400">Articles</router-link>
+          <router-link :to="localePath('/blog')" class="hover:underline text-blue-600 dark:text-blue-400">{{$t("Blog")}}</router-link>
           <span>/</span>
           <span class="truncate">{{ post.title }}</span>
         </nav>
@@ -64,6 +64,8 @@ import RelatedPosts from '../components/blog/RelatedPosts.vue';
 import { ref, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useHead } from '#imports';
+import { useLocalePath } from '#i18n';
+const localePath = useLocalePath();
 
 const route = useRoute();
 const post = ref(null);
@@ -154,6 +156,7 @@ useHead(() => ({
 :deep(.prose pre code) {
   background-color: transparent;
   color: inherit;
+  /* text-align: start; */
   padding: 0;
   border-radius: 0;
   font-size: inherit;
