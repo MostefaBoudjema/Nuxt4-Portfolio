@@ -3,57 +3,57 @@
 const SMALL_IMAGE_URLS = {
   react: {
     alt: "react",
-    src: '/images/technology/react.png',
+    src: '/images/technology/react.webp',
     width: '60px',
   },
   api: {
     alt: "api",
-    src: '/images/technology/api.png',
+    src: '/images/technology/api.webp',
     width: '60px',
   },
   bootstrap: {
     alt: "bootstrap",
-    src: '/images/technology/bootstrap.png',
+    src: '/images/technology/bootstrap.webp',
     width: '60px',
   },
   laravel: {
     alt: "laravel",
-    src: '/images/technology/laravel.png',
+    src: '/images/technology/laravel.webp',
     width: '60px',
   },
   php: {
     alt: "php",
-    src: '/images/technology/php.png',
+    src: '/images/technology/php.webp',
     width: '60px',
   },
   jquery: {
     alt: "jquery",
-    src: '/images/technology/jquery.png',
+    src: '/images/technology/jquery.webp',
     width: '60px',
   },
   wordpress: {
     alt: "wordpress",
-    src: '/images/technology/wordpress.png',
+    src: '/images/technology/wordpress.webp',
     width: '60px',
   },
   vue: {
     alt: "vue",
-    src: '/images/technology/vue.png',
+    src: '/images/technology/vue.webp',
     width: '60px',
   },
   tailwind: {
     alt: "tailwind",
-    src: '/images/technology/tailwind.png',
+    src: '/images/technology/tailwind.webp',
     width: '60px',
   },
   next: {
     alt: "next",
-    src: '/images/technology/next.png',
+    src: '/images/technology/next.webp',
     width: '60px',
   },
   nuxt: {
     alt: "nuxt",
-    src: '/images/technology/nuxt.png',
+    src: '/images/technology/nuxt.webp',
     width: '60px',
   },
 };
