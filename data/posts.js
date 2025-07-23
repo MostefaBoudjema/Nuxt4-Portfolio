@@ -443,6 +443,234 @@ let postsList=[
   `
   },
   {
+    id: 3,
+    lang: 'fr',
+    title: 'Les Meilleures Technologies Liées à Laravel à Apprendre en 2025',
+    summary: 'Découvrez les meilleurs outils et technologies autour de Laravel qui boosteront votre productivité et vos opportunités en 2025.',
+    date: '2025-07-07',
+    tags: ['laravel', 'php', 'backend', 'productivité'],
+    slug: 'meilleures-technos-laravel-2025',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Développeur Laravel'
+    },
+    coverImage: cover3,
+    readingTime: '10 min de lecture',
+    published: true,
+    category: 'Backend',
+    updatedAt: '2025-07-07',
+    metaDescription: 'Découvrez les outils et technologies Laravel les plus puissants à maîtriser en 2025 — Livewire, Filament, Octane, Vapor et plus encore.',
+    excerpt: 'Maîtrisez l’écosystème Laravel en 2025 avec ces outils et frameworks incontournables.',
+    content: `
+## Introduction
+
+Laravel évolue constamment, et son écosystème devient de plus en plus riche. En 2025, il ne suffit plus de connaître Laravel — il faut aussi maîtriser les outils qui accélèrent le développement.
+
+Voici les **technologies incontournables liées à Laravel** à apprendre cette année.
+
+---
+
+### 1. **Laravel Livewire**
+
+Livewire vous permet de créer des interfaces réactives en utilisant uniquement Blade et PHP — pas besoin de JavaScript.
+
+> 🔥 Bonus : utilisez-le avec Alpine.js pour encore plus d’interactivité.
+
+---
+
+### 2. **Filament PHP**
+
+Filament est l’outil phare de 2025 pour créer rapidement des interfaces admin élégantes.
+
+- Basé sur Livewire et Tailwind.
+- Supporte la multi-location, les widgets personnalisés et les actions.
+- Parfait pour des outils internes, backoffices SaaS, CMS, etc.
+
+---
+
+### 3. **Laravel Octane**
+
+Besoin de performances ? Octane booste vos apps Laravel grâce à Swoole ou RoadRunner.
+
+- Jusqu’à 10 fois plus rapide.
+- Idéal pour des APIs à fort trafic ou apps en temps réel.
+
+---
+
+### 4. **Laravel Pulse**
+
+Un moyen élégant de surveiller la performance de votre app — sans service externe.
+
+- Données sur les files d’attente, requêtes lentes, etc.
+- Aucune configuration, intégré nativement.
+
+---
+
+### 5. **Laravel Breeze + API Stack**
+
+Pour un démarrage API léger mais solide : Breeze est souvent combiné avec :
+
+- Sanctum (auth par token)
+- Inertia.js (full-stack)
+- Tailwind CSS (style)
+
+Un pack idéal pour créer une SPA moderne.
+
+---
+
+### 6. **Pest PHP**
+
+Pest simplifie les tests en PHP avec une syntaxe claire et moderne.
+
+- Simple et lisible
+- Rapide à exécuter
+- Intégré à Laravel
+
+---
+
+### 7. **Laravel Forge / Vapor**
+
+Des outils DevOps faits pour les devs : déploiement facile avec Forge (VPS) ou Vapor (serverless AWS).
+
+- Forge : simple et rapide pour VPS.
+- Vapor : scalable et parfait pour startups.
+
+---
+
+### 8. **Tailwind CSS & Composants Blade**
+
+Tailwind + Blade Components = développement d’interfaces cohérentes et rapides.
+
+> Astuce : combinez avec \`@props\` pour des composants modulaires.
+
+---
+
+## Conclusion
+
+Laravel, c’est plus qu’un framework : c’est un écosystème complet.
+
+Maîtriser Livewire, Filament, Octane et Vapor fera de vous un **développeur Laravel moderne** — rapide, efficace et prêt à scaler.
+
+> Choisissez les outils selon vos objectifs (SaaS, API, outils internes) et allez en profondeur.
+`
+  }
+  ,
+  {
+    id: 3,
+    lang: 'ar',
+    title: 'أهم التقنيات المرتبطة بلارافيل لي لازمك تتعلمها في 2025',
+    summary: 'شوف الأدوات والتقنيات لي مع لارافيل باش تزيد في الإنتاجية وتفتح بيبان جديدة في خدمتك كمطور.',
+    date: '2025-07-07',
+    tags: ['laravel', 'php', 'backend', 'إنتاجية'],
+    slug: 'تقنيات-laravel-2025',
+    author: {
+      name: 'مصطفى بوجمعة',
+      avatar: me1,
+      bio: 'مطور Laravel'
+    },
+    coverImage: cover3,
+    readingTime: '10 دقايق قراية',
+    published: true,
+    category: 'الخلفية',
+    updatedAt: '2025-07-07',
+    metaDescription: 'تعرف على الأدوات والتقنيات المهمة لي تخليك قوي في Laravel في عام 2025 — كيف Livewire، Filament، Octane، Vapor، وغيرهم.',
+    excerpt: 'تحكم في منظومة Laravel في 2025 بهذو الأدوات القوية وسهّل حياتك كمطور.',
+    content: `
+## المقدمة
+
+لارافيل راهو يتطور من عام لعام، واللي يخدمو بيه ويفهمو النظام اللي معاه، ديما يكونو سابقين بخطوة. في 2025، ما يكفيش تعرف تخدم غير لارافيل — لازمك تتعلم الأدوات لي تعاونك تخدم أسرع وبطريقة أنظف.
+
+هاك **أهم الأدوات والتقنيات** المرتبطة بلارافيل لي ننصحك تتعلمهم هاد العام.
+
+---
+
+### 1. **Laravel Livewire**
+
+Livewire يسمحلك تبني واجهات تفاعلية بلا ما تمس الجافاسكريبت — غير Blade وPHP.
+
+> 🔥 نصيحة: زيدلو Alpine.js وراح تولي عندك واجهات خفيفة وتخدم بنينة.
+
+---
+
+### 2. **Filament PHP**
+
+Filament ولا اليوم هو الحل السريع والجميل باش تبني لوحات تحكم ونماذج وجدوال.
+
+- مبني فوق Livewire وTailwind.
+- يدعم Multi-tenancy، Widgets، وActions مخصصة.
+- ممتاز لأدوات داخلية، SaaS، ولوحات الإدارة.
+
+---
+
+### 3. **Laravel Octane**
+
+حاب تطبيقك يكون سريع؟ Octane يخلي استجابة Laravel أسرع حتى 10 مرات باستعمال Swoole ولا RoadRunner.
+
+- مثالي للتطبيقات لي فيها ضغط كبير أو حية (real-time).
+
+---
+
+### 4. **Laravel Pulse**
+
+أداة جديدة باش تراقب أداء التطبيق ديالك بلا ما تستعمل خدمات خارجية.
+
+- تشوف الطوابير، الاستعلامات الثقيلة، والبطء في العمليات.
+- كلشي مدمج في لارافيل بلا صداع راس.
+
+---
+
+### 5. **Laravel Breeze + API Stack**
+
+بغيت تبدأ API نظيف وخفيف؟ استعمل Breeze مع:
+
+- Sanctum (توثيق بالتوكن)
+- Inertia.js (لو بغيت Full-stack app)
+- Tailwind (للتزيين)
+
+هدومة يخلوك تنطلق في بناء SPA عصري بلا مشاكل.
+
+---
+
+### 6. **Pest PHP**
+
+Pest جا باش يسهل علينا كتابة التستات. بسيط، واضح، ويدعم لارافيل من الدار.
+
+- الكود مفهوم، سهل القراءة.
+- التجارب أسرع من PHPUnit.
+- مثالي لمطوري لارافيل.
+
+---
+
+### 7. **Laravel Forge / Vapor**
+
+Forge وVapor يخلوك تنشر التطبيقات بلا ما تدخل في مشاكل DevOps:
+
+- Forge: يخدم مع VPS كيما DigitalOcean وLinode.
+- Vapor: scalable على AWS، مثالي للي يخدمو SaaS.
+
+---
+
+### 8. **Tailwind CSS + Blade Components**
+
+كفاك من CSS العشوائي! Tailwind + Blade Components يخلوك تبني واجهات واضحة وسريعة.
+
+> نصيحة: استعمل \`@props\` وديّر مكونات تعاود تستعملها وين ما حبيت.
+
+---
+
+## الخاتمة
+
+لارافيل ماشي غير فريمورك — راهو نظام كامل يخليك تبني وتنشر وتطور مشاريع قوية.
+
+إذا ركزت على الأدوات الصح كيما Livewire، Filament، Octane وVapor، راك تولي مطور Laravel عصري يخدم بذكاء وسرعة.
+
+> نصيحة أخوية: شوف انت وين حاب تروح (SaaS؟ APIs؟ لوحات تحكم؟) وخدم صح على الأدوات لي تخدم مصلحتك.
+`
+  }
+
+  ,
+  {
     id: 4,
     lang: 'en',
     title: 'Top Remote Job Platforms for Full-Stack Developers (International-Friendly)',
@@ -1834,7 +2062,7 @@ Visit my blog for more real-world prep tips and example answers:
   ---
   
   \`\`\`
-  🏪 Local Businesses with Bad or Outdated Websites
+  🏪 1 - Local Businesses with Bad or Outdated Websites
   
   What to look for:
   - Websites that look like they're from 2008
@@ -1852,7 +2080,7 @@ Visit my blog for more real-world prep tips and example answers:
   ---
   
   \`\`\`
-  💬 Facebook Groups = Free Leads
+  💬 2 - Facebook Groups = Free Leads
   
   Join groups like:
   - Small Business Owners
@@ -1868,7 +2096,7 @@ Visit my blog for more real-world prep tips and example answers:
   ---
   
   \`\`\`
-  💼 Freelance Platforms (But Smarter)
+  💼 3 - Freelance Platforms (But Smarter)
   
   Use platforms like:
   - Upwork
@@ -1886,7 +2114,7 @@ Visit my blog for more real-world prep tips and example answers:
   ---
   
   \`\`\`
-  🧑‍💼 LinkedIn Cold Outreach
+  🧑‍💼 4 - LinkedIn Cold Outreach
   
   Target industries:
   - Real estate agents
@@ -1901,7 +2129,7 @@ Visit my blog for more real-world prep tips and example answers:
   ---
   
   \`\`\`
-  📧 Cold Email Works (If You’re Not Spamming)
+  📧 5 - Cold Email Works (If You’re Not Spamming)
   
   Find leads with:
   - Google Maps
@@ -1923,7 +2151,7 @@ Visit my blog for more real-world prep tips and example answers:
   ---
   
   \`\`\`
-  📝 Google Hack: “Not Secure” Websites
+  📝 6 - Google Hack: “Not Secure” Websites
   
   Search this in Google:
   site:.com "not secure" "contact us"
@@ -1936,7 +2164,7 @@ Visit my blog for more real-world prep tips and example answers:
   ---
   
   \`\`\`
-  📲 DM Small Brands on Instagram
+  📲 7 - DM Small Brands on Instagram
   
   Perfect for:
   - Artists
@@ -1953,7 +2181,7 @@ Visit my blog for more real-world prep tips and example answers:
   ---
   
   \`\`\`
-  🎯 Run Targeted Facebook/Instagram Ads
+  🎯 8 - Run Targeted Facebook/Instagram Ads
   
   Ad idea:
   “Still using a 2012-style website? I build modern, fast, mobile-first websites for small businesses.”
@@ -1969,7 +2197,7 @@ Visit my blog for more real-world prep tips and example answers:
   ---
   
   \`\`\`
-  🙋 Referrals: Ask Every Single Client
+  🙋 9 - Referrals: Ask Every Single Client
   
   After delivering a website:
   “If you know someone else who needs a site refresh, let me know — I’ll give them a discount and you’ll get a referral bonus.”
@@ -1984,10 +2212,7 @@ Visit my blog for more real-world prep tips and example answers:
   
   You don’t need 100 leads — just 3–5 good ones who see the value in your work.  
   Focus on showing clear, simple value. Fix problems, don’t sell pixels.
-  
-  Want outreach message templates that actually convert?
-  Need help with lead gen tools like Hunter or YAMM?
-  
+    
   Check out more no-fluff freelance guides on the blog:
   https://mostefa-boudjema.vercel.app/blog
   \`\`\`
@@ -3224,9 +3449,9 @@ https://mostefa-boudjema.vercel.app/blog
 
 // Sort by updatedAt (descending: newest first)
 
-postsList = postsList
-  .filter(post => post.published === true)
-  .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+postsList=postsList
+  .filter(post => post.published===true)
+  .sort((a, b) => new Date(b.updatedAt)-new Date(a.updatedAt));
 
 // Export only posts published on or before today (dynamic date)
 const today=new Date();
