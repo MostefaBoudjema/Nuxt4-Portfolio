@@ -53,10 +53,7 @@
 
 <script setup>
 import { onMounted } from 'vue';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useLocalePath } from '#i18n'
-gsap.registerPlugin(ScrollTrigger);
 import { useI18n } from 'vue-i18n'
 const { locale } = useI18n()
 const props = defineProps({
@@ -68,7 +65,13 @@ const props = defineProps({
 
 const localePath = useLocalePath();
 
-onMounted(() => {
+onMounted(async () => {
+  const gsapModule = await import('gsap');
+  const ScrollTrigger = (await import('gsap/ScrollTrigger')).default;
+  const gsap = gsapModule.default || gsapModule;
+  if (typeof gsap.registerPlugin === 'function') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
   let mm = gsap.matchMedia();
   mm.add('(min-width: 991px)', () => {
     gsap.fromTo('.single',
