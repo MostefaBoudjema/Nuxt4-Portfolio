@@ -1,5 +1,6 @@
 {
     "Projects": "مشاريعي",
+    "Mostefa Boudjema": "مصطفى بوجمعة",
     "About Me": "نبذة عني",
     "Contact": "تواصل معي ",
     "Download CV": "تنزيل السيرة الذاتية",
@@ -231,6 +232,8 @@
     "iAuto - Car dealership web app": "تطبيق الويب لبيع السيارات",
     "Car store services": "خدمات متجر السيارات",
     "eBook": "كتاب إلكتروني",
+    
+    "Blog Post Not Found": "لا توجد مقالات. يرجى التحقق مرة أخرى لاحقًا.",
     "Saadaah News": "أخبار السعادة",
     "detailsCD": "تفاصيل CD",
     "Bash Gate Landing Page": "Bash Gate Landing Page",

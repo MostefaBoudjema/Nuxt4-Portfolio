@@ -49,7 +49,7 @@ onUpdated(() => {
 });
 
 useHead({
-  title: () => `${t('About Me')} - Mostefa Boudjema`
+  title: () => `${t('About Me')} - ${t('Mostefa Boudjema')}`
 })
 </script>
 

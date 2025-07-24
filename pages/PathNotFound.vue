@@ -11,7 +11,7 @@ const { t }=useI18n({
 });
 
 useHead({
-  title: () => `${t('404 Page Not found')} - Mostefa Boudjema`
+  title: () => `${t('404 Page Not found')} - ${t('Mostefa Boudjema')}`
 })
 
 const theme=ref("dark"); // Assuming theme is a reactive property; adjust if it's sourced differently

@@ -11,7 +11,7 @@ import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 useHead({
-  title: () => `${t('Blog')} - Mostefa Boudjema`
+  title: () => `${t('Blog')} - ${t('Mostefa Boudjema')}`
 })
 </script>
 

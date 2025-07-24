@@ -29,7 +29,7 @@ const socials=ref(socialLinks);
 
 const { t } = useI18n();
 useHead({
-  title: () => `${t('Contact')} - Mostefa Boudjema`
+  title: () => `${t('Contact')} - ${t('Mostefa Boudjema')}`
 })
 
 onMounted(() => {

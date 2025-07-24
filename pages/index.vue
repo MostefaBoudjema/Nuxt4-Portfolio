@@ -38,7 +38,7 @@ const { t } = useI18n({
     useScope: "global",
 });
 useHead({
-  title: () => `${t('Home')} - Mostefa Boudjema`
+  title: () => `${t('Home')} - ${t('Mostefa Boudjema')}`
 })
 </script>
 

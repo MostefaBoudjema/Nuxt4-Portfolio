@@ -65,6 +65,8 @@ import { ref, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useHead } from '#imports';
 import { useLocalePath } from '#i18n';
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const localePath = useLocalePath();
 
 const route = useRoute();
@@ -101,9 +103,9 @@ const formattedContent = computed(() => {
 // Dynamic head management
 const title = computed(() => {
   if (post.value) {
-    return `${post.value.title} - Mostefa Boudjema`;
+    return `${post.value.title} - ${t('Mostefa Boudjema')}`;
   }
-  return 'Blog Post Not Found - Mostefa Boudjema';
+  return `${t('Blog Post Not Found')} - ${t('Mostefa Boudjema')}`;
 });
 
 const description = computed(() => {

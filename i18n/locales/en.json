@@ -1,5 +1,6 @@
 {
     "Projects": "Projects",
+    "Mostefa Boudjema": "Mostefa Boudjema",
     "About Me": "About Me",
     "Contact": "Contact",
     "Close": "Close",
@@ -246,6 +247,7 @@
     "Saadaah News": "Saadaah News",
     "detailsCD": "detailsCD",
     "Posts": "Posts",
+    "Blog Post Not Found": "Blog Post Not Found",
     "Bash Gate Landing Page": "Bash Gate Landing Page",
     "Image Generator OpenAI": "Image Generator OpenAI",
     "Frontend / API": "Frontend / API",

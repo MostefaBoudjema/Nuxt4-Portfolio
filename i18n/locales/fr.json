@@ -1,5 +1,6 @@
 {
     "Projects": "Projets",
+    "Mostefa Boudjema": "Mostefa Boudjema",
     "About Me": "À propos",
     "Contact": "Contact",
     "Close": "Fermer",
@@ -192,6 +193,7 @@
     "Job Title3": "Développeur Frontend React",
     "Job Title4": "Développeur Full Stack Web",
     "Testimonials": "Témoignages",
+    "Blog Post Not Found": "Aucun article trouvé.",
     "Project Manager": "Gestionnaire de projet",
     "Lead Developer": "Développeur principal",
     "UI/UX Designer": "Designer UI/UX",
