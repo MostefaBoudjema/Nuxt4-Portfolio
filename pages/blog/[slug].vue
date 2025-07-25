@@ -59,7 +59,7 @@
 
 <script setup>
 import { marked } from 'marked';
-import posts from '../data/posts.js';
+import {postsList as posts} from '../data/posts.js';
 import RelatedPosts from '../components/blog/RelatedPosts.vue';
 import { ref, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
@@ -71,6 +71,7 @@ const localePath = useLocalePath();
 
 const route = useRoute();
 const post = ref(null);
+// const postsList = ref(null);
 
 const loadPost = () => {
   const slug = route.params.slug;

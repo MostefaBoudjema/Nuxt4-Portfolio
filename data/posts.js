@@ -3989,26 +3989,26 @@ https://mostefa-boudjema.vercel.app/blog
   }
   ,
   {
-  id: 23,
-  lang: 'fr',
-  title: '20 concepts JavaScript essentiels pour devenir un développeur plus confiant',
-  summary: 'Tu tâtonnes encore avec JavaScript ? Apprends ces 20 concepts clés et code enfin avec assurance. Explications claires, sans blabla.',
-  date: '2025-08-09',
-  tags: ['javascript', 'frontend', 'développement web', 'concepts JS', 'programmation'],
-  slug: '20-concepts-javascript-essentiels',
-  author: {
-    name: 'Mostefa Boudjema',
-    avatar: me1,
-    bio: 'Développeur Laravel'
-  },
-  coverImage: cover23,
-  readingTime: '10 min de lecture',
-  published: true,
-  category: 'JavaScript',
-  updatedAt: '2025-08-09',
-  metaDescription: 'Maîtrise JavaScript en comprenant ces 20 concepts fondamentaux : closures, hoisting, scope, promesses, async/await, this, event loop, etc.',
-  excerpt: 'JavaScript est plein de pièges — mais dès que tu comprends ces 20 concepts de base, tout devient plus clair. Voici l’essentiel à connaître.',
-  content: `
+    id: 23,
+    lang: 'fr',
+    title: '20 concepts JavaScript essentiels pour devenir un développeur plus confiant',
+    summary: 'Tu tâtonnes encore avec JavaScript ? Apprends ces 20 concepts clés et code enfin avec assurance. Explications claires, sans blabla.',
+    date: '2025-08-09',
+    tags: ['javascript', 'frontend', 'développement web', 'concepts JS', 'programmation'],
+    slug: '20-concepts-javascript-essentiels',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Développeur Laravel'
+    },
+    coverImage: cover23,
+    readingTime: '10 min de lecture',
+    published: true,
+    category: 'JavaScript',
+    updatedAt: '2025-08-09',
+    metaDescription: 'Maîtrise JavaScript en comprenant ces 20 concepts fondamentaux : closures, hoisting, scope, promesses, async/await, this, event loop, etc.',
+    excerpt: 'JavaScript est plein de pièges — mais dès que tu comprends ces 20 concepts de base, tout devient plus clair. Voici l’essentiel à connaître.',
+    content: `
 ## 💡 20 Concepts JavaScript Essentiels à Connaître
 
 Tu peux copier-coller du code à l’infini…  
@@ -4306,29 +4306,29 @@ Passe sur le blog :
 https://mostefa-boudjema.vercel.app/fr/blog
 
   `
-}
-,
-{
-  id: 23,
-  lang: 'ar',
-  title: '20 مفهوم لازم تكون فاهمهم في JavaScript',
-  summary: 'ما تبقاش ديما تعوّل على StackOverflow! تعلّم هاد المفاهيم وتولي تفهم كود JavaScript بعينيك.',
-  date: '2025-08-09',
-  tags: ['javascript', 'تطوير الواجهة', 'برمجة الويب', 'أساسيات جافاسكريبت'],
-  slug: '20-js-concepts-arabic',
-  author: {
-    name: 'Mostefa Boudjema',
-    avatar: me1,
-    bio: 'مطور Laravel'
-  },
-  coverImage: cover23,
-  readingTime: '10 دقايق قراية',
-  published: true,
-  category: 'JavaScript',
-  updatedAt: '2025-08-09',
-  metaDescription: 'تعرّف على أهم 20 مفهوم في JavaScript مثل closures، hoisting، scope، promises، async/await، this، event loop وغيرها. شرح مبسط مع أمثلة.',
-  excerpt: 'JavaScript تقدر تبانلك معقدة فالأول، بصح كي تفهم هاد المفاهيم، كلش يولي ساهل.',
-  content: `
+  }
+  ,
+  {
+    id: 23,
+    lang: 'ar',
+    title: '20 مفهوم لازم تكون فاهمهم في JavaScript',
+    summary: 'ما تبقاش ديما تعوّل على StackOverflow! تعلّم هاد المفاهيم وتولي تفهم كود JavaScript بعينيك.',
+    date: '2025-08-09',
+    tags: ['javascript', 'تطوير الواجهة', 'برمجة الويب', 'أساسيات جافاسكريبت'],
+    slug: '20-js-concepts-arabic',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'مطور Laravel'
+    },
+    coverImage: cover23,
+    readingTime: '10 دقايق قراية',
+    published: true,
+    category: 'JavaScript',
+    updatedAt: '2025-08-09',
+    metaDescription: 'تعرّف على أهم 20 مفهوم في JavaScript مثل closures، hoisting، scope، promises، async/await، this، event loop وغيرها. شرح مبسط مع أمثلة.',
+    excerpt: 'JavaScript تقدر تبانلك معقدة فالأول، بصح كي تفهم هاد المفاهيم، كلش يولي ساهل.',
+    content: `
 ## 💡 20 مفهوم لازمك تفهمهم في JavaScript
 
 كاين فرق كبير بين نسخ الكود وفهمو.  
@@ -4579,30 +4579,30 @@ button.addEventListener("click", handleClick);
 user?.address?.city
   
 `
-}
-,
+  }
+  ,
 
-{
-  id: 24,
-  lang: 'en',
-  title: '25 Laravel Interview Questions to Help You Land Remote Backend Jobs',
-  summary: 'Interviewing for a Laravel backend role? These 25 project-manager-style questions will help you prepare and answer with clarity and confidence.',
-  date: '2027-08-10',
-  tags: ['laravel', 'backend', 'web development', 'interview', 'remote work'],
-  slug: '25-laravel-interview-questions',
-  author: {
-    name: 'Mostefa Boudjema',
-    avatar: me1,
-    bio: 'Laravel dev'
-  },
-  coverImage: cover24,
-  readingTime: '8 min read',
-  published: true,
-  category: 'Laravel',
-  updatedAt: '2027-08-11',
-  metaDescription: 'Nail your Laravel backend interview with these 25 clear and concise questions and answers, tailored for remote job discussions with project managers.',
-  excerpt: 'Preparing for a Laravel backend job interview with a project manager? These 25 questions cover everything from collaboration to Laravel practices, with quick-fire answers.',
-  content: `
+  {
+    id: 24,
+    lang: 'en',
+    title: '25 Laravel Interview Questions to Help You Land Remote Backend Jobs',
+    summary: 'Interviewing for a Laravel backend role? These 25 project-manager-style questions will help you prepare and answer with clarity and confidence.',
+    date: '2027-08-10',
+    tags: ['laravel', 'backend', 'web development', 'interview', 'remote work'],
+    slug: '25-laravel-interview-questions',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover24,
+    readingTime: '8 min read',
+    published: true,
+    category: 'Laravel',
+    updatedAt: '2027-08-11',
+    metaDescription: 'Nail your Laravel backend interview with these 25 clear and concise questions and answers, tailored for remote job discussions with project managers.',
+    excerpt: 'Preparing for a Laravel backend job interview with a project manager? These 25 questions cover everything from collaboration to Laravel practices, with quick-fire answers.',
+    content: `
 ## 🚀 25 Laravel Interview Questions (With Quick Answers)
 
 Interviewing for a Laravel backend developer job — especially remote — means answering a mix of technical, behavioral, and workflow questions. Here are the most common ones you'll likely face from a project manager:
@@ -4759,8 +4759,8 @@ Good luck — you got this!
 🔗 Want more Laravel content?  
 Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
   `
-}
-, 
+  }
+  ,
 
 
 
@@ -4797,5 +4797,5 @@ const posts=
 
 const privates=postsList.filter(post => new Date(post.updatedAt)>new Date(todayStr));
 
-export {  privates   }; // Export the full list for external use
+export { privates, postsList }; // Export the full list for external use
 export default posts; 
