@@ -1,7 +1,7 @@
 <template>
   <div class="blog-page">
-
-    <BlogList :posts="posts"/>
+    
+    <BlogList :posts="privates"/>
   </div>
 </template>
 
@@ -10,10 +10,10 @@ import BlogList from '../components/blog/BlogList.vue';
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n';
 
-import posts from '../data/posts.js';
+import { privates } from '../data/posts.js';
 const { t } = useI18n();
 useHead({
-  title: () => `${t('Blog')} - ${t('Mostefa Boudjema')}`
+  title: () => `${t('Private')} - ${t('Mostefa Boudjema')}`
 })
 </script>
 

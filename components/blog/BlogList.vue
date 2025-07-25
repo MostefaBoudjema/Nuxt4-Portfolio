@@ -1,13 +1,25 @@
 <script setup>
 import BlogPost from './BlogPost.vue';
-import posts from '../../data/posts.js';
 import { useI18n } from 'vue-i18n';
+import { computed } from 'vue';
 
-const { locale }=useI18n();
-const filteredPosts=posts.filter(post => post.lang===locale.value).map(post => ({
-  ...post,
-  image: `https://picsum.photos/600/300?random=${post.id}`
-}));
+const props = defineProps({
+  posts: {
+    type: Array,
+    required: true,
+  },
+});
+
+const { locale } = useI18n();
+
+const filteredPosts = computed(() => {
+  return (props.posts || [])
+    .filter(post => post.lang === locale.value)
+    .map(post => ({
+      ...post,
+      image: `https://picsum.photos/600/300?random=${post.id}`,
+    }));
+});
 </script>
 
 <template>
@@ -30,11 +42,3 @@ const filteredPosts=posts.filter(post => post.lang===locale.value).map(post => (
     </div>
   </div>
 </template>
-
-<style scoped>
-.blog-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-</style>
