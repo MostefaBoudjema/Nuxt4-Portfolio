@@ -23,6 +23,7 @@ import cover20 from '/images/posts/laravel-dto-vs-model.webp';
 import cover21 from '/images/posts/firebase-vs-supabase.webp';
 import cover22 from '/images/posts/laravel-service-container-vs-provider.webp';
 import cover23 from '/images/posts/20-core-javascript-concepts.webp';
+import cover24 from '/images/posts/25-laravel-interview-questions.webp';
 
 // Nuxt 3: Use runtime config for useAllPosts
 import { useRuntimeConfig } from '#imports'
@@ -2257,7 +2258,7 @@ Visit my blog for more real-world prep tips and example answers:
     lang: 'en',
     title: 'How to Find People That Need a New Website or a Redesign',
     summary: 'Struggling to find web dev clients? Here’s a straight-to-the-point guide to help you identify and reach people who need a new website or a redesign.',
-    date: '2025-08-02',
+    date: '2027-08-02',
     tags: ['web development', 'freelance', 'marketing', 'portfolio', 'clients'],
     slug: 'find-website-clients',
     author: {
@@ -2269,7 +2270,7 @@ Visit my blog for more real-world prep tips and example answers:
     readingTime: '6 min read',
     published: true,
     category: 'Freelance',
-    updatedAt: '2025-08-02',
+    updatedAt: '2027-08-02',
     metaDescription: 'Learn practical strategies to find people or businesses that need a new website or a redesign. Perfect for freelance web developers looking to get more clients.',
     excerpt: 'If you’re a web developer looking for more clients, here’s how to find businesses that desperately need a website redesign — and how to pitch them.',
     content: `
@@ -4581,6 +4582,185 @@ user?.address?.city
 }
 ,
 
+{
+  id: 24,
+  lang: 'en',
+  title: '25 Laravel Interview Questions to Help You Land Remote Backend Jobs',
+  summary: 'Interviewing for a Laravel backend role? These 25 project-manager-style questions will help you prepare and answer with clarity and confidence.',
+  date: '2027-08-10',
+  tags: ['laravel', 'backend', 'web development', 'interview', 'remote work'],
+  slug: '25-laravel-interview-questions',
+  author: {
+    name: 'Mostefa Boudjema',
+    avatar: me1,
+    bio: 'Laravel dev'
+  },
+  coverImage: cover24,
+  readingTime: '8 min read',
+  published: true,
+  category: 'Laravel',
+  updatedAt: '2027-08-11',
+  metaDescription: 'Nail your Laravel backend interview with these 25 clear and concise questions and answers, tailored for remote job discussions with project managers.',
+  excerpt: 'Preparing for a Laravel backend job interview with a project manager? These 25 questions cover everything from collaboration to Laravel practices, with quick-fire answers.',
+  content: `
+## 🚀 25 Laravel Interview Questions (With Quick Answers)
+
+Interviewing for a Laravel backend developer job — especially remote — means answering a mix of technical, behavioral, and workflow questions. Here are the most common ones you'll likely face from a project manager:
+
+---
+
+### ✅ General & Workflow
+
+\`\`\`
+1. Tell me about yourself.
+\`\`\`
+Laravel backend dev with 4+ years experience building APIs, booking systems, CMS platforms, and admin dashboards.
+
+\`\`\`
+2. What types of Laravel projects have you worked on?
+\`\`\`
+Marketplaces, multi-step forms, appointment systems, API backends for mobile apps, and custom admin panels.
+
+\`\`\`
+3. Are you good at working independently?
+\`\`\`
+Yes. I manage my own tasks, meet deadlines, and use Trello or Notion to track progress and blockers.
+
+\`\`\`
+4. How do you work with frontend or mobile devs?
+\`\`\`
+Clear API contracts, Git collaboration, and async communication via Slack, Notion, or Loom videos.
+
+\`\`\`
+5. Do you use Trello, Jira, or ClickUp?
+\`\`\`
+Yes. Mainly Trello and ClickUp for sprints, task breakdowns, and status updates.
+
+\`\`\`
+6. Walk me through your process from task to deployment.
+\`\`\`
+Clarify the task → Create Git branch → Code → Local + staging tests → Merge + Deploy.
+
+\`\`\`
+7. How do you handle client feedback or changes?
+\`\`\`
+I track change requests, prioritize impact, and deliver fast iterations while keeping communication open.
+
+\`\`\`
+8. Can you overlap with our time zone?
+\`\`\`
+Yes. I’m flexible and can align for 3–4 hours/day for meetings or standups.
+
+---
+
+### 🧠 Laravel & Technical Questions
+
+\`\`\`
+9. How do you structure a Laravel project for scalability?
+\`\`\`
+I use service classes, repository patterns, jobs, and events for cleaner and testable code separation.
+
+\`\`\`
+10. How do you build APIs in Laravel?
+\`\`\`
+API Resource classes, Form Requests for validation, proper status codes, and Sanctum or Passport for auth.
+
+\`\`\`
+11. What do you use for auth in Laravel?
+\`\`\`
+Sanctum for SPAs or mobile APIs, Passport for OAuth. I also customize Laravel Breeze or Jetstream when needed.
+
+\`\`\`
+12. How do you manage environment configurations?
+\`\`\`
+'.env' files per environment, with secure storage of keys and config overrides on staging/production servers.
+
+\`\`\`
+13. Have you integrated third-party services?
+\`\`\`
+Yes: Stripe (payments), Twilio (SMS/WhatsApp), Firebase (push), and multiple external REST APIs.
+
+\`\`\`
+14. How do you use version control?
+\`\`\`
+Git with GitHub. I follow feature branching and use pull requests for reviews and team feedback.
+
+\`\`\`
+15. How do you test your backend before handoff?
+\`\`\`
+Manual Postman tests, some PHPUnit coverage, and staging server testing for full flows.
+
+\`\`\`
+16. How do you ensure secure code?
+\`\`\`
+I validate inputs, sanitize data, use Laravel’s built-in protections (CSRF, XSS, SQLi), and restrict sensitive info exposure.
+
+---
+
+### 🧩 Project-Based / Problem Solving
+
+\`\`\`
+17. Tell me about a tough bug you solved.
+\`\`\`
+Queue jobs failed silently due to misconfigured connection. I used logs, tried sync driver, and fixed it by adjusting 'config/queue.php'.
+
+\`\`\`
+18. How do you estimate tasks?
+\`\`\`
+Break down features into sub-tasks, estimate each based on past experience, and add margin for edge cases/testing.
+
+\`\`\`
+19. How do you prioritize tasks?
+\`\`\`
+Impact + urgency. I tackle blockers first, then critical tasks, and communicate delays early.
+
+\`\`\`
+20. Have you ever missed a deadline?
+\`\`\`
+Once due to unclear scope. I flagged it early, discussed trade-offs, and delivered a revised version the next day.
+
+\`\`\`
+21. What Laravel project are you most proud of?
+\`\`\`
+A clinic booking system with Stripe payments, Twilio reminders, user roles, and mobile-friendly API. Delivered in 3 weeks.
+
+---
+
+### 💬 Communication & Remote Skills
+
+\`\`\`
+22. How do you report progress remotely?
+\`\`\`
+Daily async updates (text/video), and task status in Trello/ClickUp. I also mention blockers early.
+
+\`\`\`
+23. Do you write documentation?
+\`\`\`
+Yes. I document API routes, env setup, and any custom logic that might help other devs or QA.
+
+\`\`\`
+24. What if a requirement isn’t clear?
+\`\`\`
+I clarify it ASAP, propose assumptions or examples, and wait for confirmation before moving forward.
+
+\`\`\`
+25. How do you stay productive while working remotely?
+\`\`\`
+Time blocks, minimal distractions, task list reviews, and async check-ins to stay on track.
+
+---
+
+🔥 Final Tip
+
+Keep your answers short, specific, and backed by real experience. Project managers care more about **reliability, communication, and process** than deep technical jargon.
+
+Good luck — you got this!
+
+🔗 Want more Laravel content?  
+Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
+  `
+}
+, 
 
 
 
@@ -4615,4 +4795,7 @@ const posts=
     ? postsList
     :postsList.filter(post => new Date(post.updatedAt)<=new Date(todayStr));
 
+const privates=postsList.filter(post => new Date(post.updatedAt)>new Date(todayStr));
+
+export {  privates   }; // Export the full list for external use
 export default posts; 
