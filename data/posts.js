@@ -22,6 +22,7 @@ import cover19 from '/images/posts/laravel-multi-tenancy-guide.webp';
 import cover20 from '/images/posts/laravel-dto-vs-model.webp';
 import cover21 from '/images/posts/firebase-vs-supabase.webp';
 import cover22 from '/images/posts/laravel-service-container-vs-provider.webp';
+import cover23 from '/images/posts/20-core-javascript-concepts.webp';
 
 // Nuxt 3: Use runtime config for useAllPosts
 import { useRuntimeConfig } from '#imports'
@@ -3661,6 +3662,924 @@ https://mostefa-boudjema.vercel.app/blog
 
   `
   },
+  {
+    id: 23,
+    lang: 'en',
+    title: '20 Core JavaScript Concepts That Will Instantly Make You a More Confident Developer',
+    summary: 'Still guessing your way through JS? Learn these 20 core concepts and start coding with real confidence. Each concept is explained with clarity and zero fluff.',
+    date: '2025-08-09',
+    tags: ['javascript', 'frontend', 'web development', 'js concepts', 'programming'],
+    slug: '20-core-javascript-concepts',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover23,
+    readingTime: '10 min read',
+    published: true,
+    category: 'JavaScript',
+    updatedAt: '2025-08-09',
+    metaDescription: 'Master JavaScript by understanding these 20 fundamental concepts — closures, hoisting, scope, promises, async/await, this, event loop, and more.',
+    excerpt: 'JavaScript is full of “gotchas” — but once you understand these 20 core concepts, things will finally start making sense. Let’s break them down.',
+    content: `
+## 💡 20 Core JavaScript Concepts Every Dev Should Know
+
+You can copy-paste code all day…  
+But if you want to build confidently, **you need to truly understand JavaScript.**
+
+Here are 20 concepts that will give you that edge — with real examples.
+
+---
+
+\`\`\`
+1. 🔄 Variable Scopes (var, let, const)
+
+- \`var\` is function-scoped.
+- \`let\` and \`const\` are block-scoped.
+
+Example:
+
+\`\`\`js
+if (true) {
+  var a = 1;
+  let b = 2;
+}
+console.log(a); // 1
+console.log(b); // Error
+\`\`\`
+
+
+---
+
+2. 🎯 The "this" Keyword
+
+Depends on how a function is called — not where it’s defined.
+
+Example:
+
+\`\`\`js
+const user = {
+  name: "Ali",
+  greet() {
+    console.log(this.name);
+  }
+}
+user.greet(); // "Ali"
+\`\`\`
+
+
+---
+
+3. 🧠 Closures
+
+A function remembers variables from the scope it was created in.
+
+\`\`\`js
+function outer() {
+  let counter = 0;
+  return function inner() {
+    counter++;
+    return counter;
+  };
+}
+const inc = outer();
+console.log(inc()); // 1
+console.log(inc()); // 2
+\`\`\`
+
+
+---
+
+4. 🏗️ Hoisting
+
+Variables and functions are "hoisted" to the top of their scope.
+
+\`\`\`js
+console.log(a); // undefined
+var a = 5;
+
+sayHi(); // works
+function sayHi() {
+  console.log("Hello");
+}
+\`\`\`
+
+
+---
+
+5. 🕳️ Falsy vs Truthy
+
+Falsy values: \`false\`, \`0\`, \`""\`, \`null\`, \`undefined\`, \`NaN\`
+
+Everything else is truthy.
+
+\`\`\`js
+if ("0") console.log("Truthy"); // runs
+if (0) console.log("Falsy");   // doesn't run
+\`\`\`
+
+
+---
+
+6. 🔁 Loops and Array Methods
+
+Master these:
+- \`for\`, \`for...of\`, \`forEach()\`
+- \`map()\`, \`filter()\`, \`reduce()\`
+
+\`\`\`js
+[1,2,3].map(n => n * 2); // [2,4,6]
+\`\`\`
+
+
+---
+
+7. 🧩 Destructuring
+
+Extract values from arrays/objects in one line.
+
+\`\`\`js
+const [a, b] = [1, 2];
+const { name } = { name: "Sara", age: 30 };
+\`\`\`
+
+
+---
+
+8. 📦 Spread & Rest Operators
+
+Spread = expand, Rest = collect
+
+\`\`\`js
+const arr = [1, 2, 3];
+const copy = [...arr]; // spread
+
+function sum(...nums) { // rest
+  return nums.reduce((a, b) => a + b, 0);
+}
+\`\`\`
+
+
+---
+
+9. 🔃 Promises
+
+Handle async operations cleanly.
+
+\`\`\`js
+fetch('/api').then(res => res.json()).then(data => console.log(data));
+\`\`\`
+
+
+---
+
+10. ⏱️ async / await
+
+Cleaner syntax for promises.
+
+\`\`\`js
+async function getData() {
+  const res = await fetch('/api');
+  const data = await res.json();
+}
+\`\`\`
+
+
+---
+
+11. 🌊 The Event Loop
+
+JS is single-threaded. The event loop handles async callbacks.
+
+\`\`\`js
+console.log("1");
+setTimeout(() => console.log("2"), 0);
+console.log("3"); // output: 1, 3, 2
+\`\`\`
+
+
+---
+
+12. 📚 Data Types
+
+Primitive: string, number, boolean, null, undefined, symbol, bigint  
+Reference: object, array, function
+
+
+---
+
+13. 🔍 typeof vs instanceof
+
+\`typeof\` checks primitive types.  
+\`instanceof\` checks object instances.
+
+\`\`\`js
+typeof "hello" // "string"
+[] instanceof Array // true
+\`\`\`
+
+
+---
+
+14. 🧪 == vs ===
+
+- \`==\` does type coercion
+- \`===\` checks type + value (use this)
+
+\`\`\`js
+"5" == 5   // true
+"5" === 5  // false
+\`\`\`
+
+
+---
+
+15. 🧱 IIFE (Immediately Invoked Function Expression)
+
+Runs a function as soon as it’s defined.
+
+\`\`\`js
+(function() {
+  console.log("I run immediately!");
+})();
+\`\`\`
+
+
+---
+
+16. 🧵 Callback Hell
+
+Too many nested callbacks → messy code.
+
+Fix with:
+- Promises
+- async/await
+- abstraction
+
+
+---
+
+17. 🔧 Object Methods: keys(), values(), entries()
+
+\`\`\`js
+const obj = { a: 1, b: 2 };
+Object.keys(obj); // ['a', 'b']
+Object.values(obj); // [1, 2]
+Object.entries(obj); // [['a',1], ['b',2]]
+\`\`\`
+
+
+---
+
+18. 📏 Array.isArray() vs typeof
+
+\`typeof [] === "object"\` → not helpful
+
+Use:
+
+\`\`\`js
+Array.isArray([]); // true
+\`\`\`
+
+
+---
+
+19. 📛 Error Handling: try...catch
+
+\`\`\`js
+try {
+  throw new Error("Something broke");
+} catch (e) {
+  console.log(e.message);
+}
+\`\`\`
+
+
+---
+
+20. 🧠 Pure Functions
+
+Functions with:
+- No side effects
+- Same input → same output
+
+This makes your code more testable and maintainable.
+
+\`\`\`js
+function add(a, b) {
+  return a + b;
+}
+\`\`\`
+
+
+---
+
+🎯 Final Tip
+
+You don’t need to master the *entire language* to be confident.  
+Just understand these 20 core concepts — and practice using them.
+
+💬 Want flashcards, cheatsheets, or exercises for these topics?
+Check the blog:  
+https://mostefa-boudjema.vercel.app/blog
+
+  `
+  }
+  ,
+  {
+  id: 23,
+  lang: 'fr',
+  title: '20 concepts JavaScript essentiels pour devenir un développeur plus confiant',
+  summary: 'Tu tâtonnes encore avec JavaScript ? Apprends ces 20 concepts clés et code enfin avec assurance. Explications claires, sans blabla.',
+  date: '2025-08-09',
+  tags: ['javascript', 'frontend', 'développement web', 'concepts JS', 'programmation'],
+  slug: '20-concepts-javascript-essentiels',
+  author: {
+    name: 'Mostefa Boudjema',
+    avatar: me1,
+    bio: 'Développeur Laravel'
+  },
+  coverImage: cover23,
+  readingTime: '10 min de lecture',
+  published: true,
+  category: 'JavaScript',
+  updatedAt: '2025-08-09',
+  metaDescription: 'Maîtrise JavaScript en comprenant ces 20 concepts fondamentaux : closures, hoisting, scope, promesses, async/await, this, event loop, etc.',
+  excerpt: 'JavaScript est plein de pièges — mais dès que tu comprends ces 20 concepts de base, tout devient plus clair. Voici l’essentiel à connaître.',
+  content: `
+## 💡 20 Concepts JavaScript Essentiels à Connaître
+
+Tu peux copier-coller du code à l’infini…  
+Mais si tu veux coder avec confiance, **tu dois vraiment comprendre JavaScript.**
+
+Voici 20 concepts qui vont faire passer ton niveau à la vitesse supérieure.
+
+---
+
+\`\`\`
+1. 🔄 Portée des variables (var, let, const)
+
+- \`var\` → portée fonction
+- \`let\` et \`const\` → portée bloc
+
+\`\`\`js
+if (true) {
+  var a = 1;
+  let b = 2;
+}
+console.log(a); // 1
+console.log(b); // Erreur
+\`\`\`
+
+
+---
+
+2. 🎯 Le mot-clé "this"
+
+\`this\` dépend de **comment** la fonction est appelée.
+
+\`\`\`js
+const user = {
+  name: "Ali",
+  greet() {
+    console.log(this.name);
+  }
+}
+user.greet(); // "Ali"
+\`\`\`
+
+
+---
+
+3. 🧠 Closures (fermetures)
+
+Une fonction se souvient des variables de son scope d’origine.
+
+\`\`\`js
+function outer() {
+  let count = 0;
+  return function inner() {
+    count++;
+    return count;
+  };
+}
+const inc = outer();
+console.log(inc()); // 1
+console.log(inc()); // 2
+\`\`\`
+
+
+---
+
+4. 🏗️ Hoisting (remontée)
+
+Les déclarations sont remontées en haut du scope.
+
+\`\`\`js
+console.log(a); // undefined
+var a = 5;
+
+sayHi(); // fonctionne
+function sayHi() {
+  console.log("Salut");
+}
+\`\`\`
+
+
+---
+
+5. 🕳️ Falsy vs Truthy
+
+Falsy : \`false\`, \`0\`, \`""\`, \`null\`, \`undefined\`, \`NaN\`  
+Tout le reste est truthy.
+
+\`\`\`js
+if ("0") console.log("Truthy"); // s'exécute
+if (0) console.log("Falsy");   // ne s'exécute pas
+\`\`\`
+
+
+---
+
+6. 🔁 Boucles et méthodes de tableau
+
+À connaître :
+- \`for\`, \`for...of\`, \`forEach()\`
+- \`map()\`, \`filter()\`, \`reduce()\`
+
+\`\`\`js
+[1,2,3].map(n => n * 2); // [2,4,6]
+\`\`\`
+
+
+---
+
+7. 🧩 Déstructuration
+
+Extraire des valeurs en une ligne.
+
+\`\`\`js
+const [a, b] = [1, 2];
+const { name } = { name: "Sara", age: 30 };
+\`\`\`
+
+
+---
+
+8. 📦 Spread et Rest
+
+Spread = étendre  
+Rest = regrouper
+
+\`\`\`js
+const arr = [1, 2, 3];
+const copy = [...arr];
+
+function sum(...nombres) {
+  return nombres.reduce((a, b) => a + b, 0);
+}
+\`\`\`
+
+
+---
+
+9. 🔃 Promesses (Promises)
+
+Gérer l’asynchrone proprement.
+
+\`\`\`js
+fetch('/api').then(res => res.json()).then(data => console.log(data));
+\`\`\`
+
+
+---
+
+10. ⏱️ async / await
+
+Syntaxe plus lisible pour les promesses.
+
+\`\`\`js
+async function getData() {
+  const res = await fetch('/api');
+  const data = await res.json();
+}
+\`\`\`
+
+
+---
+
+11. 🌊 Event Loop
+
+JS est mono-thread. L'event loop gère les callbacks asynchrones.
+
+\`\`\`js
+console.log("1");
+setTimeout(() => console.log("2"), 0);
+console.log("3"); // Résultat : 1, 3, 2
+\`\`\`
+
+
+---
+
+12. 📚 Types de données
+
+Primitifs : string, number, boolean, null, undefined, symbol, bigint  
+Références : object, array, function
+
+
+---
+
+13. 🔍 typeof vs instanceof
+
+\`typeof\` → types primitifs  
+\`instanceof\` → instances d'objet
+
+\`\`\`js
+typeof "hello" // "string"
+[] instanceof Array // true
+\`\`\`
+
+
+---
+
+14. 🧪 == vs ===
+
+- \`==\` → conversion de type
+- \`===\` → comparaison stricte
+
+\`\`\`js
+"5" == 5   // true
+"5" === 5  // false
+\`\`\`
+
+
+---
+
+15. 🧱 IIFE (Immediately Invoked Function Expression)
+
+Fonction qui s’exécute tout de suite.
+
+\`\`\`js
+(function() {
+  console.log("Je sors direct !");
+})();
+\`\`\`
+
+
+---
+
+16. 🧵 Callback Hell
+
+Trop de callbacks imbriqués = cauchemar à lire.
+
+À éviter avec :
+- Promesses
+- async/await
+- Fonctions séparées
+
+
+---
+
+17. 🔧 Object.keys(), values(), entries()
+
+\`\`\`js
+const obj = { a: 1, b: 2 };
+Object.keys(obj); // ['a', 'b']
+Object.values(obj); // [1, 2]
+Object.entries(obj); // [['a', 1], ['b', 2]]
+\`\`\`
+
+
+---
+
+18. 📏 Array.isArray() vs typeof
+
+\`typeof [] === "object"\` → peu utile  
+Utilise :
+
+\`\`\`js
+Array.isArray([]); // true
+\`\`\`
+
+
+---
+
+19. 📛 try...catch
+
+Gérer les erreurs proprement.
+
+\`\`\`js
+try {
+  throw new Error("Problème détecté");
+} catch (e) {
+  console.log(e.message);
+}
+\`\`\`
+
+
+---
+
+20. 🧠 Fonctions pures
+
+Une fonction :
+- Sans effet de bord
+- Même entrée → même sortie
+
+\`\`\`js
+function add(a, b) {
+  return a + b;
+}
+\`\`\`
+
+
+---
+
+🎯 Conclusion
+
+Tu n’as pas besoin de tout savoir.  
+Juste **comprendre ces 20 concepts** va te rendre 10x plus efficace.
+
+💬 Tu veux des cartes mémoire ou des mini-exos ?
+Passe sur le blog :  
+https://mostefa-boudjema.vercel.app/fr/blog
+
+  `
+}
+,
+{
+  id: 23,
+  lang: 'ar',
+  title: '20 مفهوم لازم تكون فاهمهم في JavaScript',
+  summary: 'ما تبقاش ديما تعوّل على StackOverflow! تعلّم هاد المفاهيم وتولي تفهم كود JavaScript بعينيك.',
+  date: '2025-08-09',
+  tags: ['javascript', 'تطوير الواجهة', 'برمجة الويب', 'أساسيات جافاسكريبت'],
+  slug: '20-js-concepts-arabic',
+  author: {
+    name: 'Mostefa Boudjema',
+    avatar: me1,
+    bio: 'مطور Laravel'
+  },
+  coverImage: cover23,
+  readingTime: '10 دقايق قراية',
+  published: true,
+  category: 'JavaScript',
+  updatedAt: '2025-08-09',
+  metaDescription: 'تعرّف على أهم 20 مفهوم في JavaScript مثل closures، hoisting، scope، promises، async/await، this، event loop وغيرها. شرح مبسط مع أمثلة.',
+  excerpt: 'JavaScript تقدر تبانلك معقدة فالأول، بصح كي تفهم هاد المفاهيم، كلش يولي ساهل.',
+  content: `
+## 💡 20 مفهوم لازمك تفهمهم في JavaScript
+
+كاين فرق كبير بين نسخ الكود وفهمو.  
+لو تبغي تولي مبرمج محترف فعلاً، هاد المفاهيم لازم تكون عندك فالمخ.
+
+---
+
+\`\`\`
+1. 🔄 var, let, const
+
+- \`var\`: عندها نطاق الدالة (function scope)
+- \`let\` و \`const\`: عندهم نطاق البلوك (block scope)
+
+مثال:
+
+\`\`\`js
+if (true) {
+  var a = 1;
+  let b = 2;
+}
+console.log(a); // 1
+console.log(b); // خطأ
+\`\`\`
+
+
+---
+
+2. 🎯 this
+
+تشير إلى السياق وين تم استدعاء الدالة، مش وين تكتبت.
+
+\`\`\`js
+const user = {
+  name: "Ali",
+  greet() {
+    console.log(this.name);
+  }
+}
+user.greet(); // "Ali"
+\`\`\`
+
+
+---
+
+3. 🧠 Closures
+
+دالة داخل دالة تبقى تقدر توصّل للمتغيرات اللي فوقها حتى من بعد ما تخلص الدالة الأصلية.
+
+\`\`\`js
+function outer() {
+  let counter = 0;
+  return function inner() {
+    counter++;
+    return counter;
+  };
+}
+const inc = outer();
+console.log(inc()); // 1
+console.log(inc()); // 2
+\`\`\`
+
+
+---
+
+4. 🏗️ Hoisting
+
+JavaScript ترفع تعريفات المتغيرات والدوال لأعلى الملف وقت التنفيذ.
+
+\`\`\`js
+console.log(a); // undefined
+var a = 5;
+
+sayHi(); // "مرحبًا"
+function sayHi() {
+  console.log("مرحبًا");
+}
+\`\`\`
+
+
+---
+
+5. 🕳️ القيم Truthy و Falsy
+
+Falsy:
+- \`false\`
+- \`0\`
+- \`""\`
+- \`null\`
+- \`undefined\`
+- \`NaN\`
+
+\`\`\`js
+if ("0") console.log("Truthy"); // يتنفذ
+if (0) console.log("Falsy");   // ما يتنفذش
+\`\`\`
+
+
+---
+
+6. 🔁 التكرار
+
+أدوات التكرار:
+
+- \`for\`, \`for...of\`, \`forEach()\`
+- \`map()\`, \`filter()\`, \`reduce()\`
+
+\`\`\`js
+[1,2,3].map(n => n * 2); // [2,4,6]
+\`\`\`
+
+
+---
+
+7. 🧩 Destructuring
+
+تفكيك القيم بطريقة أنيقة.
+
+\`\`\`js
+const [a, b] = [1, 2];
+const { name } = { name: "Sara", age: 30 };
+\`\`\`
+
+
+---
+
+8. 📦 Spread و Rest
+
+- Spread يوسع القيم
+- Rest يجمع الباقي
+
+\`\`\`js
+const arr = [1, 2, 3];
+const copy = [...arr];
+
+function sum(...nums) {
+  return nums.reduce((a, b) => a + b, 0);
+}
+\`\`\`
+
+
+---
+
+9. 🔃 Promises
+
+تسهل التعامل مع الكود اللي يخدم بالوقت (asynchronous).
+
+\`\`\`js
+fetch('/api').then(res => res.json()).then(data => console.log(data));
+\`\`\`
+
+
+---
+
+10. ⏱️ async / await
+
+نفس الفكرة، لكن بصيغة أوضح وأسهل في القراءة.
+
+\`\`\`js
+async function getData() {
+  const res = await fetch('/api');
+  const data = await res.json();
+}
+\`\`\`
+
+---
+
+### 11. الوعود (Promises)
+📌 \`Promise\` تسمح لك بالتعامل مع العمليات غير المتزامنة:
+\`\`\`js
+fetch("/api").then().catch();
+\`\`\`
+
+---
+
+### 12. async/await
+📌 تسهّل كتابة الكود غير المتزامن:
+\`\`\`js
+const data = await fetchData();
+\`\`\`
+
+---
+
+### 13. المعاملات المنطقية (Logical Operators)
+📌 \`&&\`, \`||\`, \`??\` تُستخدم لاتخاذ قرارات ذكية في الكود:
+\`\`\`js
+const name = user.name || "Guest";
+\`\`\`
+
+---
+
+### 14. التدمير (Destructuring)
+📌 سحب القيم مباشرة من كائن أو مصفوفة:
+\`\`\`js
+const { name, age } = user;
+\`\`\`
+
+---
+
+### 15. المعامل المنتشر (Spread Operator)
+📌 ينسخ أو يدمج المصفوفات والكائنات:
+\`\`\`js
+const clone = { ...obj };
+\`\`\`
+
+---
+
+### 16. المعلمات الافتراضية (Default Parameters)
+📌 تمنع الأخطاء لما ما ترسلش باراميتر:
+\`\`\`js
+function greet(name = "Guest") {
+  return \`Hello \${name}\`;
+}
+\`\`\`
+
+---
+
+### 17. البرمجة الكائنية (OOP)
+📌 استخدم \`class\`, \`constructor\`, \`extends\`, \`super\`
+\`\`\`js
+class Animal {
+  speak() {
+    console.log("Noise");
+  }
+}
+\`\`\`
+
+---
+
+### 18. المصفوفات الدالة (Array Methods)
+📌 \`map\`, \`filter\`, \`reduce\`, \`forEach\`:
+\`\`\`js
+users.map(user => user.name);
+\`\`\`
+
+---
+
+### 19. الأحداث (Events)
+📌 في المتصفح، الأحداث تُربط بالعناصر:
+\`\`\`js
+button.addEventListener("click", handleClick);
+\`\`\`
+
+---
+
+### 20. المعالجة الشرطية المتقدمة
+📌 استعمل \`switch\`, \`try...catch\`, و Optional Chaining:
+\`\`\`js
+user?.address?.city
+  
+`
+}
+,
 
 
 
