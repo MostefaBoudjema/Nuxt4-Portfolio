@@ -5,7 +5,8 @@
       <div class="lg:col-span-2 bg-white dark:bg-gray-900 rounded-xl shadow-lg md:p-8 transition-all duration-300">
         <!-- Breadcrumb -->
         <nav class="text-sm text-gray-500 dark:text-gray-400 mb-6 flex items-center gap-2">
-          <router-link :to="localePath('/blog')" class="hover:underline text-blue-600 dark:text-blue-400">{{$t("Blog")}}</router-link>
+          <router-link v-if="post.private" :to="localePath('/private')" class="hover:underline text-blue-600 dark:text-blue-400">{{$t("Private")}}</router-link>
+          <router-link v-else :to="localePath('/blog')" class="hover:underline text-blue-600 dark:text-blue-400">{{$t("Blog")}}</router-link>
           <span>/</span>
           <span class="truncate">{{ post.title }}</span>
         </nav>
@@ -71,7 +72,11 @@ const localePath = useLocalePath();
 
 const route = useRoute();
 const post = ref(null);
-// const postsList = ref(null);
+const today=new Date();
+const yyyy=today.getFullYear();
+const mm=String(today.getMonth()+1).padStart(2, '0');
+const dd=String(today.getDate()).padStart(2, '0');
+const todayStr=`${yyyy}-${mm}-${dd}`;
 
 const loadPost = () => {
   const slug = route.params.slug;
@@ -80,7 +85,8 @@ const loadPost = () => {
   if (found) {
     // Add fallback image if missing
     post.value = {
-      ...found,
+      ...found,      
+      private: new Date(found.updatedAt)>new Date(todayStr),
       image: found.coverImage || found.image || `https://picsum.photos/600/300?random=${found.id}`
     };
   } else {

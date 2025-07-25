@@ -3,18 +3,18 @@ import BlogPost from './BlogPost.vue';
 import { useI18n } from 'vue-i18n';
 import { computed } from 'vue';
 
-const props = defineProps({
+const props=defineProps({
   posts: {
     type: Array,
     required: true,
   },
 });
 
-const { locale } = useI18n();
+const { locale }=useI18n();
 
-const filteredPosts = computed(() => {
-  return (props.posts || [])
-    .filter(post => post.lang === locale.value)
+const filteredPosts=computed(() => {
+  return (props.posts||[])
+    .filter(post => post.lang===locale.value)
     .map(post => ({
       ...post,
       image: `https://picsum.photos/600/300?random=${post.id}`,
