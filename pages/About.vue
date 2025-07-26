@@ -10,6 +10,9 @@
   <!-- About counter -->
   <AboutCounter />
 
+  <!-- About Education -->
+  <AboutEducation />
+
   <!-- About Employment History -->
   <AboutEmplymentHistory />
 
@@ -30,22 +33,23 @@ import AboutMe from '@/components/about/AboutMe';
 import AboutCounter from '@/components/about/AboutCounter';
 import AboutClients from '@/components/about/AboutClients';
 import AboutEmplymentHistory from '@/components/about/AboutEmplymentHistory';
+import AboutEducation from '@/components/about/AboutEducation';
 import AboutsSkills from '@/components/about/AboutsSkills.vue';
 import AboutVideo from '@/components/about/AboutVideo';
 import AboutTestimonials from '@/components/about/AboutTestimonials.vue';
 import feather from 'feather-icons';
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n'
-const { t } = useI18n()
+const { t }=useI18n()
 
 import { onMounted, onUpdated } from 'vue';
 
 onMounted(() => {
-	feather.replace();
+  feather.replace();
 });
 
 onUpdated(() => {
-	feather.replace();
+  feather.replace();
 });
 
 useHead({
