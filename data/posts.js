@@ -1809,7 +1809,7 @@ Check out the blog for focused guides and coding patterns:
     lang: 'en',
     title: 'Laravel: Advanced Tips and Techniques for Power Users',
     summary: 'Take your Laravel skills to the next level with these advanced tips and techniques.',
-    date: '2025-07-27',
+    date: '2025-04-27',
     tags: ['laravel', 'php', 'backend', 'advanced', 'tips'],
     slug: 'laravel-advanced-tips',
     author: {
@@ -1821,7 +1821,7 @@ Check out the blog for focused guides and coding patterns:
     readingTime: '6 min read',
     published: true,
     category: 'Backend',
-    updatedAt: '2025-07-27',
+    updatedAt: '2025-04-27',
     metaDescription: 'Advanced Laravel tips and techniques for experienced developers, covering Artisan commands, broadcasting, and policies.',
     excerpt: 'Take your Laravel skills to the next level with these advanced tips and techniques for power users.',
     content: `
