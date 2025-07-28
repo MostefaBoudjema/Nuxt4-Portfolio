@@ -24,6 +24,7 @@ import cover21 from '/images/posts/firebase-vs-supabase.webp';
 import cover22 from '/images/posts/laravel-service-container-vs-provider.webp';
 import cover23 from '/images/posts/20-core-javascript-concepts.webp';
 import cover24 from '/images/posts/25-laravel-interview-questions.webp';
+import cover25 from '/images/posts/php-8-5-new-features.webp';
 
 // Nuxt 3: Use runtime config for useAllPosts
 import { useRuntimeConfig } from '#imports'
@@ -4761,6 +4762,162 @@ Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/bl
   `
   }
   ,
+  {
+    id: 25,
+    lang: 'en',
+    title: 'PHP 8.5: New Features Every Backend Dev Should Know',
+    summary: 'Explore the top new features in PHP 8.5, including the pipe operator, array helpers, fatal error backtraces, and more.',
+    date: '2025-07-28',
+    tags: ['php', 'backend', 'updates', 'release', 'developer'],
+    slug: 'php-8-5-new-features',
+    author: {
+      name: 'Mostefa Boudjema',
+      avatar: me1,
+      bio: 'Laravel dev'
+    },
+    coverImage: cover25,
+    readingTime: '7 min read',
+    published: true,
+    category: 'Backend',
+    updatedAt: '2025-07-28',
+    metaDescription: 'Discover what’s new in PHP 8.5: pipe operator, new array functions, fatal error stack traces, and useful improvements for Laravel and backend developers.',
+    excerpt: 'Explore the most practical new features in PHP 8.5 that make your backend development faster, safer, and more expressive.',
+    content: `
+  ## 🚀 What’s New in PHP 8.5
+  
+  PHP 8.5 brings a clean mix of powerful syntax, debugging improvements, and utility upgrades that make backend development more fluent and productive. Here's a breakdown of what’s worth your attention.
+  
+  ---
+  
+  ## 1. Pipe Operator (\`|>\`)
+  
+  Chain functions in a readable, functional way:
+  
+  \`\`\`php
+  $result = "hello world"
+      |> strtoupper(...)
+      |> trim(...)
+      |> ucfirst(...);
+  \`\`\`
+  
+  No more temporary variables or nested calls—just clean data flow.
+  
+  ---
+  
+  ## 2. \`array_first()\` & \`array_last()\` Helpers
+  
+  Finally! Simple functions to grab the first or last item from an array:
+  
+  - \`array_first(\$array)\`
+  - \`array_last(\$array)\`
+  
+  Works with both indexed and associative arrays.
+  
+  ---
+  
+  ## 3. Fatal Error Stack Traces
+  
+  With \`fatal_error_backtraces\` enabled, you'll get full stack traces even for fatal errors. Debugging just got easier.
+  
+  ---
+  
+  ## 4. Error/Exception Handler Introspection
+  
+  Two new functions:
+  
+  \`\`\`php
+  get_error_handler();
+  get_exception_handler();
+  \`\`\`
+  
+  This helps debug and preserve handlers when libraries override them.
+  
+  ---
+  
+  ## 5. cURL Multi Handle Enhancements
+  
+  Use \`curl_multi_get_handles()\` to fetch all handles in a multi request. No more manual tracking.
+  
+  ---
+  
+  ## 6. \`PHP_BUILD_DATE\` Constant
+  
+  This new constant returns the build timestamp of your PHP binary. Great for audits and debugging.
+  
+  ---
+  
+  ## 7. Locale Utilities
+  
+  New methods like:
+  
+  \`\`\`php
+  locale_is_right_to_left('ar_SA'); // true
+  \`\`\`
+  
+  Also includes \`Locale::isRightToLeft()\` and \`IntlListFormatter\` for localized string lists.
+  
+  ---
+  
+  ## 8. CLI Upgrade: \`php --ini=diff\`
+  
+  See only the changed INI values compared to defaults. Helps track down config bugs fast.
+  
+  ---
+  
+  ## 9. Constant-Time Closures & Callables
+  
+  You can now use static closures in constant expressions, default values, and attributes.
+  
+  ---
+  
+  ## 10. \`#[\\NoDiscard]\` & Final Property Promotion
+  
+  Mark return values as mandatory to use:
+  
+  \`\`\`php
+  #[\\NoDiscard]
+  function riskyOperation() { ... }
+  \`\`\`
+  
+  Also, constructor property promotion now supports \`final\`:
+  
+  \`\`\`php
+  public function __construct(final string \$id) {}
+  \`\`\`
+  
+  ---
+  
+  ## 11. Deprecated Features
+  
+  - The \`Directory\` class is gone. Use \`dir()\` instead.
+  - All \`MHASH_*\` constants are deprecated.
+  
+  ---
+  
+  ## 🧠 Why It Matters for Laravel Devs
+  
+  - Pipe syntax helps clean up controller and service logic.
+  - \`array_first\`/\`last\` simplifies common data operations.
+  - Full backtraces on fatal errors = fewer blind spots.
+  - Final promotion helps enforce immutability in DTOs.
+  
+  ---
+  
+  ## ✅ Conclusion
+  
+  PHP 8.5 isn't revolutionary, but it polishes the dev experience in all the right places. It's more readable, debuggable, and expressive—without breaking everything.
+  
+  ---
+  
+  ## What’s Next?
+  
+  - Upgrade to 8.5 in a sandbox and test for deprecations.
+  - Use the pipe operator and array helpers in new code.
+  - Check my blog for Laravel 11 compatibility tips with PHP 8.5.
+  
+  🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
+    `
+  },  
 
 
 
