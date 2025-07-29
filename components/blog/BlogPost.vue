@@ -1,6 +1,6 @@
 <template>
   <div
-    class="blog-post single font-general-regular rounded-lg p-4 shadow hover:shadow-lg transition bg-secondary-light dark:bg-secondary-dark text-ternary-dark dark:text-ternary-light flex flex-col md:flex-row md:items-stretch">
+    class="mb-4 blog-post single font-general-regular rounded-lg p-4 shadow hover:shadow-lg transition bg-secondary-light dark:bg-secondary-dark text-ternary-dark dark:text-ternary-light flex flex-col md:flex-row md:items-stretch">
     <div
       v-if="post.coverImage || post.image"
       class="w-full mb-4 md:w-1/4 md:mb-0 md:mr-4 rtl:md:mr-0 rtl:md:ml-4 flex-shrink-0"
