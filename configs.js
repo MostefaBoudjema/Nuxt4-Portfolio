@@ -7,6 +7,8 @@ import profilePhoto from '/images/me3.webp';
 import whatsapp from '/images/whatsapp2.svg';
 
 const configs = {
+  name: 'Mostefa Boudjema',
+  jobTitle: 'Job Title4',
   hero_image: heroImage,
   hero_image_dark: heroImageDark,
   logo_dark: logoDark,
