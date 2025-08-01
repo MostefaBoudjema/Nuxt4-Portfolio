@@ -1,4 +1,4 @@
-const EmplymentHistory=[
+const EmploymentHistory=[
 
     {
         title: "JobTitle2",
@@ -51,4 +51,4 @@ const EmplymentHistory=[
 
 ];
 
-export default EmplymentHistory;
+export default EmploymentHistory;

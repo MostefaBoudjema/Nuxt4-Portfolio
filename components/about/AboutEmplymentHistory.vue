@@ -47,14 +47,14 @@
 </template>
 <script setup>
 import { useI18n } from "vue-i18n";
-import EmplymentHistory from '@/data/EmplymentHistory';
+import EmploymentHistory from '~/data/EmploymentHistory';
 
 const { t }=useI18n({
     inheritLocale: true,
     useScope: "local",
 });
 
-const employmentHistory=EmplymentHistory;
+const employmentHistory=EmploymentHistory;
 </script>
 
 
@@ -244,3 +244,4 @@ const employmentHistory=EmplymentHistory;
     }
 }
 </style>
+~/data/EmploymentHistory

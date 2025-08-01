@@ -14,7 +14,7 @@
   <AboutEducation />
 
   <!-- About Employment History -->
-  <AboutEmplymentHistory />
+  <AboutEmploymentHistory />
 
   <!-- About Skills -->
   <AboutsSkills />
@@ -29,13 +29,13 @@
 </template>
 
 <script setup>
-import AboutMe from '@/components/about/AboutMe';
-import AboutCounter from '@/components/about/AboutCounter';
-import AboutClients from '@/components/about/AboutClients';
-import AboutEmplymentHistory from '@/components/about/AboutEmplymentHistory';
-import AboutEducation from '@/components/about/AboutEducation';
+import AboutMe from '@/components/about/AboutMe.vue';
+import AboutCounter from '@/components/about/AboutCounter.vue';
+import AboutClients from '@/components/about/AboutClients.vue';
+import AboutEmploymentHistory from '@/components/about/AboutEmplymentHistory.vue';
+import AboutEducation from '@/components/about/AboutEducation.vue';
 import AboutsSkills from '@/components/about/AboutsSkills.vue';
-import AboutVideo from '@/components/about/AboutVideo';
+import AboutVideo from '@/components/about/AboutVideo.vue';
 import AboutTestimonials from '@/components/about/AboutTestimonials.vue';
 import feather from 'feather-icons';
 import { useHead } from '#imports'
