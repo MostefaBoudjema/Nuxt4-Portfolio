@@ -1,47 +1,56 @@
 <template>
-	<div class="cv-container">
-		<div class="header">
+	<div class="cv-container bg-[#0f172a] text-gray-100 dark:bg-[#0f172a] dark:text-gray-100 bg-white text-gray-900">
+		<div class="header bg-[#1e293b] dark:bg-[#1e293b] text-white">
 			<img :src="profile.photo" :alt="profile.name" class="profile-img">
 			<h1 class="name">{{ t(profile.name) }}</h1>
 			<p class="title">{{ t(profile.title) }}</p>
 		</div>
 
 		<div class="content">
+			<!-- Contact Section -->
 			<div class="section">
-				<h2 class="section-title">{{ t('Contact') }}</h2>
+				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600">{{ t('Contact') }}</h2>
 				<div class="contact-info">
-					<div class="contact-item">
+					<div
+						class="contact-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">
 						<span class="contact-icon">📧</span>
 						<span>{{ profile.email }}</span>
 					</div>
-					<div class="contact-item">
+					<div
+						class="contact-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">
 						<span class="contact-icon">📱</span>
 						<span>{{ profile.phone }}</span>
 					</div>
-					<div class="contact-item">
+					<div
+						class="contact-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">
 						<span class="contact-icon">📍</span>
 						<span>{{ profile.location }}</span>
 					</div>
-					<div class="contact-item">
+					<div
+						class="contact-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">
 						<span class="contact-icon">🔗</span>
 						<span>{{ profile.linkedin }}</span>
 					</div>
 				</div>
 			</div>
 
+			<!-- Skills Section -->
 			<div class="section">
-				<h2 class="section-title">{{ t('Skills') }}</h2>
+				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600">{{ t('Skills') }}</h2>
 				<div v-for="skill in skills" :key="skill.name" class="skill-item">
 					<div class="skill-name">{{ skill.name }}</div>
-					<div class="skill-bar">
+					<div class="skill-bar bg-gray-200 dark:bg-gray-700">
 						<div class="skill-progress" :style="{ width: skill.level + '%' }"></div>
 					</div>
 				</div>
 			</div>
 
+			<!-- Employment Section -->
 			<div class="section">
-				<h2 class="section-title">{{ t('Employment History') }}</h2>
-				<div v-for="exp in employmentHistory" :key="exp.id" class="experience-item">
+				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600">{{ t('Employment History') }}
+				</h2>
+				<div v-for="exp in employmentHistory" :key="exp.id"
+					class="experience-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">
 					<h3 class="item-title">{{ t(exp.position) }}</h3>
 					<p class="item-company">{{ t(exp.company) }}</p>
 					<p class="item-date">{{ t(exp.startDate) }} - {{ t(exp.endDate) }}</p>
@@ -49,9 +58,11 @@
 				</div>
 			</div>
 
+			<!-- Education Section -->
 			<div class="section">
-				<h2 class="section-title">{{ t('Education') }}</h2>
-				<div v-for="edu in education" :key="edu.id" class="education-item">
+				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600">{{ t('Education') }}</h2>
+				<div v-for="edu in education" :key="edu.id"
+					class="education-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">
 					<h3 class="item-title">{{ t(edu.degree) }}</h3>
 					<p class="item-school">{{ t(edu.school) }}</p>
 					<p class="item-date">{{ t(edu.startDate) }} - {{ t(edu.endDate) }}</p>
@@ -59,13 +70,20 @@
 				</div>
 			</div>
 		</div>
-		<!-- <button class="print-btn" @click="printCV">🖨️</button> -->
+
+
+		<!-- Print Button -->
+		<!-- <button
+		class="print-btn bg-green-600 dark:bg-green-400 text-white dark:text-gray-900"
+		@click="printCV"
+	  >
+		🖨️
+	  </button> -->
 
 	</div>
-
-
-	
 </template>
+
+
 
 <script setup>
 import configs from '~/configs';
@@ -74,26 +92,26 @@ import { useI18n } from 'vue-i18n';
 import EmploymentHistory from '~/data/EmploymentHistory'; // adjust path if needed
 import Education from '~/data/Education'; // adjust path if needed
 definePageMeta({
-  layout: 'empty' 
+	layout: 'empty'
 })
 
 
-const { t } = useI18n();
+const { t }=useI18n();
 
 
-const getContact = (key) => configs.contacts.find(c => c.icon === key)?.name || '';
+const getContact=(key) => configs.contacts.find(c => c.icon===key)?.name||'';
 
-const profile = reactive({
-  name: configs.name,
-  title: configs.jobTitle,
-  email: getContact('mail'),
-  phone: getContact('phone'),
-  location: getContact('map-pin'),
-  linkedin: 'linkedin.com/in/johndoe',
-  photo: configs.profile_photo,
+const profile=reactive({
+	name: configs.name,
+	title: configs.jobTitle,
+	email: getContact('mail'),
+	phone: getContact('phone'),
+	location: getContact('map-pin'),
+	linkedin: 'linkedin.com/in/johndoe',
+	photo: configs.profile_photo,
 })
 
-const skills = ref([
+const skills=ref([
 	{ name: 'Laravel', level: 90 },
 	{ name: 'Vue.js', level: 85 },
 	{ name: 'Node.js', level: 80 },
@@ -103,40 +121,40 @@ const skills = ref([
 ])
 
 
-const employmentHistory = EmploymentHistory.map((job, index) => ({
-  id: index + 1,
-  position: job.title,
-  company: job.company,
-  startDate: job.startDate,
-  endDate: job.endDate,
-  description: job.description,
-  logo: job.logo
+const employmentHistory=EmploymentHistory.map((job, index) => ({
+	id: index+1,
+	position: job.title,
+	company: job.company,
+	startDate: job.startDate,
+	endDate: job.endDate,
+	description: job.description,
+	logo: job.logo
 }));
 
-const education = Education.map((edu, index) => ({
-  id: index + 1,
-  degree: edu.title,
-  school: edu.institution,
-  startDate: edu.startDate,
-  endDate: edu.endDate,
-  description: edu.description,
-  logo: edu.logo
+const education=Education.map((edu, index) => ({
+	id: index+1,
+	degree: edu.title,
+	school: edu.institution,
+	startDate: edu.startDate,
+	endDate: edu.endDate,
+	description: edu.description,
+	logo: edu.logo
 }));
-const printCV = () => {
-  window.print();
+const printCV=() => {
+	window.print();
 }
 
 onMounted(() => {
-  setTimeout(() => {
-    skills.value.forEach((skill, index) => {
-      setTimeout(() => {
-        const progressBar = document.querySelectorAll('.skill-progress')[index]
-        if (progressBar) {
-          progressBar.style.width = skill.level + '%'
-        }
-      }, index * 200)
-    })
-  }, 500)
+	setTimeout(() => {
+		skills.value.forEach((skill, index) => {
+			setTimeout(() => {
+				const progressBar=document.querySelectorAll('.skill-progress')[index]
+				if (progressBar) {
+					progressBar.style.width=skill.level+'%'
+				}
+			}, index*200)
+		})
+	}, 500)
 });
 </script>
 
@@ -157,7 +175,6 @@ body {
 .cv-container {
 	max-width: 800px;
 	margin: 0 auto;
-	background: white;
 	border-radius: 20px;
 	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
@@ -171,8 +188,6 @@ body {
 }
 
 .header {
-	background: linear-gradient(45deg, #2c3e50, #34495e);
-	color: white;
 	padding: 40px;
 	text-align: center;
 	position: relative;
@@ -188,12 +203,16 @@ body {
 	height: 200%;
 	background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
 	animation: float 6s ease-in-out infinite;
+	z-index: 0;
 }
 
 @keyframes float {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: translate(-50%, -50%) rotate(0deg);
 	}
+
 	50% {
 		transform: translate(-50%, -50%) rotate(180deg);
 	}
@@ -207,8 +226,8 @@ body {
 	margin: 0 auto 20px;
 	object-fit: cover;
 	transition: transform 0.3s ease;
-	z-index: 2;
 	position: relative;
+	z-index: 1;
 }
 
 .profile-img:hover {
@@ -219,15 +238,15 @@ body {
 	font-size: 2.5em;
 	font-weight: 300;
 	margin-bottom: 10px;
-	z-index: 2;
 	position: relative;
+	z-index: 1;
 }
 
 .title {
 	font-size: 1.2em;
 	opacity: 0.9;
-	z-index: 2;
 	position: relative;
+	z-index: 1;
 }
 
 .content {
@@ -241,10 +260,21 @@ body {
 	animation: slideIn 0.6s ease forwards;
 }
 
-.section:nth-child(1) { animation-delay: 0.1s; }
-.section:nth-child(2) { animation-delay: 0.2s; }
-.section:nth-child(3) { animation-delay: 0.3s; }
-.section:nth-child(4) { animation-delay: 0.4s; }
+.section:nth-child(1) {
+	animation-delay: 0.1s;
+}
+
+.section:nth-child(2) {
+	animation-delay: 0.2s;
+}
+
+.section:nth-child(3) {
+	animation-delay: 0.3s;
+}
+
+.section:nth-child(4) {
+	animation-delay: 0.4s;
+}
 
 @keyframes slideIn {
 	to {
@@ -255,10 +285,8 @@ body {
 
 .section-title {
 	font-size: 1.8em;
-	color: #2c3e50;
 	margin-bottom: 20px;
 	padding-bottom: 10px;
-	border-bottom: 3px solid #3498db;
 	position: relative;
 }
 
@@ -288,11 +316,10 @@ body {
 	align-items: center;
 	padding: 10px;
 	border-radius: 10px;
-	transition: background 0.3s ease;
+	transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-	background: #f8f9fa;
 	transform: translateX(5px);
 }
 
@@ -300,7 +327,6 @@ body {
 	width: 20px;
 	height: 20px;
 	margin-right: 10px;
-	color: #3498db;
 }
 
 .skill-item {
@@ -310,11 +336,9 @@ body {
 .skill-name {
 	font-weight: 600;
 	margin-bottom: 5px;
-	color: #2c3e50;
 }
 
 .skill-bar {
-	background: #ecf0f1;
 	height: 8px;
 	border-radius: 4px;
 	overflow: hidden;
@@ -341,8 +365,13 @@ body {
 }
 
 @keyframes shimmer {
-	0% { left: -100%; }
-	100% { left: 100%; }
+	0% {
+		left: -100%;
+	}
+
+	100% {
+		left: 100%;
+	}
 }
 
 .experience-item,
@@ -351,46 +380,40 @@ body {
 	padding: 20px;
 	border-left: 4px solid #3498db;
 	border-radius: 0 10px 10px 0;
-	background: #f8f9fa;
 	transition: all 0.3s ease;
 }
 
 .experience-item:hover,
 .education-item:hover {
-	background: #e8f4fd;
 	transform: translateX(10px);
 }
 
 .item-title {
 	font-size: 1.3em;
 	font-weight: 600;
-	color: #2c3e50;
 	margin-bottom: 5px;
 }
 
 .item-company,
 .item-school {
-	color: #3498db;
 	font-weight: 500;
 	margin-bottom: 5px;
 }
 
 .item-date {
-	color: #7f8c8d;
 	font-size: 0.9em;
 	margin-bottom: 10px;
 }
 
 .item-description {
-	color: #555;
 	line-height: 1.6;
 }
 
-.edit-btn {
+.edit-btn,
+.print-btn {
 	position: fixed;
 	bottom: 30px;
 	right: 30px;
-	background: linear-gradient(45deg, #667eea, #764ba2);
 	color: white;
 	border: none;
 	border-radius: 50%;
@@ -400,8 +423,19 @@ body {
 	cursor: pointer;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 	transition: all 0.3s ease;
+	z-index: 1001;
 }
 
+.print-btn {
+	bottom: 100px;
+	background: linear-gradient(45deg, #2ecc71, #27ae60);
+}
+
+.edit-btn {
+	background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+.print-btn:hover,
 .edit-btn:hover {
 	transform: scale(1.1);
 	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
@@ -421,7 +455,6 @@ body {
 }
 
 .modal-content {
-	background: white;
 	padding: 30px;
 	border-radius: 15px;
 	width: 90%;
@@ -438,7 +471,6 @@ body {
 	display: block;
 	margin-bottom: 5px;
 	font-weight: 600;
-	color: #2c3e50;
 }
 
 .form-group input,
@@ -458,8 +490,6 @@ body {
 }
 
 .btn {
-	background: linear-gradient(45deg, #3498db, #2980b9);
-	color: white;
 	border: none;
 	padding: 12px 25px;
 	border-radius: 8px;
@@ -496,50 +526,26 @@ body {
 	}
 }
 
-.print-btn {
-	position: fixed;
-	bottom: 100px;
-	right: 30px;
-	background: linear-gradient(45deg, #2ecc71, #27ae60);
-	color: white;
-	border: none;
-	border-radius: 50%;
-	width: 60px;
-	height: 60px;
-	font-size: 1.5em;
-	cursor: pointer;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-	transition: all 0.3s ease;
-	z-index: 1001;
-}
-
-.print-btn:hover {
-	transform: scale(1.1);
-	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-
 @media print {
-  body * {
-    visibility: hidden;
-  }
+	body * {
+		visibility: hidden;
+	}
 
-  .cv-container,
-  .cv-container * {
-    visibility: visible;
-  }
+	.cv-container,
+	.cv-container * {
+		visibility: visible;
+	}
 
-  .cv-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
+	.cv-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
 
-  .print-btn,
-  .edit-btn {
-    display: none !important;
-  }
+	.print-btn,
+	.edit-btn {
+		display: none !important;
+	}
 }
-
 </style>
