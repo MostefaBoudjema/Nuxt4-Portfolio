@@ -9,7 +9,8 @@
 		<div class="content">
 			<!-- Contact Section -->
 			<div class="section">
-				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600">{{ t('Contact') }}</h2>
+				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600" :dir="isRTL ? 'rtl' : 'ltr'"
+					:class="{ 'rtl': isRTL }">{{ t('Contact') }}</h2>
 				<div class="contact-info">
 					<div
 						class="contact-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">
@@ -39,8 +40,10 @@
 
 			<!-- Skills Section -->
 			<div class="section">
-				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600">{{ t('Skills') }}</h2>
-				<div v-for="skill in skills" :key="skill.name" class="skill-item">
+				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600" :dir="isRTL ? 'rtl' : 'ltr'"
+					:class="{ 'rtl': isRTL }">{{ t('Skills') }}</h2>
+				<div v-for="skill in skills" :key="skill.name" class="skill-item" :dir="isRTL ? 'rtl' : 'ltr'"
+					:class="{ 'rtl': isRTL }">
 					<div class="skill-name">{{ skill.name }}</div>
 					<div class="skill-bar bg-gray-200 dark:bg-gray-700">
 						<div class="skill-progress" :style="{ width: skill.level + '%' }"></div>
@@ -50,10 +53,12 @@
 
 			<!-- Employment Section -->
 			<div class="section">
-				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600">{{ t('Employment History') }}
+				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600" :dir="isRTL ? 'rtl' : 'ltr'"
+					:class="{ 'rtl': isRTL }">{{ t('Employment History') }}
 				</h2>
 				<div v-for="exp in employmentHistory" :key="exp.id"
-					class="experience-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">
+					class="experience-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+					:dir="isRTL ? 'rtl' : 'ltr'" :class="{ 'rtl': isRTL }">
 					<h3 class="item-title">{{ t(exp.position) }}</h3>
 					<p class="item-company">{{ t(exp.company) }}</p>
 					<p class="item-date">{{ t(exp.startDate) }} - {{ t(exp.endDate) }}</p>
@@ -63,9 +68,11 @@
 
 			<!-- Education Section -->
 			<div class="section">
-				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600">{{ t('Education') }}</h2>
+				<h2 class="section-title border-b-4 border-blue-400 dark:border-blue-600" :dir="isRTL ? 'rtl' : 'ltr'"
+					:class="{ 'rtl': isRTL }">{{ t('Education') }}</h2>
 				<div v-for="edu in education" :key="edu.id"
-					class="education-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">
+					class="education-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
+					:dir="isRTL ? 'rtl' : 'ltr'" :class="{ 'rtl': isRTL }">
 					<h3 class="item-title">{{ t(edu.degree) }}</h3>
 					<p class="item-school">{{ t(edu.school) }}</p>
 					<p class="item-date">{{ t(edu.startDate) }} - {{ t(edu.endDate) }}</p>
@@ -90,17 +97,22 @@
 
 <script setup>
 import configs from '~/configs';
-
-import { useI18n } from 'vue-i18n';
 import EmploymentHistory from '~/data/EmploymentHistory';
 import Education from '~/data/Education';
+import { useHead } from '#imports'
+import { useI18n } from 'vue-i18n';
 import { socialLinks } from "@/data/socialLinks";
+
+useHead({
+  title: () => `${t('CV')} - ${t('Mostefa Boudjema')}`
+})
 definePageMeta({
 	layout: 'empty'
 })
 
 
-const { t }=useI18n();
+const { t, locale }=useI18n();
+const isRTL=computed(() => locale.value==='ar');
 
 
 const getContact=(key) => configs.contacts.find(c => c.icon===key)?.name||'';
@@ -125,7 +137,7 @@ const skills=ref([
 	{ name: 'API', level: 75 },
 	{ name: 'SQL', level: 70 },
 	{ name: 'Git', level: 70 },
-	{ name: 'CI/CD', level: 60 },
+	// { name: 'CI/CD', level: 60 },
 ])
 
 
@@ -148,22 +160,30 @@ const education=Education.map((edu, index) => ({
 	description: edu.description,
 	logo: edu.logo
 }));
-const printCV=() => {
-	window.print();
-}
+
+let timeouts = [];
 
 onMounted(() => {
-	setTimeout(() => {
-		skills.value.forEach((skill, index) => {
-			setTimeout(() => {
-				const progressBar=document.querySelectorAll('.skill-progress')[index]
-				if (progressBar) {
-					progressBar.style.width=skill.level+'%'
-				}
-			}, index*200)
-		})
-	}, 500)
+  const mainTimeout = setTimeout(() => {
+    skills.value.forEach((skill, index) => {
+      const t = setTimeout(() => {
+        const progressBar = document.querySelectorAll('.skill-progress')[index];
+        if (progressBar) {
+          progressBar.style.width = skill.level + '%';
+        }
+      }, index * 200);
+      timeouts.push(t);
+    });
+  }, 500);
+
+  timeouts.push(mainTimeout);
 });
+
+onUnmounted(() => {
+  timeouts.forEach(clearTimeout);
+  timeouts.length = 0; // Clear the array without reassigning
+});
+
 </script>
 
 <style scoped>
@@ -174,7 +194,8 @@ onMounted(() => {
 }
 
 body {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	/* font-family: 'Fira Code', 'JetBrains Mono', 'Source Code Pro', 'Courier New', monospace; */
+	font-family: 'Fira Code', monospace;
 	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	min-height: 100vh;
 	padding: 20px;
@@ -515,6 +536,34 @@ body {
 .btn-secondary {
 	background: #95a5a6;
 }
+
+.rtl {
+	direction: rtl;
+	text-align: right;
+}
+
+.rtl .contact-icon {
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+.rtl .contact-item:hover {
+	transform: translateX(-5px);
+}
+
+.rtl .experience-item,
+.rtl .education-item {
+	border-left: none;
+	border-right: 4px solid #3498db;
+	border-radius: 10px 0 0 10px;
+	transform: translateX(0);
+}
+
+.rtl .experience-item:hover,
+.rtl .education-item:hover {
+	transform: translateX(-10px);
+}
+
 
 @media (max-width: 768px) {
 	.cv-container {
