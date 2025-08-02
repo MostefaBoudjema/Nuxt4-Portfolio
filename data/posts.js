@@ -28,7 +28,7 @@ import cover25 from '/images/posts/php-8-5-new-features.webp';
 import cover26 from '/images/posts/us-local-businesses-need-websites.webp';
 import cover27 from '/images/posts/annaba-businesses-need-websites.webp';
 import cover28 from '/images/posts/algeria-businesses-need-websites.webp';
-import cover29 from '/images/posts/not-found-image.webp';
+import cover29 from '/images/posts/top-developer-tools-2025.webp';
 import not_found_image from '/images/posts/not-found-image.webp';
 const authorMostefaBoudjema={
   name: 'Mostefa Boudjema',
