@@ -1,5 +1,5 @@
 <template>
-	<div class="cv-container bg-[#0f172a] text-gray-100 dark:bg-[#0f172a] dark:text-gray-100 bg-white text-gray-900">
+	<div class="cv-container bg-[#0f172a] dark:bg-[#0f172a] dark:text-gray-100 bg-white text-gray-900">
 		<div class="header bg-[#1e293b] dark:bg-[#1e293b] text-white">
 			<img :src="profile.photo" :alt="profile.name" class="profile-img">
 			<h1 class="name">{{ t(profile.name) }}</h1>
@@ -99,9 +99,10 @@
 import configs from '~/configs';
 import EmploymentHistory from '~/data/EmploymentHistory';
 import Education from '~/data/Education';
-import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n';
+import { useHead } from '#imports'
 import { socialLinks } from "@/data/socialLinks";
+const { t, locale }=useI18n();
 
 useHead({
   title: () => `${t('CV')} - ${t('Mostefa Boudjema')}`
@@ -111,7 +112,6 @@ definePageMeta({
 })
 
 
-const { t, locale }=useI18n();
 const isRTL=computed(() => locale.value==='ar');
 
 
