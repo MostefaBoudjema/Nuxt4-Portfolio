@@ -1,5 +1,5 @@
 <template>
-	<div class="m-12">
+	<div class="my-2 sm:my-4">
 		<!-- Main content -->
 		<main class="main-content">
 			<slot />

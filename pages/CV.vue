@@ -59,7 +59,7 @@
 				</div>
 			</div>
 		</div>
-		<button class="print-btn" @click="printCV">🖨️ Print PDF</button>
+		<!-- <button class="print-btn" @click="printCV">🖨️</button> -->
 
 	</div>
 
