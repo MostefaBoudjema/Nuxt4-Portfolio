@@ -29,8 +29,11 @@
 					<div
 						class="contact-item bg-white dark:bg-[#1e293b] text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800">
 						<span class="contact-icon">🔗</span>
-						<span>{{ profile.linkedin }}</span>
+						<a :href="profile.linkedin" target="_blank" rel="noopener noreferrer" class="hover:underline">
+							{{ profile.linkedin }}
+						</a>
 					</div>
+
 				</div>
 			</div>
 
@@ -89,8 +92,9 @@
 import configs from '~/configs';
 
 import { useI18n } from 'vue-i18n';
-import EmploymentHistory from '~/data/EmploymentHistory'; // adjust path if needed
-import Education from '~/data/Education'; // adjust path if needed
+import EmploymentHistory from '~/data/EmploymentHistory';
+import Education from '~/data/Education';
+import { socialLinks } from "@/data/socialLinks";
 definePageMeta({
 	layout: 'empty'
 })
@@ -100,6 +104,8 @@ const { t }=useI18n();
 
 
 const getContact=(key) => configs.contacts.find(c => c.icon===key)?.name||'';
+const getSocialLink=(key) => socialLinks.find(c => c.name===key)?.url||'';
+
 
 const profile=reactive({
 	name: configs.name,
@@ -107,17 +113,19 @@ const profile=reactive({
 	email: getContact('mail'),
 	phone: getContact('phone'),
 	location: getContact('map-pin'),
-	linkedin: 'linkedin.com/in/johndoe',
+	linkedin: getSocialLink('LinkedIn'),
 	photo: configs.profile_photo,
 })
 
 const skills=ref([
 	{ name: 'Laravel', level: 90 },
 	{ name: 'Vue.js', level: 85 },
-	{ name: 'Node.js', level: 80 },
-	{ name: 'Python', level: 75 },
+	{ name: 'React', level: 80 },
+	{ name: 'Node.js', level: 75 },
+	{ name: 'API', level: 75 },
 	{ name: 'SQL', level: 70 },
-	{ name: 'Docker', level: 65 }
+	{ name: 'Git', level: 70 },
+	{ name: 'CI/CD', level: 60 },
 ])
 
 
