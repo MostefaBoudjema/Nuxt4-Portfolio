@@ -242,6 +242,7 @@ const PROJECT_IMAGE_URLS = {
       { id: 4, img: '/images/alphanex/4.webp' },
     ],
   },
+
   eventManagement: {
     img: '/images/event-management/0.webp',
     projectImages: [
@@ -260,6 +261,19 @@ const PROJECT_IMAGE_URLS = {
       { id: 13, img: '/images/event-management/13.webp' },
       { id: 14, img: '/images/event-management/14.webp' },
       { id: 15, img: '/images/event-management/15.webp' },
+    ],
+  },
+  medicio: {
+    img: '/images/medicio/0.webp',
+    projectImages: [
+      { id: 1, img: '/images/medicio/1.webp' },
+      { id: 2, img: '/images/medicio/2.webp' },
+      { id: 3, img: '/images/medicio/3.webp' },
+      { id: 4, img: '/images/medicio/4.webp' },
+      { id: 4, img: '/images/medicio/5.webp' },
+      { id: 4, img: '/images/medicio/6.webp' },
+      { id: 4, img: '/images/medicio/7.webp' },
+      { id: 4, img: '/images/medicio/8.webp' },
     ],
   },
 };
@@ -368,8 +382,8 @@ const allProjects=[
   },
   {
     id: 1,
-    title: 'Business Website',
-    hide: false,
+    title: 'tamtamtools - Business Website',
+    hide: true,
     category: 'Laravel Application',
     img: PROJECT_IMAGE_URLS.tamtamtools.img,
     link: 'tamtamtools',
@@ -400,7 +414,7 @@ const allProjects=[
       {
         id: 3,
         title: "Website",
-        details: "https://tamtamtools.com/",
+        details: "#",
       },
       ],
       objectivesHeading: "Objective",
@@ -2040,6 +2054,100 @@ const allProjects=[
       {
         id: 4,
         details: "details17D",
+      },
+      ],
+      socialSharingsHeading: "Share This",
+      socialSharings: [{
+        id: 1,
+        name: "Twitter",
+        icon: "twitter",
+        url: "https://twitter.com/",
+      },
+      {
+        id: 2,
+        name: "Instagram",
+        icon: "instagram",
+        url: "https://instagram.com/",
+      },
+      {
+        id: 3,
+        name: "Facebook",
+        icon: "facebook",
+        url: "https://facebook.com/",
+      },
+      {
+        id: 4,
+        name: "LinkedIn",
+        icon: "linkedin",
+        url: "https://linkedin.com/",
+      },
+      ],
+    },
+
+  },
+  {
+    id: 18,
+    title: 'Medicio',
+    hide: false,
+    category: 'Nuxt Vue Web App',
+    link: 'medicio',
+    img: PROJECT_IMAGE_URLS.medicio.img,
+    smallImages: [
+      { id: 1, ...SMALL_IMAGE_URLS.nuxt },
+      { id: 2, ...SMALL_IMAGE_URLS.vue },
+      { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
+    ],
+    singleProjectHeader: {
+      singleProjectTitle: "Medicio",
+      singleProjectDate: "01 Aug 2025",
+      singleProjectTag: "Frontend",
+    },
+    projectImages: PROJECT_IMAGE_URLS.medicio.projectImages,
+    projectInfo: {
+      clientHeading: "About Client",
+      companyInfos: [{
+        id: 1,
+        title: "Name",
+        details: "Medicio",
+      },
+      {
+        id: 2,
+        title: "Services",
+        details: "Frontend Development",
+      },
+      {
+        id: 3,
+        title: "Website",
+        details: "https://nuxt4-medicio.vercel.app",
+      },
+
+      ],
+      objectivesHeading: "Objective",
+      objectivesDetails: "Objective18",
+      technologies: [{
+        title: "Tools & Technologies",
+        techs: [
+          "Nuxt",
+          "Vue",
+          "Bootstrap",
+        ],
+      },],
+      projectDetailsHeading: "Challenge",
+      projectDetails: [{
+        id: 1,
+        details: "details18A",
+      },
+      {
+        id: 2,
+        details: "details18B",
+      },
+      {
+        id: 3,
+        details: "details18C",
+      },
+      {
+        id: 4,
+        details: "details18D",
       },
       ],
       socialSharingsHeading: "Share This",

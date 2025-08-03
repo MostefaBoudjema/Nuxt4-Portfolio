@@ -22,6 +22,7 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
+import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 import { onMounted, watch, ref, computed, nextTick } from 'vue'
 import AppHeader from '~/components/shared/AppHeader.vue'
 import AppFooter from '~/components/shared/AppFooter.vue'
