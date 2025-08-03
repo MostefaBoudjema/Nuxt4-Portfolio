@@ -1,6 +1,6 @@
-const colors = require('tailwindcss/colors');
+const colors=require('tailwindcss/colors');
 
-module.exports = {
+module.exports={
 	content: [
 		'./components/**/*.{js,vue,ts}',
 		'./layouts/**/*.vue',
@@ -14,6 +14,9 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		extend: {
+			fontFamily: {
+				poppins: ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				'primary-light': '#F7F8FC',
 				'secondary-light': '#FFFFFF',

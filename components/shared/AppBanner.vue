@@ -4,23 +4,31 @@
       <!-- Banner left contents -->
       <div class="w-full md:w-1/3 text-left px-4 sm:px-0" data-aos="fade-right" data-aos-delay="200">
         <h1 :class="[
-          'font-general-semibold text-3xl md:text-3xl xl:text-4xl text-center uppercase',
+          'text-4xl md:text-5xl xl:text-6xl font-extrabold uppercase font-poppins',
           isRtl ? 'md:text-right' : 'md:text-left',
           'text-ternary-dark dark:text-primary-light'
         ]">
-          {{ t('Hi, Iam Mostfa') }}
+          {{ t('HiIam') }}
+        </h1>
+        <h1 :class="[
+          'text-4xl md:text-5xl xl:text-6xl font-extrabold uppercase font-poppins',
+          isRtl ? 'md:text-right' : 'md:text-left',
+          'text-yellow-500'
+        ]">
+          {{ t('Mostfa') }}
         </h1>
 
         <p :class="[
-          'font-general-medium mt-2 text-lg sm:text-xl xl:text-2xl text-center leading-none text-gray-400 min-h-[2.5rem]',
+          'mt-4 text-lg sm:text-xl xl:text-2xl text-ternary-dark dark:text-primary-light font-poppins',
           isRtl ? 'md:text-right' : 'md:text-left'
         ]">
-          {{ displayedText }}<span v-if="showCursor" class="typewriter-cursor">|</span>
+          {{ displayedText }}<span v-if="showCursor" class="typewriter-cursor text-yellow-500 font-bold">|</span>
         </p>
 
         <DownloadCv />
         <AboutBtn />
       </div>
+
       <!-- Banner right illustration -->
       <div class="w-full md:w-2/3 text-right float-right">
         <DotLottieVue class="h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px]" autoplay loop
