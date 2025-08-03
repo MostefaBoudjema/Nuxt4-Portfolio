@@ -19,7 +19,7 @@
         <h2 class="text-3xl font-bold mb-2">{{ post.title }}</h2>
         <div class="flex items-center mb-2 text-sm text-gray-500 dark:text-gray-400">
           <img v-if="post.author && post.author.avatar" :src="post.author.avatar" :alt="post.author.name"
-            class="w-6 h-6 rounded-full mr-2" />
+            class="w-6 h-6 rounded-full mx-2" />
           <span v-if="post.author && post.author.name">{{ post.author.name }}</span>
           <span v-if="post.readingTime" class="mx-2">•</span>
           <span v-if="post.readingTime">{{ post.readingTime }}</span>
