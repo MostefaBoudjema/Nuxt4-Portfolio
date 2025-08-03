@@ -2,7 +2,7 @@
   <section class="sm:container sm:mx-auto">
     <div class="flex flex-col sm:justify-between items-center sm:flex-row mt-12 sm:mt-10">
       <!-- Banner left contents -->
-      <div class="w-full md:w-1/3 text-left px-4 sm:px-0" data-aos="fade-right" data-aos-delay="200">
+      <div class="w-full md:w-1/3 text-center md:text-left px-4 sm:px-0" data-aos="fade-right" data-aos-delay="200">
         <h1 :class="[
           'text-4xl md:text-5xl xl:text-6xl font-extrabold uppercase font-poppins',
           isRtl ? 'md:text-right' : 'md:text-left',
