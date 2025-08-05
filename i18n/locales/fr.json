@@ -97,7 +97,7 @@
     "EducationStartDate1": "2012",
     "EducationEndDate1": "2017",
     "EducationDescription1": "Études en informatique avec spécialisation en génie logiciel, algorithmes et développement web. Diplômé avec mention et réalisé plusieurs projets utilisant des technologies modernes.",
-  
+
     "Hire Me": "Hire Me",
     "Projects I worked On": "Projets sur lesquels j'ai travaillé",
     "Search projects by title or filter by category": "Recherchez des projets par titre ou filtrez par catégorie",
@@ -197,6 +197,12 @@
     "details17C": "Implémentation technique Le **backend** exploite Laravel avec les standards JSON:API, utilisant Laravel Passport pour l'authentification et mailtrap.io pour les notifications. Le processus d'installation implique Composer, les migrations de base de données et la configuration de l'environnement pour un déploiement fluide. Le **frontend**, construit avec React et le Dashboard Material, nécessite Node.js et Yarn, avec des variables d'environnement personnalisables pour les chemins d'API et le mode démo. Cette combinaison fournit une solution réactive, évolutive qui équilibre la fonctionnalité avec une expérience utilisateur moderne, adaptée à la fois aux administrateurs et aux participants.",
     "details17D": "Objectif et Contact Ce projet met en avant les compétences en développement full-stack, en se concentrant sur l'accès basé sur les rôles, la logique de planification et le design utilisateur convivial. C'est une outil pratique pour les organisateurs d'événements qui ont besoin d'une gestion et d'une participation fiables. Le Système de gestion d'événements Laravel React fusionne la précision technique avec l'applicabilité réelle, offrant une plateforme simplifiée pour la coordination et l'engagement des événements, adaptable à différents cas d'utilisation comme des événements communautaires ou des rassemblements professionnels.",
     "Objective17": "Le Système de gestion d'événements Laravel vise à évaluer et à présenter la capacité à construire une application full-stack robuste utilisant Laravel et React. Il se concentre sur l'implémentation des rôles d'utilisateurs—admins avec le contrôle total des événements et les utilisateurs limités aux événements publiés—ainsi que la gestion et la planification des événements robustes. En intégrant un backend Laravel JSON:API et un frontend React et un Dashboard Material Laravel, le projet teste les compétences en CRUD, l'authentification, la gestion de la capacité et les systèmes de notification. L'objectif est de créer une plateforme efficace, utilisateur conviviale pour l'organisation et la participation aux événements, adaptée aux applications réelles comme des ateliers ou des conférences.",
+    "details18A": "Le **modèle de site web médical Medicio** est un template HTML5 moderne et responsive, conçu pour les établissements de santé comme les cliniques, hôpitaux et cabinets privés. Construit avec **Bootstrap 5**, Medicio offre une mise en page propre et professionnelle, avec des sections adaptées aux contenus médicaux, tels que les profils de médecins ou les formulaires de rendez-vous. C’est une solution idéale pour créer rapidement une présence en ligne crédible pour les structures médicales.",
+    "details18B": "Fonctionnalités principales Medicio comprend une **page d’accueil complète** avec défilement fluide, compteurs animés, témoignages, FAQ et section de contact. Des **pages dédiées** incluent À propos, Services, Départements, Médecins et Contact. Les visiteurs peuvent facilement consulter les services ou **prendre un rendez-vous via un formulaire**. Le design est **mobile-first**, compatible avec tous les navigateurs, et enrichi par des animations AOS et des bibliothèques d’icônes pour une expérience utilisateur soignée.",
+    "details18C": "Implémentation technique Medicio est développé avec **HTML5, CSS3, Bootstrap 5 et JavaScript**, en utilisant une structure de fichiers simple à personnaliser et à déployer. Il exploite **AOS (Animate On Scroll)** pour des animations douces et les composants Bootstrap pour une mise en page responsive. Le template est optimisé pour le référencement (SEO) et les performances, avec un chargement rapide sur tous les appareils. Il peut être intégré à des frameworks comme **Laravel**, **WordPress**, ou tout backend souhaité.",
+    "details18D": "Objectif et contact Medicio vise à aider les professionnels de santé à créer une présence en ligne professionnelle et digne de confiance. Il permet aux cliniques et hôpitaux de présenter leurs services de manière claire, d’augmenter les prises de rendez-vous et de renforcer leur image digitale. Ce template constitue une base solide pour tout projet web médical, statique ou dynamique, avec la possibilité de l’intégrer à des API de rendez-vous ou des CMS pour enrichir ses fonctionnalités.",
+    "Objective18": "Le but de Medicio est de fournir une solution front-end moderne, facile à utiliser et personnalisable pour les sites médicaux. Il permet aux développeurs ou établissements de santé de déployer rapidement des sites professionnels mettant en avant leurs services, équipes et moyens de contact. Basé sur Bootstrap 5 et des pratiques HTML/CSS/JS propres, l’objectif est de proposer un point de départ fiable et efficace pour des sites web médicaux accessibles sur tous les supports.",
+
     "Job Title1": "Développeur Backend Laravel",
     "Job Title2": "Développeur Frontend Vue",
     "Job Title3": "Développeur Frontend React",
@@ -212,7 +218,7 @@
     "QA Engineer": "Ingénieur de qualité",
     "Business Analyst": "Analyste commercial",
     "Portfolio": "Portfolio",
-    "Hi, Iam Mostfa": "Bonjour, je suis Mostfa",    
+    "Hi, Iam Mostfa": "Bonjour, je suis Mostfa",
     "HiIam": "Bonjour, je suis",
     "Mostfa": "Mostfa",
     "Skills": "Compétences",
@@ -233,7 +239,7 @@
     "eLearn": "e-learning",
     "iAuto - Car dealership web app": "iAuto - Application web de concessionnaire de voitures",
     "Car store services": "services de concessionnaire de voitures",
-    "eBook": "e-book",    
+    "eBook": "e-book",
     "Private": "Privé",
     "Saadaah News": "Saadaah News",
     "detailsCD": "detailsCD",
@@ -314,6 +320,12 @@
         "phone": {
             "label": "Quel est votre numéro de téléphone ?",
             "placeholder": "Entrez votre numéro de téléphone"
+        }
+    },
+    "meta": {
+        "home": {
+            "description": "Mostefa Boudjema est un développeur web full-stack spécialisé dans la création de sites modernes et responsives avec Nuxt 3, Tailwind CSS et Vue 3. Découvrez ses projets, articles de blog et options de contact.",
+            "keywords": "Mostefa Boudjema, Développeur Web, Portfolio Nuxt 3, Vue 3, Tailwind CSS, SEO, Design Responsive, Développeur Freelance, Développement Web, JavaScript, Frontend, Backend, SSR, SPA"
         }
     }
 }

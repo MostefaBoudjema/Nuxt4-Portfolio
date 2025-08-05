@@ -98,7 +98,7 @@
     "EducationStartDate1": "2012",
     "EducationEndDate1": "2017",
     "EducationDescription1": "Studied computer science with focus on software engineering, algorithms, and web development. Graduated with honors and completed several projects using modern technologies.",
-  
+
     "Hire Me": "Hire Me",
     "Projects I worked On": "Projects I worked On",
     "Search projects by title or filter by category": "Search projects by title or filter by category",
@@ -218,6 +218,12 @@
     "details17D": "Purpose and Contact This project demonstrates expertise in full-stack development, focusing on role-based access, scheduling logic, and user-friendly design. It's a practical tool for event organizers needing reliable management and participation features. The Laravel React Event Management System merges technical precision with real-world applicability, offering a streamlined platform for event coordination and engagement, adaptable to various use cases like community events or professional gatherings.",
     "Objective17": "The Laravel React Event Management System aims to evaluate and showcase the ability to build a robust full-stack application using Laravel and React. It focuses on implementing user roles—admins with full event oversight and users restricted to published events—alongside comprehensive event management and scheduling constraints. By integrating a Laravel JSON:API backend with a React frontend and Laravel Material Dashboard, the project tests skills in CRUD operations, authentication, capacity handling, and notification systems. The objective is to create an efficient, user-friendly platform for event organization and participation, suitable for real-world applications like workshops or conferences.",
 
+    "details18A": "The **Medicio Medical Website Template** is a modern, responsive HTML5 template built for healthcare and medical institutions such as clinics, hospitals, and private practices. Designed with **Bootstrap 5**, Medicio delivers a clean and professional layout with sections tailored for medical content, from doctor listings to appointment forms. The template is ideal for quickly launching a credible online presence for health-related businesses, making it easier to showcase services, staff, and facilities with clarity and trust.",
+    "details18B": "Core Features Medicio includes a rich **homepage layout** with smooth scrolling, animated counters, testimonials, FAQs, and contact sections. Dedicated **pages** include About, Services, Departments, Doctors, and Contact. Visitors can easily browse medical departments or **book appointments via a form**, improving client engagement. It supports responsive navigation, **mobile-first design**, and cross-browser compatibility. Built-in **AOS animations** and **icon libraries** add polish without complicating the user experience.",
+    "details18C": "Technical Implementation Medicio is built using **HTML5, CSS3, Bootstrap 5, and JavaScript**, with a simple folder structure that’s easy to customize and deploy. It leverages **AOS (Animate On Scroll)** for subtle UI animations and **Bootstrap’s components** for responsive behavior. The template is SEO-friendly and optimized for performance, loading fast across devices. Developers can extend it into a dynamic site by integrating it into frameworks like **Laravel**, **WordPress**, or any backend of choice.",
+    "details18D": "Purpose and Contact Medicio is designed for healthcare providers looking for a professional and trust-building online presence. It helps clinics and hospitals communicate their services clearly, increase appointment bookings, and build digital credibility. The template can serve as a solid foundation for any medical web project, whether static or dynamic, and is available for free customization and commercial use. For further use cases, Medicio supports integration with appointment APIs or CMS platforms to scale functionality.",
+    "Objective18": "The Medicio template aims to provide a modern, easy-to-use, and customizable front-end solution for medical websites. It enables developers or healthcare providers to rapidly deploy professional sites that highlight medical services, teams, and contact options. Built with Bootstrap 5 and clean HTML/CSS/JS practices, the objective is to offer a practical starting point for medical institutions seeking reliable, mobile-friendly web design with essential healthcare features ready out of the box.",
+
     "Job Title1": "Laravel Backend Developer",
     "Job Title2": "Vue Frontend Developer",
     "Job Title3": "React Frontend Developer",
@@ -336,6 +342,12 @@
         "phone": {
             "label": "What is your phone number?",
             "placeholder": "Enter your phone number"
+        }
+    },
+    "meta": {
+        "home": {
+            "description": "Mostefa Boudjema is a full-stack web developer specializing in modern, responsive websites using Nuxt 3, Tailwind CSS, and Vue 3. Explore projects, blog posts, and contact options.",
+            "keywords": "Mostefa Boudjema, Web Developer, Nuxt 3 Portfolio, Vue 3, Tailwind CSS, SEO, Responsive Design, Freelance Developer, Web Development, JavaScript, Frontend, Backend, SSR, SPA"
         }
     }
 }
