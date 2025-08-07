@@ -78,7 +78,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: 'Mostefa Boudjema',
-            link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+            link: [{ rel: 'icon', type: 'image/png', href: '/images/logo.svg' }],
             script: [
                 {
                     src: 'https://www.googletagmanager.com/gtag/js?id=G-L5HVZ2VCP7',
