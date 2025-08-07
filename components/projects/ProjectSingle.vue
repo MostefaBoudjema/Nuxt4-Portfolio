@@ -15,7 +15,7 @@ const props=defineProps({
     }
 });
 
-const { t }=useI18n({
+const { t, locale }=useI18n({
     inheritLocale: true,
     useScope: "global",
 });
@@ -23,7 +23,7 @@ const { t }=useI18n({
 // const store=useStore();
 // const setPageId=(id) => store.dispatch('setPageId', id);
 const setPageId=(id) => console.log('Page ID:', id);
-const localePath = useLocalePath();
+const localePath=useLocalePath();
 onMounted(() => {
     let mm=gsap.matchMedia();
     mm.add("(min-width: 991px)", () => {
@@ -60,13 +60,9 @@ onMounted(() => {
 <template>
     <div v-if="!props.project.hide">
         <div class="flex justify-center">
-            <NuxtLink
-  :to="localePath(`/projects/${props.project.link}`)"
-  @click="setPageId(props.project.id)"
-  class="single rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
-  aria-label="Single Project"
-  style="position: relative; display: inline-block;"
->
+            <NuxtLink :to="localePath(`/projects/${props.project.link}`)" @click="setPageId(props.project.id)"
+                class="single rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
+                aria-label="Single Project" style="position: relative; display: inline-block;">
                 <NuxtImg :src="props.project.img" :alt="props.project.title" class="rounded-t-xl border-none"
                     style="width: 100%; height: auto;" />
                 <template v-for="(smallImg, index) in props.project.smallImages" :key="index">
@@ -84,10 +80,12 @@ onMounted(() => {
             <p class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2">
                 {{ t(props.project.title) }}
                 <a class="text-lg text-center text-link d-flex"
-                    v-if="props.project.projectInfo.companyInfos[2].details != '#'"
-                    :href="props.project.projectInfo.companyInfos[2].details" target="_blank">
+                    v-if="(locale.value === 'ar' ? (props.project.projectInfo.companyInfos[2].detailsAr || props.project.projectInfo.companyInfos[2].details) : props.project.projectInfo.companyInfos[2].details) !== '#'"
+                    :href="locale.value === 'ar' ? (props.project.projectInfo.companyInfos[2].detailsAr || props.project.projectInfo.companyInfos[2].details) : props.project.projectInfo.companyInfos[2].details"
+                    target="_blank">
                     <i class="bi bi-box-arrow-up-right text-blue-500 px-2"></i>
                 </a>
+
             </p>
             <span class="font-general-medium text-lg text-ternary-dark dark:text-ternary-light pb-5">
                 {{ t(props.project.category) }}

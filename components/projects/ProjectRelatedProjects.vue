@@ -15,7 +15,7 @@ const { t } = useI18n({
 });
 
 const randomItems = computed(() => {
-    console.log('relatedProject:', props.relatedProject);
+    // console.log('relatedProject:', props.relatedProject);
     const arr = Array.isArray(props.relatedProject.relatedProjects)
         ? props.relatedProject.relatedProjects
         : [];

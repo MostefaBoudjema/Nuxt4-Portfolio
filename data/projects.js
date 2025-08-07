@@ -2118,7 +2118,8 @@ const allProjects=[
       {
         id: 3,
         title: "Website",
-        details: "https://nuxt4-medicio.vercel.app",
+        details: "https://nuxt4-medicio.vercel.app/en",
+        detailsAr: "https://nuxt4-medicio.vercel.app",
       },
 
       ],
