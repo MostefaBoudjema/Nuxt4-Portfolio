@@ -141,7 +141,6 @@ try {
                         <Button :title="$t('Hire Me')"
                             class="ml-8 text-md font-general-medium bg-blue-500 hover:bg-blue-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
                             @click="showModal()" aria-label="Hire Me Button">
-                            <img src="/images/upworkIcon.png" alt="">
                         </Button>
                     </a>
                 </div>
