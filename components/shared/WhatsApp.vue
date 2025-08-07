@@ -10,4 +10,20 @@ import settings from "~/configs";
 
 </script>
 
-<style></style>
+<style scoped>
+
+#whatsapp {
+    z-index: 99;
+    position: fixed;
+    bottom: -5px;
+	width: 10vh;
+    left: 10px;
+}
+@media (max-width: 991px) {
+    #whatsapp {
+        img {
+            width: 75px;
+        }
+    }
+}
+</style>
