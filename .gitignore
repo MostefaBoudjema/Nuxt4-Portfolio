@@ -17,6 +17,7 @@ node_modules
 # Logs
 logs
 *.log
+*.ai
 
 # Misc
 .DS_Store

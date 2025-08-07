@@ -39,7 +39,6 @@ export default defineNuxtConfig({
     css: ['~/assets/css/app.css'],
     plugins: [
         '@/plugins/aos.client.js',
-        '@/plugins/aos.client.js',
         '~/plugins/theme.client.js',
         '~/plugins/backtotop.client.js',
     ],

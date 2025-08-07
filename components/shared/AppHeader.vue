@@ -90,9 +90,13 @@ try {
                 <!-- Header logos -->
                 <div>
                     <NuxtLink :to="localePath('/')">
-                        <img v-if="theme === 'light'" :src="settings.logo_dark" class="w-36" alt="Dark Logo" />
-                        <img v-else :src="settings.logo_light" class="w-36" alt="Light Logo" />
+                        <img v-if="theme === 'light'"
+                            :src="$i18n.locale === 'ar' ? settings.logo_dark_ar : settings.logo_dark" class="w-36"
+                            alt="Dark Logo" />
+                        <img v-else :src="$i18n.locale === 'ar' ? settings.logo_light_ar : settings.logo_light"
+                            class="w-36" alt="Light Logo" />
                     </NuxtLink>
+
                 </div>
                 <div class="flex items-end gap-3">
                     <language-switcher v-if="show_multi_lang" :lang="lang" :theme="theme" @lang-changed="updateLang"

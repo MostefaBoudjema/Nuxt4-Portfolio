@@ -1,5 +1,7 @@
 import heroImage from '/images/developer.svg';
 import heroImageDark from '/images/developer-dark.svg';
+import logoDarkAr from '/images/logo-dark-ar.svg';
+import logoLightAr from '/images/logo-light-ar.svg';
 import logoDark from '/images/logo-dark.svg';
 import logoLight from '/images/logo-light.svg';
 import page404 from '/images/404-page.png';
@@ -13,6 +15,8 @@ const configs = {
   hero_image_dark: heroImageDark,
   logo_dark: logoDark,
   logo_light: logoLight,
+  logo_dark_ar: logoDarkAr,
+  logo_light_ar: logoLightAr,
   page_404: page404,
   profile_photo: profilePhoto,
   whatsapp: whatsapp,
