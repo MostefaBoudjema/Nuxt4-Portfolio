@@ -277,16 +277,12 @@ const PROJECT_IMAGE_URLS = {
     ],
   },
   medilab: {
-    img: '/images/projects/medicio/0.webp',
+    img: '/images/projects/medilab/0.webp',
     projectImages: [
-      { id: 1, img: '/images/projects/medicio/1.webp' },
-      { id: 2, img: '/images/projects/medicio/2.webp' },
-      { id: 3, img: '/images/projects/medicio/3.webp' },
-      { id: 4, img: '/images/projects/medicio/4.webp' },
-      { id: 5, img: '/images/projects/medicio/5.webp' },
-      { id: 6, img: '/images/projects/medicio/6.webp' },
-      { id: 7, img: '/images/projects/medicio/7.webp' },
-      { id: 8, img: '/images/projects/medicio/8.webp' },
+      { id: 1, img: '/images/projects/medilab/1.webp' },
+      { id: 2, img: '/images/projects/medilab/2.webp' },
+      { id: 3, img: '/images/projects/medilab/3.webp' },
+      { id: 4, img: '/images/projects/medilab/4.webp' },
     ],
   },
 };

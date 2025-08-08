@@ -1,6 +1,61 @@
+
+<template>
+    <div class="Carousel">
+        <video class="video-style" v-if="video" controls width="800">
+            <source :src="video" type="video/mp4" />
+        </video>
+        <div v-else>
+            <div class="lightbox" v-show="lightboxActive" @click.self="
+                lightboxActive = false;
+            currLightboxImg = currImgIdx;
+            ">
+                <img :src="imgList[currLightboxImg].img" />
+                <div class="prev" @click="goToImg(currLightboxImg - 1)"></div>
+                <div class="next" @click="goToImg(currLightboxImg + 1)"></div>
+            </div>
+            <!-- big image  -->
+            <img class="curr-Img" :src="imgList[currImgIdx].img" @click="lightboxActive = true" />
+            <!-- small images  -->
+            <transition-group  class="CROP" :name="transition_name" tag="div">
+                <div class="Carousel_chunk" v-for="(chunk, i) in arrChunk" v-show="currSlide == i" :key="i">
+                    <div class="chunk_item" v-for="(item, j) in chunk" :key="j" @click="currImgIdx = j + i * chunkSize"
+                        :class="{ CURR: item.img == imgList[currImgIdx].img }">
+                        <img :src="item.img" />
+                    </div>
+                </div>
+            </transition-group>
+            <!-- controls  -->
+            <div v-if="imgList.length>chunkSize" class="Carousel-controls" :class="locale=='ar' ? 'flex-row-reverse' : ''">
+                <div></div>
+                <div></div>
+                <svg @click="prev" width="48" height="48" viewBox="0 0 24 24" fill="%23051c28" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 8 8 12 12 16"></polyline>
+                    <line x1="16" y1="12" x2="8" y2="12"></line>
+                </svg>
+                <div class="Carousel-controls_dot" v-for="(dot, i) in arrChunk" :class="{ CURR: currSlide == i }"
+                    :key="dot.id" @click="goToChunk(i)">
+                    {{ i + 1 }}
+                </div>
+                <svg @click="next" width="48" height="48" viewBox="0 0 24 24" fill="%23051c28" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 16 16 12 12 8"></polyline>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</template>
+
 <script setup>
 import { ref, computed, watch } from 'vue';
 
+import { useI18n } from 'vue-i18n'
+const { locale }=useI18n()
 const props = defineProps(["imgList", "video"]);
 
 const chunkSize = ref(4);
@@ -52,59 +107,6 @@ const goToChunk = (idx) => {
     currSlide.value = idx;
 };
 </script>
-
-<template>
-    <div class="Carousel">
-        <video class="video-style" v-if="video" controls width="800">
-            <source :src="video" type="video/mp4" />
-        </video>
-        <div v-else>
-            <div class="lightbox" v-show="lightboxActive" @click.self="
-                lightboxActive = false;
-            currLightboxImg = currImgIdx;
-            ">
-                <img :src="imgList[currLightboxImg].img" />
-                <div class="prev" @click="goToImg(currLightboxImg - 1)"></div>
-                <div class="next" @click="goToImg(currLightboxImg + 1)"></div>
-            </div>
-            <!-- big image  -->
-            <img class="curr-Img" :src="imgList[currImgIdx].img" @click="lightboxActive = true" />
-            <!-- small images  -->
-            <transition-group class="CROP" :name="transition_name" tag="div">
-                <div class="Carousel_chunk" v-for="(chunk, i) in arrChunk" v-show="currSlide == i" :key="i">
-                    <div class="chunk_item" v-for="(item, j) in chunk" :key="j" @click="currImgIdx = j + i * chunkSize"
-                        :class="{ CURR: item.img == imgList[currImgIdx].img }">
-                        <img :src="item.img" />
-                    </div>
-                </div>
-            </transition-group>
-            <!-- controls  -->
-            <div class="Carousel-controls">
-                <div></div>
-                <div></div>
-                <svg @click="prev" width="48" height="48" viewBox="0 0 24 24" fill="%23051c28" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 8 8 12 12 16"></polyline>
-                    <line x1="16" y1="12" x2="8" y2="12"></line>
-                </svg>
-                <div class="Carousel-controls_dot" v-for="(dot, i) in arrChunk" :class="{ CURR: currSlide == i }"
-                    :key="dot.id" @click="goToChunk(i)">
-                    {{ i + 1 }}
-                </div>
-                <svg @click="next" width="48" height="48" viewBox="0 0 24 24" fill="%23051c28" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 16 16 12 12 8"></polyline>
-                    <line x1="8" y1="12" x2="16" y2="12"></line>
-                </svg>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div>
-</template>
-
 
 
 <style scoped>
