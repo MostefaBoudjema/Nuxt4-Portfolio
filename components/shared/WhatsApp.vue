@@ -1,6 +1,6 @@
 <template>
     <a id="whatsapp" :href="`https://api.whatsapp.com/send?phone=${whatsappNumber}`" data-aos="fade-up"
-        data-aos-delay="200">
+        >
         <img :src="whatsappImag" alt="Icon" />
     </a>
 </template>
@@ -21,14 +21,14 @@ const whatsappImag=settings.whatsapp; // Replace with your WhatsApp image path
     width: 10vh;
     bottom: -20px;
     left: 5px;
-    margin-right: .5rem !important;
-    margin-left: .5rem !important;
+    margin-right: .5rem;
+    margin-left: .5rem;
 }
 
 img {
     width: 90px;
-    margin-top: 1.5rem !important;
-    margin-bottom: 1.5rem !important;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 @media (max-width: 991px) {
