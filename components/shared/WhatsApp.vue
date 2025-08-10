@@ -18,7 +18,6 @@ const whatsappImag=settings.whatsapp; // Replace with your WhatsApp image path
 #whatsapp {
 	z-index: 99;
 	position: fixed;
-	width: 10vh !important;
 	bottom: 0px !important;
 	left: 5px !important;
 }
