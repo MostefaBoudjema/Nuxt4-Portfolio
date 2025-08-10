@@ -16,28 +16,25 @@ const whatsappImag=settings.whatsapp; // Replace with your WhatsApp image path
 
 <style scoped>
 #whatsapp {
-    z-index: 99;
-    position: fixed;
-    width: 10vh;
-    bottom: -20px;
-    left: 5px;
-    margin-right: .5rem;
-    margin-left: .5rem;
+	z-index: 99;
+	position: fixed;
+	width: 10vh !important;
+	bottom: 0px !important;
+	left: 5px !important;
 }
 
 img {
-    width: 90px;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+	width: 90px !important;
 }
 
 @media (max-width: 991px) {
-    #whatsapp {
-        left: 10px;
-    }
+	#whatsapp {
+		bottom: 0px !important;
+		left: 5px !important;
+	}
 
-    img {
-        width: 95px;
-    }
+	img {
+		width: 95px !important;
+	}
 }
 </style>
