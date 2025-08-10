@@ -1416,7 +1416,7 @@ const allProjects=[
   },
   {
     id: 11,
-    title: 'Landing Page',
+    title: 'Startup - Landing Page',
     hide: false,
     category: 'React App',
     link: 'landing-page',
@@ -1517,7 +1517,7 @@ const allProjects=[
   },
   {
     id: 12,
-    title: 'Bash Gate Landing Page',
+    title: 'Bash Gate - Landing Page',
     hide: false,
     category: 'React App',
     link: 'infogate',
@@ -2096,7 +2096,7 @@ const allProjects=[
   },
   {
     id: 18,
-    title: 'Medicio - clinic landing page',
+    title: 'Medicio - Clinic Landing Page',
     hide: false,
     category: 'Nuxt Vue Web App',
     link: 'medicio',
@@ -2191,7 +2191,7 @@ const allProjects=[
   },
   {
     id: 19,
-    title: 'MediLab - clinic landing page',
+    title: 'MediLab - Clinic Landing Page',
     hide: false,
     category: 'Nuxt Vue Web App',
     link: 'medilab',
