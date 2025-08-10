@@ -43,9 +43,9 @@
         :project="project" />
     </div> -->
   </section>
-</template>
-<script setup>
-import { ref, computed, onMounted, defineProps } from 'vue';
+</template><script setup>
+import { ref, computed, onMounted, defineProps, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import feather from 'feather-icons';
 import ProjectsFilter from './ProjectsFilter.vue';
 import ProjectSingle from './ProjectSingle.vue';
@@ -54,15 +54,32 @@ import settings from '@/configs';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n({ inheritLocale: true, useScope: 'global' });
+const router = useRouter();
+const route = useRoute();
 
 const projects = computed(() => getProjects(t));
 const projectsHeading = computed(() => t('Projects I worked On'));
 
 const selectedCategory = ref('');
-const searchProject = ref('');
+const searchProject = ref(route.query.search || ''); // Initialize with query parameter
 const props = defineProps({
   full: String
-})
+});
+
+// Watch for changes in searchProject and update the URL
+watch(searchProject, (newSearch) => {
+  router.replace({ query: { ...route.query, search: newSearch } });
+});
+
+// Watch for changes in the route query and update searchProject
+watch(
+  () => route.query.search,
+  (newSearch) => {
+    if (newSearch !== searchProject.value) {
+      searchProject.value = newSearch || '';
+    }
+  }
+);
 
 const filteredProjects = computed(() => {
   let filtered;
@@ -98,7 +115,6 @@ const filteredProjects = computed(() => {
 
 const getShortList = computed(() => {
     const selectedIds = settings.home_list;
-    // const selectedIds = [3, 4, 5, 6, 7, 14, 15];
     const filtered = filteredProjects.value.filter(project => selectedIds.includes(project.id));
     
     // Sort projects according to settings.home_list order
@@ -130,4 +146,3 @@ onMounted(() => {
   feather.replace();
 });
 </script>
-

@@ -2096,7 +2096,7 @@ const allProjects=[
   },
   {
     id: 18,
-    title: 'Medicio',
+    title: 'Medicio - clinic landing page',
     hide: false,
     category: 'Nuxt Vue Web App',
     link: 'medicio',
@@ -2191,7 +2191,7 @@ const allProjects=[
   },
   {
     id: 19,
-    title: 'MediLab',
+    title: 'MediLab - clinic landing page',
     hide: false,
     category: 'Nuxt Vue Web App',
     link: 'medilab',
