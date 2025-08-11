@@ -36,4 +36,8 @@ img {
 		width: 95px !important;
 	}
 }
+#whatsapp:hover {
+    background: color-mix(in srgb, var(--green), transparent 20%);
+    transform: translateY(-10px);
+}
 </style>
