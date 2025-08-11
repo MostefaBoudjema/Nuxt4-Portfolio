@@ -25,15 +25,19 @@ const { t, locale }=useI18n({
 const setPageId=(id) => console.log('Page ID:', id);
 const localePath=useLocalePath();
 onMounted(() => {
-    let mm=gsap.matchMedia();
+    const mm=gsap.matchMedia();
+
+    // Animation only applies on desktop-sized screens
     mm.add("(min-width: 991px)", () => {
 
-
-        let tween=gsap.fromTo(".single",
+        gsap.fromTo(
+            ".single",
+            // Initial state
             {
                 opacity: 0,
-                y: 80
+                y: 10
             },
+            // Target state
             {
                 opacity: 1,
                 y: 0,
@@ -42,19 +46,19 @@ onMounted(() => {
                 stagger: 0.9,
                 ease: "elastic",
                 scrollTrigger: {
-                    trigger: ".single",
-                    start: "top 80%",
-                    end: "end 10%",
-                    toggleActions: "restart none none none",
-                    // toggleActions: "restart pause resume reverse restart reset complete none
-                    scrub: 5,
-                    // markers: true,
+                    trigger: ".single",       // Element that triggers the animation
+                    start: "top 80%",         // Animation starts when top of element hits 80% viewport height
+                    end: "bottom 10%",        // Animation ends when bottom reaches 10% viewport height
+                    toggleActions: "restart none none none", // Control what happens on enter/leave
+                    scrub: 5,                 // Smooth scrubbing
+                    // markers: true,         // Uncomment for debugging
                 },
             }
         );
 
     });
 });
+
 </script>
 
 <template>
