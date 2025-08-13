@@ -3,16 +3,12 @@
     class="relative min-h-screen overflow-x-hidden bg-dark before:absolute before:inset-0 before:-z-10 before:bg-[url('/images/bg-circuit.svg')] before:bg-no-repeat before:bg-cover before:bg-center before:opacity-50">
     <div v-if="isDark"
       class="fixed inset-0 -z-20 bg-gradient-to-b from-primary-dark via-secondary-dark to-ternary-dark transition-colors duration-500" />
-    <!-- Gradient Background and Stars: Only in dark mode -->
-    <!-- Header -->
     <AppHeader />
-    <!-- Main content -->
     <main class="main-content">
       <slot />
     </main>
     <WhatsApp />
     <CustomBackToTop :visibleoffset="300" right="20px" bottom="25px" />
-    <!-- Footer -->
     <AppFooter />
   </div>
 </template>
