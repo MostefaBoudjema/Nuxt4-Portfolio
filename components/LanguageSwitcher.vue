@@ -2,6 +2,8 @@
 import { useI18n } from 'vue-i18n'
 import { ref, watch } from 'vue'
 import { useRuntimeConfig } from '#imports'
+import gsap from 'gsap';
+
 const { locale, setLocale }=useI18n()
 
 // List of supported languages
@@ -23,7 +25,26 @@ if (typeof window!=='undefined') {
 }
 
 function onLangChange(event) {
-  setLocale(event.target.value);
+  const mainContent = document.querySelector('.main-content');
+  if (mainContent) {
+    gsap.to(mainContent, {
+      scale: 0.95,
+      opacity: 0,
+      duration: 0.3,
+      ease: 'power1.in',
+      onComplete: () => {
+        setLocale(event.target.value);
+        gsap.fromTo(mainContent, { scale: 1.05, opacity: 0 }, {
+          scale: 1,
+          opacity: 1,
+          duration: 0.4,
+          ease: 'power1.out',
+        });
+      },
+    });
+  } else {
+    setLocale(event.target.value);
+  }
 }
 
 const runtimeConfig=useRuntimeConfig();
