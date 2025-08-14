@@ -3,13 +3,15 @@
     class="relative min-h-screen overflow-x-hidden bg-dark before:absolute before:inset-0 before:-z-10 before:bg-[url('/images/bg-circuit.svg')] before:bg-no-repeat before:bg-cover before:bg-center before:opacity-50">
     <div v-if="isDark"
       class="fixed inset-0 -z-20 bg-gradient-to-b from-primary-dark via-secondary-dark to-ternary-dark transition-colors duration-500" />
-    <AppHeader />
+
+    <SharedAppHeader />
     <main class="main-content">
       <slot />
     </main>
-    <WhatsApp />
-    <CustomBackToTop :visibleoffset="300" right="20px" bottom="25px" />
-    <AppFooter />
+    <SharedWhatsApp />
+    <SharedCustomBackToTop :visibleoffset="300" right="20px" bottom="25px" />
+    <SharedAppFooter />
+    <SpeedInsights />
   </div>
 </template>
 
@@ -17,10 +19,6 @@
 import { useI18n } from 'vue-i18n'
 import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 import { onMounted, watch, ref, computed, nextTick } from 'vue'
-import AppHeader from '~/components/shared/AppHeader.vue'
-import AppFooter from '~/components/shared/AppFooter.vue'
-import WhatsApp from '~/components/shared/WhatsApp.vue';
-import CustomBackToTop from '~/components/shared/CustomBackToTop.vue';
 
 const { locale }=useI18n()
 const isArabic=computed(() => locale.value==='ar')
