@@ -32,7 +32,7 @@ export default defineNuxtConfig({
                 lazy: true,
                 langDir: 'locales/',
                 vueI18n: './locales/vue-i18n.options.js',
-                detectBrowserLanguage: true, // disables i18n_redirected cookie and redirect
+                detectBrowserLanguage: false, // disables i18n_redirected cookie and redirect
             },
         ],
     ],
