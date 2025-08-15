@@ -501,7 +501,7 @@ const allProjects=[
 
   {
     id: 2,
-    title: 'Elearn',
+    title: 'Elearn - Online Learning Platform',
     hide: true,
     category: 'Wordpress site',
     link: 'Elearn',
@@ -709,7 +709,7 @@ const allProjects=[
   },
   {
     id: 4,
-    title: 'Business',
+    title: 'Business - Wordpress site',
     hide: true,
     category: 'Wordpress site',
     link: 'Business',
@@ -812,7 +812,7 @@ const allProjects=[
   },
   {
     id: 5,
-    title: 'Blog',
+    title: 'Saadaahnews - Blog website',
     category: 'Vue App',
     hide: false,
     link: 'Blog',
@@ -917,7 +917,7 @@ const allProjects=[
   },
   {
     id: 6,
-    title: 'Clothes Store',
+    title: 'DNK - Clothes Store',
     hide: true,
     category: 'Wordpress site',
     link: 'ClothesStore',
@@ -1020,7 +1020,7 @@ const allProjects=[
   },
   {
     id: 7,
-    title: 'Portfolio',
+    title: 'Mostefa - Portfolio website',
     hide: true,
     category: 'Vue App',
     link: 'Portfolio',
@@ -1223,7 +1223,7 @@ const allProjects=[
   },
   {
     id: 9,
-    title: 'Ecommerce Phone Store',
+    title: 'Ecom - Ecommerce Phone Store',
     hide: false,
     category: 'Laravel Vue Application',
     link: 'LaravelVueEcommercePhone',
@@ -1331,7 +1331,7 @@ const allProjects=[
 
   {
     id: 10,
-    title: 'Phones Store',
+    title: 'AnnabaPhone - Phones Store',
     hide: false,
     category: 'Wordpress site',
     link: 'PhonesStore',
@@ -1824,7 +1824,7 @@ const allProjects=[
   },
   {
     id: 15,
-    title: 'Stock management SaaS Garage',
+    title: 'Garage - Stock management SaaS',
     hide: false,
     category: 'Laravel Application',
     link: 'garage',
@@ -1923,7 +1923,7 @@ const allProjects=[
   },
   {
     id: 16,
-    title: 'Alphanex',
+    title: 'Alphanex - Portfolio website',
     hide: false,
     category: 'Wordpress site',
     link: 'Alphanex',
@@ -2018,7 +2018,7 @@ const allProjects=[
   },
   {
     id: 17,
-    title: 'Event Management',
+    title: 'Event Management - Management dashboard',
     hide: false,
     category: 'Laravel React Web App',
     link: 'event-management',
