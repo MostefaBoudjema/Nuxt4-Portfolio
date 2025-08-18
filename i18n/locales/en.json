@@ -366,5 +366,6 @@
             "description": "Mostefa Boudjema is a full-stack web developer specializing in modern, responsive websites using Nuxt 3, Tailwind CSS, and Vue 3. Explore projects, blog posts, and contact options.",
             "keywords": "Mostefa Boudjema, Web Developer, Nuxt 3 Portfolio, Vue 3, Tailwind CSS, SEO, Responsive Design, Freelance Developer, Web Development, JavaScript, Frontend, Backend, SSR, SPA"
         }
-    }
+    },
+    "link": "Link"
 }
