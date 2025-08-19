@@ -22,7 +22,6 @@ const lang=ref('');
 const modal=ref(false);
 
 const langRoot=computed(() => {
-    // If default language is 'en', you may want to use '/' instead of '/en'
     // Adjust as needed for your routing strategy
     return lang.value==='en'? '/':`/${lang.value}`;
 });

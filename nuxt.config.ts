@@ -64,6 +64,7 @@ export default defineNuxtConfig({
             showMultiLang:
                 process.env.NUXT_PUBLIC_SHOW_MULTI_LANG === 'true' || false,
             showHireMe: process.env.SHOW_HIRE_ME === 'true' || false,
+            showPricing: process.env.VITE_SHOW_SHOW_PRICING === 'true' || false,
             showBlog: process.env.SHOW_BLOG === 'true' || false,
             showContactForm: process.env.SHOW_CONTACT_FORM === 'true' || false,
             cvPath: process.env.CV_PATH || '/files/MostefaBoudjema-Resume.pdf',

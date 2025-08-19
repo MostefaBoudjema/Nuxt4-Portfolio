@@ -255,6 +255,7 @@
     "Car store services": "services de concessionnaire de voitures",
     "eBook": "e-book",
     "Private": "Privé",
+    "Pricing": "Tarification",
     "Saadaah News": "Saadaah News",
     "detailsCD": "detailsCD",
     "Bash Gate Landing Page": "Page d'atterrissage Bash Gate",
@@ -341,6 +342,44 @@
             "description": "Mostefa Boudjema est un développeur web full-stack spécialisé dans la création de sites modernes et responsives avec Nuxt 3, Tailwind CSS et Vue 3. Découvrez ses projets, articles de blog et options de contact.",
             "keywords": "Mostefa Boudjema, Développeur Web, Portfolio Nuxt 3, Vue 3, Tailwind CSS, SEO, Design Responsive, Développeur Freelance, Développement Web, JavaScript, Frontend, Backend, SSR, SPA"
         }
+    },
+    "pricing": {
+        "title": "💰 Tarifs",
+        "subtitle": "Services professionnels pour cliniques et cabinets médicaux.",
+        "starter": {
+            "title": "Page d’atterrissage",
+            "desc": "Page statique pour la clinique.",
+            "price": "20000 DA",
+            "features": {
+                "project": "Design personnalisé",
+                "support": "Support de base",
+                "updates": "Petites modifications si nécessaire"
+            },
+            "cta": "Commencer"
+        },
+        "pro": {
+            "title": "Site complet",
+            "desc": "Site avec plusieurs services et spécialités.",
+            "price": "À partir de 50000 DA",
+            "features": {
+                "projects": "Ajout de tous les services",
+                "support": "Support prioritaire",
+                "analytics": "Possibilité d’évolution"
+            },
+            "cta": "Choisir cette offre"
+        },
+        "enterprise": {
+            "title": "Hébergement + Domaine",
+            "desc": "Pour une année complète avec certificat SSL.",
+            "price": "À partir de 5000 DA",
+            "features": {
+                "manager": "Nom de domaine personnalisé",
+                "integrations": "Hébergement sécurisé",
+                "support": "Assistance technique"
+            },
+            "cta": "Nous contacter"
+        },
+        "note": "Nous pouvons vous préparer un prototype gratuit sans aucun engagement, afin que vous puissiez voir à quoi ressemblera votre site avant de décider."
     },
     "link": "Lien"
 }

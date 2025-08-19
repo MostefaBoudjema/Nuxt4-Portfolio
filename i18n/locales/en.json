@@ -280,6 +280,7 @@
     "detailsCD": "detailsCD",
     "Posts": "Posts",
     "Private": "Private",
+    "Pricing": "Pricing",
     "Blog Post Not Found": "Blog Post Not Found",
     "Bash Gate Landing Page": "Bash Gate Landing Page",
     "Image Generator OpenAI": "Image Generator OpenAI",
@@ -366,6 +367,44 @@
             "description": "Mostefa Boudjema is a full-stack web developer specializing in modern, responsive websites using Nuxt 3, Tailwind CSS, and Vue 3. Explore projects, blog posts, and contact options.",
             "keywords": "Mostefa Boudjema, Web Developer, Nuxt 3 Portfolio, Vue 3, Tailwind CSS, SEO, Responsive Design, Freelance Developer, Web Development, JavaScript, Frontend, Backend, SSR, SPA"
         }
+    },
+    "pricing": {
+        "title": "💰 Pricing",
+        "subtitle": "Professional services for clinics and medical practices.",
+        "starter": {
+            "title": "Landing Page",
+            "desc": "Static landing page for your clinic.",
+            "price": "Starting from $200",
+            "features": {
+                "project": "Custom design for your clinic",
+                "support": "Basic support",
+                "updates": "Minor adjustments when needed"
+            },
+            "cta": "Get Started"
+        },
+        "pro": {
+            "title": "Full Website",
+            "desc": "Website with multiple services and specialties.",
+            "price": "Starting from $500",
+            "features": {
+                "projects": "Add all services",
+                "support": "Priority support",
+                "analytics": "Future scalability"
+            },
+            "cta": "Choose this plan"
+        },
+        "enterprise": {
+            "title": "Hosting + Domain",
+            "desc": "One year with SSL certificate.",
+            "price": "Starting from $50",
+            "features": {
+                "manager": "Custom domain",
+                "integrations": "Secure hosting",
+                "support": "Technical assistance"
+            },
+            "cta": "Contact Us"
+        },
+        "note": "We can prepare a free prototype with no commitment, so you can preview your website before deciding."
     },
     "link": "Link"
 }

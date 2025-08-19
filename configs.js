@@ -26,6 +26,7 @@ const configs = {
   full_list: JSON.parse(import.meta.env.VITE_FULL_LIST || '[3,9,1,10,0,11,5,2,4,6,7,8]'),
   home_list: JSON.parse(import.meta.env.VITE_HOME_LIST || '[3,14,15,6,9,10]'),
   show_cv: import.meta.env.VITE_SHOW_CV === 'true' || false,
+  show_pricing: import.meta.env.VITE_SHOW_SHOW_PRICING === 'true' || false,
   show_multi_lang: import.meta.env.SHOW_MULTI_LANG === 'true' || false,
   show_hire_me: import.meta.env.VITE_SHOW_HIRE_ME === 'true' || false,
   show_contact_form: import.meta.env.VITE_SHOW_CONTACT_FORM === 'true' || false,

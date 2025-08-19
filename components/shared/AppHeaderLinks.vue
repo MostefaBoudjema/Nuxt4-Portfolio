@@ -60,6 +60,13 @@ const localePath = useLocalePath();
             aria-label="About Me"
             >{{ t("About Me") }}</NuxtLink
         >
+        <NuxtLink v-if="settings.show_pricing"
+            :to="localePath('/pricing')"
+            @click="closeMenu"
+            :class="['font-general-medium block text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-blue-600 dark:hover:text-blue-300 sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark', (isOpen && ['ar', 'ar-DZ', 'ar-SA', 'ar-EG'].includes($i18n.locale) ? 'text-right' : 'text-left')]"
+            aria-label="Pricing"
+            >{{ t("Pricing") }}</NuxtLink
+        >
         <NuxtLink
             :to="localePath('/contact')"
             @click="closeMenu"
