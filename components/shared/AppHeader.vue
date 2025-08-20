@@ -3,7 +3,6 @@ import { ref, onMounted, onUpdated, watch, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import HireMeModal from "@/components/HireMeModal.vue";
 import feather from "feather-icons";
 import AppHeaderLinks from "./AppHeaderLinks.vue";
 import Button from "@/components/reusable/Button.vue";
@@ -98,7 +97,7 @@ try {
 
                 </div>
                 <div class="flex items-end gap-3">
-                    <language-switcher v-if="show_multi_lang" :lang="lang" :theme="theme" @lang-changed="updateLang"
+                    <language-switcher v-if="show_multi_lang&&lang" :lang="lang" :theme="theme" @lang-changed="updateLang"
                         class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
                     <!-- Theme switcher small screen -->
                     <theme-switcher :theme="theme" @themeChanged="updateTheme"
@@ -129,16 +128,16 @@ try {
             <div class="hidden sm:flex justify-between items-center flex-col md:flex-row">
 
                 <language-switcher v-if="show_multi_lang" :lang="lang" :theme="theme" @lang-changed="updateLang"
-                    class="bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer rtl:mr-4" />
+                    class="ml-4 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
 
                 <!-- Theme switcher large screen -->
                 <theme-switcher :theme="theme" @theme-changed="updateTheme"
-                    class="ml-8 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
+                    class="ml-4 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
 
                 <div class="hidden md:block" v-if="settings.show_hire_me">
                     <a href="https://www.upwork.com/freelancers/mostefaboudjema" target="_blank">
                         <Button :title="$t('Hire Me')"
-                            class="ml-8 text-md font-general-medium bg-blue-500 hover:bg-blue-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
+                            class="ml-4 text-md font-general-medium bg-blue-500 hover:bg-blue-600 text-white text-nowrap shadow-sm rounded-md px-5 py-2.5 duration-300"
                             @click="showModal()" aria-label="Hire Me Button">
                         </Button>
                     </a>
@@ -149,8 +148,8 @@ try {
         </div>
 
         <!-- Hire me modal -->
-        <HireMeModal v-if="settings.show_hire_me" :showModal="showModal" :modal="modal"
-            :categories="settings.categories" aria-modal="Hire Me Modal" />
+        <!-- <HireMeModal v-if="settings.show_hire_me" :showModal="showModal" :modal="modal"
+            :categories="settings.categories" aria-modal="Hire Me Modal" /> -->
     </nav>
 </template>
 
