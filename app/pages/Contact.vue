@@ -15,8 +15,8 @@
 <script setup>
 import feather from 'feather-icons';
 import { ref, onMounted, onUpdated } from 'vue';
-import ContactForm from '@/components/contact/ContactForm.vue';
-import ContactDetails from '@/components/contact/ContactDetails.vue';
+// import ContactForm from '@/components/contact/ContactForm.vue';
+// import ContactDetails from '@/components/contact/ContactDetails.vue';
 
 import settingsData from '~/configs';
 import { socialLinks } from '@/data/socialLinks';

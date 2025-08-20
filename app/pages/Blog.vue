@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import BlogList from '../components/blog/BlogList.vue';
+// import BlogList from '../components/blog/BlogList.vue';
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n';
 

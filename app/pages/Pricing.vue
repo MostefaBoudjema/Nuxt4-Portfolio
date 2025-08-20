@@ -1,11 +1,11 @@
 <template>
-	<Prices />
+	<PricingPrices />
 	<AboutTestimonials />
 </template>
 
 <script setup>
-import Prices from '@/components/pricing/Prices.vue';
-import AboutTestimonials from '@/components/about/AboutTestimonials.vue';
+// import PricingPrices from '@/components/pricing/PricingPrices.vue';
+// import AboutTestimonials from '@/components/about/AboutTestimonials.vue';
 
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n'
