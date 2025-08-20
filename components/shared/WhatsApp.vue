@@ -1,5 +1,5 @@
 <template>
-    <a id="whatsapp" :href="`https://api.whatsapp.com/send?phone=${whatsappNumber}`" data-aos="fade-up"
+    <a id="whatsapp" :href="`https://wa.me/${whatsappNumber}`" data-aos="fade-up"
         >
         <img :src="whatsappImag" alt="Icon" />
     </a>
