@@ -66,3 +66,4 @@ const handleToggleTheme = () => {
     </div>
   </a>
 </template>
+~/app/composables/useThemeSwitcher

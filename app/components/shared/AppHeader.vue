@@ -160,3 +160,4 @@ try {
     @apply font-medium;
 }
 </style>
+~/app/composables/useThemeSwitcher

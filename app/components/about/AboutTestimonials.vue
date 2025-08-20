@@ -47,8 +47,7 @@ const { t }=useI18n();
 
 <style scoped>
 .testimonial-slide {
-  min-height: 340px; /* Adjust as needed */
-  height: 340px;
+  min-height: 540px; 
   display: flex;
   flex-direction: column;
   justify-content: center;

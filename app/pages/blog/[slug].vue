@@ -60,8 +60,8 @@
 
 <script setup>
 import { marked } from 'marked';
-import {postsList as posts} from '../data/posts.js';
-import RelatedPosts from '../components/blog/RelatedPosts.vue';
+import {postsList as posts} from '@/data/posts.js';
+import RelatedPosts from '@/components/blog/RelatedPosts.vue';
 import { ref, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useHead } from '#imports';

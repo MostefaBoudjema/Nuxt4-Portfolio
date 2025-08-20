@@ -58,7 +58,7 @@
 </template>
 
 <script setup>
-import posts from '../../data/posts.js';
+import posts from '@/data/posts.js';
 
 import { useLocalePath, useRouter } from '#imports';
 const localePath = useLocalePath();
