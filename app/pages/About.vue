@@ -1,30 +1,23 @@
 <template>
-  <!-- About me -->
+
   <div class="container mx-auto">
     <AboutMe />
   </div>
 
-  <!-- About video (optional, uncomment if needed) -->
   <!-- <AboutVideo /> -->
 
-  <!-- About counter -->
   <AboutCounter />
 
-  <!-- About Education -->
   <AboutEducation />
 
-  <!-- About Employment History -->
   <AboutEmploymentHistory />
 
-  <!-- About Skills -->
   <AboutsSkills />
 
-  <!-- About clients -->
   <div class="container mx-auto">
     <AboutClients />
   </div>
 
-  <!-- About testimonials -->
   <AboutTestimonials />
 </template>
 

@@ -6,27 +6,32 @@
 			</p>
 		</div>
 
-		<Carousel :itemsToShow="1.5" :wrapAround="true" :mouseDrag="true" :autoplay="4000" 
-			:breakpoints="{
-				640: {
-					itemsToShow: 1.5
-				},
-				768: {
-					itemsToShow: 2.5
-				},
-				1024: {
-					itemsToShow: 3.5
-				}
-			}"
-			class="container mx-auto">
+		<Carousel :itemsToShow="1.5" :wrapAround="true" :mouseDrag="true" :autoplay="4000" :breakpoints="{
+					640: {
+						itemsToShow: 1.5
+					},
+					768: {
+						itemsToShow: 2.5
+					},
+					1024: {
+						itemsToShow: 3.5
+					}
+				}" class="container mx-auto">
 			<Slide v-for="(testimonial, idx) in testimonials" :key="idx">
 				<div
 					class="testimonial-slide bg-white dark:bg-secondary-dark shadow rounded-lg p-6 flex flex-col items-center text-center border border-gray-100 dark:border-ternary-dark mx-2 h-full">
 					<img :src="testimonial.avatar" alt="avatar"
 						class="w-24 h-24 rounded-full mb-4 border-2 border-gray-200 dark:border-ternary-dark" />
-					<p class="text-gray-700 dark:text-gray-200 italic mb-2">"{{ testimonial.quote }}"</p>
+					<p class="text-gray-700 dark:text-gray-200 italic mb-2">"{{ testimonial.quote }}" <a
+							:href="testimonial.link" target="_blank"
+							class="inline-flex items-center rounded-full text-sm font-medium transition">
+							
+							<i class="bi bi-box-arrow-up-right text-blue-500 ms-1"></i>
+						</a>
+					</p>
 					<span class="font-semibold text-gray-900 dark:text-primary-light">- {{ testimonial.name }}</span>
 					<span class="text-sm text-gray-500 dark:text-gray-400">{{ t(testimonial.role) }}</span>
+
 				</div>
 			</Slide>
 			<template #addons>
@@ -47,9 +52,9 @@ const { t }=useI18n();
 
 <style scoped>
 .testimonial-slide {
-  min-height: 540px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	min-height: 540px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 </style>
