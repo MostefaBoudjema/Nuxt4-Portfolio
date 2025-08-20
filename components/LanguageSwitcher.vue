@@ -73,6 +73,7 @@ select {
   font-weight: 600;
   min-width: 90px;
   box-shadow: none;
+  text-align: center;
   /* Hide default dropdown arrow for most browsers */
   appearance: none;
   -webkit-appearance: none;

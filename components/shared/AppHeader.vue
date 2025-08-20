@@ -138,7 +138,7 @@ try {
                     <a href="https://www.upwork.com/freelancers/mostefaboudjema" target="_blank">
                         <Button :title="$t('Hire Me')"
                             class="ml-4 text-md font-general-medium bg-blue-500 hover:bg-blue-600 text-white text-nowrap shadow-sm rounded-md px-5 py-2.5 duration-300"
-                            @click="showModal()" aria-label="Hire Me Button">
+                            aria-label="Hire Me Button">
                         </Button>
                     </a>
                 </div>
