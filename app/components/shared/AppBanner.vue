@@ -25,8 +25,8 @@
           {{ displayedText }}<span v-if="showCursor" class="typewriter-cursor text-yellow-500 font-bold">|</span>
         </p>
 
-        <DownloadCv />
-        <AboutBtn />
+        <ReusableDownloadCv />
+        <ReusableAboutBtn />
       </div>
 
       <!-- Banner right illustration -->
@@ -43,8 +43,6 @@ import { onMounted, onUpdated, onUnmounted, ref, computed } from 'vue';
 import feather from 'feather-icons';
 import { useI18n } from 'vue-i18n';
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
-import DownloadCv from './DownloadCv.vue';
-import AboutBtn from './AboutBtn.vue';
 
 const { t, locale }=useI18n({
   inheritLocale: true,

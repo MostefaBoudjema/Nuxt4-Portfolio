@@ -3,8 +3,8 @@
     <!-- About profile image -->
     <div class="w-full sm:w-2/6 mb-7 sm:mb-0">
       <NuxtImg :src="settings.profile_photo" class="rounded-xl w-96" alt="" />
-      <DownloadCv />
-      <ContactBtn />
+      <ReusableDownloadCv />
+      <ReusableContactBtn />
     </div>
 
     <!-- About details -->
@@ -48,8 +48,6 @@
 import { useI18n } from 'vue-i18n';
 import { computed } from 'vue';
 import settings from '~/configs';
-import DownloadCv from '@/components/shared/DownloadCv.vue';
-import ContactBtn from '@/components/shared/ContactBtn.vue';
 
 const { t } = useI18n();
 
