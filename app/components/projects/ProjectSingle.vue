@@ -83,9 +83,9 @@ onMounted(() => {
         <div class="text-center px-4 py-6 d-flex justify-content-center align-items-center">
             <p class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2">
                 {{ t(props.project.title) }}
-                <a v-if="(locale.value === 'ar'
+                <a v-if="(locale === 'ar'
         ? (props.project.projectInfo.companyInfos[2].detailsAr || props.project.projectInfo.companyInfos[2].details)
-        : props.project.projectInfo.companyInfos[2].details) !== '#'" :href="locale.value === 'ar'
+        : props.project.projectInfo.companyInfos[2].details) !== '#'" :href="locale === 'ar'
         ? (props.project.projectInfo.companyInfos[2].detailsAr || props.project.projectInfo.companyInfos[2].details)
         : props.project.projectInfo.companyInfos[2].details" target="_blank"
                     class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700 hover:bg-blue-200 transition">

@@ -87,13 +87,13 @@ try {
             <div class="flex justify-between items-center px-4 sm:px-0">
                 <!-- Header logos -->
                 <div>
-                    <NuxtLink :to="localePath('/')">
+                    <a :href="localePath('/')">
                         <img v-if="theme === 'light'"
                             :src="$i18n.locale === 'ar' ? settings.logo_dark_ar : settings.logo_dark" class="w-36"
                             alt="Dark Logo" />
                         <img v-else :src="$i18n.locale === 'ar' ? settings.logo_light_ar : settings.logo_light"
                             class="w-36" alt="Light Logo" />
-                    </NuxtLink>
+                    </a>
 
                 </div>
                 <div class="flex items-end gap-3">
