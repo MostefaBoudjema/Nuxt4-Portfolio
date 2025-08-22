@@ -8,8 +8,8 @@
     <main class="main-content">
       <slot />
     </main>
-    <SharedWhatsApp />
-    <SharedCustomBackToTop :visibleoffset="300" right="20px" bottom="25px" />
+    <ReusableWhatsApp />
+    <ReusableCustomBackToTop :visibleoffset="300" right="20px" bottom="25px" />
     <SharedAppFooter />
     <SpeedInsights />
   </div>

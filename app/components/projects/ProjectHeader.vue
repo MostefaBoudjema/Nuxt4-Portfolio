@@ -1,5 +1,4 @@
 <script setup>
-import CustomSlide from "@/components/reusable/CustomSlide.vue";
 import { useI18n } from "vue-i18n";
 
 const props = defineProps(["singleProjectHeader", "imgList", "video"]);
@@ -41,7 +40,7 @@ const { t } = useI18n();
                 </div>
             </div>
 
-            <CustomSlide :video="video" :imgList="imgList" />
+            <ReusableCustomSlide :video="video" :imgList="imgList" />
         </div>
     </div>
 </template>

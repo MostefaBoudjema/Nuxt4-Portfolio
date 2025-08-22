@@ -9,7 +9,6 @@
 				{{ $t('Contact Us') }}
 			</p>
 			<form @submit.prevent="submitForm" class="font-general-regular space-y-5 md:space-y-7">
-				<!-- Progress indicator -->
 				<div class="hidden md:flex justify-between mb-6 md:mb-8 px-0">
 					<div v-for="(step, index) in steps" :key="index" class="flex items-center">
 						<div :class="[
@@ -25,7 +24,6 @@
 					</div>
 				</div>
 
-				<!-- Mobile progress indicator -->
 				<div class="md:hidden flex justify-center mb-6">
 					<div class="bg-gray-200 dark:bg-gray-700 rounded-full px-4 py-2">
 						<span class="text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -34,7 +32,6 @@
 					</div>
 				</div>
 
-				<!-- Current question -->
 				<div class="mb-6 md:mb-8">
 					<h3 :class="[
 				'text-lg md:text-xl font-medium mb-4 text-primary-dark dark:text-primary-light',
@@ -43,17 +40,14 @@
 						{{ $t(currentQuestion.label) }}
 					</h3>
 
-					<!-- Text / Email / Phone input -->
-					<FormInput v-if="['text', 'email', 'phone'].includes(currentQuestion.type)"
+					<ReusableFormInput v-if="['text', 'email', 'phone'].includes(currentQuestion.type)"
 						v-model="formData[currentQuestion.field]" :placeholder="$t(currentQuestion.placeholder)"
 						:inputIdentifier="currentQuestion.field" :inputType="currentQuestion.type" :hideLabel="true" />
 
-					<!-- Textarea input -->
-					<FormTextarea v-else-if="currentQuestion.type === 'textarea'"
+					<ReusableFormTextarea v-else-if="currentQuestion.type === 'textarea'"
 						v-model="formData[currentQuestion.field]" :placeholder="$t(currentQuestion.placeholder)"
 						:textareaIdentifier="currentQuestion.field" :hideLabel="true" />
 
-					<!-- Select input -->
 					<select v-else-if="currentQuestion.type === 'select'" v-model="formData[currentQuestion.field]"
 						class="w-full px-3 md:px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent dark:bg-secondary-dark dark:text-gray-200"
 						:class="{ 'border-red-500': !isCurrentStepValid && formData[currentQuestion.field] === '' }">
@@ -63,23 +57,21 @@
 						</option>
 					</select>
 
-					<!-- Custom input if 'other' selected -->
-					<FormInput v-if="currentQuestion.type === 'select' && formData[currentQuestion.field] === 'other'"
+					<ReusableFormInput v-if="currentQuestion.type === 'select' && formData[currentQuestion.field] === 'other'"
 						v-model="formData[currentQuestion.field + 'Custom']"
 						:placeholder="$t('form.other.placeholder', { field: currentQuestion.field })"
 						:inputIdentifier="currentQuestion.field + 'Custom'" inputType="text" :hideLabel="true"
 						class="mt-2" />
 				</div>
 
-				<!-- Navigation buttons -->
 				<div class="flex justify-between">
 					<div>
-						<Button v-if="currentStep > 0" :title="$t('form.previous')" @click="previousStep"
+						<ReusableButton v-if="currentStep > 0" :title="$t('form.previous')" @click="previousStep"
 							class="px-3 md:px-4 py-2 md:py-2.5 text-white tracking-wider bg-gray-500 hover:bg-gray-600 focus:ring-1 focus:ring-gray-900 rounded-lg duration-500"
 							type="button" />
 					</div>
 					<div>
-						<Button
+						<ReusableButton
 							:title="isLastStep ? (isSubmitting ? $t('form.sending') : $t('form.sendMessage')) : $t('form.next')"
 							:disabled="isSubmitting || !isCurrentStepValid"
 							@click="isLastStep ? submitForm() : nextStep()"
@@ -88,7 +80,6 @@
 					</div>
 				</div>
 
-				<!-- Success Message -->
 
 				<Transition name="fade">
 					<div v-if="submissionSuccess" :class="[
@@ -99,7 +90,6 @@
 					</div>
 				</Transition>
 
-				<!-- Error Message -->
 				<div v-if="submissionError" :class="[
 				'mt-4 p-4 bg-red-100 text-red-700 rounded-lg',
 				($i18n && $i18n.locale === 'ar') ? 'text-right' : 'text-left'
@@ -114,9 +104,6 @@
 
 <script setup>
 import { ref, computed, onBeforeUnmount } from 'vue';
-import Button from '@/components/reusable/Button.vue';
-import FormInput from '@/components/reusable/FormInput.vue';
-import FormTextarea from '@/components/reusable/FormTextarea.vue';
 
 const currentStep=ref(0);
 const formData=ref({

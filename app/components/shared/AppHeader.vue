@@ -5,7 +5,6 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import feather from "feather-icons";
 import AppHeaderLinks from "./AppHeaderLinks.vue";
-import Button from "@/components/reusable/Button.vue";
 import settings from "~/configs";
 import useThemeSwitcher from '~/composables/useThemeSwitcher';
 import { useLocalePath } from '#i18n';
@@ -136,10 +135,10 @@ try {
 
                 <div class="hidden md:block" v-if="settings.show_hire_me">
                     <a href="https://www.upwork.com/freelancers/mostefaboudjema" target="_blank">
-                        <Button :title="$t('Hire Me')"
+                        <ReusableButton :title="$t('Hire Me')"
                             class="ml-4 text-md font-general-medium bg-blue-500 hover:bg-blue-600 text-white text-nowrap shadow-sm rounded-md px-5 py-2.5 duration-300"
                             aria-label="Hire Me Button">
-                        </Button>
+                        </ReusableButton>
                     </a>
                 </div>
 
@@ -160,4 +159,3 @@ try {
     @apply font-medium;
 }
 </style>
-~/app/composables/useThemeSwitcher

@@ -1,6 +1,4 @@
 <script setup>
-// import ProjectsGrid from '@/components/projects/ProjectsGrid.vue';
-// import ContactBtn from '@/components/shared/ContactBtn.vue';
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
@@ -13,7 +11,7 @@ useHead({
 	<div class="container mx-auto">
 		<ProjectsGrid :full="true"/>
 		
-		<ContactBtn place="center"/>
+		<ReusableContactBtn place="center"/>
 	</div>
 </template>
 
