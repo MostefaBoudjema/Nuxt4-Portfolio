@@ -9,20 +9,21 @@
 				{{ $t('Contact Us') }}
 			</p>
 			<form @submit.prevent="submitForm" class="font-general-regular space-y-5 md:space-y-7">
-				<div class="hidden md:flex justify-between mb-6 md:mb-8 px-0">
-					<div v-for="(step, index) in steps" :key="index" class="flex items-center">
+				<div class="hidden md:flex justify-between mb-6 md:mb-8 px-0 w-full">
+					<div v-for="(step, index) in steps" :key="index" class="flex items-center flex-1 min-w-0">
 						<div :class="[
-				'w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium',
+				'w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0',
 				currentStep >= index ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-600'
 			]">
 							{{ index + 1 }}
 						</div>
 						<div v-if="index < steps.length - 1" :class="[
-				'w-16 h-1',
+				'flex-1 h-1 mx-0',
 				currentStep > index ? 'bg-blue-500' : 'bg-gray-200'
 			]"></div>
 					</div>
 				</div>
+
 
 				<div class="md:hidden flex justify-center mb-6">
 					<div class="bg-gray-200 dark:bg-gray-700 rounded-full px-4 py-2">
@@ -57,7 +58,8 @@
 						</option>
 					</select>
 
-					<ReusableFormInput v-if="currentQuestion.type === 'select' && formData[currentQuestion.field] === 'other'"
+					<ReusableFormInput
+						v-if="currentQuestion.type === 'select' && formData[currentQuestion.field] === 'other'"
 						v-model="formData[currentQuestion.field + 'Custom']"
 						:placeholder="$t('form.other.placeholder', { field: currentQuestion.field })"
 						:inputIdentifier="currentQuestion.field + 'Custom'" inputType="text" :hideLabel="true"
@@ -314,5 +316,9 @@ onBeforeUnmount(() => {
 .fade-enter-from,
 .fade-leave-to {
 	opacity: 0;
+}
+
+* {
+	box-sizing: border-box;
 }
 </style>
