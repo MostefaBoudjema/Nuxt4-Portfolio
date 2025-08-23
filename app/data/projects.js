@@ -310,7 +310,17 @@ const PROJECT_IMAGE_URLS={
       { id: 2, img: '/images/projects/novara/2.webp' },
       { id: 3, img: '/images/projects/novara/3.webp' },
       { id: 4, img: '/images/projects/novara/4.webp' },
-      { id: 4, img: '/images/projects/novara/5.webp' },
+      { id: 5, img: '/images/projects/novara/5.webp' },
+    ],
+  },
+  restaurantly: {
+    img: '/images/projects/restaurantly/0.webp',
+    projectImages: [
+      { id: 1, img: '/images/projects/restaurantly/1.webp' },
+      { id: 2, img: '/images/projects/restaurantly/2.webp' },
+      { id: 3, img: '/images/projects/restaurantly/3.webp' },
+      { id: 4, img: '/images/projects/restaurantly/4.webp' },
+      { id: 5, img: '/images/projects/restaurantly/5.webp' },
     ],
   },
 };
@@ -2571,6 +2581,103 @@ const allProjects=[
       {
         id: 4,
         details: "details22D",
+      },
+      ],
+      socialSharingsHeading: "Share This",
+      socialSharings: [
+        {
+          id: 1,
+          name: "Twitter",
+          icon: "twitter",
+          url: "https://twitter.com/",
+        },
+        {
+          id: 2,
+          name: "Instagram",
+          icon: "instagram",
+          url: "https://instagram.com/",
+        },
+        {
+          id: 3,
+          name: "Facebook",
+          icon: "facebook",
+          url: "https://facebook.com/",
+        },
+        {
+          id: 4,
+          name: "LinkedIn",
+          icon: "linkedin",
+          url: "https://linkedin.com/",
+        },
+      ],
+    }
+  }
+  , {
+    id: 23,
+    title: 'Restaurantly - Food Delivery App',
+    hide: false,
+    category: 'Nuxt Vue Web App',
+    link: 'restaurantly',
+    img: PROJECT_IMAGE_URLS.restaurantly.img,
+    smallImages: [
+      { id: 1, ...SMALL_IMAGE_URLS.nuxt },
+      { id: 2, ...SMALL_IMAGE_URLS.vue },
+      { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
+    ],
+    singleProjectHeader: {
+      singleProjectTitle: "Restaurantly",
+      singleProjectDate: "23 Aug 2025",
+      singleProjectTag: "Frontend",
+    },
+    projectImages: PROJECT_IMAGE_URLS.restaurantly.projectImages,
+    projectInfo: {
+      clientHeading: "About Client",
+      companyInfos: [
+        {
+          id: 1,
+          title: "Name",
+          details: "Restaurantly",
+        },
+        {
+          id: 2,
+          title: "Services",
+          details: "Frontend Development",
+        },
+        {
+          id: 3,
+          title: "Website",
+          details: "https://nuxt4-restaurantly.vercel.app/en",
+          detailsAr: "https://nuxt4-restaurantly.vercel.app",
+        },
+      ],
+      objectivesHeading: "Objective",
+      objectivesDetails: "Objective23",
+      technologies: [
+        {
+          title: "Tools & Technologies",
+          techs: [
+            "Nuxt",
+            "Vue",
+            "Bootstrap",
+          ],
+        },
+      ],
+      projectDetailsHeading: "Challenge",
+      projectDetails: [{
+        id: 1,
+        details: "details23A",
+      },
+      {
+        id: 2,
+        details: "details23B",
+      },
+      {
+        id: 3,
+        details: "details23C",
+      },
+      {
+        id: 4,
+        details: "details23D",
       },
       ],
       socialSharingsHeading: "Share This",
