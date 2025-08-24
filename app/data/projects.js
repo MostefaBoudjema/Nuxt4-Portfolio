@@ -323,6 +323,18 @@ const PROJECT_IMAGE_URLS={
       { id: 5, img: '/images/projects/restaurantly/5.webp' },
     ],
   },
+  platia: {
+    img: '/images/projects/platia/0.webp',
+    projectImages: [
+      { id: 1, img: '/images/projects/platia/1.webp' },
+      { id: 2, img: '/images/projects/platia/2.webp' },
+      { id: 3, img: '/images/projects/platia/3.webp' },
+      { id: 4, img: '/images/projects/platia/4.webp' },
+      { id: 5, img: '/images/projects/platia/5.webp' },
+      { id: 6, img: '/images/projects/platia/6.webp' },
+      { id: 7, img: '/images/projects/platia/7.webp' },
+    ],
+  },
 };
 
 const allProjects=[
@@ -2614,7 +2626,7 @@ const allProjects=[
   }
   , {
     id: 23,
-    title: 'Restaurantly - Food Delivery App',
+    title: 'Restaurantly - Restaurant Landing Page',
     hide: false,
     category: 'Nuxt Vue Web App',
     link: 'restaurantly',
@@ -2678,6 +2690,103 @@ const allProjects=[
       {
         id: 4,
         details: "details23D",
+      },
+      ],
+      socialSharingsHeading: "Share This",
+      socialSharings: [
+        {
+          id: 1,
+          name: "Twitter",
+          icon: "twitter",
+          url: "https://twitter.com/",
+        },
+        {
+          id: 2,
+          name: "Instagram",
+          icon: "instagram",
+          url: "https://instagram.com/",
+        },
+        {
+          id: 3,
+          name: "Facebook",
+          icon: "facebook",
+          url: "https://facebook.com/",
+        },
+        {
+          id: 4,
+          name: "LinkedIn",
+          icon: "linkedin",
+          url: "https://linkedin.com/",
+        },
+      ],
+    }
+  }
+  , {
+    id: 24,
+    title: 'Platia - Restaurant Landing Page',
+    hide: false,
+    category: 'Nuxt Vue Web App',
+    link: 'platia',
+    img: PROJECT_IMAGE_URLS.platia.img,
+    smallImages: [
+      { id: 1, ...SMALL_IMAGE_URLS.nuxt },
+      { id: 2, ...SMALL_IMAGE_URLS.vue },
+      { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
+    ],
+    singleProjectHeader: {
+      singleProjectTitle: "Platia",
+      singleProjectDate: "24 Aug 2025",
+      singleProjectTag: "Frontend",
+    },
+    projectImages: PROJECT_IMAGE_URLS.platia.projectImages,
+    projectInfo: {
+      clientHeading: "About Client",
+      companyInfos: [
+        {
+          id: 1,
+          title: "Name",
+          details: "Platia",
+        },
+        {
+          id: 2,
+          title: "Services",
+          details: "Frontend Development",
+        },
+        {
+          id: 3,
+          title: "Website",
+          details: "https://nuxt4-platia.vercel.app/en",
+          detailsAr: "https://nuxt4-platia.vercel.app",
+        },
+      ],
+      objectivesHeading: "Objective",
+      objectivesDetails: "Objective24",
+      technologies: [
+        {
+          title: "Tools & Technologies",
+          techs: [
+            "Nuxt",
+            "Vue",
+            "Bootstrap",
+          ],
+        },
+      ],
+      projectDetailsHeading: "Challenge",
+      projectDetails: [{
+        id: 1,
+        details: "details24A",
+      },
+      {
+        id: 2,
+        details: "details24B",
+      },
+      {
+        id: 3,
+        details: "details24C",
+      },
+      {
+        id: 4,
+        details: "details24D",
       },
       ],
       socialSharingsHeading: "Share This",
