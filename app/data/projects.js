@@ -335,6 +335,15 @@ const PROJECT_IMAGE_URLS={
       { id: 7, img: '/images/projects/platia/7.webp' },
     ],
   },
+  pizzalicious: {
+    img: '/images/projects/pizzalicious/0.webp',
+    projectImages: [
+      { id: 1, img: '/images/projects/pizzalicious/1.webp' },
+      { id: 2, img: '/images/projects/pizzalicious/2.webp' },
+      { id: 3, img: '/images/projects/pizzalicious/3.webp' },
+      { id: 4, img: '/images/projects/pizzalicious/4.webp' },
+    ],
+  },
 };
 
 const allProjects=[
@@ -2787,6 +2796,103 @@ const allProjects=[
       {
         id: 4,
         details: "details24D",
+      },
+      ],
+      socialSharingsHeading: "Share This",
+      socialSharings: [
+        {
+          id: 1,
+          name: "Twitter",
+          icon: "twitter",
+          url: "https://twitter.com/",
+        },
+        {
+          id: 2,
+          name: "Instagram",
+          icon: "instagram",
+          url: "https://instagram.com/",
+        },
+        {
+          id: 3,
+          name: "Facebook",
+          icon: "facebook",
+          url: "https://facebook.com/",
+        },
+        {
+          id: 4,
+          name: "LinkedIn",
+          icon: "linkedin",
+          url: "https://linkedin.com/",
+        },
+      ],
+    }
+  }
+  , {
+    id: 25,
+    title: 'PizzaLicious - Restaurant Landing Page',
+    hide: false,
+    category: 'Nuxt Vue Web App',
+    link: 'pizzalicious',
+    img: PROJECT_IMAGE_URLS.pizzalicious.img,
+    smallImages: [
+      { id: 1, ...SMALL_IMAGE_URLS.nuxt },
+      { id: 2, ...SMALL_IMAGE_URLS.vue },
+      { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
+    ],
+    singleProjectHeader: {
+      singleProjectTitle: "PizzaLicious",
+      singleProjectDate: "25 Aug 2025",
+      singleProjectTag: "Frontend",
+    },
+    projectImages: PROJECT_IMAGE_URLS.pizzalicious.projectImages,
+    projectInfo: {
+      clientHeading: "About Client",
+      companyInfos: [
+        {
+          id: 1,
+          title: "Name",
+          details: "PizzaLicious",
+        },
+        {
+          id: 2,
+          title: "Services",
+          details: "Frontend Development",
+        },
+        {
+          id: 3,
+          title: "Website",
+          details: "https://nuxt4-pizza-licious.vercel.app/en",
+          detailsAr: "https://nuxt4-pizza-licious.vercel.app",
+        },
+      ],
+      objectivesHeading: "Objective",
+      objectivesDetails: "Objective25",
+      technologies: [
+        {
+          title: "Tools & Technologies",
+          techs: [
+            "Nuxt",
+            "Vue",
+            "Bootstrap",
+          ],
+        },
+      ],
+      projectDetailsHeading: "Challenge",
+      projectDetails: [{
+        id: 1,
+        details: "details25A",
+      },
+      {
+        id: 2,
+        details: "details25B",
+      },
+      {
+        id: 3,
+        details: "details25C",
+      },
+      {
+        id: 4,
+        details: "details25D",
       },
       ],
       socialSharingsHeading: "Share This",

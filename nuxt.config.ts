@@ -30,8 +30,8 @@ export default defineNuxtConfig({
                 defaultLocale: 'en',
                 strategy: 'prefix_except_default',
                 lazy: true,
-                langDir: 'locales/',
-                vueI18n: './locales/vue-i18n.options.js',
+                langDir: '',
+                vueI18n: './vue-i18n.options.js',
                 detectBrowserLanguage: false, // disables i18n_redirected cookie and redirect
             },
         ],
