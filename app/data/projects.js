@@ -344,6 +344,15 @@ const PROJECT_IMAGE_URLS={
       { id: 4, img: '/images/projects/pizzalicious/4.webp' },
     ],
   },
+  orthoDental: {
+    img: '/images/projects/orthoDental/0.webp',
+    projectImages: [
+      { id: 4, img: '/images/projects/orthoDental/0.webp' },
+      { id: 1, img: '/images/projects/orthoDental/1.webp' },
+      { id: 2, img: '/images/projects/orthoDental/2.webp' },
+      { id: 3, img: '/images/projects/orthoDental/3.webp' },
+    ],
+  },
 };
 
 const allProjects=[
@@ -2923,7 +2932,105 @@ const allProjects=[
         },
       ],
     }
+  }, {
+    id: 26,
+    title: 'Ortho Dental - Orthodontic Training & Clinic Landing page',
+    hide: false,
+    category: 'Nuxt Vue Web App',
+    link: 'ortho-dental',
+    img: PROJECT_IMAGE_URLS.orthoDental.img,
+    smallImages: [
+      { id: 1, ...SMALL_IMAGE_URLS.nuxt },
+      { id: 2, ...SMALL_IMAGE_URLS.vue },
+      { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
+    ],
+    singleProjectHeader: {
+      singleProjectTitle: "Ortho Dental",
+      singleProjectDate: "27 Aug 2025",
+      singleProjectTag: "Frontend",
+    },
+    projectImages: PROJECT_IMAGE_URLS.orthoDental.projectImages,
+    projectInfo: {
+      clientHeading: "About Client",
+      companyInfos: [
+        {
+          id: 1,
+          title: "Name",
+          details: "Ortho Dental",
+        },
+        {
+          id: 2,
+          title: "Services",
+          details: "Fullstack Development, Web Design",
+        },
+        {
+          id: 3,
+          title: "Website",
+          details: "https://ortho-dental.vercel.app/en",
+          detailsAr: "https://ortho-dental.vercel.app/ar",
+        },
+      ],
+      objectivesHeading: "Objective",
+      objectivesDetails: "Objective26",
+      technologies: [
+        {
+          title: "Tools & Technologies",
+          techs: [
+            "Nuxt",
+            "Vue",
+            "Bootstrap",
+          ],
+        },
+      ],
+      projectDetailsHeading: "Challenge",
+      projectDetails: [{
+        id: 1,
+        details: "details26A",
+      },
+      {
+        id: 2,
+        details: "details26B",
+      },
+      {
+        id: 3,
+        details: "details26C",
+      },
+      {
+        id: 4,
+        details: "details26D",
+      },
+      ],
+      socialSharingsHeading: "Share This",
+      socialSharings: [
+        {
+          id: 1,
+          name: "Twitter",
+          icon: "twitter",
+          url: "https://twitter.com/",
+        },
+        {
+          id: 2,
+          name: "Instagram",
+          icon: "instagram",
+          url: "https://instagram.com/",
+        },
+        {
+          id: 3,
+          name: "Facebook",
+          icon: "facebook",
+          url: "https://www.facebook.com/profile.php?id=100095235111131",
+        },
+        {
+          id: 4,
+          name: "LinkedIn",
+          icon: "linkedin",
+          url: "https://linkedin.com/",
+        },
+      ],
+    },
   }
+
+
 
 ];
 
