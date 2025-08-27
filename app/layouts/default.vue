@@ -9,7 +9,7 @@
       <slot />
     </main>
     <ReusableWhatsApp />
-    <ReusableCustomBackToTop :visibleoffset="300" right="20px" bottom="25px" />
+    <ReusableCustomBackToTop :visibleoffset="300" right="10px" bottom="10px" />
     <SharedAppFooter />
     <SpeedInsights />
   </div>
