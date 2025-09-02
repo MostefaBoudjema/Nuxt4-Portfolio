@@ -403,36 +403,36 @@
     },
     "pricing": {
         "title": "💰 Pricing",
-        "subtitle": "Professional services for clinics and medical practices.",
+        "subtitle": "Flexible website solutions tailored to your needs.",
         "starter": {
-            "title": "Landing Page",
-            "desc": "Static landing page for your clinic.",
+            "title": "Starter Website",
+            "desc": "A simple static website for individuals or small businesses.",
             "price": "Starting from $200",
             "features": {
-                "project": "Custom design for your clinic",
+                "project": "Custom design with up to 3 pages",
                 "support": "Basic support",
                 "updates": "Minor adjustments when needed"
             },
             "cta": "Get Started"
         },
         "pro": {
-            "title": "Full Website",
-            "desc": "Website with multiple services and specialties.",
+            "title": "Professional Website",
+            "desc": "Dynamic website with multiple pages and features.",
             "price": "Starting from $500",
             "features": {
-                "projects": "Add all services",
+                "projects": "Unlimited pages",
                 "support": "Priority support",
-                "analytics": "Future scalability"
+                "analytics": "Future scalability and integrations"
             },
             "cta": "Choose this plan"
         },
         "enterprise": {
             "title": "Hosting + Domain",
-            "desc": "One year with SSL certificate.",
+            "desc": "One year of hosting with SSL and domain included.",
             "price": "Starting from $50",
             "features": {
-                "manager": "Custom domain",
-                "integrations": "Secure hosting",
+                "manager": "Custom domain name",
+                "integrations": "Secure hosting with SSL",
                 "support": "Technical assistance"
             },
             "cta": "Contact Us"

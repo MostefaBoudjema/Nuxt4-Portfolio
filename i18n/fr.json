@@ -376,41 +376,41 @@
     },
     "pricing": {
         "title": "💰 Tarifs",
-        "subtitle": "Services professionnels pour cliniques et cabinets médicaux.",
+        "subtitle": "Des solutions web flexibles adaptées à vos besoins.",
         "starter": {
-            "title": "Page d’atterrissage",
-            "desc": "Page statique pour la clinique.",
-            "price": "19000 DA",
+            "title": "Site de base",
+            "desc": "Un site statique simple pour particuliers ou petites entreprises.",
+            "price": "À partir de 19 000 DA",
             "features": {
-                "project": "Design personnalisé",
+                "project": "Design personnalisé avec jusqu’à 3 pages",
                 "support": "Support de base",
-                "updates": "Petites modifications si nécessaire"
+                "updates": "Petits ajustements si nécessaire"
             },
             "cta": "Commencer"
         },
         "pro": {
-            "title": "Site complet",
-            "desc": "Site avec plusieurs services et spécialités.",
-            "price": "À partir de 50000 DA",
+            "title": "Site professionnel",
+            "desc": "Un site dynamique avec plusieurs pages et fonctionnalités.",
+            "price": "À partir de 59 000 DA",
             "features": {
-                "projects": "Ajout de tous les services",
+                "projects": "Pages illimitées",
                 "support": "Support prioritaire",
-                "analytics": "Possibilité d’évolution"
+                "analytics": "Évolutif avec intégrations futures"
             },
-            "cta": "Choisir cette offre"
+            "cta": "Choisir ce plan"
         },
         "enterprise": {
             "title": "Hébergement + Domaine",
-            "desc": "Pour une année complète avec certificat SSL.",
-            "price": "À partir de 5000 DA",
+            "desc": "Un an d’hébergement sécurisé avec domaine et certificat SSL inclus.",
+            "price": "À partir de 5 000 DA",
             "features": {
                 "manager": "Nom de domaine personnalisé",
-                "integrations": "Hébergement sécurisé",
+                "integrations": "Hébergement sécurisé avec SSL",
                 "support": "Assistance technique"
             },
             "cta": "Nous contacter"
         },
-        "note": "Nous pouvons vous préparer un prototype gratuit sans aucun engagement, afin que vous puissiez voir à quoi ressemblera votre site avant de décider."
+        "note": "Nous pouvons préparer un prototype gratuit sans engagement afin que vous puissiez prévisualiser votre site avant de décider."
     },
     "link": "Lien"
 }
