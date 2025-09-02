@@ -347,10 +347,20 @@ const PROJECT_IMAGE_URLS={
   orthoDental: {
     img: '/images/projects/orthoDental/0.webp',
     projectImages: [
-      { id: 4, img: '/images/projects/orthoDental/0.webp' },
+      { id: 0, img: '/images/projects/orthoDental/0.webp' },
       { id: 1, img: '/images/projects/orthoDental/1.webp' },
       { id: 2, img: '/images/projects/orthoDental/2.webp' },
       { id: 3, img: '/images/projects/orthoDental/3.webp' },
+    ],
+  },
+  ta3limi: {
+    img: '/images/projects/ta3limi/0.webp',
+    projectImages: [
+      { id: 0, img: '/images/projects/ta3limi/0.webp' },
+      { id: 1, img: '/images/projects/ta3limi/1.webp' },
+      { id: 2, img: '/images/projects/ta3limi/2.webp' },
+      { id: 3, img: '/images/projects/ta3limi/3.webp' },
+      { id: 4, img: '/images/projects/ta3limi/4.webp' },
     ],
   },
 };
@@ -3028,7 +3038,106 @@ const allProjects=[
         },
       ],
     },
+  },
+  {
+    id: 27,
+    title: 'Ta3limi - Kindergarten Landing Page',
+    hide: false,
+    category: 'Nuxt Vue Web App',
+    link: 'ta3limi',
+    img: PROJECT_IMAGE_URLS.ta3limi.img,
+    smallImages: [
+      { id: 1, ...SMALL_IMAGE_URLS.nuxt },
+      { id: 2, ...SMALL_IMAGE_URLS.vue },
+      { id: 3, ...SMALL_IMAGE_URLS.tailwind },
+    ],
+    singleProjectHeader: {
+      singleProjectTitle: "Ta3limi",
+      singleProjectDate: "02 Sep 2025",
+      singleProjectTag: "Frontend",
+    },
+    projectImages: PROJECT_IMAGE_URLS.ta3limi.projectImages,
+    projectInfo: {
+      clientHeading: "About Client",
+      companyInfos: [
+        {
+          id: 1,
+          title: "Name",
+          details: "Ta3limi",
+        },
+        {
+          id: 2,
+          title: "Services",
+          details: "Frontend Development, Web Design",
+        },
+        {
+          id: 3,
+          title: "Website",
+          details: "https://ta3limi.vercel.app/en",
+          detailsAr: "https://ta3limi.vercel.app",
+        },
+      ],
+      objectivesHeading: "Objective",
+      objectivesDetails: "Objective27",
+      technologies: [
+        {
+          title: "Tools & Technologies",
+          techs: [
+            "Nuxt",
+            "Vue",
+            "TailwindCSS",
+          ],
+        },
+      ],
+      projectDetailsHeading: "Challenge",
+      projectDetails: [
+        {
+          id: 1,
+          details: "details27A",
+        },
+        {
+          id: 2,
+          details: "details27B",
+        },
+        {
+          id: 3,
+          details: "details27C",
+        },
+        {
+          id: 4,
+          details: "details27D",
+        },
+      ],
+      socialSharingsHeading: "Share This",
+      socialSharings: [
+        {
+          id: 1,
+          name: "Twitter",
+          icon: "twitter",
+          url: "https://twitter.com/",
+        },
+        {
+          id: 2,
+          name: "Instagram",
+          icon: "instagram",
+          url: "https://instagram.com/",
+        },
+        {
+          id: 3,
+          name: "Facebook",
+          icon: "facebook",
+          url: "https://www.facebook.com/",
+        },
+        {
+          id: 4,
+          name: "LinkedIn",
+          icon: "linkedin",
+          url: "https://linkedin.com/",
+        },
+      ],
+    },
   }
+
 
 
 
