@@ -2,13 +2,18 @@
   <div class="p-8">
 
     <!-- Banner -->
-    <SharedAppBanner class="mb-5 sm:mb-8 mt-8" />
+    <HomeAppBanner class="mb-5 sm:mb-8 mt-8" />
     <!-- Projects -->
     <div class="sm:container sm:mx-auto">
       <ProjectsGrid data-aos="fade-up" data-aos-delay="200" />
 
       <!-- Load more projects button -->
-      <ReusableMoreProjectsBtn />
+      <ReusableMoreBtn text="More Projects" link="/Projects" />
+    </div>
+    <!-- Blog -->
+    <div class="sm:container sm:mx-auto">
+      <HomeBlogItems data-aos="fade-up" data-aos-delay="200" />
+      <ReusableMoreBtn text="More Articles" link="/Blog" />
     </div>
 
   </div>
