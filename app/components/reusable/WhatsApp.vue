@@ -1,14 +1,15 @@
 <template>
-    <a id="whatsapp" :href="`https://wa.me/${whatsappNumber}`" data-aos="fade-up"
-        >
+    <a id="whatsapp" :href=whatsappLink data-aos="fade-up" target="_blank">
         <img :src="whatsappImag" alt="Icon" />
     </a>
 </template>
 
 <script setup>
 import settings from "~/configs";
-const whatsappNumber=settings.whatsappNumber; // Replace with your WhatsApp number
-const whatsappImag=settings.whatsapp; // Replace with your WhatsApp image path
+const whatsappNumber=settings.whatsappNumber; 
+// const whatsappLink=`https://wa.me/${whatsappNumber}?text=message`; 
+const whatsappLink=`https://wa.me/${whatsappNumber}`; 
+const whatsappImag=settings.whatsapp; 
 
 
 </script>
