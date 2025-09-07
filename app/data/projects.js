@@ -2985,8 +2985,8 @@ const allProjects=[
         {
           id: 3,
           title: "Website",
-          details: "https://ortho-dental.vercel.app/en",
-          detailsAr: "https://ortho-dental.vercel.app/ar",
+          details: "https://nuxt4-ortho-dental.vercel.app/en",
+          detailsAr: "https://nuxt4-ortho-dental.vercel.app/ar",
         },
       ],
       objectivesHeading: "Objective",
