@@ -52,18 +52,20 @@
       </div>
 
       <!-- Social sharing -->
-      <div>
+      <div v-if="projectInfo.socialSharings.some(social => social.url !== '#')">
         <p class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2">
           {{ t(projectInfo.socialSharingsHeading) }}
         </p>
         <div class="flex items-center gap-3 mt-5">
-          <a v-for="social in projectInfo.socialSharings" :key="social.id" :href="social.url" target="__blank"
-            aria-label="Share Project"
-            class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500">
-            <i :data-feather="social.icon" class="w-4 lg:w-5 h-4 lg:h-5"></i>
-          </a>
+          <template v-for="social in projectInfo.socialSharings" :key="social.id">
+            <a v-if="social.url !== '#'" :href="social.url" target="_blank" aria-label="Share Project"
+              class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500">
+              <i :data-feather="social.icon" class="w-4 lg:w-5 h-4 lg:h-5"></i>
+            </a>
+          </template>
         </div>
       </div>
+
     </div>
 
     <!-- Right section -->
