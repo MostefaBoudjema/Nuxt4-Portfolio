@@ -84,7 +84,7 @@ export default defineNuxtConfig({
                 // Open Graph image (Facebook, WhatsApp, LinkedIn)
                 {
                     property: 'og:image',
-                    content: '/images/thumbnail.jpg',
+                    content: 'https://mostefa-webdev.vercel.app/images/logo-light.svg',
                 },
             ],
             link: [
