@@ -79,7 +79,18 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: 'Mostefa Boudjema',
-            link: [{ rel: 'icon', type: 'image/png', href: '/images/logo.svg' }],
+            meta: [
+                { name: 'description', content: 'This is my Nuxt website' },
+                // Open Graph image (Facebook, WhatsApp, LinkedIn)
+                {
+                    property: 'og:image',
+                    content: '/images/thumbnail.jpg',
+                },
+            ],
+            link: [
+                { rel: 'icon', type: 'image/png', href: '/images/logo.svg' },
+            ],
+
             script: [
                 {
                     src: 'https://www.googletagmanager.com/gtag/js?id=G-L5HVZ2VCP7',
