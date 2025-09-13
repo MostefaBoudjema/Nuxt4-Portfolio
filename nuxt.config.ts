@@ -1,6 +1,47 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: false },
+
+    app: {
+        head: {
+            title: 'Mostefa Boudjema',
+            meta: [
+                { property: 'og:title', content: 'Mostfa – Web Developer' },
+                {
+                    property: 'og:description',
+                    content:
+                        'Mostefa Boudjema - Laravel & Vue.js developer portfolio.',
+                },
+                {
+                    property: 'og:image',
+                    content:
+                        'https://mostefa-webdev.vercel.app/images/logo.jpg',
+                },
+                {
+                    property: 'og:url',
+                    content: 'https://mostefa-webdev.vercel.app/',
+                },
+                { name: 'twitter:card', content: 'summary_large_image' },
+            ],
+            link: [
+                { rel: 'icon', type: 'image/png', href: '/images/logo.svg' },
+            ],
+
+            script: [
+                {
+                    src: 'https://www.googletagmanager.com/gtag/js?id=G-L5HVZ2VCP7',
+                    async: true,
+                },
+                {
+                    innerHTML: `window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-L5HVZ2VCP7');`,
+                    type: 'text/javascript',
+                },
+            ],
+        },
+    },
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxt/image',
@@ -74,43 +115,6 @@ export default defineNuxtConfig({
             whatsappNumber: process.env.WHATSAPP_NUMBER || '213793692289',
             fullList: process.env.FULL_LIST || '[3,9,1,10,0,11,5,2,4,6,7,8]',
             homeList: process.env.HOME_LIST || '[3,14,15,6,9,10]',
-        },
-    },
-    app: {
-        head: {
-            title: 'Mostefa Boudjema',
-            meta: [
-                { property: 'og:title', content: 'Mostfa – Web Developer' },
-                {
-                    property: 'og:description',
-                    content: 'Mostefa Boudjema - Laravel & Vue.js developer portfolio.',
-                },
-                {
-                    property: 'og:image',
-                    content:
-                        'https://mostefa-webdev.vercel.app/images/logo-dark.jpg',
-                },
-                { property: 'og:url', content: 'https://mostefa-webdev.vercel.app/' },
-                { name: 'twitter:card', content: 'summary_large_image' },
-
-            ],
-            link: [
-                { rel: 'icon', type: 'image/png', href: '/images/logo.svg' },
-            ],
-
-            script: [
-                {
-                    src: 'https://www.googletagmanager.com/gtag/js?id=G-L5HVZ2VCP7',
-                    async: true,
-                },
-                {
-                    innerHTML: `window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
-gtag('js', new Date());
-gtag('config', 'G-L5HVZ2VCP7');`,
-                    type: 'text/javascript',
-                },
-            ],
         },
     },
     compatibilityDate: '2025-07-08',
