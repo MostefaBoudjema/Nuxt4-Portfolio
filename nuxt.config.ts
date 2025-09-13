@@ -15,7 +15,7 @@ export default defineNuxtConfig({
                 {
                     property: 'og:image',
                     content:
-                        'https://mostefa-webdev.vercel.app/images/logo.jpg',
+                        'https://mostefa-webdev.vercel.app/images/logo1.jpg',
                 },
                 {
                     property: 'og:url',
