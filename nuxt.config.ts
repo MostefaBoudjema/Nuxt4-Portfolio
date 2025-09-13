@@ -80,12 +80,19 @@ export default defineNuxtConfig({
         head: {
             title: 'Mostefa Boudjema',
             meta: [
-                { name: 'description', content: 'This is my Nuxt website' },
-                // Open Graph image (Facebook, WhatsApp, LinkedIn)
+                { property: 'og:title', content: 'Mostfa – Web Developer' },
+                {
+                    property: 'og:description',
+                    content: 'Mostefa Boudjema - Laravel & Vue.js developer portfolio.',
+                },
                 {
                     property: 'og:image',
-                    content: 'https://mostefa-webdev.vercel.app/images/logo-light.svg',
+                    content:
+                        'https://mostefa-webdev.vercel.app/images/logo-dark.jpg',
                 },
+                { property: 'og:url', content: 'https://mostefa-webdev.vercel.app/' },
+                { name: 'twitter:card', content: 'summary_large_image' },
+
             ],
             link: [
                 { rel: 'icon', type: 'image/png', href: '/images/logo.svg' },
