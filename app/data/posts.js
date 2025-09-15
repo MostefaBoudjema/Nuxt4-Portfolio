@@ -32,6 +32,7 @@ import cover29 from '/images/posts/top-developer-tools-2025.webp';
 import cover30 from '/images/posts/not-found-image.webp';
 import cover31 from '/images/posts/web-dev-pitch-2025-dz.webp';
 import cover32 from '/images/posts/jobs-that-need-website-2025.webp';
+import cover33 from '/images/posts/basic-medical-cabinet-web-app.webp';
 import not_found_image from '/images/posts/not-found-image.webp';
 const authorMostefaBoudjema={
   name: 'Mostefa Boudjema',
@@ -6194,12 +6195,141 @@ Bottom line: If the profession depends on trust, credibility, or lead generation
 
 القاعدة بسيطة: أي مهنة تعتمد على **الثقة أو جمع العملاء** لازم يكون عندها موقع إلكتروني. هو الباب الأول لعملهم.
 `
+  },
+  {
+    id: 33,
+    lang: "en",
+    title: "Building a Basic Medical Cabinet Web App",
+    summary: "A step-by-step guide to plan a simple clinic management system—covering key features, database schema, and a UML class diagram to kick-start development.",
+    date: "2025-09-15",
+    tags: ["web development", "laravel", "healthcare", "database", "clinic app"],
+    slug: "basic-medical-cabinet-web-app",
+    author: authorMostefaBoudjema,
+    coverImage: cover33,
+    readingTime: "6 min read",
+    published: true,
+    category: "Web Development",
+    updatedAt: "2025-09-15",
+    metaDescription: "Learn how to design a medical cabinet web application with essential features, database tables, and a UML class diagram—perfect for a Laravel + Vue stack.",
+    excerpt: "Planning a clinic management app? Here’s a clear blueprint for the features, database schema, and UML diagram you need to build a basic medical cabinet web app.",
+    content: `
+## 🩺 Overview
+
+A medical cabinet (clinic) web app helps manage patients, appointments, and medical records efficiently.  
+Below is a **practical blueprint** for building a minimum viable product (MVP).
+
+---
+
+## 1️⃣ Core Features
+
+- **Patient Management**: register, edit, archive patient profiles.  
+- **Appointments**: book, reschedule, cancel.  
+- **Doctors/Staff Management**: handle multiple doctors or assistants.  
+- **Medical Records**: store diagnoses, treatments, prescriptions, and lab results.  
+- **Billing/Payments** *(optional)*: track and record payments.  
+- **Authentication/Roles**: separate permissions for admin, doctor, receptionist.
+
+---
+
+## 2️⃣ Database Tables
+
+Use singular model names and plural table names.
+
+### Users & Roles
+| Table   | Fields |
+|---------|-------|
+| \`users\` | id, name, email, password, role (admin/doctor/staff) |
+
+### Patients
+| Table      | Fields |
+|------------|-------|
+| \`patients\` | id, first_name, last_name, gender, dob, phone, email, address, emergency_contact, insurance_info(optional) |
+
+### Appointments
+| Table          | Fields |
+|----------------|-------|
+| \`appointments\` | id, patient_id (FK), doctor_id (FK→users), date_time, status (scheduled/completed/cancelled), notes |
+
+### Medical Records
+| Table             | Fields |
+|-------------------|-------|
+| \`medical_records\` | id, patient_id, doctor_id, visit_date, diagnosis, treatment, prescription, attachment(optional) |
+
+### Payments (optional)
+| Table     | Fields |
+|-----------|-------|
+| \`payments\` | id, patient_id, appointment_id, amount, method (cash/card), paid_at |
+
+### Audit Logs (optional)
+| Table           | Fields |
+|-----------------|-------|
+| \`activity_logs\` | id, user_id, action, model_type, model_id, created_at |
+
+---
+
+## 3️⃣ Relationships
+
+- **User 1–* Appointments** (doctor to appointments)  
+- **Patient 1–* Appointments**  
+- **Patient 1–* MedicalRecords**  
+- **Appointment 1–1 Payment** (if using payments)  
+- **User 1–* MedicalRecords** (doctor notes)
+
+---
+
+## 4️⃣ UML Class Diagram
+
+\`\`\`
++-----------+        +------------+
+|   User    |1----* | Appointment|
++-----------+        +------------+
+|id         |       /|id          |
+|name       |      / |date_time   |
+|email      |     /  |status      |
+|role       |    /   |patient_id  |
++-----------+   /    |doctor_id   |
+                 /
++-------------+ /    +---------------+
+|  Patient    |1----*| MedicalRecord |
++-------------+      +---------------+
+|id           |      |id             |
+|first_name   |      |diagnosis      |
+|last_name    |      |treatment      |
+|dob          |      |prescription   |
++-------------+      |visit_date     |
+                     |doctor_id      |
+                     +---------------+
+\`\`\`
+
+---
+
+## 5️⃣ Suggested Tech Stack
+
+- **Backend**: Laravel 11/12  
+- **Frontend**: Vue 3 + Inertia or Nuxt (SPA)  
+- **Database**: MySQL or PostgreSQL  
+- **Auth**: Laravel Breeze or Jetstream  
+- **UI**: Tailwind with Flowbite or Vuetify
+
+---
+
+## 6️⃣ Extra Considerations
+
+- Strong input validation and unique patient IDs  
+- Role-based permissions using Laravel Gates/Policies  
+- Search and filter by patient name, date, or doctor  
+- Backup and export to CSV/PDF  
+- Audit logging for edits and deletions
+
+---
+
+## ✅ Final Thoughts
+
+Start simple: focus on \`users\`, \`patients\`, \`appointments\`, and \`medical_records\` tables.  
+Add billing, inventory, or reporting only when required.  
+This foundation will scale with your clinic’s needs.
+`
   }
-
-
-
-
-
 
 ];
 
