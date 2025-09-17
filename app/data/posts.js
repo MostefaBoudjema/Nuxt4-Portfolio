@@ -33,6 +33,12 @@ import cover30 from '/images/posts/not-found-image.webp';
 import cover31 from '/images/posts/web-dev-pitch-2025-dz.webp';
 import cover32 from '/images/posts/jobs-that-need-website-2025.webp';
 import cover33 from '/images/posts/basic-medical-cabinet-web-app.webp';
+import cover34 from '/images/posts/find-freelance-clients-linkedin-laravel.webp';
+import cover35 from '/images/posts/not-found-image.webp';
+import cover36 from '/images/posts/not-found-image.webp';
+import cover37 from '/images/posts/not-found-image.webp';
+import cover38 from '/images/posts/not-found-image.webp';
+import cover39 from '/images/posts/not-found-image.webp';
 import not_found_image from '/images/posts/not-found-image.webp';
 const authorMostefaBoudjema={
   name: 'Mostefa Boudjema',
@@ -6329,7 +6335,96 @@ Start simple: focus on \`users\`, \`patients\`, \`appointments\`, and \`medical_
 Add billing, inventory, or reporting only when required.  
 This foundation will scale with your clinic’s needs.
 `
+  },
+  {
+    id: 34,
+    lang: "en",
+    title: "How to Find Freelance Clients on LinkedIn as a Laravel Developer",
+    summary: "A straight-to-the-point guide for Laravel developers to land freelance work using LinkedIn—covering profile optimization, networking, content strategy, and outreach.",
+    date: "2025-09-17",
+    tags: ["freelance", "laravel", "linkedin", "web development", "business"],
+    slug: "find-freelance-clients-linkedin-laravel",
+    author: authorMostefaBoudjema,
+    coverImage: cover34,
+    readingTime: "6 min read",
+    published: true,
+    category: "Freelancing",
+    updatedAt: "2025-09-17",
+    metaDescription: "Practical steps for Laravel developers to get freelance clients on LinkedIn: optimize your profile, grow your network, post valuable content, and reach out effectively.",
+    excerpt: "Want freelance Laravel projects? Here’s a pragmatic LinkedIn playbook to attract and convert clients—from sharpening your profile to sending smart outreach messages.",
+    content: `
+## 🚀 Overview
+
+LinkedIn is more than a résumé site—it's a client-finding machine when used correctly.  
+If you’re a Laravel web developer looking for freelance projects, here’s a **practical, no-fluff strategy**.
+
+---
+
+## 1️⃣ Optimize Your Profile
+
+- **Headline:** Make it client-focused, not just “Laravel Developer.”  
+  *Example:* \`Freelance Laravel Developer | Building custom web apps & SaaS solutions\`
+- **About Section:** Show the problems you solve.  
+  *“I help startups build scalable web apps using Laravel and Vue.js, delivering MVPs in weeks.”*
+- **Portfolio:** Add screenshots, live links, or case studies with measurable results.
+
+---
+
+## 2️⃣ Grow a Targeted Network
+
+- Connect with **decision-makers**: founders, CTOs, product managers, and marketing agencies that outsource projects.  
+- Personalize connection requests:  
+  *“Hi [Name], I see you’re working on [project]. I build custom Laravel solutions and would love to connect.”*
+
+---
+
+## 3️⃣ Post Valuable Content
+
+- Share **mini case studies**: e.g., “Built a booking system saving a clinic 10 hours/week.”  
+- Post Laravel or Vue tips and workflow tricks.  
+- Comment meaningfully on startup or tech posts to get noticed.
+
+---
+
+## 4️⃣ Use LinkedIn Search & Filters
+
+- Search phrases like “Looking for Laravel developer” or “Hiring web developer.”  
+- Filter by location, industry, or titles such as Founder, CTO, Product Manager.  
+- Send concise outreach messages:  
+  *“Hi [Name], I specialize in Laravel and Vue.js and have helped similar businesses launch their platforms quickly. Interested in a short call?”*
+
+---
+
+## 5️⃣ Join & Engage in Groups
+
+- Groups like “Freelance Developers” or “Startup Founders” are full of leads.  
+- Offer advice, answer questions, and position yourself as an expert.
+
+---
+
+## 6️⃣ Showcase Work & Social Proof
+
+- Pin a portfolio post or a problem/solution story to your profile.  
+- Request LinkedIn recommendations from past clients.
+
+---
+
+## 💡 Quick Tips
+
+- Focus on **value**, not hard selling.  
+- Use a consistent posting schedule (even 1–2 posts/week).  
+- Track which messages or posts get responses and refine.
+
+---
+
+## ✅ Final Thoughts
+
+Finding freelance clients on LinkedIn isn’t about spamming messages—it’s about **visibility, credibility, and targeted outreach**.  
+Polish your profile, build a relevant network, share useful content, and approach leads strategically.  
+Do this consistently, and projects will start finding you.
+`
   }
+
 
 ];
 
