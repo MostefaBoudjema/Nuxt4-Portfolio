@@ -56,6 +56,16 @@ const SMALL_IMAGE_URLS={
     src: '/images/technology/nuxt.webp',
     width: '60px',
   },
+  supabase: {
+    alt: "supabase",
+    src: '/images/technology/supabase.webp',
+    width: '60px',
+  },
+  firebase: {
+    alt: "firebase",
+    src: '/images/technology/firebase.webp',
+    width: '60px',
+  },
 };
 
 // Define all project images as constants for reuse
@@ -370,6 +380,16 @@ const PROJECT_IMAGE_URLS={
       { id: 1, img: '/images/projects/ta3limi/1.webp' },
       { id: 2, img: '/images/projects/ta3limi/2.webp' },
       { id: 3, img: '/images/projects/ta3limi/3.webp' },
+    ],
+  },
+  myclinicapp: {
+    img: '/images/projects/myclinicapp/0.webp',
+    projectImages: [
+      { id: 0, img: '/images/projects/myclinicapp/0.webp' },
+      { id: 1, img: '/images/projects/myclinicapp/1.webp' },
+      { id: 2, img: '/images/projects/myclinicapp/2.webp' },
+      { id: 3, img: '/images/projects/myclinicapp/3.webp' },
+      { id: 4, img: '/images/projects/myclinicapp/4.webp' },
     ],
   },
 };
@@ -3148,7 +3168,7 @@ const allProjects=[
   },
   {
     id: 28,
-    title: 'Medic People Academy - course Landing Page',
+    title: 'Medic People Academy - Course Landing Page',
     hide: false,
     category: 'Nuxt Vue Web App',
     link: 'mpa',
@@ -3234,6 +3254,103 @@ const allProjects=[
           name: "Facebook",
           icon: "facebook",
           url: "https://www.facebook.com/profile.php?id=61556068952692#",
+        },
+        {
+          id: 4,
+          name: "LinkedIn",
+          icon: "linkedin",
+          url: "#",
+        },
+      ],
+    },
+  },
+   {
+    id: 29,
+    title: 'MyClinicApp - Medical cabinet App',
+    hide: false,
+    category: 'React Web App',
+    link: 'myclinicapp',
+    img: PROJECT_IMAGE_URLS.myclinicapp.img,
+    smallImages: [
+      { id: 1, ...SMALL_IMAGE_URLS.react },
+      { id: 2, ...SMALL_IMAGE_URLS.supabase  },
+      { id: 3, ...SMALL_IMAGE_URLS.tailwind },
+    ],
+    singleProjectHeader: {
+      singleProjectTitle: "MyClinicApp",
+      singleProjectDate: "17 Sep 2025",
+      singleProjectTag: "Frontend/Backend",
+    },
+    projectImages: PROJECT_IMAGE_URLS.myclinicapp.projectImages,
+    projectInfo: {
+      clientHeading: "About Client",
+      companyInfos: [
+        {
+          id: 1,
+          title: "Name",
+          details: "MyClinicApp",
+        },
+        {
+          id: 2,
+          title: "Services",
+          details: "Frontend Development, Web Design, Backend Development",
+        },
+        {
+          id: 3,
+          title: "Website",
+          details: "https://heal-cabnet.vercel.app",
+        },
+      ],
+      objectivesHeading: "Objective",
+      objectivesDetails: "Objective29",
+      technologies: [
+        {
+          title: "Tools & Technologies",
+          techs: [
+            "Nuxt",
+            "Supabase",
+            "TailwindCSS",
+          ],
+        },
+      ],
+      projectDetailsHeading: "Challenge",
+      projectDetails: [
+        {
+          id: 1,
+          details: "details29A",
+        },
+        {
+          id: 2,
+          details: "details29B",
+        },
+        {
+          id: 3,
+          details: "details29C",
+        },
+        {
+          id: 4,
+          details: "details29D",
+        },
+      ],
+      socialSharingsHeading: "Share This",
+      socialSharings: [
+        {
+          id: 1,
+          name: "Twitter",
+          icon: "twitter",
+          url: "#",
+        },
+        {
+          id: 2,
+          name: "Instagram",
+          icon: "instagram",
+          url: "#",
+        },
+        {
+          id: 3,
+          name: "Facebook",
+          icon: "facebook",
+          url: "#",
         },
         {
           id: 4,
