@@ -3266,10 +3266,10 @@ const allProjects=[
   },
    {
     id: 29,
-    title: 'MyClinicApp - Medical cabinet App',
+    title: 'Shifaa Care - Medical cabinet App',
     hide: false,
     category: 'React Web App',
-    link: 'myclinicapp',
+    link: 'shifaacare',
     img: PROJECT_IMAGE_URLS.myclinicapp.img,
     smallImages: [
       { id: 1, ...SMALL_IMAGE_URLS.react },
@@ -3277,7 +3277,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.tailwind },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "MyClinicApp",
+      singleProjectTitle: "Shifaa Care",
       singleProjectDate: "17 Sep 2025",
       singleProjectTag: "Frontend/Backend",
     },
@@ -3288,7 +3288,7 @@ const allProjects=[
         {
           id: 1,
           title: "Name",
-          details: "MyClinicApp",
+          details: "Shifaa Care",
         },
         {
           id: 2,
