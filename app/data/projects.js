@@ -382,14 +382,14 @@ const PROJECT_IMAGE_URLS={
       { id: 3, img: '/images/projects/ta3limi/3.webp' },
     ],
   },
-  myclinicapp: {
-    img: '/images/projects/myclinicapp/0.webp',
+  shifaacare: {
+    img: '/images/projects/shifaacare/0.webp',
     projectImages: [
-      { id: 0, img: '/images/projects/myclinicapp/0.webp' },
-      { id: 1, img: '/images/projects/myclinicapp/1.webp' },
-      { id: 2, img: '/images/projects/myclinicapp/2.webp' },
-      { id: 3, img: '/images/projects/myclinicapp/3.webp' },
-      { id: 4, img: '/images/projects/myclinicapp/4.webp' },
+      { id: 0, img: '/images/projects/shifaacare/0.webp' },
+      { id: 1, img: '/images/projects/shifaacare/1.webp' },
+      { id: 2, img: '/images/projects/shifaacare/2.webp' },
+      { id: 3, img: '/images/projects/shifaacare/3.webp' },
+      { id: 4, img: '/images/projects/shifaacare/4.webp' },
     ],
   },
 };
@@ -3270,7 +3270,7 @@ const allProjects=[
     hide: false,
     category: 'React Web App',
     link: 'shifaacare',
-    img: PROJECT_IMAGE_URLS.myclinicapp.img,
+    img: PROJECT_IMAGE_URLS.shifaacare.img,
     smallImages: [
       { id: 1, ...SMALL_IMAGE_URLS.react },
       { id: 2, ...SMALL_IMAGE_URLS.supabase  },
@@ -3281,7 +3281,7 @@ const allProjects=[
       singleProjectDate: "17 Sep 2025",
       singleProjectTag: "Frontend/Backend",
     },
-    projectImages: PROJECT_IMAGE_URLS.myclinicapp.projectImages,
+    projectImages: PROJECT_IMAGE_URLS.shifaacare.projectImages,
     projectInfo: {
       clientHeading: "About Client",
       companyInfos: [
@@ -3298,7 +3298,7 @@ const allProjects=[
         {
           id: 3,
           title: "Website",
-          details: "https://heal-cabnet.vercel.app",
+          details: "https://shifaa-care.vercel.app",
         },
       ],
       objectivesHeading: "Objective",
