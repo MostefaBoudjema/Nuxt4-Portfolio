@@ -3102,8 +3102,8 @@ const allProjects=[
         {
           id: 3,
           title: "Website",
-          details: "https://ta3limi.vercel.app/en",
-          detailsAr: "https://ta3limi.vercel.app",
+          details: "https://nuxt4-ta3limi.vercel.app/en",
+          detailsAr: "https://nuxt4-ta3limi.vercel.app",
         },
       ],
       objectivesHeading: "Objective",
@@ -3264,7 +3264,7 @@ const allProjects=[
       ],
     },
   },
-   {
+  {
     id: 29,
     title: 'Shifaa Care - Medical cabinet App',
     hide: false,
@@ -3273,7 +3273,7 @@ const allProjects=[
     img: PROJECT_IMAGE_URLS.shifaacare.img,
     smallImages: [
       { id: 1, ...SMALL_IMAGE_URLS.react },
-      { id: 2, ...SMALL_IMAGE_URLS.supabase  },
+      { id: 2, ...SMALL_IMAGE_URLS.supabase },
       { id: 3, ...SMALL_IMAGE_URLS.tailwind },
     ],
     singleProjectHeader: {
