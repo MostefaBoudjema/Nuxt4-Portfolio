@@ -50,6 +50,7 @@ onUpdated(() => {
             :singleProjectHeader="project.singleProjectHeader"
             :imgList="project.projectImages"
             :video="project.video"
+            :title="project.title"
         />
         <!-- Project information -->
         <ProjectInfo :projectInfo="project.projectInfo" :smallImages="project.smallImages"/>

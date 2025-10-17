@@ -510,7 +510,7 @@ const allProjects=[
       { id: 4, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Tamtam Tools",
+      singleProjectTitle: "tamtamtools - Business Website",
       singleProjectDate: "02 Apr 2023",
       singleProjectTag: " Frontend / Backend",
     },
@@ -601,7 +601,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.jquery },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Elearn",
+      singleProjectTitle: "Elearn - Online Learning Platform",
       singleProjectDate: "16 Jan 2023",
       singleProjectTag: "UI / Frontend",
     },
@@ -809,7 +809,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.jquery },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Business",
+      singleProjectTitle: "Business - Wordpress site",
       singleProjectDate: "18 Sep 2017",
       singleProjectTag: "UI / Frontend",
     },
@@ -911,7 +911,7 @@ const allProjects=[
       { id: 2, ...SMALL_IMAGE_URLS.api },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Blog",
+      singleProjectTitle: "Saadaahnews - Blog website",
       singleProjectDate: "08 Mar 2020",
       singleProjectTag: " Frontend / Backend",
     },
@@ -1017,7 +1017,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.jquery },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Clothes Store",
+      singleProjectTitle: "DNK - Clothes Store",
       singleProjectDate: "24 Sep 2022",
       singleProjectTag: "UI / Frontend",
     },
@@ -1119,7 +1119,7 @@ const allProjects=[
       { id: 2, ...SMALL_IMAGE_URLS.tailwind },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Portfolio",
+      singleProjectTitle: "Mostefa - Portfolio website",
       singleProjectDate: "20 Mar 2023",
       singleProjectTag: "UI / Frontend",
     },
@@ -1324,7 +1324,7 @@ const allProjects=[
       { id: 4, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Laravel Vue Ecommerce Phone",
+      singleProjectTitle: "Ecom - Ecommerce Phone Store",
       singleProjectDate: "26 Jul 2021",
       singleProjectTag: " Frontend / Backend",
     },
@@ -1431,7 +1431,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.jquery },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Phones Store",
+      singleProjectTitle: "AnnabaPhone - Phones Store",
       singleProjectDate: "26 Jul 2021",
       singleProjectTag: "UI / Frontend",
     },
@@ -1533,7 +1533,7 @@ const allProjects=[
       { id: 2, ...SMALL_IMAGE_URLS.react },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Landing Page",
+      singleProjectTitle: "Startup - Landing Page",
       singleProjectDate: "26 Aug 2023",
       singleProjectTag: "UI / Frontend",
     },
@@ -1636,7 +1636,7 @@ const allProjects=[
       { id: 4, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Bash Gate",
+      singleProjectTitle: "Bash Gate - Landing Page",
       singleProjectDate: "31 Dec 2023",
       singleProjectTag: "UI / Frontend",
     },
@@ -1733,7 +1733,7 @@ const allProjects=[
       { id: 4, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Stockifly",
+      singleProjectTitle: "Stockifly - Stock management system",
       singleProjectDate: "16 Oct 2022",
       singleProjectTag: "UI / Frontend",
     },
@@ -1829,7 +1829,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Roxboro",
+      singleProjectTitle: "Roxboro - Content Management System",
       singleProjectDate: "03 Mar 2024",
       singleProjectTag: "UI / Frontend",
     },
@@ -1924,7 +1924,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Garage",
+      singleProjectTitle: "Garage - Stock management SaaS",
       singleProjectDate: "05 Dec 2023",
       singleProjectTag: "UI / Frontend",
     },
@@ -2023,7 +2023,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.jquery },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Alphanex",
+      singleProjectTitle: "Alphanex - Portfolio website",
       singleProjectDate: "16 Jan 2023",
       singleProjectTag: "UI / Frontend",
     },
@@ -2119,7 +2119,7 @@ const allProjects=[
       { id: 4, ...SMALL_IMAGE_URLS.tailwind },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Event Management",
+      singleProjectTitle: "Event Management - Management dashboard",
       singleProjectDate: "22 Feb 2025",
       singleProjectTag: "Backend / Frontend",
     },
@@ -2214,7 +2214,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Medicio",
+      singleProjectTitle: "Medicio - Clinic Landing Page",
       singleProjectDate: "01 Aug 2025",
       singleProjectTag: "Frontend",
     },
@@ -2309,7 +2309,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "MediLab",
+      singleProjectTitle: "MediLab - Clinic Landing Page",
       singleProjectDate: "08 Aug 2025",
       singleProjectTag: "Frontend",
     },
@@ -2404,7 +2404,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "DentistCare",
+      singleProjectTitle: "DentistCare - Dental Clinic Landing Page",
       singleProjectDate: "11 Aug 2025",
       singleProjectTag: "Frontend",
     },
@@ -2501,7 +2501,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Mellow",
+      singleProjectTitle: "Mellow - Hotel Landing Page",
       singleProjectDate: "16 Aug 2025",
       singleProjectTag: "Frontend",
     },
@@ -2597,7 +2597,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Novara",
+      singleProjectTitle: "Novara - Private School Landing Page",
       singleProjectDate: "22 Aug 2025",
       singleProjectTag: "Frontend",
     },
@@ -2694,7 +2694,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Restaurantly",
+      singleProjectTitle: "Restaurantly - Restaurant Landing Page",
       singleProjectDate: "23 Aug 2025",
       singleProjectTag: "Frontend",
     },
@@ -2791,7 +2791,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Platia",
+      singleProjectTitle: "Platia - Restaurant Landing Page",
       singleProjectDate: "24 Aug 2025",
       singleProjectTag: "Frontend",
     },
@@ -2888,7 +2888,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "PizzaLicious",
+      singleProjectTitle: "PizzaLicious - Restaurant Landing Page",
       singleProjectDate: "25 Aug 2025",
       singleProjectTag: "Frontend",
     },
@@ -2984,7 +2984,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Ortho Dental",
+      singleProjectTitle: "Ortho Dental - Orthodontic Training & Clinic Landing page",
       singleProjectDate: "27 Aug 2025",
       singleProjectTag: "Frontend",
     },
@@ -3081,7 +3081,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.tailwind },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Ta3limi",
+      singleProjectTitle: "Ta3limi - Kindergarten Landing Page",
       singleProjectDate: "02 Sep 2025",
       singleProjectTag: "Frontend",
     },
@@ -3179,7 +3179,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.tailwind },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Medic People Academy",
+      singleProjectTitle: "Medic People Academy - Course Landing Page",
       singleProjectDate: "02 Sep 2025",
       singleProjectTag: "Frontend",
     },
@@ -3277,7 +3277,7 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.tailwind },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Shifaa Care",
+      singleProjectTitle: "Shifaa Care - Medical cabinet App",
       singleProjectDate: "17 Sep 2025",
       singleProjectTag: "Frontend/Backend",
     },
