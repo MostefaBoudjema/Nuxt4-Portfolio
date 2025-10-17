@@ -34,7 +34,7 @@ import cover31 from '/images/posts/web-dev-pitch-2025-dz.webp';
 import cover32 from '/images/posts/jobs-that-need-website-2025.webp';
 import cover33 from '/images/posts/basic-medical-cabinet-web-app.webp';
 import cover34 from '/images/posts/find-freelance-clients-linkedin-laravel.webp';
-import cover35 from '/images/posts/not-found-image.webp';
+import cover35 from '/images/posts/docker-setup-laravel-apache-mysql.webp';
 import cover36 from '/images/posts/not-found-image.webp';
 import cover37 from '/images/posts/not-found-image.webp';
 import cover38 from '/images/posts/not-found-image.webp';
@@ -6422,6 +6422,157 @@ If you’re a Laravel web developer looking for freelance projects, here’s a *
 Finding freelance clients on LinkedIn isn’t about spamming messages—it’s about **visibility, credibility, and targeted outreach**.  
 Polish your profile, build a relevant network, share useful content, and approach leads strategically.  
 Do this consistently, and projects will start finding you.
+`
+  },
+  {
+    id: 35,
+    lang: "en",
+    title: "How to Set Up Docker for a Laravel Project (Apache & MySQL)",
+    summary: "Step-by-step guide to containerize a Laravel app with Docker using Apache and MySQL. Covers Dockerfile creation, docker-compose setup, environment configuration, and common fixes.",
+    date: "2025-09-26",
+    tags: ["laravel", "docker", "apache", "mysql", "devops"],
+    slug: "docker-setup-laravel-apache-mysql",
+    author: authorMostefaBoudjema,
+    coverImage: cover35,
+    readingTime: "7 min read",
+    published: true,
+    category: "Web Development",
+    updatedAt: "2027-09-26",
+    metaDescription: "Learn how to run Laravel inside Docker with Apache and MySQL. This practical guide shows you how to write the Dockerfile, configure docker-compose, set environment variables, and troubleshoot common errors.",
+    excerpt: "A clear, no-fluff tutorial on Dockerizing Laravel with Apache and MySQL. From Dockerfile to docker-compose and database configuration, this guide gets your app running in containers fast.",
+    content: `
+## 🚀 Overview
+
+Docker makes Laravel development consistent across any machine.  
+Here’s a pragmatic guide to run a **Laravel app in Docker with Apache and MySQL**.
+
+---
+
+## 1️⃣ Prerequisites
+
+- Docker & Docker Compose installed  
+- Existing Laravel project (or run \`laravel new myapp\`)
+
+---
+
+## 2️⃣ Project Structure
+
+laravel-app/
+├─ Dockerfile
+├─ docker-compose.yml
+├─ .env
+└─ ... (Laravel files)
+
+yaml
+Copy code
+
+---
+
+## 3️⃣ Create the Dockerfile
+
+Add a \`Dockerfile\` to the project root:
+
+\`\`\`dockerfile
+FROM php:8.2-apache
+
+# Required PHP extensions
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Enable Apache rewrite
+RUN a2enmod rewrite
+
+# Copy project files
+COPY . /var/www/html
+WORKDIR /var/www/html
+
+# Permissions
+RUN chown -R www-data:www-data /var/www/html \\
+    && chmod -R 755 /var/www/html
+
+EXPOSE 80
+\`\`\`
+
+---
+
+## 4️⃣ docker-compose.yml
+
+Create \`docker-compose.yml\`:
+
+\`\`\`yaml
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: laravel
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+\`\`\`
+
+
+---
+
+## 5️⃣ Update .env
+
+Match database settings:
+
+\`\`\`
+DB_CONNECTION=mysql
+DB_HOST=db
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=laravel
+DB_PASSWORD=laravel
+\`\`\`
+
+---
+
+## 6️⃣ Build & Run
+
+From the root folder:
+
+\`\`\`bash
+docker compose up -d --build
+\`\`\`
+
+- App: **http://localhost:8080**  
+- MySQL: port 3306 inside the \`db\` container.
+
+---
+
+## 7️⃣ Run Migrations
+
+\`\`\`bash
+docker compose exec app php artisan migrate
+\`\`\`
+
+---
+
+## 8️⃣ Common Fixes
+
+- **403 Forbidden:** Check \`public\` folder exists and permissions are correct.  
+- **DB connection errors:** Ensure \`DB_HOST=db\` matches the service name.
+
+---
+
+## ✅ Done
+
+You now have a fully Dockerized Laravel app running Apache & MySQL—ready for local development or production tweaks.
 `
   }
 
