@@ -8,9 +8,9 @@
 
   <AboutCounter />
 
-  <AboutEducation />
-
   <AboutEmploymentHistory />
+  
+  <AboutEducation />
 
   <AboutsSkills />
 

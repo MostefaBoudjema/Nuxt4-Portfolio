@@ -11,6 +11,10 @@ const IMAGES = {
         gray: '/images/brands/freelancer_gray.webp',
         color: '/images/brands/freelancer_color.webp'
     },
+    NZIDOO: {
+        gray: '/images/brands/nzidoo_gray.webp',
+        color: '/images/brands/nzidoo_color.webp'
+    },
     NEWDAY_AGENCY: {
         gray: '/images/brands/newdayagency_gray.webp',
         color: '/images/brands/newdayagency_color.webp'
@@ -54,10 +58,10 @@ const clients = [
     },
     {
         id: 3,
-        title: 'Freelancer',
+        title: 'Nzidoo',
         link: '',
-        imgGray: IMAGES.FREELANCER.gray,
-        imgColor: IMAGES.FREELANCER.color,
+        imgGray: IMAGES.NZIDOO.gray,
+        imgColor: IMAGES.NZIDOO.color,
     },
     {
         id: 4,

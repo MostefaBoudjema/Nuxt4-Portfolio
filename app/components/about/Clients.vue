@@ -1,13 +1,3 @@
-<script setup>
-import AboutClientSingle from "./AboutClientSingle.vue";
-import clients from '@/data/clients';
-import { useI18n } from 'vue-i18n';
-import { computed } from 'vue';
-
-const { t } = useI18n();
-
-const clientsHeading = computed(() => t("Some of the brands I have worked with"));
-</script>
 
 <template>
     <div class="mt-10 sm:mt-20">
@@ -25,3 +15,14 @@ const clientsHeading = computed(() => t("Some of the brands I have worked with")
         </div>
     </div>
 </template>
+
+<script setup>
+import clients from '@/data/clients';
+import { useI18n } from 'vue-i18n';
+import { computed } from 'vue';
+
+const { t } = useI18n();
+
+const clientsHeading = computed(() => t("Some of the brands I have worked with"));
+</script>
+

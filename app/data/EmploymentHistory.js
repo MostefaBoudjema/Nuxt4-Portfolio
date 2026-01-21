@@ -7,7 +7,16 @@ const EmploymentHistory=[
         endDate: "JobEndDate2",
         logo: '/images/brands/upwork_color.webp',
         description: "JobDescription2"
-    }, {
+    },
+    {
+        title: "JobTitle7",
+        company: "JobCompany7",
+        startDate: "JobStartDate7",
+        endDate: "JobEndDate7",
+        logo: '/images/brands/nzidoo_color.webp',
+        description: "JobDescription7"
+    },
+    {
         title: "JobTitle6",
         company: "JobCompany6",
         startDate: "JobStartDate6",

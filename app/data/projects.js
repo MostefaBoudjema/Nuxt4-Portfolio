@@ -392,6 +392,29 @@ const PROJECT_IMAGE_URLS={
       { id: 4, img: '/images/projects/shifaacare/4.webp' },
     ],
   },
+  nzidoo: {
+    img: '/images/projects/nzidoo/0.webp',
+    projectImages: [
+      { id: 0, img: '/images/projects/nzidoo/0.webp' },
+      { id: 1, img: '/images/projects/nzidoo/1.webp' },
+      { id: 2, img: '/images/projects/nzidoo/2.webp' },
+      { id: 3, img: '/images/projects/nzidoo/3.webp' },
+      { id: 4, img: '/images/projects/nzidoo/4.webp' },
+      { id: 5, img: '/images/projects/nzidoo/5.webp' },
+      { id: 6, img: '/images/projects/nzidoo/6.webp' },
+      { id: 7, img: '/images/projects/nzidoo/7.webp' },
+      { id: 8, img: '/images/projects/nzidoo/8.webp' },
+      { id: 9, img: '/images/projects/nzidoo/9.webp' },
+      { id: 10, img: '/images/projects/nzidoo/10.webp' },
+      { id: 11, img: '/images/projects/nzidoo/11.webp' },
+      { id: 12, img: '/images/projects/nzidoo/12.webp' },
+      { id: 13, img: '/images/projects/nzidoo/13.webp' },
+      { id: 14, img: '/images/projects/nzidoo/14.webp' },
+      { id: 15, img: '/images/projects/nzidoo/15.webp' },
+      { id: 16, img: '/images/projects/nzidoo/16.webp' },
+      { id: 17, img: '/images/projects/nzidoo/17.webp' },
+    ],
+  },
 };
 
 const allProjects=[
@@ -3330,6 +3353,104 @@ const allProjects=[
         {
           id: 4,
           details: "details29D",
+        },
+      ],
+      socialSharingsHeading: "Share This",
+      socialSharings: [
+        {
+          id: 1,
+          name: "Twitter",
+          icon: "twitter",
+          url: "#",
+        },
+        {
+          id: 2,
+          name: "Instagram",
+          icon: "instagram",
+          url: "#",
+        },
+        {
+          id: 3,
+          name: "Facebook",
+          icon: "facebook",
+          url: "#",
+        },
+        {
+          id: 4,
+          name: "LinkedIn",
+          icon: "linkedin",
+          url: "#",
+        },
+      ],
+    },
+  },
+  {
+    id: 30,
+    title: 'Nzidoo - eCommerce App',
+    hide: false,
+    category: 'Laravel Vue Web App',
+    link: 'nzidoo',
+    img: PROJECT_IMAGE_URLS.nzidoo.img,
+    smallImages: [
+      { id: 1, ...SMALL_IMAGE_URLS.laravel },
+      { id: 1, ...SMALL_IMAGE_URLS.vue },
+      { id: 2, ...SMALL_IMAGE_URLS.php },
+      { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
+    ],
+    singleProjectHeader: {
+      singleProjectTitle: "Nzidoo - eCommerce App",
+      singleProjectDate: "20 Jan 2026",
+      singleProjectTag: "Frontend/Backend",
+    },
+    projectImages: PROJECT_IMAGE_URLS.nzidoo.projectImages,
+    projectInfo: {
+      clientHeading: "About Client",
+      companyInfos: [
+        {
+          id: 1,
+          title: "Name",
+          details: "Nzidoo",
+        },
+        {
+          id: 2,
+          title: "Services",
+          details: "Frontend Development, Web Design, Backend Development",
+        },
+        {
+          id: 3,
+          title: "Website",
+          details: "http://109.123.243.14",
+        },
+      ],
+      objectivesHeading: "Objective",
+      objectivesDetails: "Objective30",
+      technologies: [
+        {
+          title: "Tools & Technologies",
+          techs: [
+            "Laravel",
+            "Vue",
+            "Bootstrap",
+          ],
+        },
+      ],
+      projectDetailsHeading: "Challenge",
+      projectDetails: [
+        {
+          id: 1,
+          details: "details30A",
+        },
+        {
+          id: 2,
+          details: "details30B",
+        },
+        {
+          id: 3,
+          details: "details30C",
+        },
+        {
+          id: 4,
+          details: "details30D",
         },
       ],
       socialSharingsHeading: "Share This",
