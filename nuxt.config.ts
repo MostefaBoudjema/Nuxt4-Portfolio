@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: false },
-
+    experimental: { appManifest: false },
     app: {
         head: {
             title: 'Mostefa Boudjema',
@@ -113,8 +113,8 @@ gtag('config', 'G-L5HVZ2VCP7');`,
                 process.env.VIDEO_LINK_EN ||
                 'https://www.youtube.com/embed/CMu_27ZURwA?si=sriXHIbvcos5620e',
             whatsappNumber: process.env.WHATSAPP_NUMBER || '213793692289',
-            fullList: process.env.FULL_LIST ,
-            homeList: process.env.HOME_LIST ,
+            fullList: process.env.FULL_LIST,
+            homeList: process.env.HOME_LIST,
         },
     },
     compatibilityDate: '2025-07-08',
