@@ -2,6 +2,21 @@
 export default defineNuxtConfig({
     devtools: { enabled: false },
     experimental: { appManifest: false },
+    vite: {
+        ssr: {
+            noExternal: [
+                'vue',
+                '@vue/runtime-core',
+                '@vue/runtime-dom',
+                '@vue/shared',
+                '@vue/server-renderer',
+                'vue-i18n',
+                '@intlify/core-base',
+                '@intlify/message-compiler',
+                '@intlify/shared',
+            ],
+        },
+    },
     app: {
         head: {
             title: 'Mostefa Boudjema',
@@ -86,6 +101,19 @@ gtag('config', 'G-L5HVZ2VCP7');`,
     ssr: true,
     nitro: {
         preset: 'vercel',
+        externals: {
+            inline: [
+                'vue',
+                '@vue/runtime-core',
+                '@vue/runtime-dom',
+                '@vue/shared',
+                '@vue/server-renderer',
+                'vue-i18n',
+                '@intlify/core-base',
+                '@intlify/message-compiler',
+                '@intlify/shared',
+            ],
+        },
     },
     runtimeConfig: {
         // Private keys (only available on server-side)
