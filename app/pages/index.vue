@@ -1,21 +1,11 @@
 <template>
-  <div class="p-8">
-
-    <!-- Banner -->
-    <HomeAppBanner class="mb-5 sm:mb-8 mt-8" />
-    <!-- Projects -->
-    <div class="sm:container sm:mx-auto">
-      <ProjectsGrid data-aos="fade-up" data-aos-delay="200" />
-
-      <!-- Load more projects button -->
-      <ReusableMoreBtn text="More Projects" link="/Projects" />
-    </div>
-    <!-- Blog -->
-    <div class="sm:container sm:mx-auto">
-      <HomeBlogItems data-aos="fade-up" data-aos-delay="200" />
-      <ReusableMoreBtn text="More Articles" link="/Blog" />
-    </div>
-
+  <div>
+    <Home2025Hero />
+    <Home2025FeaturedWork data-aos="fade-up" data-aos-delay="150" />
+    <Home2025Stats />
+    <!-- <Home2025Clients data-aos="fade-up" data-aos-delay="150" /> -->
+    <Home2025BlogTeaser data-aos="fade-up" data-aos-delay="150" />
+    <Home2025Cta />
   </div>
 </template>
 
@@ -23,9 +13,6 @@
 
 import { useI18n } from 'vue-i18n';
 import { useHead } from '#imports'
-import { useLocalePath } from '#i18n';
-
-const localePath=useLocalePath();
 
 const { t }=useI18n({
   inheritLocale: true,
