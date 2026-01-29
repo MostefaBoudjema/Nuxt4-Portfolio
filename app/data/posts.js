@@ -6592,16 +6592,9 @@ const mm=String(today.getMonth()+1).padStart(2, '0');
 const dd=String(today.getDate()).padStart(2, '0');
 const todayStr=`${yyyy}-${mm}-${dd}`;
 
-// Use Nuxt runtime config for useAllPosts
-let useAllPosts=false;
-try {
-  const config=useRuntimeConfig&&useRuntimeConfig();
-  if (config&&config.public&&(config.public.useAllPosts===true||config.public.useAllPosts==='true')) {
-    useAllPosts=true;
-  }
-} catch (e) {
-  // fallback for non-Nuxt environments (e.g. static build)
-}
+// SSR-safe flag (works on Vercel/serverless too)
+// Set NUXT_PUBLIC_USE_ALL_POSTS=true to display all posts even if scheduled for the future.
+const useAllPosts=process.env.NUXT_PUBLIC_USE_ALL_POSTS==='true';
 
 const posts=
   useAllPosts
