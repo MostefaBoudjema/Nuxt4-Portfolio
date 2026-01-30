@@ -30,9 +30,9 @@ module.exports={
 				padding: {
 					DEFAULT: '1rem',
 					sm: '2rem',
-					lg: '5rem',
-					xl: '6rem',
-					'2xl': '8rem',
+					lg: '2rem',
+					xl: '4rem',
+					'2xl': '6rem',
 				},
 			},
 		},

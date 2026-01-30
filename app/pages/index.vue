@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sm:container sm:mx-auto">
     <Home2025Hero />
     <Home2025FeaturedWork data-aos="fade-up" data-aos-delay="150" />
     <Home2025Stats />
