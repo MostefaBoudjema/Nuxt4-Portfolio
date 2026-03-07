@@ -3,14 +3,15 @@
     <Home2025Hero />
     <Home2025FeaturedWork data-aos="fade-up" data-aos-delay="150" />
     <Home2025Stats />
-    <!-- <Home2025Clients data-aos="fade-up" data-aos-delay="150" /> -->
-    <Home2025BlogTeaser data-aos="fade-up" data-aos-delay="150" />
+    <Home2025BlogTeaser v-if="settings.show_blog" data-aos="fade-up" data-aos-delay="150" />
     <Home2025Cta />
   </div>
 </template>
+  <!-- <Home2025Clients data-aos="fade-up" data-aos-delay="150" /> -->
 
 <script setup>
 
+import settings from "~/configs";
 import { useI18n } from 'vue-i18n';
 import { useHead } from '#imports'
 

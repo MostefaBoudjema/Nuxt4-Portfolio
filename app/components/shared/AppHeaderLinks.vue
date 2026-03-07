@@ -1,3 +1,32 @@
+
+<template>
+  <div
+    :class="[
+      isOpen ? 'block' : 'hidden',
+      isRtl ? 'rtl' : '',
+      'm-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none',
+    ]"
+  >
+    <!-- Navigation links -->
+    <NuxtLink
+      v-for="(link, i) in navLinks"
+      :key="i"
+      :to="localePath(link.path)"
+      @click="closeMenu"
+      :class="[
+        'font-general-medium block text-lg text-nowrap font-medium text-primary-dark dark:text-ternary-light hover:text-blue-600 dark:hover:text-blue-300 sm:mx-4 mb-2 sm:py-2',
+        i !== 0 ? 'border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark' : '',
+        isRtl ? 'text-right' : 'text-left',
+      ]"
+      :aria-label="link.label"
+    >
+      {{ t(link.label) }}
+    </NuxtLink>
+
+  </div>
+</template>
+
+
 <script setup>
 import { useI18n } from "vue-i18n";
 import settings from "~/configs";
@@ -34,30 +63,3 @@ const allLinks = [
 // ✅ filtered array (no v-if inside template)
 const navLinks = computed(() => allLinks.filter(l => l.show !== false));
 </script>
-
-<template>
-  <div
-    :class="[
-      isOpen ? 'block' : 'hidden',
-      isRtl ? 'rtl' : '',
-      'm-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none',
-    ]"
-  >
-    <!-- Navigation links -->
-    <NuxtLink
-      v-for="(link, i) in navLinks"
-      :key="i"
-      :to="localePath(link.path)"
-      @click="closeMenu"
-      :class="[
-        'font-general-medium block text-lg text-nowrap font-medium text-primary-dark dark:text-ternary-light hover:text-blue-600 dark:hover:text-blue-300 sm:mx-4 mb-2 sm:py-2',
-        i !== 0 ? 'border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark' : '',
-        isRtl ? 'text-right' : 'text-left',
-      ]"
-      :aria-label="link.label"
-    >
-      {{ t(link.label) }}
-    </NuxtLink>
-
-  </div>
-</template>
