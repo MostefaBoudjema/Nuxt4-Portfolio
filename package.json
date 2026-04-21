@@ -1,7 +1,9 @@
 {
-  "name": "nuxt-app",
+  "name": "portfolio-mostefa-boudjema",
+	"description": "Portfolio of Mostefa Boudjema",
   "private": true,
   "type": "module",
+	"version": "1.9.9",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",

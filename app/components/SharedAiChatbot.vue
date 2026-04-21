@@ -14,9 +14,9 @@
         class="mb-4 flex flex-col w-[90vw] md:w-[400px] h-[500px] max-h-[80vh] bg-white dark:bg-ternary-dark rounded-2xl shadow-2xl overflow-hidden border border-gray-200 dark:border-primary-dark/30 ring-1 ring-black/5"
       >
         <!-- Header -->
-        <div class="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark text-white shadow-sm">
+        <div class="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-primary-light to-secondary-light dark:from-primary-dark dark:to-secondary-dark text-ternary-dark dark:text-ternary-light shadow-sm">
           <div class="flex items-center gap-3">
-            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-white dark:bg-ternary-dark shadow-inner">
+            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-white dark:bg-ternary-dark shadow-inner border border-gray-100 dark:border-white/10">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 animate-pulse" viewBox="0 0 24 24" fill="url(#gemini-grad-header)">
                 <defs>
                   <linearGradient id="gemini-grad-header" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -30,12 +30,12 @@
             </div>
             <div>
               <h3 class="font-bold text-lg leading-tight">AI Assistant</h3>
-              <p class="text-xs text-white/80">Powered by Gemini</p>
+              <p class="text-xs text-gray-500 dark:text-ternary-light/80">Powered by Gemini</p>
             </div>
           </div>
           <button
             @click="toggleChat"
-            class="text-white hover:bg-white/20 p-2 rounded-full transition-colors"
+            class="text-ternary-dark dark:text-ternary-light hover:bg-black/10 dark:hover:bg-white/20 p-2 rounded-full transition-colors"
             aria-label="Close Chat"
           >
             <i data-feather="x" class="w-5 h-5"></i>
@@ -54,7 +54,7 @@
               class="max-w-[85%] px-4 py-3 rounded-2xl text-sm shadow-sm"
               :class="
                 msg.role === 'user'
-                  ? 'bg-primary-light text-white rounded-tr-sm'
+                  ? 'bg-indigo-600 text-white rounded-tr-sm'
                   : 'bg-white dark:bg-primary-dark text-ternary-dark dark:text-ternary-light rounded-tl-sm border border-gray-100 dark:border-white/10 prose prose-sm dark:prose-invert max-w-none'
               "
             >
@@ -88,7 +88,7 @@
             />
             <button
               type="submit"
-              class="absolute right-1.5 p-2 bg-primary-light hover:bg-secondary-light text-white rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-8 h-8"
+              class="absolute right-1.5 p-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-8 h-8"
               :disabled="isLoading || !inputMessage.trim()"
             >
               <i data-feather="send" class="w-4 h-4" :class="{'opacity-0': isLoading}"></i>
