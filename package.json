@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
     "@lottiefiles/dotlottie-vue": "^0.7.2",
     "@nuxt/image": "^1.10.0",
     "@nuxtjs/i18n": "^10.0.1",

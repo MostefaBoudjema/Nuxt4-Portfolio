@@ -118,6 +118,7 @@ gtag('config', 'G-L5HVZ2VCP7');`,
     runtimeConfig: {
         // Private keys (only available on server-side)
         // apiSecret: process.env.API_SECRET,
+        geminiApiKey: process.env.VITE_GEMENI_API_KEY || process.env.GEMINI_API_KEY,
 
         // Public keys (exposed to the client)
         public: {
