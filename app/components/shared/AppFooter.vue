@@ -1,7 +1,7 @@
 <script setup>
-import { ref, onMounted, onUpdated } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-import feather from "feather-icons";
+
 const { t } = useI18n({
     inheritLocale: true,
     useScope: "local",
@@ -11,11 +11,6 @@ const { data: socials } = await useFetch('/api/v1/social-links');
 
 
 onMounted(() => {
-    feather.replace();
-});
-
-onUpdated(() => {
-    feather.replace();
 });
 </script>
 
@@ -41,10 +36,10 @@ onUpdated(() => {
                         target="__blank"
                         class="text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500"
                     >
-                        <i
-                            :data-feather="social.icon"
+                        <Icon
+                            :name="`feather:${social.icon}`"
                             class="w-5 sm:w-8 h-5 sm:h-8"
-                        ></i>
+                        />
                     </a>
                 </ul>
             </div>

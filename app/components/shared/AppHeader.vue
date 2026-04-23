@@ -73,11 +73,10 @@
     </nav>
 </template>
 <script setup>
-import { ref, onMounted, onUpdated, watch, computed } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import feather from "feather-icons";
 import AppHeaderLinks from "./AppHeaderLinks.vue";
 import settings from "~/configs";
 import useThemeSwitcher from '~/composables/useThemeSwitcher';
@@ -135,10 +134,6 @@ const showModal=() => {
         modal.value=true;
     }
 };
-
-onUpdated(() => {
-    feather.replace();
-});
 
 let show_multi_lang=false;
 try {

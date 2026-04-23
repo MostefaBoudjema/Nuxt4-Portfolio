@@ -1,11 +1,10 @@
 <script setup>
-import feather from "feather-icons";
 import ProjectHeader from "@/components/projects/ProjectHeader.vue";
 // import ProjectGallery from "@/components/projects/ProjectGallery.vue";
 import ProjectInfo from "@/components/projects/ProjectInfo.vue";
 import ProjectRelatedProjects from "@/components/projects/ProjectRelatedProjects.vue";
 
-import { ref, watch, onMounted, onUpdated } from "vue";
+import { ref, watch, onMounted } from "vue";
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { useHead } from '#imports'
@@ -42,16 +41,10 @@ function fetchProject() {
 
 onMounted(() => {
   fetchProject();
-  feather.replace();
 });
 
 watch(() => route.params.link, () => {
   fetchProject();
-  feather.replace();
-});
-
-onUpdated(() => {
-  feather.replace();
 });
 </script>
 

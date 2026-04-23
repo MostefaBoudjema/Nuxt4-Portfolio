@@ -13,8 +13,7 @@
 </template>
 
 <script setup>
-import feather from 'feather-icons';
-import { ref, onMounted, onUpdated } from 'vue';
+import { ref, onMounted } from 'vue';
 // import ContactForm from '@/components/contact/ContactForm.vue';
 // import ContactDetails from '@/components/contact/ContactDetails.vue';
 
@@ -32,11 +31,6 @@ useHead({
 })
 
 onMounted(() => {
-	feather.replace();
-});
-
-onUpdated(() => {
-	feather.replace();
 });
 </script>
 

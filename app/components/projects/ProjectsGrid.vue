@@ -17,7 +17,7 @@
       <div class="flex justify-between border-b border-primary-light dark:border-secondary-dark pb-3 gap-2">
         <div class="flex justify-between gap-2">
           <span class="hidden sm:block bg-primary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-xl cursor-pointer">
-            <i data-feather="search" class="text-ternary-dark dark:text-ternary-light"></i>
+            <Icon name="feather:search" class="text-ternary-dark dark:text-ternary-light" />
           </span>
           <input v-model="searchProject"
             class="font-general-medium pl-3 pr-1 sm:px-4 py-2 border-1 border-gray-200 dark:border-secondary-dark rounded-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
@@ -45,10 +45,11 @@
       <ProjectSingle v-for="project in getShortList" :key="project.id" :project="project" />
     </div>
   </section>
-</template><script setup>
-import { ref, computed, onMounted, defineProps, watch } from 'vue';
+</template>
+
+<script setup>
+import { ref, computed, defineProps, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import feather from 'feather-icons';
 import ProjectsFilter from './ProjectsFilter.vue';
 import ProjectSingle from './ProjectSingle.vue';
 import settings from '@/configs';
@@ -147,8 +148,4 @@ const filterProjectsBySearch = () => {
 const getSpecificProjectsList = (indices) => {
   return indices.map((index) => filteredProjects.value[index]);
 };
-
-onMounted(() => {
-  feather.replace();
-});
 </script>

@@ -254,7 +254,8 @@ async function submitForm() {
 			timeline: formData.value.timeline==='other'? formData.value.timelineCustom:formData.value.timeline
 		};
 
-		const apiUrl=process.env.API_URL||'https://backend-mostefa-boudjema.vercel.app';
+		const config = useRuntimeConfig();
+		const apiUrl = config.public.apiUrl || 'https://backend-mostefa-boudjema.vercel.app';
 		const response=await fetch(`${apiUrl}/send-email`, {
 			method: 'POST',
 			headers: {

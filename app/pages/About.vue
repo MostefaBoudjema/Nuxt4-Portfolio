@@ -23,19 +23,13 @@
 
 <script setup>
 
-import feather from 'feather-icons';
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n'
 const { t }=useI18n()
 
-import { onMounted, onUpdated } from 'vue';
+import { onMounted } from 'vue';
 
 onMounted(() => {
-  feather.replace();
-});
-
-onUpdated(() => {
-  feather.replace();
 });
 
 useHead({

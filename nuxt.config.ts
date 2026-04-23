@@ -59,6 +59,7 @@ gtag('config', 'G-L5HVZ2VCP7');`,
     },
 
     modules: [
+        'nuxt-icon',
         '@nuxtjs/tailwindcss',
         '@nuxt/image',
         [

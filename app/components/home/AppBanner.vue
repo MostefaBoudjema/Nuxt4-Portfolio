@@ -39,8 +39,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUpdated, onUnmounted, ref, computed } from 'vue';
-import feather from 'feather-icons';
+import { onMounted, onUnmounted, ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { DotLottieVue } from '@lottiefiles/dotlottie-vue';
 
@@ -105,7 +104,6 @@ function startAnimation() {
 }
 
 onMounted(() => {
-  feather.replace();
   startAnimation();
   // Blinking cursor
   setInterval(() => {
@@ -119,7 +117,6 @@ onUnmounted(() => {
 });
 
 onUpdated(() => {
-  feather.replace();
 });
 </script>
 
