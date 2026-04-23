@@ -58,7 +58,8 @@
 </template>
 
 <script setup>
-import posts from '@/data/posts.js';
+const { data: posts } = await useFetch('/api/v1/posts');
+
 
 import { useLocalePath, useRouter } from '#imports';
 const localePath = useLocalePath();
@@ -79,8 +80,9 @@ const relatedPosts = computed(() => {
   if (!props.currentPost) return [];
   const currentTags = props.currentPost.tags || [];
   const currentCategory = props.currentPost.category;
-  const related = posts
+  const related = (posts.value || [])
     .filter(post => post.id !== props.currentPost.id && post.published !== false && props.currentPost.lang === post.lang)
+
     .map(post => {
       let score = 0;
       if (post.tags) {

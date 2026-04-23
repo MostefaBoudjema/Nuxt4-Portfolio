@@ -44,10 +44,11 @@
 <script setup>
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
-import testimonials from '@/data/testimonials.js';
 import { useI18n } from 'vue-i18n';
 
-const { t }=useI18n();
+const { data: testimonials } = await useFetch('/api/v1/testimonials');
+const { t } = useI18n();
+
 </script>
 
 <style scoped>

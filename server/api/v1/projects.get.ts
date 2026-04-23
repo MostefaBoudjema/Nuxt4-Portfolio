@@ -3505,8 +3505,6 @@ const allProjects=[
 const projects=allProjects.filter(project => !project.hide);
 
 
-export function getProjects(t) {
+export default defineEventHandler(() => {
   return projects;
-}
-
-export default getProjects;
+});

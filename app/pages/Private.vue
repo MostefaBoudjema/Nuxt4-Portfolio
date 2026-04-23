@@ -10,8 +10,11 @@
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n';
 
-import { privates } from '@/data/posts.js';
+const { data: privates } = await useFetch('/api/v1/posts', {
+  query: { type: 'private' }
+});
 const { t } = useI18n();
+
 useHead({
   title: () => `${t('Private')} - ${t('Mostefa Boudjema')}`
 })

@@ -10,8 +10,9 @@
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n';
 
-import posts from '@/data/posts.js';
+const { data: posts } = await useFetch('/api/v1/posts');
 const { t } = useI18n();
+
 useHead({
   title: () => `${t('Blog')} - ${t('Mostefa Boudjema')}`
 })

@@ -3,7 +3,6 @@ import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useLocalePath } from '#i18n';
 
-import getProjects from '@/data/projects';
 import settings from '@/configs';
 
 const props = defineProps({
@@ -13,11 +12,13 @@ const props = defineProps({
 const { t } = useI18n({ inheritLocale: true, useScope: 'global' });
 const localePath = useLocalePath();
 
-const projects = computed(() => getProjects(t));
+const { data: projects } = await useFetch('/api/v1/projects');
+
 
 const featuredProjects = computed(() => {
   const selectedIds = settings.home_list || [];
-  const filtered = projects.value.filter((p) => selectedIds.includes(p.id) && !p.hide);
+  const filtered = (projects.value || []).filter((p) => selectedIds.includes(p.id) && !p.hide);
+
 
   const sorted = filtered.sort((a, b) => {
     const aIndex = selectedIds.indexOf(a.id);

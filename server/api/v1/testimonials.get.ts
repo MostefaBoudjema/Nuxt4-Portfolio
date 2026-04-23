@@ -71,4 +71,7 @@ const testimonials = [
   },
 ];
 
-export default testimonials; 
+export default defineEventHandler(() => {
+  return testimonials;
+});
+ 

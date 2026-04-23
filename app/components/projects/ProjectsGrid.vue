@@ -49,15 +49,14 @@ import { useRouter, useRoute } from 'vue-router';
 import feather from 'feather-icons';
 import ProjectsFilter from './ProjectsFilter.vue';
 import ProjectSingle from './ProjectSingle.vue';
-import getProjects from '@/data/projects';
 import settings from '@/configs';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n({ inheritLocale: true, useScope: 'global' });
+const { data: projects } = await useFetch('/api/v1/projects');
 const router = useRouter();
 const route = useRoute();
 
-const projects = computed(() => getProjects(t));
 const projectsHeading = computed(() => t('Projects I worked On'));
 
 const selectedCategory = ref('');
@@ -88,7 +87,8 @@ const filteredProjects = computed(() => {
   } else if (searchProject.value) {
     filtered = filterProjectsBySearch();
   } else {
-    filtered = projects.value;
+    filtered = (projects.value || []);
+
   }
   
   // Sort projects according to settings.full_list order
@@ -126,7 +126,8 @@ const getShortList = computed(() => {
 });
 
 const filterProjectsByCategory = () => {
-  return projects.value.filter((item) => {
+  return (projects.value || []).filter((item) => {
+
     const category =
       item.category.charAt(0).toUpperCase() + item.category.slice(1);
     return category.includes(selectedCategory.value);
@@ -135,7 +136,8 @@ const filterProjectsByCategory = () => {
 
 const filterProjectsBySearch = () => {
   const project = new RegExp(searchProject.value, 'i');
-  return projects.value.filter((el) => el.title.match(project));
+  return (projects.value || []).filter((el) => el.title.match(project));
+
 };
 
 const getSpecificProjectsList = (indices) => {

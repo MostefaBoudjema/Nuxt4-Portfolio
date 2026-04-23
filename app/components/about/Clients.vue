@@ -17,11 +17,12 @@
 </template>
 
 <script setup>
-import clients from '@/data/clients';
 import { useI18n } from 'vue-i18n';
 import { computed } from 'vue';
 
+const { data: clients } = await useFetch('/api/v1/clients');
 const { t } = useI18n();
+
 
 const clientsHeading = computed(() => t("Some of the brands I have worked with"));
 </script>

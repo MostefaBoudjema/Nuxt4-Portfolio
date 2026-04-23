@@ -2,14 +2,13 @@
 import { ref, onMounted, onUpdated } from 'vue';
 import { useI18n } from 'vue-i18n';
 import feather from "feather-icons";
-import { socialLinks } from "@/data/socialLinks";
-
 const { t } = useI18n({
     inheritLocale: true,
     useScope: "local",
 });
 
-const socials = ref(socialLinks);
+const { data: socials } = await useFetch('/api/v1/social-links');
+
 
 onMounted(() => {
     feather.replace();

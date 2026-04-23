@@ -174,7 +174,7 @@ const sendMessage = async () => {
   await scrollToBottom();
 
   try {
-    const response = await $fetch('/api/chat', {
+    const response = await $fetch('/api/v1/chat', {
       method: 'POST',
       body: {
         message: text,

@@ -2,7 +2,8 @@
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useLocalePath } from '#i18n';
-import posts from '@/data/posts.js';
+const { data: posts } = await useFetch('/api/v1/posts');
+
 
 const props = defineProps({
   limit: { type: Number, default: 4 },
@@ -12,7 +13,8 @@ const { t, locale } = useI18n({ inheritLocale: true, useScope: 'global' });
 const localePath = useLocalePath();
 
 const filteredPosts = computed(() => {
-  return (posts || [])
+  return (posts.value || [])
+
     .filter((p) => p.lang === locale.value)
     .filter((p) => p.published !== false)
     .slice()

@@ -97,11 +97,12 @@
 
 <script setup>
 import configs from '~/configs';
-import EmploymentHistory from '~/data/EmploymentHistory';
-import Education from '~/data/Education';
+const { data: rawEmploymentHistory } = await useFetch('/api/v1/employment-history');
+const { data: rawEducation } = await useFetch('/api/v1/education');
+const { data: socialsData } = await useFetch('/api/v1/social-links');
+
 import { useI18n } from 'vue-i18n';
 import { useHead } from '#imports'
-import { socialLinks } from "@/data/socialLinks";
 const { t, locale }=useI18n();
 
 useHead({
@@ -111,13 +112,10 @@ definePageMeta({
 	layout: 'empty'
 })
 
-
 const isRTL=computed(() => locale.value==='ar');
 
-
 const getContact=(key) => configs.contacts.find(c => c.icon===key)?.name||'';
-const getSocialLink=(key) => socialLinks.find(c => c.name===key)?.url||'';
-
+const getSocialLink=(key) => (socialsData.value || []).find(c => c.name===key)?.url||'';
 
 const profile=reactive({
 	name: configs.name,
@@ -137,11 +135,9 @@ const skills=ref([
 	{ name: 'API', level: 75 },
 	{ name: 'SQL', level: 70 },
 	{ name: 'Git', level: 70 },
-	// { name: 'CI/CD', level: 60 },
 ])
 
-
-const employmentHistory=EmploymentHistory.map((job, index) => ({
+const employmentHistory = computed(() => (rawEmploymentHistory.value || []).map((job, index) => ({
 	id: index+1,
 	position: job.title,
 	company: job.company,
@@ -149,9 +145,9 @@ const employmentHistory=EmploymentHistory.map((job, index) => ({
 	endDate: job.endDate,
 	description: job.description,
 	logo: job.logo
-}));
+})));
 
-const education=Education.map((edu, index) => ({
+const education = computed(() => (rawEducation.value || []).map((edu, index) => ({
 	id: index+1,
 	degree: edu.title,
 	school: edu.institution,
@@ -159,7 +155,8 @@ const education=Education.map((edu, index) => ({
 	endDate: edu.endDate,
 	description: edu.description,
 	logo: edu.logo
-}));
+})));
+
 
 let timeouts = [];
 

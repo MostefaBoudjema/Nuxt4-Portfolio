@@ -35,17 +35,20 @@
 	</section>
 </template>
 <script setup>
-import posts from '@/data/posts.js';
 import { useI18n } from 'vue-i18n';
 import { computed } from 'vue';
+
+const { data: posts } = await useFetch('/api/v1/posts');
 
 import { useLocalePath } from '#i18n'
 const localePath=useLocalePath();
 
+
 const { locale }=useI18n();
 
 const filteredPosts=computed(() => {
-	return (posts||[])
+	return (posts.value||[])
+
 		.filter(post => post.lang===locale.value)
 		.reverse()
 		.slice(-4) // take the last 4 posts

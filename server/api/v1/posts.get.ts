@@ -6603,5 +6603,16 @@ const posts=
 
 const privates=postsList.filter(post => new Date(post.updatedAt)>new Date(todayStr));
 
-export { privates, postsList }; // Export the full list for external use
-export default posts; 
+export default defineEventHandler((event) => {
+  const query = getQuery(event);
+  if (query.type === 'private') {
+    return privates;
+  }
+  if (query.type === 'all') {
+    return postsList;
+  }
+  return posts;
+});
+
+
+ 

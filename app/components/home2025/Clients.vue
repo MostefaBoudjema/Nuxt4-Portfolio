@@ -1,7 +1,8 @@
 <script setup>
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import clients from '@/data/clients';
+const { data: clients } = await useFetch('/api/v1/clients');
+
 
 const { t, locale } = useI18n({ inheritLocale: true, useScope: 'global' });
 

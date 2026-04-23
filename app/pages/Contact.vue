@@ -19,13 +19,12 @@ import { ref, onMounted, onUpdated } from 'vue';
 // import ContactDetails from '@/components/contact/ContactDetails.vue';
 
 import settingsData from '~/configs';
-import { socialLinks } from '@/data/socialLinks';
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n';
-// import ContactSocials from '@/components/contact/ContactSocials.vue';
 
 const settings=ref(settingsData);
-const socials=ref(socialLinks);
+const { data: socials } = await useFetch('/api/v1/social-links');
+
 
 const { t } = useI18n();
 useHead({

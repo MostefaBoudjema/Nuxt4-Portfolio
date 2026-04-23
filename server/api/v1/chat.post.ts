@@ -1,12 +1,4 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import getProjects from '@/data/projects.js';
-import EmploymentHistory from '@/data/EmploymentHistory.js';
-import Education from '@/data/Education.js';
-import { socialLinks } from '@/data/socialLinks.js';
-import clients from '@/data/clients.js';
-import testimonials from '@/data/testimonials.js';
-import posts from '@/data/posts.js';
-
 export default defineEventHandler(async (event) => {
     // Check method
     if (event.node.req.method !== 'POST') {
@@ -29,22 +21,42 @@ export default defineEventHandler(async (event) => {
             });
         }
 
+        // Fetch context data from internal APIs
+        const [
+            projectsData,
+            employmentData,
+            educationData,
+            socialLinksData,
+            clientsData,
+            testimonialsData,
+            postsData
+        ] = await Promise.all([
+            $fetch('/api/v1/projects'),
+            $fetch('/api/v1/employment-history'),
+            $fetch('/api/v1/education'),
+            $fetch('/api/v1/social-links'),
+            $fetch('/api/v1/clients'),
+            $fetch('/api/v1/testimonials'),
+            $fetch('/api/v1/posts')
+        ]);
+
         const genAI = new GoogleGenerativeAI(config.geminiApiKey);
         const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
         const contextData = {
-            projects: getProjects().map((p: any) => ({ 
+            projects: (projectsData as any[]).map((p: any) => ({ 
                 title: p.title, 
                 category: p.category, 
                 technologies: p.projectInfo?.technologies?.[0]?.techs 
             })),
-            employment: EmploymentHistory,
-            education: Education,
-            socialLinks: socialLinks,
-            clients: clients.map((c: any) => c.title),
-            testimonials: testimonials.map((t: any) => ({ name: t.name, role: t.role, quote: t.quote })),
-            blogPosts: posts.map((p: any) => ({ title: p.title, summary: p.summary, tags: p.tags }))
+            employment: employmentData,
+            education: educationData,
+            socialLinks: socialLinksData,
+            clients: (clientsData as any[]).map((c: any) => c.title),
+            testimonials: (testimonialsData as any[]).map((t: any) => ({ name: t.name, role: t.role, quote: t.quote })),
+            blogPosts: (postsData as any[]).map((p: any) => ({ title: p.title, summary: p.summary, tags: p.tags }))
         };
+
 
         const systemInstruction = `You are a helpful, professional, and friendly AI assistant on Mostefa Boudjema's web developer portfolio website. You help visitors navigate the site, answer questions about Mostefa's background (Laravel and Vue.js developer, based in Algeria), and provide assistance regarding his projects and CV. Keep your responses concise and well-formatted in markdown. 
         

@@ -5,13 +5,13 @@ import ProjectHeader from "@/components/projects/ProjectHeader.vue";
 import ProjectInfo from "@/components/projects/ProjectInfo.vue";
 import ProjectRelatedProjects from "@/components/projects/ProjectRelatedProjects.vue";
 
-import relatedProject from "@/data/relatedProjects";
-import getProjects from "@/data/projects";
+const { data: projects } = await useFetch('/api/v1/projects');
+const { data: relatedProject } = await useFetch('/api/v1/related-projects');
 
-// import { blog } from "@/data/projectInfos";
 import { ref, watch, onMounted, onUpdated } from "vue";
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+
 import { useHead } from '#imports'
 
 const { t } = useI18n();
@@ -20,7 +20,8 @@ const route = useRoute();
 const project = ref(null);
 
 function fetchProject() {
-  project.value = getProjects(t).find(p => p.link === route.params.link) || null;
+  project.value = (projects.value || []).find(p => p.link === route.params.link) || null;
+
   if (project.value) {
     useHead({
       title: `${project.value.title || project.value.name || 'Project'} - ${t('Mostefa Boudjema')}`

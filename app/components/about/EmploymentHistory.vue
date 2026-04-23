@@ -47,14 +47,14 @@
 </template>
 <script setup>
 import { useI18n } from "vue-i18n";
-import EmploymentHistory from '~/data/EmploymentHistory';
+
+const { data: employmentHistory } = await useFetch('/api/v1/employment-history');
 
 const { t }=useI18n({
     inheritLocale: true,
     useScope: "local",
 });
 
-const employmentHistory=EmploymentHistory;
 </script>
 
 
@@ -243,5 +243,4 @@ const employmentHistory=EmploymentHistory;
         padding-left: 16px;
     }
 }
-</style>
-~/data/EmploymentHistory
+</style>

@@ -48,14 +48,14 @@
 
 <script setup>
 import { useI18n } from "vue-i18n";
-import Education from '@/data/Education';
+
+const { data: educationData } = await useFetch('/api/v1/education');
 
 const { t } = useI18n({
     inheritLocale: true,
     useScope: "local",
 });
 
-const educationData = Education;
 </script>
 
 <style scoped>

@@ -60,13 +60,17 @@
 
 <script setup>
 import { marked } from 'marked';
-import {postsList as posts} from '@/data/posts.js';
 import RelatedPosts from '@/components/blog/RelatedPosts.vue';
 import { ref, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useHead } from '#imports';
 import { useLocalePath } from '#i18n';
 import { useI18n } from 'vue-i18n'
+
+const { data: posts } = await useFetch('/api/v1/posts', {
+  query: { type: 'all' }
+});
+
 const { t } = useI18n()
 const localePath = useLocalePath();
 
@@ -81,7 +85,7 @@ const todayStr=`${yyyy}-${mm}-${dd}`;
 const loadPost = () => {
   const slug = route.params.slug;
   // Find the post by slug
-  const found = posts.find(p => p.slug === slug);
+  const found = (posts.value || []).find(p => p.slug === slug);
   if (found) {
     // Add fallback image if missing
     post.value = {
@@ -93,6 +97,7 @@ const loadPost = () => {
     post.value = null;
   }
 };
+
 
 // Watch for route changes
 watch(() => route.params.slug, () => {
