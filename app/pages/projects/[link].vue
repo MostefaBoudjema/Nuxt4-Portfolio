@@ -3,6 +3,7 @@ import ProjectHeader from "@/components/projects/ProjectHeader.vue";
 // import ProjectGallery from "@/components/projects/ProjectGallery.vue";
 import ProjectInfo from "@/components/projects/ProjectInfo.vue";
 import ProjectRelatedProjects from "@/components/projects/ProjectRelatedProjects.vue";
+import ProjectSkeleton from "@/components/projects/ProjectSkeleton.vue";
 
 import { ref, watch, onMounted } from "vue";
 import { useRoute } from 'vue-router';
@@ -51,27 +52,7 @@ watch(() => route.params.link, () => {
 <template>
     <div class="container mx-auto sm:mt-20 px-4">
         <!-- Skeleton Loading -->
-        <div v-if="projectPending" class="space-y-8">
-            <div class="space-y-4">
-                <ReusableSkeleton width="w-1/3" height="h-10" />
-                <div class="flex gap-4">
-                    <ReusableSkeleton width="w-24" height="h-6" rounded="rounded-full" />
-                    <ReusableSkeleton width="w-24" height="h-6" rounded="rounded-full" />
-                </div>
-            </div>
-            <ReusableSkeleton width="w-full" height="h-[400px]" rounded="rounded-2xl" />
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="md:col-span-2 space-y-4">
-                    <ReusableSkeleton width="w-full" height="h-4" />
-                    <ReusableSkeleton width="w-full" height="h-4" />
-                    <ReusableSkeleton width="w-3/4" height="h-4" />
-                </div>
-                <div class="space-y-4">
-                    <ReusableSkeleton width="w-full" height="h-32" />
-                    <ReusableSkeleton width="w-full" height="h-32" />
-                </div>
-            </div>
-        </div>
+        <ProjectSkeleton v-if="projectPending" />
 
         <!-- Project content -->
         <template v-else-if="project">
@@ -86,10 +67,7 @@ watch(() => route.params.link, () => {
             <ProjectInfo :projectInfo="project.projectInfo" :smallImages="project.smallImages"/>
             <div class="block sm:flex gap-0 sm:gap-10 mt-14">
                 <!-- Project related projects -->
-                <div v-if="relatedPending" class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <ReusableSkeleton v-for="i in 4" :key="i" height="h-48" />
-                </div>
-                <ProjectRelatedProjects v-else :relatedProject="relatedProject" />
+                <ProjectRelatedProjects :relatedProject="relatedProject" />
             </div>
         </template>
     </div>
