@@ -28,20 +28,22 @@
       </div>
     </div>
     <!-- Projects grid -->
-    <div v-if="full" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
-
+    <div v-if="pending" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
+      <div v-for="i in 6" :key="i" class="rounded-xl shadow-lg border-1 border-gray-100 dark:border-secondary-dark mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark overflow-hidden">
+        <ReusableSkeleton height="h-64" rounded="rounded-none" />
+        <div class="p-4 space-y-3 text-center">
+            <ReusableSkeleton width="w-2/3" height="h-6" class="mx-auto" />
+            <ReusableSkeleton width="w-1/3" height="h-4" class="mx-auto" />
+        </div>
+      </div>
+    </div>
+    <div v-else-if="full" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
       <ProjectSingle v-for="project in filteredProjects" :key="project.id"
         :project="project" />
-      <!-- <ProjectSingle v-for="index in selectedProjects" :key="index" :project="projects[index]" /> -->
-
     </div>
     <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
-      <ProjectSingle v-for="project in getShortList" :key="project" :project="project" />
+      <ProjectSingle v-for="project in getShortList" :key="project.id" :project="project" />
     </div>
-    <!-- <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 mt-6 sm:gap-10">
-      <ProjectSingle v-for="project in getSpecificProjectsList(settings.home_list)" :key="project.id"
-        :project="project" />
-    </div> -->
   </section>
 </template><script setup>
 import { ref, computed, onMounted, defineProps, watch } from 'vue';
@@ -53,7 +55,9 @@ import settings from '@/configs';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n({ inheritLocale: true, useScope: 'global' });
-const { data: projects } = await useFetch('/api/v1/projects');
+const { data: projects, pending } = await useFetch('/api/v1/projects', {
+  lazy: true
+});
 const router = useRouter();
 const route = useRoute();
 

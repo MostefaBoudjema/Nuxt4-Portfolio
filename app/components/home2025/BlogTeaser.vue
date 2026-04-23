@@ -2,7 +2,9 @@
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useLocalePath } from '#i18n';
-const { data: posts } = await useFetch('/api/v1/posts');
+const { data: posts, pending } = await useFetch('/api/v1/posts', {
+  lazy: true
+});
 
 
 const props = defineProps({
@@ -42,7 +44,18 @@ const filteredPosts = computed(() => {
       </NuxtLink>
     </div>
 
-    <div v-if="filteredPosts.length" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div v-if="pending" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div v-for="i in 4" :key="i" class="rounded-2xl border border-ternary-light/60 dark:border-ternary-dark/80 bg-white/60 dark:bg-ternary-dark/40 overflow-hidden">
+        <ReusableSkeleton height="h-44" rounded="rounded-none" />
+        <div class="p-5 space-y-3">
+          <ReusableSkeleton width="w-1/4" height="h-3" />
+          <ReusableSkeleton width="w-full" height="h-5" />
+          <ReusableSkeleton width="w-full" height="h-4" />
+          <ReusableSkeleton width="w-2/3" height="h-4" />
+        </div>
+      </div>
+    </div>
+    <div v-else-if="filteredPosts.length" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <NuxtLink
         v-for="post in filteredPosts"
         :key="post.slug"
@@ -69,7 +82,6 @@ const filteredPosts = computed(() => {
         </div>
       </NuxtLink>
     </div>
-
     <div v-else class="mt-8 rounded-2xl border border-ternary-light/60 dark:border-ternary-dark/80 bg-white/60 dark:bg-ternary-dark/40 backdrop-blur p-6 text-center text-ternary-dark/70 dark:text-ternary-light/70">
       {{ $t('blog.noPosts') }}
     </div>

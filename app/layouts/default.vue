@@ -4,6 +4,7 @@
     <div v-if="isDark"
       class="fixed inset-0 -z-20 bg-gradient-to-b from-primary-dark via-secondary-dark to-ternary-dark transition-colors duration-500" />
 
+    <NuxtLoadingIndicator :color="'#3b82f6'" :height="3" />
     <SharedAppHeader />
     <main class="main-content">
       <slot />

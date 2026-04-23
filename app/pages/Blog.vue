@@ -1,7 +1,10 @@
 <template>
   <div class="blog-page">
 
-    <BlogList :posts="posts"/>
+    <div v-if="pending" class="container mx-auto px-4 space-y-6">
+        <ReusableBlogSkeleton v-for="i in 4" :key="i" />
+    </div>
+    <BlogList v-else :posts="posts"/>
   </div>
 </template>
 
@@ -10,7 +13,9 @@
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n';
 
-const { data: posts } = await useFetch('/api/v1/posts');
+const { data: posts, pending } = await useFetch('/api/v1/posts', {
+  lazy: true
+});
 const { t } = useI18n();
 
 useHead({
