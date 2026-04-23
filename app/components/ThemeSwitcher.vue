@@ -50,7 +50,13 @@ const handleToggleTheme = () => {
 </script>
 
 <template>
-  <a href="#" @click.prevent="handleToggleTheme" aria-label="Theme Switcher">
+  <button
+    type="button"
+    @click.prevent="handleToggleTheme"
+    :aria-label="`Switch to ${currentTheme === 'light' ? 'dark' : 'light'} theme`"
+    title="Toggle Theme"
+    class="focus:outline-none"
+  >
     <!-- Moon icon (black, shown in light theme) -->
     <div v-if="currentTheme === 'light'" class="flex items-center justify-center">
       <svg width="24" height="24" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24">
@@ -64,6 +70,6 @@ const handleToggleTheme = () => {
         <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
       </svg>
     </div>
-  </a>
+  </button>
 </template>
 ~/app/composables/useThemeSwitcher

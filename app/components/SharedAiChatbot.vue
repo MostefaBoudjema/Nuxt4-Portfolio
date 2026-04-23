@@ -103,7 +103,8 @@
     <button
       @click="toggleChat"
       class="group flex items-center justify-center w-14 h-14 bg-white dark:bg-ternary-dark rounded-full shadow-lg shadow-black/10 dark:shadow-primary-dark/30 border border-gray-100 dark:border-primary-dark/30 transition-all duration-300 hover:scale-105 active:scale-95 focus:outline-none"
-      aria-label="Toggle AI Assistant"
+      :aria-label="isOpen ? 'Close AI Assistant' : 'Open AI Assistant'"
+      :title="isOpen ? 'Close AI Assistant' : 'Open AI Assistant'"
     >
       <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 transition-transform duration-300 transform group-hover:rotate-12" viewBox="0 0 24 24" fill="url(#gemini-grad-fab)">
         <defs>
