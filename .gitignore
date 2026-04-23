@@ -3,16 +3,13 @@ _bak
 # Nuxt dev/build outputs
 .output
 .data
-.cursor
 .nuxt
 .nitro
 .cache
-.vscode
 dist
 
 # Node dependencies
 node_modules
-
 
 # Logs
 logs
@@ -28,5 +25,3 @@ logs
 .env
 .env.*
 !.env.example
-
-*ar

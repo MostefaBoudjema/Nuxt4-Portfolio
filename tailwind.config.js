@@ -1,14 +1,14 @@
-const colors=require('tailwindcss/colors');
+const colors = require('tailwindcss/colors');
 
-module.exports={
+module.exports = {
 	content: [
-		'./components/**/*.{js,vue,ts}',
-		'./layouts/**/*.vue',
-		'./pages/**/*.vue',
-		'./plugins/**/*.{js,ts}',
+		'./app/components/**/*.{js,vue,ts}',
+		'./app/layouts/**/*.vue',
+		'./app/pages/**/*.vue',
+		'./app/plugins/**/*.{js,ts}',
 		'./nuxt.config.{js,ts}',
-		'./app.vue',
-		'./error.vue'
+		'./app/app.vue',
+		'./error.vue',
 	],
 
 	darkMode: 'class',
