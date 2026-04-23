@@ -67,15 +67,13 @@ import { useHead } from '#imports';
 import { useLocalePath } from '#i18n';
 import { useI18n } from 'vue-i18n'
 
-const { data: posts } = await useFetch('/api/v1/posts', {
-  query: { type: 'all' }
-});
-
+const route = useRoute();
 const { t } = useI18n()
 const localePath = useLocalePath();
 
-const route = useRoute();
-const post = ref(null);
+const { data: postData } = await useFetch(`/api/v1/posts/${route.params.slug}`);
+
+const post = ref(postData.value);
 const today=new Date();
 const yyyy=today.getFullYear();
 const mm=String(today.getMonth()+1).padStart(2, '0');
@@ -83,20 +81,17 @@ const dd=String(today.getDate()).padStart(2, '0');
 const todayStr=`${yyyy}-${mm}-${dd}`;
 
 const loadPost = () => {
-  const slug = route.params.slug;
-  // Find the post by slug
-  const found = (posts.value || []).find(p => p.slug === slug);
-  if (found) {
-    // Add fallback image if missing
+  if (postData.value) {
     post.value = {
-      ...found,      
-      private: new Date(found.updatedAt)>new Date(todayStr),
-      image: found.coverImage || found.image || `https://picsum.photos/600/300?random=${found.id}`
+      ...postData.value,      
+      private: new Date(postData.value.updatedAt)>new Date(todayStr),
+      image: postData.value.coverImage || postData.value.image || `https://picsum.photos/600/300?random=${postData.value.id}`
     };
   } else {
     post.value = null;
   }
 };
+
 
 
 // Watch for route changes

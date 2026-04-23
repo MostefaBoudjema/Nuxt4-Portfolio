@@ -5,22 +5,23 @@ import ProjectHeader from "@/components/projects/ProjectHeader.vue";
 import ProjectInfo from "@/components/projects/ProjectInfo.vue";
 import ProjectRelatedProjects from "@/components/projects/ProjectRelatedProjects.vue";
 
-const { data: projects } = await useFetch('/api/v1/projects');
-const { data: relatedProject } = await useFetch('/api/v1/related-projects');
-
 import { ref, watch, onMounted, onUpdated } from "vue";
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
-
 import { useHead } from '#imports'
 
+const route = useRoute();
 const { t } = useI18n();
 
-const route = useRoute();
-const project = ref(null);
+const { data: projectData } = await useFetch(`/api/v1/projects/${route.params.link}`);
+const { data: relatedProject } = await useFetch('/api/v1/related-projects');
+
+const project = ref(projectData.value);
+
 
 function fetchProject() {
-  project.value = (projects.value || []).find(p => p.link === route.params.link) || null;
+  project.value = projectData.value;
+
 
   if (project.value) {
     useHead({
