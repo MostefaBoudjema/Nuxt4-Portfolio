@@ -196,7 +196,7 @@ const sendMessage = async () => {
     console.error('Chat error:', error);
     chatHistory.value.push({
       role: 'model',
-      parts: [{ text: 'Sorry, I encountered an error and could not process your request at the moment.' }]
+      parts: [{ text: error.data.message || 'Sorry, I encountered an error and could not process your request at the moment.' }]
     });
   } finally {
     isLoading.value = false;

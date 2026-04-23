@@ -1,45 +1,45 @@
 // Blog posts data
-import me1 from '/images/me1.webp';
-import cover1 from '/images/posts/getting-started-laravel-11.webp';
-import cover2 from '/images/posts/best-tech-2025.webp';
-import cover3 from '/images/posts/best-laravel-tech-2025.webp';
-import cover4 from '/images/posts/Best-Sites-for-Finding-Remote-Work-Online.webp';
-import cover5 from '/images/posts/laravel-packages-you-must-know.webp';
-import cover6 from '/images/posts/best-mvc-frameworks-2025.webp';
-import cover7 from '/images/posts/vuejs-beginner-guide.webp';
-import cover8 from '/images/posts/advanced-vuejs-features.webp';
-import cover9 from '/images/posts/react-for-beginners.webp';
-import cover10 from '/images/posts/advanced-react-performance-patterns.webp';
-import cover11 from '/images/posts/algorithm-patterns-dev-interview.webp';
-import cover12 from '/images/posts/laravel-advanced-tips.webp';
-import cover13 from '/images/posts/common-web-dev-interview-questions.webp';
-import cover14 from '/images/posts/eager-vs-lazy-loading-laravel.webp';
-import cover15 from '/images/posts/laravel-pulse-vs-telescope.webp';
-import cover16 from '/images/posts/find-website-clients.webp';
-import cover17 from '/images/posts/laravel-filament-guide.webp';
-import cover18 from '/images/posts/laravel-nova-guide.webp';
-import cover19 from '/images/posts/laravel-multi-tenancy-guide.webp';
-import cover20 from '/images/posts/laravel-dto-vs-model.webp';
-import cover21 from '/images/posts/firebase-vs-supabase.webp';
-import cover22 from '/images/posts/laravel-service-container-vs-provider.webp';
-import cover23 from '/images/posts/20-core-javascript-concepts.webp';
-import cover24 from '/images/posts/25-laravel-interview-questions.webp';
-import cover25 from '/images/posts/php-8-5-new-features.webp';
-import cover26 from '/images/posts/us-local-businesses-need-websites.webp';
-import cover27 from '/images/posts/annaba-businesses-need-websites.webp';
-import cover28 from '/images/posts/algeria-businesses-need-websites.webp';
-import cover29 from '/images/posts/top-developer-tools-2025.webp';
-import cover30 from '/images/posts/not-found-image.webp';
-import cover31 from '/images/posts/web-dev-pitch-2025-dz.webp';
-import cover32 from '/images/posts/jobs-that-need-website-2025.webp';
-import cover33 from '/images/posts/basic-medical-cabinet-web-app.webp';
-import cover34 from '/images/posts/find-freelance-clients-linkedin-laravel.webp';
-import cover35 from '/images/posts/docker-setup-laravel-apache-mysql.webp';
-import cover36 from '/images/posts/not-found-image.webp';
-import cover37 from '/images/posts/not-found-image.webp';
-import cover38 from '/images/posts/not-found-image.webp';
-import cover39 from '/images/posts/not-found-image.webp';
-import not_found_image from '/images/posts/not-found-image.webp';
+const me1 = '/images/me1.webp';
+const cover1 = '/images/posts/getting-started-laravel-11.webp';
+const cover2 = '/images/posts/best-tech-2025.webp';
+const cover3 = '/images/posts/best-laravel-tech-2025.webp';
+const cover4 = '/images/posts/Best-Sites-for-Finding-Remote-Work-Online.webp';
+const cover5 = '/images/posts/laravel-packages-you-must-know.webp';
+const cover6 = '/images/posts/best-mvc-frameworks-2025.webp';
+const cover7 = '/images/posts/vuejs-beginner-guide.webp';
+const cover8 = '/images/posts/advanced-vuejs-features.webp';
+const cover9 = '/images/posts/react-for-beginners.webp';
+const cover10 = '/images/posts/advanced-react-performance-patterns.webp';
+const cover11 = '/images/posts/algorithm-patterns-dev-interview.webp';
+const cover12 = '/images/posts/laravel-advanced-tips.webp';
+const cover13 = '/images/posts/common-web-dev-interview-questions.webp';
+const cover14 = '/images/posts/eager-vs-lazy-loading-laravel.webp';
+const cover15 = '/images/posts/laravel-pulse-vs-telescope.webp';
+const cover16 = '/images/posts/find-website-clients.webp';
+const cover17 = '/images/posts/laravel-filament-guide.webp';
+const cover18 = '/images/posts/laravel-nova-guide.webp';
+const cover19 = '/images/posts/laravel-multi-tenancy-guide.webp';
+const cover20 = '/images/posts/laravel-dto-vs-model.webp';
+const cover21 = '/images/posts/firebase-vs-supabase.webp';
+const cover22 = '/images/posts/laravel-service-container-vs-provider.webp';
+const cover23 = '/images/posts/20-core-javascript-concepts.webp';
+const cover24 = '/images/posts/25-laravel-interview-questions.webp';
+const cover25 = '/images/posts/php-8-5-new-features.webp';
+const cover26 = '/images/posts/us-local-businesses-need-websites.webp';
+const cover27 = '/images/posts/annaba-businesses-need-websites.webp';
+const cover28 = '/images/posts/algeria-businesses-need-websites.webp';
+const cover29 = '/images/posts/top-developer-tools-2025.webp';
+const cover30 = '/images/posts/not-found-image.webp';
+const cover31 = '/images/posts/web-dev-pitch-2025-dz.webp';
+const cover32 = '/images/posts/jobs-that-need-website-2025.webp';
+const cover33 = '/images/posts/basic-medical-cabinet-web-app.webp';
+const cover34 = '/images/posts/find-freelance-clients-linkedin-laravel.webp';
+const cover35 = '/images/posts/docker-setup-laravel-apache-mysql.webp';
+const cover36 = '/images/posts/not-found-image.webp';
+const cover37 = '/images/posts/not-found-image.webp';
+const cover38 = '/images/posts/not-found-image.webp';
+const cover39 = '/images/posts/not-found-image.webp';
+const not_found_image = '/images/posts/not-found-image.webp';
 const authorMostefaBoudjema={
   name: 'Mostefa Boudjema',
   avatar: me1,
@@ -57,7 +57,7 @@ const authorMostefaBoudjemaFR={
 };
 
 // Nuxt 3: Use runtime config for useAllPosts
-import { useRuntimeConfig } from '#imports'
+
 
 let postsList=[
   {

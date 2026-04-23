@@ -1,10 +1,10 @@
 # Mostefa Boudjema Portfolio
 
-A modern, responsive web portfolio built with Nuxt 3 and Tailwind CSS. This project showcases a professional portfolio website with a clean design, smooth animations, and server-side rendering capabilities.
+A modern, responsive web portfolio built with Nuxt 4 and Tailwind CSS. This project showcases a professional portfolio website with a clean design, smooth animations, and server-side rendering capabilities.
 
 ## 🚀 Features
 
-- Built with Nuxt 3 for optimal performance and SEO
+- Built with Nuxt 4 for optimal performance and SEO
 - Server-side rendering (SSR) for better SEO and performance
 - Styled with Tailwind CSS for modern, responsive design
 - Internationalization support (i18n) with Vue I18n
@@ -21,7 +21,7 @@ A modern, responsive web portfolio built with Nuxt 3 and Tailwind CSS. This proj
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Nuxt 3
+- **Framework:** Nuxt 4
 - **Frontend:** Vue 3
 - **CSS Framework:** Tailwind CSS
 - **Animation Libraries:** GSAP, AOS
