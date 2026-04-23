@@ -38,7 +38,7 @@
 
       <!-- Technologies -->
       <div class="mb-7">
-        <p class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2">
+        <p v-if="projectInfo.technologies?.length" class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2">
           {{ t(projectInfo.technologies[0].title) }}
         </p>
         <div class="flex space-x-2">

@@ -7,7 +7,6 @@
     <Home2025Cta />
   </div>
 </template>
-  <!-- <Home2025Clients data-aos="fade-up" data-aos-delay="150" /> -->
 
 <script setup>
 

@@ -1,7 +1,7 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 // import { useStore } from "vuex";
-import { onMounted, defineProps } from 'vue';
+import { onMounted, defineProps, computed } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLocalePath } from '#i18n'
@@ -59,6 +59,21 @@ onMounted(() => {
     });
 });
 
+const websiteUrl = computed(() => {
+    const companyInfos = props.project?.projectInfo?.companyInfos;
+    if (!Array.isArray(companyInfos)) return '#';
+
+    // Find the website info by title first, fallback to index 2 if it matches our expected structure
+    const websiteInfo = companyInfos.find(info => info.title === 'Website') || companyInfos[2];
+
+    if (!websiteInfo) return '#';
+
+    return locale.value === 'ar'
+        ? (websiteInfo.detailsAr || websiteInfo.details)
+        : websiteInfo.details;
+});
+
+
 </script>
 
 <template>
@@ -83,11 +98,7 @@ onMounted(() => {
         <div class="text-center px-4 py-6 d-flex justify-content-center align-items-center">
             <p class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2">
                 {{ t(props.project.title) }}
-                <a v-if="(locale === 'ar'
-        ? (props.project.projectInfo.companyInfos[2].detailsAr || props.project.projectInfo.companyInfos[2].details)
-        : props.project.projectInfo.companyInfos[2].details) !== '#'" :href="locale === 'ar'
-        ? (props.project.projectInfo.companyInfos[2].detailsAr || props.project.projectInfo.companyInfos[2].details)
-        : props.project.projectInfo.companyInfos[2].details" target="_blank"
+                <a v-if="websiteUrl !== '#'" :href="websiteUrl" target="_blank"
                     class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700 hover:bg-blue-200 transition">
                     {{ t("link") }}
                     <i class="bi bi-box-arrow-up-right text-blue-500 ms-1"></i>
@@ -98,8 +109,8 @@ onMounted(() => {
             <span class="font-general-medium text-lg text-ternary-dark dark:text-ternary-light pb-5">
                 {{ t(props.project.category) }}
             </span>
-            <br v-if="props.project.projectInfo.companyInfos[2].details != '#'" />
-            <br v-if="props.project.projectInfo.companyInfos[2].details != '#'" />
+            <br v-if="websiteUrl !== '#'" />
+            <br v-if="websiteUrl !== '#'" />
         </div>
     </div>
 </template>

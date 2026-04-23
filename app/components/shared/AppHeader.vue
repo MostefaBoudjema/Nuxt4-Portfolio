@@ -16,12 +16,14 @@
 
                 </div>
                 <div class="flex items-end gap-3">
-                    <language-switcher v-if="show_multi_lang && lang" :lang="lang" :theme="theme"
-                        @lang-changed="updateLang"
-                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
-                    <!-- Theme switcher small screen -->
-                    <theme-switcher :theme="theme" @themeChanged="updateTheme"
-                        class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
+                    <client-only>
+                        <language-switcher v-if="show_multi_lang_client && lang" :lang="lang" :theme="theme"
+                            @lang-changed="updateLang"
+                            class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
+                        <!-- Theme switcher small screen -->
+                        <theme-switcher :theme="theme" @themeChanged="updateTheme"
+                            class="block sm:hidden bg-ternary-light dark:bg-ternary-dark hover:bg-hover-light dark:hover:bg-hover-dark hover:shadow-sm px-2.5 py-2 rounded-lg" />
+                    </client-only>
 
                     <!-- Small screen hamburger menu -->
                     <div class="sm:hidden">
@@ -46,13 +48,14 @@
 
             <!-- Header right section buttons -->
             <div class="hidden sm:flex justify-between items-center flex-col md:flex-row">
+                <client-only>
+                    <language-switcher v-if="show_multi_lang_client" :lang="lang" :theme="theme" @lang-changed="updateLang"
+                        class="ml-4 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
 
-                <language-switcher v-if="show_multi_lang" :lang="lang" :theme="theme" @lang-changed="updateLang"
-                    class="ml-4 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
-
-                <!-- Theme switcher large screen -->
-                <theme-switcher :theme="theme" @theme-changed="updateTheme"
-                    class="ml-4 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
+                    <!-- Theme switcher large screen -->
+                    <theme-switcher :theme="theme" @theme-changed="updateTheme"
+                        class="ml-4 bg-primary-light dark:bg-ternary-dark px-3 py-2 shadow-sm rounded-xl cursor-pointer" />
+                </client-only>
 
                 <div class="hidden md:block" v-if="settings.show_hire_me">
                     <a href="https://www.upwork.com/freelancers/mostefaboudjema" target="_blank">
@@ -91,6 +94,7 @@ const isOpen=ref(false);
 const theme=ref('dark');
 const lang=ref('');
 const modal=ref(false);
+const show_multi_lang_client = ref(false);
 
 const langRoot=computed(() => {
     // Adjust as needed for your routing strategy
@@ -110,6 +114,17 @@ onMounted(() => {
     watch(currentTheme, (newTheme) => {
         theme.value=newTheme;
     });
+
+    // Check runtime config for multi-lang after mount
+    try {
+        const config=typeof useRuntimeConfig==='function'? useRuntimeConfig():null;
+        if (config&&config.public) {
+            const val=config.public.showMultiLang||config.public.SHOW_MULTI_LANG||config.public.NUXT_PUBLIC_SHOW_MULTI_LANG;
+            show_multi_lang_client.value=val===true||val==='true'||val===1||val==='1';
+        }
+    } catch (e) {
+        // fallback
+    }
 });
 
 const updateTheme=(newTheme) => {
@@ -123,28 +138,14 @@ const updateLang=(newLang) => {
 const showModal=() => {
     if (modal.value) {
         // Stop screen scrolling
-        document
-            .getElementsByTagName("html")[0]
-            .classList.remove("overflow-y-hidden");
+        document.documentElement.classList.remove("overflow-y-hidden");
         modal.value=false;
     } else {
-        document
-            .getElementsByTagName("html")[0]
-            .classList.add("overflow-y-hidden");
+        document.documentElement.classList.add("overflow-y-hidden");
         modal.value=true;
     }
 };
 
-let show_multi_lang=false;
-try {
-    const config=typeof useRuntimeConfig==='function'? useRuntimeConfig():null;
-    if (config&&config.public) {
-        const val=config.public.showMultiLang||config.public.SHOW_MULTI_LANG||config.public.NUXT_PUBLIC_SHOW_MULTI_LANG;
-        show_multi_lang=val===true||val==='true'||val===1||val==='1';
-    }
-} catch (e) {
-    // fallback for non-Nuxt environments (e.g. static build)
-}
 </script>
 
 <style scoped>

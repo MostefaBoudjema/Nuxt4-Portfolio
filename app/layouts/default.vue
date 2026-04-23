@@ -9,9 +9,11 @@
     <main class="main-content">
       <slot />
     </main>
-    <SharedAiChatbot />
-    <ReusableWhatsApp />
-    <ReusableCustomBackToTop :visibleoffset="300" right="10px" bottom="10px" />
+    <client-only>
+      <SharedAiChatbot />
+      <ReusableWhatsApp />
+      <ReusableCustomBackToTop :visibleoffset="300" right="10px" bottom="10px" />
+    </client-only>
     <SharedAppFooter />
     <SpeedInsights />
   </div>
