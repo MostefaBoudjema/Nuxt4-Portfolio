@@ -117,13 +117,7 @@ function formatDate(dateString) {
 function navigateToPost(slug) {
   // Use Nuxt localePath for localized navigation
   const path = localePath(`/blog/${slug}`);
-  if (typeof navigateTo === 'function') {
-    navigateTo(path);
-  } else if (router && typeof router.push === 'function') {
-    router.push(path);
-  } else {
-    window.location.href = path;
-  }
+  navigateTo(path);
 }
 </script>
 
@@ -131,6 +125,7 @@ function navigateToPost(slug) {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

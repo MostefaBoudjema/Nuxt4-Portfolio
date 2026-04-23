@@ -271,7 +271,7 @@ async function submitForm() {
 			const localePath=useLocalePath(); // Nuxt composable
 			successTimeout.value=setTimeout(() => {
 				submissionSuccess.value=false;
-				window.location.href=localePath('/');
+				navigateTo(localePath('/'));
 			}, 5000);
 
 			// Reset form
