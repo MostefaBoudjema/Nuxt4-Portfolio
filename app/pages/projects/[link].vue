@@ -4,6 +4,7 @@ import ProjectHeader from "@/components/projects/ProjectHeader.vue";
 import ProjectInfo from "@/components/projects/ProjectInfo.vue";
 import ProjectRelatedProjects from "@/components/projects/ProjectRelatedProjects.vue";
 import ProjectSkeleton from "@/components/projects/ProjectSkeleton.vue";
+import NotFoundState from "@/components/shared/NotFoundState.vue";
 
 import { ref, watch, onMounted } from "vue";
 import { useRoute } from 'vue-router';
@@ -28,6 +29,8 @@ watch(projectData, (newData) => {
     useHead({
       title: `${newData.title || newData.name || 'Project'} - ${t('Mostefa Boudjema')}`
     })
+  } else if (!projectPending.value) {
+    project.value = null;
   }
 }, { immediate: true });
 
@@ -70,6 +73,12 @@ watch(() => route.params.link, () => {
                 <ProjectRelatedProjects :relatedProject="relatedProject" />
             </div>
         </template>
+
+        <!-- Not Found State -->
+        <NotFoundState 
+          v-else 
+          type="project"
+        />
     </div>
 </template>
 

@@ -1,10 +1,13 @@
 <template>
-  <div class="single-blog-page container mx-auto py-12 max-w-7xl">
-    <div v-if="post" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+  <div class="single-blog-page container mx-auto py-12 max-w-7xl px-4">
+    <!-- Skeleton Loading -->
+    <BlogSkeleton v-if="pending" />
+
+    <div v-else-if="post" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <!-- Main Content -->
       <div class="lg:col-span-2 bg-white dark:bg-gray-900 rounded-xl shadow-lg md:p-8 transition-all duration-300">
         <!-- Breadcrumb -->
-        <nav class="text-sm text-gray-500 dark:text-gray-400 mb-6 flex items-center gap-2">
+        <nav class="text-sm text-gray-500 dark:text-gray-400 mb-6 flex items-center gap-2 px-4 md:px-0">
           <router-link v-if="post.private" :to="localePath('/private')" class="hover:underline text-blue-600 dark:text-blue-400">{{$t("Private")}}</router-link>
           <router-link v-else :to="localePath('/blog')" class="hover:underline text-blue-600 dark:text-blue-400">{{$t("Blog")}}</router-link>
           <span>/</span>
@@ -12,33 +15,35 @@
         </nav>
 
         <!-- Title -->
-        <h1 class="text-4xl font-bold mb-3 leading-tight text-gray-900 dark:text-gray-100">{{ post.title }}</h1>
+        <h1 class="text-4xl font-bold mb-3 leading-tight text-gray-900 dark:text-gray-100 px-4 md:px-0">{{ post.title }}</h1>
 
         <!-- Meta info -->
-        <div class="flex flex-wrap items-center gap-2 text-gray-500 dark:text-gray-400 text-sm mb-4">
+        <div class="flex flex-wrap items-center gap-2 text-gray-500 dark:text-gray-400 text-sm mb-4 px-4 md:px-0">
           <span>{{ post.date }}</span>
           <span v-if="post.readingTime">• {{ post.readingTime }}</span>
           <span v-if="post.category">• {{ post.category }}</span>
         </div>
 
         <!-- Tags -->
-        <div v-if="post.tags && post.tags.length" class="mb-6 flex flex-wrap gap-2">
+        <div v-if="post.tags && post.tags.length" class="mb-6 flex flex-wrap gap-2 px-4 md:px-0">
           <span v-for="tag in post.tags" :key="tag" class="bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 text-xs font-semibold px-3 py-1 rounded-full">{{ tag }}</span>
         </div>
 
         <!-- Cover Image -->
         <div v-if="post.coverImage || post.image" class="mb-8 flex justify-center">
-          <NuxtImg :src="post.coverImage || post.image" :alt="post.title" class="object-cover rounded-lg w-full max-h-80 border border-gray-200 dark:border-gray-700" />
+          <NuxtImg :src="post.coverImage || post.image" :alt="post.title" class="object-cover rounded-lg w-full max-h-80 border border-gray-200 dark:border-gray-700 shadow-md" />
         </div>
 
         <!-- Excerpt -->
-        <p v-if="post.excerpt" class="text-lg text-gray-700 dark:text-gray-300 mb-6 italic border-l-4 border-blue-400 pl-4">{{ post.excerpt }}</p>
+        <div class="px-4 md:px-0">
+          <p v-if="post.excerpt" class="text-lg text-gray-700 dark:text-gray-300 mb-6 italic border-l-4 border-blue-400 pl-4">{{ post.excerpt }}</p>
+        </div>
 
         <!-- Content -->
         <div class="prose prose-lg dark:prose-invert max-w-none mb-10 transition-all duration-300 px-4 py-6 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 overflow-x-auto" v-html="formattedContent"></div>
 
         <!-- Author Card -->
-        <div v-if="post.author && post.author.name!='Mostefa Boudjema'" class="flex items-center gap-4 mt-12 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-sm border-t border-gray-200 dark:border-gray-700 pt-6">
+        <div v-if="post.author && post.author.name!='Mostefa Boudjema'" class="mx-4 md:mx-0 flex items-center gap-4 mt-12 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 pt-6">
           <NuxtImg v-if="post.author.avatar" :src="post.author.avatar" :alt="post.author.name" class="w-14 h-14 rounded-full border object-cover" />
           <div>
             <div class="font-semibold text-lg text-gray-900 dark:text-gray-100">{{ post.author.name }}</div>
@@ -52,15 +57,20 @@
         <RelatedPosts :current-post="post" :max-posts="6" />
       </div>
     </div>
-    <div v-else class="py-24 text-center text-xl text-red-500 dark:text-red-400">
-      {{$t('blog.notFound') || 'Blog post not found.'}}
-    </div>
+    
+    <!-- Not Found State -->
+    <NotFoundState 
+      v-else 
+      type="post"
+    />
   </div>
 </template>
 
 <script setup>
 import { marked } from 'marked';
 import RelatedPosts from '@/components/blog/RelatedPosts.vue';
+import BlogSkeleton from '@/components/blog/BlogSkeleton.vue';
+import NotFoundState from '@/components/shared/NotFoundState.vue';
 import { ref, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useHead } from '#imports';
@@ -71,7 +81,9 @@ const route = useRoute();
 const { t } = useI18n()
 const localePath = useLocalePath();
 
-const { data: postData } = await useFetch(`/api/v1/posts/${route.params.slug}`);
+const { data: postData, pending } = await useFetch(`/api/v1/posts/${route.params.slug}`, {
+  lazy: true
+});
 
 const post = ref(postData.value);
 const today=new Date();
@@ -92,10 +104,7 @@ const loadPost = () => {
   }
 };
 
-
-
-// Watch for route changes
-watch(() => route.params.slug, () => {
+watch(postData, () => {
   loadPost();
 }, { immediate: true });
 
