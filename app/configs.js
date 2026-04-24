@@ -31,53 +31,6 @@ const configs={
   show_hire_me: import.meta.env.VITE_SHOW_HIRE_ME==='true'||false,
   show_contact_form: import.meta.env.VITE_SHOW_CONTACT_FORM==='true'||false,
   show_blog: import.meta.env.VITE_SHOW_BLOG==='true'||false,
-  contacts: [
-    {
-      id: 1,
-      name: 'Annaba, Algeria',
-      icon: 'map-pin',
-    },
-    {
-      id: 2,
-      name: 'mostefa.boudjema.dev@gmail.com',
-      icon: 'mail',
-    },
-    {
-      id: 3,
-      name: '+213 793 69 22 89',
-      icon: 'phone',
-    },
-  ],
-  socials: [
-    {
-      id: 1,
-      name: 'Telegram',
-      link: 'Telegram',
-      icon: 'map-pin',
-    },
-  ],
-  categories: [
-    {
-      id: 1,
-      value: "Laravel Application",
-      name: "Laravel Application",
-    },
-    {
-      id: 2,
-      value: "Laravel Vue Application",
-      name: "Laravel Vue Application",
-    },
-    {
-      id: 3,
-      value: "Wordpress site",
-      name: "Wordpress site",
-    },
-    {
-      id: 4,
-      value: "Vue App",
-      name: "Vue App",
-    },
-  ],
 }
 
 export default configs;

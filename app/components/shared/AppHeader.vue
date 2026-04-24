@@ -72,7 +72,7 @@
 
         <!-- Hire me modal -->
         <!-- <HireMeModal v-if="settings.show_hire_me" :showModal="showModal" :modal="modal"
-            :categories="settings.categories" aria-modal="Hire Me Modal" /> -->
+            :categories="categories" aria-modal="Hire Me Modal" /> -->
     </nav>
 </template>
 <script setup>
@@ -85,7 +85,11 @@ import settings from "~/configs";
 import useThemeSwitcher from '~/composables/useThemeSwitcher';
 import { useLocalePath } from '#i18n';
 
-const { t }=useI18n({
+const { data: categories } = await useFetch('/api/v1/categories');
+const { data: contacts } = await useFetch('/api/v1/contacts');
+const { data: socialLinks } = await useFetch('/api/v1/social-links');
+
+const { t } = useI18n({
     inheritLocale: true,
     useScope: "global",
 });
