@@ -3,7 +3,7 @@
   "description": "Portfolio of Mostefa Boudjema",
   "private": true,
   "type": "module",
-  "version": "2.0.9",
+  "version": "2.1.4",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",

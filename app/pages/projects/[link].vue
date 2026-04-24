@@ -10,9 +10,11 @@ import { ref, watch, onMounted } from "vue";
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { useHead } from '#imports'
+import { useJsonLd } from '~/composables/useJsonLd'
 
 const route = useRoute();
 const { t } = useI18n();
+const { useProjectJsonLd } = useJsonLd();
 
 const { data: projectData, pending: projectPending } = await useFetch(`/api/v1/projects/${route.params.link}`, {
   lazy: true
@@ -29,6 +31,7 @@ watch(projectData, (newData) => {
     useHead({
       title: `${newData.title || newData.name || 'Project'} - ${t('Mostefa Boudjema')}`
     })
+    useProjectJsonLd(newData);
   } else if (!projectPending.value) {
     project.value = null;
   }
@@ -40,6 +43,7 @@ function fetchProject() {
     useHead({
       title: `${project.value.title || project.value.name || 'Project'} - ${t('Mostefa Boudjema')}`
     })
+    useProjectJsonLd(project.value);
   }
 }
 

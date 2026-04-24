@@ -13,11 +13,15 @@
 import settings from "~/configs";
 import { useI18n } from 'vue-i18n';
 import { useHead } from '#imports'
+import { useJsonLd } from '~/composables/useJsonLd'
 
 const { t }=useI18n({
   inheritLocale: true,
   useScope: "global",
 });
+
+const { usePersonJsonLd } = useJsonLd()
+usePersonJsonLd(settings)
 useHead({
   title: () => `${t('Home')} - ${t('Mostefa Boudjema')}`,
   meta: [
