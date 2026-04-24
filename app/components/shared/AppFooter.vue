@@ -36,10 +36,9 @@ onMounted(() => {
                         target="__blank"
                         class="text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500"
                     >
-                        <Icon
-                            :name="`feather:${social.icon}`"
-                            class="w-5 sm:w-8 h-5 sm:h-8"
-                        />
+                        <i
+                            :class="`bi bi-${social.icon} text-2xl sm:text-4xl`"
+                        ></i>
                     </a>
                 </ul>
             </div>

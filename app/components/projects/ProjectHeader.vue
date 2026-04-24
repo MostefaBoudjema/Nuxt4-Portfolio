@@ -18,20 +18,18 @@ const { t } = useI18n();
                 </div>
                 <div class="flex sm:block justify-center">
                     <div class="flex mt-10 mr-10">
-                        <Icon
-                            name="feather:clock"
-                            class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
-                        />
+                        <i
+                            class="bi bi-clock w-4 h-4 text-ternary-dark dark:text-ternary-light"
+                        ></i>
                         <span
                             class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
                             >{{ t(singleProjectHeader.singleProjectDate) }}</span
                         >
                     </div>
                     <div class="flex mt-10">
-                        <Icon
-                            name="feather:tag"
-                            class="w-4 h-4 text-ternary-dark dark:text-ternary-light"
-                        />
+                        <i
+                            class="bi bi-tag w-4 h-4 text-ternary-dark dark:text-ternary-light"
+                        ></i>
                         <span
                             class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
                             >{{ t(singleProjectHeader.singleProjectTag) }}</span

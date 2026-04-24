@@ -60,7 +60,7 @@
           <template v-for="social in projectInfo.socialSharings" :key="social.id">
             <a v-if="social.url !== '#'" :href="social.url" target="_blank" aria-label="Share Project"
               class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500">
-              <Icon :name="`feather:${social.icon}`" class="w-4 lg:w-5 h-4 lg:h-5" />
+              <i :class="`bi bi-${social.icon} w-4 lg:w-5 h-4 lg:h-5`" ></i>
             </a>
           </template>
         </div>

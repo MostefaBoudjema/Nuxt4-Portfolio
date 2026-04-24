@@ -21,13 +21,13 @@ export default defineEventHandler(() => {
     {
       id: 4,
       name: 'Telegram',
-      icon: 'navigation',
+      icon: 'telegram',
       url: 'https://t.me/mostefa28',
     },
     {
       id: 5,
       name: 'Whatsapp',
-      icon: 'phone',
+      icon: 'whatsapp',
       url: 'https://wa.me/2130793692289',
     },
   ];

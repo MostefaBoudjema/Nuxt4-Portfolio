@@ -38,7 +38,7 @@
             class="text-ternary-dark dark:text-ternary-light hover:bg-black/10 dark:hover:bg-white/20 p-2 rounded-full transition-colors"
             aria-label="Close Chat"
           >
-            <Icon name="feather:x" class="w-5 h-5" />
+            <i class="bi bi-x w-5 h-5"></i>
           </button>
         </div>
 
@@ -91,7 +91,7 @@
               class="absolute right-1.5 p-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center w-8 h-8"
               :disabled="isLoading || !inputMessage.trim()"
             >
-              <Icon name="feather:send" class="w-4 h-4" :class="{'opacity-0': isLoading}" />
+              <i class="bi bi-send w-4 h-4" :class="{'opacity-0': isLoading}"></i>
               <div v-if="isLoading" class="absolute w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
             </button>
           </div>
