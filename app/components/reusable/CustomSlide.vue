@@ -9,18 +9,18 @@
                 lightboxActive = false;
             currLightboxImg = currImgIdx;
             ">
-                <img :src="imgList[currLightboxImg].img" />
+                <NuxtImg :src="imgList[currLightboxImg].img" />
                 <div class="prev" @click="goToImg(currLightboxImg - 1)"></div>
                 <div class="next" @click="goToImg(currLightboxImg + 1)"></div>
             </div>
             <!-- big image  -->
-            <img class="curr-Img" :src="imgList[currImgIdx].img" @click="lightboxActive = true" />
+            <NuxtImg class="curr-Img" :src="imgList[currImgIdx].img" @click="lightboxActive = true" />
             <!-- small images  -->
             <transition-group  class="CROP" :name="transition_name" tag="div">
                 <div class="Carousel_chunk" v-for="(chunk, i) in arrChunk" v-show="currSlide == i" :key="i">
                     <div class="chunk_item" v-for="(item, j) in chunk" :key="j" @click="currImgIdx = j + i * chunkSize"
                         :class="{ CURR: item.img == imgList[currImgIdx].img }">
-                        <img :src="item.img" />
+                        <NuxtImg :src="item.img" />
                     </div>
                 </div>
             </transition-group>

@@ -1,12 +1,13 @@
 <template>
   <div
-    class="mb-4 blog-post single font-general-regular rounded-lg p-4 shadow hover:shadow-lg transition bg-secondary-light dark:bg-secondary-dark text-ternary-dark dark:text-ternary-light flex flex-col md:flex-row md:items-stretch">
+    class="mb-4 blog-post single font-general-regular rounded-lg p-4 shadow hover:shadow-lg transition bg-secondary-light dark:bg-secondary-dark text-ternary-dark dark:text-ternary-light flex flex-col md:flex-row md:items-stretch"
+  >
     <div
       v-if="post.coverImage || post.image"
       class="w-full mb-4 md:w-1/4 md:mb-0 md:mr-4 rtl:md:mr-0 rtl:md:ml-4 flex-shrink-0"
     >
       <div class="aspect-[3/2] w-full rounded overflow-hidden">
-        <img
+        <NuxtImg
           :src="post.coverImage || post.image"
           :alt="post.title"
           class="object-cover w-full h-full"
@@ -18,7 +19,7 @@
       <div class="w-full">
         <h2 class="text-3xl font-bold mb-2">{{ post.title }}</h2>
         <div class="flex items-center mb-2 text-sm text-gray-500 dark:text-gray-400">
-          <img v-if="post.author && post.author.avatar" :src="post.author.avatar" :alt="post.author.name"
+          <NuxtImg v-if="post.author && post.author.avatar" :src="post.author.avatar" :alt="post.author.name"
             class="w-6 h-6 rounded-full mx-2" />
           <span v-if="post.author && post.author.name">{{ post.author.name }}</span>
           <span v-if="post.readingTime" class="mx-2">•</span>

@@ -7,10 +7,10 @@
                 <!-- Header logos -->
                 <div>
                     <a :href="localePath('/')">
-                        <img v-if="theme === 'light'"
+                        <NuxtImg v-if="theme === 'light'"
                             :src="$i18n.locale === 'ar' ? settings.logo_dark_ar : settings.logo_dark" class="w-36"
                             alt="Dark Logo" />
-                        <img v-else :src="$i18n.locale === 'ar' ? settings.logo_light_ar : settings.logo_light"
+                        <NuxtImg v-else :src="$i18n.locale === 'ar' ? settings.logo_light_ar : settings.logo_light"
                             class="w-36" alt="Light Logo" />
                     </a>
 

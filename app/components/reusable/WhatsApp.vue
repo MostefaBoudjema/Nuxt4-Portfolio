@@ -1,6 +1,6 @@
 <template>
     <a id="whatsapp" :href=whatsappLink data-aos="fade-up" target="_blank">
-        <img :src="whatsappImag" alt="Icon" />
+        <NuxtImg :src="whatsappImag" alt="Icon" />
     </a>
 </template>
 

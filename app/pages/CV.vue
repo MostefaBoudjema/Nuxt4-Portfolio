@@ -1,7 +1,7 @@
 <template>
 	<div class="cv-container bg-[#0f172a] dark:bg-[#0f172a] dark:text-gray-100 bg-white text-gray-900">
 		<div class="header bg-[#1e293b] dark:bg-[#1e293b] text-white">
-			<img :src="profile.photo" :alt="profile.name" class="profile-img">
+			<NuxtImg :src="profile.photo" :alt="profile.name" class="profile-img" />
 			<h1 class="name">{{ t(profile.name) }}</h1>
 			<p class="title">{{ t(profile.title) }}</p>
 		</div>

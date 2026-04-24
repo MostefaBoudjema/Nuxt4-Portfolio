@@ -14,7 +14,7 @@
           <div class="flex gap-3">
             <!-- Post Image -->
             <div class="flex-shrink-0">
-              <img 
+              <NuxtImg 
                 :src="post.coverImage || post.image" 
                 :alt="post.title"
                 class="w-16 h-16 object-cover rounded-lg border border-gray-200 dark:border-gray-600"

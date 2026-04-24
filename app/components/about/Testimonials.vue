@@ -20,7 +20,7 @@
 			<Slide v-for="(testimonial, idx) in testimonials" :key="idx">
 				<div
 					class="testimonial-slide bg-white dark:bg-secondary-dark shadow rounded-lg p-6 flex flex-col items-center text-center border border-gray-100 dark:border-ternary-dark mx-2 h-full">
-					<img :src="testimonial.avatar" alt="avatar"
+					<NuxtImg :src="testimonial.avatar" alt="avatar"
 						class="w-24 h-24 rounded-full mb-4 border-2 border-gray-200 dark:border-ternary-dark" />
 					<p class="text-gray-700 dark:text-gray-200 italic mb-2">"{{ testimonial.quote }}" <a
 							:href="testimonial.link" target="_blank"

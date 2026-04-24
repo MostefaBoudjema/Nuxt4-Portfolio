@@ -28,7 +28,7 @@
 
         <!-- Cover Image -->
         <div v-if="post.coverImage || post.image" class="mb-8 flex justify-center">
-          <img :src="post.coverImage || post.image" :alt="post.title" class="object-cover rounded-lg w-full max-h-80 border border-gray-200 dark:border-gray-700" />
+          <NuxtImg :src="post.coverImage || post.image" :alt="post.title" class="object-cover rounded-lg w-full max-h-80 border border-gray-200 dark:border-gray-700" />
         </div>
 
         <!-- Excerpt -->
@@ -39,7 +39,7 @@
 
         <!-- Author Card -->
         <div v-if="post.author && post.author.name!='Mostefa Boudjema'" class="flex items-center gap-4 mt-12 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-sm border-t border-gray-200 dark:border-gray-700 pt-6">
-          <img v-if="post.author.avatar" :src="post.author.avatar" :alt="post.author.name" class="w-14 h-14 rounded-full border object-cover" />
+          <NuxtImg v-if="post.author.avatar" :src="post.author.avatar" :alt="post.author.name" class="w-14 h-14 rounded-full border object-cover" />
           <div>
             <div class="font-semibold text-lg text-gray-900 dark:text-gray-100">{{ post.author.name }}</div>
             <div class="text-blue-600 dark:text-blue-400 text-sm">{{ post.author.bio || 'Author' }}</div>

@@ -12,7 +12,7 @@
 				<div v-for="post in filteredPosts" :key="post.id" class="relative">
 					<NuxtLink :to="localePath(`/blog/${post.slug}`)"
 						class="block group rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
-						<img :src="post.coverImage" alt="post thumbnail"
+						<NuxtImg :src="post.coverImage" alt="post thumbnail"
 							class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110" />
 
 						<!-- Title overlay -->
