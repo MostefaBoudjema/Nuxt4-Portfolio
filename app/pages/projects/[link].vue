@@ -28,31 +28,23 @@ const project = ref(null);
 watch(projectData, (newData) => {
   if (newData) {
     project.value = newData;
-    useHead({
-      title: `${newData.title || newData.name || 'Project'} - ${t('Mostefa Boudjema')}`
-    })
-    useProjectJsonLd(newData);
   } else if (!projectPending.value) {
     project.value = null;
   }
 }, { immediate: true });
 
-function fetchProject() {
-  if (projectData.value) {
-    project.value = projectData.value;
-    useHead({
-      title: `${project.value.title || project.value.name || 'Project'} - ${t('Mostefa Boudjema')}`
-    })
-    useProjectJsonLd(project.value);
-  }
-}
+useHead(() => ({
+  title: project.value 
+    ? `${project.value.title || project.value.name || 'Project'} - ${t('Mostefa Boudjema')}`
+    : `${t('Mostefa Boudjema')}`
+}));
 
-onMounted(() => {
-  fetchProject();
-});
+useProjectJsonLd(() => project.value);
 
 watch(() => route.params.link, () => {
-  fetchProject();
+  if (projectData.value) {
+    project.value = projectData.value;
+  }
 });
 </script>
 
@@ -74,7 +66,13 @@ watch(() => route.params.link, () => {
             <ProjectInfo :projectInfo="project.projectInfo" :smallImages="project.smallImages"/>
             <div class="block sm:flex gap-0 sm:gap-10 mt-14">
                 <!-- Project related projects -->
-                <ProjectRelatedProjects :relatedProject="relatedProject" />
+                <ProjectRelatedProjects v-if="!relatedPending" :relatedProject="relatedProject" />
+                <div v-else class="w-full">
+                    <div class="h-10 w-48 bg-gray-200 dark:bg-gray-700 animate-pulse mb-10 rounded"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-4 sm:gap-10 mt-12">
+                        <div v-for="i in 4" :key="i" class="h-40 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-xl"></div>
+                    </div>
+                </div>
             </div>
         </template>
 

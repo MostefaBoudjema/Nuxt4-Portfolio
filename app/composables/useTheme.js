@@ -20,19 +20,17 @@ function toggleTheme() {
   setTheme(theme.value === 'light' ? 'dark' : 'light');
 }
 
-// Update <body> class whenever theme changes
-if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-  watch(theme, (newTheme) => {
-    const body = document.body;
-    body.classList.remove('bg-primary-dark', 'bg-secondary-light');
-    if (newTheme === 'dark') {
-      body.classList.add('bg-primary-dark');
-    } else {
-      body.classList.add('bg-secondary-light');
-    }
-  }, { immediate: true });
-}
-
 export function useTheme() {
+  if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+    watch(theme, (newTheme) => {
+      const body = document.body;
+      body.classList.remove('bg-primary-dark', 'bg-secondary-light');
+      if (newTheme === 'dark') {
+        body.classList.add('bg-primary-dark');
+      } else {
+        body.classList.add('bg-secondary-light');
+      }
+    }, { immediate: true });
+  }
   return { theme, setTheme, toggleTheme };
-} 
+}

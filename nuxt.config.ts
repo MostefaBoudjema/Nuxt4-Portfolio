@@ -61,6 +61,8 @@ gtag('config', 'G-L5HVZ2VCP7');`,
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxt/image',
+        'nuxt-simple-sitemap',
+        'nuxt-simple-robots',
         [
             '@nuxtjs/i18n',
             {
@@ -117,8 +119,24 @@ gtag('config', 'G-L5HVZ2VCP7');`,
                 '@intlify/core-base',
                 '@intlify/message-compiler',
                 '@intlify/shared',
+                'rss',
             ],
         },
+    },
+
+    site: {
+        url: 'https://mostefa-webdev.vercel.app',
+        name: 'Mostefa Boudjema Portfolio',
+    },
+
+    sitemap: {
+        autoLastmod: true,
+        discoverImages: true,
+    },
+
+    robots: {
+        allow: ['/'],
+        disallow: ['/private'],
     },
 
     runtimeConfig: {

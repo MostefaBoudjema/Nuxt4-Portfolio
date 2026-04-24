@@ -1,24 +1,26 @@
-
 export const useJsonLd = () => {
   const runtimeConfig = useRuntimeConfig();
   const { t, locale } = useI18n();
 
   const generatePersonSchema = (configs) => {
+    const contacts = configs.contacts || [];
+    const socials = configs.socials || [];
+    
     return {
       '@context': 'https://schema.org',
       '@type': 'Person',
       name: configs.name,
       jobTitle: t(configs.jobTitle || 'Job Title4'),
       url: 'https://mostefaboudjema.com', // Replace with actual domain if known
-      image: `https://mostefaboudjema.com${configs.profile_photo}`,
+      image: configs.profile_photo ? `https://mostefaboudjema.com${configs.profile_photo}` : undefined,
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Annaba',
         addressCountry: 'DZ'
       },
-      email: configs.contacts.find(c => c.icon === 'mail')?.name,
-      telephone: configs.contacts.find(c => c.icon === 'phone')?.name,
-      sameAs: configs.socials.map(s => s.link).filter(l => l && l !== 'Telegram'), // Filter out placeholders
+      email: contacts.find(c => c.icon === 'mail')?.name,
+      telephone: contacts.find(c => c.icon === 'phone')?.name,
+      sameAs: socials.map(s => s.url || s.link).filter(l => l && !l.includes('Telegram')),
       description: t('AboutMe1')
     };
   };
@@ -51,26 +53,45 @@ export const useJsonLd = () => {
     return schema;
   };
 
-  const usePersonJsonLd = (configs) => {
-    useHead({
+  const usePersonJsonLd = async (configs) => {
+    const personConfigs = ref(configs);
+
+    useHead(() => ({
       script: [
         {
           type: 'application/ld+json',
-          innerHTML: JSON.stringify(generatePersonSchema(configs))
+          innerHTML: JSON.stringify(generatePersonSchema(personConfigs.value))
         }
       ]
-    });
+    }));
+
+    // If contacts/socials are missing, try to fetch them to enrich the schema
+    if (!configs.contacts || !configs.socials) {
+      try {
+        const [ contacts, socials ] = await Promise.all([
+          $fetch('/api/v1/contacts'),
+          $fetch('/api/v1/social-links')
+        ]);
+        personConfigs.value = { ...personConfigs.value, contacts, socials };
+      } catch (e) {
+        console.error('Failed to fetch contacts/socials for JSON-LD:', e);
+      }
+    }
   };
 
   const useProjectJsonLd = (project) => {
-    if (!project) return;
-    useHead({
-      script: [
-        {
-          type: 'application/ld+json',
-          innerHTML: JSON.stringify(generateProjectSchema(project))
-        }
-      ]
+    useHead(() => {
+      const p = typeof project === 'function' ? project() : (project.value || project);
+      if (!p) return {};
+      
+      return {
+        script: [
+          {
+            type: 'application/ld+json',
+            innerHTML: JSON.stringify(generateProjectSchema(p))
+          }
+        ]
+      };
     });
   };
 

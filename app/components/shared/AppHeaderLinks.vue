@@ -28,6 +28,7 @@
 
 
 <script setup>
+import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import settings from "~/configs";
 import { useLocalePath } from "#i18n";

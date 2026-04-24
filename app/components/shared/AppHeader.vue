@@ -76,7 +76,7 @@
     </nav>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -84,10 +84,6 @@ import AppHeaderLinks from "./AppHeaderLinks.vue";
 import settings from "~/configs";
 import useThemeSwitcher from '~/composables/useThemeSwitcher';
 import { useLocalePath } from '#i18n';
-
-const { data: categories } = await useFetch('/api/v1/categories');
-const { data: contacts } = await useFetch('/api/v1/contacts');
-const { data: socialLinks } = await useFetch('/api/v1/social-links');
 
 const { t } = useI18n({
     inheritLocale: true,
@@ -100,14 +96,26 @@ const lang=ref('');
 const modal=ref(false);
 const show_multi_lang_client = ref(false);
 
+const localePath=useLocalePath();
+const { currentTheme }=useThemeSwitcher();
+const config = useRuntimeConfig();
+
+// Check runtime config for multi-lang
+if (config && config.public) {
+    const val = config.public.showMultiLang || config.public.SHOW_MULTI_LANG || config.public.NUXT_PUBLIC_SHOW_MULTI_LANG;
+    show_multi_lang_client.value = val === true || val === 'true' || val === 1 || val === '1';
+}
+
+const { data: categories } = await useFetch('/api/v1/categories');
+const { data: contacts } = await useFetch('/api/v1/contacts');
+const { data: socialLinks } = await useFetch('/api/v1/social-links');
+
 const langRoot=computed(() => {
     // Adjust as needed for your routing strategy
     return lang.value==='en'? '/':`/${lang.value}`;
 });
 
-const localePath=useLocalePath();
 
-const { currentTheme }=useThemeSwitcher();
 
 onMounted(() => {
     // Get theme from localStorage or default to dark
@@ -118,17 +126,6 @@ onMounted(() => {
     watch(currentTheme, (newTheme) => {
         theme.value=newTheme;
     });
-
-    // Check runtime config for multi-lang after mount
-    try {
-        const config=typeof useRuntimeConfig==='function'? useRuntimeConfig():null;
-        if (config&&config.public) {
-            const val=config.public.showMultiLang||config.public.SHOW_MULTI_LANG||config.public.NUXT_PUBLIC_SHOW_MULTI_LANG;
-            show_multi_lang_client.value=val===true||val==='true'||val===1||val==='1';
-        }
-    } catch (e) {
-        // fallback
-    }
 });
 
 const updateTheme=(newTheme) => {

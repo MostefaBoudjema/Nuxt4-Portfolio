@@ -13,14 +13,14 @@
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n';
 
-const { data: posts, pending } = await useFetch('/api/v1/posts', {
-  lazy: true
-});
 const { t } = useI18n();
-
 useHead({
   title: () => `${t('Blog')} - ${t('Mostefa Boudjema')}`
 })
+
+const { data: posts, pending } = await useFetch('/api/v1/posts', {
+  lazy: true
+});
 </script>
 
 <style scoped>

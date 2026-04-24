@@ -1,5 +1,5 @@
 <template>
-    <div class="border-primary-light dark:border-secondary-dark">
+    <div v-if="relatedProject" class="border-primary-light dark:border-secondary-dark">
         <p
             class="font-general-regular text-primary-dark dark:text-primary-light text-3xl font-bold mb-10 sm:mb-14" :class="locale==='ar'?'text-right':'text-left'">
             {{ $t(relatedProject.relatedProjectsHeading) }}

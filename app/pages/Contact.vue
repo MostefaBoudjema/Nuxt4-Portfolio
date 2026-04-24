@@ -22,13 +22,13 @@ import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n';
 
 const settings=ref(settingsData);
-const { data: socials } = await useFetch('/api/v1/social-links');
-
-
 const { t } = useI18n();
 useHead({
   title: () => `${t('Contact')} - ${t('Mostefa Boudjema')}`
 })
+
+const { data: socials } = await useFetch('/api/v1/social-links');
+
 
 onMounted(() => {
 });

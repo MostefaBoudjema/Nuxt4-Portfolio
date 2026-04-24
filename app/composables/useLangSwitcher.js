@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n';
 
 export default function useLangSwitcher() {
 	const { locale } = useI18n();
+    const i18n = useI18n();
 	const currentLang = ref(locale.value);
 
 	function toggleLang() {

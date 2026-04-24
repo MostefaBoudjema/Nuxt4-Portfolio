@@ -106,6 +106,10 @@
 
 <script setup>
 import { ref, computed, onBeforeUnmount } from 'vue';
+import { useRuntimeConfig, useLocalePath } from '#imports';
+
+const config = useRuntimeConfig();
+const localePath = useLocalePath();
 
 const currentStep=ref(0);
 const formData=ref({
@@ -254,7 +258,6 @@ async function submitForm() {
 			timeline: formData.value.timeline==='other'? formData.value.timelineCustom:formData.value.timeline
 		};
 
-		const config = useRuntimeConfig();
 		const apiUrl = config.public.apiUrl || 'https://backend-mostefa-boudjema.vercel.app';
 		const response=await fetch(`${apiUrl}/send-email`, {
 			method: 'POST',
@@ -269,7 +272,6 @@ async function submitForm() {
 		if (response.ok) {
 			submissionSuccess.value=true;
 			// Set timeout to hide success message and redirect to home page
-			const localePath=useLocalePath(); // Nuxt composable
 			successTimeout.value=setTimeout(() => {
 				submissionSuccess.value=false;
 				navigateTo(localePath('/'));

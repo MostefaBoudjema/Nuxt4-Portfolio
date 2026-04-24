@@ -10,7 +10,8 @@
 
 <script setup>
 
-import settings from "~/configs";
+import configs from "~/configs";
+const settings = configs;
 import { useI18n } from 'vue-i18n';
 import { useHead } from '#imports'
 import { useJsonLd } from '~/composables/useJsonLd'
@@ -20,8 +21,6 @@ const { t }=useI18n({
   useScope: "global",
 });
 
-const { usePersonJsonLd } = useJsonLd()
-usePersonJsonLd(settings)
 useHead({
   title: () => `${t('Home')} - ${t('Mostefa Boudjema')}`,
   meta: [
@@ -35,6 +34,9 @@ useHead({
     }
   ],
 })
+
+const { usePersonJsonLd } = useJsonLd()
+await usePersonJsonLd(settings)
 </script>
 
 <style scoped></style>
