@@ -32,7 +32,7 @@ const cover29 = '/images/posts/top-developer-tools-2025.webp';
 const cover30 = '/images/posts/not-found-image.webp';
 const cover31 = '/images/posts/web-dev-pitch-2025-dz.webp';
 const cover32 = '/images/posts/jobs-that-need-website-2025.webp';
-const cover33 = '/images/posts/basic-medical-cabinet-web-app.webp';
+const cover33 = '/images/posts/modern-clinic-management-system-2026.webp';
 const cover34 = '/images/posts/find-freelance-clients-linkedin-laravel.webp';
 const cover35 = '/images/posts/docker-setup-laravel-apache-mysql.webp';
 const cover36 = '/images/posts/linkedin-beginners-guide-2026-ar.webp';
@@ -45,43 +45,45 @@ const cover42 = '/images/posts/not-found-image.webp';
 const cover43 = '/images/posts/not-found-image.webp';
 const cover44 = '/images/posts/not-found-image.webp';
 const not_found_image = '/images/posts/not-found-image.webp';
-const authorMostefaBoudjema={
-  name: 'Mostefa Boudjema',
-  avatar: me1,
-  bio: 'Laravel dev'
+const authorMostefaBoudjema = {
+    name: 'Mostefa Boudjema',
+    avatar: me1,
+    bio: 'Laravel dev',
 };
-const authorMostefaBoudjemaAR={
-  name: 'مصطفى بوجمعة',
-  avatar: me1,
-  bio: 'مطور لارافيل'
+const authorMostefaBoudjemaAR = {
+    name: 'مصطفى بوجمعة',
+    avatar: me1,
+    bio: 'مطور لارافيل',
 };
-const authorMostefaBoudjemaFR={
-  name: 'Mostefa Boudjema',
-  avatar: me1,
-  bio: 'Développeur Laravel'
+const authorMostefaBoudjemaFR = {
+    name: 'Mostefa Boudjema',
+    avatar: me1,
+    bio: 'Développeur Laravel',
 };
 
 // Nuxt 3: Use runtime config for useAllPosts
 
-
-let postsList=[
-  {
-    id: 1,
-    lang: 'en',
-    title: 'Getting Started with Laravel 11: A Step-by-Step Guide',
-    summary: 'A beginner-friendly walkthrough to set up, configure, and run your first Laravel 11 application.',
-    date: '2025-07-02',
-    tags: ['laravel', 'php', 'getting started'],
-    slug: 'getting-started-laravel-11',
-    author: authorMostefaBoudjema,
-    coverImage: cover1,
-    readingTime: '4 min read',
-    published: true,
-    category: 'Backend',
-    updatedAt: '2025-07-02',
-    metaDescription: 'Learn how to install and run your first Laravel 11 project step-by-step.',
-    excerpt: 'Kickstart your Laravel 11 journey with this beginner-friendly guide to installation, configuration, and setup.',
-    content: `
+let postsList = [
+    {
+        id: 1,
+        lang: 'en',
+        title: 'Getting Started with Laravel 11: A Step-by-Step Guide',
+        summary:
+            'A beginner-friendly walkthrough to set up, configure, and run your first Laravel 11 application.',
+        date: '2025-07-02',
+        tags: ['laravel', 'php', 'getting started'],
+        slug: 'getting-started-laravel-11',
+        author: authorMostefaBoudjema,
+        coverImage: cover1,
+        readingTime: '4 min read',
+        published: true,
+        category: 'Backend',
+        updatedAt: '2025-07-02',
+        metaDescription:
+            'Learn how to install and run your first Laravel 11 project step-by-step.',
+        excerpt:
+            'Kickstart your Laravel 11 journey with this beginner-friendly guide to installation, configuration, and setup.',
+        content: `
     ## Introduction
     
     Laravel 11 is a powerful and elegant PHP framework built to make web development faster and cleaner. Whether you're building a personal project or an enterprise-level app, Laravel provides a rich set of tools to speed up development.
@@ -257,26 +259,29 @@ let postsList=[
     > ⭐ Bonus tip: Follow Laravel News and the official docs to stay updated.
     
     Happy coding! 🚀
-    `
-  },
+    `,
+    },
 
-  {
-    id: 2,
-    lang: 'en',
-    title: 'Best Technology to Learn in 2025',
-    summary: 'Explore the top technologies you should master in 2025 to stay ahead in tech.',
-    date: '2025-07-05',
-    tags: ['trending tech', 'career growth', 'web development'],
-    slug: 'best-technology-to-learn-2025',
-    author: authorMostefaBoudjema,
-    coverImage: cover2,
-    readingTime: '4 min read',
-    published: true,
-    category: 'Tech Trends',
-    updatedAt: '2025-07-05',
-    metaDescription: 'Discover the best technologies to learn in 2025 for developers and tech enthusiasts.',
-    excerpt: 'Top skills to stay ahead in the rapidly evolving tech industry.',
-    content: `## Best Technologies to Learn in 2025
+    {
+        id: 2,
+        lang: 'en',
+        title: 'Best Technology to Learn in 2025',
+        summary:
+            'Explore the top technologies you should master in 2025 to stay ahead in tech.',
+        date: '2025-07-05',
+        tags: ['trending tech', 'career growth', 'web development'],
+        slug: 'best-technology-to-learn-2025',
+        author: authorMostefaBoudjema,
+        coverImage: cover2,
+        readingTime: '4 min read',
+        published: true,
+        category: 'Tech Trends',
+        updatedAt: '2025-07-05',
+        metaDescription:
+            'Discover the best technologies to learn in 2025 for developers and tech enthusiasts.',
+        excerpt:
+            'Top skills to stay ahead in the rapidly evolving tech industry.',
+        content: `## Best Technologies to Learn in 2025
 
     Technology is evolving faster than ever, and staying updated is critical for every developer. Whether you're starting out or looking to upskill, here are the top tech trends to invest in for 2025.
     
@@ -347,25 +352,27 @@ let postsList=[
     ---
     
     _“Learning never exhausts the mind.” – Leonardo da Vinci_
-    `
-  },
-  {
-    id: 2,
-    lang: 'ar',
-    title: 'أفضل التقنيات لتعلمها في 2025',
-    summary: 'اكتشف أبرز التقنيات اللي لازم تتعلمها في 2025 باش تبقى دايمًا مواكب.',
-    date: '2025-07-05',
-    tags: ['تقنية حديثة', 'تطوير المهارات', 'تطوير الويب', 'laravel'],
-    slug: 'best-technology-to-learn-2025-ar',
-    author: authorMostefaBoudjemaAR,
-    coverImage: cover2,
-    readingTime: '4 دقائق قراءة',
-    published: true,
-    category: 'اتجاهات تقنية',
-    updatedAt: '2025-07-05',
-    metaDescription: 'تعرف على أفضل التقنيات اللي لازم تتعلمها في 2025 كمطور أو هاوي للتكنولوجيا.',
-    excerpt: 'مهارات أساسية باش تبقى سابق في عالم التقنية المتطور.',
-    content: `## أفضل التقنيات لتعلمها في 2025
+    `,
+    },
+    {
+        id: 2,
+        lang: 'ar',
+        title: 'أفضل التقنيات لتعلمها في 2025',
+        summary:
+            'اكتشف أبرز التقنيات اللي لازم تتعلمها في 2025 باش تبقى دايمًا مواكب.',
+        date: '2025-07-05',
+        tags: ['تقنية حديثة', 'تطوير المهارات', 'تطوير الويب', 'laravel'],
+        slug: 'best-technology-to-learn-2025-ar',
+        author: authorMostefaBoudjemaAR,
+        coverImage: cover2,
+        readingTime: '4 دقائق قراءة',
+        published: true,
+        category: 'اتجاهات تقنية',
+        updatedAt: '2025-07-05',
+        metaDescription:
+            'تعرف على أفضل التقنيات اللي لازم تتعلمها في 2025 كمطور أو هاوي للتكنولوجيا.',
+        excerpt: 'مهارات أساسية باش تبقى سابق في عالم التقنية المتطور.',
+        content: `## أفضل التقنيات لتعلمها في 2025
 
 التكنولوجيا راهي تتطور بسرعة كبيرة، ولازم كل مطور يكون دايمًا على الخط. سواء كنت مبتدئ أو حاب تطور مهاراتك، هاذي أبرز المجالات اللي تستاهل تعطيها من وقتك في 2025.
 
@@ -436,26 +443,28 @@ Laravel مازال ملك في عالم PHP. أدوات كيما **Livewire**، 
 ---
 
 _“العقل لا يتعب من التعلم.” – ليوناردو دا فينشي_
-`
-  }
-  ,
-  {
-    id: 3,
-    lang: 'en',
-    title: 'Best Laravel-Related Technologies to Learn in 2025',
-    summary: 'Explore top Laravel-related tools and technologies that will boost your productivity and job prospects in 2025.',
-    date: '2025-07-07',
-    tags: ['laravel', 'php', 'backend', 'productivity'],
-    slug: 'best-laravel-related-tech-2025',
-    author: authorMostefaBoudjema,
-    coverImage: cover3,
-    readingTime: '10 min read',
-    published: true,
-    category: 'Backend',
-    updatedAt: '2025-07-07',
-    metaDescription: 'Discover the top Laravel-related tools and technologies to learn in 2025 — from Livewire and Filament to Octane and Vapor.',
-    excerpt: 'Master the Laravel ecosystem in 2025 with these powerful tools and frameworks.',
-    content: `
+`,
+    },
+    {
+        id: 3,
+        lang: 'en',
+        title: 'Best Laravel-Related Technologies to Learn in 2025',
+        summary:
+            'Explore top Laravel-related tools and technologies that will boost your productivity and job prospects in 2025.',
+        date: '2025-07-07',
+        tags: ['laravel', 'php', 'backend', 'productivity'],
+        slug: 'best-laravel-related-tech-2025',
+        author: authorMostefaBoudjema,
+        coverImage: cover3,
+        readingTime: '10 min read',
+        published: true,
+        category: 'Backend',
+        updatedAt: '2025-07-07',
+        metaDescription:
+            'Discover the top Laravel-related tools and technologies to learn in 2025 — from Livewire and Filament to Octane and Vapor.',
+        excerpt:
+            'Master the Laravel ecosystem in 2025 with these powerful tools and frameworks.',
+        content: `
   ## Introduction
   
   Laravel keeps evolving, and the ecosystem around it is getting more powerful. In 2025, mastering Laravel alone isn’t enough — you need to embrace the tools and packages that supercharge development.
@@ -556,25 +565,28 @@ _“العقل لا يتعب من التعلم.” – ليوناردو دا ف�
   
   > Focus on the tools that align with your goals (SaaS, APIs, admin panels), and go deep. Laravel in 2025 is all about productivity and performance.
   
-  `
-  },
-  {
-    id: 3,
-    lang: 'fr',
-    title: 'Les Meilleures Technologies Liées à Laravel à Apprendre en 2025',
-    summary: 'Découvrez les meilleurs outils et technologies autour de Laravel qui boosteront votre productivité et vos opportunités en 2025.',
-    date: '2025-07-07',
-    tags: ['laravel', 'php', 'backend', 'productivité'],
-    slug: 'meilleures-technos-laravel-2025',
-    author: authorMostefaBoudjemaFR,
-    coverImage: cover3,
-    readingTime: '10 min de lecture',
-    published: true,
-    category: 'Backend',
-    updatedAt: '2025-07-07',
-    metaDescription: 'Découvrez les outils et technologies Laravel les plus puissants à maîtriser en 2025 — Livewire, Filament, Octane, Vapor et plus encore.',
-    excerpt: 'Maîtrisez l’écosystème Laravel en 2025 avec ces outils et frameworks incontournables.',
-    content: `
+  `,
+    },
+    {
+        id: 3,
+        lang: 'fr',
+        title: 'Les Meilleures Technologies Liées à Laravel à Apprendre en 2025',
+        summary:
+            'Découvrez les meilleurs outils et technologies autour de Laravel qui boosteront votre productivité et vos opportunités en 2025.',
+        date: '2025-07-07',
+        tags: ['laravel', 'php', 'backend', 'productivité'],
+        slug: 'meilleures-technos-laravel-2025',
+        author: authorMostefaBoudjemaFR,
+        coverImage: cover3,
+        readingTime: '10 min de lecture',
+        published: true,
+        category: 'Backend',
+        updatedAt: '2025-07-07',
+        metaDescription:
+            'Découvrez les outils et technologies Laravel les plus puissants à maîtriser en 2025 — Livewire, Filament, Octane, Vapor et plus encore.',
+        excerpt:
+            'Maîtrisez l’écosystème Laravel en 2025 avec ces outils et frameworks incontournables.',
+        content: `
 ## Introduction
 
 Laravel évolue constamment, et son écosystème devient de plus en plus riche. En 2025, il ne suffit plus de connaître Laravel — il faut aussi maîtriser les outils qui accélèrent le développement.
@@ -665,26 +677,28 @@ Laravel, c’est plus qu’un framework : c’est un écosystème complet.
 Maîtriser Livewire, Filament, Octane et Vapor fera de vous un **développeur Laravel moderne** — rapide, efficace et prêt à scaler.
 
 > Choisissez les outils selon vos objectifs (SaaS, API, outils internes) et allez en profondeur.
-`
-  }
-  ,
-  {
-    id: 3,
-    lang: 'ar',
-    title: 'أهم التقنيات المرتبطة بلارافيل لي لازمك تتعلمها في 2025',
-    summary: 'شوف الأدوات والتقنيات لي مع لارافيل باش تزيد في الإنتاجية وتفتح بيبان جديدة في خدمتك كمطور.',
-    date: '2025-07-07',
-    tags: ['laravel', 'php', 'backend', 'إنتاجية'],
-    slug: 'تقنيات-لارافيل-2025',
-    author: authorMostefaBoudjemaAR,
-    coverImage: cover3,
-    readingTime: '10 دقايق قراية',
-    published: true,
-    category: 'الخلفية',
-    updatedAt: '2025-07-07',
-    metaDescription: 'تعرف على الأدوات والتقنيات المهمة لي تخليك قوي في لارافيل في عام 2025 — كيف Livewire، Filament، Octane، Vapor، وغيرهم.',
-    excerpt: 'تحكم في منظومة لارافيل في 2025 بهذو الأدوات القوية وسهّل حياتك كمطور.',
-    content: `
+`,
+    },
+    {
+        id: 3,
+        lang: 'ar',
+        title: 'أهم التقنيات المرتبطة بلارافيل لي لازمك تتعلمها في 2025',
+        summary:
+            'شوف الأدوات والتقنيات لي مع لارافيل باش تزيد في الإنتاجية وتفتح بيبان جديدة في خدمتك كمطور.',
+        date: '2025-07-07',
+        tags: ['laravel', 'php', 'backend', 'إنتاجية'],
+        slug: 'تقنيات-لارافيل-2025',
+        author: authorMostefaBoudjemaAR,
+        coverImage: cover3,
+        readingTime: '10 دقايق قراية',
+        published: true,
+        category: 'الخلفية',
+        updatedAt: '2025-07-07',
+        metaDescription:
+            'تعرف على الأدوات والتقنيات المهمة لي تخليك قوي في لارافيل في عام 2025 — كيف Livewire، Filament، Octane، Vapor، وغيرهم.',
+        excerpt:
+            'تحكم في منظومة لارافيل في 2025 بهذو الأدوات القوية وسهّل حياتك كمطور.',
+        content: `
 ## المقدمة
 
 لارافيل راهو يتطور من عام لعام، واللي يخدمو بيه ويفهمو النظام اللي معاه، ديما يكونو سابقين بخطوة. في 2025، ما يكفيش تعرف تخدم غير لارافيل — لازمك تتعلم الأدوات لي تعاونك تخدم أسرع وبطريقة أنظف.
@@ -774,27 +788,35 @@ Forge وVapor يخلوك تنشر التطبيقات بلا ما تدخل في �
 إذا ركزت على الأدوات الصح كيما Livewire، Filament، Octane وVapor، راك تولي مطور لارافيل عصري يخدم بذكاء وسرعة.
 
 > نصيحة أخوية: شوف انت وين حاب تروح (SaaS؟ APIs؟ لوحات تحكم؟) وخدم صح على الأدوات لي تخدم مصلحتك.
-`
-  }
-
-  ,
-  {
-    id: 4,
-    lang: 'en',
-    title: 'Top Remote Job Platforms for Full-Stack Developers (International-Friendly)',
-    summary: 'A curated list of the best remote job platforms that hire full-stack developers globally — no entry fees, no location bias.',
-    date: '2025-07-09',
-    tags: ['remote work', 'full-stack', 'job search', 'laravel', 'vue', 'freelance'],
-    slug: 'top-remote-job-platforms-fullstack-developers',
-    author: authorMostefaBoudjema,
-    coverImage: cover4,
-    readingTime: '5 min read',
-    published: true,
-    category: 'Career',
-    updatedAt: '2025-07-09',
-    metaDescription: 'Explore the top international-friendly remote job platforms for full-stack developers. Laravel, Vue, and React developers welcome.',
-    excerpt: 'Best remote job platforms for full-stack developers that support international applicants without fees. Includes curated dev boards and freelance sites.',
-    content: `
+`,
+    },
+    {
+        id: 4,
+        lang: 'en',
+        title: 'Top Remote Job Platforms for Full-Stack Developers (International-Friendly)',
+        summary:
+            'A curated list of the best remote job platforms that hire full-stack developers globally — no entry fees, no location bias.',
+        date: '2025-07-09',
+        tags: [
+            'remote work',
+            'full-stack',
+            'job search',
+            'laravel',
+            'vue',
+            'freelance',
+        ],
+        slug: 'top-remote-job-platforms-fullstack-developers',
+        author: authorMostefaBoudjema,
+        coverImage: cover4,
+        readingTime: '5 min read',
+        published: true,
+        category: 'Career',
+        updatedAt: '2025-07-09',
+        metaDescription:
+            'Explore the top international-friendly remote job platforms for full-stack developers. Laravel, Vue, and React developers welcome.',
+        excerpt:
+            'Best remote job platforms for full-stack developers that support international applicants without fees. Includes curated dev boards and freelance sites.',
+        content: `
   ## Introduction
   
   Remote work is booming, but finding the **right platforms** that accept **international applicants** without charging upfront fees can be tricky — especially as a **full-stack developer** working with stacks like Laravel, Vue, or React.
@@ -906,25 +928,28 @@ Forge وVapor يخلوك تنشر التطبيقات بلا ما تدخل في �
   - Need help building a portfolio or CV for Arc/Toptal?
   
   Let me know — I’ve got you covered.
-    `
-  },
-  {
-    id: 5,
-    lang: 'en',
-    title: 'Laravel Packages You Must Know as a Developer',
-    summary: 'Level up your Laravel development by using the best community-supported packages for performance, security, and productivity.',
-    date: '2025-07-13',
-    tags: ['laravel', 'php', 'backend', 'tools', 'packages'],
-    slug: 'laravel-packages-you-must-know',
-    author: authorMostefaBoudjema,
-    coverImage: cover5,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Backend',
-    updatedAt: '2025-07-13',
-    metaDescription: 'Discover the top Laravel packages that every backend developer should know. Boost performance, security, and productivity in your projects.',
-    excerpt: 'A practical list of essential Laravel packages that solve real problems — from debugging and security to file uploads and APIs.',
-    content: `
+    `,
+    },
+    {
+        id: 5,
+        lang: 'en',
+        title: 'Laravel Packages You Must Know as a Developer',
+        summary:
+            'Level up your Laravel development by using the best community-supported packages for performance, security, and productivity.',
+        date: '2025-07-13',
+        tags: ['laravel', 'php', 'backend', 'tools', 'packages'],
+        slug: 'laravel-packages-you-must-know',
+        author: authorMostefaBoudjema,
+        coverImage: cover5,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Backend',
+        updatedAt: '2025-07-13',
+        metaDescription:
+            'Discover the top Laravel packages that every backend developer should know. Boost performance, security, and productivity in your projects.',
+        excerpt:
+            'A practical list of essential Laravel packages that solve real problems — from debugging and security to file uploads and APIs.',
+        content: `
   ## Introduction
   
   Laravel is great out of the box — but the ecosystem around it is even better. With thousands of open-source packages, you can boost productivity, reduce boilerplate, and solve complex tasks in minutes.
@@ -1059,26 +1084,28 @@ Forge وVapor يخلوك تنشر التطبيقات بلا ما تدخل في �
   - Need tips on writing your own Laravel packages?
   
   Let me know — happy to help.
-    `
-  }
-  ,
-  {
-    id: 6,
-    lang: 'en',
-    title: 'Best MVC Frameworks Developers Should Know in 2025',
-    summary: 'Explore the top MVC frameworks used by developers in 2025 — whether you’re building web apps, APIs, or full-stack projects.',
-    date: '2025-07-15',
-    tags: ['mvc', 'frameworks', 'laravel', 'backend', 'architecture'],
-    slug: 'best-mvc-frameworks-2025',
-    author: authorMostefaBoudjema,
-    coverImage: cover6,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Architecture',
-    updatedAt: '2025-07-15',
-    metaDescription: 'Discover the best MVC frameworks in 2025 including Laravel, Django, Rails, and more. A practical guide for modern web developers.',
-    excerpt: 'A curated list of top MVC frameworks developers should learn in 2025 — from Laravel and Django to Rails and Spring Boot.',
-    content: `
+    `,
+    },
+    {
+        id: 6,
+        lang: 'en',
+        title: 'Best MVC Frameworks Developers Should Know in 2025',
+        summary:
+            'Explore the top MVC frameworks used by developers in 2025 — whether you’re building web apps, APIs, or full-stack projects.',
+        date: '2025-07-15',
+        tags: ['mvc', 'frameworks', 'laravel', 'backend', 'architecture'],
+        slug: 'best-mvc-frameworks-2025',
+        author: authorMostefaBoudjema,
+        coverImage: cover6,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Architecture',
+        updatedAt: '2025-07-15',
+        metaDescription:
+            'Discover the best MVC frameworks in 2025 including Laravel, Django, Rails, and more. A practical guide for modern web developers.',
+        excerpt:
+            'A curated list of top MVC frameworks developers should learn in 2025 — from Laravel and Django to Rails and Spring Boot.',
+        content: `
   ## Introduction
   
   The MVC (Model-View-Controller) pattern is still one of the most widely used architectural patterns in modern web development. It helps separate concerns, organize logic, and scale applications more efficiently.
@@ -1185,25 +1212,34 @@ Forge وVapor يخلوك تنشر التطبيقات بلا ما تدخل في �
   🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
   
   Happy building! 🚀
-    `
-  },
-  {
-    id: 6,
-    lang: 'ar',
-    title: 'أفضل أطر MVC لي لازمك تعرفهم كمطور في 2025',
-    summary: 'تعرف على أقوى أطر MVC المستخدمة من طرف المطورين في 2025 — سواء كنت تبني تطبيقات ويب، APIs، ولا مشاريع Full Stack.',
-    date: '2025-07-15',
-    tags: ['mvc', 'إطارات العمل', 'laravel', 'backend', 'الهندسة المعمارية'],
-    slug: 'افضل-mvc-frameworks-2025',
-    author: authorMostefaBoudjemaAR,
-    coverImage: cover6,
-    readingTime: '6 دقايق قراية',
-    published: true,
-    category: 'الهندسة',
-    updatedAt: '2025-07-15',
-    metaDescription: 'اكتشف أفضل أطر عمل MVC في 2025 مثل Laravel وDjango وRails وغيرها. دليل عملي للمطورين العصريين.',
-    excerpt: 'قائمة منتقاة لأهم أطر MVC لي يستحق كل مطور يتعلمها في 2025 — من Laravel وDjango إلى Rails وSpring Boot.',
-    content: `
+    `,
+    },
+    {
+        id: 6,
+        lang: 'ar',
+        title: 'أفضل أطر MVC لي لازمك تعرفهم كمطور في 2025',
+        summary:
+            'تعرف على أقوى أطر MVC المستخدمة من طرف المطورين في 2025 — سواء كنت تبني تطبيقات ويب، APIs، ولا مشاريع Full Stack.',
+        date: '2025-07-15',
+        tags: [
+            'mvc',
+            'إطارات العمل',
+            'laravel',
+            'backend',
+            'الهندسة المعمارية',
+        ],
+        slug: 'افضل-mvc-frameworks-2025',
+        author: authorMostefaBoudjemaAR,
+        coverImage: cover6,
+        readingTime: '6 دقايق قراية',
+        published: true,
+        category: 'الهندسة',
+        updatedAt: '2025-07-15',
+        metaDescription:
+            'اكتشف أفضل أطر عمل MVC في 2025 مثل Laravel وDjango وRails وغيرها. دليل عملي للمطورين العصريين.',
+        excerpt:
+            'قائمة منتقاة لأهم أطر MVC لي يستحق كل مطور يتعلمها في 2025 — من Laravel وDjango إلى Rails وSpring Boot.',
+        content: `
 ## المقدمة
 
 نمط MVC (Model-View-Controller) مازال من أكثر الأنماط استخدامًا في تطوير الويب الحديث. ينظم الكود، يفصل المهام، ويسهل عليك توسعة التطبيق بدون ما تدوّخ.
@@ -1306,27 +1342,34 @@ dotnet new mvc -n MyApp
 🔗 [https://mostefa-boudjema.vercel.app/ar/blog](https://mostefa-boudjema.vercel.app/ar/blog)
 
 بالتوفيق في مشروعك! 🚀
-`
-  }
-
-  ,
-  {
-    id: 7,
-    lang: 'en',
-    title: 'Vue.js: A Beginner\'s Guide to Getting Started',
-    summary: 'Learn how to set up and start building with Vue.js, the popular JavaScript framework for creating interactive user interfaces.',
-    date: '2025-06-17',
-    tags: ['vuejs', 'javascript', 'frontend', 'framework', 'getting started'],
-    slug: 'vuejs-beginner-guide',
-    author: authorMostefaBoudjema,
-    coverImage: cover7,
-    readingTime: '5 min read',
-    published: true,
-    category: 'Frontend',
-    updatedAt: '2025-06-17',
-    metaDescription: 'Learn how to get started with Vue.js in this beginner’s guide, including setup and creating your first app.',
-    excerpt: 'A beginner’s guide to Vue.js, helping you get started with this powerful JavaScript framework.',
-    content: `
+`,
+    },
+    {
+        id: 7,
+        lang: 'en',
+        title: "Vue.js: A Beginner's Guide to Getting Started",
+        summary:
+            'Learn how to set up and start building with Vue.js, the popular JavaScript framework for creating interactive user interfaces.',
+        date: '2025-06-17',
+        tags: [
+            'vuejs',
+            'javascript',
+            'frontend',
+            'framework',
+            'getting started',
+        ],
+        slug: 'vuejs-beginner-guide',
+        author: authorMostefaBoudjema,
+        coverImage: cover7,
+        readingTime: '5 min read',
+        published: true,
+        category: 'Frontend',
+        updatedAt: '2025-06-17',
+        metaDescription:
+            'Learn how to get started with Vue.js in this beginner’s guide, including setup and creating your first app.',
+        excerpt:
+            'A beginner’s guide to Vue.js, helping you get started with this powerful JavaScript framework.',
+        content: `
   ## Introduction
   
   Vue.js is a progressive JavaScript framework used for building interactive web interfaces. Whether you're starting from scratch or integrating it into an existing project, Vue.js offers flexibility and simplicity.
@@ -1404,25 +1447,28 @@ dotnet new mvc -n MyApp
   
   Check out more guides on my blog:  
   🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-    `
-  },
-  {
-    id: 8,
-    lang: 'en',
-    title: 'Advanced Vue.js Features You Should Know',
-    summary: 'Explore advanced features in Vue.js that can help you scale your apps, from Vue Router to Vuex and dynamic components.',
-    date: '2025-07-19',
-    tags: ['vuejs', 'advanced', 'frontend', 'javascript', 'router', 'vuex'],
-    slug: 'advanced-vuejs-features',
-    author: authorMostefaBoudjema,
-    coverImage: cover8,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Frontend',
-    updatedAt: '2025-07-19',
-    metaDescription: 'Explore advanced Vue.js features like Vue Router, Vuex, and dynamic components in this post.',
-    excerpt: 'Take your Vue.js skills to the next level with advanced techniques for routing, state management, and dynamic components.',
-    content: `
+    `,
+    },
+    {
+        id: 8,
+        lang: 'en',
+        title: 'Advanced Vue.js Features You Should Know',
+        summary:
+            'Explore advanced features in Vue.js that can help you scale your apps, from Vue Router to Vuex and dynamic components.',
+        date: '2025-07-19',
+        tags: ['vuejs', 'advanced', 'frontend', 'javascript', 'router', 'vuex'],
+        slug: 'advanced-vuejs-features',
+        author: authorMostefaBoudjema,
+        coverImage: cover8,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Frontend',
+        updatedAt: '2025-07-19',
+        metaDescription:
+            'Explore advanced Vue.js features like Vue Router, Vuex, and dynamic components in this post.',
+        excerpt:
+            'Take your Vue.js skills to the next level with advanced techniques for routing, state management, and dynamic components.',
+        content: `
 ## Introduction
 
 Once you’re comfortable with Vue.js basics, it’s time to explore some advanced features that can take your app to the next level. These features make Vue.js a powerful tool for complex, large-scale applications.
@@ -1499,25 +1545,28 @@ By mastering Vue Router, Vuex, and dynamic components, you’ll be ready to tack
 
 Check out more guides on my blog:  
 🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-  `
-  },
-  {
-    id: 9,
-    lang: 'en',
-    title: 'React for Beginners: A Quick Start Guide',
-    summary: 'Learn how to get started with React and build your first interactive web app.',
-    date: '2025-05-21',
-    tags: ['react', 'javascript', 'frontend', 'getting started'],
-    slug: 'react-for-beginners',
-    author: authorMostefaBoudjema,
-    coverImage: cover9,
-    readingTime: '5 min read',
-    published: true,
-    category: 'Frontend',
-    updatedAt: '2025-05-21',
-    metaDescription: 'A beginner’s guide to getting started with React, including components and state management.',
-    excerpt: 'Learn how to build your first interactive web app with React in this quick start guide.',
-    content: `
+  `,
+    },
+    {
+        id: 9,
+        lang: 'en',
+        title: 'React for Beginners: A Quick Start Guide',
+        summary:
+            'Learn how to get started with React and build your first interactive web app.',
+        date: '2025-05-21',
+        tags: ['react', 'javascript', 'frontend', 'getting started'],
+        slug: 'react-for-beginners',
+        author: authorMostefaBoudjema,
+        coverImage: cover9,
+        readingTime: '5 min read',
+        published: true,
+        category: 'Frontend',
+        updatedAt: '2025-05-21',
+        metaDescription:
+            'A beginner’s guide to getting started with React, including components and state management.',
+        excerpt:
+            'Learn how to build your first interactive web app with React in this quick start guide.',
+        content: `
 ## Introduction
 
 React is one of the most popular JavaScript libraries for building user interfaces. In this guide, we’ll show you how to get started with React by building your first app.
@@ -1587,25 +1636,28 @@ With React, building interactive UIs becomes much easier. Once you’ve built a 
 
 Check out more on my blog:  
 🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-  `
-  },
-  {
-    id: 10,
-    lang: 'en',
-    title: 'Advanced React: Optimizing Performance and Advanced Patterns',
-    summary: 'Dive deeper into React with performance optimization techniques, hooks, and advanced patterns.',
-    date: '2025-07-23',
-    tags: ['react', 'performance', 'javascript', 'advanced', 'react hooks'],
-    slug: 'advanced-react-performance-patterns',
-    author: authorMostefaBoudjema,
-    coverImage: cover10,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Frontend',
-    updatedAt: '2025-07-23',
-    metaDescription: 'Learn advanced React patterns and performance optimization techniques in this detailed guide.',
-    excerpt: 'Take your React skills to the next level with these performance optimizations and advanced patterns.',
-    content: `
+  `,
+    },
+    {
+        id: 10,
+        lang: 'en',
+        title: 'Advanced React: Optimizing Performance and Advanced Patterns',
+        summary:
+            'Dive deeper into React with performance optimization techniques, hooks, and advanced patterns.',
+        date: '2025-07-23',
+        tags: ['react', 'performance', 'javascript', 'advanced', 'react hooks'],
+        slug: 'advanced-react-performance-patterns',
+        author: authorMostefaBoudjema,
+        coverImage: cover10,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Frontend',
+        updatedAt: '2025-07-23',
+        metaDescription:
+            'Learn advanced React patterns and performance optimization techniques in this detailed guide.',
+        excerpt:
+            'Take your React skills to the next level with these performance optimizations and advanced patterns.',
+        content: `
 ## Introduction
 
 React is fast, but as your app grows, you’ll need to pay attention to performance and best practices. In this post, we’ll cover advanced techniques and patterns to optimize your React app.
@@ -1666,25 +1718,35 @@ By using tools like 'React.memo','React.lazy', and the Context API, you can make
 
 Visit my blog for in-depth React tutorials:  
 🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-  `
-  },
-  {
-    id: 11,
-    lang: 'en',
-    title: '7 Algorithm Patterns Every Developer Should Master for Interviews',
-    summary: 'Learn the most common algorithmic patterns that appear in coding interviews. Mastering these will help you solve 80% of LeetCode-style problems.',
-    date: '2025-07-25',
-    tags: ['algorithms', 'interview prep', 'leetcode', 'coding', 'developer job', 'javascript'],
-    slug: 'algorithm-patterns-dev-interview',
-    author: authorMostefaBoudjema,
-    coverImage: cover11,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Career',
-    updatedAt: '2025-07-25',
-    metaDescription: 'Master the 7 algorithm patterns most commonly used in developer interviews — with examples and practical tips.',
-    excerpt: 'Stop solving random LeetCode questions. Focus on these 7 algorithm patterns that show up in most dev interviews.',
-    content: `
+  `,
+    },
+    {
+        id: 11,
+        lang: 'en',
+        title: '7 Algorithm Patterns Every Developer Should Master for Interviews',
+        summary:
+            'Learn the most common algorithmic patterns that appear in coding interviews. Mastering these will help you solve 80% of LeetCode-style problems.',
+        date: '2025-07-25',
+        tags: [
+            'algorithms',
+            'interview prep',
+            'leetcode',
+            'coding',
+            'developer job',
+            'javascript',
+        ],
+        slug: 'algorithm-patterns-dev-interview',
+        author: authorMostefaBoudjema,
+        coverImage: cover11,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Career',
+        updatedAt: '2025-07-25',
+        metaDescription:
+            'Master the 7 algorithm patterns most commonly used in developer interviews — with examples and practical tips.',
+        excerpt:
+            'Stop solving random LeetCode questions. Focus on these 7 algorithm patterns that show up in most dev interviews.',
+        content: `
 ## Introduction
 
 Tech interviews are tough — but not random. Most algorithm problems fall under a handful of **core patterns**. If you can recognize these, you can solve almost anything on LeetCode, HackerRank, or Codeforces.
@@ -1778,25 +1840,28 @@ Don’t memorize 500 LeetCode problems. **Master these 7 patterns** and you’ll
 
 Check out the blog for focused guides and coding patterns:  
 🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-  `
-  },
-  {
-    id: 12,
-    lang: 'en',
-    title: 'Laravel: Advanced Tips and Techniques for Power Users',
-    summary: 'Take your Laravel skills to the next level with these advanced tips and techniques.',
-    date: '2025-04-27',
-    tags: ['laravel', 'php', 'backend', 'advanced', 'tips'],
-    slug: 'laravel-advanced-tips',
-    author: authorMostefaBoudjema,
-    coverImage: cover12,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Backend',
-    updatedAt: '2025-04-27',
-    metaDescription: 'Advanced Laravel tips and techniques for experienced developers, covering Artisan commands, broadcasting, and policies.',
-    excerpt: 'Take your Laravel skills to the next level with these advanced tips and techniques for power users.',
-    content: `
+  `,
+    },
+    {
+        id: 12,
+        lang: 'en',
+        title: 'Laravel: Advanced Tips and Techniques for Power Users',
+        summary:
+            'Take your Laravel skills to the next level with these advanced tips and techniques.',
+        date: '2025-04-27',
+        tags: ['laravel', 'php', 'backend', 'advanced', 'tips'],
+        slug: 'laravel-advanced-tips',
+        author: authorMostefaBoudjema,
+        coverImage: cover12,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Backend',
+        updatedAt: '2025-04-27',
+        metaDescription:
+            'Advanced Laravel tips and techniques for experienced developers, covering Artisan commands, broadcasting, and policies.',
+        excerpt:
+            'Take your Laravel skills to the next level with these advanced tips and techniques for power users.',
+        content: `
 ## Introduction
 
 Laravel offers a lot out of the box, but as you become more comfortable with it, you’ll want to explore some of its advanced features and techniques. This post will dive deeper into Laravel’s power features and help you optimize your workflow.
@@ -1854,25 +1919,36 @@ With these advanced tips, you'll be able to create more efficient and scalable L
 
 Visit my blog for more advanced Laravel tutorials:  
 🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-  `
-  },
-  {
-    id: 13,
-    lang: 'en',
-    title: 'Top Web Development Interview Questions (And How to Answer Them Right)',
-    summary: 'Get ready for your next frontend, backend, or full-stack interview with this list of real web dev questions and the best ways to answer them.',
-    date: '2025-07-29',
-    tags: ['web development', 'interview', 'frontend', 'backend', 'career', 'javascript', 'laravel'],
-    slug: 'common-web-dev-interview-questions',
-    author: authorMostefaBoudjema,
-    coverImage: cover13,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Career',
-    updatedAt: '2025-07-29',
-    metaDescription: 'Be ready for your next web dev interview with these real questions and smart, no-fluff answers.',
-    excerpt: 'Get the top web dev interview questions and how to answer them clearly. Frontend, backend, and full-stack covered.',
-    content: `
+  `,
+    },
+    {
+        id: 13,
+        lang: 'en',
+        title: 'Top Web Development Interview Questions (And How to Answer Them Right)',
+        summary:
+            'Get ready for your next frontend, backend, or full-stack interview with this list of real web dev questions and the best ways to answer them.',
+        date: '2025-07-29',
+        tags: [
+            'web development',
+            'interview',
+            'frontend',
+            'backend',
+            'career',
+            'javascript',
+            'laravel',
+        ],
+        slug: 'common-web-dev-interview-questions',
+        author: authorMostefaBoudjema,
+        coverImage: cover13,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Career',
+        updatedAt: '2025-07-29',
+        metaDescription:
+            'Be ready for your next web dev interview with these real questions and smart, no-fluff answers.',
+        excerpt:
+            'Get the top web dev interview questions and how to answer them clearly. Frontend, backend, and full-stack covered.',
+        content: `
 ## Introduction
 
 Web development interviews don’t just test your skills — they test your communication, reasoning, and confidence.
@@ -1973,25 +2049,35 @@ Don’t memorize answers. Understand the **why** behind each question, and alway
 
 Visit my blog for more real-world prep tips and example answers:  
 🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-  `
-  },
-  {
-    id: 14,
-    lang: 'en',
-    title: 'Eager vs Lazy Loading in Laravel (Clear, Practical Guide)',
-    summary: 'Avoid N+1 query issues and speed up your Laravel app. Learn the difference between eager and lazy loading, with simple examples.',
-    date: '2025-07-31',
-    tags: ['laravel', 'php', 'eloquent', 'performance', 'backend', 'web development'],
-    slug: 'eager-vs-lazy-loading-laravel',
-    author: authorMostefaBoudjema,
-    coverImage: cover14,
-    readingTime: '5 min read',
-    published: true,
-    category: 'Laravel',
-    updatedAt: '2025-07-31',
-    metaDescription: 'Learn the difference between eager and lazy loading in Laravel, how to avoid N+1 problems, and when to use each technique for better app performance.',
-    excerpt: 'Speed up your Laravel app by mastering the difference between eager and lazy loading. Avoid N+1 queries with clear examples.',
-    content: `
+  `,
+    },
+    {
+        id: 14,
+        lang: 'en',
+        title: 'Eager vs Lazy Loading in Laravel (Clear, Practical Guide)',
+        summary:
+            'Avoid N+1 query issues and speed up your Laravel app. Learn the difference between eager and lazy loading, with simple examples.',
+        date: '2025-07-31',
+        tags: [
+            'laravel',
+            'php',
+            'eloquent',
+            'performance',
+            'backend',
+            'web development',
+        ],
+        slug: 'eager-vs-lazy-loading-laravel',
+        author: authorMostefaBoudjema,
+        coverImage: cover14,
+        readingTime: '5 min read',
+        published: true,
+        category: 'Laravel',
+        updatedAt: '2025-07-31',
+        metaDescription:
+            'Learn the difference between eager and lazy loading in Laravel, how to avoid N+1 problems, and when to use each technique for better app performance.',
+        excerpt:
+            'Speed up your Laravel app by mastering the difference between eager and lazy loading. Avoid N+1 queries with clear examples.',
+        content: `
   ## Introduction
   
   Loading relationships in Laravel can either make your app fly or crawl.
@@ -2081,25 +2167,36 @@ Visit my blog for more real-world prep tips and example answers:
   
   Check out more Laravel deep-dives on my blog:  
   🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-  `
-  },
-  {
-    id: 15,
-    lang: 'en',
-    title: 'Laravel Pulse vs Telescope: Best Monitoring Tool for Production',
-    summary: 'Confused between Laravel Pulse and Telescope? This post compares both tools and helps you decide which one fits your app’s needs.',
-    date: '2025-08-01',
-    tags: ['laravel', 'monitoring', 'pulse', 'telescope', 'debugging', 'performance', 'backend'],
-    slug: 'laravel-pulse-vs-telescope',
-    author: authorMostefaBoudjema,
-    coverImage: cover15,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Laravel',
-    updatedAt: '2025-08-01',
-    metaDescription: 'Laravel Pulse vs Telescope — which one is better for production? Learn the key differences, use cases, and when to use each.',
-    excerpt: 'Compare Laravel Pulse and Telescope. See which one is better for monitoring your Laravel app in development vs production.',
-    content: `
+  `,
+    },
+    {
+        id: 15,
+        lang: 'en',
+        title: 'Laravel Pulse vs Telescope: Best Monitoring Tool for Production',
+        summary:
+            'Confused between Laravel Pulse and Telescope? This post compares both tools and helps you decide which one fits your app’s needs.',
+        date: '2025-08-01',
+        tags: [
+            'laravel',
+            'monitoring',
+            'pulse',
+            'telescope',
+            'debugging',
+            'performance',
+            'backend',
+        ],
+        slug: 'laravel-pulse-vs-telescope',
+        author: authorMostefaBoudjema,
+        coverImage: cover15,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Laravel',
+        updatedAt: '2025-08-01',
+        metaDescription:
+            'Laravel Pulse vs Telescope — which one is better for production? Learn the key differences, use cases, and when to use each.',
+        excerpt:
+            'Compare Laravel Pulse and Telescope. See which one is better for monitoring your Laravel app in development vs production.',
+        content: `
   ## Introduction
   
   When your Laravel app hits production, you need solid monitoring. 
@@ -2211,25 +2308,34 @@ Visit my blog for more real-world prep tips and example answers:
   
   Check out my Laravel guides and real-world tips on the blog:  
   🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-  `
-  }
-  , {
-    id: 16,
-    lang: 'en',
-    title: 'How to Find People That Need a New Website or a Redesign',
-    summary: 'Struggling to find web dev clients? Here’s a straight-to-the-point guide to help you identify and reach people who need a new website or a redesign.',
-    date: '2027-08-02',
-    tags: ['web development', 'freelance', 'marketing', 'portfolio', 'clients'],
-    slug: 'find-website-clients',
-    author: authorMostefaBoudjema,
-    coverImage: cover16,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Freelance',
-    updatedAt: '2027-08-02',
-    metaDescription: 'Learn practical strategies to find people or businesses that need a new website or a redesign. Perfect for freelance web developers looking to get more clients.',
-    excerpt: 'If you’re a web developer looking for more clients, here’s how to find businesses that desperately need a website redesign — and how to pitch them.',
-    content: `
+  `,
+    },
+    {
+        id: 16,
+        lang: 'en',
+        title: 'How to Find People That Need a New Website or a Redesign',
+        summary:
+            'Struggling to find web dev clients? Here’s a straight-to-the-point guide to help you identify and reach people who need a new website or a redesign.',
+        date: '2027-08-02',
+        tags: [
+            'web development',
+            'freelance',
+            'marketing',
+            'portfolio',
+            'clients',
+        ],
+        slug: 'find-website-clients',
+        author: authorMostefaBoudjema,
+        coverImage: cover16,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Freelance',
+        updatedAt: '2027-08-02',
+        metaDescription:
+            'Learn practical strategies to find people or businesses that need a new website or a redesign. Perfect for freelance web developers looking to get more clients.',
+        excerpt:
+            'If you’re a web developer looking for more clients, here’s how to find businesses that desperately need a website redesign — and how to pitch them.',
+        content: `
   ## 🔎 How to Find People Who Need a New Website or Redesign
   
   Not enough clients? You're probably chasing the wrong ones.  
@@ -2394,25 +2500,28 @@ Visit my blog for more real-world prep tips and example answers:
   Check out more no-fluff freelance guides on the blog:
   https://mostefa-boudjema.vercel.app/blog
   \`\`\`
-  `
-  },
-  {
-    id: 16,
-    lang: 'ar',
-    title: 'كيف تلقى ناس يحتاجو موقع جديد ولا إعادة تصميم',
-    summary: 'تعبان باش تلقى كليان في الويب ديف؟ هاك دليل مباشر باش تعرف وتوصل للناس اللي يحتاجو موقع جديد ولا إعادة تصميم.',
-    date: '2027-08-02',
-    tags: ['تطوير مواقع', 'فريلانس', 'ماركيتينغ', 'بورتفوليو', 'كليان'],
-    slug: 'find-website-clients-ar',
-    author: authorMostefaBoudjema,
-    coverImage: cover16,
-    readingTime: '6 دقايق قراءة',
-    published: true,
-    category: 'فريلانس',
-    updatedAt: '2027-08-02',
-    metaDescription: 'استراتيجيات عملية باش تلقى ناس ولا شركات تحتاج موقع جديد ولا إعادة تصميم. مثالية للمطورين الفريلانس اللي حابين يجيبو كليان أكثر.',
-    excerpt: 'إذا كنت مطور مواقع وتحب تجيب كليان جدد، هاك كيف تلقى شركات ولا محلات تحتاج ضروري إعادة تصميم — وكيف تعرض عليهم الخدمة.',
-    content: `
+  `,
+    },
+    {
+        id: 16,
+        lang: 'ar',
+        title: 'كيف تلقى ناس يحتاجو موقع جديد ولا إعادة تصميم',
+        summary:
+            'تعبان باش تلقى كليان في الويب ديف؟ هاك دليل مباشر باش تعرف وتوصل للناس اللي يحتاجو موقع جديد ولا إعادة تصميم.',
+        date: '2027-08-02',
+        tags: ['تطوير مواقع', 'فريلانس', 'ماركيتينغ', 'بورتفوليو', 'كليان'],
+        slug: 'find-website-clients-ar',
+        author: authorMostefaBoudjema,
+        coverImage: cover16,
+        readingTime: '6 دقايق قراءة',
+        published: true,
+        category: 'فريلانس',
+        updatedAt: '2027-08-02',
+        metaDescription:
+            'استراتيجيات عملية باش تلقى ناس ولا شركات تحتاج موقع جديد ولا إعادة تصميم. مثالية للمطورين الفريلانس اللي حابين يجيبو كليان أكثر.',
+        excerpt:
+            'إذا كنت مطور مواقع وتحب تجيب كليان جدد، هاك كيف تلقى شركات ولا محلات تحتاج ضروري إعادة تصميم — وكيف تعرض عليهم الخدمة.',
+        content: `
   ## 🔎 كيف تلقى ناس يحتاجو موقع جديد ولا إعادة تصميم
   
   ما عندكش كليان كفاية؟ يمكن راك تلاحق في الناس الغالطين.  
@@ -2577,26 +2686,28 @@ Visit my blog for more real-world prep tips and example answers:
   شوف المزيد من النصائح العملية على المدونة:
   https://mostefa-boudjema.vercel.app/ar/blog
   \`\`\`
-  `
-  }
-  ,
-  {
-    id: 17,
-    lang: 'en',
-    title: 'Laravel Filament: Powerful Admin Panels Made Easy',
-    summary: 'Need a modern admin panel fast? Laravel Filament gives you beautiful dashboards, resource management, and more — with zero boilerplate. Here’s how to get started and when to use it.',
-    date: '2025-08-05',
-    tags: ['laravel', 'filament', 'php', 'admin panel', 'dashboard'],
-    slug: 'laravel-filament-guide',
-    author: authorMostefaBoudjema,
-    coverImage: cover17,
-    readingTime: '10 min read',
-    published: true,
-    category: 'Laravel',
-    updatedAt: '2025-08-05',
-    metaDescription: 'A complete beginner-to-advanced guide on Laravel Filament. Learn how to install, integrate with existing projects, and use it to build powerful admin panels fast.',
-    excerpt: 'Laravel Filament makes building admin dashboards ridiculously fast. In this guide, you’ll learn how to install it, use it with your current Laravel project, and the best use cases where it shines.',
-    content: `
+  `,
+    },
+    {
+        id: 17,
+        lang: 'en',
+        title: 'Laravel Filament: Powerful Admin Panels Made Easy',
+        summary:
+            'Need a modern admin panel fast? Laravel Filament gives you beautiful dashboards, resource management, and more — with zero boilerplate. Here’s how to get started and when to use it.',
+        date: '2025-08-05',
+        tags: ['laravel', 'filament', 'php', 'admin panel', 'dashboard'],
+        slug: 'laravel-filament-guide',
+        author: authorMostefaBoudjema,
+        coverImage: cover17,
+        readingTime: '10 min read',
+        published: true,
+        category: 'Laravel',
+        updatedAt: '2025-08-05',
+        metaDescription:
+            'A complete beginner-to-advanced guide on Laravel Filament. Learn how to install, integrate with existing projects, and use it to build powerful admin panels fast.',
+        excerpt:
+            'Laravel Filament makes building admin dashboards ridiculously fast. In this guide, you’ll learn how to install it, use it with your current Laravel project, and the best use cases where it shines.',
+        content: `
   ## 🚀 What is Laravel Filament?
   
   Filament is a **beautiful, fast, and highly extensible admin panel** for Laravel. It's built with TALL stack (Tailwind, Alpine.js, Laravel, Livewire), and it saves you hours building dashboards from scratch.
@@ -2772,25 +2883,28 @@ Visit my blog for more real-world prep tips and example answers:
   💬 Need help integrating Filament into a client project?
   Let’s chat: https://mostefa-boudjema.vercel.app
   
-    `
-  },
-  {
-    id: 18,
-    lang: 'en',
-    title: 'Laravel Nova: Setup, Integration & Best Use Cases',
-    summary: 'Laravel Nova is a sleek admin panel for Laravel. Learn how to set it up, use it effectively, and decide when it’s the right tool for your project.',
-    date: '2025-08-03',
-    tags: ['laravel', 'nova', 'admin panel', 'dashboard', 'backend'],
-    slug: 'laravel-nova-guide',
-    author: authorMostefaBoudjema,
-    coverImage: cover18,
-    readingTime: '10 min read',
-    published: true,
-    category: 'Laravel',
-    updatedAt: '2025-08-03',
-    metaDescription: 'Everything you need to know about Laravel Nova: what it is, how to install it, integrate it into existing projects, and when you should use it.',
-    excerpt: 'Laravel Nova is a powerful admin panel that saves dev time. In this guide, learn how to install Nova, use it, and know when it’s the right tool for your Laravel project.',
-    content: `
+    `,
+    },
+    {
+        id: 18,
+        lang: 'en',
+        title: 'Laravel Nova: Setup, Integration & Best Use Cases',
+        summary:
+            'Laravel Nova is a sleek admin panel for Laravel. Learn how to set it up, use it effectively, and decide when it’s the right tool for your project.',
+        date: '2025-08-03',
+        tags: ['laravel', 'nova', 'admin panel', 'dashboard', 'backend'],
+        slug: 'laravel-nova-guide',
+        author: authorMostefaBoudjema,
+        coverImage: cover18,
+        readingTime: '10 min read',
+        published: true,
+        category: 'Laravel',
+        updatedAt: '2025-08-03',
+        metaDescription:
+            'Everything you need to know about Laravel Nova: what it is, how to install it, integrate it into existing projects, and when you should use it.',
+        excerpt:
+            'Laravel Nova is a powerful admin panel that saves dev time. In this guide, learn how to install Nova, use it, and know when it’s the right tool for your Laravel project.',
+        content: `
   ## ⚙️ What Is Laravel Nova?
   
   Laravel Nova is an official Laravel admin panel package.  
@@ -2953,25 +3067,28 @@ Visit my blog for more real-world prep tips and example answers:
   Check out more practical Laravel tips on the blog:  
   https://mostefa-boudjema.vercel.app/blog
  
-  `
-  },
-  {
-    id: 19,
-    lang: 'en',
-    title: 'Laravel Multi-Tenancy: How to Get Started and When to Use It',
-    summary: 'Building a SaaS app? Laravel multi-tenancy might be what you need. Learn the core concepts, how to set it up, and when it actually makes sense to use.',
-    date: '2025-08-04',
-    tags: ['laravel', 'multi-tenancy', 'saas', 'architecture', 'database'],
-    slug: 'laravel-multi-tenancy-guide',
-    author: authorMostefaBoudjema,
-    coverImage: cover19,
-    readingTime: '10 min read',
-    published: true,
-    category: 'Laravel',
-    updatedAt: '2025-08-04',
-    metaDescription: 'Learn how to set up multi-tenancy in Laravel using practical packages and clean architecture. Understand the different tenancy types and when you should (or shouldn’t) use them.',
-    excerpt: 'Thinking about building a SaaS or client-facing app with isolated data? Laravel multi-tenancy is what you’re looking for. This guide walks you through setup, strategy, and best use cases.',
-    content: `
+  `,
+    },
+    {
+        id: 19,
+        lang: 'en',
+        title: 'Laravel Multi-Tenancy: How to Get Started and When to Use It',
+        summary:
+            'Building a SaaS app? Laravel multi-tenancy might be what you need. Learn the core concepts, how to set it up, and when it actually makes sense to use.',
+        date: '2025-08-04',
+        tags: ['laravel', 'multi-tenancy', 'saas', 'architecture', 'database'],
+        slug: 'laravel-multi-tenancy-guide',
+        author: authorMostefaBoudjema,
+        coverImage: cover19,
+        readingTime: '10 min read',
+        published: true,
+        category: 'Laravel',
+        updatedAt: '2025-08-04',
+        metaDescription:
+            'Learn how to set up multi-tenancy in Laravel using practical packages and clean architecture. Understand the different tenancy types and when you should (or shouldn’t) use them.',
+        excerpt:
+            'Thinking about building a SaaS or client-facing app with isolated data? Laravel multi-tenancy is what you’re looking for. This guide walks you through setup, strategy, and best use cases.',
+        content: `
   ## 🏢 What Is Multi-Tenancy?
   
   Multi-tenancy means a single app serves **multiple clients (tenants)** with isolated data.
@@ -3147,25 +3264,34 @@ Visit my blog for more real-world prep tips and example answers:
   Check out more Laravel SaaS tips on the blog:  
   https://mostefa-boudjema.vercel.app/blog
   \`\`\`
-  `
-  },
-  {
-    id: 20,
-    lang: 'en',
-    title: 'What Is the Advantage of DTO (Over Model Instances)?',
-    summary: 'DTOs can make your Laravel app cleaner, more testable, and easier to scale. Here’s when and why to use Data Transfer Objects instead of Eloquent models directly.',
-    date: '2025-08-06',
-    tags: ['laravel', 'dto', 'architecture', 'clean code', 'best practices'],
-    slug: 'laravel-dto-vs-model',
-    author: authorMostefaBoudjema,
-    coverImage: cover20,
-    readingTime: '7 min read',
-    published: true,
-    category: 'Laravel',
-    updatedAt: '2025-08-06',
-    metaDescription: 'Learn what DTOs are in Laravel, why they matter, and how they improve maintainability, testability, and decoupling over using raw model instances.',
-    excerpt: 'Stop passing around Eloquent models like candy. Use DTOs to make your Laravel app more predictable, testable, and future-proof. Here’s the what, why, and how.',
-    content: `
+  `,
+    },
+    {
+        id: 20,
+        lang: 'en',
+        title: 'What Is the Advantage of DTO (Over Model Instances)?',
+        summary:
+            'DTOs can make your Laravel app cleaner, more testable, and easier to scale. Here’s when and why to use Data Transfer Objects instead of Eloquent models directly.',
+        date: '2025-08-06',
+        tags: [
+            'laravel',
+            'dto',
+            'architecture',
+            'clean code',
+            'best practices',
+        ],
+        slug: 'laravel-dto-vs-model',
+        author: authorMostefaBoudjema,
+        coverImage: cover20,
+        readingTime: '7 min read',
+        published: true,
+        category: 'Laravel',
+        updatedAt: '2025-08-06',
+        metaDescription:
+            'Learn what DTOs are in Laravel, why they matter, and how they improve maintainability, testability, and decoupling over using raw model instances.',
+        excerpt:
+            'Stop passing around Eloquent models like candy. Use DTOs to make your Laravel app more predictable, testable, and future-proof. Here’s the what, why, and how.',
+        content: `
   ## 📦 What Is a DTO?
   
   DTO = **Data Transfer Object**  
@@ -3345,25 +3471,28 @@ Visit my blog for more real-world prep tips and example answers:
   Check out more Laravel best practices on the blog:  
   https://mostefa-boudjema.vercel.app/blog
 
-  `
-  },
-  {
-    id: 21,
-    lang: 'en',
-    title: 'Firebase vs Supabase: Which One Should You Use?',
-    summary: 'Both Firebase and Supabase offer backend-as-a-service tools — but they take very different approaches. Here’s a no-fluff comparison to help you choose.',
-    date: '2025-08-07',
-    tags: ['firebase', 'supabase', 'backend', 'baas', 'databases'],
-    slug: 'firebase-vs-supabase',
-    author: authorMostefaBoudjema,
-    coverImage: cover21,
-    readingTime: '9 min read',
-    published: true,
-    category: 'Backend',
-    updatedAt: '2025-08-07',
-    metaDescription: 'A practical comparison of Firebase and Supabase for developers. Learn the key differences, when to choose one over the other, and which stacks they work best with.',
-    excerpt: 'Firebase vs Supabase — which one fits your project better? We break down auth, databases, pricing, real-time features, and more. No fluff, just the facts.',
-    content: `
+  `,
+    },
+    {
+        id: 21,
+        lang: 'en',
+        title: 'Firebase vs Supabase: Which One Should You Use?',
+        summary:
+            'Both Firebase and Supabase offer backend-as-a-service tools — but they take very different approaches. Here’s a no-fluff comparison to help you choose.',
+        date: '2025-08-07',
+        tags: ['firebase', 'supabase', 'backend', 'baas', 'databases'],
+        slug: 'firebase-vs-supabase',
+        author: authorMostefaBoudjema,
+        coverImage: cover21,
+        readingTime: '9 min read',
+        published: true,
+        category: 'Backend',
+        updatedAt: '2025-08-07',
+        metaDescription:
+            'A practical comparison of Firebase and Supabase for developers. Learn the key differences, when to choose one over the other, and which stacks they work best with.',
+        excerpt:
+            'Firebase vs Supabase — which one fits your project better? We break down auth, databases, pricing, real-time features, and more. No fluff, just the facts.',
+        content: `
   ## ⚔️ Firebase vs Supabase: The Showdown
   
   Both **Firebase** and **Supabase** are "backend-as-a-service" (BaaS) platforms. They help you build full-stack apps without writing your own backend from scratch.
@@ -3580,25 +3709,34 @@ Visit my blog for more real-world prep tips and example answers:
   https://mostefa-boudjema.vercel.app/blog
   
   \`\`\`
-    `
-  },
-  {
-    id: 22,
-    lang: 'en',
-    title: 'Laravel Service Container vs Service Provider: What’s the Difference?',
-    summary: 'Still confused between Laravel’s Service Container and Service Providers? This post clears it up with real examples and explains how they work together.',
-    date: '2025-08-08',
-    tags: ['laravel', 'php', 'dependency injection', 'service container', 'service provider'],
-    slug: 'laravel-service-container-vs-provider',
-    author: authorMostefaBoudjema,
-    coverImage: cover22,
-    readingTime: '7 min read',
-    published: true,
-    category: 'Laravel',
-    updatedAt: '2025-08-08',
-    metaDescription: 'Learn the real difference between Laravel’s service container and service providers. Understand how they work together with examples and practical use cases.',
-    excerpt: 'Service Container? Service Provider? If these two concepts confuse you in Laravel, this article will finally clear things up with simple examples and real use cases.',
-    content: `
+    `,
+    },
+    {
+        id: 22,
+        lang: 'en',
+        title: 'Laravel Service Container vs Service Provider: What’s the Difference?',
+        summary:
+            'Still confused between Laravel’s Service Container and Service Providers? This post clears it up with real examples and explains how they work together.',
+        date: '2025-08-08',
+        tags: [
+            'laravel',
+            'php',
+            'dependency injection',
+            'service container',
+            'service provider',
+        ],
+        slug: 'laravel-service-container-vs-provider',
+        author: authorMostefaBoudjema,
+        coverImage: cover22,
+        readingTime: '7 min read',
+        published: true,
+        category: 'Laravel',
+        updatedAt: '2025-08-08',
+        metaDescription:
+            'Learn the real difference between Laravel’s service container and service providers. Understand how they work together with examples and practical use cases.',
+        excerpt:
+            'Service Container? Service Provider? If these two concepts confuse you in Laravel, this article will finally clear things up with simple examples and real use cases.',
+        content: `
 ## 🧠 Service Container vs Service Provider — What’s the Deal?
 
 They sound similar, right?  
@@ -3776,25 +3914,34 @@ Auth::guard(...)
 Check out more Laravel deep dives here:  
 https://mostefa-boudjema.vercel.app/blog
 
-  `
-  },
-  {
-    id: 23,
-    lang: 'en',
-    title: '20 Core JavaScript Concepts That Will Instantly Make You a More Confident Developer',
-    summary: 'Still guessing your way through JS? Learn these 20 core concepts and start coding with real confidence. Each concept is explained with clarity and zero fluff.',
-    date: '2025-08-09',
-    tags: ['javascript', 'frontend', 'web development', 'js concepts', 'programming'],
-    slug: '20-core-javascript-concepts',
-    author: authorMostefaBoudjema,
-    coverImage: cover23,
-    readingTime: '10 min read',
-    published: true,
-    category: 'JavaScript',
-    updatedAt: '2025-08-09',
-    metaDescription: 'Master JavaScript by understanding these 20 fundamental concepts — closures, hoisting, scope, promises, async/await, this, event loop, and more.',
-    excerpt: 'JavaScript is full of “gotchas” — but once you understand these 20 core concepts, things will finally start making sense. Let’s break them down.',
-    content: `
+  `,
+    },
+    {
+        id: 23,
+        lang: 'en',
+        title: '20 Core JavaScript Concepts That Will Instantly Make You a More Confident Developer',
+        summary:
+            'Still guessing your way through JS? Learn these 20 core concepts and start coding with real confidence. Each concept is explained with clarity and zero fluff.',
+        date: '2025-08-09',
+        tags: [
+            'javascript',
+            'frontend',
+            'web development',
+            'js concepts',
+            'programming',
+        ],
+        slug: '20-core-javascript-concepts',
+        author: authorMostefaBoudjema,
+        coverImage: cover23,
+        readingTime: '10 min read',
+        published: true,
+        category: 'JavaScript',
+        updatedAt: '2025-08-09',
+        metaDescription:
+            'Master JavaScript by understanding these 20 fundamental concepts — closures, hoisting, scope, promises, async/await, this, event loop, and more.',
+        excerpt:
+            'JavaScript is full of “gotchas” — but once you understand these 20 core concepts, things will finally start making sense. Let’s break them down.',
+        content: `
 ## 💡 20 Core JavaScript Concepts Every Dev Should Know
 
 You can copy-paste code all day…  
@@ -4096,26 +4243,34 @@ Just understand these 20 core concepts — and practice using them.
 Check the blog:  
 https://mostefa-boudjema.vercel.app/blog
 
-  `
-  }
-  ,
-  {
-    id: 23,
-    lang: 'fr',
-    title: '20 concepts JavaScript essentiels pour devenir un développeur plus confiant',
-    summary: 'Tu tâtonnes encore avec JavaScript ? Apprends ces 20 concepts clés et code enfin avec assurance. Explications claires, sans blabla.',
-    date: '2025-08-09',
-    tags: ['javascript', 'frontend', 'développement web', 'concepts JS', 'programmation'],
-    slug: '20-concepts-javascript-essentiels',
-    author: authorMostefaBoudjemaFR,
-    coverImage: cover23,
-    readingTime: '10 min de lecture',
-    published: true,
-    category: 'JavaScript',
-    updatedAt: '2025-08-09',
-    metaDescription: 'Maîtrise JavaScript en comprenant ces 20 concepts fondamentaux : closures, hoisting, scope, promesses, async/await, this, event loop, etc.',
-    excerpt: 'JavaScript est plein de pièges — mais dès que tu comprends ces 20 concepts de base, tout devient plus clair. Voici l’essentiel à connaître.',
-    content: `
+  `,
+    },
+    {
+        id: 23,
+        lang: 'fr',
+        title: '20 concepts JavaScript essentiels pour devenir un développeur plus confiant',
+        summary:
+            'Tu tâtonnes encore avec JavaScript ? Apprends ces 20 concepts clés et code enfin avec assurance. Explications claires, sans blabla.',
+        date: '2025-08-09',
+        tags: [
+            'javascript',
+            'frontend',
+            'développement web',
+            'concepts JS',
+            'programmation',
+        ],
+        slug: '20-concepts-javascript-essentiels',
+        author: authorMostefaBoudjemaFR,
+        coverImage: cover23,
+        readingTime: '10 min de lecture',
+        published: true,
+        category: 'JavaScript',
+        updatedAt: '2025-08-09',
+        metaDescription:
+            'Maîtrise JavaScript en comprenant ces 20 concepts fondamentaux : closures, hoisting, scope, promesses, async/await, this, event loop, etc.',
+        excerpt:
+            'JavaScript est plein de pièges — mais dès que tu comprends ces 20 concepts de base, tout devient plus clair. Voici l’essentiel à connaître.',
+        content: `
 ## 💡 20 Concepts JavaScript Essentiels à Connaître
 
 Tu peux copier-coller du code à l’infini…  
@@ -4412,26 +4567,33 @@ Juste **comprendre ces 20 concepts** va te rendre 10x plus efficace.
 Passe sur le blog :  
 https://mostefa-boudjema.vercel.app/fr/blog
 
-  `
-  }
-  ,
-  {
-    id: 23,
-    lang: 'ar',
-    title: '20 مفهوم لازم تكون فاهمهم في JavaScript',
-    summary: 'ما تبقاش ديما تعوّل على StackOverflow! تعلّم هاد المفاهيم وتولي تفهم كود JavaScript بعينيك.',
-    date: '2025-08-09',
-    tags: ['javascript', 'تطوير الواجهة', 'برمجة الويب', 'أساسيات جافاسكريبت'],
-    slug: '20-js-concepts-arabic',
-    author: authorMostefaBoudjemaAR,
-    coverImage: cover23,
-    readingTime: '10 دقايق قراية',
-    published: true,
-    category: 'JavaScript',
-    updatedAt: '2025-08-09',
-    metaDescription: 'تعرّف على أهم 20 مفهوم في JavaScript مثل closures، hoisting، scope، promises، async/await، this، event loop وغيرها. شرح مبسط مع أمثلة.',
-    excerpt: 'JavaScript تقدر تبانلك معقدة فالأول، بصح كي تفهم هاد المفاهيم، كلش يولي ساهل.',
-    content: `
+  `,
+    },
+    {
+        id: 23,
+        lang: 'ar',
+        title: '20 مفهوم لازم تكون فاهمهم في JavaScript',
+        summary:
+            'ما تبقاش ديما تعوّل على StackOverflow! تعلّم هاد المفاهيم وتولي تفهم كود JavaScript بعينيك.',
+        date: '2025-08-09',
+        tags: [
+            'javascript',
+            'تطوير الواجهة',
+            'برمجة الويب',
+            'أساسيات جافاسكريبت',
+        ],
+        slug: '20-js-concepts-arabic',
+        author: authorMostefaBoudjemaAR,
+        coverImage: cover23,
+        readingTime: '10 دقايق قراية',
+        published: true,
+        category: 'JavaScript',
+        updatedAt: '2025-08-09',
+        metaDescription:
+            'تعرّف على أهم 20 مفهوم في JavaScript مثل closures، hoisting، scope، promises، async/await، this، event loop وغيرها. شرح مبسط مع أمثلة.',
+        excerpt:
+            'JavaScript تقدر تبانلك معقدة فالأول، بصح كي تفهم هاد المفاهيم، كلش يولي ساهل.',
+        content: `
 ## 💡 20 مفهوم لازمك تفهمهم في JavaScript
 
 كاين فرق كبير بين نسخ الكود وفهمو.  
@@ -4681,27 +4843,35 @@ button.addEventListener("click", handleClick);
 \`\`\`js
 user?.address?.city
   
-`
-  }
-  ,
+`,
+    },
 
-  {
-    id: 24,
-    lang: 'en',
-    title: '25 Laravel Interview Questions to Help You Land Remote Backend Jobs',
-    summary: 'Interviewing for a Laravel backend role? These 25 project-manager-style questions will help you prepare and answer with clarity and confidence.',
-    date: '2027-04-10',
-    tags: ['laravel', 'backend', 'web development', 'interview', 'remote work'],
-    slug: '25-laravel-interview-questions',
-    author: authorMostefaBoudjema,
-    coverImage: cover24,
-    readingTime: '8 min read',
-    published: true,
-    category: 'Laravel',
-    updatedAt: '2027-04-11',
-    metaDescription: 'Nail your Laravel backend interview with these 25 clear and concise questions and answers, tailored for remote job discussions with project managers.',
-    excerpt: 'Preparing for a Laravel backend job interview with a project manager? These 25 questions cover everything from collaboration to Laravel practices, with quick-fire answers.',
-    content: `
+    {
+        id: 24,
+        lang: 'en',
+        title: '25 Laravel Interview Questions to Help You Land Remote Backend Jobs',
+        summary:
+            'Interviewing for a Laravel backend role? These 25 project-manager-style questions will help you prepare and answer with clarity and confidence.',
+        date: '2027-04-10',
+        tags: [
+            'laravel',
+            'backend',
+            'web development',
+            'interview',
+            'remote work',
+        ],
+        slug: '25-laravel-interview-questions',
+        author: authorMostefaBoudjema,
+        coverImage: cover24,
+        readingTime: '8 min read',
+        published: true,
+        category: 'Laravel',
+        updatedAt: '2027-04-11',
+        metaDescription:
+            'Nail your Laravel backend interview with these 25 clear and concise questions and answers, tailored for remote job discussions with project managers.',
+        excerpt:
+            'Preparing for a Laravel backend job interview with a project manager? These 25 questions cover everything from collaboration to Laravel practices, with quick-fire answers.',
+        content: `
 ## 🚀 25 Laravel Interview Questions (With Quick Answers)
 
 Interviewing for a Laravel backend developer job — especially remote — means answering a mix of technical, behavioral, and workflow questions. Here are the most common ones you'll likely face from a project manager:
@@ -4857,26 +5027,28 @@ Good luck — you got this!
 
 🔗 Want more Laravel content?  
 Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-  `
-  }
-  ,
-  {
-    id: 25,
-    lang: 'en',
-    title: 'PHP 8.5: New Features Every Backend Dev Should Know',
-    summary: 'Explore the top new features in PHP 8.5, including the pipe operator, array helpers, fatal error backtraces, and more.',
-    date: '2025-07-28',
-    tags: ['php', 'backend', 'updates', 'release', 'developer'],
-    slug: 'php-8-5-new-features',
-    author: authorMostefaBoudjema,
-    coverImage: cover25,
-    readingTime: '7 min read',
-    published: true,
-    category: 'Backend',
-    updatedAt: '2025-07-28',
-    metaDescription: 'Discover what’s new in PHP 8.5: pipe operator, new array functions, fatal error stack traces, and useful improvements for Laravel and backend developers.',
-    excerpt: 'Explore the most practical new features in PHP 8.5 that make your backend development faster, safer, and more expressive.',
-    content: `
+  `,
+    },
+    {
+        id: 25,
+        lang: 'en',
+        title: 'PHP 8.5: New Features Every Backend Dev Should Know',
+        summary:
+            'Explore the top new features in PHP 8.5, including the pipe operator, array helpers, fatal error backtraces, and more.',
+        date: '2025-07-28',
+        tags: ['php', 'backend', 'updates', 'release', 'developer'],
+        slug: 'php-8-5-new-features',
+        author: authorMostefaBoudjema,
+        coverImage: cover25,
+        readingTime: '7 min read',
+        published: true,
+        category: 'Backend',
+        updatedAt: '2025-07-28',
+        metaDescription:
+            'Discover what’s new in PHP 8.5: pipe operator, new array functions, fatal error stack traces, and useful improvements for Laravel and backend developers.',
+        excerpt:
+            'Explore the most practical new features in PHP 8.5 that make your backend development faster, safer, and more expressive.',
+        content: `
   ## 🚀 What’s New in PHP 8.5
   
   PHP 8.5 brings a clean mix of powerful syntax, debugging improvements, and utility upgrades that make backend development more fluent and productive. Here's a breakdown of what’s worth your attention.
@@ -5010,25 +5182,28 @@ Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/bl
   - Check my blog for Laravel 11 compatibility tips with PHP 8.5.
   
   🔗 [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-    `
-  },
-  {
-    id: 26,
-    lang: 'en',
-    title: 'Local US Businesses That Need a Website (But Often Don’t Have One)',
-    summary: 'Discover which types of local businesses across the US still lack proper websites and how this creates a huge opportunity for web developers.',
-    date: '2027-07-31',
-    tags: ['local', 'business', 'websites', 'freelancing', 'opportunities'],
-    slug: 'us-local-businesses-need-websites',
-    author: authorMostefaBoudjema,
-    coverImage: cover26,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Freelancing',
-    updatedAt: '2027-07-31',
-    metaDescription: 'Many US local businesses like plumbers, salons, and clinics still operate without a proper website. Learn which sectors to target for freelance web dev gigs.',
-    excerpt: 'Here’s a clear list of local business types in the US that need websites but often still don’t have one. Perfect for freelance devs looking for high-impact clients.',
-    content: `
+    `,
+    },
+    {
+        id: 26,
+        lang: 'en',
+        title: 'Local US Businesses That Need a Website (But Often Don’t Have One)',
+        summary:
+            'Discover which types of local businesses across the US still lack proper websites and how this creates a huge opportunity for web developers.',
+        date: '2027-07-31',
+        tags: ['local', 'business', 'websites', 'freelancing', 'opportunities'],
+        slug: 'us-local-businesses-need-websites',
+        author: authorMostefaBoudjema,
+        coverImage: cover26,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Freelancing',
+        updatedAt: '2027-07-31',
+        metaDescription:
+            'Many US local businesses like plumbers, salons, and clinics still operate without a proper website. Learn which sectors to target for freelance web dev gigs.',
+        excerpt:
+            'Here’s a clear list of local business types in the US that need websites but often still don’t have one. Perfect for freelance devs looking for high-impact clients.',
+        content: `
   ## 🧭 Overview
   
   Tons of local businesses in the US still rely on Facebook pages, word-of-mouth, or worse—nothing at all online. That’s where web developers come in.
@@ -5139,25 +5314,28 @@ Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/bl
   
   🔗 Need help pitching them? Check my freelance outreach templates here:
   [https://mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/blog)
-    `
-  },
-  {
-    id: 27,
-    lang: "en",
-    title: "Local Businesses in Annaba That Desperately Need a Website",
-    summary: "A breakdown of which businesses in Annaba, Algeria still lack websites—and why it’s a huge opportunity for web developers.",
-    date: "2027-07-31",
-    tags: ["algeria", "business", "annaba", "websites", "opportunity"],
-    slug: "annaba-businesses-need-websites",
-    author: authorMostefaBoudjema,
-    coverImage: cover27,
-    readingTime: "6 min read",
-    published: true,
-    category: "Freelancing",
-    updatedAt: "2027-07-31",
-    metaDescription: "Explore the sectors in Annaba, Algeria where small businesses still lack websites—from computer shops to cafés—and how you can target them as a web developer.",
-    excerpt: "Web developers in Algeria—especially in Annaba—are sitting on a goldmine. These business sectors need websites, and fast. Here's your list of who to target and why.",
-    content: `
+    `,
+    },
+    {
+        id: 27,
+        lang: 'en',
+        title: 'Local Businesses in Annaba That Desperately Need a Website',
+        summary:
+            'A breakdown of which businesses in Annaba, Algeria still lack websites—and why it’s a huge opportunity for web developers.',
+        date: '2027-07-31',
+        tags: ['algeria', 'business', 'annaba', 'websites', 'opportunity'],
+        slug: 'annaba-businesses-need-websites',
+        author: authorMostefaBoudjema,
+        coverImage: cover27,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Freelancing',
+        updatedAt: '2027-07-31',
+        metaDescription:
+            'Explore the sectors in Annaba, Algeria where small businesses still lack websites—from computer shops to cafés—and how you can target them as a web developer.',
+        excerpt:
+            "Web developers in Algeria—especially in Annaba—are sitting on a goldmine. These business sectors need websites, and fast. Here's your list of who to target and why.",
+        content: `
   ## 🔍 Businesses in Annaba That Still Need a Website
   
   ### 1. 🖥️ Computer & Electronics Stores
@@ -5225,25 +5403,28 @@ Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/bl
   ## ✅ Final Thought
   
   Annaba is going digital—but slowly. Be the developer who helps it move faster, one small business at a time.
-    `
-  },
-  {
-    id: 28,
-    lang: 'en',
-    title: 'Which Businesses in Algeria Still Need a Website?',
-    summary: 'Thousands of Algerian businesses still operate without a proper website. Here\'s where the biggest opportunities are for developers.',
-    date: '2027-07-31',
-    tags: ['algeria', 'business', 'webdev', 'opportunity', 'freelancing'],
-    slug: 'algeria-businesses-need-websites',
-    author: authorMostefaBoudjema,
-    coverImage: cover28,
-    readingTime: '6 min read',
-    published: true,
-    category: 'Freelancing',
-    updatedAt: '2027-07-31',
-    metaDescription: 'Algeria is full of local businesses that lack proper websites. Discover which sectors are most in need—and how web developers can tap into them.',
-    excerpt: 'From insurance agencies to artisans and freelancers—many Algerian businesses still have no website. Here’s a focused breakdown of who to target and why it’s worth it.',
-    content: `
+    `,
+    },
+    {
+        id: 28,
+        lang: 'en',
+        title: 'Which Businesses in Algeria Still Need a Website?',
+        summary:
+            "Thousands of Algerian businesses still operate without a proper website. Here's where the biggest opportunities are for developers.",
+        date: '2027-07-31',
+        tags: ['algeria', 'business', 'webdev', 'opportunity', 'freelancing'],
+        slug: 'algeria-businesses-need-websites',
+        author: authorMostefaBoudjema,
+        coverImage: cover28,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Freelancing',
+        updatedAt: '2027-07-31',
+        metaDescription:
+            'Algeria is full of local businesses that lack proper websites. Discover which sectors are most in need—and how web developers can tap into them.',
+        excerpt:
+            'From insurance agencies to artisans and freelancers—many Algerian businesses still have no website. Here’s a focused breakdown of who to target and why it’s worth it.',
+        content: `
   ## 🇩🇿 What Kind of Businesses in Algeria Still Need a Website?
   
   Algeria is still early in digital adoption—especially outside e-commerce giants. As a web dev, here's where the real opportunity lies.
@@ -5334,26 +5515,28 @@ Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/bl
   You’re not too late. You’re actually early.
   
   Start local. Solve a real problem. Repeat.
-    `
-  }
-  ,
-  {
-    id: 28,
-    lang: "ar",
-    title: "شكون المحلات في الجزائر اللي مازال ماعندهومش موقع ويب؟",
-    summary: "آلاف المحلات الجزائرية مازالو يخدمو بلا مواقع ويب. هنا تلقى القطاعات اللي فيها أكبر فرص للمطورين.",
-    date: "2027-07-31",
-    tags: ["الجزائر", "أعمال", "مطورين", "فرصة", "فريلانس"],
-    slug: "algeria-businesses-need-websites-ar",
-    author: authorMostefaBoudjemaAR,
-    coverImage: cover28,
-    readingTime: "6 دقايق قراية",
-    published: true,
-    category: "Freelancing",
-    updatedAt: "2027-07-31",
-    metaDescription: "الجزائر مازال فيها بزاف من المحلات بلا مواقع. إكتشف القطاعات اللي فيها الطلب كبير، وكيفاش كمطور تقدر تستغل الفرصة.",
-    excerpt: "من وكالات التأمين للحرفيين والفريلانسرز—بزاف من المحلات في الجزائر مازال ماعندهمش موقع. هاك التفاصيل: شكون تستهدف، وعلاش هذي فرصة كبيرة.",
-    content: `
+    `,
+    },
+    {
+        id: 28,
+        lang: 'ar',
+        title: 'شكون المحلات في الجزائر اللي مازال ماعندهومش موقع ويب؟',
+        summary:
+            'آلاف المحلات الجزائرية مازالو يخدمو بلا مواقع ويب. هنا تلقى القطاعات اللي فيها أكبر فرص للمطورين.',
+        date: '2027-07-31',
+        tags: ['الجزائر', 'أعمال', 'مطورين', 'فرصة', 'فريلانس'],
+        slug: 'algeria-businesses-need-websites-ar',
+        author: authorMostefaBoudjemaAR,
+        coverImage: cover28,
+        readingTime: '6 دقايق قراية',
+        published: true,
+        category: 'Freelancing',
+        updatedAt: '2027-07-31',
+        metaDescription:
+            'الجزائر مازال فيها بزاف من المحلات بلا مواقع. إكتشف القطاعات اللي فيها الطلب كبير، وكيفاش كمطور تقدر تستغل الفرصة.',
+        excerpt:
+            'من وكالات التأمين للحرفيين والفريلانسرز—بزاف من المحلات في الجزائر مازال ماعندهمش موقع. هاك التفاصيل: شكون تستهدف، وعلاش هذي فرصة كبيرة.',
+        content: `
   ## 🇩🇿 شكون المحلات في الجزائر اللي مازال ما عندهمش موقع؟
   
   الرقمنة في الجزائر مازالها في بدايتها—خصوصاً خارج التجارة الإلكترونية الكبيرة. كمطور، هاذي هي القطاعات اللي تقدر تدي منها فرص.
@@ -5444,25 +5627,28 @@ Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/bl
   راك ماشي متأخر. بالعكس، راك فالوقت الصح.
   
   إبدأ محلياً. حل مشكل حقيقي. وكرر.
-  `
-  },
-  {
-    id: 27,
-    lang: "ar",
-    title: "شكون المحلات في عنابة اللي مازال ماعندهومش موقع ويب؟",
-    summary: "تفصيل على المحلات في عنابة، الجزائر، اللي مازال ماعندهومش مواقع ويب—وعلاش هاذي فرصة كبيرة للمطورين.",
-    date: "2027-07-31",
-    tags: ["الجزائر", "أعمال", "عنابة", "مواقع", "فرصة"],
-    slug: "annaba-businesses-need-websites-ar",
-    author: authorMostefaBoudjemaAR,
-    coverImage: cover27,
-    readingTime: "6 دقايق قراية",
-    published: true,
-    category: "Freelancing",
-    updatedAt: "2027-07-31",
-    metaDescription: "إكتشف القطاعات في عنابة وين المحلات الصغار مازال ماعندهومش مواقع—من محلات إلكترونيات حتى الكافيهات—وكيفاش تستهدفهم كمطور ويب.",
-    excerpt: "مطورين الويب في الجزائر، خصوصاً في عنابة، راهي قدامهم منجم ذهب. هاذي القطاعات تحتاج مواقع، وبالسرعة. شوف معايا شكون تستهدف وعلاش.",
-    content: `
+  `,
+    },
+    {
+        id: 27,
+        lang: 'ar',
+        title: 'شكون المحلات في عنابة اللي مازال ماعندهومش موقع ويب؟',
+        summary:
+            'تفصيل على المحلات في عنابة، الجزائر، اللي مازال ماعندهومش مواقع ويب—وعلاش هاذي فرصة كبيرة للمطورين.',
+        date: '2027-07-31',
+        tags: ['الجزائر', 'أعمال', 'عنابة', 'مواقع', 'فرصة'],
+        slug: 'annaba-businesses-need-websites-ar',
+        author: authorMostefaBoudjemaAR,
+        coverImage: cover27,
+        readingTime: '6 دقايق قراية',
+        published: true,
+        category: 'Freelancing',
+        updatedAt: '2027-07-31',
+        metaDescription:
+            'إكتشف القطاعات في عنابة وين المحلات الصغار مازال ماعندهومش مواقع—من محلات إلكترونيات حتى الكافيهات—وكيفاش تستهدفهم كمطور ويب.',
+        excerpt:
+            'مطورين الويب في الجزائر، خصوصاً في عنابة، راهي قدامهم منجم ذهب. هاذي القطاعات تحتاج مواقع، وبالسرعة. شوف معايا شكون تستهدف وعلاش.',
+        content: `
   ## 🔍 محلات في عنابة مازال ماعندهومش موقع
   
   ### 1. 🖥️ محلات الإعلام الآلي والإلكترونيات
@@ -5531,25 +5717,28 @@ Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/bl
   ## ✅ الكلمة الأخيرة
   
   عنابة راهي رايحة نحو الرقمنة—لكن ببطء. كن المطور اللي يسرّع هاذ التغيير، محل بمحل.
-  `
-  },
-  {
-    id: 29,
-    lang: "en",
-    title: "Top 7 Developer Tools Used in 2025",
-    summary: "A practical breakdown of the most used developer tools in 2025—from coding editors and API testers to design and deployment tools.",
-    date: "2025-08-02",
-    tags: ["developer tools", "2025", "programming", "tech", "software"],
-    slug: "top-developer-tools-2025",
-    author: authorMostefaBoudjema,
-    coverImage: cover29,
-    readingTime: "5 min read",
-    published: true,
-    category: "Tech",
-    updatedAt: "2025-08-02",
-    metaDescription: "Check out the 7 most popular tools developers are using in 2025, including VS Code, GitHub, Docker, and more. Stay updated with the modern dev stack.",
-    excerpt: "Whether you're coding, testing APIs, or managing containers, these are the must-have tools developers rely on in 2025. Here's what you should be using.",
-    content: `
+  `,
+    },
+    {
+        id: 29,
+        lang: 'en',
+        title: 'Top 7 Developer Tools Used in 2025',
+        summary:
+            'A practical breakdown of the most used developer tools in 2025—from coding editors and API testers to design and deployment tools.',
+        date: '2025-08-02',
+        tags: ['developer tools', '2025', 'programming', 'tech', 'software'],
+        slug: 'top-developer-tools-2025',
+        author: authorMostefaBoudjema,
+        coverImage: cover29,
+        readingTime: '5 min read',
+        published: true,
+        category: 'Tech',
+        updatedAt: '2025-08-02',
+        metaDescription:
+            'Check out the 7 most popular tools developers are using in 2025, including VS Code, GitHub, Docker, and more. Stay updated with the modern dev stack.',
+        excerpt:
+            "Whether you're coding, testing APIs, or managing containers, these are the must-have tools developers rely on in 2025. Here's what you should be using.",
+        content: `
   ## 🚀 Top 7 Developer Tools in 2025
   
   ### 1. 🖊️ Visual Studio Code (VS Code)
@@ -5614,25 +5803,34 @@ Visit: [mostefa-boudjema.vercel.app/blog](https://mostefa-boudjema.vercel.app/bl
   ## ✅ Final Word
   
   If you’re building apps in 2025, these tools are part of the modern dev stack. Learn them, master them, and use them to ship faster and cleaner. No fluff—just the tools that get things done.
-    `
-  },
-  {
-    id: 30,
-    lang: "en",
-    title: "Most In-Demand Landing Page Types in 2025 (Global & Algeria)",
-    summary: "A practical look at the landing page types businesses are actively investing in worldwide and in Algeria. Use this insight to target the right clients.",
-    date: "2027-08-05",
-    tags: ["landing pages", "web design", "algeria", "freelance", "2025 trends"],
-    slug: "landing-page-demand-2025",
-    author: authorMostefaBoudjema,
-    coverImage: cover30,
-    readingTime: "5 min read",
-    published: true,
-    category: "Web Design",
-    updatedAt: "2027-08-05",
-    metaDescription: "Explore the most requested landing page types in 2025—globally and in Algeria. Know what clients are looking for and how to pitch effectively.",
-    excerpt: "Whether you’re building pages for SaaS startups or local Algerian clinics, these are the landing pages businesses are paying for in 2025. Here’s the list.",
-    content: `
+    `,
+    },
+    {
+        id: 30,
+        lang: 'en',
+        title: 'Most In-Demand Landing Page Types in 2025 (Global & Algeria)',
+        summary:
+            'A practical look at the landing page types businesses are actively investing in worldwide and in Algeria. Use this insight to target the right clients.',
+        date: '2027-08-05',
+        tags: [
+            'landing pages',
+            'web design',
+            'algeria',
+            'freelance',
+            '2025 trends',
+        ],
+        slug: 'landing-page-demand-2025',
+        author: authorMostefaBoudjema,
+        coverImage: cover30,
+        readingTime: '5 min read',
+        published: true,
+        category: 'Web Design',
+        updatedAt: '2027-08-05',
+        metaDescription:
+            'Explore the most requested landing page types in 2025—globally and in Algeria. Know what clients are looking for and how to pitch effectively.',
+        excerpt:
+            'Whether you’re building pages for SaaS startups or local Algerian clinics, these are the landing pages businesses are paying for in 2025. Here’s the list.',
+        content: `
 ## 🌟 Most In-Demand Landing Pages in 2025
 
 Whether you’re targeting global clients or small businesses in Algeria, these are the landing pages that actually convert and sell in 2025.
@@ -5782,25 +5980,28 @@ Used for trending products sold directly via social media.
 If you're building or selling landing pages in 2025, focus on results—not flashy designs. Algerian businesses care about **WhatsApp, speed, and simplicity**. Global clients care about **conversion and clarity**.
 
 Need help building reusable landing page templates for these niches? Let's build them together.
-`
-  },
-  {
-    id: 31,
-    lang: "ar",
-    title: "كيفاش تعرض خدماتك في تطوير المواقع وجه لوجه (دليل 2025)",
-    summary: "واش هي أفضل طريقة تهدر مع الناس وتعرض عليهم خدمة إنشاء موقع؟ هاد الدليل يعلمك كيفاش تقنع الزبون وجه لوجه وتخرج بخدمة.",
-    date: "2027-08-05",
-    tags: ["فريلانس", "خدمة المواقع", "الجزائر", "كيف تبيع", "مطوّر ويب"],
-    slug: "web-dev-pitch-2025-dz",
-    author: authorMostefaBoudjema,
-    coverImage: cover31,
-    readingTime: "5 دقايق قراية",
-    published: true,
-    category: "Freelancing",
-    updatedAt: "2027-08-05",
-    metaDescription: "حاب تزيد عدد الزبائن وتخدم أكثر كمطوّر ويب؟ هاك طريقة مجرّبة وفعالة كيفاش تعرض خدمتك للناس وجه لوجه وتخليهم مهتمّين.",
-    excerpt: "ما تحتاجش إشهار فايسبوك ولا موقع ضخم باش تجيب الزبائن. خذ تليفونك، خدم شوية كروت، وروح دق على البيبان. هكا تبدأ.",
-    content: `
+`,
+    },
+    {
+        id: 31,
+        lang: 'ar',
+        title: 'كيفاش تعرض خدماتك في تطوير المواقع وجه لوجه (دليل 2025)',
+        summary:
+            'واش هي أفضل طريقة تهدر مع الناس وتعرض عليهم خدمة إنشاء موقع؟ هاد الدليل يعلمك كيفاش تقنع الزبون وجه لوجه وتخرج بخدمة.',
+        date: '2027-08-05',
+        tags: ['فريلانس', 'خدمة المواقع', 'الجزائر', 'كيف تبيع', 'مطوّر ويب'],
+        slug: 'web-dev-pitch-2025-dz',
+        author: authorMostefaBoudjema,
+        coverImage: cover31,
+        readingTime: '5 دقايق قراية',
+        published: true,
+        category: 'Freelancing',
+        updatedAt: '2027-08-05',
+        metaDescription:
+            'حاب تزيد عدد الزبائن وتخدم أكثر كمطوّر ويب؟ هاك طريقة مجرّبة وفعالة كيفاش تعرض خدمتك للناس وجه لوجه وتخليهم مهتمّين.',
+        excerpt:
+            'ما تحتاجش إشهار فايسبوك ولا موقع ضخم باش تجيب الزبائن. خذ تليفونك، خدم شوية كروت، وروح دق على البيبان. هكا تبدأ.',
+        content: `
 ## 🚪 كيفاش تعرض خدمة تطوير المواقع وجه لوجه في 2025
 
 أنت فريلانس وتحب تزيد الزبائن؟  
@@ -5886,25 +6087,28 @@ Need help building reusable landing page templates for these niches? Let's build
 ماشي ضروري تعقّد الأمور، بالعكس، زيد تبسّطها وتبان صادق ومحترف.  
 روح دق على 5-6 محلات في النهار، ومع الوقت تبدأ تجيب خدمة وحدة وراء وحدة.
 
-`
-  },
-  {
-    id: 32,
-    lang: "en",
-    title: "Jobs That Need a Website in 2025",
-    summary: "From freelancers to local clinics, here’s a breakdown of professions where having a website is no longer optional but essential for growth.",
-    date: "2025-08-28",
-    tags: ["websites", "freelance", "algeria", "jobs", "small business"],
-    slug: "jobs-that-need-website-2025",
-    author: authorMostefaBoudjema,
-    coverImage: cover32,
-    readingTime: "6 min read",
-    published: true,
-    category: "Web Design",
-    updatedAt: "2025-08-28",
-    metaDescription: "Discover the jobs and professions that absolutely require a website in 2025—globally and in Algeria. Target the right clients by knowing who needs you most.",
-    excerpt: "Whether it’s a doctor, a freelancer, or a local shop owner, some jobs simply can’t thrive without a website. Here’s the list of professions where websites make the biggest impact in 2025.",
-    content: `
+`,
+    },
+    {
+        id: 32,
+        lang: 'en',
+        title: 'Jobs That Need a Website in 2025',
+        summary:
+            'From freelancers to local clinics, here’s a breakdown of professions where having a website is no longer optional but essential for growth.',
+        date: '2025-08-28',
+        tags: ['websites', 'freelance', 'algeria', 'jobs', 'small business'],
+        slug: 'jobs-that-need-website-2025',
+        author: authorMostefaBoudjema,
+        coverImage: cover32,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Web Design',
+        updatedAt: '2025-08-28',
+        metaDescription:
+            'Discover the jobs and professions that absolutely require a website in 2025—globally and in Algeria. Target the right clients by knowing who needs you most.',
+        excerpt:
+            'Whether it’s a doctor, a freelancer, or a local shop owner, some jobs simply can’t thrive without a website. Here’s the list of professions where websites make the biggest impact in 2025.',
+        content: `
 ## 🌐 Why Certain Jobs Need a Website
 
 In 2025, social media is powerful—but it’s not enough. If you rely only on Facebook, Instagram, or TikTok, you’re always at the mercy of algorithms. A website gives professionals **control, credibility, and a place to convert clients**.
@@ -6046,24 +6250,34 @@ If you’re a freelancer or agency, these are the **exact niches to target in 20
 - **Global market:** SaaS, creative portfolios, consultants, and course creators.  
 
 Bottom line: If the profession depends on trust, credibility, or lead generation—a website isn’t optional anymore. It’s the front door to their business.
-`
-  }, {
-    id: 32,
-    lang: "ar",
-    title: "الوظائف التي تحتاج موقع إلكتروني في 2025",
-    summary: "من المستقلين إلى العيادات المحلية، هذه نظرة عملية على المهن التي أصبح وجود موقع إلكتروني فيها ضرورة للنمو.",
-    date: "2025-08-28",
-    tags: ["مواقع إلكترونية", "عمل حر", "الجزائر", "مشاريع صغيرة", "ويب ديزاين"],
-    slug: "jobs-need-website-2025-ar",
-    author: authorMostefaBoudjema,
-    coverImage: cover32,
-    readingTime: "6 دقائق قراءة",
-    published: true,
-    category: "تصميم مواقع",
-    updatedAt: "2025-08-28",
-    metaDescription: "اكتشف الوظائف والمهن التي تحتاج فعليًا إلى موقع إلكتروني في 2025، سواء عالميًا أو في الجزائر. استهدف العملاء الصح عبر معرفة من يحتاجك أكثر.",
-    excerpt: "سواء طبيب، فريلانسير أو صاحب متجر محلي، هناك مهن لا يمكنها النجاح بدون موقع إلكتروني. هذه قائمة بالوظائف الأكثر حاجة لمواقع في 2025.",
-    content: `
+`,
+    },
+    {
+        id: 32,
+        lang: 'ar',
+        title: 'الوظائف التي تحتاج موقع إلكتروني في 2025',
+        summary:
+            'من المستقلين إلى العيادات المحلية، هذه نظرة عملية على المهن التي أصبح وجود موقع إلكتروني فيها ضرورة للنمو.',
+        date: '2025-08-28',
+        tags: [
+            'مواقع إلكترونية',
+            'عمل حر',
+            'الجزائر',
+            'مشاريع صغيرة',
+            'ويب ديزاين',
+        ],
+        slug: 'jobs-need-website-2025-ar',
+        author: authorMostefaBoudjema,
+        coverImage: cover32,
+        readingTime: '6 دقائق قراءة',
+        published: true,
+        category: 'تصميم مواقع',
+        updatedAt: '2025-08-28',
+        metaDescription:
+            'اكتشف الوظائف والمهن التي تحتاج فعليًا إلى موقع إلكتروني في 2025، سواء عالميًا أو في الجزائر. استهدف العملاء الصح عبر معرفة من يحتاجك أكثر.',
+        excerpt:
+            'سواء طبيب، فريلانسير أو صاحب متجر محلي، هناك مهن لا يمكنها النجاح بدون موقع إلكتروني. هذه قائمة بالوظائف الأكثر حاجة لمواقع في 2025.',
+        content: `
 ## 🌐 لماذا بعض المهن تحتاج موقع؟
 
 في 2025، وسائل التواصل الاجتماعي مهمة، لكن وحدها غير كافية. إذا اعتمدت فقط على فيسبوك أو إنستغرام فأنت رهينة الخوارزميات. الموقع الإلكتروني يعطيك **مصداقية، تحكم، ومساحة لتحويل الزوار إلى عملاء**.
@@ -6205,159 +6419,341 @@ Bottom line: If the profession depends on trust, credibility, or lead generation
 - **عالميًا:** الاستشاريون، المبدعون، صناع المحتوى، والمشاريع الناشئة.  
 
 القاعدة بسيطة: أي مهنة تعتمد على **الثقة أو جمع العملاء** لازم يكون عندها موقع إلكتروني. هو الباب الأول لعملهم.
-`
-  },
-  {
-    id: 33,
-    lang: "en",
-    title: "Building a Basic Medical Cabinet Web App",
-    summary: "A step-by-step guide to plan a simple clinic management system—covering key features, database schema, and a UML class diagram to kick-start development.",
-    date: "2025-09-15",
-    tags: ["web development", "laravel", "healthcare", "database", "clinic app"],
-    slug: "basic-medical-cabinet-web-app",
-    author: authorMostefaBoudjema,
-    coverImage: cover33,
-    readingTime: "6 min read",
-    published: true,
-    category: "Web Development",
-    updatedAt: "2025-09-15",
-    metaDescription: "Learn how to design a medical cabinet web application with essential features, database tables, and a UML class diagram—perfect for a Laravel + Vue stack.",
-    excerpt: "Planning a clinic management app? Here’s a clear blueprint for the features, database schema, and UML diagram you need to build a basic medical cabinet web app.",
-    content: `
-## 🩺 Overview
+`,
+    },
+    {
+        id: 33,
+        lang: 'en',
+        title: 'How Modern Clinic Management Systems Are Built in 2026',
+        summary:
+            'A practical look at the architecture, features, and technologies behind modern clinic management platforms.',
+        date: '2025-09-02',
+        tags: [
+            'Laravel',
+            'Nuxt',
+            'Healthcare',
+            'Clinic Management',
+            'Web Development',
+        ],
+        slug: 'modern-clinic-management-system-2026',
+        author: authorMostefaBoudjema,
+        coverImage: cover33,
+        readingTime: '7 min read',
+        published: true,
+        category: 'System Development',
+        updatedAt: '2026-05-07',
+        metaDescription:
+            'Explore how modern clinic management systems are built in 2026 using Laravel, Nuxt, and scalable healthcare-focused architecture.',
+        excerpt:
+            'Clinic management systems are no longer simple CRUD apps. Here’s what a modern medical platform looks like in 2026.',
+        content: `
+## 🩺 Why Clinics Need Modern Systems
 
-A medical cabinet (clinic) web app helps manage patients, appointments, and medical records efficiently.  
-Below is a **practical blueprint** for building a minimum viable product (MVP).
+In 2026, spreadsheets and paper-based workflows are no longer enough for clinics and medical centers. Modern healthcare businesses need fast, organized, and scalable systems to manage patients, appointments, consultations, and finances efficiently.
 
----
-
-## 1️⃣ Core Features
-
-- **Patient Management**: register, edit, archive patient profiles.  
-- **Appointments**: book, reschedule, cancel.  
-- **Doctors/Staff Management**: handle multiple doctors or assistants.  
-- **Medical Records**: store diagnoses, treatments, prescriptions, and lab results.  
-- **Billing/Payments** *(optional)*: track and record payments.  
-- **Authentication/Roles**: separate permissions for admin, doctor, receptionist.
-
----
-
-## 2️⃣ Database Tables
-
-Use singular model names and plural table names.
-
-### Users & Roles
-| Table   | Fields |
-|---------|-------|
-| \`users\` | id, name, email, password, role (admin/doctor/staff) |
-
-### Patients
-| Table      | Fields |
-|------------|-------|
-| \`patients\` | id, first_name, last_name, gender, dob, phone, email, address, emergency_contact, insurance_info(optional) |
-
-### Appointments
-| Table          | Fields |
-|----------------|-------|
-| \`appointments\` | id, patient_id (FK), doctor_id (FK→users), date_time, status (scheduled/completed/cancelled), notes |
-
-### Medical Records
-| Table             | Fields |
-|-------------------|-------|
-| \`medical_records\` | id, patient_id, doctor_id, visit_date, diagnosis, treatment, prescription, attachment(optional) |
-
-### Payments (optional)
-| Table     | Fields |
-|-----------|-------|
-| \`payments\` | id, patient_id, appointment_id, amount, method (cash/card), paid_at |
-
-### Audit Logs (optional)
-| Table           | Fields |
-|-----------------|-------|
-| \`activity_logs\` | id, user_id, action, model_type, model_id, created_at |
+A good clinic management system improves both operational efficiency and patient experience.
 
 ---
 
-## 3️⃣ Relationships
+## 👤 Patient Management & Medical History
 
-- **User 1–* Appointments** (doctor to appointments)  
-- **Patient 1–* Appointments**  
-- **Patient 1–* MedicalRecords**  
-- **Appointment 1–1 Payment** (if using payments)  
-- **User 1–* MedicalRecords** (doctor notes)
+The foundation of any medical platform is structured patient data.
 
----
+**Core features usually include:**  
+- Detailed patient profiles  
+- Unique patient codes  
+- Medical history tracking  
+- Allergies and chronic diseases  
+- Historical vitals monitoring  
 
-## 4️⃣ UML Class Diagram
-
-\`\`\`
-+-----------+        +------------+
-|   User    |1----* | Appointment|
-+-----------+        +------------+
-|id         |       /|id          |
-|name       |      / |date_time   |
-|email      |     /  |status      |
-|role       |    /   |patient_id  |
-+-----------+   /    |doctor_id   |
-                 /
-+-------------+ /    +---------------+
-|  Patient    |1----*| MedicalRecord |
-+-------------+      +---------------+
-|id           |      |id             |
-|first_name   |      |diagnosis      |
-|last_name    |      |treatment      |
-|dob          |      |prescription   |
-+-------------+      |visit_date     |
-                     |doctor_id      |
-                     +---------------+
-\`\`\`
+Centralized patient records allow doctors to access important medical information instantly during consultations.
 
 ---
 
-## 5️⃣ Suggested Tech Stack
+## 🏥 Consultations & Diagnostics
 
-- **Backend**: Laravel 11/12  
-- **Frontend**: Vue 3 + Inertia or Nuxt (SPA)  
-- **Database**: MySQL or PostgreSQL  
-- **Auth**: Laravel Breeze or Jetstream  
-- **UI**: Tailwind with Flowbite or Vuetify
+Modern consultation systems go beyond simple notes.
+
+**Essential features:**  
+- Physical examination records  
+- Diagnosis management  
+- ICD-10 integration  
+- Digital prescriptions  
+- Laboratory test management  
+
+This creates a complete medical workflow that is easier to track, review, and maintain.
 
 ---
 
-## 6️⃣ Extra Considerations
+## 📅 Appointment & Queue Management
 
-- Strong input validation and unique patient IDs  
-- Role-based permissions using Laravel Gates/Policies  
-- Search and filter by patient name, date, or doctor  
-- Backup and export to CSV/PDF  
-- Audit logging for edits and deletions
+Scheduling is one of the biggest operational challenges for clinics.
+
+**Modern systems typically provide:**  
+- Smart appointment booking  
+- Status management (Scheduled, Completed, Cancelled)  
+- Real-time queue monitoring  
+- Doctor schedule organization  
+- Automated reminders  
+
+Efficient scheduling reduces waiting times and improves clinic organization.
+
+---
+
+## 💰 Financial Tracking & Analytics
+
+Financial management is just as important as clinical operations.
+
+**Key capabilities include:**  
+- Payment tracking  
+- Multiple payment methods  
+- Revenue analytics  
+- Financial reporting  
+- Patient and medication statistics  
+
+Dashboards and analytics help clinic owners make better operational decisions.
+
+---
+
+## ⚙️ Recommended Tech Stack in 2026
+
+Building a scalable healthcare platform requires a modern architecture.
+
+### Backend
+- Laravel 12/13  
+- PHP 8.3+  
+- Laravel Sanctum  
+- Service-based architecture  
+- Spatie Activity Log  
+
+### Frontend
+- Nuxt 4 + Vue 3  
+- TypeScript  
+- Pinia  
+- TailwindCSS  
+- Shadcn-Vue  
+
+This stack provides strong performance, maintainability, and scalability for long-term development.
+
+---
+
+## 🎨 UX Matters More Than Ever
+
+Even powerful systems fail if they are difficult to use.
+
+That’s why modern medical platforms focus on:
+- Responsive layouts  
+- Dark/Light mode  
+- Skeleton loaders  
+- Fast search and autocomplete  
+- Clean dashboards for doctors and staff  
+
+The goal is to reduce friction and improve workflow speed.
+
+---
+
+## 📊 Quick Overview
+
+| Section                  | Main Purpose                          |
+|---------------------------|---------------------------------------|
+| Patient Management        | Centralized medical records           |
+| Consultations             | Diagnoses and prescriptions           |
+| Appointments              | Scheduling and queue organization     |
+| Financial Records         | Billing and revenue tracking          |
+| Analytics                 | Reports and real-time statistics      |
+| Staff Management          | Role-based access control             |
 
 ---
 
 ## ✅ Final Thoughts
 
-Start simple: focus on \`users\`, \`patients\`, \`appointments\`, and \`medical_records\` tables.  
-Add billing, inventory, or reporting only when required.  
-This foundation will scale with your clinic’s needs.
-`
-  },
-  {
-    id: 34,
-    lang: "en",
-    title: "How to Find Freelance Clients on LinkedIn as a Laravel Developer",
-    summary: "A straight-to-the-point guide for Laravel developers to land freelance work using LinkedIn—covering profile optimization, networking, content strategy, and outreach.",
-    date: "2025-09-17",
-    tags: ["freelance", "laravel", "linkedin", "web development", "business"],
-    slug: "find-freelance-clients-linkedin-laravel",
-    author: authorMostefaBoudjema,
-    coverImage: cover34,
-    readingTime: "6 min read",
-    published: true,
-    category: "Freelancing",
-    updatedAt: "2025-09-17",
-    metaDescription: "Practical steps for Laravel developers to get freelance clients on LinkedIn: optimize your profile, grow your network, post valuable content, and reach out effectively.",
-    excerpt: "Want freelance Laravel projects? Here’s a pragmatic LinkedIn playbook to attract and convert clients—from sharpening your profile to sending smart outreach messages.",
-    content: `
+Modern clinic management systems are no longer simple CRUD dashboards.
+
+Healthcare platforms in 2026 require:
+- Clean architecture  
+- Strong security  
+- Fast UX  
+- Scalable infrastructure  
+- Reliable data management  
+
+With technologies like Laravel and Nuxt, developers can build robust healthcare systems that scale from small clinics to large medical centers.
+`,
+    },
+    {
+        id: 33,
+        lang: 'ar',
+        title: 'كيف تبني نظام إدارة عيادة حديث في 2026',
+        summary:
+            'نظرة عملية على أهم المكونات التي يحتاجها أي نظام طبي حديث لإدارة المرضى، المواعيد، والفواتير بكفاءة.',
+        date: '2025-09-02',
+        tags: ['Laravel', 'Nuxt', 'أنظمة طبية', 'إدارة عيادات', 'تطوير ويب'],
+        slug: 'modern-clinic-management-system-2026-ar',
+        author: authorMostefaBoudjema,
+        coverImage: cover33,
+        readingTime: '7 دقائق قراءة',
+        published: true,
+        category: 'تطوير الأنظمة',
+        updatedAt: '2026-05-07',
+        metaDescription:
+            'تعرف على المكونات الأساسية لبناء نظام إدارة عيادات حديث باستخدام Laravel و Nuxt، مع إدارة المرضى، المواعيد، والوصفات الطبية.',
+        excerpt:
+            'أنظمة إدارة العيادات لم تعد مجرد CRUD بسيط. هذه نظرة على كيف يتم بناء منصة طبية حديثة وقابلة للتوسع في 2026.',
+        content: `
+## 🩺 لماذا تحتاج العيادات إلى أنظمة حديثة؟
+
+في 2026، الاعتماد على الملفات الورقية أو جداول Excel لم يعد عمليًا. العيادات الحديثة تحتاج إلى نظام متكامل يساعد الأطباء والموظفين على إدارة المرضى، المواعيد، والوصفات بشكل سريع وآمن.
+
+النظام الجيد لا يوفر الوقت فقط، بل يحسن تجربة المريض ويقلل الأخطاء الطبية والإدارية.
+
+---
+
+## 👤 إدارة المرضى والسجل الطبي
+
+أهم جزء في أي نظام طبي هو إدارة بيانات المرضى بشكل منظم.
+
+**ما يجب أن يدعمه النظام:**  
+- معلومات المريض الأساسية  
+- رقم مريض فريد  
+- التاريخ الطبي والحساسيات  
+- الأمراض المزمنة والعمليات السابقة  
+- تتبع العلامات الحيوية مع الوقت  
+
+وجود سجل طبي مركزي يسهل على الطبيب الوصول إلى كل المعلومات أثناء الاستشارة.
+
+---
+
+## 🏥 إدارة الاستشارات والوصفات
+
+الاستشارة الطبية ليست مجرد ملاحظة قصيرة، بل عملية متكاملة.
+
+**الخصائص الأساسية:**  
+- تسجيل الفحص والتشخيص  
+- دعم أكواد ICD-10  
+- وصفات طبية رقمية  
+- ربط الأدوية بقاعدة بيانات  
+- طلبات التحاليل الطبية  
+
+هذا يجعل المتابعة الطبية أوضح وأسهل للطبيب والمريض معًا.
+
+---
+
+## 📅 المواعيد وتنظيم العيادة
+
+إدارة المواعيد من أكثر المشاكل شيوعًا في العيادات التقليدية.
+
+**النظام الحديث يجب أن يوفر:**  
+- حجز المواعيد  
+- إدارة الحالات (مؤكد، مكتمل، ملغي)  
+- نظام Queue مباشر  
+- تنظيم وقت الأطباء  
+- إشعارات وتذكيرات  
+
+كل هذا يقلل الفوضى داخل العيادة ويحسن تجربة الاستقبال.
+
+---
+
+## 💰 الإدارة المالية والإحصائيات
+
+الجانب المالي مهم بنفس أهمية الجانب الطبي.
+
+**ما يجب توفره:**  
+- تسجيل المدفوعات  
+- طرق دفع متعددة  
+- متابعة الإيرادات اليومية والشهرية  
+- إحصائيات المرضى والأدوية  
+- رسوم بيانية وتقارير مباشرة  
+
+لوحة تحكم جيدة تساعد صاحب العيادة على اتخاذ قرارات أفضل.
+
+---
+
+## ⚙️ التقنيات المناسبة في 2026
+
+بناء نظام طبي حديث يحتاج Stack قوي وقابل للتوسع.
+
+### Backend
+- Laravel 12/13  
+- Laravel Sanctum  
+- Services + Resources Architecture  
+- Spatie Activity Log  
+
+### Frontend
+- Nuxt 4 + Vue 3  
+- TypeScript  
+- Pinia  
+- TailwindCSS  
+- Shadcn-Vue  
+
+هذا النوع من المعمارية يجعل النظام سريع، قابل للصيانة، وسهل التطوير مستقبلًا.
+
+---
+
+## 🎨 تجربة المستخدم مهمة جدًا
+
+حتى أقوى الأنظمة تفشل لو كانت معقدة.
+
+لهذا الأنظمة الحديثة تعتمد على:
+- تصميم Responsive  
+- Dark/Light Mode  
+- Skeleton Loaders  
+- بحث سريع وAutocomplete  
+- واجهات بسيطة للأطباء والاستقبال  
+
+الهدف أن يكون النظام سريع التعلم والاستخدام.
+
+---
+
+## 📊 لمحة سريعة
+
+| القسم                  | الوظيفة الأساسية                  |
+|-------------------------|-----------------------------------|
+| إدارة المرضى            | حفظ وتتبع السجل الطبي             |
+| الاستشارات              | التشخيص والوصفات والتحاليل         |
+| المواعيد                | تنظيم الحجوزات والطوابير          |
+| الإدارة المالية         | الفواتير والإيرادات               |
+| الإحصائيات              | تقارير وتحليلات مباشرة            |
+| إدارة المستخدمين        | صلاحيات للأطباء والموظفين         |
+
+---
+
+## ✅ الخلاصة
+
+بناء نظام إدارة عيادات في 2026 لم يعد مجرد CRUD تقليدي.  
+الأنظمة الطبية الحديثة تحتاج إلى:
+- Architecture نظيفة  
+- UX سريع وواضح  
+- أمان عالي للبيانات  
+- أداء قوي وقابلية للتوسع  
+
+ومع استخدام Laravel + Nuxt يمكن بناء منصة طبية احترافية تدعم العيادات الصغيرة وحتى المراكز الطبية الكبيرة.
+`,
+    },
+    {
+        id: 34,
+        lang: 'en',
+        title: 'How to Find Freelance Clients on LinkedIn as a Laravel Developer',
+        summary:
+            'A straight-to-the-point guide for Laravel developers to land freelance work using LinkedIn—covering profile optimization, networking, content strategy, and outreach.',
+        date: '2025-09-17',
+        tags: [
+            'freelance',
+            'laravel',
+            'linkedin',
+            'web development',
+            'business',
+        ],
+        slug: 'find-freelance-clients-linkedin-laravel',
+        author: authorMostefaBoudjema,
+        coverImage: cover34,
+        readingTime: '6 min read',
+        published: true,
+        category: 'Freelancing',
+        updatedAt: '2025-09-17',
+        metaDescription:
+            'Practical steps for Laravel developers to get freelance clients on LinkedIn: optimize your profile, grow your network, post valuable content, and reach out effectively.',
+        excerpt:
+            'Want freelance Laravel projects? Here’s a pragmatic LinkedIn playbook to attract and convert clients—from sharpening your profile to sending smart outreach messages.',
+        content: `
 ## 🚀 Overview
 
 LinkedIn is more than a résumé site—it's a client-finding machine when used correctly.  
@@ -6427,25 +6823,28 @@ If you’re a Laravel web developer looking for freelance projects, here’s a *
 Finding freelance clients on LinkedIn isn’t about spamming messages—it’s about **visibility, credibility, and targeted outreach**.  
 Polish your profile, build a relevant network, share useful content, and approach leads strategically.  
 Do this consistently, and projects will start finding you.
-`
-  },
-  {
-    id: 35,
-    lang: "en",
-    title: "How to Set Up Docker for a Laravel Project (Apache & MySQL)",
-    summary: "Step-by-step guide to containerize a Laravel app with Docker using Apache and MySQL. Covers Dockerfile creation, docker-compose setup, environment configuration, and common fixes.",
-    date: "2025-09-26",
-    tags: ["laravel", "docker", "apache", "mysql", "devops"],
-    slug: "docker-setup-laravel-apache-mysql",
-    author: authorMostefaBoudjema,
-    coverImage: cover35,
-    readingTime: "7 min read",
-    published: true,
-    category: "Web Development",
-    updatedAt: "2027-09-26",
-    metaDescription: "Learn how to run Laravel inside Docker with Apache and MySQL. This practical guide shows you how to write the Dockerfile, configure docker-compose, set environment variables, and troubleshoot common errors.",
-    excerpt: "A clear, no-fluff tutorial on Dockerizing Laravel with Apache and MySQL. From Dockerfile to docker-compose and database configuration, this guide gets your app running in containers fast.",
-    content: `
+`,
+    },
+    {
+        id: 35,
+        lang: 'en',
+        title: 'How to Set Up Docker for a Laravel Project (Apache & MySQL)',
+        summary:
+            'Step-by-step guide to containerize a Laravel app with Docker using Apache and MySQL. Covers Dockerfile creation, docker-compose setup, environment configuration, and common fixes.',
+        date: '2025-09-26',
+        tags: ['laravel', 'docker', 'apache', 'mysql', 'devops'],
+        slug: 'docker-setup-laravel-apache-mysql',
+        author: authorMostefaBoudjema,
+        coverImage: cover35,
+        readingTime: '7 min read',
+        published: true,
+        category: 'Web Development',
+        updatedAt: '2027-09-26',
+        metaDescription:
+            'Learn how to run Laravel inside Docker with Apache and MySQL. This practical guide shows you how to write the Dockerfile, configure docker-compose, set environment variables, and troubleshoot common errors.',
+        excerpt:
+            'A clear, no-fluff tutorial on Dockerizing Laravel with Apache and MySQL. From Dockerfile to docker-compose and database configuration, this guide gets your app running in containers fast.',
+        content: `
 ## 🚀 Overview
 
 Docker makes Laravel development consistent across any machine.  
@@ -6578,25 +6977,34 @@ docker compose exec app php artisan migrate
 ## ✅ Done
 
 You now have a fully Dockerized Laravel app running Apache & MySQL—ready for local development or production tweaks.
-`
-  }
-,{
-    id: 36,
-    lang: "ar",
-    title: "الدليل الشامل للمبتدئين على لينكدإن في 2026",
-    summary: "خطة عملية لبناء حضور قوي على لينكدإن خطوة بخطوة، من الصفر إلى جذب العملاء والفرص المهنية بشكل مستمر.",
-    date: "2026-05-05",
-    tags: ["لينكدإن", "العلامة الشخصية", "عمل حر", "التسويق الشخصي", "LinkedIn"],
-    slug: "linkedin-beginners-guide-2026-ar",
-    author: authorMostefaBoudjema,
-    coverImage: cover36,
-    readingTime: "7 دقائق قراءة",
-    published: true,
-    category: "التسويق الشخصي",
-    updatedAt: "2026-05-05",
-    metaDescription: "تعلم كيف تبني حساب لينكدإن قوي في 2026 عبر استراتيجية مجربة للنشر، التعليقات، بناء العلاقات وتحويل المتابعين إلى عملاء.",
-    excerpt: "إذا كنت تريد استخدام لينكدإن لجذب فرص عمل أو عملاء حقيقيين، فهذا الدليل العملي يشرح لك ما يجب فعله يوميًا وأسبوعيًا لتحقيق نتائج فعلية.",
-    content: `
+`,
+    },
+    {
+        id: 36,
+        lang: 'ar',
+        title: 'الدليل الشامل للمبتدئين على لينكدإن في 2026',
+        summary:
+            'خطة عملية لبناء حضور قوي على لينكدإن خطوة بخطوة، من الصفر إلى جذب العملاء والفرص المهنية بشكل مستمر.',
+        date: '2026-05-05',
+        tags: [
+            'لينكدإن',
+            'العلامة الشخصية',
+            'عمل حر',
+            'التسويق الشخصي',
+            'LinkedIn',
+        ],
+        slug: 'linkedin-beginners-guide-2026-ar',
+        author: authorMostefaBoudjema,
+        coverImage: cover36,
+        readingTime: '7 دقائق قراءة',
+        published: true,
+        category: 'التسويق الشخصي',
+        updatedAt: '2026-05-05',
+        metaDescription:
+            'تعلم كيف تبني حساب لينكدإن قوي في 2026 عبر استراتيجية مجربة للنشر، التعليقات، بناء العلاقات وتحويل المتابعين إلى عملاء.',
+        excerpt:
+            'إذا كنت تريد استخدام لينكدإن لجذب فرص عمل أو عملاء حقيقيين، فهذا الدليل العملي يشرح لك ما يجب فعله يوميًا وأسبوعيًا لتحقيق نتائج فعلية.',
+        content: `
 
 ## 🚀 لماذا لينكدإن مهم اليوم؟
 
@@ -6746,25 +7154,34 @@ You now have a fully Dockerized Laravel app running Apache & MySQL—ready for l
 
 بل:  
 **هل أنت مستعد للالتزام طويل المدى؟**
-`
-},
-{
-  id: 37,
-  lang: "en",
-  title: "Which LinkedIn Posts Web Developers Should Target for Profile Views & Engagement",
-  summary: "A practical breakdown of the types of LinkedIn posts web developers should comment on to increase visibility, engagement, and profile clicks.",
-  date: "2026-05-06",
-  tags: ["LinkedIn", "Web Development", "Personal Branding", "Career Growth", "Freelancing"],
-  slug: "linkedin-posts-web-developers-engagement",
-  author: authorMostefaBoudjema,
-  coverImage: cover37,
-  readingTime: "5 minutes read",
-  published: true,
-  category: "Career Growth",
-  updatedAt: "2026-05-06",
-  metaDescription: "Discover the exact types of LinkedIn posts web developers should target to boost profile views, attract recruiters, and increase engagement in 2026.",
-  excerpt: "If you’re a web developer, commenting randomly on LinkedIn won’t help. Here are the exact post types that actually drive profile views and engagement.",
-  content: `
+`,
+    },
+    {
+        id: 37,
+        lang: 'en',
+        title: 'Which LinkedIn Posts Web Developers Should Target for Profile Views & Engagement',
+        summary:
+            'A practical breakdown of the types of LinkedIn posts web developers should comment on to increase visibility, engagement, and profile clicks.',
+        date: '2026-05-06',
+        tags: [
+            'LinkedIn',
+            'Web Development',
+            'Personal Branding',
+            'Career Growth',
+            'Freelancing',
+        ],
+        slug: 'linkedin-posts-web-developers-engagement',
+        author: authorMostefaBoudjema,
+        coverImage: cover37,
+        readingTime: '5 minutes read',
+        published: true,
+        category: 'Career Growth',
+        updatedAt: '2026-05-06',
+        metaDescription:
+            'Discover the exact types of LinkedIn posts web developers should target to boost profile views, attract recruiters, and increase engagement in 2026.',
+        excerpt:
+            'If you’re a web developer, commenting randomly on LinkedIn won’t help. Here are the exact post types that actually drive profile views and engagement.',
+        content: `
 ## 🚀 Why targeting matters on LinkedIn
 
 If your goal is **profile views and meaningful engagement as a web developer**, commenting everywhere is a waste of effort.  
@@ -6886,40 +7303,35 @@ That’s where:
 - profile clicks increase significantly
 - real conversations happen
 
-`
-}
-
-
-
+`,
+    },
 ];
 
 // Sort by updatedAt (descending: newest first)
 
-postsList=postsList
-  .filter(post => post.published===true)
-  .sort((a, b) => new Date(b.updatedAt)-new Date(a.updatedAt));
+postsList = postsList
+    .filter((post) => post.published === true)
+    .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
 // Export only posts published on or before today (dynamic date)
-const today=new Date();
-const yyyy=today.getFullYear();
-const mm=String(today.getMonth()+1).padStart(2, '0');
-const dd=String(today.getDate()).padStart(2, '0');
-const todayStr=`${yyyy}-${mm}-${dd}`;
+const today = new Date();
+const yyyy = today.getFullYear();
+const mm = String(today.getMonth() + 1).padStart(2, '0');
+const dd = String(today.getDate()).padStart(2, '0');
+const todayStr = `${yyyy}-${mm}-${dd}`;
 
 // SSR-safe flag (works on Vercel/serverless too)
 // Set NUXT_PUBLIC_USE_ALL_POSTS=true to display all posts even if scheduled for the future.
-const useAllPosts=process.env.NUXT_PUBLIC_USE_ALL_POSTS==='true';
+const useAllPosts = process.env.NUXT_PUBLIC_USE_ALL_POSTS === 'true';
 
-const posts=
-  useAllPosts
+const posts = useAllPosts
     ? postsList
-    :postsList.filter(post => new Date(post.updatedAt)<=new Date(todayStr));
+    : postsList.filter(
+          (post) => new Date(post.updatedAt) <= new Date(todayStr),
+      );
 
-const privates=postsList.filter(post => new Date(post.updatedAt)>new Date(todayStr));
-
+const privates = postsList.filter(
+    (post) => new Date(post.updatedAt) > new Date(todayStr),
+);
 
 export { postsList, posts, privates };
-
-
-
- 
