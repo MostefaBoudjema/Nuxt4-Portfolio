@@ -1,10 +1,26 @@
 {
     "Projects": "Projets",
-    "Mostefa Boudjema": "Mostefa Boudjema",
+    "Home": "Accueil",
+    "Blog": "Blog",
     "About Me": "À propos",
+    "Pricing": "Tarification",
     "Contact": "Contact",
-    "Close": "Fermer",
     "Download CV": "Télécharger CV",
+    "More Articles": "Plus d'articles",
+    "Nzidoo - eCommerce App": "Nzidoo - App eCommerce",
+    "Laravel Vue Web App": "Application Web Laravel Vue",
+    "🚗 iAuto — Multi-Module Automotive SaaS Platform": "🚗 iAuto — Plateforme SaaS automobile multi-module",
+    "Laravel Vue Application": "Application Laravel Vue",
+    "AnnabaPhone - Phones Store": "AnnabaPhone - Magasin de téléphones",
+    "Wordpress site": "Site Wordpress",
+    "Shifaa Care - Medical cabinet App": "Shifaa Care - App cabinet médical",
+    "React Web App": "Application Web React",
+    "Roxboro - Content Management System": "Roxboro - Système de gestion de contenu",
+    "Laravel Application": "Application Laravel",
+    "MediLab - Clinic Landing Page": "MediLab - Page d'accueil clinique",
+    "Nuxt Vue Web App": "Application Web Nuxt Vue",
+    "Mostefa Boudjema": "Mostefa Boudjema",
+    "Close": "Fermer",
     "CV": "CV",
     "Blog Services": "Services de blog",
     "Phone store services": "Services de magasin de téléphones",
@@ -56,7 +72,6 @@
     "details3": "Optimisation des performances : Les utilisateurs attendent des sites web qu'ils se chargent rapidement et sans accroc. Des temps de chargement lents ou des animations saccadées peuvent entraîner de la frustration et une mauvaise expérience utilisateur. L'optimisation des performances implique de trouver un équilibre entre la qualité visuelle et la réduction des temps de chargement.",
     "details4": "Accessibilité : L'accessibilité web garantit que les utilisateurs en situation de handicap peuvent accéder à votre projet web et l'utiliser. Cela implique de concevoir des sites compatibles avec les lecteurs d'écran, des raccourcis clavier, et une navigation aisée avec des technologies d'assistance. Assurer l'accessibilité nécessite une bonne compréhension des directives et des tests avec divers outils d'assistance.",
     "Phones Store": "Magasin de téléphones",
-    "Blog": "Blog",
     "Clothes Store": "Magasin de vêtements",
     "Employment History": "Historique professionnel",
     "Business": "Entreprise",
@@ -296,7 +311,6 @@
     "Sending...": "Envoi...",
     "Next": "Suivant",
     "Message sent successfully! ...": "Message envoyé avec succès ! ...",
-    "Home": "Accueil",
     "Contact Us": "Contactez-nous",
     "Mymoviez - Popular shows listing Website": "Mymoviez - Site de classement des films populaires",
     "Frontend": "Frontend",
@@ -311,7 +325,6 @@
     "Car store services": "services de concessionnaire de voitures",
     "eBook": "e-book",
     "Private": "Privé",
-    "Pricing": "Tarif",
     "Saadaah News": "Saadaah News",
     "detailsCD": "detailsCD",
     "Bash Gate Landing Page": "Page d'atterrissage Bash Gate",
@@ -327,7 +340,10 @@
         "relatedPosts": "Articles connexes",
         "notFound": "Non trouvé",
         "noPosts": "Aucun article trouvé.",
-        "noRelatedPosts": "Aucun article connexe trouvé."
+        "noRelatedPosts": "Aucun article connexe trouvé.",
+        "postNotFound": "Article de blog non trouvé",
+        "postNotFoundDesc": "L'article que vous recherchez n'existe pas ou a été déplacé.",
+        "backToBlog": "Retour au blog"
     },
     "form": {
         "previous": "Précédent",
@@ -335,14 +351,17 @@
         "sendMessage": "Envoyer le message",
         "sending": "Envoi en cours...",
         "successMessage": "Message envoyé avec succès ! Nous vous répondrons bientôt.",
-        "errorMessage": "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.",
+        "errorMessage": "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer plus tard.",
+        "other": {
+            "placeholder": "Veuillez préciser pour {field}"
+        },
         "subject": {
-            "label": "Quel est le sujet de votre message ?",
-            "placeholder": "Saisissez le sujet"
+            "label": "De quoi s'agit-il ?",
+            "placeholder": "Entrez le sujet"
         },
         "projectType": {
             "label": "Quel type de projet vous intéresse ?",
-            "placeholder": "Sélectionnez un type de projet",
+            "placeholder": "Sélectionnez le type de projet",
             "options": {
                 "webDev": "Développement Web",
                 "ecommerce": "Solution E-commerce",
@@ -437,5 +456,23 @@
         },
         "note": "Nous pouvons préparer un prototype gratuit sans engagement afin que vous puissiez prévisualiser votre site avant de décider."
     },
+    "projects": {
+        "projectNotFound": "Projet non trouvé",
+        "projectNotFoundDesc": "Le projet que vous recherchez n'existe pas ou a été déplacé.",
+        "backToProjects": "Retour aux projets"
+    },
+    "header": {
+        "phone": "Téléphone",
+        "email": "E-mail"
+    },
+    "PageNotFound": "Page non trouvée",
+    "PageNotFoundDesc": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "GoHome": "Retour à l'accueil",
+    "ContactSupport": "Signaler un problème",
+    "ErrorOccurred": "Une erreur est survenue",
+    "ErrorDesc": "Nous avons rencontré une erreur inattendue. Veuillez réessayer plus tard.",
+    "authorName": "Mostefa Boudjema",
+    "AllRightsReserved": "Tous droits réservés.",
+    "Test": "Test",
     "link": "Lien"
 }

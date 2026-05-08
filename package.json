@@ -9,7 +9,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",    
+    "i18n:report": "npx vue-i18n-extract report --vueFiles \"./app/**/*.{vue,ts}\" --languageFiles \"./i18n/en.json\" --output _bak/i18n-en.json"
+ 
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

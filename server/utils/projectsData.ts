@@ -66,6 +66,11 @@ const SMALL_IMAGE_URLS={
     src: '/images/technology/firebase.webp',
     width: '60px',
   },
+  filament: {
+    alt: "filament",
+    src: '/images/technology/filament.webp',
+    width: '60px',
+  },
 };
 
 // Define all project images as constants for reuse
@@ -426,6 +431,37 @@ const PROJECT_IMAGE_URLS={
       { id: 15, img: '/images/projects/nzidoo/15.webp' },
       { id: 16, img: '/images/projects/nzidoo/16.webp' },
       { id: 17, img: '/images/projects/nzidoo/17.webp' },
+    ],
+  },
+  hrms: {
+    img: '/images/projects/hrms/0.webp',
+    projectImages: [
+      { id: 0, img: '/images/projects/hrms/0.webp' },
+      { id: 1, img: '/images/projects/hrms/1.webp' },
+      { id: 2, img: '/images/projects/hrms/2.webp' },
+      { id: 3, img: '/images/projects/hrms/3.webp' },
+      { id: 4, img: '/images/projects/hrms/4.webp' },
+      { id: 5, img: '/images/projects/hrms/5.webp' },
+      { id: 6, img: '/images/projects/hrms/6.webp' },
+      { id: 7, img: '/images/projects/hrms/7.webp' },
+      { id: 8, img: '/images/projects/hrms/8.webp' },
+      { id: 9, img: '/images/projects/hrms/9.webp' },
+      { id: 10, img: '/images/projects/hrms/10.webp' },
+      { id: 11, img: '/images/projects/hrms/11.webp' },
+      { id: 12, img: '/images/projects/hrms/12.webp' },
+      { id: 13, img: '/images/projects/hrms/13.webp' },
+      { id: 14, img: '/images/projects/hrms/14.webp' },
+      { id: 15, img: '/images/projects/hrms/15.webp' },
+      { id: 16, img: '/images/projects/hrms/16.webp' },
+      { id: 17, img: '/images/projects/hrms/17.webp' },
+      { id: 18, img: '/images/projects/hrms/18.webp' },
+      { id: 19, img: '/images/projects/hrms/19.webp' },
+      { id: 20, img: '/images/projects/hrms/20.webp' },
+      { id: 21, img: '/images/projects/hrms/21.webp' },
+      { id: 22, img: '/images/projects/hrms/22.webp' },
+      { id: 23, img: '/images/projects/hrms/23.webp' },
+      { id: 24, img: '/images/projects/hrms/24.webp' },
+      { id: 25, img: '/images/projects/hrms/25.webp' },
     ],
   },
 };
@@ -3494,7 +3530,105 @@ const allProjects=[
         },
       ],
     },
-  }
+  },
+  {
+    id: 31,
+    title: 'HRMS - Human Resource Management System',
+    hide: false,
+    category: 'Laravel Filament Web App',
+    link: 'hrms',
+    img: PROJECT_IMAGE_URLS.hrms.img,
+    smallImages: [
+      { id: 1, ...SMALL_IMAGE_URLS.laravel },
+      { id: 1, ...SMALL_IMAGE_URLS.filament },
+      { id: 2, ...SMALL_IMAGE_URLS.php },
+      { id: 3, ...SMALL_IMAGE_URLS.tailwind },
+    ],
+    singleProjectHeader: {
+      singleProjectTitle: "HRMS - Human Resource Management System",
+      singleProjectDate: "07 Mai 2026",
+      singleProjectTag: "Frontend/Backend",
+    },
+    projectImages: PROJECT_IMAGE_URLS.hrms.projectImages,
+    projectInfo: {
+      clientHeading: "About Client",
+      companyInfos: [
+        {
+          id: 1,
+          title: "Name",
+          details: "HRMS - Human Resource Management System",
+        },
+        {
+          id: 2,
+          title: "Services",
+          details: "Frontend Development, Web Design, Backend Development",
+        },
+        {
+          id: 3,
+          title: "Website",
+          details: "#",
+        },
+      ],
+      objectivesHeading: "Objective",
+      objectivesDetails: "Objective31",
+      technologies: [
+        {
+          title: "Tools & Technologies",
+          techs: [
+            "Laravel",
+            "Filament",
+            "Tailwind",
+          ],
+        },
+      ],
+      projectDetailsHeading: "Challenge",
+      projectDetails: [
+        {
+          id: 1,
+          details: "details31A",
+        },
+        {
+          id: 2,
+          details: "details31B",
+        },
+        {
+          id: 3,
+          details: "details31C",
+        },
+        {
+          id: 4,
+          details: "details31D",
+        },
+      ],
+      socialSharingsHeading: "Share This",
+      socialSharings: [
+        {
+          id: 1,
+          name: "Twitter",
+          icon: "twitter",
+          url: "#",
+        },
+        {
+          id: 2,
+          name: "Instagram",
+          icon: "instagram",
+          url: "#",
+        },
+        {
+          id: 3,
+          name: "Facebook",
+          icon: "facebook",
+          url: "#",
+        },
+        {
+          id: 4,
+          name: "LinkedIn",
+          icon: "linkedin",
+          url: "#",
+        },
+      ],
+    },
+  },
 
 
 
