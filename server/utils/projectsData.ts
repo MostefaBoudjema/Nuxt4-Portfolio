@@ -464,6 +464,23 @@ const PROJECT_IMAGE_URLS={
       { id: 25, img: '/images/projects/hrms/25.webp' },
     ],
   },
+  printiha: {
+    img: '/images/projects/printiha/0.webp',
+    projectImages: [
+      { id: 0, img: '/images/projects/printiha/0.webp' },
+      { id: 1, img: '/images/projects/printiha/1.webp' },
+      { id: 2, img: '/images/projects/printiha/2.webp' },
+      { id: 3, img: '/images/projects/printiha/3.webp' },
+      { id: 4, img: '/images/projects/printiha/4.webp' },
+      { id: 5, img: '/images/projects/printiha/5.webp' },
+      { id: 6, img: '/images/projects/printiha/6.webp' },
+      { id: 7, img: '/images/projects/printiha/7.webp' },
+      { id: 8, img: '/images/projects/printiha/8.webp' },
+      { id: 9, img: '/images/projects/printiha/9.webp' },
+      { id: 10, img: '/images/projects/printiha/10.webp' },
+      { id: 11, img: '/images/projects/printiha/11.webp' },
+    ],
+  },
 };
 
 const allProjects=[
@@ -3598,6 +3615,104 @@ const allProjects=[
         {
           id: 4,
           details: "details31D",
+        },
+      ],
+      socialSharingsHeading: "Share This",
+      socialSharings: [
+        {
+          id: 1,
+          name: "Twitter",
+          icon: "twitter",
+          url: "#",
+        },
+        {
+          id: 2,
+          name: "Instagram",
+          icon: "instagram",
+          url: "#",
+        },
+        {
+          id: 3,
+          name: "Facebook",
+          icon: "facebook",
+          url: "#",
+        },
+        {
+          id: 4,
+          name: "LinkedIn",
+          icon: "linkedin",
+          url: "#",
+        },
+      ],
+    },
+  },
+  {
+    id: 32,
+    title: 'Printiha - Print on Demand Website',
+    hide: false,
+    category: 'Laravel Filament Web App',
+    link: 'printiha',
+    img: PROJECT_IMAGE_URLS.printiha.img,
+    smallImages: [
+      { id: 1, ...SMALL_IMAGE_URLS.laravel },
+      { id: 1, ...SMALL_IMAGE_URLS.filament },
+      { id: 2, ...SMALL_IMAGE_URLS.php },
+      { id: 3, ...SMALL_IMAGE_URLS.tailwind },
+    ],
+    singleProjectHeader: {
+      singleProjectTitle: "Printiha - Print on Demand Website",
+      singleProjectDate: "19 Mai 2026",
+      singleProjectTag: "Frontend/Backend",
+    },
+    projectImages: PROJECT_IMAGE_URLS.printiha.projectImages,
+    projectInfo: {
+      clientHeading: "About Client",
+      companyInfos: [
+        {
+          id: 1,
+          title: "Name",
+          details: "Printiha - Print on Demand Website",
+        },
+        {
+          id: 2,
+          title: "Services",
+          details: "Frontend Development, Web Design, Backend Development",
+        },
+        {
+          id: 3,
+          title: "Website",
+          details: "#",
+        },
+      ],
+      objectivesHeading: "Objective",
+      objectivesDetails: "Objective32",
+      technologies: [
+        {
+          title: "Tools & Technologies",
+          techs: [
+            "Laravel",
+            "Filament",
+            "Tailwind",
+          ],
+        },
+      ],
+      projectDetailsHeading: "Challenge",
+      projectDetails: [
+        {
+          id: 1,
+          details: "details32A",
+        },
+        {
+          id: 2,
+          details: "details32B",
+        },
+        {
+          id: 3,
+          details: "details32C",
+        },
+        {
+          id: 4,
+          details: "details32D",
         },
       ],
       socialSharingsHeading: "Share This",
