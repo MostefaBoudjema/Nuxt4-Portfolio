@@ -65,6 +65,8 @@ import { useLocalePath, useRouter } from '#imports';
 const localePath = useLocalePath();
 const router = useRouter && useRouter();
 
+const { formatDate } = useFormatDate();
+
 const props = defineProps({
   currentPost: {
     type: Object,
@@ -105,14 +107,7 @@ const relatedPosts = computed(() => {
   return related;
 });
 
-function formatDate(dateString) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  });
-}
+
 
 function navigateToPost(slug) {
   // Use Nuxt localePath for localized navigation

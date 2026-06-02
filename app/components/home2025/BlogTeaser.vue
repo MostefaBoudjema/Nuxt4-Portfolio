@@ -45,7 +45,7 @@
         />
         <div class="p-5">
           <p class="text-xs text-ternary-dark/60 dark:text-ternary-light/60">
-            {{ post.updatedAt }} {{ post.readingTime }}
+            {{ formatDate(post.updatedAt) }} ({{ post.readingTime }})
           </p>
           <h3 class="mt-2 text-base font-semibold text-primary-dark dark:text-primary-light line-clamp-2">
             {{ post.title }}
@@ -80,6 +80,8 @@ import { useLocalePath } from '#i18n';
 const props = defineProps({
   limit: { type: Number, default: 4},
 });
+
+const { formatDate } = useFormatDate();
 
 const { t, locale } = useI18n({ inheritLocale: true, useScope: 'global' });
 const localePath = useLocalePath();
