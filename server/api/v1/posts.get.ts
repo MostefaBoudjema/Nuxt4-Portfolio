@@ -1,10 +1,15 @@
 export default defineEventHandler((event) => {
   const query = getQuery(event);
-  if (query.type === 'private') {
-    return privates;
+  const limit = query.limit ? Number(query.limit) : undefined;
+  const lang = query.lang ? String(query.lang) : undefined;
+  const sortDesc = (arr) => [...arr].sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+  
+  let data = query.type === 'private' ? privates : (query.type === 'all' ? postsList : posts);
+  
+  if (lang) {
+    data = data.filter(p => p.lang === lang);
   }
-  if (query.type === 'all') {
-    return postsList;
-  }
-  return posts;
+  
+  data = sortDesc(data);
+  return limit ? data.slice(0, limit) : data;
 });

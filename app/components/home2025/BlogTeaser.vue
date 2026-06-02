@@ -1,29 +1,3 @@
-<script setup>
-import { computed } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { useLocalePath } from '#i18n';
-const { data: posts, pending } = await useFetch('/api/v1/posts', {
-  lazy: true
-});
-
-
-const props = defineProps({
-  limit: { type: Number, default: 4 },
-});
-
-const { t, locale } = useI18n({ inheritLocale: true, useScope: 'global' });
-const localePath = useLocalePath();
-
-const filteredPosts = computed(() => {
-  return (posts.value || [])
-
-    .filter((p) => p.lang === locale.value)
-    .filter((p) => p.published !== false)
-    .slice()
-    .reverse()
-    .slice(0, props.limit);
-});
-</script>
 
 <template>
   <section class="sm:container sm:mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
@@ -71,7 +45,7 @@ const filteredPosts = computed(() => {
         />
         <div class="p-5">
           <p class="text-xs text-ternary-dark/60 dark:text-ternary-light/60">
-            {{ post.readingTime }}
+            {{ post.updatedAt }} {{ post.readingTime }}
           </p>
           <h3 class="mt-2 text-base font-semibold text-primary-dark dark:text-primary-light line-clamp-2">
             {{ post.title }}
@@ -97,5 +71,27 @@ const filteredPosts = computed(() => {
     </div>
   </section>
 </template>
+
+<script setup>
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useLocalePath } from '#i18n';
+
+const props = defineProps({
+  limit: { type: Number, default: 4},
+});
+
+const { t, locale } = useI18n({ inheritLocale: true, useScope: 'global' });
+const localePath = useLocalePath();
+
+const { data: posts, pending } = await useFetch(() => `/api/v1/posts?limit=${props.limit}&lang=${locale.value}`, {
+  lazy: true
+});
+
+const filteredPosts = computed(() => {
+  return (posts.value || [])
+    .filter((p) => p.published !== false);
+});
+</script>
 
 <style scoped></style>
