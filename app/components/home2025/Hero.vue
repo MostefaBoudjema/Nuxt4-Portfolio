@@ -14,21 +14,11 @@ const isRtl=computed(() => rtlLocales.includes(locale.value));
 <template>
   <section class="relative overflow-hidden">
     <div class="absolute inset-0">
-      <!-- <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl"></div> -->
-      <!-- <div class="absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-violet-500/20 blur-3xl"></div> -->
-      <!-- <div class="absolute inset-0 bg-gradient-to-b from-white via-white to-transparent dark:from-[#0B1220] dark:via-[#0B1220] dark:to-transparent"></div> -->
-    </div>
+ </div>
 
     <div class="relative sm:container sm:mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-7">
-          <div
-            :class="['inline-flex items-center gap-2 rounded-full border border-ternary-light/60 dark:border-ternary-dark/80 bg-white/60 dark:bg-ternary-dark/40 backdrop-blur px-4 py-2', isRtl ? 'flex-row-reverse' : '']">
-            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-            <span class="text-sm text-ternary-dark/80 dark:text-ternary-light/80">
-              {{ t('Hire Me') }}
-            </span>
-          </div>
 
           <h1 :class="[
             'mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary-dark dark:text-primary-light',
