@@ -69,10 +69,6 @@
             </div>
 
         </div>
-
-        <!-- Hire me modal -->
-        <!-- <HireMeModal v-if="settings.show_hire_me" :showModal="showModal" :modal="modal"
-            :categories="categories" aria-modal="Hire Me Modal" /> -->
     </nav>
 </template>
 <script setup>
