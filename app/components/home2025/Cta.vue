@@ -43,13 +43,12 @@ const isRtl = computed(() => rtlLocales.includes(locale.value));
             >
               {{ t('Contact') }}
             </NuxtLink>
-            <a
-              :href="configs.cv_path"
-              download
+            <NuxtLink
+              :to="localePath('/projects')"
               class="inline-flex items-center justify-center rounded-xl border border-ternary-light/70 dark:border-ternary-dark/80 bg-white/70 dark:bg-ternary-dark/40 backdrop-blur px-6 py-3 font-medium text-primary-dark dark:text-primary-light hover:bg-white/90 dark:hover:bg-ternary-dark/60 transition"
             >
-              {{ t('Download CV') }}
-            </a>
+              {{ t('All Projects') }}
+            </NuxtLink>
           </div>
         </div>
       </div>

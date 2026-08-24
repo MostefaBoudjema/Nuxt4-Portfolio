@@ -3765,6 +3765,7 @@ const allProjects=[
     id: 33,
     title: 'EduPay - Private School Management System',
     hide: false,
+    video: '/videos/edupay/0.mp4',
     category: 'Laravel Filament Web App',
     link: 'edupay',
     img: PROJECT_IMAGE_URLS.edupay.img,

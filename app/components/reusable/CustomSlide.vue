@@ -1,10 +1,7 @@
 
 <template>
     <div class="Carousel">
-        <video class="video-style" v-if="video" controls width="800">
-            <source :src="video" type="video/mp4" />
-        </video>
-        <div v-else>
+        <div v-if="combinedMedia.length>0">
             <div class="lightbox" v-show="lightboxActive" @click.self="
                 lightboxActive = false;
             currLightboxImg = currImgIdx;
@@ -13,19 +10,27 @@
                 <div class="prev" @click="goToImg(currLightboxImg - 1)"></div>
                 <div class="next" @click="goToImg(currLightboxImg + 1)"></div>
             </div>
-            <!-- big image  -->
-            <NuxtImg class="curr-Img" :src="imgList[currImgIdx].img" @click="lightboxActive = true" />
-            <!-- small images  -->
+            <!-- big image/video -->
+            <template v-if="combinedMedia[currImgIdx]">
+                <video v-if="combinedMedia[currImgIdx].type === 'video'" class="curr-Img video-style" controls width="800">
+                    <source :src="combinedMedia[currImgIdx].url" type="video/mp4" />
+                </video>
+                <NuxtImg v-else class="curr-Img" :src="combinedMedia[currImgIdx].url" @click="lightboxActive = true" />
+            </template>
+            <!-- small images/video  -->
             <transition-group  class="CROP" :name="transition_name" tag="div">
                 <div class="Carousel_chunk" v-for="(chunk, i) in arrChunk" v-show="currSlide == i" :key="i">
                     <div class="chunk_item" v-for="(item, j) in chunk" :key="j" @click="currImgIdx = j + i * chunkSize"
-                        :class="{ CURR: item.img == imgList[currImgIdx].img }">
-                        <NuxtImg :src="item.img" />
+                        :class="{ CURR: j + i * chunkSize == currImgIdx }">
+                        <video v-if="item.type === 'video'" class="w-full h-full object-cover">
+                            <source :src="item.url" type="video/mp4" />
+                        </video>
+                        <NuxtImg v-else :src="item.url" />
                     </div>
                 </div>
             </transition-group>
             <!-- controls  -->
-            <div v-if="imgList.length>chunkSize" class="Carousel-controls" :class="locale=='ar' ? 'flex-row-reverse' : ''">
+            <div v-if="combinedMedia.length>chunkSize" class="Carousel-controls" :class="locale=='ar' ? 'flex-row-reverse' : ''">
                 <div></div>
                 <div></div>
                 <svg @click="prev" width="48" height="48" viewBox="0 0 24 24" fill="%23051c28" stroke="currentColor"
@@ -65,15 +70,41 @@ const transition_name = ref("slide_next");
 const lightboxActive = ref(false);
 const currLightboxImg = ref(2);
 
+// Create combined media list of video + images
+const combinedMedia = computed(() => {
+    const list = [];
+    if (props.video) {
+        list.push({
+            type: 'video',
+            url: props.video
+        });
+    }
+    if (props.imgList && props.imgList.length > 0) {
+        props.imgList.forEach(item => {
+            list.push({
+                type: 'image',
+                url: item.img
+            });
+        });
+    }
+    return list;
+});
+
 watch(currImgIdx, (newVal) => {
-    currLightboxImg.value = newVal;
+    const item = combinedMedia.value[newVal];
+    if (item && item.type === 'image') {
+        const idx = props.imgList.findIndex(img => img.img === item.url);
+        if (idx !== -1) {
+            currLightboxImg.value = idx;
+        }
+    }
 });
 
 const arrChunk = computed(() => {
     return Array.from(
-        { length: Math.ceil(props.imgList.length / chunkSize.value) },
+        { length: Math.ceil(combinedMedia.value.length / chunkSize.value) },
         (v, i) =>
-            props.imgList.slice(
+            combinedMedia.value.slice(
                 i * chunkSize.value,
                 i * chunkSize.value + chunkSize.value
             )
@@ -194,9 +225,14 @@ const goToChunk = (idx) => {
     border-color: transparent;
 }
 
-.chunk_item img {
+.chunk_item img,
+.chunk_item video {
     display: inline-block;
     height: 100%;
+}
+
+.chunk_item video {
+    object-fit: cover;
 }
 
 .Carousel-controls {
