@@ -8,10 +8,10 @@
                 <div>
                     <a :href="localePath('/')">
                         <NuxtImg v-if="theme === 'light'"
-                            :src="$i18n.locale === 'ar' ? settings.logo_dark_ar : settings.logo_dark" class="w-36"
+                            :src="$i18n.locale === 'ar' ? settings.logo_dark_ar : settings.logo_dark" class="w-36 h-9" width="144" height="36"
                             alt="Dark Logo" />
                         <NuxtImg v-else :src="$i18n.locale === 'ar' ? settings.logo_light_ar : settings.logo_light"
-                            class="w-36" alt="Light Logo" />
+                            class="w-36 h-9" width="144" height="36" alt="Light Logo" />
                     </a>
 
                 </div>

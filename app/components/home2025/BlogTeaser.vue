@@ -41,7 +41,7 @@
           :alt="post.title"
           width="1000"
           height="700"
-          class="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform"
+          class="w-full h-44 object-cover group-hover:scale-[1.02] transition-transform will-change-transform"
         />
         <div class="p-5">
           <p class="text-xs text-ternary-dark/60 dark:text-ternary-light/60">

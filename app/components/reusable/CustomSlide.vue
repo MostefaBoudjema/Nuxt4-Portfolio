@@ -15,7 +15,7 @@
                 <video v-if="combinedMedia[currImgIdx].type === 'video'" class="curr-Img video-style" controls width="800">
                     <source :src="combinedMedia[currImgIdx].url" type="video/mp4" />
                 </video>
-                <NuxtImg v-else class="curr-Img" :src="combinedMedia[currImgIdx].url" @click="lightboxActive = true" />
+                <NuxtImg v-else class="curr-Img" :src="combinedMedia[currImgIdx].url" width="540" height="405" @click="lightboxActive = true" />
             </template>
             <!-- small images/video  -->
             <transition-group  class="CROP" :name="transition_name" tag="div">
@@ -25,7 +25,7 @@
                         <video v-if="item.type === 'video'" class="w-full h-full object-cover">
                             <source :src="item.url" type="video/mp4" />
                         </video>
-                        <NuxtImg v-else :src="item.url" />
+                        <NuxtImg v-else :src="item.url" width="128" height="72" loading="lazy" />
                     </div>
                 </div>
             </transition-group>
@@ -273,6 +273,8 @@ svg:hover {
     font-family: sans-serif;
     font-size: 0.5em;
     color: #fff;
+    will-change: transform;
+    transform: translateZ(0); /* Promote to compositor layer */
 }
 
 .Carousel-controls_dot:hover {
@@ -291,6 +293,7 @@ svg:hover {
 .slide_next-enter-active,
 .slide_prev-enter-active {
     transition: transform 0.3s;
+    will-change: transform;
 }
 
 .slide_next-enter {

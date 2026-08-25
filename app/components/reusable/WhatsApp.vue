@@ -1,6 +1,6 @@
 <template>
     <a id="whatsapp" :href=whatsappLink data-aos="fade-up" target="_blank">
-        <NuxtImg :src="whatsappImag" alt="Icon" />
+        <NuxtImg :src="whatsappImag" width="90" height="90" alt="Icon" />
     </a>
 </template>
 
@@ -40,5 +40,10 @@ img {
 #whatsapp:hover {
     background: color-mix(in srgb, var(--green), transparent 20%);
     transform: translateY(-10px);
+}
+
+#whatsapp {
+    will-change: transform;
+    transform: translateZ(0); /* Promote to compositor layer */
 }
 </style>

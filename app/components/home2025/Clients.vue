@@ -30,7 +30,7 @@ const isRtl = computed(() => rtlLocales.includes(locale.value));
           :alt="client.title"
           width="240"
           height="120"
-          class="h-10 sm:h-12 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition"
+          class="h-10 sm:h-12 w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition will-change-transform"
         />
       </div>
     </div>

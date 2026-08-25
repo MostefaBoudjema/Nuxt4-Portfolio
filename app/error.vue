@@ -22,7 +22,7 @@ const handleError = () => clearError({ redirect: localePath('/') });
 <template>
   <div :dir="isRtl ? 'rtl' : 'ltr'" class="min-h-screen bg-dark relative overflow-hidden flex items-center justify-center p-4">
     <!-- Background effects matching the layout -->
-    <div class="absolute inset-0 -z-10 bg-[url('/images/bg-circuit.svg')] bg-no-repeat bg-cover bg-center opacity-30"></div>
+    <div class="absolute inset-0 -z-10 md:bg-[url('/images/bg-circuit.svg')] md:bg-no-repeat md:bg-cover md:bg-center opacity-30"></div>
     <div class="fixed inset-0 -z-20 bg-gradient-to-b from-primary-dark via-secondary-dark to-ternary-dark"></div>
 
     <div class="relative max-w-2xl w-full text-center">

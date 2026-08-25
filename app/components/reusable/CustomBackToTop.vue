@@ -88,6 +88,7 @@ onUnmounted(() => {
   transition: background 0.3s;
   opacity: 0;
   transform: translateY(20px);
+  will-change: transform, opacity;
   animation: fadeInUp 0.3s ease forwards;
 }
 

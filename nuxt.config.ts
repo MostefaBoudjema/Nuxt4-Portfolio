@@ -41,11 +41,32 @@ export default defineNuxtConfig({
             ],
             link: [
                 { rel: 'icon', type: 'image/png', href: '/images/logo.svg' },
+                // Preconnect to Google Fonts for faster font loading
+                { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+                { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+                // Load Fira Code and Inter non-blocking (was render-blocking @import in CSS)
+                {
+                    rel: 'stylesheet',
+                    href: 'https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@300;400;500;600;700&display=swap',
+                    media: 'print',
+                    onload: "this.media='all'",
+                },
+                // Load bootstrap icons non-blocking
+                {
+                    rel: 'stylesheet',
+                    href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css',
+                    media: 'print',
+                    onload: "this.media='all'",
+                },
+                // Preload LCP hero image for faster discovery
+                { rel: 'preload', as: 'image', type: 'image/webp', href: '/images/me3.webp' },
             ],
             script: [
                 {
                     src: 'https://www.googletagmanager.com/gtag/js?id=G-L5HVZ2VCP7',
                     async: true,
+                    defer: true,
+                    tagPosition: 'bodyClose',
                 },
                 {
                     innerHTML: `window.dataLayer = window.dataLayer || [];
@@ -53,6 +74,7 @@ function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 gtag('config', 'G-L5HVZ2VCP7');`,
                     type: 'text/javascript',
+                    tagPosition: 'bodyClose',
                 },
             ],
         },
@@ -137,6 +159,11 @@ gtag('config', 'G-L5HVZ2VCP7');`,
     robots: {
         allow: ['/'],
         disallow: ['/private'],
+    },
+
+    image: {
+        formats: ['avif', 'webp'],
+        quality: 80,
     },
 
     runtimeConfig: {

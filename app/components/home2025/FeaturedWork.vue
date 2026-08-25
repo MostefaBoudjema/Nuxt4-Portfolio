@@ -81,7 +81,7 @@ const featuredProjects = computed(() => {
               :alt="t(project.title)"
               width="1200"
               height="800"
-              class="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform"
+              class="w-full h-52 object-cover group-hover:scale-[1.02] transition-transform will-change-transform"
             />
 
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0"></div>
