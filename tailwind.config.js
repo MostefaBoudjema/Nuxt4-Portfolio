@@ -24,7 +24,7 @@ module.exports = {
 
 				'primary-dark': '#051c28',
 				'secondary-dark': '#102D44',
-				'ternary-dark': '#1E3851',
+				'ternary-dark': '#0f1724',
 			},
 			container: {
 				padding: {

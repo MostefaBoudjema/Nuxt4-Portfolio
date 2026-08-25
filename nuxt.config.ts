@@ -22,6 +22,7 @@ export default defineNuxtConfig({
 
     app: {
         head: {
+            htmlAttrs: { lang: 'en' },
             title: 'Mostefa Boudjema',
             meta: [
                 { property: 'og:title', content: 'Mostefa – Web Developer' },
