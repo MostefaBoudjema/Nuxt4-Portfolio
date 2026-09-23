@@ -1,10 +1,11 @@
 <template>
-  <div class="sm:container sm:mx-auto">
-    <Home2025Hero />
-    <Home2025FeaturedWork data-aos="fade-up" data-aos-delay="150" />
-    <Home2025Stats />
-    <Home2025BlogTeaser v-if="settings.show_blog" data-aos="fade-up" data-aos-delay="150" />
-    <Home2025Cta />
+  <div class="sm:container sm:mx-auto" ref="mainContainer">
+    <Home2026Hero class="scroll-section" />
+    <Home2026Clients class="scroll-section" />
+    <Home2026FeaturedWork class="scroll-section" />
+    <Home2026Stats class="scroll-section" />
+    <Home2026BlogTeaser v-if="settings.show_blog" class="scroll-section" />
+    <Home2026Cta class="scroll-section" />
   </div>
 </template>
 
@@ -37,6 +38,40 @@ useHead({
 
 const { usePersonJsonLd } = useJsonLd()
 await usePersonJsonLd(settings)
+
+import { onMounted, ref } from 'vue';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+const mainContainer = ref(null);
+
+onMounted(() => {
+  gsap.registerPlugin(ScrollTrigger);
+  
+  if (mainContainer.value) {
+    const sections = mainContainer.value.querySelectorAll('.scroll-section');
+    
+    sections.forEach((section, index) => {
+      if (index === 0) return; // Skip Hero
+      
+      gsap.fromTo(section, 
+        { opacity: 0, y: 80, scale: 0.98 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 95%",
+            end: "top 40%",
+            scrub: 1.5,
+          }
+        }
+      );
+    });
+  }
+});
 </script>
 
 <style scoped></style>

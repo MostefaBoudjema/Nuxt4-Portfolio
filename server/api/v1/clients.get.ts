@@ -8,6 +8,10 @@ export default defineEventHandler(() => {
       gray: '/images/brands/freelancer_gray.webp',
       color: '/images/brands/freelancer_color.webp'
     },
+    LAMRI: {
+      gray: '/images/brands/lamri_belaid_gray.webp',
+      color: '/images/brands/lamri_belaid_color.webp'
+    },
     NZIDOO: {
       gray: '/images/brands/nzidoo_gray.webp',
       color: '/images/brands/nzidoo_color.webp'
@@ -39,6 +43,13 @@ export default defineEventHandler(() => {
   };
 
   return [
+    {
+      id: 1,
+      title: 'Lamri Belaid',
+      link: '',
+      imgGray: IMAGES.LAMRI.gray,
+      imgColor: IMAGES.LAMRI.color,
+    },
     {
       id: 2,
       title: 'Upwork',

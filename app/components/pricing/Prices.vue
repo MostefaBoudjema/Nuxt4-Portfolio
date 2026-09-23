@@ -71,25 +71,37 @@
 
 <script setup>
 import configs from '~/configs';
-const plans = [
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n({ inheritLocale: true, useScope: 'global' });
+
+const whatsappMessage = computed(() => {
+  if (locale.value === 'ar') return encodeURIComponent("مرحباً، أنا مهتم بالحصول على استشارة مجانية.");
+  if (locale.value === 'fr') return encodeURIComponent("Bonjour, je suis intéressé par une consultation gratuite.");
+  return encodeURIComponent("Hello, I am interested in a free consultation.");
+});
+
+const whatsappLink = computed(() => configs.whatsappNumber ? `https://wa.me/${configs.whatsappNumber}?text=${whatsappMessage.value}` : "#");
+
+const plans = computed(() => [
   {
     key: "starter",
     features: ["project", "support", "updates"],
     featured: false,
-    link: configs.whatsappNumber ? `https://wa.me/${configs.whatsappNumber}` : "#",
+    link: whatsappLink.value,
   },
   {
     key: "pro",
     features: ["projects", "support", "analytics"],
     featured: true, 
-    link: configs.whatsappNumber ? `https://wa.me/${configs.whatsappNumber}` : "#",
+    link: whatsappLink.value,
   },
   {
     key: "enterprise",
     features: ["manager", "integrations", "support"],
     featured: false,
-    link: configs.whatsappNumber ? `https://wa.me/${configs.whatsappNumber}` : "#",
+    link: whatsappLink.value,
   },
- 
-];
+]);
 </script>

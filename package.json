@@ -9,9 +9,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",    
+    "postinstall": "nuxt prepare",
     "i18n:report": "npx vue-i18n-extract report --vueFiles \"./app/**/*.{vue,ts}\" --languageFiles \"./i18n/en.json\" --output _bak/i18n-en.json"
- 
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -21,6 +20,7 @@
     "@nuxtjs/robots": "^6.0.8",
     "@nuxtjs/sitemap": "^8.0.13",
     "@tailwindcss/forms": "^0.5.10",
+    "@types/three": "^0.185.4",
     "@vercel/speed-insights": "^1.2.0",
     "aos": "^2.3.4",
     "bootstrap-icons": "^1.13.1",
@@ -31,6 +31,7 @@
     "nuxt-simple-robots": "^3.1.10",
     "nuxt-simple-sitemap": "^4.4.1",
     "rss": "^1.2.2",
+    "three": "^0.185.1",
     "vue": "^3.5.32",
     "vue-i18n": "^11.1.9",
     "vue3-autocounter": "^1.0.8",

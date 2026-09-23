@@ -31,28 +31,68 @@ const featuredProjects = computed(() => {
 
   return sorted.slice(0, props.limit);
 });
+
+import { ref, watch, nextTick } from 'vue';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const projectsGridRef = ref(null);
+
+watch(pending, async (isPending) => {
+  if (!isPending) {
+    await nextTick();
+    if (projectsGridRef.value) {
+      const cards = projectsGridRef.value.querySelectorAll('a.group');
+      if (cards.length > 0) {
+        cards.forEach((card, index) => {
+          gsap.fromTo(card,
+            { opacity: 0, y: 150, rotateX: 15, scale: 0.9 },
+            {
+              opacity: 1,
+              y: 0,
+              rotateX: 0,
+              scale: 1,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 95%',
+                end: 'top 50%',
+                scrub: 1,
+              }
+            }
+          );
+        });
+      }
+    }
+  }
+}, { immediate: true });
 </script>
 
 <template>
   <section class="sm:container sm:mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
     <div class="flex items-end justify-between gap-6">
       <div>
-        <p class="text-sm uppercase tracking-widest text-ternary-dark/60 dark:text-ternary-light/60">Featured</p>
+        <p class="text-sm uppercase tracking-widest text-ternary-dark/60 dark:text-ternary-light/60">{{ t('Client Work') }}</p>
         <h2 class="mt-2 text-2xl sm:text-4xl font-semibold text-primary-dark dark:text-primary-light">
-          {{ t('Projects I worked On') }}
+          {{ t('Solutions Built for Real Business Results') }}
         </h2>
+        <p class="mt-2 text-sm sm:text-base text-ternary-dark/60 dark:text-ternary-light/60 max-w-xl">
+          {{ t('FeaturedWorkSubtext') }}
+        </p>
       </div>
 
       <NuxtLink
         :to="localePath('/Projects')"
         class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-ternary-light/60 dark:border-ternary-dark/80 bg-white/60 dark:bg-ternary-dark/40 backdrop-blur px-4 py-2 text-sm font-medium text-primary-dark dark:text-primary-light hover:bg-white/80 dark:hover:bg-ternary-dark/60 transition"
       >
-        {{ t('More Projects') }}
+        {{ t('See All Results') }}
         <span aria-hidden="true">→</span>
       </NuxtLink>
     </div>
 
-    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" ref="projectsGridRef">
       <!-- Loading Skeletons -->
       <template v-if="pending">
         <div v-for="i in 6" :key="i" class="rounded-2xl border border-ternary-light/60 dark:border-ternary-dark/80 bg-white/60 dark:bg-ternary-dark/40 p-0 overflow-hidden">
@@ -90,8 +130,8 @@ const featuredProjects = computed(() => {
               <span class="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-gray-900">
                 {{ t(project.category) }}
               </span>
-              <span class="inline-flex items-center rounded-full bg-black/50 px-3 py-1 text-xs font-medium text-white">
-                {{ t('Details') }}
+              <span class="inline-flex items-center gap-1 rounded-full bg-black/50 px-3 py-1 text-xs font-medium text-white">
+                {{ t('View Case Study') }}
               </span>
             </div>
           </div>
@@ -121,7 +161,7 @@ const featuredProjects = computed(() => {
         :to="localePath('/Projects')"
         class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white px-5 py-3 font-medium shadow-sm transition"
       >
-        {{ t('More Projects') }}
+        {{ t('See All Results') }}
         <span aria-hidden="true">→</span>
       </NuxtLink>
     </div>

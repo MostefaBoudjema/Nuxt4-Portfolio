@@ -6,12 +6,19 @@
 
 <script setup>
 import settings from "~/configs";
-const whatsappNumber=settings.whatsappNumber; 
-// const whatsappLink=`https://wa.me/${whatsappNumber}?text=message`; 
-const whatsappLink=`https://wa.me/${whatsappNumber}`; 
-const whatsappImag=settings.whatsapp; 
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
+const { locale } = useI18n({ inheritLocale: true, useScope: 'global' });
+const whatsappNumber = settings.whatsappNumber; 
 
+const whatsappMessage = computed(() => {
+  if (locale.value === 'ar') return encodeURIComponent("مرحباً، أنا مهتم بالحصول على استشارة مجانية.");
+  if (locale.value === 'fr') return encodeURIComponent("Bonjour, je suis intéressé par une consultation gratuite.");
+  return encodeURIComponent("Hello, I am interested in a free consultation.");
+});
+const whatsappLink = computed(() => `https://wa.me/${whatsappNumber}?text=${whatsappMessage.value}`); 
+const whatsappImag = settings.whatsapp; 
 </script>
 
 

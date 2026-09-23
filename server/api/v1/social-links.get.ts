@@ -1,4 +1,15 @@
-export default defineEventHandler(() => {
+export default defineEventHandler((event) => {
+  const query = getQuery(event);
+  const lang = query.lang || 'en';
+  
+  let message = "Hello, I am interested in a free consultation.";
+  if (lang === 'ar') message = "مرحباً، أنا مهتم بالحصول على استشارة مجانية.";
+  if (lang === 'fr') message = "Bonjour, je suis intéressé par une consultation gratuite.";
+
+  const whatsappMessage = encodeURIComponent(message);
+  // Using the number that was originally in this file
+  const whatsappUrl = `https://wa.me/2130793692289?text=${whatsappMessage}`;
+
   return [
     {
       id: 1,
@@ -28,7 +39,7 @@ export default defineEventHandler(() => {
       id: 5,
       name: 'Whatsapp',
       icon: 'whatsapp',
-      url: 'https://wa.me/2130793692289',
+      url: whatsappUrl,
     },
   ];
 });

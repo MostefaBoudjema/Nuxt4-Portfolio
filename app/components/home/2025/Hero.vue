@@ -9,6 +9,21 @@ const localePath=useLocalePath();
 
 const rtlLocales=['ar', 'he', 'fa', 'ur'];
 const isRtl=computed(() => rtlLocales.includes(locale.value));
+
+import { onMounted, ref } from 'vue';
+import gsap from 'gsap';
+
+const heroTextRef = ref(null);
+
+onMounted(() => {
+  if (heroTextRef.value) {
+    const elements = heroTextRef.value.children;
+    gsap.fromTo(elements, 
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power3.out', delay: 0.2 }
+    );
+  }
+});
 </script>
 
 <template>
@@ -18,7 +33,7 @@ const isRtl=computed(() => rtlLocales.includes(locale.value));
 
     <div class="relative sm:container sm:mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-7">
+        <div class="lg:col-span-7" ref="heroTextRef">
 
           <h1 :class="[
             'mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary-dark dark:text-primary-light',
@@ -70,8 +85,7 @@ const isRtl=computed(() => rtlLocales.includes(locale.value));
             </div>
             <div
               class="relative rounded-3xl border border-ternary-light/60 dark:border-ternary-dark/80 bg-white/60 dark:bg-ternary-dark/40 backdrop-blur p-4">
-              <NuxtImg :src="configs.profile_photo" :alt="t('Mostefa Boudjema')" width="800" height="800"
-                class="w-full h-auto rounded-2xl object-cover" />
+              <ReusableThreeImageHover :src="configs.profile_photo" :alt="t('Mostefa Boudjema')" width="800" height="800" />
             </div>
           </div>
         </div>
