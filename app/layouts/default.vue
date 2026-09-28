@@ -10,7 +10,7 @@
       <slot />
     </main>
     <client-only>
-      <SharedAiChatbot />
+      <!-- <SharedAiChatbot /> -->
       <ReusableWhatsApp />
       <ReusableCustomBackToTop :visibleoffset="300" right="10px" bottom="10px" />
     </client-only>

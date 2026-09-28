@@ -2,7 +2,7 @@
 	<div class="container mx-auto flex flex-col-reverse md:flex-row py-5 md:py-10 md:mt-10">
 
 		<!-- Contact details -->
-		<ContactDetails :contacts="settings.contacts" />
+		<!-- <ContactDetails :contacts="settings.contacts" /> -->
 		<!-- Contact form -->
 		<ContactForm v-if="settings.show_contact_form" />
 		<div v-else class="mr-16">

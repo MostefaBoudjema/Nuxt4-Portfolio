@@ -24,12 +24,13 @@ defineEmits(['update:modelValue']);
 <template>
 	<div>
 		<label
+			v-if="label"
 			class="block mb-2 text-lg text-primary-dark dark:text-primary-light"
-			:for="label"
+			:for="inputIdentifier"
 			>{{ label }}</label
 		>
 		<input
-			class="w-full px-5 py-3 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+			class="w-full block px-5 py-3 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
 			:id="inputIdentifier"
 			:name="inputIdentifier"
 			:placeholder="label"
