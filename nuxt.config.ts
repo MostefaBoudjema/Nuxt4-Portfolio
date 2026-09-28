@@ -25,7 +25,7 @@ export default defineNuxtConfig({
             htmlAttrs: { lang: 'en' },
             title: 'Mostefa Boudjema',
             meta: [
-                { property: 'og:title', content: 'Mostefa – Web Developer' },
+                { property: 'og:title', content: 'Mostefa – Software Engineer' },
                 {
                     property: 'og:description',
                     content: 'Mostefa Boudjema - Laravel & Vue.js developer portfolio.',
