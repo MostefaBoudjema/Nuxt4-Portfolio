@@ -800,7 +800,7 @@ const allProjects=[
 
   {
     id: 3,
-    title: '🚗 iAuto — Multi-Module Automotive SaaS Platform',
+    title: '🚗 iAuto Multi-Module Automotive SaaS Platform',
     hide: false,
     category: 'Laravel Vue Application',
     // video: require('@/assets/videos/iauto/0.mp4'),

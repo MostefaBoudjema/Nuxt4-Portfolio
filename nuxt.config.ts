@@ -163,10 +163,10 @@ gtag('config', 'G-L5HVZ2VCP7');`,
     },
 
     runtimeConfig: {
-        // Private — server-side only (Gemini key never exposed to client)
+        // Private server-side only (Gemini key never exposed to client)
         geminiApiKey: process.env.GEMINI_API_KEY,
 
-        // Public — exposed to client via useRuntimeConfig().public
+        // Public exposed to client via useRuntimeConfig().public
         public: {
             useAllPosts: process.env.NUXT_PUBLIC_USE_ALL_POSTS === 'true' || false,
             showMultiLang: process.env.NUXT_PUBLIC_SHOW_MULTI_LANG === 'true' || false,

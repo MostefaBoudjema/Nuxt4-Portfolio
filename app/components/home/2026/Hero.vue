@@ -37,7 +37,6 @@
             <NuxtLink :to="localePath('/projects')"
               class="inline-flex items-center justify-center gap-2 rounded-xl border border-ternary-light/70 dark:border-ternary-dark/80 bg-white/60 dark:bg-ternary-dark/40 backdrop-blur px-6 py-3.5 font-medium text-primary-dark dark:text-primary-light hover:bg-white/80 dark:hover:bg-ternary-dark/60 transition">
               {{ t('See My Work') }}
-              <span aria-hidden="true" class="text-blue-500">→</span>
             </NuxtLink>
           </div>
 

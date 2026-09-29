@@ -14,7 +14,7 @@
         class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-ternary-light/60 dark:border-ternary-dark/80 bg-white/60 dark:bg-ternary-dark/40 backdrop-blur px-4 py-2 text-sm font-medium text-primary-dark dark:text-primary-light hover:bg-white/80 dark:hover:bg-ternary-dark/60 transition"
       >
         {{ t('More Articles') }}
-        <span aria-hidden="true">→</span>
+        
       </NuxtLink>
     </div>
 
@@ -66,7 +66,7 @@
         class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white px-5 py-3 font-medium shadow-sm transition"
       >
         {{ t('More Articles') }}
-        <span aria-hidden="true">→</span>
+        
       </NuxtLink>
     </div>
   </section>
