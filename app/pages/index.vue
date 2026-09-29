@@ -1,11 +1,11 @@
 <template>
   <div class="sm:container sm:mx-auto" ref="mainContainer">
     <Home2026Hero class="scroll-section" />
-    <Home2026Clients class="scroll-section" />
-    <Home2026FeaturedWork class="scroll-section" />
-    <Home2026Stats class="scroll-section" />
-    <Home2026BlogTeaser v-if="settings.show_blog" class="scroll-section" />
-    <Home2026Cta class="scroll-section" />
+    <LazyHome2026Clients class="scroll-section" />
+    <LazyHome2026FeaturedWork class="scroll-section" />
+    <LazyHome2026Stats class="scroll-section" />
+    <LazyHome2026BlogTeaser v-if="settings.show_blog" class="scroll-section" />
+    <LazyHome2026Cta class="scroll-section" />
   </div>
 </template>
 

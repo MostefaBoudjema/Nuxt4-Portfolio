@@ -7,6 +7,9 @@
       :alt="alt" 
       :width="width" 
       :height="height"
+      sizes="sm:100vw md:50vw lg:400px"
+      preload
+      fetchpriority="high"
       class="w-full h-auto object-cover opacity-0 pointer-events-none" 
     />
   </div>
@@ -156,7 +159,9 @@ const animate = () => {
 
 onMounted(() => {
   setTimeout(() => {
-    initThree();
+    requestAnimationFrame(() => {
+      initThree();
+    });
   }, 100);
 });
 

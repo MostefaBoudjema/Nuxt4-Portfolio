@@ -29,17 +29,18 @@ onMounted(() => {
                     {{ t("Contact me") }}
                 </p>
                 <ul class="flex gap-2 sm:gap-10">
-                    <a
-                        v-for="social in socials"
-                        :key="social.id"
-                        :href="social.url"
-                        target="__blank"
-                        class="text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500"
-                    >
-                        <i
-                            :class="`bi bi-${social.icon} text-2xl sm:text-4xl`"
-                        ></i>
-                    </a>
+                    <li v-for="social in socials" :key="social.id">
+                        <a
+                            :href="social.url"
+                            target="__blank"
+                            :aria-label="social.name || 'Social link'"
+                            class="block text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 cursor-pointer rounded-lg bg-gray-50 dark:bg-ternary-dark hover:bg-gray-100 shadow-sm p-4 duration-500"
+                        >
+                            <i
+                                :class="`bi bi-${social.icon} text-2xl sm:text-4xl`"
+                            ></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
 

@@ -3,6 +3,10 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: false },
 
+    features: {
+        inlineStyles: true
+    },
+
     // Vite build config (Nuxt uses Vite under the hood)
     vite: {
         ssr: {
@@ -42,16 +46,6 @@ export default defineNuxtConfig({
             ],
             link: [
                 { rel: 'icon', type: 'image/png', href: '/images/logo.svg' },
-                // Preconnect to Google Fonts for faster font loading
-                { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-                { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-                // Load Fira Code and Inter non-blocking (was render-blocking @import in CSS)
-                {
-                    rel: 'stylesheet',
-                    href: 'https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@300;400;500;600;700&display=swap',
-                    media: 'print',
-                    onload: "this.media='all'",
-                },
                 // Load bootstrap icons non-blocking
                 {
                     rel: 'stylesheet',
@@ -84,6 +78,7 @@ gtag('config', 'G-L5HVZ2VCP7');`,
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxt/image',
+        '@nuxt/fonts',
         'nuxt-simple-sitemap',
         'nuxt-simple-robots',
         [

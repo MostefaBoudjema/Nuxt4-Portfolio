@@ -9,7 +9,7 @@
 
     <div class="relative sm:container sm:mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-7" ref="heroTextRef">
+        <div class="lg:col-span-7 hero-text-animate">
 
            <h1 :class="[
             'mt-5 text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight leading-tight text-primary-dark dark:text-primary-light',
@@ -115,20 +115,30 @@ const outcomeBadges = computed(() => [
   { icon: '🔄', label: t('Ongoing Support') },
 ]);
 
-import { onMounted, ref } from 'vue';
-import gsap from 'gsap';
+import { onMounted } from 'vue';
 
-const heroTextRef = ref(null);
+// GSAP animations for hero text have been replaced by native CSS animations for improved Web Vitals LCP.
 
-onMounted(() => {
-  if (heroTextRef.value) {
-    const elements = heroTextRef.value.children;
-    gsap.fromTo(elements, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power3.out', delay: 0.2 }
-    );
-  }
-});
 </script>
 
-<style scoped></style>
+<style scoped>
+.hero-text-animate > * {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+.hero-text-animate > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-text-animate > *:nth-child(2) { animation-delay: 0.25s; }
+.hero-text-animate > *:nth-child(3) { animation-delay: 0.4s; }
+.hero-text-animate > *:nth-child(4) { animation-delay: 0.55s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
