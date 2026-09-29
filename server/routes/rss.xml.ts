@@ -10,8 +10,8 @@ export default defineEventHandler(async (event) => {
     const feed = new RSS({
         title: 'Mostefa Boudjema Blog',
         description: 'Latest blog posts about Laravel, Vue.js, and Web Development.',
-        feed_url: 'https://mostefa-webdev.vercel.app/rss.xml',
-        site_url: 'https://mostefa-webdev.vercel.app',
+        feed_url: 'https://mostefawebdev.com/rss.xml',
+        site_url: 'https://mostefawebdev.com',
         language: 'en',
     });
 
@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
             feed.item({
                 title: post.title,
                 description: post.summary || post.excerpt || '',
-                url: `https://mostefa-webdev.vercel.app/blog/${post.slug}`,
+                url: `https://mostefawebdev.com/blog/${post.slug}`,
                 date: post.date,
                 author: post.author?.name || 'Mostefa Boudjema',
             });

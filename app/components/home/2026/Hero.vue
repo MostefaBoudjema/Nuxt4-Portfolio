@@ -22,6 +22,13 @@
           </h1>
 
           <p :class="[
+            'mt-3 text-lg sm:text-xl font-semibold text-primary-dark dark:text-primary-light',
+            isRtl ? 'text-right' : 'text-left'
+          ]">
+            {{ locale === 'ar' ? 'مطور Laravel و Vue.js مقيم في عنابة، الجزائر.' : (locale === 'fr' ? 'Développeur Laravel et Vue.js basé à Annaba, Algérie.' : 'Laravel and Vue.js developer based in Annaba, Algeria.') }}
+          </p>
+
+          <p :class="[
             'mt-5 text-base sm:text-lg text-ternary-dark/80 dark:text-ternary-light/80 max-w-2xl leading-relaxed',
             isRtl ? 'text-right' : 'text-left'
           ]">

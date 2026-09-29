@@ -36,11 +36,11 @@ export default defineNuxtConfig({
                 },
                 {
                     property: 'og:image',
-                    content: 'https://mostefa-webdev.vercel.app/images/logo1.jpg',
+                    content: 'https://mostefawebdev.com/images/logo1.jpg',
                 },
                 {
                     property: 'og:url',
-                    content: 'https://mostefa-webdev.vercel.app/',
+                    content: 'https://mostefawebdev.com/',
                 },
                 { name: 'twitter:card', content: 'summary_large_image' },
             ],
@@ -143,7 +143,7 @@ gtag('config', 'G-L5HVZ2VCP7');`,
     },
 
     site: {
-        url: 'https://mostefa-webdev.vercel.app',
+        url: 'https://mostefawebdev.com',
         name: 'Mostefa Boudjema Portfolio',
     },
 
