@@ -538,6 +538,8 @@
       "a4": "Yes, I build multi-language websites. I offer website development in English, French, and Arabic, ensuring your site reaches a wider audience in Algeria and beyond."
     }
   },
+  "FaqTitle": "Frequently Asked Questions",
+  "FaqSubtitle": "Answers to common questions about my web development services.",
   "FaqQ1": "Who is Mostefa Boudjema?",
   "FaqA1": "Mostefa Boudjema is a full-stack web developer. He builds web apps with Laravel, Vue.js, Nuxt 3, and Tailwind CSS.",
   "FaqQ2": "What does Mostefa Boudjema build?",

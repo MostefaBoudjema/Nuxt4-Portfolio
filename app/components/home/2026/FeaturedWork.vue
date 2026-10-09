@@ -31,68 +31,31 @@ const featuredProjects = computed(() => {
 
   return sorted.slice(0, props.limit);
 });
-
-import { ref, watch, nextTick } from 'vue';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
-const projectsGridRef = ref(null);
-
-watch(pending, async (isPending) => {
-  if (!isPending) {
-    await nextTick();
-    if (projectsGridRef.value) {
-      const cards = projectsGridRef.value.querySelectorAll('a.group');
-      if (cards.length > 0) {
-        cards.forEach((card, index) => {
-          gsap.fromTo(card,
-            { opacity: 0, y: 150, rotateX: 15, scale: 0.9 },
-            {
-              opacity: 1,
-              y: 0,
-              rotateX: 0,
-              scale: 1,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top 95%',
-                end: 'top 50%',
-                scrub: 1,
-              }
-            }
-          );
-        });
-      }
-    }
-  }
-}, { immediate: true });
 </script>
 
 <template>
-  <section class="sm:container sm:mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
-    <div class="flex items-end justify-between gap-6">
-      <div>
-        <p class="text-sm uppercase tracking-widest text-ternary-dark/60 dark:text-ternary-light/60">{{ t('Client Work') }}</p>
-        <h2 class="mt-2 text-2xl sm:text-4xl font-semibold text-primary-dark dark:text-primary-light">
-          {{ t('Solutions Built for Real Business Results') }}
-        </h2>
-        <p class="mt-2 text-sm sm:text-base text-ternary-dark/60 dark:text-ternary-light/60 max-w-xl">
-          {{ t('FeaturedWorkSubtext') }}
-        </p>
+  <section class="px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+    <div class="sm:container sm:mx-auto">
+      <div class="flex items-end justify-between gap-6 mb-10">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-primary-dark dark:text-primary-light">
+            {{ t('Solutions Built for Real Business Results') }}
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-ternary-dark/50 dark:text-ternary-light/50 max-w-xl">
+            {{ t('FeaturedWorkSubtext') }}
+          </p>
+        </div>
+
+        <NuxtLink
+          :to="localePath('/Projects')"
+          class="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-primary-dark dark:text-primary-light hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-150 shrink-0"
+        >
+          {{ t('See All Results') }}
+          <span aria-hidden="true">→</span>
+        </NuxtLink>
       </div>
 
-      <NuxtLink
-        :to="localePath('/Projects')"
-        class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-ternary-light/60 dark:border-ternary-dark/80 bg-white/60 dark:bg-ternary-dark/40 backdrop-blur px-4 py-2 text-sm font-medium text-primary-dark dark:text-primary-light hover:bg-white/80 dark:hover:bg-ternary-dark/60 transition"
-      >
-        {{ t('See All Results') }}
-        
-      </NuxtLink>
-    </div>
-
-    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" ref="projectsGridRef">
+   <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" ref="projectsGridRef">
       <!-- Loading Skeletons -->
       <template v-if="pending">
         <div v-for="i in 6" :key="i" class="rounded-2xl border border-ternary-light/60 dark:border-ternary-dark/80 bg-white/60 dark:bg-ternary-dark/40 p-0 overflow-hidden">
@@ -164,6 +127,7 @@ watch(pending, async (isPending) => {
         {{ t('See All Results') }}
         
       </NuxtLink>
+    </div>
     </div>
   </section>
 </template>

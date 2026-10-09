@@ -555,6 +555,8 @@
       "a4": "Oui, je crée des sites web multilingues. Je propose la création de site web en anglais, français et arabe, assurant que votre site atteigne un public plus large en Algérie et au-delà."
     }
   },
+  "FaqTitle": "Questions Fréquemment Posées",
+  "FaqSubtitle": "Réponses aux questions courantes sur mes services de développement web.",
   "FaqQ1": "Qui est Mostefa Boudjema ?",
   "FaqA1": "Mostefa Boudjema est un développeur web full-stack. Il crée des applications web avec Laravel, Vue.js, Nuxt 3 et Tailwind CSS.",
   "FaqQ2": "Que crée Mostefa Boudjema ?",
