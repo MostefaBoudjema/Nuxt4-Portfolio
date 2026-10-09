@@ -1,0 +1,830 @@
+// app/composables/useServicesData.js
+// Central data store for all 11 service pages — EN / FR / AR
+
+const SERVICE_DEFINITIONS = [
+
+  // ─── 1. Custom SaaS Development ───────────────────────────────────────────
+  {
+    slug: 'custom-saas-development',
+    icon: 'bi-window-stack',
+    gradient: 'from-blue-600 to-indigo-600',
+    color: 'blue',
+    locales: {
+      en: {
+        meta: { title: 'Custom Web Application & SaaS Development Services', description: 'Scalable, high-performance custom web applications built to meet your exact business needs. End-to-end web software development from MVP to production.' },
+        hero: { kicker: 'Custom SaaS & Web Applications', headline: 'Custom Web Application Development', headlineAccent: 'Built for Scale', subheadline: 'From initial architecture to launch-ready web software, we turn complex business ideas into secure, high-performing web platforms.', cta: 'Schedule Architecture Call' },
+        problem: { title: 'Off-the-Shelf Software Limits Your Growth', desc: 'Generic tools force messy workarounds, create vendor lock-in, and charge recurring fees — all while never truly fitting your business logic.' },
+        solution: { title: 'Software Built Exactly for Your Business', desc: 'Fully custom applications with 100% IP ownership, unlimited scalability, and no recurring subscription traps.' },
+        features: [
+          { icon: 'bi-diagram-3', title: 'Custom Architecture & Database Design', desc: 'Engineered from scratch for your exact workflow, data model, and scale targets.' },
+          { icon: 'bi-shield-lock', title: 'Secure Auth & Role Management', desc: 'Enterprise-grade authentication, multi-role access, and granular permission systems.' },
+          { icon: 'bi-plug', title: 'REST & GraphQL API Integration', desc: 'Connect payment gateways, CRMs, and third-party tools without friction.' },
+          { icon: 'bi-phone', title: 'Responsive & Accessible UI', desc: 'Mobile-first, pixel-perfect interfaces that work on every device and browser.' },
+          { icon: 'bi-arrow-repeat', title: 'CI/CD & Automated Testing', desc: 'Deployment pipelines and test suites for confident, zero-downtime releases.' },
+          { icon: 'bi-cloud-upload', title: 'Scalable Cloud Infrastructure', desc: 'Hosted on AWS, Vercel, or DigitalOcean with auto-scaling from day one.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'React', 'Next.js', 'Nuxt', 'PostgreSQL', 'Redis', 'Docker'],
+        useCases: ['B2B SaaS Platforms', 'Internal Business Tools', 'Admin Dashboards', 'Customer Portals', 'Booking Systems'],
+        faq: [
+          { q: 'How long does a custom web app take?', a: 'A focused MVP takes 4–8 weeks. A full platform with advanced features typically runs 3–6 months.' },
+          { q: 'Do I own the source code?', a: 'Yes — 100% of all source code and IP transfers to you upon project completion.' },
+          { q: 'Can you work with our existing systems?', a: 'Absolutely. We integrate cleanly with existing APIs, databases, and legacy platforms.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Développement d\'Applications Web Personnalisées et SaaS', description: 'Applications web sur mesure, performantes et évolutives, conçues précisément pour vos besoins métier. Développement complet de MVP à la production.' },
+        hero: { kicker: 'Applications SaaS & Web Personnalisées', headline: 'Développement d\'Applications Web Sur Mesure', headlineAccent: 'Conçues pour Évoluer', subheadline: 'De l\'architecture initiale au lancement, nous transformons vos idées complexes en plateformes web sécurisées et performantes.', cta: 'Planifier un Appel Architecture' },
+        problem: { title: 'Les Logiciels Génériques Bloquent Votre Croissance', desc: 'Les outils standards imposent des contournements, créent une dépendance fournisseur et facturent des abonnements récurrents — sans jamais s\'adapter parfaitement à votre métier.' },
+        solution: { title: 'Un Logiciel Conçu Pour Votre Business', desc: 'Applications entièrement personnalisées avec 100% de propriété intellectuelle, évolutivité illimitée et zéro abonnement imposé.' },
+        features: [
+          { icon: 'bi-diagram-3', title: 'Architecture & Conception BDD', desc: 'Conçu de zéro pour votre workflow exact, votre modèle de données et vos objectifs d\'échelle.' },
+          { icon: 'bi-shield-lock', title: 'Authentification & Gestion des Rôles', desc: 'Authentification niveau entreprise, accès multi-rôles et systèmes de permissions granulaires.' },
+          { icon: 'bi-plug', title: 'Intégration API REST & GraphQL', desc: 'Connectez passerelles de paiement, CRM et outils tiers sans friction.' },
+          { icon: 'bi-phone', title: 'Interface Responsive & Accessible', desc: 'Interfaces mobile-first, pixel-perfect qui fonctionnent sur chaque appareil et navigateur.' },
+          { icon: 'bi-arrow-repeat', title: 'CI/CD & Tests Automatisés', desc: 'Pipelines de déploiement et suites de tests pour des mises en production fiables.' },
+          { icon: 'bi-cloud-upload', title: 'Infrastructure Cloud Évolutive', desc: 'Hébergé sur AWS, Vercel ou DigitalOcean avec auto-scaling dès le premier jour.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'React', 'Next.js', 'Nuxt', 'PostgreSQL', 'Redis', 'Docker'],
+        useCases: ['Plateformes SaaS B2B', 'Outils Internes', 'Tableaux de Bord Admin', 'Portails Clients', 'Systèmes de Réservation'],
+        faq: [
+          { q: 'Combien de temps prend le développement ?', a: 'Un MVP ciblé prend 4 à 8 semaines. Une plateforme complète prend généralement 3 à 6 mois.' },
+          { q: 'Suis-je propriétaire du code source ?', a: 'Oui — 100% du code source et de la propriété intellectuelle vous est transféré à la fin du projet.' },
+          { q: 'Pouvez-vous intégrer nos systèmes existants ?', a: 'Absolument. Nous nous intégrons proprement avec les API, bases de données et plateformes existantes.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'خدمات تطوير تطبيقات الويب المخصصة ومنصات SaaS', description: 'تطبيقات ويب مخصصة عالية الأداء وقابلة للتوسع، مصممة لتلبية احتياجات عملك بدقة. تطوير شامل من النموذج الأولي حتى الإنتاج.' },
+        hero: { kicker: 'تطبيقات SaaS وتطبيقات الويب المخصصة', headline: 'تطوير تطبيقات ويب مخصصة', headlineAccent: 'مبنية للنمو والتوسع', subheadline: 'من الهندسة المعمارية الأولية حتى الإطلاق، نحول أفكارك التجارية المعقدة إلى منصات ويب آمنة وعالية الأداء.', cta: 'جدول مكالمة معمارية' },
+        problem: { title: 'البرامج الجاهزة تُعيق نموك', desc: 'الأدوات العامة تفرض حلولاً مُبتسرة وتُنشئ تبعية للموردين وترسوم اشتراك متكررة — دون أن تتناسب مع منطق عملك الفعلي.' },
+        solution: { title: 'برنامج مصمم خصيصاً لعملك', desc: 'تطبيقات مخصصة بالكامل مع ملكية فكرية 100%، قابلية توسع غير محدودة وبدون أي اشتراك مفروض.' },
+        features: [
+          { icon: 'bi-diagram-3', title: 'هندسة مخصصة وتصميم قاعدة البيانات', desc: 'مصممة من الصفر لسير عملك الدقيق ونموذج بياناتك وأهداف التوسع.' },
+          { icon: 'bi-shield-lock', title: 'مصادقة آمنة وإدارة الأدوار', desc: 'مصادقة على مستوى المؤسسات، وصول متعدد الأدوار وأنظمة صلاحيات دقيقة.' },
+          { icon: 'bi-plug', title: 'تكامل REST وGraphQL API', desc: 'ربط بوابات الدفع وأنظمة CRM والأدوات الخارجية بسلاسة.' },
+          { icon: 'bi-phone', title: 'واجهة متجاوبة وسهلة الوصول', desc: 'واجهات مثالية تعمل على كل جهاز ومتصفح.' },
+          { icon: 'bi-arrow-repeat', title: 'CI/CD واختبارات آلية', desc: 'خطوط نشر وحزم اختبار لإصدارات موثوقة وبدون انقطاع.' },
+          { icon: 'bi-cloud-upload', title: 'بنية سحابية قابلة للتوسع', desc: 'مستضافة على AWS أو Vercel أو DigitalOcean مع تحجيم تلقائي من اليوم الأول.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'React', 'Next.js', 'Nuxt', 'PostgreSQL', 'Redis', 'Docker'],
+        useCases: ['منصات SaaS للشركات', 'أدوات الأعمال الداخلية', 'لوحات الإدارة', 'بوابات العملاء', 'أنظمة الحجز'],
+        faq: [
+          { q: 'كم يستغرق تطوير تطبيق ويب مخصص؟', a: 'النموذج الأولي المركّز يستغرق 4-8 أسابيع. المنصة الكاملة تستغرق عادةً 3-6 أشهر.' },
+          { q: 'هل أمتلك الكود المصدري؟', a: 'نعم — 100% من الكود المصدري والملكية الفكرية تنتقل إليك عند إتمام المشروع.' },
+          { q: 'هل يمكنكم التكامل مع أنظمتنا الحالية؟', a: 'بالتأكيد. نتكامل بسلاسة مع APIs وقواعد البيانات والمنصات القديمة الموجودة.' },
+        ],
+      },
+    },
+  },
+
+  // ─── 2. Business Automation Software ─────────────────────────────────────
+  {
+    slug: 'business-automation-software',
+    icon: 'bi-gear-wide-connected',
+    gradient: 'from-orange-500 to-amber-500',
+    color: 'orange',
+    locales: {
+      en: {
+        meta: { title: 'Custom Business Automation & Internal Tool Development', description: 'Streamline operations, eliminate manual data entry, and replace messy spreadsheets with custom admin tools and automated web software.' },
+        hero: { kicker: 'Business Process Automation', headline: 'Custom Internal Tools &', headlineAccent: 'Business Process Automation', subheadline: 'Eliminate repetitive tasks, connect legacy tools, and digitize internal workflows with bespoke web dashboards and automation engines.', cta: 'Audit Your Workflows' },
+        problem: { title: 'Manual Work Is Costing You Thousands', desc: 'Spreadsheets break, emails get lost, and repetitive manual data entry wastes hours every day — while mistakes accumulate and costs spiral.' },
+        solution: { title: 'Automate Everything That Slows You Down', desc: 'Custom automation tools that eliminate manual processes, centralize your data, and run workflows 24/7 with zero human error.' },
+        features: [
+          { icon: 'bi-receipt', title: 'Automated Invoice & Billing Engines', desc: 'Auto-generate, send, and track invoices with integrated payment status and follow-up reminders.' },
+          { icon: 'bi-box-seam', title: 'Custom Inventory Management', desc: 'Real-time stock tracking, automated reorder alerts, and supplier management in one dashboard.' },
+          { icon: 'bi-check2-circle', title: 'Approval Workflow Automation', desc: 'Digital approval chains, document routing, and audit trails that eliminate paper bottlenecks.' },
+          { icon: 'bi-envelope-check', title: 'Email & SMS Notification Triggers', desc: 'Automated communication based on system events — no manual sending ever again.' },
+          { icon: 'bi-bar-chart', title: 'Real-Time Reporting Dashboards', desc: 'Live data aggregation from all your tools into a single, clear operational dashboard.' },
+          { icon: 'bi-plugin', title: 'Third-Party Tool Integration', desc: 'Connect QuickBooks, Slack, Google Workspace, CRMs, and more into one unified workspace.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'MySQL', 'Redis', 'Webhooks', 'REST APIs', 'Filament', 'Queues'],
+        useCases: ['HR Onboarding Automation', 'Sales Pipeline Tools', 'Document Processing', 'Expense Management', 'Customer Ticketing'],
+        faq: [
+          { q: 'What kind of processes can be automated?', a: 'Any repetitive, rule-based task: data entry, approvals, notifications, reporting, and document generation.' },
+          { q: 'Will this connect with tools we already use?', a: 'Yes. We integrate with Slack, HubSpot, Stripe, Google, QuickBooks, and most major platforms via API.' },
+          { q: 'How do we measure ROI?', a: 'Most clients save 10–20 hours of manual work per employee weekly within the first month of deployment.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Automatisation des Processus Métier et Outils Internes Sur Mesure', description: 'Optimisez vos opérations, éliminez la saisie manuelle et remplacez les feuilles de calcul par des outils d\'administration personnalisés.' },
+        hero: { kicker: 'Automatisation des Processus Métier', headline: 'Outils Internes Personnalisés &', headlineAccent: 'Automatisation des Processus', subheadline: 'Éliminez les tâches répétitives, connectez vos outils existants et digitalisez vos workflows internes avec des tableaux de bord sur mesure.', cta: 'Auditer Vos Workflows' },
+        problem: { title: 'Le Travail Manuel Vous Coûte Des Milliers', desc: 'Les feuilles de calcul se cassent, les e-mails se perdent et la saisie manuelle répétitive gaspille des heures chaque jour — pendant que les erreurs s\'accumulent.' },
+        solution: { title: 'Automatisez Tout Ce Qui Vous Ralentit', desc: 'Des outils d\'automatisation sur mesure qui éliminent les processus manuels, centralisent vos données et exécutent les workflows 24h/7j sans erreur humaine.' },
+        features: [
+          { icon: 'bi-receipt', title: 'Moteurs de Facturation Automatisés', desc: 'Générez, envoyez et suivez automatiquement les factures avec rappels de paiement intégrés.' },
+          { icon: 'bi-box-seam', title: 'Gestion de Stock Personnalisée', desc: 'Suivi en temps réel, alertes de réapprovisionnement automatiques et gestion des fournisseurs.' },
+          { icon: 'bi-check2-circle', title: 'Automatisation des Approbations', desc: 'Chaînes d\'approbation numériques, routage de documents et pistes d\'audit.' },
+          { icon: 'bi-envelope-check', title: 'Déclencheurs Email & SMS', desc: 'Communication automatisée basée sur les événements système — plus jamais d\'envoi manuel.' },
+          { icon: 'bi-bar-chart', title: 'Tableaux de Bord en Temps Réel', desc: 'Agrégation de données en direct depuis tous vos outils dans un seul tableau de bord.' },
+          { icon: 'bi-plugin', title: 'Intégration d\'Outils Tiers', desc: 'Connectez QuickBooks, Slack, Google Workspace, CRM et plus dans un espace unifié.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'MySQL', 'Redis', 'Webhooks', 'REST APIs', 'Filament', 'Queues'],
+        useCases: ['Automatisation RH', 'Pipeline de Vente', 'Traitement de Documents', 'Gestion des Dépenses', 'Ticketing Client'],
+        faq: [
+          { q: 'Quels types de processus peuvent être automatisés ?', a: 'Toute tâche répétitive basée sur des règles : saisie de données, approbations, notifications, rapports et génération de documents.' },
+          { q: 'Cela se connecte-t-il avec nos outils existants ?', a: 'Oui. Nous intégrons la plupart des grandes plateformes via API : Slack, HubSpot, Stripe, Google, QuickBooks.' },
+          { q: 'Comment mesurer le ROI ?', a: 'La plupart des clients économisent 10 à 20 heures de travail manuel par employé chaque semaine dès le premier mois.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'تطوير أدوات أتمتة الأعمال والأدوات الداخلية المخصصة', description: 'تبسيط العمليات والقضاء على إدخال البيانات اليدوي واستبدال جداول البيانات الفوضوية بأدوات إدارة مخصصة وبرامج ويب آلية.' },
+        hero: { kicker: 'أتمتة العمليات التجارية', headline: 'أدوات داخلية مخصصة', headlineAccent: 'وأتمتة العمليات التجارية', subheadline: 'القضاء على المهام المتكررة، وربط الأدوات القديمة، ورقمنة سير العمل الداخلية بلوحات تحكم مخصصة ومحركات أتمتة.', cta: 'مراجعة سير عملك' },
+        problem: { title: 'العمل اليدوي يكلفك الآلاف', desc: 'جداول البيانات تتعطل، والبريد الإلكتروني يضيع، وإدخال البيانات المتكرر يضيع ساعات يومياً — بينما تتراكم الأخطاء وترتفع التكاليف.' },
+        solution: { title: 'أتمتة كل ما يُعيق تقدمك', desc: 'أدوات أتمتة مخصصة تلغي العمليات اليدوية وتُركّز بياناتك وتُشغّل سير العمل 24/7 بدون أخطاء بشرية.' },
+        features: [
+          { icon: 'bi-receipt', title: 'محركات الفوترة التلقائية', desc: 'توليد وإرسال وتتبع الفواتير تلقائياً مع تذكيرات الدفع المتكاملة.' },
+          { icon: 'bi-box-seam', title: 'إدارة المخزون المخصصة', desc: 'تتبع المخزون في الوقت الفعلي وتنبيهات إعادة الطلب الآلية وإدارة الموردين.' },
+          { icon: 'bi-check2-circle', title: 'أتمتة سير عمل الموافقة', desc: 'سلاسل موافقة رقمية وتوجيه المستندات ومسارات التدقيق.' },
+          { icon: 'bi-envelope-check', title: 'تشغيل إشعارات البريد والرسائل', desc: 'تواصل آلي بناءً على أحداث النظام — بدون إرسال يدوي أبداً.' },
+          { icon: 'bi-bar-chart', title: 'لوحات تقارير في الوقت الفعلي', desc: 'تجميع بيانات مباشر من جميع أدواتك في لوحة تحكم تشغيلية واحدة.' },
+          { icon: 'bi-plugin', title: 'تكامل أدوات الطرف الثالث', desc: 'ربط QuickBooks وSlack وGoogle Workspace وأنظمة CRM في مساحة عمل موحدة.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'MySQL', 'Redis', 'Webhooks', 'REST APIs', 'Filament', 'Queues'],
+        useCases: ['أتمتة تهيئة الموارد البشرية', 'أدوات خط مبيعات', 'معالجة المستندات', 'إدارة النفقات', 'تذاكر العملاء'],
+        faq: [
+          { q: 'ما أنواع العمليات التي يمكن أتمتتها؟', a: 'أي مهمة متكررة تعتمد على قواعد: إدخال البيانات، الموافقات، الإشعارات، التقارير، وتوليد المستندات.' },
+          { q: 'هل ستتصل بالأدوات التي نستخدمها بالفعل؟', a: 'نعم. نتكامل مع معظم المنصات الكبرى عبر APIs: Slack وHubSpot وStripe وGoogle وQuickBooks.' },
+          { q: 'كيف نقيس العائد على الاستثمار؟', a: 'معظم العملاء يوفرون 10-20 ساعة من العمل اليدوي لكل موظف أسبوعياً خلال الشهر الأول.' },
+        ],
+      },
+    },
+  },
+
+  // ─── 3. Client Portal Development ────────────────────────────────────────
+  {
+    slug: 'client-portal-development',
+    icon: 'bi-person-workspace',
+    gradient: 'from-purple-600 to-violet-600',
+    color: 'purple',
+    locales: {
+      en: {
+        meta: { title: 'Custom B2B Client Portals & Customer Dashboards', description: 'Enhance customer experience with custom web portals for secure file sharing, project tracking, invoicing, and self-service account management.' },
+        hero: { kicker: 'B2B Client Portals & Dashboards', headline: 'Secure B2B Client Portals That', headlineAccent: 'Streamline Customer Operations', subheadline: 'Empower clients with self-service dashboards for tracking requests, managing documents, and paying invoices safely.', cta: 'Request a Portal Demo' },
+        problem: { title: 'Managing Client Communication Is Chaos', desc: 'Endless email threads, lost files, missed follow-ups, and no single source of truth for project status — every client relationship is a coordination nightmare.' },
+        solution: { title: 'Give Every Client Their Own Secure Dashboard', desc: 'A branded client portal that gives your customers real-time visibility, self-service tools, and secure document access — all in one place.' },
+        features: [
+          { icon: 'bi-person-badge', title: 'Role-Based Access Control', desc: 'Granular permissions — give each client exactly what they need, nothing more.' },
+          { icon: 'bi-activity', title: 'Real-Time Project Tracking', desc: 'Live status dashboards showing task progress, milestones, and delivery timelines.' },
+          { icon: 'bi-folder-lock', title: 'Secure File Vault', desc: 'Encrypted document storage with controlled access, versioning, and audit logs.' },
+          { icon: 'bi-credit-card', title: 'Integrated Invoicing & Payments', desc: 'Clients can view, download, and pay invoices directly within their portal.' },
+          { icon: 'bi-chat-dots', title: 'In-Portal Messaging', desc: 'Centralized client communication — no more lost emails or scattered Slack threads.' },
+          { icon: 'bi-shield-check', title: 'SOC2-Ready Security Standards', desc: 'End-to-end encryption, audit trails, and data isolation for enterprise-level compliance.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'Filament', 'MySQL', 'S3 Storage', 'Stripe', 'Redis'],
+        useCases: ['Agency Client Portals', 'Legal Document Sharing', 'Consulting Platforms', 'Project Tracking', 'White-Label Client Apps'],
+        faq: [
+          { q: 'Can the portal be white-labeled with our brand?', a: 'Yes. Full custom branding including logo, colors, domain name, and email templates.' },
+          { q: 'How secure is client data?', a: 'All data is encrypted at rest and in transit. We implement RBAC, audit logs, and SOC2-aligned security practices.' },
+          { q: 'Can clients manage their own accounts?', a: 'Yes — clients can update profiles, upload documents, pay invoices, and submit requests independently.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Portails Clients B2B Personnalisés et Tableaux de Bord', description: 'Améliorez l\'expérience client avec des portails web personnalisés pour le partage sécurisé de fichiers, le suivi de projets et la facturation.' },
+        hero: { kicker: 'Portails Clients B2B & Tableaux de Bord', headline: 'Portails Clients B2B Sécurisés Qui', headlineAccent: 'Optimisent Vos Opérations', subheadline: 'Donnez à vos clients des tableaux de bord self-service pour suivre les demandes, gérer les documents et payer les factures en toute sécurité.', cta: 'Demander une Démo de Portail' },
+        problem: { title: 'Gérer la Communication Client Est un Chaos', desc: 'Fils d\'e-mails interminables, fichiers perdus, suivis manqués — sans source unique de vérité sur l\'état des projets.' },
+        solution: { title: 'Donnez à Chaque Client Son Tableau de Bord Sécurisé', desc: 'Un portail client à votre image qui offre une visibilité en temps réel, des outils self-service et un accès sécurisé aux documents.' },
+        features: [
+          { icon: 'bi-person-badge', title: 'Contrôle d\'Accès par Rôle', desc: 'Permissions granulaires — donnez à chaque client exactement ce dont il a besoin.' },
+          { icon: 'bi-activity', title: 'Suivi de Projet en Temps Réel', desc: 'Tableaux de bord de statut en direct montrant la progression, les jalons et les délais.' },
+          { icon: 'bi-folder-lock', title: 'Coffre-Fort de Fichiers Sécurisé', desc: 'Stockage de documents chiffré avec accès contrôlé, versioning et journaux d\'audit.' },
+          { icon: 'bi-credit-card', title: 'Facturation & Paiements Intégrés', desc: 'Les clients peuvent consulter, télécharger et payer les factures directement depuis leur portail.' },
+          { icon: 'bi-chat-dots', title: 'Messagerie In-Portal', desc: 'Communication client centralisée — plus d\'e-mails perdus ni de fils Slack éparpillés.' },
+          { icon: 'bi-shield-check', title: 'Standards de Sécurité SOC2', desc: 'Chiffrement de bout en bout, pistes d\'audit et isolation des données pour conformité entreprise.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'Filament', 'MySQL', 'S3 Storage', 'Stripe', 'Redis'],
+        useCases: ['Portails d\'Agences', 'Documents Juridiques', 'Plateformes de Conseil', 'Suivi de Projets', 'Apps Marque Blanche'],
+        faq: [
+          { q: 'Le portail peut-il être en marque blanche ?', a: 'Oui. Personnalisation complète incluant logo, couleurs, nom de domaine et modèles d\'e-mail.' },
+          { q: 'Les données clients sont-elles sécurisées ?', a: 'Toutes les données sont chiffrées au repos et en transit. Nous implémentons RBAC, journaux d\'audit et pratiques alignées SOC2.' },
+          { q: 'Les clients peuvent-ils gérer leurs propres comptes ?', a: 'Oui — les clients peuvent mettre à jour leurs profils, télécharger des documents, payer des factures et soumettre des demandes.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'بوابات عملاء B2B مخصصة ولوحات تحكم للعملاء', description: 'تحسين تجربة العملاء ببوابات ويب مخصصة لمشاركة الملفات الآمنة وتتبع المشاريع والفوترة وإدارة الحسابات.' },
+        hero: { kicker: 'بوابات عملاء B2B ولوحات التحكم', headline: 'بوابات عملاء B2B آمنة', headlineAccent: 'تُبسّط عمليات عملائك', subheadline: 'أعطِ عملاءك لوحات تحكم تخدمية لتتبع الطلبات وإدارة المستندات ودفع الفواتير بأمان.', cta: 'طلب عرض تجريبي للبوابة' },
+        problem: { title: 'إدارة تواصل العملاء فوضى', desc: 'سلاسل بريد إلكتروني لا تنتهي وملفات مفقودة ومتابعات فائتة — بدون مصدر واحد للحقيقة حول حالة المشروع.' },
+        solution: { title: 'أعطِ كل عميل لوحة تحكم آمنة خاصة به', desc: 'بوابة عملاء بعلامتك التجارية توفر رؤية فورية وأدوات ذاتية الخدمة ووصول آمن للمستندات — كل ذلك في مكان واحد.' },
+        features: [
+          { icon: 'bi-person-badge', title: 'التحكم بالوصول القائم على الأدوار', desc: 'صلاحيات دقيقة — أعطِ كل عميل ما يحتاجه بالضبط.' },
+          { icon: 'bi-activity', title: 'تتبع المشاريع في الوقت الفعلي', desc: 'لوحات حالة مباشرة تعرض تقدم المهام والمعالم والجداول الزمنية.' },
+          { icon: 'bi-folder-lock', title: 'خزنة ملفات آمنة', desc: 'تخزين مستندات مشفر مع وصول مُتحكم به وإصدارات وسجلات تدقيق.' },
+          { icon: 'bi-credit-card', title: 'فوترة ومدفوعات متكاملة', desc: 'يمكن للعملاء عرض الفواتير وتنزيلها والدفع مباشرة من بوابتهم.' },
+          { icon: 'bi-chat-dots', title: 'مراسلة داخل البوابة', desc: 'تواصل مركزي مع العملاء — لا مزيد من الرسائل المفقودة.' },
+          { icon: 'bi-shield-check', title: 'معايير أمان متوافقة مع SOC2', desc: 'تشفير من طرف إلى طرف ومسارات تدقيق وعزل بيانات للامتثال المؤسسي.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'Filament', 'MySQL', 'S3 Storage', 'Stripe', 'Redis'],
+        useCases: ['بوابات وكالات', 'مشاركة مستندات قانونية', 'منصات استشارية', 'تتبع مشاريع', 'تطبيقات بعلامة بيضاء'],
+        faq: [
+          { q: 'هل يمكن تعليم البوابة بعلامتنا التجارية؟', a: 'نعم. علامة تجارية مخصصة كاملة تشمل الشعار والألوان واسم النطاق وقوالب البريد الإلكتروني.' },
+          { q: 'ما مدى أمان بيانات العملاء؟', a: 'جميع البيانات مشفرة في حالة الراحة وأثناء النقل. نطبق RBAC وسجلات التدقيق وممارسات الأمان المتوافقة مع SOC2.' },
+          { q: 'هل يمكن للعملاء إدارة حساباتهم الخاصة؟', a: 'نعم — يمكن للعملاء تحديث ملفاتهم ورفع المستندات ودفع الفواتير وتقديم الطلبات باستقلالية.' },
+        ],
+      },
+    },
+  },
+
+  // ─── 4. API Integration & Backend ────────────────────────────────────────
+  {
+    slug: 'api-integration-backend',
+    icon: 'bi-hdd-network',
+    gradient: 'from-teal-500 to-cyan-600',
+    color: 'teal',
+    locales: {
+      en: {
+        meta: { title: 'Custom API Integration & Backend Infrastructure Development', description: 'Connect disconnected software, build robust REST/GraphQL APIs, and optimize backend database architecture for high performance.' },
+        hero: { kicker: 'Backend Engineering & API Integration', headline: 'Robust Backend Engineering &', headlineAccent: 'Custom API Integration', subheadline: 'We build secure, resilient backend infrastructure and custom integrations to keep your digital systems in perfect sync.', cta: 'Discuss Your API Strategy' },
+        problem: { title: 'Disconnected Systems Are Killing Productivity', desc: 'Data lives in silos, integrations break at peak load, manual syncing wastes hours, and no one has a single real-time view of the business.' },
+        solution: { title: 'One Unified, Always-In-Sync Backend', desc: 'Custom backend architecture and API integrations that connect every system, automate data flow, and deliver sub-100ms response times at scale.' },
+        features: [
+          { icon: 'bi-link-45deg', title: 'Third-Party API Integrations', desc: 'Stripe, HubSpot, Salesforce, Twilio, Google, and any custom API — integrated and production-ready.' },
+          { icon: 'bi-arrow-left-right', title: 'Custom RESTful & GraphQL APIs', desc: 'Designed to industry standards with rate limiting, authentication, versioning, and documentation.' },
+          { icon: 'bi-database-gear', title: 'Database Schema & Query Optimization', desc: 'Efficient database design, indexing strategies, and query tuning for high-throughput systems.' },
+          { icon: 'bi-boxes', title: 'Microservices Architecture', desc: 'Decompose monolithic systems into maintainable, independently scalable microservices.' },
+          { icon: 'bi-cloud-lightning', title: 'Serverless & Edge Deployments', desc: 'Vercel Edge, Cloudflare Workers, or AWS Lambda for globally distributed performance.' },
+          { icon: 'bi-graph-up', title: 'Performance Monitoring & Alerting', desc: 'Real-time error tracking, latency monitoring, and automated alerts with Sentry or Datadog.' },
+        ],
+        techStack: ['Laravel', 'Node.js', 'GraphQL', 'REST', 'PostgreSQL', 'Redis', 'Docker', 'AWS'],
+        useCases: ['ERP Integrations', 'Payment Gateway Connections', 'CRM Data Sync', 'Real-Time Webhooks', 'Multi-System Data Pipelines'],
+        faq: [
+          { q: 'Which APIs can you integrate with?', a: 'Any API with public documentation — Stripe, PayPal, HubSpot, Salesforce, Google APIs, Twilio, AWS services, and more.' },
+          { q: 'How do you ensure API reliability?', a: 'We implement rate limiting, retry logic, circuit breakers, webhooks validation, and comprehensive logging.' },
+          { q: 'Can you migrate our legacy monolith to microservices?', a: 'Yes — using the Strangler Fig pattern for incremental migration with zero downtime.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Intégration API Personnalisée et Développement d\'Infrastructure Backend', description: 'Connectez les logiciels déconnectés, construisez des APIs REST/GraphQL robustes et optimisez l\'architecture de base de données backend.' },
+        hero: { kicker: 'Ingénierie Backend & Intégration API', headline: 'Ingénierie Backend Robuste &', headlineAccent: 'Intégration API Personnalisée', subheadline: 'Nous construisons une infrastructure backend sécurisée et des intégrations personnalisées pour maintenir vos systèmes en parfaite synchronisation.', cta: 'Discuter de Votre Stratégie API' },
+        problem: { title: 'Les Systèmes Déconnectés Tuent la Productivité', desc: 'Les données vivent en silos, les intégrations se cassent en pic de charge, la synchronisation manuelle gaspille des heures.' },
+        solution: { title: 'Un Backend Unifié, Toujours Synchronisé', desc: 'Architecture backend personnalisée et intégrations API qui connectent chaque système, automatisent les flux de données et délivrent des temps de réponse sub-100ms.' },
+        features: [
+          { icon: 'bi-link-45deg', title: 'Intégrations API Tierces', desc: 'Stripe, HubSpot, Salesforce, Twilio, Google et toute API personnalisée — intégrée et prête pour la production.' },
+          { icon: 'bi-arrow-left-right', title: 'APIs RESTful & GraphQL Personnalisées', desc: 'Conçues aux standards industriels avec limitation de débit, authentification et documentation.' },
+          { icon: 'bi-database-gear', title: 'Optimisation de Schéma & Requêtes', desc: 'Conception efficace, stratégies d\'indexation et optimisation des requêtes pour systèmes haute disponibilité.' },
+          { icon: 'bi-boxes', title: 'Architecture Microservices', desc: 'Décomposez les systèmes monolithiques en microservices maintenables et évolutifs indépendamment.' },
+          { icon: 'bi-cloud-lightning', title: 'Déploiements Serverless & Edge', desc: 'Vercel Edge, Cloudflare Workers ou AWS Lambda pour des performances distribuées mondialement.' },
+          { icon: 'bi-graph-up', title: 'Monitoring & Alertes de Performance', desc: 'Suivi des erreurs en temps réel, monitoring de la latence et alertes automatisées.' },
+        ],
+        techStack: ['Laravel', 'Node.js', 'GraphQL', 'REST', 'PostgreSQL', 'Redis', 'Docker', 'AWS'],
+        useCases: ['Intégrations ERP', 'Passerelles de Paiement', 'Synchronisation CRM', 'Webhooks Temps Réel', 'Pipelines Multi-Systèmes'],
+        faq: [
+          { q: 'Avec quelles APIs pouvez-vous vous intégrer ?', a: 'Toute API avec documentation publique — Stripe, PayPal, HubSpot, Salesforce, Google APIs, Twilio, AWS et plus.' },
+          { q: 'Comment assurez-vous la fiabilité API ?', a: 'Nous implémentons la limitation de débit, la logique de retry, les disjoncteurs et une journalisation complète.' },
+          { q: 'Pouvez-vous migrer notre monolithe vers des microservices ?', a: 'Oui — en utilisant le pattern Strangler Fig pour une migration incrémentale sans temps d\'arrêt.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'تطوير تكامل API المخصص والبنية التحتية للخلفية', description: 'ربط البرامج المنفصلة وبناء APIs REST/GraphQL قوية وتحسين بنية قاعدة البيانات للأداء العالي.' },
+        hero: { kicker: 'هندسة الخلفية وتكامل API', headline: 'هندسة خلفية قوية', headlineAccent: 'وتكامل API مخصص', subheadline: 'نبني بنية تحتية للخلفية آمنة ومرنة وتكاملات مخصصة لإبقاء أنظمتك الرقمية في تزامن مثالي.', cta: 'ناقش استراتيجية API الخاصة بك' },
+        problem: { title: 'الأنظمة المنفصلة تقتل الإنتاجية', desc: 'البيانات في صوامع منفصلة، والتكاملات تنهار في أوقات الذروة، والمزامنة اليدوية تضيع ساعات يومياً.' },
+        solution: { title: 'خلفية موحدة دائمة التزامن', desc: 'بنية خلفية مخصصة وتكاملات API تربط كل نظام وتؤتمت تدفق البيانات وتوفر أوقات استجابة أقل من 100ms.' },
+        features: [
+          { icon: 'bi-link-45deg', title: 'تكاملات API للطرف الثالث', desc: 'Stripe وHubSpot وSalesforce وTwilio وGoogle وأي API مخصصة — متكاملة وجاهزة للإنتاج.' },
+          { icon: 'bi-arrow-left-right', title: 'APIs RESTful وGraphQL مخصصة', desc: 'مصممة وفق المعايير الصناعية مع تحديد المعدل والمصادقة والإصدارات والتوثيق.' },
+          { icon: 'bi-database-gear', title: 'تصميم المخطط وتحسين الاستعلامات', desc: 'تصميم قاعدة بيانات فعّال واستراتيجيات الفهرسة وضبط الاستعلامات للأنظمة عالية الإنتاجية.' },
+          { icon: 'bi-boxes', title: 'هندسة الخدمات المصغرة', desc: 'تفكيك الأنظمة الضخمة إلى خدمات مصغرة قابلة للصيانة والتوسع المستقل.' },
+          { icon: 'bi-cloud-lightning', title: 'نشر Serverless وEdge', desc: 'Vercel Edge وCloudflare Workers وAWS Lambda للأداء الموزع عالمياً.' },
+          { icon: 'bi-graph-up', title: 'مراقبة الأداء والتنبيهات', desc: 'تتبع الأخطاء في الوقت الفعلي ومراقبة التأخر وتنبيهات آلية.' },
+        ],
+        techStack: ['Laravel', 'Node.js', 'GraphQL', 'REST', 'PostgreSQL', 'Redis', 'Docker', 'AWS'],
+        useCases: ['تكاملات ERP', 'بوابات الدفع', 'مزامنة CRM', 'Webhooks الوقت الفعلي', 'خطوط أنابيب بيانات'],
+        faq: [
+          { q: 'مع أي APIs يمكنكم التكامل؟', a: 'أي API بوثائق عامة — Stripe وPayPal وHubSpot وSalesforce وGoogle APIs وTwilio وAWS وأكثر.' },
+          { q: 'كيف تضمنون موثوقية API؟', a: 'نطبق تحديد المعدل ومنطق إعادة المحاولة وقواطع الدائرة والتحقق من الـ webhooks وتسجيل شامل.' },
+          { q: 'هل يمكنكم ترحيل نظامنا الضخم إلى microservices؟', a: 'نعم — باستخدام نمط Strangler Fig للترحيل التدريجي بدون توقف.' },
+        ],
+      },
+    },
+  },
+
+  // ─── 5. Custom Ecommerce Solutions ───────────────────────────────────────
+  {
+    slug: 'custom-ecommerce-solutions',
+    icon: 'bi-cart4',
+    gradient: 'from-emerald-500 to-green-600',
+    color: 'emerald',
+    locales: {
+      en: {
+        meta: { title: 'Custom E-Commerce Web Application Development', description: 'High-converting custom e-commerce web applications, bespoke checkout flows, and B2B wholesale ordering systems.' },
+        hero: { kicker: 'Custom E-Commerce Development', headline: 'Custom E-Commerce Solutions', headlineAccent: 'Engineered for High Conversion', subheadline: 'Break free from template limitations with custom e-commerce platforms, tailored checkout flows, and enterprise integrations that drive revenue.', cta: 'Plan Your Custom Storefront' },
+        problem: { title: 'Templates Are Costing You Sales', desc: 'Shopify themes don\'t fit your catalog, WooCommerce is slow, and none of them handle complex B2B pricing, custom flows, or API integrations cleanly.' },
+        solution: { title: 'A Storefront Built Precisely for Your Buyers', desc: 'Custom e-commerce with your exact catalog structure, checkout flow, pricing engine, and every integration your business needs — from day one.' },
+        features: [
+          { icon: 'bi-layers', title: 'Headless E-Commerce Architecture', desc: 'Decouple frontend from backend for blazing-fast storefronts and total design freedom.' },
+          { icon: 'bi-building', title: 'B2B Wholesale & Tiered Pricing', desc: 'Net terms, volume discounts, buyer-specific pricing, and organization account management.' },
+          { icon: 'bi-sliders', title: 'Custom Product Configurator', desc: 'Let customers build complex products with real-time pricing and visual previews.' },
+          { icon: 'bi-currency-exchange', title: 'Multi-Currency & Tax Engine', desc: 'Automatic currency conversion, local tax calculation, and global compliance built-in.' },
+          { icon: 'bi-truck', title: 'Advanced Shipping & Logistics', desc: 'Multi-carrier rates, zone-based rules, fulfillment routing, and real-time tracking.' },
+          { icon: 'bi-graph-up-arrow', title: 'Conversion Optimization Built-In', desc: 'A/B testable checkout flows, cart abandonment recovery, and performance-first architecture.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'Stripe', 'PayPal', 'PostgreSQL', 'Redis', 'Elasticsearch'],
+        useCases: ['High-Volume Retail', 'B2B Wholesale Ordering', 'Multi-Vendor Marketplaces', 'Subscription Commerce', 'Custom Product Builders'],
+        faq: [
+          { q: 'Can you migrate from Shopify or WooCommerce?', a: 'Yes — we handle full data migrations including products, orders, customers, and SEO URL structures.' },
+          { q: 'How do you handle payment security?', a: 'We integrate Stripe or PayPal with PCI-DSS compliance. No card data ever touches your server.' },
+          { q: 'Can I have a multi-vendor marketplace?', a: 'Yes — we build multi-vendor platforms with vendor dashboards, commission engines, and payout systems.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Développement d\'Applications E-Commerce Personnalisées', description: 'Applications e-commerce sur mesure à haute conversion, tunnels de commande optimisés et systèmes de commande B2B grossistes.' },
+        hero: { kicker: 'Développement E-Commerce Personnalisé', headline: 'Solutions E-Commerce Personnalisées', headlineAccent: 'Conçues pour la Haute Conversion', subheadline: 'Libérez-vous des limitations des templates avec des plateformes e-commerce sur mesure, des tunnels optimisés et des intégrations entreprise.', cta: 'Planifier Votre Boutique Sur Mesure' },
+        problem: { title: 'Les Templates Vous Coûtent des Ventes', desc: 'Les thèmes Shopify ne correspondent pas à votre catalogue, WooCommerce est lent — aucun ne gère proprement les prix B2B complexes ni les intégrations API.' },
+        solution: { title: 'Une Boutique Conçue Précisément pour Vos Acheteurs', desc: 'E-commerce personnalisé avec votre structure de catalogue exacte, tunnel de commande, moteur de prix et toutes les intégrations dont votre entreprise a besoin.' },
+        features: [
+          { icon: 'bi-layers', title: 'Architecture E-Commerce Headless', desc: 'Découpler le frontend du backend pour des boutiques ultra-rapides et une liberté de design totale.' },
+          { icon: 'bi-building', title: 'Prix B2B Grossiste & par Paliers', desc: 'Conditions de paiement, remises sur volume, prix spécifiques acheteur et gestion de comptes organisation.' },
+          { icon: 'bi-sliders', title: 'Configurateur de Produits Personnalisé', desc: 'Laissez vos clients configurer des produits complexes avec tarification en temps réel.' },
+          { icon: 'bi-currency-exchange', title: 'Multi-Devises & Moteur de Taxes', desc: 'Conversion de devise automatique, calcul de taxe locale et conformité mondiale intégrés.' },
+          { icon: 'bi-truck', title: 'Expédition & Logistique Avancées', desc: 'Tarifs multi-transporteurs, règles basées sur les zones, routage des centres de distribution.' },
+          { icon: 'bi-graph-up-arrow', title: 'Optimisation de Conversion Intégrée', desc: 'Tunnels de commande testables A/B, récupération de panier abandonné et architecture orientée performance.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'Stripe', 'PayPal', 'PostgreSQL', 'Redis', 'Elasticsearch'],
+        useCases: ['Retail à Fort Volume', 'Commandes Grossiste B2B', 'Marketplaces Multi-Vendeurs', 'Commerce par Abonnement', 'Constructeurs de Produits'],
+        faq: [
+          { q: 'Pouvez-vous migrer depuis Shopify ou WooCommerce ?', a: 'Oui — nous gérons les migrations complètes incluant produits, commandes, clients et structures URL SEO.' },
+          { q: 'Comment gérez-vous la sécurité des paiements ?', a: 'Nous intégrons Stripe ou PayPal avec conformité PCI-DSS. Aucune donnée de carte ne touche jamais votre serveur.' },
+          { q: 'Puis-je avoir une marketplace multi-vendeurs ?', a: 'Oui — nous construisons des plateformes multi-vendeurs avec tableaux de bord vendeurs, moteurs de commission et systèmes de paiement.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'تطوير تطبيقات التجارة الإلكترونية المخصصة', description: 'تطبيقات تجارة إلكترونية مخصصة عالية التحويل وتدفقات دفع مصممة خصيصاً وأنظمة طلب الجملة B2B.' },
+        hero: { kicker: 'تطوير التجارة الإلكترونية المخصصة', headline: 'حلول التجارة الإلكترونية المخصصة', headlineAccent: 'مصممة لتحويل عالٍ', subheadline: 'تحرر من قيود القوالب بمنصات تجارة إلكترونية مخصصة وتدفقات دفع مُحسّنة وتكاملات مؤسسية تزيد الإيرادات.', cta: 'خطط لمتجرك المخصص' },
+        problem: { title: 'القوالب الجاهزة تكلفك مبيعات', desc: 'قوالب Shopify لا تناسب كتالوجك وWooCommerce بطيء — ولا أي منهما يتعامل بنظافة مع أسعار B2B المعقدة.' },
+        solution: { title: 'متجر مُبنى بدقة لمشتريك', desc: 'تجارة إلكترونية مخصصة بهيكل كتالوجك الدقيق وتدفق الدفع ومحرك التسعير وكل التكاملات التي يحتاجها عملك.' },
+        features: [
+          { icon: 'bi-layers', title: 'هندسة تجارة إلكترونية Headless', desc: 'فصل الواجهة الأمامية عن الخلفية لمتاجر فائقة السرعة وحرية تصميم كاملة.' },
+          { icon: 'bi-building', title: 'أسعار الجملة B2B والمستويات', desc: 'شروط صافي وخصومات حجم وتسعير خاص بالمشتري وإدارة حسابات المؤسسة.' },
+          { icon: 'bi-sliders', title: 'مُهيّئ منتجات مخصص', desc: 'دع العملاء يبنون منتجات معقدة بتسعير في الوقت الفعلي ومعاينات مرئية.' },
+          { icon: 'bi-currency-exchange', title: 'محرك متعدد العملات والضرائب', desc: 'تحويل عملة تلقائي وحساب ضريبي محلي وامتثال عالمي مدمج.' },
+          { icon: 'bi-truck', title: 'شحن ولوجستيات متقدمة', desc: 'أسعار متعددة الناقلين وقواعد قائمة على المناطق وتتبع في الوقت الفعلي.' },
+          { icon: 'bi-graph-up-arrow', title: 'تحسين التحويل مدمج', desc: 'تدفقات دفع قابلة لاختبار A/B واسترداد سلة التسوق المهجورة.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'Stripe', 'PayPal', 'PostgreSQL', 'Redis', 'Elasticsearch'],
+        useCases: ['التجزئة عالية الحجم', 'طلبات الجملة B2B', 'أسواق متعددة البائعين', 'تجارة الاشتراك', 'بُناة المنتجات'],
+        faq: [
+          { q: 'هل يمكنكم الترحيل من Shopify أو WooCommerce؟', a: 'نعم — نتعامل مع عمليات الترحيل الكاملة بما في ذلك المنتجات والطلبات والعملاء وهياكل URL لـ SEO.' },
+          { q: 'كيف تتعاملون مع أمان المدفوعات؟', a: 'نتكامل مع Stripe أو PayPal مع امتثال PCI-DSS. لا تمس أي بيانات بطاقة خادمك أبداً.' },
+          { q: 'هل يمكنني الحصول على سوق متعدد البائعين؟', a: 'نعم — نبني منصات متعددة البائعين مع لوحات تحكم ومحركات عمولة وأنظمة دفع.' },
+        ],
+      },
+    },
+  },
+
+  // ─── 6. Multi-Tenant SaaS Platforms ──────────────────────────────────────
+  {
+    slug: 'multi-tenant-saas-platforms',
+    icon: 'bi-buildings',
+    gradient: 'from-violet-600 to-purple-700',
+    color: 'violet',
+    locales: {
+      en: {
+        meta: { title: 'Multi-Tenant SaaS & Subscription Platform Development', description: 'Build multi-tenant SaaS applications with isolated database architectures, automated billing, and user management.' },
+        hero: { kicker: 'Multi-Tenant SaaS Development', headline: 'Scalable Multi-Tenant', headlineAccent: 'SaaS Development', subheadline: 'Secure tenant isolation, flexible subscription billing, and seamless team onboarding built into one powerful SaaS foundation.', cta: 'Launch Your SaaS Product' },
+        problem: { title: 'Building SaaS on the Wrong Foundation Costs Everything', desc: 'Without proper multi-tenancy, data leaks between accounts, billing becomes manual, and scaling past 100 tenants breaks your architecture.' },
+        solution: { title: 'Enterprise-Grade Multi-Tenancy From Day One', desc: 'Isolated tenant data, automated subscription billing, and self-service team management — the right foundation for a SaaS that can grow to thousands of customers.' },
+        features: [
+          { icon: 'bi-hdd-rack', title: 'Tenant Data Isolation', desc: 'Database-per-tenant or schema-per-tenant models ensuring 100% data separation and security.' },
+          { icon: 'bi-globe', title: 'Subdomain & Custom Domain Routing', desc: 'Each tenant gets their branded subdomain or custom domain with automatic SSL provisioning.' },
+          { icon: 'bi-credit-card-2-back', title: 'Subscription Management Engine', desc: 'Tiered, per-seat, usage-based, and freemium models with Stripe Billing integration.' },
+          { icon: 'bi-people', title: 'Team & Organization Management', desc: 'Invite members, assign roles, manage permissions, and audit team activity per organization.' },
+          { icon: 'bi-person-lines-fill', title: 'Self-Service Onboarding', desc: 'Automated onboarding flows, guided setup, and drip email sequences that activate users fast.' },
+          { icon: 'bi-graph-up', title: 'Usage Analytics & Billing Metering', desc: 'Per-tenant usage dashboards, invoice generation, and overage billing automation.' },
+        ],
+        techStack: ['Laravel', 'Tenancy for Laravel', 'Vue.js', 'Stripe', 'PostgreSQL', 'Redis', 'Horizon', 'Docker'],
+        useCases: ['B2B SaaS Products', 'White-Label Platforms', 'Agency Management Tools', 'Franchise Systems', 'Education Platforms'],
+        faq: [
+          { q: 'What tenancy model do you recommend?', a: 'For most SaaS products, schema-per-tenant using the Tenancy for Laravel package provides the best balance of isolation and cost.' },
+          { q: 'How is billing handled across tenants?', a: 'We integrate Stripe Billing with subscription sync, prorated upgrades, dunning management, and automated invoicing.' },
+          { q: 'Can tenants have their own custom branding?', a: 'Yes — each tenant can upload logos, set custom colors, and use their own domain.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Développement de Plateformes SaaS Multi-Locataires', description: 'Construisez des applications SaaS multi-locataires avec des architectures de base de données isolées, une facturation automatisée.' },
+        hero: { kicker: 'Développement SaaS Multi-Locataires', headline: 'Développement SaaS', headlineAccent: 'Multi-Locataires Évolutif', subheadline: 'Isolation sécurisée des locataires, facturation d\'abonnement flexible et intégration d\'équipe transparente dans une base SaaS puissante.', cta: 'Lancer Votre Produit SaaS' },
+        problem: { title: 'Construire un SaaS sur la Mauvaise Base Coûte Tout', desc: 'Sans multi-location correcte, les données fuient entre les comptes, la facturation devient manuelle et dépasser 100 locataires brise votre architecture.' },
+        solution: { title: 'Multi-Location Niveau Entreprise Dès le Premier Jour', desc: 'Données locataires isolées, facturation d\'abonnement automatisée et gestion d\'équipe self-service — la bonne base pour un SaaS qui peut croître jusqu\'à des milliers de clients.' },
+        features: [
+          { icon: 'bi-hdd-rack', title: 'Isolation des Données Locataires', desc: 'Modèles base de données par locataire ou schéma par locataire assurant 100% de séparation.' },
+          { icon: 'bi-globe', title: 'Routage Sous-Domaine & Domaine Personnalisé', desc: 'Chaque locataire obtient son sous-domaine de marque ou domaine personnalisé avec SSL automatique.' },
+          { icon: 'bi-credit-card-2-back', title: 'Moteur de Gestion des Abonnements', desc: 'Modèles par paliers, par siège, basés sur l\'utilisation et freemium avec Stripe Billing.' },
+          { icon: 'bi-people', title: 'Gestion d\'Équipes & d\'Organisations', desc: 'Invitez des membres, assignez des rôles, gérez les permissions et auditez l\'activité par organisation.' },
+          { icon: 'bi-person-lines-fill', title: 'Onboarding Self-Service', desc: 'Flux d\'onboarding automatisés, configuration guidée et séquences d\'e-mails drip.' },
+          { icon: 'bi-graph-up', title: 'Analyse d\'Utilisation & Facturation', desc: 'Tableaux de bord d\'utilisation par locataire, génération de factures et automatisation.' },
+        ],
+        techStack: ['Laravel', 'Tenancy for Laravel', 'Vue.js', 'Stripe', 'PostgreSQL', 'Redis', 'Horizon', 'Docker'],
+        useCases: ['Produits SaaS B2B', 'Plateformes Marque Blanche', 'Outils d\'Agence', 'Systèmes de Franchise', 'Plateformes Éducatives'],
+        faq: [
+          { q: 'Quel modèle de location recommandez-vous ?', a: 'Pour la plupart des SaaS, schéma par locataire avec Tenancy for Laravel offre le meilleur équilibre entre isolation et coût.' },
+          { q: 'Comment la facturation est-elle gérée entre locataires ?', a: 'Nous intégrons Stripe Billing avec synchronisation d\'abonnement, mises à niveau au prorata, et facturation automatisée.' },
+          { q: 'Les locataires peuvent-ils avoir leur propre branding ?', a: 'Oui — chaque locataire peut télécharger des logos, définir des couleurs personnalisées et utiliser son propre domaine.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'تطوير منصات SaaS متعددة المستأجرين والاشتراكات', description: 'بناء تطبيقات SaaS متعددة المستأجرين مع بنيات قواعد بيانات معزولة وفوترة آلية وإدارة المستخدمين.' },
+        hero: { kicker: 'تطوير SaaS متعدد المستأجرين', headline: 'تطوير SaaS', headlineAccent: 'متعدد المستأجرين وقابل للتوسع', subheadline: 'عزل آمن للمستأجرين وفوترة اشتراك مرنة وتهيئة فريق سلسة مدمجة في أساس SaaS قوي واحد.', cta: 'أطلق منتج SaaS الخاص بك' },
+        problem: { title: 'بناء SaaS على أساس خاطئ يكلف كل شيء', desc: 'بدون استئجار متعدد مناسب، تتسرب البيانات بين الحسابات وتصبح الفوترة يدوية وتجاوز 100 مستأجر يكسر هندستك المعمارية.' },
+        solution: { title: 'استئجار متعدد على مستوى المؤسسة من اليوم الأول', desc: 'بيانات مستأجرين معزولة وفوترة اشتراك آلية وإدارة فريق ذاتية الخدمة — الأساس الصحيح لـ SaaS ينمو لآلاف العملاء.' },
+        features: [
+          { icon: 'bi-hdd-rack', title: 'عزل بيانات المستأجرين', desc: 'نماذج قاعدة بيانات لكل مستأجر أو مخطط لكل مستأجر لضمان فصل وأمان 100%.' },
+          { icon: 'bi-globe', title: 'توجيه النطاقات الفرعية والمخصصة', desc: 'كل مستأجر يحصل على نطاقه الفرعي أو النطاق المخصص مع توفير SSL تلقائي.' },
+          { icon: 'bi-credit-card-2-back', title: 'محرك إدارة الاشتراكات', desc: 'نماذج متدرجة ولكل مقعد وقائمة على الاستخدام ومجانية مع تكامل Stripe Billing.' },
+          { icon: 'bi-people', title: 'إدارة الفريق والمنظمة', desc: 'دعوة الأعضاء وتعيين الأدوار وإدارة الصلاحيات وتدقيق نشاط الفريق.' },
+          { icon: 'bi-person-lines-fill', title: 'تهيئة ذاتية الخدمة', desc: 'تدفقات تهيئة آلية وإعداد موجَّه وتسلسلات بريد إلكتروني تُنشّط المستخدمين بسرعة.' },
+          { icon: 'bi-graph-up', title: 'تحليلات الاستخدام وقياس الفوترة', desc: 'لوحات استخدام لكل مستأجر وتوليد فواتير وأتمتة فوترة التجاوز.' },
+        ],
+        techStack: ['Laravel', 'Tenancy for Laravel', 'Vue.js', 'Stripe', 'PostgreSQL', 'Redis', 'Horizon', 'Docker'],
+        useCases: ['منتجات SaaS للشركات', 'منصات بعلامة بيضاء', 'أدوات إدارة الوكالات', 'أنظمة الامتياز', 'منصات التعليم'],
+        faq: [
+          { q: 'ما نموذج الاستئجار الذي توصون به؟', a: 'لمعظم SaaS، يوفر مخطط لكل مستأجر باستخدام Tenancy for Laravel أفضل توازن بين العزل والتكلفة.' },
+          { q: 'كيف تُدار الفوترة عبر المستأجرين؟', a: 'نتكامل مع Stripe Billing مع مزامنة الاشتراك والترقيات المتناسبة وإدارة التحصيل والفوترة الآلية.' },
+          { q: 'هل يمكن للمستأجرين امتلاك علامتهم التجارية المخصصة؟', a: 'نعم — يمكن لكل مستأجر رفع الشعارات وتعيين ألوان مخصصة واستخدام نطاقه الخاص.' },
+        ],
+      },
+    },
+  },
+
+  // ─── 7. Legacy System Modernization ──────────────────────────────────────
+  {
+    slug: 'legacy-system-modernization',
+    icon: 'bi-arrow-clockwise',
+    gradient: 'from-amber-500 to-yellow-500',
+    color: 'amber',
+    locales: {
+      en: {
+        meta: { title: 'Legacy Web Application Modernization & Codebase Refactoring', description: 'Upgrade legacy web applications to modern frameworks without breaking current operations or sacrificing business continuity.' },
+        hero: { kicker: 'Legacy System Modernization', headline: 'Legacy Web Application', headlineAccent: 'Modernization & Refactoring', subheadline: 'Transform slow, outdated web tools into modern, lightning-fast applications without risking business downtime or data loss.', cta: 'Schedule a Code Audit' },
+        problem: { title: 'Your Legacy System Is a Business Risk', desc: 'Slow page loads, security vulnerabilities, no mobile support, developer reluctance to touch the codebase — your old system is actively costing you customers.' },
+        solution: { title: 'Modernization Without the Terror of Big Rewrites', desc: 'Incremental, risk-managed modernization that upgrades your system piece by piece — keeping the business running while transforming the tech underneath.' },
+        features: [
+          { icon: 'bi-scissors', title: 'Strangler Fig Pattern Migration', desc: 'Incrementally replace legacy components with modern equivalents without any big-bang rewrite risk.' },
+          { icon: 'bi-code-slash', title: 'Legacy to React / Vue / Next.js', desc: 'Migrate jQuery, PHP, or outdated frontend code to modern component-based frameworks.' },
+          { icon: 'bi-phone-landscape', title: 'Mobile Optimization & Responsive UI', desc: 'Transform desktop-only legacy UIs into fully responsive, mobile-first experiences.' },
+          { icon: 'bi-shield-exclamation', title: 'Security Vulnerability Patching', desc: 'Identify and patch critical CVEs, SQL injection risks, XSS, and authentication weaknesses.' },
+          { icon: 'bi-speedometer', title: 'Performance Tuning', desc: 'Database query optimization, caching layers, and asset optimization for dramatic speed improvements.' },
+          { icon: 'bi-file-code', title: 'Codebase Documentation & Testing', desc: 'Add test coverage, document undocumented logic, and establish code standards for future teams.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'React', 'PostgreSQL', 'Redis', 'Docker', 'PHPUnit', 'Pest'],
+        useCases: ['PHP 5/7 to Laravel Migration', 'jQuery to Vue.js Upgrade', 'Monolith Decomposition', 'Schema Refactoring', 'API Layer Addition'],
+        faq: [
+          { q: 'Will modernization break our current business operations?', a: 'No. We use the Strangler Fig pattern — the old system runs alongside the new one until migration is complete.' },
+          { q: 'How do you handle undocumented legacy code?', a: 'We perform a thorough code audit, reverse-engineer business logic, and document everything before touching a single line.' },
+          { q: 'What is the typical timeline for modernization?', a: 'A medium-sized app typically takes 3–6 months for full modernization depending on complexity.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Modernisation d\'Applications Web Legacy et Refactorisation de Code', description: 'Modernisez les applications web obsolètes vers des frameworks modernes sans perturber les opérations actuelles.' },
+        hero: { kicker: 'Modernisation des Systèmes Legacy', headline: 'Modernisation d\'Applications Web', headlineAccent: 'Legacy & Refactorisation', subheadline: 'Transformez vos outils web lents et obsolètes en applications modernes ultra-rapides sans risquer l\'arrêt des activités.', cta: 'Planifier un Audit de Code' },
+        problem: { title: 'Votre Système Legacy Est un Risque Métier', desc: 'Pages lentes, vulnérabilités de sécurité, aucun support mobile, développeurs réticents — votre ancien système vous coûte activement des clients.' },
+        solution: { title: 'Modernisation Sans la Terreur des Grandes Réécritures', desc: 'Modernisation incrémentale et gérée par risque qui met à niveau votre système pièce par pièce — tout en gardant l\'activité opérationnelle.' },
+        features: [
+          { icon: 'bi-scissors', title: 'Migration Pattern Strangler Fig', desc: 'Remplacez progressivement les composants legacy par des équivalents modernes sans risque.' },
+          { icon: 'bi-code-slash', title: 'Migration vers React / Vue / Next.js', desc: 'Migrez jQuery, PHP ou code frontend obsolète vers des frameworks basés sur des composants modernes.' },
+          { icon: 'bi-phone-landscape', title: 'Optimisation Mobile & UI Responsive', desc: 'Transformez les UIs legacy desktop-only en expériences entièrement responsive et mobile-first.' },
+          { icon: 'bi-shield-exclamation', title: 'Correction de Vulnérabilités de Sécurité', desc: 'Identifiez et corrigez les CVE critiques, risques d\'injection SQL, XSS et faiblesses d\'authentification.' },
+          { icon: 'bi-speedometer', title: 'Optimisation des Performances', desc: 'Optimisation des requêtes, couches de cache et optimisation d\'assets pour des améliorations de vitesse.' },
+          { icon: 'bi-file-code', title: 'Documentation & Tests de Code', desc: 'Ajoutez la couverture de tests, documentez la logique non documentée et établissez des standards de code.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'React', 'PostgreSQL', 'Redis', 'Docker', 'PHPUnit', 'Pest'],
+        useCases: ['Migration PHP vers Laravel', 'Upgrade jQuery vers Vue.js', 'Décomposition Monolithe', 'Refactorisation Schéma', 'Ajout Couche API'],
+        faq: [
+          { q: 'La modernisation va-t-elle perturber nos opérations ?', a: 'Non. Nous utilisons le pattern Strangler Fig — l\'ancien système tourne en parallèle jusqu\'à ce que la migration soit complète.' },
+          { q: 'Comment gérez-vous le code legacy non documenté ?', a: 'Nous effectuons un audit complet, rétro-ingénions la logique métier et documentons tout avant de toucher une seule ligne.' },
+          { q: 'Quel est le délai typique pour la modernisation ?', a: 'Une application de taille moyenne prend généralement 3 à 6 mois selon la complexité.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'تحديث تطبيقات الويب القديمة وإعادة هيكلة قاعدة الكود', description: 'ترقية تطبيقات الويب القديمة إلى أطر عمل حديثة دون الإخلال بالعمليات الحالية أو التضحية باستمرارية الأعمال.' },
+        hero: { kicker: 'تحديث الأنظمة القديمة', headline: 'تحديث تطبيقات الويب القديمة', headlineAccent: 'وإعادة الهيكلة', subheadline: 'تحويل أدوات الويب البطيئة والقديمة إلى تطبيقات حديثة فائقة السرعة دون المخاطرة بتوقف الأعمال أو فقدان البيانات.', cta: 'جدول تدقيق كود' },
+        problem: { title: 'نظامك القديم خطر على أعمالك', desc: 'صفحات بطيئة وثغرات أمنية ولا دعم للجوال ومطورون يترددون في لمس قاعدة الكود — نظامك القديم يكلفك عملاء وإيرادات.' },
+        solution: { title: 'تحديث بدون رعب إعادة الكتابة الكاملة', desc: 'تحديث تدريجي ومُدار من حيث المخاطر يُرقّي نظامك قطعة بقطعة — مع إبقاء الأعمال تعمل بينما تتحول التقنية.' },
+        features: [
+          { icon: 'bi-scissors', title: 'ترحيل نمط Strangler Fig', desc: 'استبدل مكونات قاعدة الكود القديمة تدريجياً بمكافئات حديثة دون خطر إعادة الكتابة الكاملة.' },
+          { icon: 'bi-code-slash', title: 'ترحيل إلى React / Vue / Next.js', desc: 'ترحيل jQuery أو PHP أو كود الواجهة الأمامية القديم إلى أطر عمل حديثة قائمة على المكونات.' },
+          { icon: 'bi-phone-landscape', title: 'تحسين الجوال والواجهة المتجاوبة', desc: 'تحويل واجهات سطح المكتب القديمة إلى تجارب متجاوبة بالكامل وتعطي الجوال الأولوية.' },
+          { icon: 'bi-shield-exclamation', title: 'تصحيح ثغرات الأمان', desc: 'تحديد وتصحيح الـ CVE الحرجة ومخاطر حقن SQL وXSS وضعف المصادقة.' },
+          { icon: 'bi-speedometer', title: 'ضبط الأداء', desc: 'تحسين استعلامات قاعدة البيانات وطبقات التخزين المؤقت وتحسين الأصول لسرعة أعلى.' },
+          { icon: 'bi-file-code', title: 'توثيق الكود والاختبارات', desc: 'إضافة تغطية الاختبارات وتوثيق المنطق غير الموثق وإرساء معايير الكود.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'React', 'PostgreSQL', 'Redis', 'Docker', 'PHPUnit', 'Pest'],
+        useCases: ['ترحيل PHP إلى Laravel', 'ترقية jQuery إلى Vue.js', 'تفكيك الأحادي', 'إعادة هيكلة المخطط', 'إضافة طبقة API'],
+        faq: [
+          { q: 'هل سيُعطّل التحديث عملياتنا الحالية؟', a: 'لا. نستخدم نمط Strangler Fig — يعمل النظام القديم جنباً إلى جنب مع الجديد حتى اكتمال الترحيل.' },
+          { q: 'كيف تتعاملون مع الكود القديم غير الموثق؟', a: 'نُجري تدقيقاً شاملاً للكود ونعكس هندسة منطق الأعمال ونوثق كل شيء قبل لمس سطر واحد.' },
+          { q: 'ما الجدول الزمني النموذجي للتحديث؟', a: 'التطبيق متوسط الحجم يستغرق عادةً 3-6 أشهر للتحديث الكامل بحسب التعقيد.' },
+        ],
+      },
+    },
+  },
+
+  // ─── 8. Progressive Web Apps ──────────────────────────────────────────────
+  {
+    slug: 'progressive-web-apps',
+    icon: 'bi-phone-vibrate',
+    gradient: 'from-cyan-500 to-blue-500',
+    color: 'cyan',
+    locales: {
+      en: {
+        meta: { title: 'Progressive Web App (PWA) Development Services', description: 'Deliver app-like mobile experiences on the web with fast offline storage, push notifications, and cross-platform reliability.' },
+        hero: { kicker: 'Progressive Web App Development', headline: 'High-Performance Progressive', headlineAccent: 'Web Apps (PWAs)', subheadline: 'Native-like mobile experiences delivered straight through the web browser — fast, reliable, installable, and offline-capable anywhere.', cta: 'Explore PWA Options' },
+        problem: { title: 'Native Apps Cost Too Much and Reach Too Few', desc: 'App Store publishing costs thousands in fees, requires separate iOS and Android codebases, and forces users to download before they even try your product.' },
+        solution: { title: 'App-Like Power, Web-Like Reach', desc: 'A PWA delivers native app performance, offline access, and push notifications — without App Store fees, rejection risks, or separate codebases.' },
+        features: [
+          { icon: 'bi-wifi-off', title: 'Offline-First Functionality', desc: 'Service workers cache critical assets and data so users stay productive even without a network.' },
+          { icon: 'bi-bell-fill', title: 'Push Notifications', desc: 'Re-engage users with native-style push notifications on both mobile and desktop platforms.' },
+          { icon: 'bi-download', title: 'Installable on Any Device', desc: 'Users can add the PWA to their home screen on iOS, Android, and desktop with a single tap.' },
+          { icon: 'bi-lightning-charge', title: 'Sub-Second Load Times', desc: 'Pre-caching, lazy loading, and optimized asset delivery achieve Lighthouse scores of 90+.' },
+          { icon: 'bi-phone-flip', title: 'Cross-Platform with One Codebase', desc: 'One codebase serves iOS, Android, and desktop — dramatically lower maintenance cost.' },
+          { icon: 'bi-shield-check', title: 'HTTPS & Secure by Default', desc: 'PWAs require HTTPS, ensuring all data transmission is encrypted and user trust is maintained.' },
+        ],
+        techStack: ['Nuxt', 'Vue.js', 'Next.js', 'React', 'Workbox', 'Service Workers', 'IndexedDB', 'Web Push API'],
+        useCases: ['Field Service Apps', 'Offline Data Collection', 'News & Media Apps', 'Retail Catalogs', 'Corporate Intranets'],
+        faq: [
+          { q: 'Are PWAs as fast as native apps?', a: 'Modern PWAs with proper caching achieve near-native performance. Twitter Lite and Pinterest PWA outperform their native counterparts.' },
+          { q: 'Do push notifications work on iOS?', a: 'Yes — since iOS 16.4, Safari supports Web Push API. We implement it correctly for full cross-platform support.' },
+          { q: 'Can a PWA be listed on the Play Store?', a: 'Yes — via TWA (Trusted Web Activity), your PWA can be listed on the Google Play Store.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Services de Développement d\'Applications Web Progressives (PWA)', description: 'Offrez des expériences mobiles similaires aux applications natives via le web avec stockage hors ligne rapide et notifications push.' },
+        hero: { kicker: 'Développement d\'Applications Web Progressives', headline: 'Applications Web Progressives', headlineAccent: 'Haute Performance (PWA)', subheadline: 'Expériences mobiles natives livrées directement via le navigateur web — rapides, fiables, installables et utilisables hors ligne.', cta: 'Explorer les Options PWA' },
+        problem: { title: 'Les Apps Natives Coûtent Trop Cher et Atteignent Trop Peu', desc: 'Publier sur l\'App Store coûte des milliers en frais, nécessite des équipes séparées et force les utilisateurs à télécharger avant d\'essayer.' },
+        solution: { title: 'Puissance d\'Application, Portée Web', desc: 'Une PWA offre les performances d\'une app native, accès hors ligne et notifications push — sans frais d\'App Store ni bases de code iOS/Android séparées.' },
+        features: [
+          { icon: 'bi-wifi-off', title: 'Fonctionnalité Hors Ligne', desc: 'Les service workers mettent en cache les assets et données critiques pour rester productif sans réseau.' },
+          { icon: 'bi-bell-fill', title: 'Notifications Push', desc: 'Réengagez les utilisateurs avec des notifications push de style natif sur mobile et desktop.' },
+          { icon: 'bi-download', title: 'Installable sur N\'importe Quel Appareil', desc: 'Les utilisateurs peuvent ajouter la PWA à leur écran d\'accueil sur iOS, Android et desktop en un tap.' },
+          { icon: 'bi-lightning-charge', title: 'Temps de Chargement Sub-Seconde', desc: 'Pré-mise en cache, chargement lazy et livraison optimisée pour des scores Lighthouse 90+.' },
+          { icon: 'bi-phone-flip', title: 'Multiplateforme avec une Seule Base de Code', desc: 'Une base de code sert iOS, Android et desktop — coût de maintenance dramatiquement réduit.' },
+          { icon: 'bi-shield-check', title: 'HTTPS & Sécurisé par Défaut', desc: 'Les PWA nécessitent HTTPS, assurant que toutes les transmissions de données sont chiffrées.' },
+        ],
+        techStack: ['Nuxt', 'Vue.js', 'Next.js', 'React', 'Workbox', 'Service Workers', 'IndexedDB', 'Web Push API'],
+        useCases: ['Apps Service Terrain', 'Collecte Hors Ligne', 'Apps News & Médias', 'Catalogues Retail', 'Intranets d\'Entreprise'],
+        faq: [
+          { q: 'Les PWA sont-elles aussi rapides que les apps natives ?', a: 'Les PWA modernes avec cache approprié atteignent des performances quasi-natives. Twitter Lite surpasse son homologue natif.' },
+          { q: 'Les notifications push fonctionnent-elles sur iOS ?', a: 'Oui — depuis iOS 16.4, Safari supporte Web Push API. Nous l\'implémentons correctement pour support multiplateforme complet.' },
+          { q: 'Une PWA peut-elle être listée sur le Play Store ?', a: 'Oui — via TWA (Trusted Web Activity), votre PWA peut être listée sur le Google Play Store.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'خدمات تطوير تطبيقات الويب التقدمية (PWA)', description: 'تقديم تجارب جوال شبيهة بالتطبيقات الأصلية عبر الويب مع تخزين غير متصل سريع وإشعارات فورية.' },
+        hero: { kicker: 'تطوير تطبيقات الويب التقدمية', headline: 'تطبيقات ويب تقدمية', headlineAccent: 'عالية الأداء (PWA)', subheadline: 'تجارب جوال شبيهة بالتطبيقات الأصلية مُقدَّمة مباشرة عبر متصفح الويب — سريعة وموثوقة وقابلة للتثبيت.', cta: 'استكشف خيارات PWA' },
+        problem: { title: 'التطبيقات الأصلية مكلفة جداً وتصل لأقل عدد', desc: 'النشر على App Store وPlay Store يكلف الآلاف ويتطلب فرق تطوير منفصلة ويجبر المستخدمين على التنزيل قبل التجربة.' },
+        solution: { title: 'قوة التطبيق، انتشار الويب', desc: 'يوفر PWA أداء التطبيق الأصلي والوصول غير المتصل والإشعارات الفورية — بدون رسوم App Store أو قواعد كود منفصلة.' },
+        features: [
+          { icon: 'bi-wifi-off', title: 'وظائف الأولوية غير المتصلة', desc: 'يخزن عمال الخدمة الأصول والبيانات الحيوية لإبقاء المستخدمين منتجين حتى بدون شبكة.' },
+          { icon: 'bi-bell-fill', title: 'إشعارات فورية', desc: 'إعادة إشراك المستخدمين بإشعارات فورية بأسلوب أصلي على منصات الجوال وسطح المكتب.' },
+          { icon: 'bi-download', title: 'قابل للتثبيت على أي جهاز', desc: 'يمكن للمستخدمين إضافة PWA لشاشتهم الرئيسية على iOS وAndroid وسطح المكتب بنقرة واحدة.' },
+          { icon: 'bi-lightning-charge', title: 'أوقات تحميل أقل من ثانية', desc: 'التخزين المؤقت المسبق والتحميل الكسول وتسليم الأصول المحسّن يحقق نتائج Lighthouse 90+.' },
+          { icon: 'bi-phone-flip', title: 'متعدد المنصات بقاعدة كود واحدة', desc: 'قاعدة كود واحدة تخدم iOS وAndroid وسطح المكتب — تكلفة صيانة أقل بشكل كبير.' },
+          { icon: 'bi-shield-check', title: 'HTTPS وآمن افتراضياً', desc: 'تتطلب PWA الـ HTTPS مما يضمن تشفير جميع نقل البيانات والحفاظ على ثقة المستخدم.' },
+        ],
+        techStack: ['Nuxt', 'Vue.js', 'Next.js', 'React', 'Workbox', 'Service Workers', 'IndexedDB', 'Web Push API'],
+        useCases: ['تطبيقات الخدمة الميدانية', 'جمع البيانات غير المتصلة', 'تطبيقات الأخبار', 'كتالوجات التجزئة', 'الإنترانت المؤسسي'],
+        faq: [
+          { q: 'هل PWAs سريعة كالتطبيقات الأصلية؟', a: 'PWA الحديثة مع التخزين المؤقت المناسب تحقق أداءً شبه أصلي. كثير منها مثل Twitter Lite يتفوق على نظيراته الأصلية.' },
+          { q: 'هل تعمل الإشعارات الفورية على iOS؟', a: 'نعم — منذ iOS 16.4، يدعم Safari Web Push API. نطبقه بشكل صحيح للدعم الكامل لجميع المنصات.' },
+          { q: 'هل يمكن إدراج PWA في متجر Play؟', a: 'نعم — عبر TWA (Trusted Web Activity)، يمكن إدراج PWA الخاص بك في Google Play Store.' },
+        ],
+      },
+    },
+  },
+
+  // ─── 9. Custom Analytics Dashboards ──────────────────────────────────────
+  {
+    slug: 'custom-analytics-dashboards',
+    icon: 'bi-bar-chart-line',
+    gradient: 'from-indigo-600 to-blue-700',
+    color: 'indigo',
+    locales: {
+      en: {
+        meta: { title: 'Custom Data Visualization & Analytics Dashboard Services', description: 'Turn complex business metrics into real-time, interactive web dashboards and automated reporting systems.' },
+        hero: { kicker: 'Custom Analytics & Reporting', headline: 'Real-Time Data Dashboards &', headlineAccent: 'Visual Analytics', subheadline: 'Transform fragmented data sources into clear, actionable dashboards that drive smart, confident business decisions every day.', cta: 'Visualize Your Data' },
+        problem: { title: 'You\'re Making Decisions Without Seeing the Full Picture', desc: 'Your data lives in five different tools, reports take hours to compile, and by the time insights are ready — the moment to act has passed.' },
+        solution: { title: 'Your Entire Business in One Real-Time View', desc: 'Custom dashboards that pull from every data source, refresh in real time, and put the exact KPIs your team needs at their fingertips — always.' },
+        features: [
+          { icon: 'bi-database-check', title: 'Multi-Source Data Aggregation', desc: 'Pull from SQL databases, REST APIs, Google Analytics, CRMs, spreadsheets, and webhooks.' },
+          { icon: 'bi-graph-up', title: 'Interactive Charts & Heatmaps', desc: 'Drill-down charts, time-series graphs, funnel analyses, and custom KPI widgets.' },
+          { icon: 'bi-envelope-paper', title: 'Automated PDF/Excel Reports', desc: 'Schedule and auto-deliver reports by email in PDF or Excel formats to any stakeholder.' },
+          { icon: 'bi-funnel', title: 'Advanced Filtering & Segmentation', desc: 'Slice and dice data by date range, region, department, product, or any custom dimension.' },
+          { icon: 'bi-eye-slash', title: 'Granular Data Permissions', desc: 'Each user sees only the data they\'re authorized for — full row-level security.' },
+          { icon: 'bi-alarm', title: 'Automated KPI Alerts', desc: 'Set thresholds and receive instant Slack/email alerts when metrics deviate from targets.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Chart.js', 'D3.js', 'PostgreSQL', 'Redis', 'BigQuery', 'REST APIs'],
+        useCases: ['Executive KPI Dashboards', 'Sales Performance Tracking', 'Financial Reporting', 'Marketing Attribution', 'Operations Monitoring'],
+        faq: [
+          { q: 'Can you connect to our existing databases?', a: 'Yes — MySQL, PostgreSQL, MongoDB, Supabase, BigQuery, Redshift, and most SQL/NoSQL databases.' },
+          { q: 'Can non-technical users build their own reports?', a: 'Yes — we build drag-and-drop report builders so any team member can create custom views.' },
+          { q: 'How frequently does data refresh?', a: 'From real-time via WebSockets to scheduled (hourly/daily) depending on your data source and performance requirements.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Services de Visualisation de Données et Tableaux de Bord Analytics', description: 'Transformez les métriques métier complexes en tableaux de bord web interactifs en temps réel et systèmes de reporting automatisés.' },
+        hero: { kicker: 'Tableaux de Bord Analytics & Reporting', headline: 'Tableaux de Bord en Temps Réel &', headlineAccent: 'Analytique Visuelle', subheadline: 'Transformez les sources de données fragmentées en tableaux de bord clairs et exploitables qui pilotent des décisions métier intelligentes.', cta: 'Visualiser Vos Données' },
+        problem: { title: 'Vous Prenez des Décisions Sans Voir le Tableau Complet', desc: 'Vos données vivent dans cinq outils différents, les rapports prennent des heures à compiler — au moment où les insights sont prêts, l\'occasion est passée.' },
+        solution: { title: 'Tout Votre Business en une Vue Temps Réel', desc: 'Tableaux de bord personnalisés qui agrègent toutes vos sources, se rafraîchissent en temps réel et mettent les KPI exactes à portée de main.' },
+        features: [
+          { icon: 'bi-database-check', title: 'Agrégation Multi-Sources', desc: 'Tirez depuis les bases SQL, APIs REST, Google Analytics, CRM, feuilles de calcul et webhooks.' },
+          { icon: 'bi-graph-up', title: 'Graphiques Interactifs & Heatmaps', desc: 'Graphiques drill-down, graphiques temporels, analyses d\'entonnoir et widgets KPI personnalisés.' },
+          { icon: 'bi-envelope-paper', title: 'Rapports PDF/Excel Automatisés', desc: 'Planifiez et livrez automatiquement des rapports par e-mail en formats PDF ou Excel.' },
+          { icon: 'bi-funnel', title: 'Filtrage Avancé & Segmentation', desc: 'Découpez les données par plage de dates, région, département, produit ou dimension personnalisée.' },
+          { icon: 'bi-eye-slash', title: 'Permissions de Données Granulaires', desc: 'Chaque utilisateur voit uniquement les données qu\'il est autorisé à voir — sécurité au niveau des lignes.' },
+          { icon: 'bi-alarm', title: 'Alertes KPI Automatisées', desc: 'Définissez des seuils et recevez des alertes instantanées Slack/e-mail quand les métriques s\'écartent.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Chart.js', 'D3.js', 'PostgreSQL', 'Redis', 'BigQuery', 'REST APIs'],
+        useCases: ['KPI Direction', 'Performances de Vente', 'Reporting Financier', 'Attribution Marketing', 'Monitoring des Opérations'],
+        faq: [
+          { q: 'Pouvez-vous vous connecter à nos bases de données ?', a: 'Oui — MySQL, PostgreSQL, MongoDB, Supabase, BigQuery, Redshift et la plupart des bases SQL/NoSQL.' },
+          { q: 'Les utilisateurs non techniques peuvent-ils créer des rapports ?', a: 'Oui — nous construisons des générateurs de rapports drag-and-drop pour tout membre d\'équipe.' },
+          { q: 'À quelle fréquence les données se rafraîchissent-elles ?', a: 'Du temps réel via WebSockets aux actualisations planifiées selon votre source de données.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'خدمات تصوير البيانات المخصص ولوحات التحليلات', description: 'تحويل مقاييس الأعمال المعقدة إلى لوحات ويب تفاعلية في الوقت الفعلي وأنظمة تقارير آلية.' },
+        hero: { kicker: 'لوحات تحليلات وتقارير مخصصة', headline: 'لوحات بيانات في الوقت الفعلي', headlineAccent: 'وتحليلات مرئية', subheadline: 'تحويل مصادر البيانات المجزأة إلى لوحات واضحة وقابلة للتنفيذ تدفع قرارات أعمال ذكية وواثقة كل يوم.', cta: 'اعرض بياناتك' },
+        problem: { title: 'تتخذ قراراتك بدون رؤية الصورة كاملة', desc: 'بياناتك موزعة في خمسة أدوات مختلفة والتقارير تستغرق ساعات لتجميعها — وبحلول وقت جاهزية الرؤى تكون فرصة التصرف قد فاتت.' },
+        solution: { title: 'كل أعمالك في عرض واحد في الوقت الفعلي', desc: 'لوحات مخصصة تسحب من كل مصدر بيانات وتُحدَّث في الوقت الفعلي وتضع مؤشرات الأداء التي يحتاجها فريقك في متناول أيديهم دائماً.' },
+        features: [
+          { icon: 'bi-database-check', title: 'تجميع بيانات متعدد المصادر', desc: 'سحب من قواعد SQL وAPIs REST وGoogle Analytics وأنظمة CRM وجداول البيانات والـ Webhooks.' },
+          { icon: 'bi-graph-up', title: 'رسوم بيانية تفاعلية وخرائط حرارية', desc: 'رسوم تعمق، رسوم سلاسل زمنية، تحليلات مسار وأدوات KPI مخصصة.' },
+          { icon: 'bi-envelope-paper', title: 'تقارير PDF/Excel آلية', desc: 'جدولة وتسليم تقارير تلقائي عبر البريد الإلكتروني بتنسيقات PDF أو Excel.' },
+          { icon: 'bi-funnel', title: 'تصفية متقدمة وتقسيم', desc: 'تقسيم البيانات حسب النطاق الزمني والمنطقة والقسم والمنتج أو أي بُعد مخصص.' },
+          { icon: 'bi-eye-slash', title: 'أذونات بيانات دقيقة', desc: 'كل مستخدم يرى فقط البيانات المصرّح له بها — أمان كامل على مستوى الصف.' },
+          { icon: 'bi-alarm', title: 'تنبيهات KPI آلية', desc: 'اضبط حدوداً واستقبل تنبيهات فورية عبر Slack والبريد عند انحراف المقاييس.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Chart.js', 'D3.js', 'PostgreSQL', 'Redis', 'BigQuery', 'REST APIs'],
+        useCases: ['لوحات KPI التنفيذية', 'تتبع أداء المبيعات', 'التقارير المالية', 'نسب التسويق', 'مراقبة العمليات'],
+        faq: [
+          { q: 'هل يمكنكم الاتصال بقواعد بياناتنا الحالية؟', a: 'نعم — MySQL وPostgreSQL وMongoDB وSupabase وBigQuery وRedshift ومعظم قواعد SQL/NoSQL.' },
+          { q: 'هل يمكن للمستخدمين غير التقنيين بناء تقاريرهم؟', a: 'نعم — نبني أدوات بناء تقارير سحب وإفلات حتى يتمكن أي عضو فريق من إنشاء طرق عرض مخصصة.' },
+          { q: 'كم مرة تُحدَّث البيانات؟', a: 'من الوقت الفعلي عبر WebSockets إلى المجدولة (كل ساعة/يومياً) بحسب مصدر البيانات.' },
+        ],
+      },
+    },
+  },
+
+  // ─── 10. Custom eLearning Portals ─────────────────────────────────────────
+  {
+    slug: 'custom-elearning-portals',
+    icon: 'bi-mortarboard',
+    gradient: 'from-rose-500 to-pink-600',
+    color: 'rose',
+    locales: {
+      en: {
+        meta: { title: 'Custom E-Learning Platform & Training Dashboard Development', description: 'Build tailored learning management systems, student dashboards, and corporate training portals designed for high engagement.' },
+        hero: { kicker: 'Custom E-Learning Platform Development', headline: 'Custom E-Learning Platforms &', headlineAccent: 'Training Software', subheadline: 'Engaging, scalable learning platforms customized to your curriculum, grading systems, and user tracking needs — built to maximize learner outcomes.', cta: 'Build Your Learning Portal' },
+        problem: { title: 'Generic LMS Platforms Don\'t Fit Your Curriculum', desc: 'Moodle is clunky, Teachable limits your branding, and corporate tools don\'t adapt to your internal training structure or track the right KPIs.' },
+        solution: { title: 'A Learning Platform Built for Your Learners', desc: 'A fully custom LMS with your exact course structure, assessment types, progress tracking, and reporting — branded as your own product from day one.' },
+        features: [
+          { icon: 'bi-play-btn', title: 'Interactive Lesson Player', desc: 'Rich video delivery with chapters, subtitles, completion tracking, and speed controls.' },
+          { icon: 'bi-clipboard-data', title: 'Student Progress Tracking', desc: 'Individual learner dashboards, completion percentages, time-on-task, and performance reports.' },
+          { icon: 'bi-patch-check', title: 'Quizzes, Assignments & Certification', desc: 'Timed quizzes, open-ended assignments, auto-grading, and digital certificate generation.' },
+          { icon: 'bi-person-gear', title: 'Instructor & Admin Dashboard', desc: 'Course creation tools, cohort management, live Q&A, and granular analytics for instructors.' },
+          { icon: 'bi-people-fill', title: 'Cohort & Group Learning', desc: 'Organize learners into cohorts, peer discussions, group projects, and collaborative workspaces.' },
+          { icon: 'bi-bell', title: 'Automated Learning Reminders', desc: 'Smart notification triggers to re-engage learners who fall behind their course schedule.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'Filament', 'MySQL', 'S3', 'Video.js', 'WebSockets'],
+        useCases: ['Corporate Training Portals', 'Online Course Marketplaces', 'University Supplements', 'Onboarding Academies', 'Certification Programs'],
+        faq: [
+          { q: 'Can you integrate with video hosting platforms?', a: 'Yes — we integrate with Vimeo, YouTube, AWS S3/CloudFront, and Bunny.net for scalable video delivery.' },
+          { q: 'Can learners access content offline?', a: 'Yes — with PWA capabilities, we enable content download and offline viewing for mobile learners.' },
+          { q: 'Do you support SCORM-compliant content?', a: 'Yes — we build SCORM 1.2/2004 players that integrate with your existing content library.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Développement de Plateformes E-Learning Personnalisées et Formation', description: 'Construisez des systèmes de gestion de l\'apprentissage sur mesure, des tableaux de bord étudiants et des portails de formation entreprise.' },
+        hero: { kicker: 'Développement de Plateforme E-Learning', headline: 'Plateformes E-Learning Personnalisées &', headlineAccent: 'Logiciels de Formation', subheadline: 'Plateformes d\'apprentissage engageantes et évolutives personnalisées pour votre programme, vos systèmes de notation et vos besoins de suivi.', cta: 'Construire Votre Portail d\'Apprentissage' },
+        problem: { title: 'Les LMS Génériques Ne S\'adaptent Pas à Votre Programme', desc: 'Moodle est encombrant, Teachable limite votre branding — les outils d\'entreprise ne s\'adaptent pas à votre structure de formation interne.' },
+        solution: { title: 'Une Plateforme d\'Apprentissage Pour Vos Apprenants', desc: 'Un LMS entièrement personnalisé avec votre structure de cours exacte, types d\'évaluation, suivi de progression et reporting — marqué comme votre propre produit.' },
+        features: [
+          { icon: 'bi-play-btn', title: 'Lecteur de Leçons Interactif', desc: 'Livraison vidéo riche avec chapitres, sous-titres, suivi de complétion et contrôles de vitesse.' },
+          { icon: 'bi-clipboard-data', title: 'Suivi de Progression des Étudiants', desc: 'Tableaux de bord individuels, pourcentages de complétion, temps sur tâche et rapports de performance.' },
+          { icon: 'bi-patch-check', title: 'Quiz, Devoirs & Certification', desc: 'Quiz chronométrés, devoirs libres, notation automatique et génération de certificats numériques.' },
+          { icon: 'bi-person-gear', title: 'Tableau de Bord Instructeur & Admin', desc: 'Outils de création de cours, gestion de cohortes, Q&R en direct et analytique granulaire.' },
+          { icon: 'bi-people-fill', title: 'Apprentissage en Cohorte & Groupe', desc: 'Organisez les apprenants en cohortes, discussions entre pairs, projets de groupe et espaces collaboratifs.' },
+          { icon: 'bi-bell', title: 'Rappels d\'Apprentissage Automatisés', desc: 'Déclencheurs de notification intelligents pour réengager les apprenants qui prennent du retard.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'Filament', 'MySQL', 'S3', 'Video.js', 'WebSockets'],
+        useCases: ['Formation Entreprise', 'Cours en Ligne', 'Suppléments Universitaires', 'Académies d\'Onboarding', 'Programmes de Certification'],
+        faq: [
+          { q: 'Pouvez-vous vous intégrer avec des plateformes vidéo ?', a: 'Oui — Vimeo, YouTube, AWS S3/CloudFront et Bunny.net pour une livraison vidéo évolutive.' },
+          { q: 'Les apprenants peuvent-ils accéder au contenu hors ligne ?', a: 'Oui — avec les capacités PWA, nous activons le téléchargement et la lecture hors ligne pour les apprenants mobiles.' },
+          { q: 'Supportez-vous le contenu compatible SCORM ?', a: 'Oui — nous construisons des lecteurs SCORM 1.2/2004 qui s\'intègrent avec votre bibliothèque de contenu existante.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'تطوير منصات التعلم الإلكتروني المخصصة ولوحات التدريب', description: 'بناء أنظمة إدارة التعلم المصممة خصيصاً ولوحات الطلاب وبوابات تدريب الشركات المصممة للانخراط العالي.' },
+        hero: { kicker: 'تطوير منصة التعلم الإلكتروني المخصصة', headline: 'منصات التعلم الإلكتروني المخصصة', headlineAccent: 'وبرامج التدريب', subheadline: 'منصات تعلم جذابة وقابلة للتوسع مخصصة لمناهجك وأنظمة التقييم واحتياجات تتبع المستخدم — مبنية لزيادة نتائج المتعلمين.', cta: 'ابنِ بوابة التعلم الخاصة بك' },
+        problem: { title: 'منصات LMS العامة لا تناسب مناهجك', desc: 'Moodle ثقيل وTechable يحد علامتك التجارية — وأدوات الشركات لا تتكيف مع هيكل تدريبك الداخلي أو تتبع مؤشرات الأداء الصحيحة.' },
+        solution: { title: 'منصة تعلم مبنية لمتعلميك', desc: 'LMS مخصص بالكامل بهيكل دوراتك الدقيق وأنواع التقييم وتتبع التقدم والتقارير — بعلامتك التجارية كمنتجك الخاص من اليوم الأول.' },
+        features: [
+          { icon: 'bi-play-btn', title: 'مشغل دروس تفاعلي', desc: 'تسليم فيديو غني مع فصول وترجمات وتتبع الإكمال وأدوات التحكم في السرعة.' },
+          { icon: 'bi-clipboard-data', title: 'تتبع تقدم الطلاب', desc: 'لوحات متعلمين فردية ونسب الإكمال والوقت في المهمة وتقارير الأداء.' },
+          { icon: 'bi-patch-check', title: 'اختبارات وتكاليف وشهادات', desc: 'اختبارات مؤقتة وتكاليف مفتوحة وتقييم آلي وتوليد شهادات رقمية.' },
+          { icon: 'bi-person-gear', title: 'لوحة المدرب والمشرف', desc: 'أدوات إنشاء الدورات وإدارة المجموعات وأسئلة وأجوبة مباشرة وتحليلات دقيقة.' },
+          { icon: 'bi-people-fill', title: 'التعلم في مجموعات وفرق', desc: 'تنظيم المتعلمين في مجموعات ومناقشات الأقران ومشاريع جماعية ومساحات عمل تعاونية.' },
+          { icon: 'bi-bell', title: 'تذكيرات التعلم الآلية', desc: 'محفزات إشعار ذكية لإعادة إشراك المتعلمين الذين يتأخرون عن جدول دوراتهم.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'Filament', 'MySQL', 'S3', 'Video.js', 'WebSockets'],
+        useCases: ['بوابات تدريب الشركات', 'أسواق الدورات الإلكترونية', 'ملاحق جامعية', 'أكاديميات التهيئة', 'برامج الشهادات'],
+        faq: [
+          { q: 'هل يمكنكم التكامل مع منصات استضافة الفيديو؟', a: 'نعم — Vimeo وYouTube وAWS S3/CloudFront وBunny.net لتسليم فيديو قابل للتوسع.' },
+          { q: 'هل يمكن للمتعلمين الوصول إلى المحتوى دون اتصال؟', a: 'نعم — مع إمكانيات PWA، نتيح تنزيل المحتوى والمشاهدة دون اتصال للمتعلمين على الجوال.' },
+          { q: 'هل تدعمون المحتوى المتوافق مع SCORM؟', a: 'نعم — يمكننا بناء مشغلات SCORM 1.2/2004 التي تتكامل مع مكتبة المحتوى الموجودة لديك.' },
+        ],
+      },
+    },
+  },
+
+  // ─── 11. MVP Development for Startups ────────────────────────────────────
+  {
+    slug: 'mvp-development-startups',
+    icon: 'bi-rocket-takeoff',
+    gradient: 'from-green-500 to-emerald-600',
+    color: 'green',
+    locales: {
+      en: {
+        meta: { title: 'Fast-Track MVP Development Services for Startups', description: 'Launch a fully functional Minimum Viable Product in 4 to 8 weeks to validate your idea, attract users, and pitch investors.' },
+        hero: { kicker: 'MVP Development for Startups', headline: 'Launch Your Startup MVP', headlineAccent: 'in 4 to 8 Weeks', subheadline: 'Rapid, high-quality product development focused on key feature validation, clean code architecture, and fast market launch — investor-ready from day one.', cta: 'Pitch Your Project' },
+        problem: { title: 'Founders Waste Months Building the Wrong Thing', desc: 'Spending 6–12 months building all the features before talking to a single real user — then discovering the core assumption was wrong. That\'s the most expensive mistake in startups.' },
+        solution: { title: 'Validate Fast. Build Smart. Launch Confidently.', desc: 'A lean, investor-ready MVP in 4–8 weeks that tests your core hypothesis with real users and gives you the traction data to raise funding.' },
+        features: [
+          { icon: 'bi-layout-text-window', title: 'Feature Scoping & Wireframing', desc: 'Week 1: Define must-have features, sketch user flows, and align on the exact MVP scope.' },
+          { icon: 'bi-code-square', title: 'Agile Development Sprints', desc: 'Weeks 2–5: Core business logic, auth, and primary feature set built with clean, scalable code.' },
+          { icon: 'bi-shield-fill-check', title: 'QA Testing & Integration', desc: 'Week 6: Full QA pass, payment integration, auth hardening, and performance optimization.' },
+          { icon: 'bi-cloud-check', title: 'Production Launch', desc: 'Week 7: Deploy to production with CI/CD, monitoring, and error tracking live from day one.' },
+          { icon: 'bi-presentation-chart', title: 'Investor-Ready Documentation', desc: 'Week 8: Technical architecture docs, demo walkthrough video, and pitch deck technical slides.' },
+          { icon: 'bi-graph-up-arrow', title: 'Post-Launch Analytics Setup', desc: 'User behavior tracking, funnel analysis, and retention metrics configured from day one.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'PostgreSQL', 'Stripe', 'Vercel', 'GitHub Actions', 'Sentry'],
+        useCases: ['B2C Product Startups', 'B2B SaaS MVPs', 'Marketplace Concepts', 'Fintech Prototypes', 'AI-Powered Tools'],
+        faq: [
+          { q: 'What\'s included in 4–8 weeks?', a: 'Feature scoping, UI design, core feature dev, auth, payments integration, QA testing, production deployment, and launch documentation.' },
+          { q: 'Is the MVP code production-quality?', a: 'Yes — we write clean, tested, documented code from day one so it can scale beyond the MVP without technical debt.' },
+          { q: 'What happens after the MVP launches?', a: 'We offer post-launch support, user feedback integration, and iteration sprints to evolve the product based on real data.' },
+        ],
+      },
+      fr: {
+        meta: { title: 'Services de Développement MVP Accéléré pour Startups', description: 'Lancez un Produit Minimum Viable entièrement fonctionnel en 4 à 8 semaines pour valider votre idée et séduire les investisseurs.' },
+        hero: { kicker: 'Développement MVP pour Startups', headline: 'Lancez Votre MVP Startup', headlineAccent: 'en 4 à 8 Semaines', subheadline: 'Développement produit rapide et de haute qualité axé sur la validation des fonctionnalités clés, une architecture de code propre et un lancement rapide.', cta: 'Présenter Votre Projet' },
+        problem: { title: 'Les Fondateurs Gaspillent des Mois à Construire la Mauvaise Chose', desc: 'Passer 6 à 12 mois à tout construire avant de parler à un seul vrai utilisateur — puis découvrir que l\'hypothèse centrale était fausse. C\'est l\'erreur la plus coûteuse dans les startups.' },
+        solution: { title: 'Validez Vite. Construisez Intelligemment. Lancez Avec Confiance.', desc: 'Un MVP lean et prêt pour les investisseurs en 4 à 8 semaines qui teste votre hypothèse centrale avec de vrais utilisateurs.' },
+        features: [
+          { icon: 'bi-layout-text-window', title: 'Cadrage des Fonctionnalités', desc: 'Semaine 1 : Définissez les fonctionnalités essentielles, esquissez les flux et alignez-vous sur le périmètre MVP.' },
+          { icon: 'bi-code-square', title: 'Sprints de Développement Agile', desc: 'Semaines 2–5 : Logique métier centrale, authentification et ensemble de fonctionnalités avec code propre.' },
+          { icon: 'bi-shield-fill-check', title: 'Tests QA & Intégration', desc: 'Semaine 6 : Passe QA complète, intégration des paiements et optimisation des performances.' },
+          { icon: 'bi-cloud-check', title: 'Lancement en Production', desc: 'Semaine 7 : Déploiement en production avec CI/CD, monitoring et suivi des erreurs en direct.' },
+          { icon: 'bi-presentation-chart', title: 'Documentation Prête pour Investisseurs', desc: 'Semaine 8 : Docs d\'architecture technique, vidéo de démo et slides techniques de pitch deck.' },
+          { icon: 'bi-graph-up-arrow', title: 'Analytics Post-Lancement', desc: 'Suivi du comportement utilisateur, analyse d\'entonnoir et métriques de rétention configurés dès le départ.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'PostgreSQL', 'Stripe', 'Vercel', 'GitHub Actions', 'Sentry'],
+        useCases: ['Startups Produits B2C', 'MVP SaaS B2B', 'Concepts de Marketplace', 'Prototypes Fintech', 'Outils IA'],
+        faq: [
+          { q: 'Qu\'est-ce qui est inclus en 4–8 semaines ?', a: 'Cadrage des fonctionnalités, design UI, développement des features core, auth, paiements, tests QA, déploiement production et documentation.' },
+          { q: 'Le code du MVP est-il de qualité production ?', a: 'Oui — nous écrivons du code propre, testé et documenté dès le premier jour pour qu\'il puisse évoluer sans dette technique.' },
+          { q: 'Que se passe-t-il après le lancement du MVP ?', a: 'Nous offrons un support post-lancement, l\'intégration des retours utilisateurs et des sprints d\'itération.' },
+        ],
+      },
+      ar: {
+        meta: { title: 'خدمات تطوير MVP السريع للشركات الناشئة', description: 'أطلق منتجاً أولياً قابلاً للاستخدام بالكامل في 4 إلى 8 أسابيع للتحقق من فكرتك وجذب المستخدمين وعرضها على المستثمرين.' },
+        hero: { kicker: 'تطوير MVP للشركات الناشئة', headline: 'أطلق MVP شركتك الناشئة', headlineAccent: 'في 4 إلى 8 أسابيع', subheadline: 'تطوير منتج سريع وعالي الجودة يركز على التحقق من الميزات الرئيسية وهندسة كود نظيفة وإطلاق سوقي سريع — جاهز للمستثمرين.', cta: 'قدّم مشروعك' },
+        problem: { title: 'يُضيع المؤسسون أشهراً في بناء الشيء الخاطئ', desc: 'قضاء 6-12 شهراً في بناء كل الميزات قبل التحدث مع مستخدم حقيقي واحد — ثم اكتشاف أن الافتراض الأساسي كان خاطئاً. هذا أغلى خطأ في الشركات الناشئة.' },
+        solution: { title: 'تحقق بسرعة. ابنِ بذكاء. أطلق بثقة.', desc: 'MVP ذكي وجاهز للمستثمرين في 4-8 أسابيع يختبر فرضيتك الأساسية مع مستخدمين حقيقيين ويمنحك بيانات الجذب لجمع التمويل.' },
+        features: [
+          { icon: 'bi-layout-text-window', title: 'تحديد نطاق الميزات والرسوم التخطيطية', desc: 'الأسبوع 1: تحديد الميزات الضرورية ورسم تدفقات المستخدم والتوافق على نطاق MVP الدقيق.' },
+          { icon: 'bi-code-square', title: 'سباقات التطوير الرشيق', desc: 'الأسابيع 2-5: منطق الأعمال الأساسي والمصادقة ومجموعة الميزات الأساسية بكود نظيف وقابل للتوسع.' },
+          { icon: 'bi-shield-fill-check', title: 'اختبار QA والتكامل', desc: 'الأسبوع 6: جولة QA كاملة وتكامل الدفع وتعزيز المصادقة وتحسين الأداء.' },
+          { icon: 'bi-cloud-check', title: 'الإطلاق في الإنتاج', desc: 'الأسبوع 7: نشر في بنية تحتية للإنتاج مع CI/CD والمراقبة وتتبع الأخطاء مباشرة.' },
+          { icon: 'bi-presentation-chart', title: 'وثائق جاهزة للمستثمرين', desc: 'الأسبوع 8: وثائق الهندسة التقنية وفيديو عرض تجريبي وشرائح عرض تقنية.' },
+          { icon: 'bi-graph-up-arrow', title: 'إعداد التحليلات بعد الإطلاق', desc: 'تتبع سلوك المستخدم وتحليل المسار ومقاييس الاستبقاء مُهيّأة من اليوم الأول.' },
+        ],
+        techStack: ['Laravel', 'Vue.js', 'Nuxt', 'PostgreSQL', 'Stripe', 'Vercel', 'GitHub Actions', 'Sentry'],
+        useCases: ['شركات منتجات B2C الناشئة', 'MVP SaaS B2B', 'مفاهيم السوق', 'نماذج Fintech الأولية', 'أدوات الذكاء الاصطناعي'],
+        faq: [
+          { q: 'ماذا يشمل 4-8 أسابيع؟', a: 'تحديد نطاق الميزات وتصميم الواجهة وتطوير الميزات الأساسية والمصادقة وتكامل المدفوعات واختبار QA ونشر الإنتاج ووثائق الإطلاق.' },
+          { q: 'هل كود MVP بجودة إنتاج؟', a: 'نعم — نكتب كوداً نظيفاً ومختبراً وموثقاً من اليوم الأول لكي يتوسع ما وراء MVP بدون ديون تقنية.' },
+          { q: 'ماذا يحدث بعد إطلاق MVP؟', a: 'نقدم دعماً بعد الإطلاق وتكامل ملاحظات المستخدمين وسباقات التكرار لتطوير المنتج بناءً على بيانات حقيقية.' },
+        ],
+      },
+    },
+  },
+]
+
+// ─── Public API ───────────────────────────────────────────────────────────────
+
+export function useServicesData() {
+  const getServiceBySlug = (slug) =>
+    SERVICE_DEFINITIONS.find((s) => s.slug === slug) || null
+
+  const getLocalizedService = (slug, locale = 'en') => {
+    const service = getServiceBySlug(slug)
+    if (!service) return null
+    const localeData = service.locales[locale] || service.locales['en']
+    return { slug: service.slug, icon: service.icon, gradient: service.gradient, color: service.color, ...localeData }
+  }
+
+  const getAllServices = (locale = 'en') =>
+    SERVICE_DEFINITIONS.map((service) => {
+      const localeData = service.locales[locale] || service.locales['en']
+      return { slug: service.slug, icon: service.icon, gradient: service.gradient, color: service.color, meta: localeData.meta, hero: localeData.hero }
+    })
+
+  return { getServiceBySlug, getLocalizedService, getAllServices, SERVICE_DEFINITIONS }
+}

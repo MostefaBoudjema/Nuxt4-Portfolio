@@ -58,6 +58,7 @@ const allLinks = [
   { path: "/projects", label: "Projects" },
   { path: "/about", label: "About Me" },
   { path: "/pricing", label: "Pricing", show: settings.show_pricing },
+  { path: "/services", label: "Services" },
   { path: "/contact", label: "Contact" },
 ];
 
