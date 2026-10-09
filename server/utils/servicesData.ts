@@ -1,7 +1,7 @@
 // app/composables/useServicesData.js
 // Central data store for all 11 service pages — EN / FR / AR
 
-const SERVICE_DEFINITIONS = [
+const servicesList = [
 
   // ─── 1. Custom SaaS Development ───────────────────────────────────────────
   {
@@ -515,77 +515,7 @@ const SERVICE_DEFINITIONS = [
   },
 
   // ─── 8. Progressive Web Apps ──────────────────────────────────────────────
-  {
-    slug: 'progressive-web-apps',
-    icon: 'bi-phone-vibrate',
-    gradient: 'from-cyan-500 to-blue-500',
-    color: 'cyan',
-    locales: {
-      en: {
-        meta: { title: 'Progressive Web App (PWA) Development Services', description: 'Deliver app-like mobile experiences on the web with fast offline storage, push notifications, and cross-platform reliability.' },
-        hero: { kicker: 'Progressive Web App Development', headline: 'High-Performance Progressive', headlineAccent: 'Web Apps (PWAs)', subheadline: 'Native-like mobile experiences delivered straight through the web browser — fast, reliable, installable, and offline-capable anywhere.', cta: 'Explore PWA Options' },
-        problem: { title: 'Native Apps Cost Too Much and Reach Too Few', desc: 'App Store publishing costs thousands in fees, requires separate iOS and Android codebases, and forces users to download before they even try your product.' },
-        solution: { title: 'App-Like Power, Web-Like Reach', desc: 'A PWA delivers native app performance, offline access, and push notifications — without App Store fees, rejection risks, or separate codebases.' },
-        features: [
-          { icon: 'bi-wifi-off', title: 'Offline-First Functionality', desc: 'Service workers cache critical assets and data so users stay productive even without a network.' },
-          { icon: 'bi-bell-fill', title: 'Push Notifications', desc: 'Re-engage users with native-style push notifications on both mobile and desktop platforms.' },
-          { icon: 'bi-download', title: 'Installable on Any Device', desc: 'Users can add the PWA to their home screen on iOS, Android, and desktop with a single tap.' },
-          { icon: 'bi-lightning-charge', title: 'Sub-Second Load Times', desc: 'Pre-caching, lazy loading, and optimized asset delivery achieve Lighthouse scores of 90+.' },
-          { icon: 'bi-phone-flip', title: 'Cross-Platform with One Codebase', desc: 'One codebase serves iOS, Android, and desktop — dramatically lower maintenance cost.' },
-          { icon: 'bi-shield-check', title: 'HTTPS & Secure by Default', desc: 'PWAs require HTTPS, ensuring all data transmission is encrypted and user trust is maintained.' },
-        ],
-        techStack: ['Nuxt', 'Vue.js', 'Next.js', 'React', 'Workbox', 'Service Workers', 'IndexedDB', 'Web Push API'],
-        useCases: ['Field Service Apps', 'Offline Data Collection', 'News & Media Apps', 'Retail Catalogs', 'Corporate Intranets'],
-        faq: [
-          { q: 'Are PWAs as fast as native apps?', a: 'Modern PWAs with proper caching achieve near-native performance. Twitter Lite and Pinterest PWA outperform their native counterparts.' },
-          { q: 'Do push notifications work on iOS?', a: 'Yes — since iOS 16.4, Safari supports Web Push API. We implement it correctly for full cross-platform support.' },
-          { q: 'Can a PWA be listed on the Play Store?', a: 'Yes — via TWA (Trusted Web Activity), your PWA can be listed on the Google Play Store.' },
-        ],
-      },
-      fr: {
-        meta: { title: 'Services de Développement d\'Applications Web Progressives (PWA)', description: 'Offrez des expériences mobiles similaires aux applications natives via le web avec stockage hors ligne rapide et notifications push.' },
-        hero: { kicker: 'Développement d\'Applications Web Progressives', headline: 'Applications Web Progressives', headlineAccent: 'Haute Performance (PWA)', subheadline: 'Expériences mobiles natives livrées directement via le navigateur web — rapides, fiables, installables et utilisables hors ligne.', cta: 'Explorer les Options PWA' },
-        problem: { title: 'Les Apps Natives Coûtent Trop Cher et Atteignent Trop Peu', desc: 'Publier sur l\'App Store coûte des milliers en frais, nécessite des équipes séparées et force les utilisateurs à télécharger avant d\'essayer.' },
-        solution: { title: 'Puissance d\'Application, Portée Web', desc: 'Une PWA offre les performances d\'une app native, accès hors ligne et notifications push — sans frais d\'App Store ni bases de code iOS/Android séparées.' },
-        features: [
-          { icon: 'bi-wifi-off', title: 'Fonctionnalité Hors Ligne', desc: 'Les service workers mettent en cache les assets et données critiques pour rester productif sans réseau.' },
-          { icon: 'bi-bell-fill', title: 'Notifications Push', desc: 'Réengagez les utilisateurs avec des notifications push de style natif sur mobile et desktop.' },
-          { icon: 'bi-download', title: 'Installable sur N\'importe Quel Appareil', desc: 'Les utilisateurs peuvent ajouter la PWA à leur écran d\'accueil sur iOS, Android et desktop en un tap.' },
-          { icon: 'bi-lightning-charge', title: 'Temps de Chargement Sub-Seconde', desc: 'Pré-mise en cache, chargement lazy et livraison optimisée pour des scores Lighthouse 90+.' },
-          { icon: 'bi-phone-flip', title: 'Multiplateforme avec une Seule Base de Code', desc: 'Une base de code sert iOS, Android et desktop — coût de maintenance dramatiquement réduit.' },
-          { icon: 'bi-shield-check', title: 'HTTPS & Sécurisé par Défaut', desc: 'Les PWA nécessitent HTTPS, assurant que toutes les transmissions de données sont chiffrées.' },
-        ],
-        techStack: ['Nuxt', 'Vue.js', 'Next.js', 'React', 'Workbox', 'Service Workers', 'IndexedDB', 'Web Push API'],
-        useCases: ['Apps Service Terrain', 'Collecte Hors Ligne', 'Apps News & Médias', 'Catalogues Retail', 'Intranets d\'Entreprise'],
-        faq: [
-          { q: 'Les PWA sont-elles aussi rapides que les apps natives ?', a: 'Les PWA modernes avec cache approprié atteignent des performances quasi-natives. Twitter Lite surpasse son homologue natif.' },
-          { q: 'Les notifications push fonctionnent-elles sur iOS ?', a: 'Oui — depuis iOS 16.4, Safari supporte Web Push API. Nous l\'implémentons correctement pour support multiplateforme complet.' },
-          { q: 'Une PWA peut-elle être listée sur le Play Store ?', a: 'Oui — via TWA (Trusted Web Activity), votre PWA peut être listée sur le Google Play Store.' },
-        ],
-      },
-      ar: {
-        meta: { title: 'خدمات تطوير تطبيقات الويب التقدمية (PWA)', description: 'تقديم تجارب جوال شبيهة بالتطبيقات الأصلية عبر الويب مع تخزين غير متصل سريع وإشعارات فورية.' },
-        hero: { kicker: 'تطوير تطبيقات الويب التقدمية', headline: 'تطبيقات ويب تقدمية', headlineAccent: 'عالية الأداء (PWA)', subheadline: 'تجارب جوال شبيهة بالتطبيقات الأصلية مُقدَّمة مباشرة عبر متصفح الويب — سريعة وموثوقة وقابلة للتثبيت.', cta: 'استكشف خيارات PWA' },
-        problem: { title: 'التطبيقات الأصلية مكلفة جداً وتصل لأقل عدد', desc: 'النشر على App Store وPlay Store يكلف الآلاف ويتطلب فرق تطوير منفصلة ويجبر المستخدمين على التنزيل قبل التجربة.' },
-        solution: { title: 'قوة التطبيق، انتشار الويب', desc: 'يوفر PWA أداء التطبيق الأصلي والوصول غير المتصل والإشعارات الفورية — بدون رسوم App Store أو قواعد كود منفصلة.' },
-        features: [
-          { icon: 'bi-wifi-off', title: 'وظائف الأولوية غير المتصلة', desc: 'يخزن عمال الخدمة الأصول والبيانات الحيوية لإبقاء المستخدمين منتجين حتى بدون شبكة.' },
-          { icon: 'bi-bell-fill', title: 'إشعارات فورية', desc: 'إعادة إشراك المستخدمين بإشعارات فورية بأسلوب أصلي على منصات الجوال وسطح المكتب.' },
-          { icon: 'bi-download', title: 'قابل للتثبيت على أي جهاز', desc: 'يمكن للمستخدمين إضافة PWA لشاشتهم الرئيسية على iOS وAndroid وسطح المكتب بنقرة واحدة.' },
-          { icon: 'bi-lightning-charge', title: 'أوقات تحميل أقل من ثانية', desc: 'التخزين المؤقت المسبق والتحميل الكسول وتسليم الأصول المحسّن يحقق نتائج Lighthouse 90+.' },
-          { icon: 'bi-phone-flip', title: 'متعدد المنصات بقاعدة كود واحدة', desc: 'قاعدة كود واحدة تخدم iOS وAndroid وسطح المكتب — تكلفة صيانة أقل بشكل كبير.' },
-          { icon: 'bi-shield-check', title: 'HTTPS وآمن افتراضياً', desc: 'تتطلب PWA الـ HTTPS مما يضمن تشفير جميع نقل البيانات والحفاظ على ثقة المستخدم.' },
-        ],
-        techStack: ['Nuxt', 'Vue.js', 'Next.js', 'React', 'Workbox', 'Service Workers', 'IndexedDB', 'Web Push API'],
-        useCases: ['تطبيقات الخدمة الميدانية', 'جمع البيانات غير المتصلة', 'تطبيقات الأخبار', 'كتالوجات التجزئة', 'الإنترانت المؤسسي'],
-        faq: [
-          { q: 'هل PWAs سريعة كالتطبيقات الأصلية؟', a: 'PWA الحديثة مع التخزين المؤقت المناسب تحقق أداءً شبه أصلي. كثير منها مثل Twitter Lite يتفوق على نظيراته الأصلية.' },
-          { q: 'هل تعمل الإشعارات الفورية على iOS؟', a: 'نعم — منذ iOS 16.4، يدعم Safari Web Push API. نطبقه بشكل صحيح للدعم الكامل لجميع المنصات.' },
-          { q: 'هل يمكن إدراج PWA في متجر Play؟', a: 'نعم — عبر TWA (Trusted Web Activity)، يمكن إدراج PWA الخاص بك في Google Play Store.' },
-        ],
-      },
-    },
-  },
+ 
 
   // ─── 9. Custom Analytics Dashboards ──────────────────────────────────────
   {
@@ -807,24 +737,4 @@ const SERVICE_DEFINITIONS = [
   },
 ]
 
-// ─── Public API ───────────────────────────────────────────────────────────────
-
-export function useServicesData() {
-  const getServiceBySlug = (slug) =>
-    SERVICE_DEFINITIONS.find((s) => s.slug === slug) || null
-
-  const getLocalizedService = (slug, locale = 'en') => {
-    const service = getServiceBySlug(slug)
-    if (!service) return null
-    const localeData = service.locales[locale] || service.locales['en']
-    return { slug: service.slug, icon: service.icon, gradient: service.gradient, color: service.color, ...localeData }
-  }
-
-  const getAllServices = (locale = 'en') =>
-    SERVICE_DEFINITIONS.map((service) => {
-      const localeData = service.locales[locale] || service.locales['en']
-      return { slug: service.slug, icon: service.icon, gradient: service.gradient, color: service.color, meta: localeData.meta, hero: localeData.hero }
-    })
-
-  return { getServiceBySlug, getLocalizedService, getAllServices, SERVICE_DEFINITIONS }
-}
+export { servicesList };

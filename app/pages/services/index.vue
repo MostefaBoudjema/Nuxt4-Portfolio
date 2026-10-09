@@ -3,13 +3,13 @@ import { computed } from 'vue'
 import { useHead } from '#imports'
 import { useI18n } from 'vue-i18n'
 import { useLocalePath } from '#i18n'
-import { useServicesData } from '~/composables/useServicesData'
-
 const { locale } = useI18n({ inheritLocale: true, useScope: 'global' })
 const localePath = useLocalePath()
-const { getAllServices } = useServicesData()
 
-const services = computed(() => getAllServices(locale.value))
+const { data: services, pending } = await useFetch('/api/v1/services', {
+  query: { lang: locale },
+  watch: [locale]
+})
 
 const rtlLocales = ['ar', 'he', 'fa', 'ur']
 const isRtl = computed(() => rtlLocales.includes(locale.value))
