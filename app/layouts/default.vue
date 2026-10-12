@@ -1,5 +1,5 @@
 <template>
-  <div :dir="isArabic ? 'rtl' : 'ltr'" :class="{ rtl: isArabic }"
+  <div :dir="isArabic ? 'rtl' : 'ltr'" :class="{ rtl: isArabic }" 
     class="relative min-h-screen overflow-x-hidden bg-dark md:before:absolute md:before:inset-0 md:before:-z-10 md:before:bg-[url('/images/bg-circuit.svg')] md:before:bg-no-repeat md:before:bg-cover md:before:bg-center md:before:opacity-50">
     <div v-if="isDark"
       class="fixed inset-0 -z-20 bg-gradient-to-b from-primary-dark via-secondary-dark to-ternary-dark transition-colors duration-500" />
