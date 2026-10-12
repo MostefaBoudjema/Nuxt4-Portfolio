@@ -11,7 +11,7 @@
     </main>
     <client-only>
       <!-- <SharedAiChatbot /> -->
-      <ReusableWhatsApp />
+      <ReusableWhatsApp /> 
       <ReusableCustomBackToTop :visibleoffset="300" right="10px" bottom="10px" />
     </client-only>
     <SharedAppFooter />
