@@ -1,115 +1,129 @@
-<template>
-  <div
-    class="mb-4 blog-post single font-general-regular rounded-lg p-4 shadow hover:shadow-lg transition bg-secondary-light dark:bg-secondary-dark text-ternary-dark dark:text-ternary-light flex flex-col md:flex-row md:items-stretch"
-  >
-    <div
-      v-if="post.coverImage || post.image"
-      class="w-full mb-4 md:w-1/4 md:mb-0 md:mr-4 rtl:md:mr-0 rtl:md:ml-4 flex-shrink-0"
-    >
-      <div class="aspect-[3/2] w-full rounded overflow-hidden">
-        <NuxtImg
-          :src="post.coverImage || post.image"
-          :alt="post.title"
-          class="object-cover w-full h-full"
-          style="display: block;"
-        />
-      </div>
-    </div>
-    <div class="md:w-3/4 w-full flex flex-col items-start">
-      <div class="w-full">
-        <h2 class="text-3xl font-bold mb-2">{{ post.title }}</h2>
-        <div class="flex items-center mb-2 text-sm text-gray-500 dark:text-gray-400">
-          <NuxtImg v-if="post.author && post.author.avatar" :src="post.author.avatar" :alt="post.author.name"
-            class="w-6 h-6 rounded-full mx-2" />
-          <span v-if="post.author && post.author.name">{{ post.author.name }}</span>
-          <span v-if="post.readingTime" class="mx-2">•</span>
-          <span v-if="post.readingTime">{{ post.readingTime }}</span>
-          <span v-if="post.category" class="mx-2">•</span>
-          <span>
-            <span>{{ post.date }}</span>
-            <span v-if="post.updatedAt && post.updatedAt !== post.date"> ({{ $t('blog.updated') }} {{ post.updatedAt
-            }})</span>
-            <span v-if="!post.published" class="ml-2 text-red-500">{{ $t('blog.draft') }}</span>
-          </span>
-        </div>
-                <p
-          class="my-2"
-          :class="locale === 'ar' ? 'text-right' : 'text-left'"
-        >
-          {{ post.excerpt || post.summary }}
-        </p>
-        <div class="mt-0 sm:mt-5 flex justify-center sm:justify-start">
-          <NuxtLink :to="localePath(`/blog/${post.slug}`)"
-            class="flex items-center px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow-lg hover:shadow-xl bg-blue-500 hover:bg-blue-600 focus:ring-1 focus:ring-blue-900 text-white text-sm sm:text-lg lg:text-xl duration-300"
-            aria-label="Read More">
-            {{ $t('blog.readMore') }}
-          </NuxtLink>
-        </div>
-      </div>
-
-
-    </div>
-  </div>
-</template>
-
 <script setup>
-import { onMounted } from 'vue';
-import { useLocalePath } from '#i18n'
-import { useI18n } from 'vue-i18n'
-const { locale } = useI18n()
-const props = defineProps({
+import { useLocalePath } from '#i18n';
+
+defineProps({
   post: {
     type: Object,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const localePath = useLocalePath();
-
-onMounted(async () => {
-  const gsapModule = await import('gsap');
-  const ScrollTrigger = (await import('gsap/ScrollTrigger')).default;
-  const gsap = gsapModule.default || gsapModule;
-  if (typeof gsap.registerPlugin === 'function') {
-    gsap.registerPlugin(ScrollTrigger);
-  }
-  let mm = gsap.matchMedia();
-  mm.add('(min-width: 991px)', () => {
-    gsap.fromTo('.single',
-      {
-        opacity: 0,
-        y: 80
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        delay: 0.3,
-        stagger: 0.9,
-        ease: 'elastic',
-        scrollTrigger: {
-          trigger: '.single',
-          start: 'top 80%',
-          end: 'end 10%',
-          toggleActions: 'restart none none none',
-          scrub: 5,
-          // markers: true,
-        },
-      }
-    );
-  });
-});
 </script>
 
+<template>
+  <article
+    class="post group relative grid gap-5 md:gap-8 md:grid-cols-[17rem_1fr] border-t border-black/10 dark:border-white/10 py-8 sm:py-10"
+  >
+    <div
+      v-if="post.coverImage || post.image"
+      class="aspect-[4/3] w-full overflow-hidden rounded-xl bg-neutral-200 dark:bg-neutral-800"
+    >
+      <NuxtImg
+        :src="post.coverImage || post.image"
+        :alt="post.title"
+        width="600"
+        height="450"
+        loading="lazy"
+        class="block h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none"
+      />
+    </div>
+
+    <div class="flex min-w-0 flex-col">
+      <div
+        class="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400"
+      >
+        <span v-if="post.category">{{ post.category }}</span>
+        <time v-if="post.date">{{ post.date }}</time>
+        <span v-if="post.readingTime">{{ post.readingTime }}</span>
+        <span
+          v-if="post.updatedAt && post.updatedAt !== post.date"
+          class="normal-case tracking-normal"
+        >
+          {{ $t('blog.updated') }} {{ post.updatedAt }}
+        </span>
+        <span
+          v-if="!post.published"
+          class="rounded-full bg-red-500/10 px-2 py-0.5 text-red-600 dark:text-red-400"
+        >
+          {{ $t('blog.draft') }}
+        </span>
+      </div>
+
+      <h2
+        class="text-2xl sm:text-3xl font-semibold tracking-tight text-balance leading-snug"
+      >
+        <NuxtLink
+          :to="localePath(`/blog/${post.slug}`)"
+          class="decoration-2 underline-offset-4 group-hover:underline after:absolute after:inset-0 focus-visible:outline-none focus-visible:underline"
+        >
+          {{ post.title }}
+        </NuxtLink>
+      </h2>
+
+      <p
+        class="mt-3 line-clamp-3 text-start text-base leading-relaxed text-pretty text-neutral-600 dark:text-neutral-300"
+      >
+        {{ post.excerpt || post.summary }}
+      </p>
+
+      <div class="mt-auto flex items-center justify-between gap-4 pt-6">
+        <div
+          v-if="post.author?.name"
+          class="flex items-center gap-2.5 text-sm text-neutral-600 dark:text-neutral-300"
+        >
+          <NuxtImg
+            v-if="post.author.avatar"
+            :src="post.author.avatar"
+            :alt="post.author.name"
+            width="28"
+            height="28"
+            class="size-7 rounded-full object-cover"
+          />
+          <span>{{ post.author.name }}</span>
+        </div>
+
+        <span
+          class="ms-auto inline-flex items-center gap-1.5 text-sm font-medium"
+        >
+          {{ $t('blog.readMore') }}
+          <svg
+            class="size-4 transition-transform duration-300 group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1 motion-reduce:transition-none"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
+        </span>
+      </div>
+    </div>
+  </article>
+</template>
+
 <style scoped>
-.blog-post {
-  /* Remove background here, use Tailwind classes for theme */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .post {
+      animation: post-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
 }
 
-.truncate-lines {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+@keyframes post-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
