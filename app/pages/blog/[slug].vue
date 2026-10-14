@@ -5,7 +5,7 @@
 
     <div v-else-if="post" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <!-- Main Content -->
-      <div class="lg:col-span-2 bg-white dark:bg-gray-900 rounded-xl shadow-lg md:p-8 transition-all duration-300">
+      <div class="lg:col-span-2 rounded-xl shadow-lg md:p-8 transition-all duration-300">
         <!-- Breadcrumb -->
         <nav class="text-sm text-gray-500 dark:text-gray-400 mb-6 flex items-center gap-2 px-4 md:px-0">
           <router-link v-if="post.private" :to="localePath('/private')" class="hover:underline text-blue-600 dark:text-blue-400">{{$t("Private")}}</router-link>
@@ -31,7 +31,7 @@
 
         <!-- Cover Image -->
         <div v-if="post.coverImage || post.image" class="mb-8 flex justify-center">
-          <NuxtImg :src="post.coverImage || post.image" :alt="post.title" class="object-cover rounded-lg w-full max-h-80 border border-gray-200 dark:border-gray-700 shadow-md" />
+          <NuxtImg :src="post.coverImage || post.image" :alt="post.title" class="object-cover rounded-lg w-full max-h-80  shadow-md" />
         </div>
 
         <!-- Excerpt -->
@@ -40,10 +40,10 @@
         </div>
 
         <!-- Content -->
-        <div class="prose prose-lg dark:prose-invert max-w-none mb-10 transition-all duration-300 px-4 py-6 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 overflow-x-auto" v-html="formattedContent"></div>
+        <div class="prose prose-lg dark:prose-invert max-w-none mb-10 transition-all duration-300 px-4 py-6 rounded-lg  text-gray-900 dark:text-gray-100 overflow-x-auto" v-html="formattedContent"></div>
 
         <!-- Author Card -->
-        <div v-if="post.author && post.author.name!='Mostefa Boudjema'" class="mx-4 md:mx-0 flex items-center gap-4 mt-12 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 pt-6">
+        <div v-if="post.author && post.author.name!='Mostefa Boudjema'" class="mx-4 md:mx-0 flex items-center gap-4 mt-12 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-sm  pt-6">
           <NuxtImg v-if="post.author.avatar" :src="post.author.avatar" :alt="post.author.name" class="w-14 h-14 rounded-full border object-cover" />
           <div>
             <div class="font-semibold text-lg text-gray-900 dark:text-gray-100">{{ post.author.name }}</div>
@@ -264,6 +264,7 @@ useHead(() => ({
 :deep(.prose hr) {
   /* border-top: 2px solid #3b82f6; Tailwind blue-500 */
   margin: 2rem 0;
+  border: 0.5rem;
 }
 
 .dark :deep(.prose table::-webkit-scrollbar-track) {

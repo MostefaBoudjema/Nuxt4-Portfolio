@@ -1,5 +1,5 @@
 <template>
-  <div class="related-posts bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6 border border-gray-200 dark:border-gray-700">
+  <div class="related-posts rounded-xl shadow-lg p-6 ">
     <h3 class="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
       {{ $t('blog.relatedPosts') || 'Related Posts' }}
     </h3>
