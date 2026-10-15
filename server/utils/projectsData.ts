@@ -3797,7 +3797,7 @@ const allProjects=[
         {
           id: 3,
           title: "Website",
-          details: "#",
+          details: "https://edupay-documentation.vercel.app/",
         },
       ],
       objectivesHeading: "Objective",
