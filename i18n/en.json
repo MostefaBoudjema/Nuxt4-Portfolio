@@ -503,41 +503,65 @@
     "note": "We can prepare a free prototype with no commitment, so you can preview your website before deciding."
   },
   "link": "Link",
+  
   "web_developer_annaba": {
-    "title": "Web Developer in Annaba",
-    "subtitle": "Laravel and Vue.js developer based in Annaba, Algeria.",
-    "description": "I am Mostefa Boudjema, an experienced software engineer and full-stack developer in Algeria. I specialize in building custom websites, e-commerce platforms, and advanced web applications for businesses. Whether you need a Laravel developer in Annaba to build a solid backend or a Vue.js developer to create interactive user interfaces, I deliver premium quality and fast results.",
-    "cta": "Get a Free Consultation",
+    "meta": {
+      "title": "Software Engineer & Full Stack Developer in Annaba | Mostefa",
+      "description": "Hire a software engineer and full stack developer in Annaba. Custom web apps, e-commerce sites and front end work for businesses across Algeria."
+    },
+    "title": "Software Engineer and Full Stack Developer in Annaba",
+    "subtitle": "Web developer in Annaba for businesses, startups and shops across Algeria.",
+    "description": "I design and build fast websites, web apps and online stores. You get one software engineer who handles the front end, the back end and the launch. Every project starts with a clear scope and a fixed plan.",
+    "cta": "Get a free quote",
     "features": {
+      "title": "What I build in Annaba",
+      "software_engineering": {
+        "title": "Software engineering",
+        "desc": "Clean, tested code for business tools, dashboards and internal systems. Built to be easy to maintain after launch."
+      },
+      "full_stack": {
+        "title": "Full stack development",
+        "desc": "One developer for the whole product. I build the interface, the API and the database, then deploy it."
+      },
+      "front_end": {
+        "title": "Front end development",
+        "desc": "Fast, mobile friendly interfaces built with Vue and Nuxt. Your pages load quickly and follow SEO best practice."
+      },
       "custom_apps": {
-        "title": "Custom Web Apps",
-        "desc": "Need a clinic management software or school management system in Algeria? I develop tailored SaaS and management systems that streamline your operations."
+        "title": "Custom web applications",
+        "desc": "Booking systems, admin panels and client portals built around how your team works."
       },
       "ecommerce": {
-        "title": "E-Commerce Stores",
-        "desc": "Launch your online business with robust e-commerce website development. Fast, secure, and optimized to increase your sales."
+        "title": "E-commerce websites",
+        "desc": "Online stores with product management, order tracking and a simple checkout."
       },
       "local": {
-        "title": "Local Expertise",
-        "desc": "As a web developer near me (Annaba), you get direct communication, clear understanding of the local market, and ongoing support for your projects."
+        "title": "Local support in Annaba",
+        "desc": "Meet in person in Annaba or work remotely. You get clear updates in Arabic, French or English."
       }
     },
-    "meta": {
-      "title": "Web Developer in Annaba and Algeria | Mostefa Boudjema",
-      "description": "Mostefa Boudjema is a Laravel and Vue.js web developer in Annaba, Algeria. I build e-commerce stores, SaaS apps, and management systems."
-    },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "q1": "Is there a freelance web developer in Annaba?",
-      "a1": "Yes, I am a freelance web developer based in Annaba, Algeria. I specialize in building custom web applications with Laravel and Vue.js.",
-      "q2": "Where do I find a Laravel developer in Algeria?",
-      "a2": "You can work with me. I am a Laravel developer in Algeria, providing backend development for e-commerce, SaaS, and custom management systems.",
-      "q3": "How much does a website cost in Algeria?",
-      "a3": "The price for website creation in Algeria depends on the complexity of the project. A simple business website starts at 50,000 DZD, while complex e-commerce or SaaS apps start at 150,000 DZD.",
-      "q4": "Do you build websites in French and Arabic?",
-      "a4": "Yes, I build multi-language websites. I offer website development in English, French, and Arabic, ensuring your site reaches a wider audience in Algeria and beyond."
+      "title": "Frequently asked questions",
+      "q1": "What does a full stack developer do?",
+      "a1": "A full stack developer builds both sides of a website or app. This covers the interface you see, the server and the database behind it. You hire one person instead of coordinating two or three.",
+      "q2": "What is the difference between a software engineer and a web developer?",
+      "a2": "A web developer builds websites and web apps. A software engineer applies the same skills to larger systems and plans for testing, security and long term maintenance. I work in both roles.",
+      "q3": "Do you work with businesses outside Annaba?",
+      "a3": "Yes. I work with clients in Annaba and across Algeria, in person or online.",
+      "q4": "How much does a website cost in Annaba?",
+      "a4": "The price depends on the pages, features and deadline. Send me your idea and you get a written quote with a fixed scope.",
+      "q5": "How long does a project take?",
+      "a5": "The timeline depends on the scope. A simple business website takes less time than a custom web app, and you get a dated plan in the quote.",
+      "q6": "Do you build online stores?",
+      "a6": "Yes. I build e-commerce sites with product pages, a cart, a checkout and an admin area to manage orders."
+    },
+    "closing": {
+      "title": "Start your project in Annaba",
+      "desc": "Tell me what you need and I will reply with a clear plan and a quote.",
+      "button": "Contact me"
     }
-  },
+  }
+,
   "FaqTitle": "Frequently Asked Questions",
   "FaqSubtitle": "Answers to common questions about my web development services.",
   "FaqQ1": "Who is Mostefa Boudjema?",

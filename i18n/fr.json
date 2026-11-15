@@ -521,38 +521,60 @@
   "Test": "Test",
   "link": "Lien",
   "web_developer_annaba": {
-    "title": "Développeur Web à Annaba",
-    "subtitle": "Développeur Laravel et Vue.js basé à Annaba, Algérie.",
-    "description": "Je suis Mostefa Boudjema, ingénieur logiciel expérimenté et développeur full-stack en Algérie. Je suis spécialisé dans la création de sites web sur mesure, de plateformes e-commerce et d'applications web avancées pour les entreprises. Que vous ayez besoin d'un développeur Laravel à Annaba pour créer un backend solide ou d'un développeur Vue.js pour créer des interfaces utilisateur interactives, je vous garantis une qualité supérieure et des résultats rapides.",
-    "cta": "Obtenez une consultation gratuite",
+    "meta": {
+      "title": "Ingénieur logiciel et développeur full stack à Annaba | Mostefa",
+      "description": "Faites appel à un développeur web et ingénieur logiciel à Annaba. Applications web sur mesure, sites e-commerce et développement front end partout en Algérie."
+    },
+    "title": "Ingénieur logiciel et développeur full stack à Annaba",
+    "subtitle": "Développeur web à Annaba pour les entreprises, les startups et les boutiques partout en Algérie.",
+    "description": "Je conçois et je développe des sites rapides, des applications web et des boutiques en ligne. Un seul ingénieur logiciel gère le front end, le back end et la mise en ligne. Chaque projet commence par un cadre clair et un plan précis.",
+    "cta": "Demander un devis gratuit",
     "features": {
+      "title": "Ce que je développe à Annaba",
+      "software_engineering": {
+        "title": "Ingénierie logicielle",
+        "desc": "Un code propre et testé pour vos outils métier, tableaux de bord et systèmes internes. Conçu pour rester facile à maintenir après la mise en ligne."
+      },
+      "full_stack": {
+        "title": "Développement full stack",
+        "desc": "Un seul développeur pour tout le produit. Je crée l'interface, l'API et la base de données, puis je déploie le projet."
+      },
+      "front_end": {
+        "title": "Développement front end",
+        "desc": "Des interfaces rapides et adaptées au mobile avec Vue et Nuxt. Vos pages se chargent vite et suivent les bonnes pratiques SEO."
+      },
       "custom_apps": {
-        "title": "Applications Web sur mesure",
-        "desc": "Besoin d'un logiciel de gestion de clinique ou d'un système de gestion scolaire en Algérie ? Je développe des solutions SaaS et des systèmes de gestion sur mesure qui optimisent vos opérations."
+        "title": "Applications web sur mesure",
+        "desc": "Systèmes de réservation, panneaux d'administration et portails clients construits autour du fonctionnement de votre équipe."
       },
       "ecommerce": {
-        "title": "Boutiques E-Commerce",
-        "desc": "Lancez votre entreprise en ligne avec un site e-commerce robuste. Rapide, sécurisé et optimisé pour augmenter vos ventes."
+        "title": "Sites e-commerce",
+        "desc": "Des boutiques en ligne avec gestion des produits, suivi des commandes et paiement simple."
       },
       "local": {
-        "title": "Expertise Locale",
-        "desc": "En tant que développeur web à proximité (Annaba), vous bénéficiez d'une communication directe, d'une compréhension claire du marché local et d'un support continu pour vos projets."
+        "title": "Un accompagnement local à Annaba",
+        "desc": "Rencontrons-nous à Annaba ou travaillons à distance. Vous recevez des points clairs en arabe, en français ou en anglais."
       }
     },
-    "meta": {
-      "title": "Développeur Web à Annaba et en Algérie | Mostefa Boudjema",
-      "description": "Mostefa Boudjema est un développeur web Laravel et Vue.js à Annaba, Algérie. Je crée des boutiques e-commerce, des applications SaaS et des systèmes de gestion."
-    },
     "faq": {
-      "title": "Foire Aux Questions",
-      "q1": "Y a-t-il un développeur web freelance à Annaba ?",
-      "a1": "Oui, je suis un développeur web freelance basé à Annaba, en Algérie. Je me spécialise dans la création d'applications web sur mesure avec Laravel et Vue.js.",
-      "q2": "Où trouver un développeur Laravel en Algérie ?",
-      "a2": "Vous pouvez travailler avec moi. Je suis un développeur Laravel en Algérie, proposant des développements backend pour l'e-commerce, les SaaS et les systèmes de gestion sur mesure.",
-      "q3": "Combien coûte la création d'un site web en Algérie ?",
-      "a3": "Le prix pour la création de site web en Algérie dépend de la complexité du projet. Un site vitrine simple commence à 50 000 DZD, tandis que les applications e-commerce ou SaaS complexes commencent à 150 000 DZD.",
-      "q4": "Créez-vous des sites web en français et en arabe ?",
-      "a4": "Oui, je crée des sites web multilingues. Je propose la création de site web en anglais, français et arabe, assurant que votre site atteigne un public plus large en Algérie et au-delà."
+      "title": "Questions fréquentes",
+      "q1": "Que fait un développeur full stack ?",
+      "a1": "Un développeur full stack construit les deux côtés d'un site ou d'une application. Cela couvre l'interface visible, le serveur et la base de données. Vous engagez une seule personne au lieu d'en coordonner plusieurs.",
+      "q2": "Quelle est la différence entre un ingénieur logiciel et un développeur web ?",
+      "a2": "Un développeur web crée des sites et des applications web. Un ingénieur logiciel applique les mêmes compétences à des systèmes plus grands et prévoit les tests, la sécurité et la maintenance à long terme. Je travaille dans les deux rôles.",
+      "q3": "Travaillez-vous avec des entreprises hors d'Annaba ?",
+      "a3": "Oui. Je travaille avec des clients à Annaba et dans toute l'Algérie, en personne ou en ligne.",
+      "q4": "Combien coûte un site web à Annaba ?",
+      "a4": "Le prix dépend des pages, des fonctionnalités et du délai. Envoyez-moi votre idée et vous recevez un devis écrit avec un périmètre précis.",
+      "q5": "Combien de temps dure un projet ?",
+      "a5": "La durée dépend du périmètre. Un site vitrine simple demande moins de temps qu'une application web sur mesure, et vous recevez un planning daté dans le devis.",
+      "q6": "Créez-vous des boutiques en ligne ?",
+      "a6": "Oui. Je crée des sites e-commerce avec fiches produits, panier, paiement et un espace d'administration pour gérer les commandes."
+    },
+    "closing": {
+      "title": "Lancez votre projet à Annaba",
+      "desc": "Dites-moi ce dont vous avez besoin et je vous réponds avec un plan clair et un devis.",
+      "button": "Me contacter"
     }
   },
   "FaqTitle": "Questions Fréquemment Posées",
