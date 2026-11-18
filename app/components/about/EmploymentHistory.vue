@@ -1,11 +1,7 @@
 <template>
     <div class="mb-8">
-        <div class="flex justify-center pt-1 pb-8 mt-8">
-            <p class="font-general-medium text-2xl sm:text-3xl text-primary-dark dark:text-primary-light">
-                {{ t("Employment History") }}
-            </p>
-        </div>
 
+      <ReusableSectionDivider  :title="t('Employment History')" />
         <div class="flex justify-center flex-wrap">
             <div v-for="(job, index) in employmentHistory" :key="index"
                 class="w-full md:w-[30%] dark:text-gray-200 mb-4 md:mb-0 md:mr-4" data-aos="zoom-in-up">
@@ -243,4 +239,4 @@ const { t }=useI18n({
         padding-left: 16px;
     }
 }
-</style>
+</style>

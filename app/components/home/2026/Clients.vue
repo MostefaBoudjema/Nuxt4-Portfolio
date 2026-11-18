@@ -12,11 +12,7 @@ const isRtl = computed(() => rtlLocales.includes(locale.value));
 <template>
   <section class="px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
     <div class="sm:container sm:mx-auto">
-      <div class="flex items-center gap-3 mb-8">
-        <div class="h-px flex-1 bg-ternary-dark/8 dark:bg-ternary-light/8"></div>
-        <p class="text-xs font-medium uppercase tracking-widest text-ternary-dark/40 dark:text-ternary-light/40 shrink-0">{{ t('Trusted by Growing Businesses') }}</p>
-        <div class="h-px flex-1 bg-ternary-dark/8 dark:bg-ternary-light/8"></div>
-      </div>
+      <ReusableSectionDivider :title="t('Trusted by Growing Businesses')" />
 
     <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
       <div

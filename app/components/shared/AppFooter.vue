@@ -23,11 +23,9 @@ onMounted(() => {
             <div
                 class="flex flex-col justify-center items-center mb-12 sm:mb-20"
             >
-                <p
-                    class="font-general-semibold text-3xl sm:text-4xl font-semibold text-primary-dark dark:text-primary-light mb-8 sm:mb-12"
-                >
-                    {{ t("Contact me") }}
-                </p>
+
+                
+      <ReusableSectionDivider  :title="t('Contact me')" />
                 <ul class="flex gap-2 sm:gap-10">
                     <li v-for="social in socials" :key="social.id">
                         <a

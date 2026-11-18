@@ -50,13 +50,13 @@ export default defineEventHandler(() => {
       imgGray: IMAGES.LAMRI.gray,
       imgColor: IMAGES.LAMRI.color,
     },
-    {
-      id: 2,
-      title: 'Upwork',
-      link: '',
-      imgGray: IMAGES.UPWORK.gray,
-      imgColor: IMAGES.UPWORK.color,
-    },
+    // {
+    //   id: 2,
+    //   title: 'Upwork',
+    //   link: '',
+    //   imgGray: IMAGES.UPWORK.gray,
+    //   imgColor: IMAGES.UPWORK.color,
+    // },
     {
       id: 3,
       title: 'Nzidoo',

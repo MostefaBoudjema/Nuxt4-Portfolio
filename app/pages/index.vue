@@ -1,7 +1,9 @@
 <template>
   <div>
     <Home2026Hero />
-    <LazyHome2026Clients />
+      <div class="container mx-auto">
+    <AboutClients />
+  </div>
     <LazyHome2026FeaturedWork />
     <LazyHome2026Stats />
     <LazyHome2026BlogTeaser v-if="settings.show_blog" />

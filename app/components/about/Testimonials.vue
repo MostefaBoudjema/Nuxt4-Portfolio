@@ -1,11 +1,7 @@
 <template>
 	<section class="py-8">
-		<div class="flex justify-center pt-1 pb-8">
-			<p class="font-general-medium text-2xl sm:text-3xl text-primary-dark dark:text-primary-light">
-				{{ t("Testimonials") }}
-			</p>
-		</div>
 
+      <ReusableSectionDivider  :title="t('Testimonials')" />
 		<Carousel :itemsToShow="1.5" :wrapAround="true" :mouseDrag="true" :autoplay="4000" :breakpoints="{
 					640: {
 						itemsToShow: 1.5
