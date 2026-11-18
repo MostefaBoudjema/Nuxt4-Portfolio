@@ -1,16 +1,13 @@
 <script setup>
-import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-const { t } = useI18n({
-    inheritLocale: true,
-    useScope: "local",
-});
+const { t, locale } = useI18n();
 
-const { data: socials } = await useFetch('/api/v1/social-links');
-
-
-onMounted(() => {
+const { data: socials } = await useFetch('/api/v1/social-links', {
+    key: 'social-links',
+    query: { lang: locale },
+    watch: [locale],
+    default: () => [],
 });
 </script>
 

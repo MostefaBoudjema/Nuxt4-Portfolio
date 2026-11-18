@@ -58,13 +58,6 @@ export default defineNuxtConfig({
             ],
             link: [
                 { rel: 'icon', type: 'image/png', href: '/images/logo.svg' },
-                // Load bootstrap icons non-blocking
-                {
-                    rel: 'stylesheet',
-                    href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css',
-                    media: 'print',
-                    onload: "this.media='all'",
-                },
                 // Preload LCP hero image for faster discovery
                 { rel: 'preload', as: 'image', type: 'image/webp', href: '/images/me3.webp' },
             ],
@@ -126,7 +119,7 @@ gtag('config', 'G-L5HVZ2VCP7');`,
         ],
     ],
 
-    css: ['~/assets/css/app.css'],
+    css: ['bootstrap-icons/font/bootstrap-icons.css', '~/assets/css/app.css'],
 
     plugins: [
         '@/plugins/aos.client.js',
