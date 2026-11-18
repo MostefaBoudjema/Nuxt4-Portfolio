@@ -1,19 +1,28 @@
 <template>
-    <div v-if="relatedProject" class="border-primary-light dark:border-secondary-dark">
+    <div v-if="relatedProject" class="border-primary-light dark:border-secondary-dark w-full">
         <p
-            class="font-general-regular text-primary-dark dark:text-primary-light text-3xl font-bold mb-10 sm:mb-14" :class="locale==='ar'?'text-right':'text-left'">
+            class="font-general-regular text-primary-dark dark:text-primary-light text-2xl sm:text-3xl font-bold mb-8 sm:mb-12" :class="locale==='ar'?'text-right':'text-left'">
             {{ $t(relatedProject.relatedProjectsHeading) }}
         </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-4 sm:gap-10 mt-12">
-            <!-- <div class="grid grid-cols-1 mt-6 sm:gap-10"> -->
-            <div v-for="item in randomItems" :key="item.id">
-                <NuxtLink :to="item.link" @click="setPageId(item.id)">
-                    <NuxtImg :src="item.img" class="rounded-xl cursor-pointer h-70 w-96" :alt="item.title" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div v-for="item in randomItems" :key="item.id" class="group">
+                <NuxtLink :to="localePath(`/projects/${item.link}`)" @click="setPageId(item.id)"
+                    class="block overflow-hidden rounded-xl bg-gray-100 dark:bg-ternary-dark border border-gray-200/60 dark:border-gray-800/80 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="aspect-[16/10] w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <NuxtImg 
+                            :src="item.img" 
+                            class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" 
+                            :alt="item.title"
+                            loading="lazy" 
+                        />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h3 class="dark:text-white font-medium text-sm sm:text-base line-clamp-1 group-hover:text-blue-500 transition-colors">
+                            {{ item.title }}
+                        </h3>
+                    </div>
                 </NuxtLink>
-                <h3 class="dark:text-white text-center pt-2">
-                    {{ item.title }}
-                </h3>
             </div>
         </div>
     </div>
@@ -22,6 +31,7 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 import { computed, watchEffect } from "vue";
+import { useLocalePath } from "#i18n";
 
 const props = defineProps({
   relatedProject: {
@@ -31,6 +41,7 @@ const props = defineProps({
 });
 
 const { locale } = useI18n();
+const localePath = useLocalePath();
 const { t } = useI18n({
   inheritLocale: true,
   useScope: "global",

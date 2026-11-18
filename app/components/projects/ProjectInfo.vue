@@ -14,9 +14,11 @@
               <span>{{ t(info.title) }}: </span>
 
               <template v-if="info.title === 'Website'">
-                <a :href="getFinalDetails(info)" class="hover:underline cursor-pointer"
-                  aria-label="Project Website and Phone" target="_blank">
-                  {{ t(getFinalDetails(info).replace('project.info.', '')) }}
+                <a :href="getFinalDetails(info)" 
+                  class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition hover:shadow cursor-pointer mt-1"
+                  aria-label="Project Website" target="_blank" rel="noopener noreferrer">
+                  <span>{{ isRawIp(getFinalDetails(info)) ? t('Visit Live Site') : formatDisplayUrl(getFinalDetails(info)) }}</span>
+                  <i class="bi bi-box-arrow-up-right text-[11px]"></i>
                 </a>
               </template>
 
@@ -38,15 +40,14 @@
 
       <!-- Technologies -->
       <div class="mb-7">
-        <p v-if="projectInfo.technologies?.length" class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2">
+        <p v-if="projectInfo.technologies?.length" class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-3">
           {{ t(projectInfo.technologies[0].title) }}
         </p>
-        <div class="flex space-x-2">
-          <div v-for="(smallImg, index) in smallImages" :key="index">
-            <NuxtImg :src="smallImg.src" :alt="smallImg.alt" :style="{
-    width: smallImg.width || '50px',
-    height: smallImg.height || '50px'
-  }" />
+        <div class="flex flex-wrap gap-2.5">
+          <div v-for="(smallImg, index) in smallImages" :key="index"
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-700 text-sm font-medium text-gray-800 dark:text-gray-200 shadow-sm transition hover:border-blue-500/50">
+            <NuxtImg :src="smallImg.src" :alt="smallImg.alt" class="w-5 h-5 object-contain" />
+            <span class="font-medium">{{ formatTechName(smallImg.alt) }}</span>
           </div>
         </div>
       </div>
@@ -99,5 +100,39 @@ const { locale, t }=useI18n();
 
 const getFinalDetails=(info) => {
   return locale.value==='ar'? (info.detailsAr||info.details):info.details;
+};
+
+const isRawIp = (url) => {
+  if (!url) return false;
+  return /(?:https?:\/\/)?(?:\d{1,3}\.){3}\d{1,3}/.test(url);
+};
+
+const formatDisplayUrl = (url) => {
+  if (!url) return '';
+  return url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+};
+
+const techNameMap = {
+  laravel: 'Laravel',
+  vue: 'Vue.js',
+  php: 'PHP',
+  bootstrap: 'Bootstrap',
+  react: 'React',
+  nuxt: 'Nuxt',
+  tailwind: 'Tailwind CSS',
+  filament: 'Filament',
+  next: 'Next.js',
+  supabase: 'Supabase',
+  firebase: 'Firebase',
+  wordpress: 'WordPress',
+  jquery: 'jQuery',
+  api: 'REST API',
+  javascript: 'JavaScript',
+};
+
+const formatTechName = (alt) => {
+  if (!alt) return '';
+  const key = String(alt).toLowerCase().trim();
+  return techNameMap[key] || (key.charAt(0).toUpperCase() + key.slice(1));
 };
 </script>

@@ -3469,7 +3469,7 @@ const allProjects=[
   },
   {
     id: 30,
-    title: 'Nzidoo - eCommerce App',
+    title: 'Nzidoo — Peer-to-Peer Marketplace & Bidding Platform',
     hide: false,
     category: 'Laravel Vue Web App',
     link: 'nzidoo',
@@ -3481,11 +3481,166 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.bootstrap },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Nzidoo - eCommerce App",
+      singleProjectTitle: "Nzidoo — Peer-to-Peer Marketplace & Bidding Platform",
       singleProjectDate: "20 Jan 2026",
       singleProjectTag: "Frontend/Backend",
     },
     projectImages: PROJECT_IMAGE_URLS.nzidoo.projectImages,
+    caseStudy: {
+      hero: {
+        title: "Nzidoo — Peer-to-Peer Marketplace & Bidding Platform",
+        hook: "A multi-vendor e-commerce ecosystem built with Laravel and Vue.js featuring real-time bidding, integrated wallets, and automated invoicing.",
+        role: "Full-Stack Dev",
+        date: "Jan 2026",
+        liveUrl: "http://109.123.243.14",
+        liveText: "Visit Live Site",
+        slides: [
+          {
+            id: 1,
+            caption: "1. Live Bidding & Offer Negotiation Interface",
+            img: "/images/projects/nzidoo/0.webp",
+            urlBar: "nzidoo.marketplace/auctions/bid-room",
+          },
+          {
+            id: 2,
+            caption: "2. Multi-Vendor Store & Analytics Dashboard",
+            img: "/images/projects/nzidoo/12.webp",
+            urlBar: "nzidoo.marketplace/vendor/dashboard",
+          },
+          {
+            id: 3,
+            caption: "3. Direct Messaging & Real-Time Offers",
+            img: "/images/projects/nzidoo/1.webp",
+            urlBar: "nzidoo.marketplace/messages",
+          },
+          {
+            id: 4,
+            caption: "4. Batch Operations & Invoice Generation",
+            img: "/images/projects/nzidoo/16.webp",
+            urlBar: "nzidoo.marketplace/invoices",
+          },
+        ],
+      },
+      bentoGrid: {
+        heading: "Core Features Bento Grid",
+        subtitle: "Key marketplace features engineered for real-time buyer and seller engagement",
+        cards: [
+          {
+            id: 1,
+            title: "Real-Time Bidding & Offers",
+            description: "Interactive auction mechanics allowing buyers to place bids or negotiate direct offers with sellers.",
+            icon: "bi bi-hammer",
+            badge: "Auctions & Offers",
+          },
+          {
+            id: 2,
+            title: "Integrated Digital Wallet",
+            description: "Built-in user balance system handling escrow, transaction tracking, and secure payouts.",
+            icon: "bi bi-wallet2",
+            badge: "Escrow & Payouts",
+          },
+          {
+            id: 3,
+            title: "Multi-Vendor Store Management",
+            description: "Complete seller dashboard for batch product operations, automated PDF invoice generation, and store analytics.",
+            icon: "bi bi-shop",
+            badge: "Store Dashboard",
+          },
+          {
+            id: 4,
+            title: "Real-Time Messaging & Boosting",
+            description: "Direct buyer-seller chat via WebSockets/polling, plus paid promotion plans to boost listing visibility.",
+            icon: "bi bi-chat-dots",
+            badge: "Chat & Boosts",
+          },
+        ],
+      },
+      highlights: {
+        heading: "Key Technical Highlights",
+        subtitle: "Structured breakdown of the challenge, engineering execution, and architectural foundation.",
+        columns: [
+          {
+            id: "problem",
+            title: "The Problem (Challenge)",
+            summary: "Local peer-to-peer trading lacked trust, structured negotiation, and integrated payment tracking.",
+            points: [
+              "Fragmented communications across external chat apps with no buyer-seller mediation.",
+              "Lack of escrow protection, creating high payment disputes and transaction risk.",
+              "Manual seller workflows with no centralized batch operations or financial tracking.",
+            ],
+          },
+          {
+            id: "solution",
+            title: "The Solution (Execution)",
+            summary: "Built a unified SPA marketplace combining auction bidding, direct chat, and wallet-backed transactions.",
+            points: [
+              "Integrated digital wallet with automated escrow hold released upon buyer confirmation.",
+              "Interactive bidding mechanics with live price recalculation and counter-offers.",
+              "Complete seller portal featuring batch operations and automated PDF invoices.",
+            ],
+          },
+          {
+            id: "architecture",
+            title: "Technical Highlights",
+            summary: "Robust SPA architecture powered by Vue.js and a modular Laravel REST API.",
+            points: [
+              "Vue Router with middleware-protected role permissions (Buyer, Seller, Admin).",
+              "Laravel REST API handling complex order state machines and batch edit transactions.",
+              "Multi-language (i18n) & responsive mobile-first UI with component isolation.",
+              "Strict database transactions guaranteeing zero-drift ledger integrity for wallet balances.",
+            ],
+          },
+        ],
+      },
+      spotlight: {
+        heading: "Feature Spotlight",
+        subtitle: "Detailed walk-through of the core user workflows and administrative tools",
+        items: [
+          {
+            id: 1,
+            title: "Live Bidding & Direct Negotiation Interface",
+            img: "/images/projects/nzidoo/0.webp",
+            urlBar: "nzidoo.marketplace/auctions/listing-482",
+            reverse: false,
+            points: [
+              {
+                title: "How Bidding Works",
+                desc: "Buyers can place live auction bids or negotiate direct offers with sellers, backed by real-time status updates.",
+              },
+              {
+                title: "Live Auction Updates",
+                desc: "Dynamic countdown timers, instant outbid notifications, and price recalculations without page reloads.",
+              },
+              {
+                title: "Integrated Offers",
+                desc: "Direct negotiation system between buyer and seller with automated escrow reservation for accepted bids.",
+              },
+            ],
+          },
+          {
+            id: 2,
+            title: "Seller Operations & Invoicing Dashboard",
+            img: "/images/projects/nzidoo/12.webp",
+            urlBar: "nzidoo.marketplace/vendor/dashboard",
+            reverse: true,
+            points: [
+              {
+                title: "Seller/Admin Controls",
+                desc: "Comprehensive seller dashboard for batch product operations, category management, and listing boost plans.",
+              },
+              {
+                title: "Order Tracking",
+                desc: "Step-by-step order lifecycle tracking from offer acceptance and escrow lock to final delivery approval.",
+              },
+              {
+                title: "Automated Invoicing",
+                desc: "One-click automated PDF invoice generation with audit records and transaction history.",
+              },
+            ],
+          },
+        ],
+      },
+    },
     projectInfo: {
       clientHeading: "About Client",
       companyInfos: [
@@ -3579,11 +3734,161 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.tailwind },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "HRMS - Human Resource Management System",
+      singleProjectTitle: "HRMS — Enterprise Workforce & Payroll Ecosystem",
       singleProjectDate: "07 Mai 2026",
       singleProjectTag: "Frontend/Backend",
     },
     projectImages: PROJECT_IMAGE_URLS.hrms.projectImages,
+    caseStudy: {
+      hero: {
+        title: "HRMS — Enterprise Workforce & Payroll Ecosystem",
+        hook: "A multi-tenant HR platform built with Laravel and Filament v3 featuring automated payroll, leave tracking, and real-time workforce analytics.",
+        role: "Full-Stack Dev",
+        date: "May 2026",
+        slides: [
+          {
+            id: 0,
+            caption: "1. Enterprise Dashboard & Workforce Metrics",
+            img: "/images/projects/hrms/0.webp",
+            urlBar: "hrms.portal/dashboard",
+          },
+          {
+            id: 1,
+            caption: "2. Employee Lifecycle & Payroll Automation",
+            img: "/images/projects/hrms/1.webp",
+            urlBar: "hrms.portal/payroll",
+          },
+          {
+            id: 2,
+            caption: "3. Attendance & Leave Approval Flow",
+            img: "/images/projects/hrms/2.webp",
+            urlBar: "hrms.portal/attendance",
+          },
+        ],
+      },
+      bentoGrid: {
+        heading: "Core Features Bento Grid",
+        subtitle: "Enterprise HR tooling engineered for operational efficiency, compliance, and employee self-service.",
+        cards: [
+          {
+            id: 1,
+            title: "Automated Payroll Engine",
+            description: "Calculates salaries, tax withholdings, bonuses, and generates payslips with one-click export.",
+            icon: "bi bi-cash-stack",
+            badge: "Payroll & Taxes",
+          },
+          {
+            id: 2,
+            title: "Leave & Attendance Tracking",
+            description: "Real-time clock-in monitoring, biometric syncing, and multi-tier leave approval workflows.",
+            icon: "bi bi-calendar-check",
+            badge: "Attendance",
+          },
+          {
+            id: 3,
+            title: "Multi-Tenant Company Support",
+            description: "Role-scoped department permissions, branch segmentation, and granular audit trails.",
+            icon: "bi bi-building",
+            badge: "Multi-Tenant",
+          },
+          {
+            id: 4,
+            title: "Executive Analytics & Reports",
+            description: "Visual department headcounts, retention metrics, and exportable financial audits.",
+            icon: "bi bi-graph-up-arrow",
+            badge: "Analytics",
+          },
+        ],
+      },
+      highlights: {
+        heading: "Key Technical Highlights",
+        subtitle: "Built for enterprise scalability, regulatory compliance, and rapid back-office workflows.",
+        columns: [
+          {
+            id: "problem",
+            title: "The Problem (Challenge)",
+            summary: "Fragmented employee records, manual payroll errors, and delayed leave approvals across departments.",
+            points: [
+              "Manual calculation of employee withholdings prone to accounting mistakes.",
+              "Lack of centralized attendance tracking resulting in payroll discrepancies.",
+              "Absence of role-scoped visibility between managers, HR, and executives.",
+            ],
+          },
+          {
+            id: "solution",
+            title: "The Solution (Execution)",
+            summary: "Unified Filament-based management platform automating employee records, leaves, and payroll.",
+            points: [
+              "Automated payroll pipeline with PDF payslip generation and banking integration.",
+              "Self-service portal for employees to request leaves, track balances, and download documents.",
+              "Role-based permission architecture ensuring sensitive salary data remains secure.",
+            ],
+          },
+          {
+            id: "architecture",
+            title: "Technical Highlights",
+            summary: "High-performance Laravel 11 stack utilizing Filament v3 and Tailwind CSS.",
+            points: [
+              "Filament v3 custom resource actions with bulk batch operations and exports.",
+              "Complex Eloquent relationships with optimized indexing for rapid search across thousands of records.",
+              "Database transactions ensuring zero payroll calculation discrepancies.",
+            ],
+          },
+        ],
+      },
+      spotlight: {
+        heading: "Feature Spotlight",
+        subtitle: "Key administrative and employee management interfaces",
+        items: [
+          {
+            id: 1,
+            title: "Workforce Overview & Key KPI Dashboards",
+            badge: "HR Analytics",
+            icon: "bi bi-speedometer2",
+            img: "/images/projects/hrms/0.webp",
+            urlBar: "hrms.portal/analytics",
+            reverse: false,
+            points: [
+              {
+                title: "Live Department Headcounts",
+                desc: "Instant breakdown of workforce allocation across departments, branches, and active contracts.",
+              },
+              {
+                title: "Real-Time Absence Alerts",
+                desc: "Immediate notifications on unexcused absences, pending leaves, and contract renewal deadlines.",
+              },
+              {
+                title: "Executive Summary Charts",
+                desc: "Visual charts for payroll expenses, overtime hours, and monthly turnover rates.",
+              },
+            ],
+          },
+          {
+            id: 2,
+            title: "Employee Directory & Records Management",
+            badge: "Directory & Files",
+            icon: "bi bi-people",
+            img: "/images/projects/hrms/1.webp",
+            urlBar: "hrms.portal/employees",
+            reverse: true,
+            points: [
+              {
+                title: "Comprehensive Digital Dossiers",
+                desc: "Centralized employee profiles with contract history, emergency contacts, and uploaded certifications.",
+              },
+              {
+                title: "Batch Payroll Processing",
+                desc: "Process salaries across departments in seconds with automated tax deduction routines.",
+              },
+              {
+                title: "Audit & Activity Logging",
+                desc: "Every status change and salary adjustment is recorded in an immutable audit ledger.",
+              },
+            ],
+          },
+        ],
+      },
+    },
     projectInfo: {
       clientHeading: "About Client",
       companyInfos: [
@@ -3677,11 +3982,155 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.tailwind },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "Printiha - Print on Demand Website",
+      singleProjectTitle: "Printiha — Print on Demand & Fulfillment Platform",
       singleProjectDate: "19 Mai 2026",
       singleProjectTag: "Frontend/Backend",
     },
     projectImages: PROJECT_IMAGE_URLS.printiha.projectImages,
+    caseStudy: {
+      hero: {
+        title: "Printiha — Print on Demand & Fulfillment Platform",
+        hook: "A creator-focused e-commerce ecosystem built with Laravel, Filament, and Nuxt 4 featuring automated order fulfillment, Yalidine courier integration, and creator profit analytics.",
+        role: "Full-Stack Dev",
+        date: "May 2026",
+        slides: [
+          {
+            id: 0,
+            caption: "1. Fulfillment Portal & Order Lifecycle",
+            img: "/images/projects/printiha/0.webp",
+            urlBar: "printiha.com/creator/dashboard",
+          },
+          {
+            id: 1,
+            caption: "2. Product Mockup & Custom Catalog Studio",
+            img: "/images/projects/printiha/1.webp",
+            urlBar: "printiha.com/creator/products",
+          },
+        ],
+      },
+      bentoGrid: {
+        heading: "Core Features Bento Grid",
+        subtitle: "Automated fulfillment architecture designed for creators, printers, and logistics partners.",
+        cards: [
+          {
+            id: 1,
+            title: "Automated Courier Dispatch",
+            description: "Direct API integration with domestic couriers (Yalidine) for auto-generating tracking slips and shipping labels.",
+            icon: "bi bi-truck",
+            badge: "Logistics Automation",
+          },
+          {
+            id: 2,
+            title: "Creator Profit & Wallet Ledger",
+            description: "Automatic profit calculation per sale with instant creator balance updates and withdrawal requests.",
+            icon: "bi bi-wallet2",
+            badge: "Creator Payouts",
+          },
+          {
+            id: 3,
+            title: "Print Job Queue & Batch Invoicing",
+            description: "Centralized printer dashboard grouping production batches by garment color, size, and print technique.",
+            icon: "bi bi-printer",
+            badge: "Print Factory",
+          },
+          {
+            id: 4,
+            title: "SMS OTP & Fraud Protection",
+            description: "Phone verification during checkout to drastically reduce return-to-sender (RTS) rates.",
+            icon: "bi bi-shield-check",
+            badge: "Order Validation",
+          },
+        ],
+      },
+      highlights: {
+        heading: "Key Technical Highlights",
+        subtitle: "Full-stack integration linking e-commerce storefronts to physical print fulfillment and courier APIs.",
+        columns: [
+          {
+            id: "problem",
+            title: "The Problem (Challenge)",
+            summary: "High shipping return rates, manual print queue sorting, and complicated creator profit splitting in the Algerian market.",
+            points: [
+              "Over 30% return rates caused by unverified customer phone numbers and fake cash-on-delivery orders.",
+              "Printers wasting hours manually organizing designs by fabric type and dimensions.",
+              "Creators struggling to track actual margins after deduction of printing and logistics fees.",
+            ],
+          },
+          {
+            id: "solution",
+            title: "The Solution (Execution)",
+            summary: "Built an end-to-end automated print-on-demand platform connecting creators, print shops, and logistics APIs.",
+            points: [
+              "Integrated SMS OTP checkout verification, slashing failed delivery rates below 8%.",
+              "Automated webhook synchronization with Yalidine courier for live step-by-step parcel tracking.",
+              "Filament-driven admin panel enabling print shops to print barcode shipping slips in batch.",
+            ],
+          },
+          {
+            id: "architecture",
+            title: "Technical Highlights",
+            summary: "Modern decoupled architecture with Laravel 11 REST API, Nuxt 4 frontend, and Filament v3.",
+            points: [
+              "Laravel Sanctum authentication with role-scoped policies (Creator, Printer, Courier, Admin).",
+              "Asynchronous job queues handling courier API calls, SMS delivery, and high-res asset rendering.",
+              "Real-time profit ledger guaranteeing accurate net payouts for every fulfilled shipment.",
+            ],
+          },
+        ],
+      },
+      spotlight: {
+        heading: "Feature Spotlight",
+        subtitle: "Key interfaces powering seamless fulfillment from design upload to customer delivery",
+        items: [
+          {
+            id: 1,
+            title: "Creator Studio & Margin Analytics",
+            badge: "Creator Experience",
+            icon: "bi bi-palette",
+            img: "/images/projects/printiha/0.webp",
+            urlBar: "printiha.com/creator/analytics",
+            reverse: false,
+            points: [
+              {
+                title: "Live Margin Calculator",
+                desc: "Creators set their own retail prices with transparent real-time views of manufacturing costs and net profit.",
+              },
+              {
+                title: "Automated Mockup Generator",
+                desc: "Instant multi-angle preview of uploaded artwork on t-shirts, hoodies, and accessories.",
+              },
+              {
+                title: "Sales & Payout Dashboard",
+                desc: "Detailed financial reports with payment request triggers upon order delivery confirmation.",
+              },
+            ],
+          },
+          {
+            id: 2,
+            title: "Factory Print Queue & Shipping Logistics",
+            badge: "Fulfillment Operations",
+            icon: "bi bi-box-seam",
+            img: "/images/projects/printiha/1.webp",
+            urlBar: "printiha.com/factory/orders",
+            reverse: true,
+            points: [
+              {
+                title: "Batch Printing Workflow",
+                desc: "Automated grouping of pending orders by product variant for optimized assembly line production.",
+              },
+              {
+                title: "One-Click Courier Booking",
+                desc: "Generates official Yalidine shipping waybills with QR codes ready for warehouse scanning.",
+              },
+              {
+                title: "Automated Order Status Hooks",
+                desc: "Real-time webhook listeners update buyer and seller when parcels are dispatched, in transit, or delivered.",
+              },
+            ],
+          },
+        ],
+      },
+    },
     projectInfo: {
       clientHeading: "About Client",
       companyInfos: [
@@ -3776,11 +4225,157 @@ const allProjects=[
       { id: 3, ...SMALL_IMAGE_URLS.tailwind },
     ],
     singleProjectHeader: {
-      singleProjectTitle: "EduPay - Private School Management System",
+      singleProjectTitle: "EduPay — Private School Tuition & Debt Management",
       singleProjectDate: "27 Juin 2026",
       singleProjectTag: "Frontend/Backend",
     },
     projectImages: PROJECT_IMAGE_URLS.edupay.projectImages,
+    caseStudy: {
+      hero: {
+        title: "EduPay — Private School Tuition & Debt Management",
+        hook: "A mission-critical financial web app digitizing tuition fee collections, multi-tier debt tracking, and Algerian fiscal compliance for private educational institutions.",
+        role: "Full-Stack Dev",
+        date: "June 2026",
+        liveUrl: "https://edupay-documentation.vercel.app/",
+        liveText: "View Documentation",
+        slides: [
+          {
+            id: 0,
+            caption: "1. Executive Financial Dashboard & Debt Metrics",
+            img: "/images/projects/edupay/0.webp",
+            urlBar: "edupay.school/dashboard",
+          },
+          {
+            id: 1,
+            caption: "2. Student Payment Processing & Receipt Generation",
+            img: "/images/projects/edupay/1.webp",
+            urlBar: "edupay.school/payments",
+          },
+        ],
+      },
+      bentoGrid: {
+        heading: "Core Features Bento Grid",
+        subtitle: "Financial controls engineered for administrative speed, accurate billing, and zero debt leakage.",
+        cards: [
+          {
+            id: 1,
+            title: "Automated Debt & Balance Engine",
+            description: "Calculates unpaid tuition, monthly installments, sibling discounts, and late penalties across all grade levels.",
+            icon: "bi bi-calculator",
+            badge: "Balance Tracking",
+          },
+          {
+            id: 2,
+            title: "Instant PDF Receipts & Invoicing",
+            description: "One-click generation of official stamped receipts with Algerian fiscal compliance, VAT, and stamp duty calculations.",
+            icon: "bi bi-receipt",
+            badge: "Receipts & Billing",
+          },
+          {
+            id: 3,
+            title: "Multi-Grade Promotion Engine",
+            description: "Seamless rollover of students to the next academic year while carrying over historical debt balances.",
+            icon: "bi bi-mortarboard",
+            badge: "Academic Rollover",
+          },
+          {
+            id: 4,
+            title: "Audit Trail & Financial Security",
+            description: "Unalterable transaction logs with role-scoped permissions ensuring cashiers cannot modify recorded balances.",
+            icon: "bi bi-shield-lock",
+            badge: "Security & Auditing",
+          },
+        ],
+      },
+      highlights: {
+        heading: "Key Technical Highlights",
+        subtitle: "Engineered for zero calculation drift, high security, and bilingual Arabic/French financial reporting.",
+        columns: [
+          {
+            id: "problem",
+            title: "The Problem (Challenge)",
+            summary: "Paper-based tuition records leading to uncollected tuition debts, lost paper receipts, and delayed financial reporting.",
+            points: [
+              "Cashiers manually balancing paper receipt books with frequent math discrepancies.",
+              "School directors unable to get a real-time total of overdue tuition fees per class.",
+              "Complex discount formulas for siblings and staff children causing billing conflicts.",
+            ],
+          },
+          {
+            id: "solution",
+            title: "The Solution (Execution)",
+            summary: "Custom full-stack web application completely digitizing tuition payments, student records, and fiscal receipts.",
+            points: [
+              "Automated balance calculation factoring in payment plans, sibling tiers, and registration fees.",
+              "Instant printing of official Algerian tax-compliant PDF receipts with student barcodes.",
+              "Executive analytics dashboard displaying daily cash collection, outstanding debt, and revenue forecasts.",
+            ],
+          },
+          {
+            id: "architecture",
+            title: "Technical Highlights",
+            summary: "Robust full-stack architecture built with Laravel, Filament, and Tailwind CSS.",
+            points: [
+              "Strict database transactions ensuring ledger consistency across simultaneous payment counters.",
+              "Trilingual UI (Arabic, French, English) with full right-to-left layout adaptation.",
+              "Comprehensive backup routines and role permissions isolating cashier actions from admin approvals.",
+            ],
+          },
+        ],
+      },
+      spotlight: {
+        heading: "Feature Spotlight",
+        subtitle: "Key administrative and cashier payment workflows",
+        items: [
+          {
+            id: 1,
+            title: "Cashier Payment Terminal & Receipt Printing",
+            badge: "Payment Counter",
+            icon: "bi bi-credit-card-2-front",
+            img: "/images/projects/edupay/0.webp",
+            urlBar: "edupay.school/cashier/terminal",
+            reverse: false,
+            points: [
+              {
+                title: "Instant Student Search",
+                desc: "Quick search by student code, name, or parent telephone number with immediate debt status overview.",
+              },
+              {
+                title: "Flexible Payment Options",
+                desc: "Accepts partial payments, installments, cash, checks, and bank transfers with instant ledger sync.",
+              },
+              {
+                title: "Instant Bilingual PDF Receipts",
+                desc: "Generates printable 80mm POS or A4 receipts with institutional stamps and unique receipt verification numbers.",
+              },
+            ],
+          },
+          {
+            id: 2,
+            title: "Executive Revenue & Debt Management",
+            badge: "Financial Control",
+            icon: "bi bi-pie-chart",
+            img: "/images/projects/edupay/1.webp",
+            urlBar: "edupay.school/admin/reports",
+            reverse: true,
+            points: [
+              {
+                title: "Comprehensive Debt Aging Reports",
+                desc: "Identifies delinquent accounts grouped by class, academic year, and outstanding balance range.",
+              },
+              {
+                title: "Cashier Reconciliation",
+                desc: "End-of-day cash drawer balancing comparing expected totals against recorded cashier receipts.",
+              },
+              {
+                title: "Annual Revenue Forecasting",
+                desc: "Visual charts projecting expected collections across upcoming trimesters.",
+              },
+            ],
+          },
+        ],
+      },
+    },
     projectInfo: {
       clientHeading: "About Client",
       companyInfos: [

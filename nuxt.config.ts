@@ -9,6 +9,18 @@ export default defineNuxtConfig({
 
     // Vite build config (Nuxt uses Vite under the hood)
     vite: {
+        optimizeDeps: {
+            include: [
+                'three',
+                'gsap',
+                'gsap/ScrollTrigger',
+                'aos',
+                'marked',
+                'vue3-autocounter',
+                'vue3-carousel',
+                '@vercel/speed-insights/nuxt',
+            ],
+        },
         ssr: {
             noExternal: [
                 'vue',

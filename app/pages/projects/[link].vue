@@ -2,6 +2,7 @@
 import ProjectHeader from "@/components/projects/ProjectHeader.vue";
 // import ProjectGallery from "@/components/projects/ProjectGallery.vue";
 import ProjectInfo from "@/components/projects/ProjectInfo.vue";
+import ProjectCaseStudy from "@/components/projects/ProjectCaseStudy.vue";
 import ProjectRelatedProjects from "@/components/projects/ProjectRelatedProjects.vue";
 import ProjectSkeleton from "@/components/projects/ProjectSkeleton.vue";
 import NotFoundState from "@/components/shared/NotFoundState.vue";
@@ -55,16 +56,10 @@ watch(() => route.params.link, () => {
 
         <!-- Project content -->
         <template v-else-if="project">
-            <!-- Project header -->
-            <ProjectHeader
-                :singleProjectHeader="project.singleProjectHeader"
-                :imgList="project.projectImages"
-                :video="project.video"
-                :title="project.title"
-            />
-            <!-- Project information -->
-            <ProjectInfo :projectInfo="project.projectInfo" :smallImages="project.smallImages"/>
-            <div class="block sm:flex gap-0 sm:gap-10 mt-14">
+            <!-- High-converting Case Study layout for all projects -->
+            <ProjectCaseStudy :project="project" />
+
+            <div class="block sm:flex gap-0 sm:gap-10 mt-14 sm:mt-20 border-t border-gray-200/80 dark:border-gray-800/80 pt-12">
                 <!-- Project related projects -->
                 <ProjectRelatedProjects v-if="!relatedPending" :relatedProject="relatedProject" />
                 <div v-else class="w-full">
