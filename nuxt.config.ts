@@ -21,19 +21,6 @@ export default defineNuxtConfig({
                 '@vercel/speed-insights/nuxt',
             ],
         },
-        ssr: {
-            noExternal: [
-                'vue',
-                '@vue/runtime-core',
-                '@vue/runtime-dom',
-                '@vue/shared',
-                '@vue/server-renderer',
-                'vue-i18n',
-                '@intlify/core-base',
-                '@intlify/message-compiler',
-                '@intlify/shared',
-            ],
-        },
     },
 
     app: {
@@ -131,20 +118,6 @@ gtag('config', 'G-L5HVZ2VCP7');`,
 
     nitro: {
         preset: 'vercel',
-        externals: {
-            inline: [
-                'vue',
-                '@vue/runtime-core',
-                '@vue/runtime-dom',
-                '@vue/shared',
-                '@vue/server-renderer',
-                'vue-i18n',
-                '@intlify/core-base',
-                '@intlify/message-compiler',
-                '@intlify/shared',
-                'rss',
-            ],
-        },
     },
 
     site: {
