@@ -1,11 +1,11 @@
 <template>
   <div>
     <Home2026Hero />
+    <LazyHome2026FeaturedWork />
       <div class="container mx-auto">
     <AboutClients />
-  </div>
-    <LazyHome2026FeaturedWork />
     <LazyHome2026Stats />
+  </div>
     <LazyHome2026BlogTeaser v-if="settings.show_blog" />
     <LazyHome2026Faq />
     <LazyHome2026Cta />
@@ -14,7 +14,7 @@
 
 <script setup>
 
-import configs from "~/configs";
+import configs from "~/configs";  
 const settings = configs;
 import { useI18n } from 'vue-i18n';
 import { useHead } from '#imports'

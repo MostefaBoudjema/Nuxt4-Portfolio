@@ -1,5 +1,6 @@
 <template>
-  <section class="sm:container sm:mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+  <section class="mt-10 sm:mt-20">
+    <div class="sm:mx-auto">
     <!-- Section header -->
     <div :class="['mb-6', isRtl ? 'text-right' : 'text-left']">
       <p class="text-sm uppercase tracking-widest text-ternary-dark/60 dark:text-ternary-light/60">{{ t('By The Numbers') }}</p>
@@ -35,6 +36,7 @@
           <span class="text-2xl select-none">{{ item.icon }}</span>
         </div>
       </div>
+    </div>
     </div>
   </section>
 </template>

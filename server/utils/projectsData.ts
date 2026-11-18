@@ -520,6 +520,158 @@ const allProjects=[
       singleProjectTag: "Frontend",
     },
     projectImages: PROJECT_IMAGE_URLS.mymviez.projectImages,
+    caseStudy: {
+      hero: {
+        title: "Mymoviez — Cinematic Media & Trending Shows Explorer",
+        hook: "A dynamic entertainment discovery platform built with React and external movie APIs, featuring live trending rankings, deep cast filmographies, and curated watchlists.",
+        role: "Frontend Developer",
+        date: "Aug 2023",
+        liveUrl: "https://mymoviez.vercel.app/",
+        liveText: "Visit Live Site",
+        slides: [
+          {
+            id: 0,
+            caption: "1. Trending Movies & Shows Discovery Portal",
+            img: "/images/projects/movie-db/0.webp",
+            urlBar: "mymoviez.vercel.app/trending",
+          },
+          {
+            id: 1,
+            caption: "2. Detailed Title Overviews & Rating Breakdown",
+            img: "/images/projects/movie-db/1.webp",
+            urlBar: "mymoviez.vercel.app/movie/762441",
+          },
+          {
+            id: 2,
+            caption: "3. Actor Filmography & Career Profiles",
+            img: "/images/projects/movie-db/2.webp",
+            urlBar: "mymoviez.vercel.app/person/1245",
+          },
+        ],
+      },
+      bentoGrid: {
+        heading: "Core Features Bento Grid",
+        subtitle: "Entertainment discovery engine powered by REST APIs, responsive layouts, and rich media caching",
+        cards: [
+          {
+            id: 1,
+            title: "Live Box Office & TMDB API",
+            description: "Real-time synchronization with external entertainment databases delivering daily trending charts and reviews.",
+            icon: "bi bi-film",
+            badge: "API Integration",
+          },
+          {
+            id: 2,
+            title: "Dynamic Genre & Year Filtering",
+            description: "Instant faceted exploration across Action, Sci-Fi, Drama, and Documentaries with release year filters.",
+            icon: "bi bi-sliders",
+            badge: "Faceted Discovery",
+          },
+          {
+            id: 3,
+            title: "Cast Filmography & Bios",
+            description: "In-depth actor profiles featuring high-res headshots, biography overviews, and full career filmographies.",
+            icon: "bi bi-person-video2",
+            badge: "Cast Profiles",
+          },
+          {
+            id: 4,
+            title: "Optimized Media & Poster CDN",
+            description: "Progressive image loading and responsive poster grids delivering smooth 60fps scrolling on mobile devices.",
+            icon: "bi bi-lightning-charge",
+            badge: "Performance",
+          },
+        ],
+      },
+      highlights: {
+        heading: "Key Technical Highlights",
+        subtitle: "High-performance client-side application handling heavy API payloads and media-rich layouts.",
+        columns: [
+          {
+            id: "problem",
+            title: "The Problem (Challenge)",
+            summary: "Fragmented movie information sources, heavy image assets causing lag, and slow API data aggregation.",
+            points: [
+              "Handling high-resolution poster payloads without sacrificing initial page load speed.",
+              "Complex nested API responses requiring client-side transformation for cast, trailers, and reviews.",
+              "Ensuring fluid mobile touch navigation across horizontal carousels and genre pills.",
+            ],
+          },
+          {
+            id: "solution",
+            title: "The Solution (Execution)",
+            summary: "Built an ultrafast React SPA with client-side caching, lazy image loading, and modular components.",
+            points: [
+              "Integrated asynchronous API data fetching with skeleton loaders for perceived instant loading.",
+              "Component-driven architecture separating poster cards, hero carousels, and detail modals.",
+              "Responsive grid utilizing Bootstrap 5 grid utilities tailored for all screen viewports.",
+            ],
+          },
+          {
+            id: "architecture",
+            title: "Technical Highlights",
+            summary: "Modern React.js frontend integrated with third-party entertainment REST APIs.",
+            points: [
+              "React Hooks (useState, useEffect, useMemo) managing search queries and filter debouncing.",
+              "Modular REST API client handling token authorization, error states, and pagination.",
+              "Progressive image rendering ensuring low-bandwidth mobile devices maintain fluid interactivity.",
+            ],
+          },
+        ],
+      },
+      spotlight: {
+        heading: "Feature Spotlight",
+        subtitle: "Key interfaces powering discovery of popular films, series, and top billing talent",
+        items: [
+          {
+            id: 1,
+            title: "Trending Feed & Instant Title Search",
+            badge: "Media Discovery",
+            icon: "bi bi-play-circle",
+            img: "/images/projects/movie-db/0.webp",
+            urlBar: "mymoviez.vercel.app/explore",
+            reverse: false,
+            points: [
+              {
+                title: "Curated Hero Banners",
+                desc: "Prominent spotlight showcases featuring the highest-rated releases with backdrop art and trailers.",
+              },
+              {
+                title: "Debounced Quick Search",
+                desc: "Sub-second title search queries returning matching movies, TV shows, and celebrities in real time.",
+              },
+              {
+                title: "Category Breakdown",
+                desc: "Clean tabs switching between Now Playing, Popular, Top Rated, and Upcoming cinema releases.",
+              },
+            ],
+          },
+          {
+            id: 2,
+            title: "Film Detail Sheets & Cast Insights",
+            badge: "Title Breakdown",
+            icon: "bi bi-info-circle",
+            img: "/images/projects/movie-db/1.webp",
+            urlBar: "mymoviez.vercel.app/title/details",
+            reverse: true,
+            points: [
+              {
+                title: "Synopsis & Meta Data",
+                desc: "Comprehensive view of runtime, production budget, genre tags, and official release date.",
+              },
+              {
+                title: "Rotten Tomatoes & User Scores",
+                desc: "Aggregated rating indicators giving users immediate insight into audience sentiment.",
+              },
+              {
+                title: "Complete Cast Carousel",
+                desc: "Interactive actor cards linking directly to full talent filmography and biography pages.",
+              },
+            ],
+          },
+        ],
+      },
+    },
     projectInfo: {
       clientHeading: "About Client",
       companyInfos: [{
@@ -800,7 +952,7 @@ const allProjects=[
 
   {
     id: 3,
-    title: '🚗 iAuto Multi-Module Automotive SaaS Platform',
+    title: 'iAuto Multi-Module Automotive SaaS Platform',
     hide: false,
     category: 'Laravel Vue Application',
     // video: require('@/assets/videos/iauto/0.mp4'),
@@ -818,6 +970,164 @@ const allProjects=[
       singleProjectTag: " Frontend / Backend",
     },
     projectImages: PROJECT_IMAGE_URLS.iauto.projectImages,
+    caseStudy: {
+      hero: {
+        title: "iAuto — Multi-Module Automotive Marketplace & Auction SaaS",
+        hook: "A high-performance automotive SaaS engineered with Laravel and Vue.js featuring real-time vehicle auction bidding, multi-module dealership management, and interactive inspection showcases.",
+        role: "Full-Stack Dev",
+        date: "May 2023",
+        liveUrl: "https://iauto.demo",
+        liveText: "Explore Platform",
+        slides: [
+          {
+            id: 0,
+            caption: "1. Interactive Automotive Showcase & Vehicle Search",
+            img: "/images/projects/iauto/0.webp",
+            urlBar: "iauto.market/showroom",
+          },
+          {
+            id: 1,
+            caption: "2. Real-Time Vehicle Bidding & Auction Room",
+            img: "/images/projects/iauto/1.webp",
+            urlBar: "iauto.market/auctions/live",
+          },
+          {
+            id: 2,
+            caption: "3. Comprehensive Vehicle Inspection & Specifications",
+            img: "/images/projects/iauto/2.webp",
+            urlBar: "iauto.market/vehicles/specs",
+          },
+          {
+            id: 3,
+            caption: "4. Dealership Operations & Inventory Management",
+            img: "/images/projects/iauto/3.webp",
+            urlBar: "iauto.market/dealer/inventory",
+          },
+        ],
+      },
+      bentoGrid: {
+        heading: "Core Features Bento Grid",
+        subtitle: "Automotive SaaS tooling designed for seamless vehicle trading, transparent auctions, and dealer efficiency",
+        cards: [
+          {
+            id: 1,
+            title: "Live Vehicle Auction Engine",
+            description: "Interactive real-time bidding system with instant countdowns, dynamic outbid alerts, and automated reserve price handling.",
+            icon: "bi bi-hammer",
+            badge: "Live Auctions",
+          },
+          {
+            id: 2,
+            title: "Multi-Tier Dealership Portal",
+            description: "Dedicated merchant workspaces for inventory stock management, test drive scheduling, and dealer lead assignment.",
+            icon: "bi bi-building",
+            badge: "Dealer Portal",
+          },
+          {
+            id: 3,
+            title: "360° Inspection & History Reports",
+            description: "Structured multi-point condition checklists, high-definition photo galleries, and verified mileage/service logs.",
+            icon: "bi bi-clipboard2-check",
+            badge: "Vehicle Inspection",
+          },
+          {
+            id: 4,
+            title: "Smart Filtering & Valuation",
+            description: "Instant multi-parameter filter engine by make, model, year, trim, mileage, fuel type, and price band.",
+            icon: "bi bi-funnel",
+            badge: "Faceted Search",
+          },
+        ],
+      },
+      highlights: {
+        heading: "Key Technical Highlights",
+        subtitle: "Enterprise automotive architecture linking buyer-facing showroom to multi-dealer inventory management.",
+        columns: [
+          {
+            id: "problem",
+            title: "The Problem (Challenge)",
+            summary: "Fragmented vehicle classifieds, opaque condition reports, and lack of verified auction mechanics in traditional auto sales.",
+            points: [
+              "Buyers facing untrustworthy vehicle condition reporting and hidden mechanical defects.",
+              "Dealerships lacking automated tools to synchronize lot inventory across web and physical lots.",
+              "Absence of real-time bidding infrastructure for certified pre-owned and specialty automotive auctions.",
+            ],
+          },
+          {
+            id: "solution",
+            title: "The Solution (Execution)",
+            summary: "Delivered an all-in-one automotive portal combining direct purchases, certified inspections, and competitive auctions.",
+            points: [
+              "Engineered real-time bidding engine with instant price synchronization and deposit locks.",
+              "Built modular dealer back-office for batch vehicle uploads, image carousels, and buyer lead routing.",
+              "Implemented mobile-first responsive layout with fast photo loading and quick test-drive booking.",
+            ],
+          },
+          {
+            id: "architecture",
+            title: "Technical Highlights",
+            summary: "Robust SPA architecture powered by Vue.js reactive components and a scalable Laravel REST backend.",
+            points: [
+              "State-managed Vue.js client with instant faceted filtering without full page reloads.",
+              "Laravel Eloquent queries optimized with composite indexes for rapid filtering across massive automotive databases.",
+              "Strict transaction boundaries protecting auction bids and status transitions from race conditions.",
+            ],
+          },
+        ],
+      },
+      spotlight: {
+        heading: "Feature Spotlight",
+        subtitle: "Key interfaces powering discovery, bidding, and dealership operations",
+        items: [
+          {
+            id: 1,
+            title: "Showroom Discovery & Live Bidding Room",
+            badge: "Showroom Experience",
+            icon: "bi bi-car-front",
+            img: "/images/projects/iauto/0.webp",
+            urlBar: "iauto.market/auctions/listing-204",
+            reverse: false,
+            points: [
+              {
+                title: "Live Bid Updates",
+                desc: "Real-time auction increments with visual timer countdowns and automated reserve checks.",
+              },
+              {
+                title: "Comprehensive Vehicle Specs",
+                desc: "Organized tabs for mechanical performance, safety equipment, options, and inspection ratings.",
+              },
+              {
+                title: "Instant Inquiries & Booking",
+                desc: "One-click scheduling for physical vehicle viewings and dealer contact requests.",
+              },
+            ],
+          },
+          {
+            id: 2,
+            title: "Dealership Fleet Management & Analytics",
+            badge: "Dealer Back-Office",
+            icon: "bi bi-speedometer2",
+            img: "/images/projects/iauto/3.webp",
+            urlBar: "iauto.market/dealer/dashboard",
+            reverse: true,
+            points: [
+              {
+                title: "Inventory Stock Control",
+                desc: "Batch listing management with instant status transitions between Draft, Active, Auction, and Sold.",
+              },
+              {
+                title: "Lead & Customer Tracking",
+                desc: "Centralized overview of incoming buyer bids, offer counter-proposals, and test-drive inquiries.",
+              },
+              {
+                title: "Performance & Turnover Metrics",
+                desc: "Visual charts detailing average days-on-lot, highest-performing vehicle categories, and gross profit.",
+              },
+            ],
+          },
+        ],
+      },
+    },
     projectInfo: {
       clientHeading: "About Client",
       companyInfos: [{
@@ -1436,6 +1746,156 @@ const allProjects=[
       singleProjectTag: " Frontend / Backend",
     },
     projectImages: PROJECT_IMAGE_URLS.eshop.projectImages,
+    caseStudy: {
+      hero: {
+        title: "eShop — Modern Smartphone & Electronics Commerce",
+        hook: "A high-conversion e-commerce platform built with Laravel and Vue.js featuring real-time product comparison, custom cart workflows, and interactive spec sheets.",
+        role: "Full-Stack Dev",
+        date: "Jul 2021",
+        slides: [
+          {
+            id: 0,
+            caption: "1. Device Catalog & Dynamic Filter Interface",
+            img: "/images/projects/eshop/0.webp",
+            urlBar: "eshop.store/devices",
+          },
+          {
+            id: 1,
+            caption: "2. Side-by-Side Smartphone Spec Comparison",
+            img: "/images/projects/eshop/1.webp",
+            urlBar: "eshop.store/compare",
+          },
+          {
+            id: 2,
+            caption: "3. Interactive Cart & Instant Order Processing",
+            img: "/images/projects/eshop/2.webp",
+            urlBar: "eshop.store/checkout",
+          },
+        ],
+      },
+      bentoGrid: {
+        heading: "Core Features Bento Grid",
+        subtitle: "Key e-commerce capabilities engineered for seamless hardware discovery and fast checkout",
+        cards: [
+          {
+            id: 1,
+            title: "Side-by-Side Spec Comparison",
+            description: "Direct specification comparison engine allowing buyers to benchmark processors, camera sensors, and battery ratings.",
+            icon: "bi bi-arrow-left-right",
+            badge: "Tech Comparison",
+          },
+          {
+            id: 2,
+            title: "Dynamic Variant Selection",
+            description: "Instant price and stock recalculation when switching between storage sizes, RAM configurations, and device colors.",
+            icon: "bi bi-phone",
+            badge: "SKU Management",
+          },
+          {
+            id: 3,
+            title: "Optimized One-Step Checkout",
+            description: "Streamlined purchase flow with address auto-completion, coupon validation, and delivery method selection.",
+            icon: "bi bi-bag-check",
+            badge: "Instant Checkout",
+          },
+          {
+            id: 4,
+            title: "Real-Time Stock & Flash Deals",
+            description: "Automated countdown banners for limited-time offers and real-time inventory threshold badges.",
+            icon: "bi bi-lightning-charge",
+            badge: "Flash Promotions",
+          },
+        ],
+      },
+      highlights: {
+        heading: "Key Technical Highlights",
+        subtitle: "Full-stack e-commerce architecture optimized for conversion rate and lightning-fast browsing.",
+        columns: [
+          {
+            id: "problem",
+            title: "The Problem (Challenge)",
+            summary: "Complex tech specs, confusing phone variants, and slow checkout flows causing customer drop-off.",
+            points: [
+              "Buyers struggling to differentiate between dozens of smartphone SKUs and storage variants.",
+              "Traditional multi-page checkout processes leading to cart abandonment.",
+              "Slow page reloads when filtering products by technical parameters (RAM, 5G, Camera, Battery).",
+            ],
+          },
+          {
+            id: "solution",
+            title: "The Solution (Execution)",
+            summary: "Built an ultrafast SPA storefront powered by Vue.js with instant reactive state and responsive UI.",
+            points: [
+              "Integrated visual spec comparison tool with dynamic difference highlighting.",
+              "Engineered persistent local storage cart with instant synchronization across user tabs.",
+              "Implemented SweetAlert2 confirmation flows and smooth animated transitions for cart actions.",
+            ],
+          },
+          {
+            id: "architecture",
+            title: "Technical Highlights",
+            summary: "Decoupled architecture blending reactive Vue components with a reliable Laravel backend.",
+            points: [
+              "Vue.js component architecture with modular store state management.",
+              "Laravel REST API endpoints optimized for product indexing and fast query execution.",
+              "Tailwind CSS utility styling guaranteeing pixel-perfect mobile-first rendering.",
+            ],
+          },
+        ],
+      },
+      spotlight: {
+        heading: "Feature Spotlight",
+        subtitle: "Direct look into the customer journey and ordering experience",
+        items: [
+          {
+            id: 1,
+            title: "Smart Catalog & Tech Spec Inspector",
+            badge: "Browsing Experience",
+            icon: "bi bi-phone-flip",
+            img: "/images/projects/eshop/0.webp",
+            urlBar: "eshop.store/devices/flagships",
+            reverse: false,
+            points: [
+              {
+                title: "Faceted Filter Engine",
+                desc: "Filter instantly by operating system, processor brand, camera resolution, and budget range.",
+              },
+              {
+                title: "Variant Switcher",
+                desc: "Real-time color previews and price adjustments upon selecting storage and RAM capacities.",
+              },
+              {
+                title: "Customer Reviews & Badges",
+                desc: "Verified buyer ratings with breakdown of battery life, camera quality, and performance scores.",
+              },
+            ],
+          },
+          {
+            id: 2,
+            title: "Persistent Cart & Streamlined Checkout Flow",
+            badge: "Conversion Engine",
+            icon: "bi bi-cart3",
+            img: "/images/projects/eshop/2.webp",
+            urlBar: "eshop.store/cart",
+            reverse: true,
+            points: [
+              {
+                title: "Slide-Over Mini Cart",
+                desc: "Quick cart summary allowing quantity edits and promotional code applications without leaving the page.",
+              },
+              {
+                title: "Order Verification",
+                desc: "Instant customer validation with shipping rate estimation and automated email receipt generation.",
+              },
+              {
+                title: "Fraud & Order Integrity",
+                desc: "Server-side price validation preventing client-side cart tampering or coupon stacking exploits.",
+              },
+            ],
+          },
+        ],
+      },
+    },
     projectInfo: {
       clientHeading: "About Client",
       companyInfos: [{
@@ -3388,6 +3848,158 @@ const allProjects=[
       singleProjectTag: "Frontend/Backend",
     },
     projectImages: PROJECT_IMAGE_URLS.shifaacare.projectImages,
+    caseStudy: {
+      hero: {
+        title: "Shifaa Care — Medical Cabinet & Patient Management System",
+        hook: "A modern healthcare management application built with React, Supabase, and Tailwind CSS designed to streamline patient consultations, digital health records, and clinical scheduling.",
+        role: "Frontend / Backend",
+        date: "Sep 2025",
+        liveUrl: "https://shifaa-care.vercel.app",
+        liveText: "Launch Application",
+        slides: [
+          {
+            id: 0,
+            caption: "1. Clinical Dashboard & Daily Consultation Schedule",
+            img: "/images/projects/shifaacare/0.webp",
+            urlBar: "shifaa-care.vercel.app/dashboard",
+          },
+          {
+            id: 1,
+            caption: "2. Digital Patient Health Records & Consultation History",
+            img: "/images/projects/shifaacare/1.webp",
+            urlBar: "shifaa-care.vercel.app/patients",
+          },
+          {
+            id: 2,
+            caption: "3. Appointment Scheduling & Medical Calendar",
+            img: "/images/projects/shifaacare/2.webp",
+            urlBar: "shifaa-care.vercel.app/appointments",
+          },
+        ],
+      },
+      bentoGrid: {
+        heading: "Core Features Bento Grid",
+        subtitle: "Clinical tooling engineered for patient confidentiality, schedule precision, and doctor productivity",
+        cards: [
+          {
+            id: 1,
+            title: "Digital Patient Records (EMR)",
+            description: "Centralized medical files storing diagnoses, past prescriptions, allergies, and lab report attachments.",
+            icon: "bi bi-clipboard2-pulse",
+            badge: "Patient Records",
+          },
+          {
+            id: 2,
+            title: "Smart Appointment Calendar",
+            description: "Interactive scheduling calendar with automatic conflict detection, patient reminders, and status updates.",
+            icon: "bi bi-calendar-event",
+            badge: "Calendar & Bookings",
+          },
+          {
+            id: 3,
+            title: "Digital Prescription Generator",
+            description: "Standardized drug prescription templates with automated dosage calculations and instant PDF export.",
+            icon: "bi bi-capsule",
+            badge: "Prescriptions",
+          },
+          {
+            id: 4,
+            title: "Secure Supabase Auth & RLS",
+            description: "Row-Level Security (RLS) policies guaranteeing strict doctor-patient confidentiality and compliance.",
+            icon: "bi bi-shield-lock",
+            badge: "HIPAA & RLS Security",
+          },
+        ],
+      },
+      highlights: {
+        heading: "Key Technical Highlights",
+        subtitle: "HIPAA-conscious healthcare architecture balancing rapid clinician workflow with patient data privacy.",
+        columns: [
+          {
+            id: "problem",
+            title: "The Problem (Challenge)",
+            summary: "Paper-based medical filing, delayed patient lookup, and double-booked clinical consultations.",
+            points: [
+              "Risk of misplaced or degraded paper records containing critical patient medical history.",
+              "Inefficient front-desk scheduling causing long patient waiting room times.",
+              "Need for strict data privacy and access controls to protect sensitive health information.",
+            ],
+          },
+          {
+            id: "solution",
+            title: "The Solution (Execution)",
+            summary: "Delivered a secure, responsive cloud clinical workspace powered by Supabase and modern reactive UI.",
+            points: [
+              "Implemented sub-second patient search indexing by national ID, phone number, and full name.",
+              "Visual color-coded appointment scheduling with instant drag-and-drop rescheduling.",
+              "Automated PDF export for medical prescriptions and consultation certificates.",
+            ],
+          },
+          {
+            id: "architecture",
+            title: "Technical Highlights",
+            summary: "Serverless reactive architecture utilizing React, Supabase PostgreSQL, and Tailwind CSS.",
+            points: [
+              "PostgreSQL Row-Level Security (RLS) enforcing granular clinician data isolation.",
+              "Real-time database subscriptions updating appointment status across reception and consultation rooms.",
+              "Accessible, high-contrast UI design tailored for fast typing during live consultations.",
+            ],
+          },
+        ],
+      },
+      spotlight: {
+        heading: "Feature Spotlight",
+        subtitle: "Direct look into daily clinical workflows and medical data management",
+        items: [
+          {
+            id: 1,
+            title: "Daily Practice Dashboard & Patient Queue",
+            badge: "Clinical Workflow",
+            icon: "bi bi-hospital",
+            img: "/images/projects/shifaacare/0.webp",
+            urlBar: "shifaa-care.vercel.app/consultations",
+            reverse: false,
+            points: [
+              {
+                title: "Live Patient Queue",
+                desc: "Real-time queue tracking showing waiting, in-consultation, and completed patient states.",
+              },
+              {
+                title: "Vital Signs & Quick Notes",
+                desc: "Rapid entry for blood pressure, heart rate, temperature, and consultation chief complaint.",
+              },
+              {
+                title: "Consultation History",
+                desc: "Chronological timeline of previous doctor visits, treatments, and response to therapies.",
+              },
+            ],
+          },
+          {
+            id: 2,
+            title: "Medical Records & Prescription Studio",
+            badge: "Record Management",
+            icon: "bi bi-file-earmark-medical",
+            img: "/images/projects/shifaacare/1.webp",
+            urlBar: "shifaa-care.vercel.app/prescriptions/new",
+            reverse: true,
+            points: [
+              {
+                title: "Standardized Formulary",
+                desc: "Quick-select drug library with preset dosages, administration routes, and duration guidelines.",
+              },
+              {
+                title: "One-Click PDF Export",
+                desc: "Formatted clinic prescription header ready for instant thermal or A4 printing.",
+              },
+              {
+                title: "Secure Cloud Storage",
+                desc: "Encrypted attachment uploads for patient ultrasound, X-ray, and laboratory PDF reports.",
+              },
+            ],
+          },
+        ],
+      },
+    },
     projectInfo: {
       clientHeading: "About Client",
       companyInfos: [

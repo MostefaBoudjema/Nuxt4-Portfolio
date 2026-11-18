@@ -7,6 +7,7 @@ _bak
 .nitro
 .cache
 dist
+.vercel
 
 # Node dependencies
 node_modules
@@ -20,7 +21,6 @@ logs
 .DS_Store
 .fleet
 .idea
-.vercel
 
 # Local env files
 .env

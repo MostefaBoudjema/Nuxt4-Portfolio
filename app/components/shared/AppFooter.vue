@@ -1,15 +1,3 @@
-<script setup>
-import { useI18n } from 'vue-i18n';
-
-const { t, locale } = useI18n();
-
-const { data: socials } = await useFetch('/api/v1/social-links', {
-    key: 'social-links',
-    query: { lang: locale },
-    watch: [locale],
-    default: () => [],
-});
-</script>
 
 <template>
     <div class="container mx-auto">
@@ -21,8 +9,8 @@ const { data: socials } = await useFetch('/api/v1/social-links', {
                 class="flex flex-col justify-center items-center mb-12 sm:mb-20"
             >
 
-                
-      <ReusableSectionDivider  :title="t('Contact me')" />
+                          
+                <ReusableSectionDivider  :title="t('Contact me')" />
                 <ul class="flex gap-2 sm:gap-10">
                     <li v-for="social in socials" :key="social.id">
                         <a
@@ -39,10 +27,20 @@ const { data: socials } = await useFetch('/api/v1/social-links', {
                 </ul>
             </div>
 
-            <!-- Footer copyright -->
-            <!-- <FooterCopyright /> -->
         </div>
     </div>
 </template>
+<script setup>
+import { useI18n } from 'vue-i18n';
+
+const { t, locale } = useI18n();
+
+const { data: socials } = await useFetch('/api/v1/social-links', {
+    key: 'social-links',
+    query: { lang: locale },
+    watch: [locale],
+    default: () => [],
+});
+</script>
 
 <style scoped></style>
