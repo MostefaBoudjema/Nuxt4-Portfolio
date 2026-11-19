@@ -528,26 +528,7 @@ const allProjects=[
         date: "Aug 2023",
         liveUrl: "https://mymoviez.vercel.app/",
         liveText: "Visit Live Site",
-        slides: [
-          {
-            id: 0,
-            caption: "1. Trending Movies & Shows Discovery Portal",
-            img: "/images/projects/movie-db/0.webp",
-            urlBar: "mymoviez.vercel.app/trending",
-          },
-          {
-            id: 1,
-            caption: "2. Detailed Title Overviews & Rating Breakdown",
-            img: "/images/projects/movie-db/1.webp",
-            urlBar: "mymoviez.vercel.app/movie/762441",
-          },
-          {
-            id: 2,
-            caption: "3. Actor Filmography & Career Profiles",
-            img: "/images/projects/movie-db/2.webp",
-            urlBar: "mymoviez.vercel.app/person/1245",
-          },
-        ],
+        slides: PROJECT_IMAGE_URLS.mymviez.projectImages,
       },
       bentoGrid: {
         heading: "Core Features Bento Grid",
@@ -978,32 +959,7 @@ const allProjects=[
         date: "May 2023",
         liveUrl: "https://iauto.demo",
         liveText: "Explore Platform",
-        slides: [
-          {
-            id: 0,
-            caption: "1. Interactive Automotive Showcase & Vehicle Search",
-            img: "/images/projects/iauto/0.webp",
-            urlBar: "iauto.market/showroom",
-          },
-          {
-            id: 1,
-            caption: "2. Real-Time Vehicle Bidding & Auction Room",
-            img: "/images/projects/iauto/1.webp",
-            urlBar: "iauto.market/auctions/live",
-          },
-          {
-            id: 2,
-            caption: "3. Comprehensive Vehicle Inspection & Specifications",
-            img: "/images/projects/iauto/2.webp",
-            urlBar: "iauto.market/vehicles/specs",
-          },
-          {
-            id: 3,
-            caption: "4. Dealership Operations & Inventory Management",
-            img: "/images/projects/iauto/3.webp",
-            urlBar: "iauto.market/dealer/inventory",
-          },
-        ],
+        slides: PROJECT_IMAGE_URLS.iauto.projectImages,
       },
       bentoGrid: {
         heading: "Core Features Bento Grid",
@@ -1752,26 +1708,7 @@ const allProjects=[
         hook: "A high-conversion e-commerce platform built with Laravel and Vue.js featuring real-time product comparison, custom cart workflows, and interactive spec sheets.",
         role: "Full-Stack Dev",
         date: "Jul 2021",
-        slides: [
-          {
-            id: 0,
-            caption: "1. Device Catalog & Dynamic Filter Interface",
-            img: "/images/projects/eshop/0.webp",
-            urlBar: "eshop.store/devices",
-          },
-          {
-            id: 1,
-            caption: "2. Side-by-Side Smartphone Spec Comparison",
-            img: "/images/projects/eshop/1.webp",
-            urlBar: "eshop.store/compare",
-          },
-          {
-            id: 2,
-            caption: "3. Interactive Cart & Instant Order Processing",
-            img: "/images/projects/eshop/2.webp",
-            urlBar: "eshop.store/checkout",
-          },
-        ],
+        slides: PROJECT_IMAGE_URLS.eshop.projectImages,
       },
       bentoGrid: {
         heading: "Core Features Bento Grid",
@@ -3856,26 +3793,7 @@ const allProjects=[
         date: "Sep 2025",
         liveUrl: "https://shifaa-care.vercel.app",
         liveText: "Launch Application",
-        slides: [
-          {
-            id: 0,
-            caption: "1. Clinical Dashboard & Daily Consultation Schedule",
-            img: "/images/projects/shifaacare/0.webp",
-            urlBar: "shifaa-care.vercel.app/dashboard",
-          },
-          {
-            id: 1,
-            caption: "2. Digital Patient Health Records & Consultation History",
-            img: "/images/projects/shifaacare/1.webp",
-            urlBar: "shifaa-care.vercel.app/patients",
-          },
-          {
-            id: 2,
-            caption: "3. Appointment Scheduling & Medical Calendar",
-            img: "/images/projects/shifaacare/2.webp",
-            urlBar: "shifaa-care.vercel.app/appointments",
-          },
-        ],
+        slides: PROJECT_IMAGE_URLS.shifaacare.projectImages,
       },
       bentoGrid: {
         heading: "Core Features Bento Grid",
@@ -4106,32 +4024,7 @@ const allProjects=[
         date: "Jan 2026",
         liveUrl: "http://109.123.243.14",
         liveText: "Visit Live Site",
-        slides: [
-          {
-            id: 1,
-            caption: "1. Live Bidding & Offer Negotiation Interface",
-            img: "/images/projects/nzidoo/0.webp",
-            urlBar: "nzidoo.marketplace/auctions/bid-room",
-          },
-          {
-            id: 2,
-            caption: "2. Multi-Vendor Store & Analytics Dashboard",
-            img: "/images/projects/nzidoo/12.webp",
-            urlBar: "nzidoo.marketplace/vendor/dashboard",
-          },
-          {
-            id: 3,
-            caption: "3. Direct Messaging & Real-Time Offers",
-            img: "/images/projects/nzidoo/1.webp",
-            urlBar: "nzidoo.marketplace/messages",
-          },
-          {
-            id: 4,
-            caption: "4. Batch Operations & Invoice Generation",
-            img: "/images/projects/nzidoo/16.webp",
-            urlBar: "nzidoo.marketplace/invoices",
-          },
-        ],
+        slides: PROJECT_IMAGE_URLS.nzidoo.projectImages,
       },
       bentoGrid: {
         heading: "Core Features Bento Grid",
@@ -4357,26 +4250,7 @@ const allProjects=[
         hook: "A multi-tenant HR platform built with Laravel and Filament v3 featuring automated payroll, leave tracking, and real-time workforce analytics.",
         role: "Full-Stack Dev",
         date: "May 2026",
-        slides: [
-          {
-            id: 0,
-            caption: "1. Enterprise Dashboard & Workforce Metrics",
-            img: "/images/projects/hrms/0.webp",
-            urlBar: "hrms.portal/dashboard",
-          },
-          {
-            id: 1,
-            caption: "2. Employee Lifecycle & Payroll Automation",
-            img: "/images/projects/hrms/1.webp",
-            urlBar: "hrms.portal/payroll",
-          },
-          {
-            id: 2,
-            caption: "3. Attendance & Leave Approval Flow",
-            img: "/images/projects/hrms/2.webp",
-            urlBar: "hrms.portal/attendance",
-          },
-        ],
+        slides: PROJECT_IMAGE_URLS.hrms.projectImages,
       },
       bentoGrid: {
         heading: "Core Features Bento Grid",
@@ -4605,20 +4479,7 @@ const allProjects=[
         hook: "A creator-focused e-commerce ecosystem built with Laravel, Filament, and Nuxt 4 featuring automated order fulfillment, Yalidine courier integration, and creator profit analytics.",
         role: "Full-Stack Dev",
         date: "May 2026",
-        slides: [
-          {
-            id: 0,
-            caption: "1. Fulfillment Portal & Order Lifecycle",
-            img: "/images/projects/printiha/0.webp",
-            urlBar: "printiha.com/creator/dashboard",
-          },
-          {
-            id: 1,
-            caption: "2. Product Mockup & Custom Catalog Studio",
-            img: "/images/projects/printiha/1.webp",
-            urlBar: "printiha.com/creator/products",
-          },
-        ],
+        slides: PROJECT_IMAGE_URLS.printiha.projectImages,
       },
       bentoGrid: {
         heading: "Core Features Bento Grid",
@@ -4850,20 +4711,7 @@ const allProjects=[
         date: "June 2026",
         liveUrl: "https://edupay-documentation.vercel.app/",
         liveText: "View Documentation",
-        slides: [
-          {
-            id: 0,
-            caption: "1. Executive Financial Dashboard & Debt Metrics",
-            img: "/images/projects/edupay/0.webp",
-            urlBar: "edupay.school/dashboard",
-          },
-          {
-            id: 1,
-            caption: "2. Student Payment Processing & Receipt Generation",
-            img: "/images/projects/edupay/1.webp",
-            urlBar: "edupay.school/payments",
-          },
-        ],
+        slides: PROJECT_IMAGE_URLS.edupay.projectImages,
       },
       bentoGrid: {
         heading: "Core Features Bento Grid",

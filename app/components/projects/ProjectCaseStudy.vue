@@ -84,8 +84,8 @@
                 </div>
 
                 <!-- Subtle Caption Below Slide -->
-                <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mt-2.5 text-center line-clamp-1">
-                  {{ t(slide.caption) }}
+                <p v-if="slide.caption" class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 mt-2.5 text-center line-clamp-1">
+                  {{ typeof slide.caption === 'string' ? t(slide.caption) : '' }}
                 </p>
               </div>
             </div>
@@ -466,7 +466,7 @@
 
           <!-- Caption -->
           <p v-if="lightboxCaption" class="text-white/90 text-sm sm:text-base font-medium mt-4 text-center">
-            {{ t(lightboxCaption) }}
+            {{ typeof lightboxCaption === 'string' ? t(lightboxCaption) : '' }}
           </p>
         </div>
       </div>
@@ -1549,7 +1549,16 @@ const spotlightData = computed(() => {
 });
 
 // Carousel state
-const allSlides = computed(() => heroData.value?.slides || []);
+const allSlides = computed(() => {
+  const slides = heroData.value?.slides || [];
+  const domain = projectDomain.value;
+  return slides.map((slide, idx) => ({
+    id: slide?.id !== undefined ? slide.id : idx,
+    img: slide?.img || slide,
+    caption: slide?.caption || `${props.project?.title || 'Project'} screenshot ${idx + 1}`,
+    urlBar: slide?.urlBar || domain,
+  }));
+});
 const currentSlidePage = ref(0);
 
 const visibleSlides = computed(() => {
